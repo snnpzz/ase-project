@@ -1,0 +1,140 @@
+@namespace(uri="http://www.ase.polimi.it/project", prefix="ASEP")
+package ASEProject;
+
+@gmf.diagram
+class Pipeline {
+  val Dataflow[+] dataflows;
+  val Task[+] tasks;
+}
+
+@gmf.node(label="name", figure="rounded")
+abstract class Task {
+  attr String name;
+  attr boolean isRequired;
+  ref Dataflow[*]#incoming next;
+  ref Dataflow#previous outgoing;
+}
+
+@gmf.link(source="previous", target="incoming", width="2")
+class Dataflow {
+  attr Format format;
+  val Schema[1] schema;
+  ref Task[*]#outgoing previous;
+  ref Task#next incoming;
+}
+
+@gmf.link(source="next", target="outgoing", width="2")
+class InternalDF {
+  attr String format;
+  ref Operation#incoming next;
+  val Schema schema;
+  ref Operation#previous outgoing;
+}
+
+class Schema {
+  val Attribute[+] attributes;
+}
+
+class Attribute {
+  attr String name;
+  attr String type;
+  ref Attribute#previous next;
+  val Attribute[*] attributes;
+  ref Attribute#next previous;
+}
+
+class CollectionTask extends Task {
+
+  @gmf.compartment
+  val Import[+] imports;
+}
+
+class IntegrationTask extends Task {
+}
+
+class CleaningTask extends Task {
+
+  @gmf.compartment
+  val CleaningOp[+] operations;
+}
+
+class AnalyzesTask extends Task {
+
+  @gmf.compartment
+  val AnalysisOp[+] analyzes;
+}
+
+class VisualizationTask extends Task {
+}
+
+class ExportingTask extends Task {
+
+  @gmf.compartment
+  val Export[+] exports;
+}
+
+@gmf.node(label="name", label.text="Import", figure="ellipse")
+class Import {
+  ref Source[1]#linkedTo readsFrom;
+  ref Schema[1] uses;
+  attr String name;
+}
+
+@gmf.node(label="name", label.text="Export", figure="ellipse")
+class Export {
+  ref File[1]#comesFrom generates;
+  ref Schema[1] uses;
+  attr String name;
+}
+
+abstract class Operation {
+  ref InternalDF#outgoing previous;
+  attr String name;
+  ref InternalDF#next incoming;
+}
+
+class UserDefined extends CleaningOp {
+}
+
+class Source {
+  ref Import[1]#readsFrom linkedTo;
+  attr String name;
+  attr String path;
+}
+
+class File {
+  attr String name;
+  attr String path;
+  ref Export[1]#generates comesFrom;
+}
+
+@gmf.node(label="name", figure="ellipse")
+abstract class CleaningOp extends Operation {
+}
+
+@gmf.node(label="name", figure="ellipse")
+abstract class AnalysisOp extends Operation {
+}
+
+class Descriptive extends AnalysisOp {
+}
+
+class Classification extends AnalysisOp {
+}
+
+class Predictive extends AnalysisOp {
+}
+
+class Clustering extends AnalysisOp {
+}
+
+class Predefined extends CleaningOp {
+}
+
+enum Format {
+  txt = 0;
+  csv = 0;
+  json = 0;
+  xml = 0;
+}
+

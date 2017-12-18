@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="ASEProject">
+  <figures name="Default">
+    <descriptors name="CollectionTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="CollectionTaskFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="CollectionTaskLabelFigure" text="CollectionTask">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="CollectionTaskImportsCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureCollectionTaskLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getCollectionTaskImportsCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="IntegrationTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="IntegrationTaskFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="IntegrationTaskLabelFigure" text="IntegrationTask"/>
+      </actualFigure>
+      <accessors accessor="getFigureIntegrationTaskLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="CleaningTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="CleaningTaskFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="CleaningTaskLabelFigure" text="CleaningTask">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="CleaningTaskOperationsCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureCleaningTaskLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors accessor="getCleaningTaskOperationsCompartmentFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="AnalyzesTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="AnalyzesTaskFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="AnalyzesTaskLabelFigure" text="AnalyzesTask">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="AnalyzesTaskAnalyzesCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureAnalyzesTaskLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+      <accessors accessor="getAnalyzesTaskAnalyzesCompartmentFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="VisualizationTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="VisualizationTaskFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="VisualizationTaskLabelFigure" text="VisualizationTask"/>
+      </actualFigure>
+      <accessors accessor="getFigureVisualizationTaskLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ExportingTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ExportingTaskFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ExportingTaskLabelFigure" text="ExportingTask">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="ExportingTaskExportsCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureExportingTaskLabelFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+      <accessors accessor="getExportingTaskExportsCompartmentFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="ImportFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="ImportFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ImportLabelFigure" text="Import"/>
+      </actualFigure>
+      <accessors accessor="getFigureImportLabelFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ExportFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="ExportFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ExportLabelFigure" text="Export"/>
+      </actualFigure>
+      <accessors accessor="getFigureExportLabelFigure" figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="UserDefinedFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="UserDefinedFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="UserDefinedLabelFigure" text="UserDefined"/>
+      </actualFigure>
+      <accessors accessor="getFigureUserDefinedLabelFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="DescriptiveFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="DescriptiveFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="DescriptiveLabelFigure" text="Descriptive"/>
+      </actualFigure>
+      <accessors accessor="getFigureDescriptiveLabelFigure" figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ClassificationFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="ClassificationFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ClassificationLabelFigure" text="Classification"/>
+      </actualFigure>
+      <accessors accessor="getFigureClassificationLabelFigure" figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="PredictiveFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="PredictiveFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="PredictiveLabelFigure" text="Predictive"/>
+      </actualFigure>
+      <accessors accessor="getFigurePredictiveLabelFigure" figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ClusteringFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="ClusteringFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ClusteringLabelFigure" text="Clustering"/>
+      </actualFigure>
+      <accessors accessor="getFigureClusteringLabelFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="PredefinedFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="PredefinedFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="PredefinedLabelFigure" text="Predefined"/>
+      </actualFigure>
+      <accessors accessor="getFigurePredefinedLabelFigure" figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="DataflowFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DataflowFigure" lineWidth="2"/>
+    </descriptors>
+  </figures>
+  <nodes name="CollectionTask" figure="CollectionTaskFigure"/>
+  <nodes name="IntegrationTask" figure="IntegrationTaskFigure"/>
+  <nodes name="CleaningTask" figure="CleaningTaskFigure"/>
+  <nodes name="AnalyzesTask" figure="AnalyzesTaskFigure"/>
+  <nodes name="VisualizationTask" figure="VisualizationTaskFigure"/>
+  <nodes name="ExportingTask" figure="ExportingTaskFigure"/>
+  <nodes name="Import" figure="ImportFigure"/>
+  <nodes name="Export" figure="ExportFigure"/>
+  <nodes name="UserDefined" figure="UserDefinedFigure"/>
+  <nodes name="Descriptive" figure="DescriptiveFigure"/>
+  <nodes name="Classification" figure="ClassificationFigure"/>
+  <nodes name="Predictive" figure="PredictiveFigure"/>
+  <nodes name="Clustering" figure="ClusteringFigure"/>
+  <nodes name="Predefined" figure="PredefinedFigure"/>
+  <connections name="Dataflow" figure="DataflowFigure"/>
+  <compartments name="CollectionTaskImportsCompartment" figure="CollectionTaskFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments name="CleaningTaskOperationsCompartment" figure="CleaningTaskFigure" collapsible="true" accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+  <compartments name="AnalyzesTaskAnalyzesCompartment" figure="AnalyzesTaskFigure" collapsible="true" accessor="//@figures.0/@descriptors.3/@accessors.1"/>
+  <compartments name="ExportingTaskExportsCompartment" figure="ExportingTaskFigure" collapsible="true" accessor="//@figures.0/@descriptors.5/@accessors.1"/>
+  <labels name="CollectionTaskLabel" figure="CollectionTaskFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="IntegrationTaskLabel" figure="IntegrationTaskFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="CleaningTaskLabel" figure="CleaningTaskFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="AnalyzesTaskLabel" figure="AnalyzesTaskFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="VisualizationTaskLabel" figure="VisualizationTaskFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <labels name="ExportingTaskLabel" figure="ExportingTaskFigure" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+  <labels name="ImportLabel" figure="ImportFigure" accessor="//@figures.0/@descriptors.6/@accessors.0"/>
+  <labels name="ExportLabel" figure="ExportFigure" accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+  <labels name="UserDefinedLabel" figure="UserDefinedFigure" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+  <labels name="DescriptiveLabel" figure="DescriptiveFigure" accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+  <labels name="ClassificationLabel" figure="ClassificationFigure" accessor="//@figures.0/@descriptors.10/@accessors.0"/>
+  <labels name="PredictiveLabel" figure="PredictiveFigure" accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+  <labels name="ClusteringLabel" figure="ClusteringFigure" accessor="//@figures.0/@descriptors.12/@accessors.0"/>
+  <labels name="PredefinedLabel" figure="PredefinedFigure" accessor="//@figures.0/@descriptors.13/@accessors.0"/>
+</gmfgraph:Canvas>

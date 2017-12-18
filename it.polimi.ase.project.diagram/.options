@@ -1,0 +1,7 @@
+# Tracing options for the it.polimi.ase.project.diagram plug-in
+
+# Common issues
+it.polimi.ase.project.diagram/debug=false
+
+# Visual IDs
+it.polimi.ase.project.diagram/debug/visualID=false

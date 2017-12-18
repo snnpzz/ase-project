@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pipeline -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="ASEProject.presentation.ASEProjectModelWizardID"
+            name="%_UI_ASEProjectModelWizard_label"
+            class="ASEProject.presentation.ASEProjectModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ASEProjectModelFile.gif">
+         <description>%_UI_ASEProjectModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated pipeline -->
+      <editor
+            id="ASEProject.presentation.ASEProjectEditorID"
+            name="%_UI_ASEProjectEditor_label"
+            icon="icons/full/obj16/ASEProjectModelFile.gif"
+            extensions="aseproject"
+            class="ASEProject.presentation.ASEProjectEditor"
+            contributorClass="ASEProject.presentation.ASEProjectActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

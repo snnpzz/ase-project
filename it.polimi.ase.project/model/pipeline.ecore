@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ASEProject" nsURI="http://www.ase.polimi.it/project" nsPrefix="ASEP">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ASE_Project" nsURI="http://www.ase.it/" nsPrefix="ASE">
   <eClassifiers xsi:type="ecore:EClass" name="Pipeline">
     <eAnnotations source="gmf.diagram"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataflows" lowerBound="1"
@@ -15,44 +15,62 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRequired" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="next" upperBound="-1" eType="#//Dataflow"
-        eOpposite="#//Dataflow/incoming"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" eType="#//Dataflow"
-        eOpposite="#//Dataflow/previous"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" upperBound="-1"
+        eType="#//Dataflow" eOpposite="#//Dataflow/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" upperBound="-1"
+        eType="#//Dataflow" eOpposite="#//Dataflow/source"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Dataflow">
     <eAnnotations source="gmf.link">
-      <details key="source" value="previous"/>
-      <details key="target" value="incoming"/>
+      <details key="source" value="source"/>
+      <details key="target" value="target"/>
       <details key="width" value="2"/>
+      <details key="target.decoration" value="arrow"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="#//Format"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="schema" lowerBound="1"
         eType="#//Schema" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="previous" upperBound="-1"
-        eType="#//Task" eOpposite="#//Task/outgoing"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" eType="#//Task"
-        eOpposite="#//Task/next"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Task"
+        eOpposite="#//Task/incoming"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Task"
+        eOpposite="#//Task/outgoing"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" abstract="true">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="figure" value="ellipse"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" eType="#//InternalDF"
+        eOpposite="#//InternalDF/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" eType="#//InternalDF"
+        eOpposite="#//InternalDF/source"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InternalDF">
     <eAnnotations source="gmf.link">
-      <details key="source" value="next"/>
-      <details key="target" value="outgoing"/>
+      <details key="source" value="source"/>
+      <details key="target" value="target"/>
       <details key="width" value="2"/>
+      <details key="target.decoration" value="arrow"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//Operation"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="#//Format"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schema" lowerBound="1"
+        eType="#//Schema" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Operation"
+        eOpposite="#//Operation/outgoing"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Operation"
         eOpposite="#//Operation/incoming"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="schema" eType="#//Schema"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" eType="#//Operation"
-        eOpposite="#//Operation/previous"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Schema">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
-        upperBound="-1" eType="#//Attribute" containment="true"/>
+        upperBound="-1" eType="#//Attribute" containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//Attribute"
@@ -110,39 +128,33 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="uses" lowerBound="1" eType="#//Schema"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Operation" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="previous" eType="#//InternalDF"
-        eOpposite="#//InternalDF/outgoing"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" eType="#//InternalDF"
-        eOpposite="#//InternalDF/next"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UserDefined" eSuperTypes="#//CleaningOp"/>
   <eClassifiers xsi:type="ecore:EClass" name="Source">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkedTo" lowerBound="1"
         eType="#//Import" eOpposite="#//Import/readsFrom"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="File">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="comesFrom" lowerBound="1"
         eType="#//Export" eOpposite="#//Export/generates"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CleaningOp" abstract="true" eSuperTypes="#//Operation">
+  <eClassifiers xsi:type="ecore:EClass" name="CleaningOp" abstract="true" eSuperTypes="#//Operation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalysisOp" abstract="true" eSuperTypes="#//Operation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Descriptive" eSuperTypes="#//AnalysisOp">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
       <details key="figure" value="ellipse"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnalysisOp" abstract="true" eSuperTypes="#//Operation">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
-      <details key="figure" value="ellipse"/>
-    </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Descriptive" eSuperTypes="#//AnalysisOp"/>
   <eClassifiers xsi:type="ecore:EClass" name="Classification" eSuperTypes="#//AnalysisOp"/>
   <eClassifiers xsi:type="ecore:EClass" name="Predictive" eSuperTypes="#//AnalysisOp"/>
   <eClassifiers xsi:type="ecore:EClass" name="Clustering" eSuperTypes="#//AnalysisOp"/>

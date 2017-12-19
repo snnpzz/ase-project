@@ -5,7 +5,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <palette
-      title="ASEProjectPalette">
+      title="ASE_ProjectPalette">
     <tools
         xsi:type="gmftool:ToolGroup"
         title="Objects"
@@ -14,6 +14,15 @@
           xsi:type="gmftool:CreationTool"
           title="AnalyzesTask"
           description="Create new AnalyzesTask">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Attribute"
+          description="Create new Attribute">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -84,6 +93,15 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="File"
+          description="Create new File">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Import"
           description="Create new Import">
         <smallIcon
@@ -113,6 +131,15 @@
           xsi:type="gmftool:CreationTool"
           title="Predictive"
           description="Create new Predictive">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Source"
+          description="Create new Source">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

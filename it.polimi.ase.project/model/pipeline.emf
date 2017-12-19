@@ -1,5 +1,5 @@
-@namespace(uri="http://www.ase.polimi.it/project", prefix="ASEP")
-package ASEProject;
+@namespace(uri="http://www.ase.it/", prefix="ASE")
+package ASE_Project;
 
 @gmf.diagram
 class Pipeline {
@@ -11,30 +11,39 @@ class Pipeline {
 abstract class Task {
   attr String name;
   attr boolean isRequired;
-  ref Dataflow[*]#incoming next;
-  ref Dataflow#previous outgoing;
+  ref Dataflow[*]#target incoming;
+  ref Dataflow[*]#source outgoing;
 }
 
-@gmf.link(source="previous", target="incoming", width="2")
+@gmf.link(source="source", target="target", width="2", target.decoration="arrow")
 class Dataflow {
   attr Format format;
   val Schema[1] schema;
-  ref Task[*]#outgoing previous;
-  ref Task#next incoming;
+  ref Task#incoming target;
+  ref Task#outgoing source;
 }
 
-@gmf.link(source="next", target="outgoing", width="2")
+@gmf.node(label="name", figure="ellipse")
+abstract class Operation {
+  attr String name;
+  ref InternalDF#target incoming;
+  ref InternalDF#source outgoing;
+}
+
+@gmf.link(source="source", target="target", width="2", target.decoration="arrow")
 class InternalDF {
-  attr String format;
-  ref Operation#incoming next;
-  val Schema schema;
-  ref Operation#previous outgoing;
+  attr Format format;
+  val Schema[1] schema;
+  ref Operation#outgoing source;
+  ref Operation#incoming target;
 }
 
 class Schema {
+  @gmf.compartment
   val Attribute[+] attributes;
 }
 
+@gmf.node(label="name")
 class Attribute {
   attr String name;
   attr String type;
@@ -44,7 +53,6 @@ class Attribute {
 }
 
 class CollectionTask extends Task {
-
   @gmf.compartment
   val Import[+] imports;
 }
@@ -53,13 +61,11 @@ class IntegrationTask extends Task {
 }
 
 class CleaningTask extends Task {
-
   @gmf.compartment
   val CleaningOp[+] operations;
 }
 
 class AnalyzesTask extends Task {
-
   @gmf.compartment
   val AnalysisOp[+] analyzes;
 }
@@ -68,7 +74,6 @@ class VisualizationTask extends Task {
 }
 
 class ExportingTask extends Task {
-
   @gmf.compartment
   val Export[+] exports;
 }
@@ -87,35 +92,30 @@ class Export {
   attr String name;
 }
 
-abstract class Operation {
-  ref InternalDF#outgoing previous;
-  attr String name;
-  ref InternalDF#next incoming;
-}
-
 class UserDefined extends CleaningOp {
 }
 
+@gmf.node(label="name")
 class Source {
   ref Import[1]#readsFrom linkedTo;
   attr String name;
   attr String path;
 }
 
+@gmf.node(label="name")
 class File {
   attr String name;
   attr String path;
   ref Export[1]#generates comesFrom;
 }
 
-@gmf.node(label="name", figure="ellipse")
 abstract class CleaningOp extends Operation {
 }
 
-@gmf.node(label="name", figure="ellipse")
 abstract class AnalysisOp extends Operation {
 }
 
+@gmf.node(label="name", figure="ellipse")
 class Descriptive extends AnalysisOp {
 }
 

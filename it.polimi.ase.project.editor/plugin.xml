@@ -12,12 +12,12 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="ASEProject.presentation.ASEProjectModelWizardID"
-            name="%_UI_ASEProjectModelWizard_label"
-            class="ASEProject.presentation.ASEProjectModelWizard"
+            id="ASE_Project.presentation.ASE_ProjectModelWizardID"
+            name="%_UI_ASE_ProjectModelWizard_label"
+            class="ASE_Project.presentation.ASE_ProjectModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ASEProjectModelFile.gif">
-         <description>%_UI_ASEProjectModelWizard_description</description>
+            icon="icons/full/obj16/ASE_ProjectModelFile.gif">
+         <description>%_UI_ASE_ProjectModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
@@ -25,12 +25,13 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated pipeline -->
       <editor
-            id="ASEProject.presentation.ASEProjectEditorID"
-            name="%_UI_ASEProjectEditor_label"
-            icon="icons/full/obj16/ASEProjectModelFile.gif"
-            extensions="aseproject"
-            class="ASEProject.presentation.ASEProjectEditor"
-            contributorClass="ASEProject.presentation.ASEProjectActionBarContributor">
+            id="ASE_Project.presentation.ASE_ProjectEditorID"
+            name="%_UI_ASE_ProjectEditor_label"
+            icon="icons/full/obj16/ASE_ProjectModelFile.gif"
+            extensions="ase_project"
+            class="ASE_Project.presentation.ASE_ProjectEditor"
+            contributorClass="ASE_Project.presentation.ASE_ProjectActionBarContributor">
       </editor>
    </extension>
+
 </plugin>

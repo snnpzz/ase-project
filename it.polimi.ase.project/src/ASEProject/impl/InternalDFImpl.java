@@ -3,6 +3,7 @@
 package ASEProject.impl;
 
 import ASEProject.ASEProjectPackage;
+import ASEProject.Format;
 import ASEProject.InternalDF;
 import ASEProject.Operation;
 import ASEProject.Schema;
@@ -25,9 +26,9 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link ASEProject.impl.InternalDFImpl#getFormat <em>Format</em>}</li>
- *   <li>{@link ASEProject.impl.InternalDFImpl#getNext <em>Next</em>}</li>
  *   <li>{@link ASEProject.impl.InternalDFImpl#getSchema <em>Schema</em>}</li>
- *   <li>{@link ASEProject.impl.InternalDFImpl#getOutgoing <em>Outgoing</em>}</li>
+ *   <li>{@link ASEProject.impl.InternalDFImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link ASEProject.impl.InternalDFImpl#getTarget <em>Target</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,7 +42,7 @@ public class InternalDFImpl extends EObjectImpl implements InternalDF {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FORMAT_EDEFAULT = null;
+	protected static final Format FORMAT_EDEFAULT = Format.TXT;
 
 	/**
 	 * The cached value of the '{@link #getFormat() <em>Format</em>}' attribute.
@@ -51,17 +52,7 @@ public class InternalDFImpl extends EObjectImpl implements InternalDF {
 	 * @generated
 	 * @ordered
 	 */
-	protected String format = FORMAT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getNext() <em>Next</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNext()
-	 * @generated
-	 * @ordered
-	 */
-	protected Operation next;
+	protected Format format = FORMAT_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSchema() <em>Schema</em>}' containment reference.
@@ -74,14 +65,24 @@ public class InternalDFImpl extends EObjectImpl implements InternalDF {
 	protected Schema schema;
 
 	/**
-	 * The cached value of the '{@link #getOutgoing() <em>Outgoing</em>}' reference.
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOutgoing()
+	 * @see #getSource()
 	 * @generated
 	 * @ordered
 	 */
-	protected Operation outgoing;
+	protected Operation source;
+
+	/**
+	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTarget()
+	 * @generated
+	 * @ordered
+	 */
+	protected Operation target;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -107,7 +108,7 @@ public class InternalDFImpl extends EObjectImpl implements InternalDF {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getFormat() {
+	public Format getFormat() {
 		return format;
 	}
 
@@ -116,71 +117,11 @@ public class InternalDFImpl extends EObjectImpl implements InternalDF {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFormat(String newFormat) {
-		String oldFormat = format;
-		format = newFormat;
+	public void setFormat(Format newFormat) {
+		Format oldFormat = format;
+		format = newFormat == null ? FORMAT_EDEFAULT : newFormat;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ASEProjectPackage.INTERNAL_DF__FORMAT, oldFormat, format));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Operation getNext() {
-		if (next != null && next.eIsProxy()) {
-			InternalEObject oldNext = (InternalEObject)next;
-			next = (Operation)eResolveProxy(oldNext);
-			if (next != oldNext) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ASEProjectPackage.INTERNAL_DF__NEXT, oldNext, next));
-			}
-		}
-		return next;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Operation basicGetNext() {
-		return next;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetNext(Operation newNext, NotificationChain msgs) {
-		Operation oldNext = next;
-		next = newNext;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ASEProjectPackage.INTERNAL_DF__NEXT, oldNext, newNext);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNext(Operation newNext) {
-		if (newNext != next) {
-			NotificationChain msgs = null;
-			if (next != null)
-				msgs = ((InternalEObject)next).eInverseRemove(this, ASEProjectPackage.OPERATION__INCOMING, Operation.class, msgs);
-			if (newNext != null)
-				msgs = ((InternalEObject)newNext).eInverseAdd(this, ASEProjectPackage.OPERATION__INCOMING, Operation.class, msgs);
-			msgs = basicSetNext(newNext, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ASEProjectPackage.INTERNAL_DF__NEXT, newNext, newNext));
 	}
 
 	/**
@@ -231,16 +172,16 @@ public class InternalDFImpl extends EObjectImpl implements InternalDF {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Operation getOutgoing() {
-		if (outgoing != null && outgoing.eIsProxy()) {
-			InternalEObject oldOutgoing = (InternalEObject)outgoing;
-			outgoing = (Operation)eResolveProxy(oldOutgoing);
-			if (outgoing != oldOutgoing) {
+	public Operation getSource() {
+		if (source != null && source.eIsProxy()) {
+			InternalEObject oldSource = (InternalEObject)source;
+			source = (Operation)eResolveProxy(oldSource);
+			if (source != oldSource) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ASEProjectPackage.INTERNAL_DF__OUTGOING, oldOutgoing, outgoing));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ASEProjectPackage.INTERNAL_DF__SOURCE, oldSource, source));
 			}
 		}
-		return outgoing;
+		return source;
 	}
 
 	/**
@@ -248,8 +189,8 @@ public class InternalDFImpl extends EObjectImpl implements InternalDF {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Operation basicGetOutgoing() {
-		return outgoing;
+	public Operation basicGetSource() {
+		return source;
 	}
 
 	/**
@@ -257,11 +198,11 @@ public class InternalDFImpl extends EObjectImpl implements InternalDF {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOutgoing(Operation newOutgoing, NotificationChain msgs) {
-		Operation oldOutgoing = outgoing;
-		outgoing = newOutgoing;
+	public NotificationChain basicSetSource(Operation newSource, NotificationChain msgs) {
+		Operation oldSource = source;
+		source = newSource;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ASEProjectPackage.INTERNAL_DF__OUTGOING, oldOutgoing, newOutgoing);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ASEProjectPackage.INTERNAL_DF__SOURCE, oldSource, newSource);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -272,18 +213,78 @@ public class InternalDFImpl extends EObjectImpl implements InternalDF {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOutgoing(Operation newOutgoing) {
-		if (newOutgoing != outgoing) {
+	public void setSource(Operation newSource) {
+		if (newSource != source) {
 			NotificationChain msgs = null;
-			if (outgoing != null)
-				msgs = ((InternalEObject)outgoing).eInverseRemove(this, ASEProjectPackage.OPERATION__PREVIOUS, Operation.class, msgs);
-			if (newOutgoing != null)
-				msgs = ((InternalEObject)newOutgoing).eInverseAdd(this, ASEProjectPackage.OPERATION__PREVIOUS, Operation.class, msgs);
-			msgs = basicSetOutgoing(newOutgoing, msgs);
+			if (source != null)
+				msgs = ((InternalEObject)source).eInverseRemove(this, ASEProjectPackage.OPERATION__OUTGOING, Operation.class, msgs);
+			if (newSource != null)
+				msgs = ((InternalEObject)newSource).eInverseAdd(this, ASEProjectPackage.OPERATION__OUTGOING, Operation.class, msgs);
+			msgs = basicSetSource(newSource, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ASEProjectPackage.INTERNAL_DF__OUTGOING, newOutgoing, newOutgoing));
+			eNotify(new ENotificationImpl(this, Notification.SET, ASEProjectPackage.INTERNAL_DF__SOURCE, newSource, newSource));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Operation getTarget() {
+		if (target != null && target.eIsProxy()) {
+			InternalEObject oldTarget = (InternalEObject)target;
+			target = (Operation)eResolveProxy(oldTarget);
+			if (target != oldTarget) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ASEProjectPackage.INTERNAL_DF__TARGET, oldTarget, target));
+			}
+		}
+		return target;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Operation basicGetTarget() {
+		return target;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTarget(Operation newTarget, NotificationChain msgs) {
+		Operation oldTarget = target;
+		target = newTarget;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ASEProjectPackage.INTERNAL_DF__TARGET, oldTarget, newTarget);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTarget(Operation newTarget) {
+		if (newTarget != target) {
+			NotificationChain msgs = null;
+			if (target != null)
+				msgs = ((InternalEObject)target).eInverseRemove(this, ASEProjectPackage.OPERATION__INCOMING, Operation.class, msgs);
+			if (newTarget != null)
+				msgs = ((InternalEObject)newTarget).eInverseAdd(this, ASEProjectPackage.OPERATION__INCOMING, Operation.class, msgs);
+			msgs = basicSetTarget(newTarget, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ASEProjectPackage.INTERNAL_DF__TARGET, newTarget, newTarget));
 	}
 
 	/**
@@ -294,14 +295,14 @@ public class InternalDFImpl extends EObjectImpl implements InternalDF {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ASEProjectPackage.INTERNAL_DF__NEXT:
-				if (next != null)
-					msgs = ((InternalEObject)next).eInverseRemove(this, ASEProjectPackage.OPERATION__INCOMING, Operation.class, msgs);
-				return basicSetNext((Operation)otherEnd, msgs);
-			case ASEProjectPackage.INTERNAL_DF__OUTGOING:
-				if (outgoing != null)
-					msgs = ((InternalEObject)outgoing).eInverseRemove(this, ASEProjectPackage.OPERATION__PREVIOUS, Operation.class, msgs);
-				return basicSetOutgoing((Operation)otherEnd, msgs);
+			case ASEProjectPackage.INTERNAL_DF__SOURCE:
+				if (source != null)
+					msgs = ((InternalEObject)source).eInverseRemove(this, ASEProjectPackage.OPERATION__OUTGOING, Operation.class, msgs);
+				return basicSetSource((Operation)otherEnd, msgs);
+			case ASEProjectPackage.INTERNAL_DF__TARGET:
+				if (target != null)
+					msgs = ((InternalEObject)target).eInverseRemove(this, ASEProjectPackage.OPERATION__INCOMING, Operation.class, msgs);
+				return basicSetTarget((Operation)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -314,12 +315,12 @@ public class InternalDFImpl extends EObjectImpl implements InternalDF {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ASEProjectPackage.INTERNAL_DF__NEXT:
-				return basicSetNext(null, msgs);
 			case ASEProjectPackage.INTERNAL_DF__SCHEMA:
 				return basicSetSchema(null, msgs);
-			case ASEProjectPackage.INTERNAL_DF__OUTGOING:
-				return basicSetOutgoing(null, msgs);
+			case ASEProjectPackage.INTERNAL_DF__SOURCE:
+				return basicSetSource(null, msgs);
+			case ASEProjectPackage.INTERNAL_DF__TARGET:
+				return basicSetTarget(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -334,14 +335,14 @@ public class InternalDFImpl extends EObjectImpl implements InternalDF {
 		switch (featureID) {
 			case ASEProjectPackage.INTERNAL_DF__FORMAT:
 				return getFormat();
-			case ASEProjectPackage.INTERNAL_DF__NEXT:
-				if (resolve) return getNext();
-				return basicGetNext();
 			case ASEProjectPackage.INTERNAL_DF__SCHEMA:
 				return getSchema();
-			case ASEProjectPackage.INTERNAL_DF__OUTGOING:
-				if (resolve) return getOutgoing();
-				return basicGetOutgoing();
+			case ASEProjectPackage.INTERNAL_DF__SOURCE:
+				if (resolve) return getSource();
+				return basicGetSource();
+			case ASEProjectPackage.INTERNAL_DF__TARGET:
+				if (resolve) return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -355,16 +356,16 @@ public class InternalDFImpl extends EObjectImpl implements InternalDF {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ASEProjectPackage.INTERNAL_DF__FORMAT:
-				setFormat((String)newValue);
-				return;
-			case ASEProjectPackage.INTERNAL_DF__NEXT:
-				setNext((Operation)newValue);
+				setFormat((Format)newValue);
 				return;
 			case ASEProjectPackage.INTERNAL_DF__SCHEMA:
 				setSchema((Schema)newValue);
 				return;
-			case ASEProjectPackage.INTERNAL_DF__OUTGOING:
-				setOutgoing((Operation)newValue);
+			case ASEProjectPackage.INTERNAL_DF__SOURCE:
+				setSource((Operation)newValue);
+				return;
+			case ASEProjectPackage.INTERNAL_DF__TARGET:
+				setTarget((Operation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -381,14 +382,14 @@ public class InternalDFImpl extends EObjectImpl implements InternalDF {
 			case ASEProjectPackage.INTERNAL_DF__FORMAT:
 				setFormat(FORMAT_EDEFAULT);
 				return;
-			case ASEProjectPackage.INTERNAL_DF__NEXT:
-				setNext((Operation)null);
-				return;
 			case ASEProjectPackage.INTERNAL_DF__SCHEMA:
 				setSchema((Schema)null);
 				return;
-			case ASEProjectPackage.INTERNAL_DF__OUTGOING:
-				setOutgoing((Operation)null);
+			case ASEProjectPackage.INTERNAL_DF__SOURCE:
+				setSource((Operation)null);
+				return;
+			case ASEProjectPackage.INTERNAL_DF__TARGET:
+				setTarget((Operation)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -403,13 +404,13 @@ public class InternalDFImpl extends EObjectImpl implements InternalDF {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ASEProjectPackage.INTERNAL_DF__FORMAT:
-				return FORMAT_EDEFAULT == null ? format != null : !FORMAT_EDEFAULT.equals(format);
-			case ASEProjectPackage.INTERNAL_DF__NEXT:
-				return next != null;
+				return format != FORMAT_EDEFAULT;
 			case ASEProjectPackage.INTERNAL_DF__SCHEMA:
 				return schema != null;
-			case ASEProjectPackage.INTERNAL_DF__OUTGOING:
-				return outgoing != null;
+			case ASEProjectPackage.INTERNAL_DF__SOURCE:
+				return source != null;
+			case ASEProjectPackage.INTERNAL_DF__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

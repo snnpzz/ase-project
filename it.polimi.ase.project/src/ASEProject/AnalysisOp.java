@@ -11,7 +11,6 @@ package ASEProject;
  *
  * @see ASEProject.ASEProjectPackage#getAnalysisOp()
  * @model abstract="true"
- *        annotation="gmf.node label='name' figure='ellipse'"
  * @generated
  */
 public interface AnalysisOp extends Operation {

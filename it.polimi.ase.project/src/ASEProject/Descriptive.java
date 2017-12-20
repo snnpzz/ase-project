@@ -10,7 +10,7 @@ package ASEProject;
  *
  *
  * @see ASEProject.ASEProjectPackage#getDescriptive()
- * @model
+ * @model annotation="gmf.node label='name' figure='ellipse'"
  * @generated
  */
 public interface Descriptive extends AnalysisOp {

@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see ASEProject.ASEProjectPackage#getSource()
- * @model
+ * @model annotation="gmf.node label='name'"
  * @generated
  */
 public interface Source extends EObject {

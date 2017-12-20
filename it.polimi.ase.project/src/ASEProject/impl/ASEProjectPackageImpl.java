@@ -348,7 +348,7 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTask_Next() {
+	public EReference getTask_Incoming() {
 		return (EReference)taskEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -393,7 +393,7 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataflow_Previous() {
+	public EReference getDataflow_Target() {
 		return (EReference)dataflowEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -402,7 +402,7 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataflow_Incoming() {
+	public EReference getDataflow_Source() {
 		return (EReference)dataflowEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -429,7 +429,7 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInternalDF_Next() {
+	public EReference getInternalDF_Schema() {
 		return (EReference)internalDFEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -438,7 +438,7 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInternalDF_Schema() {
+	public EReference getInternalDF_Source() {
 		return (EReference)internalDFEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -447,7 +447,7 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInternalDF_Outgoing() {
+	public EReference getInternalDF_Target() {
 		return (EReference)internalDFEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -699,17 +699,8 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOperation_Previous() {
-		return (EReference)operationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getOperation_Name() {
-		return (EAttribute)operationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)operationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -718,6 +709,15 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 	 * @generated
 	 */
 	public EReference getOperation_Incoming() {
+		return (EReference)operationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOperation_Outgoing() {
 		return (EReference)operationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -909,20 +909,25 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 		taskEClass = createEClass(TASK);
 		createEAttribute(taskEClass, TASK__NAME);
 		createEAttribute(taskEClass, TASK__IS_REQUIRED);
-		createEReference(taskEClass, TASK__NEXT);
+		createEReference(taskEClass, TASK__INCOMING);
 		createEReference(taskEClass, TASK__OUTGOING);
 
 		dataflowEClass = createEClass(DATAFLOW);
 		createEAttribute(dataflowEClass, DATAFLOW__FORMAT);
 		createEReference(dataflowEClass, DATAFLOW__SCHEMA);
-		createEReference(dataflowEClass, DATAFLOW__PREVIOUS);
-		createEReference(dataflowEClass, DATAFLOW__INCOMING);
+		createEReference(dataflowEClass, DATAFLOW__TARGET);
+		createEReference(dataflowEClass, DATAFLOW__SOURCE);
+
+		operationEClass = createEClass(OPERATION);
+		createEAttribute(operationEClass, OPERATION__NAME);
+		createEReference(operationEClass, OPERATION__INCOMING);
+		createEReference(operationEClass, OPERATION__OUTGOING);
 
 		internalDFEClass = createEClass(INTERNAL_DF);
 		createEAttribute(internalDFEClass, INTERNAL_DF__FORMAT);
-		createEReference(internalDFEClass, INTERNAL_DF__NEXT);
 		createEReference(internalDFEClass, INTERNAL_DF__SCHEMA);
-		createEReference(internalDFEClass, INTERNAL_DF__OUTGOING);
+		createEReference(internalDFEClass, INTERNAL_DF__SOURCE);
+		createEReference(internalDFEClass, INTERNAL_DF__TARGET);
 
 		schemaEClass = createEClass(SCHEMA);
 		createEReference(schemaEClass, SCHEMA__ATTRIBUTES);
@@ -959,11 +964,6 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 		createEReference(exportEClass, EXPORT__GENERATES);
 		createEReference(exportEClass, EXPORT__USES);
 		createEAttribute(exportEClass, EXPORT__NAME);
-
-		operationEClass = createEClass(OPERATION);
-		createEReference(operationEClass, OPERATION__PREVIOUS);
-		createEAttribute(operationEClass, OPERATION__NAME);
-		createEReference(operationEClass, OPERATION__INCOMING);
 
 		userDefinedEClass = createEClass(USER_DEFINED);
 
@@ -1046,20 +1046,25 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 		initEClass(taskEClass, Task.class, "Task", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTask_Name(), ecorePackage.getEString(), "name", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTask_IsRequired(), ecorePackage.getEBoolean(), "isRequired", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTask_Next(), this.getDataflow(), this.getDataflow_Incoming(), "next", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTask_Outgoing(), this.getDataflow(), this.getDataflow_Previous(), "outgoing", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTask_Incoming(), this.getDataflow(), this.getDataflow_Target(), "incoming", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTask_Outgoing(), this.getDataflow(), this.getDataflow_Source(), "outgoing", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataflowEClass, Dataflow.class, "Dataflow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataflow_Format(), this.getFormat(), "format", null, 0, 1, Dataflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataflow_Schema(), this.getSchema(), null, "schema", null, 1, 1, Dataflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataflow_Previous(), this.getTask(), this.getTask_Outgoing(), "previous", null, 0, -1, Dataflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataflow_Incoming(), this.getTask(), this.getTask_Next(), "incoming", null, 0, 1, Dataflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataflow_Target(), this.getTask(), this.getTask_Incoming(), "target", null, 0, 1, Dataflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataflow_Source(), this.getTask(), this.getTask_Outgoing(), "source", null, 0, 1, Dataflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(operationEClass, Operation.class, "Operation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperation_Incoming(), this.getInternalDF(), this.getInternalDF_Target(), "incoming", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperation_Outgoing(), this.getInternalDF(), this.getInternalDF_Source(), "outgoing", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(internalDFEClass, InternalDF.class, "InternalDF", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInternalDF_Format(), ecorePackage.getEString(), "format", null, 0, 1, InternalDF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInternalDF_Next(), this.getOperation(), this.getOperation_Incoming(), "next", null, 0, 1, InternalDF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInternalDF_Schema(), this.getSchema(), null, "schema", null, 0, 1, InternalDF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInternalDF_Outgoing(), this.getOperation(), this.getOperation_Previous(), "outgoing", null, 0, 1, InternalDF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInternalDF_Format(), this.getFormat(), "format", null, 0, 1, InternalDF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInternalDF_Schema(), this.getSchema(), null, "schema", null, 1, 1, InternalDF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInternalDF_Source(), this.getOperation(), this.getOperation_Outgoing(), "source", null, 0, 1, InternalDF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInternalDF_Target(), this.getOperation(), this.getOperation_Incoming(), "target", null, 0, 1, InternalDF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(schemaEClass, Schema.class, "Schema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSchema_Attributes(), this.getAttribute(), null, "attributes", null, 1, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1096,11 +1101,6 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 		initEReference(getExport_Generates(), this.getFile(), this.getFile_ComesFrom(), "generates", null, 1, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExport_Uses(), this.getSchema(), null, "uses", null, 1, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExport_Name(), ecorePackage.getEString(), "name", null, 0, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(operationEClass, Operation.class, "Operation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOperation_Previous(), this.getInternalDF(), this.getInternalDF_Outgoing(), "previous", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperation_Incoming(), this.getInternalDF(), this.getInternalDF_Next(), "incoming", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(userDefinedEClass, UserDefined.class, "UserDefined", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1180,6 +1180,19 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 			 "figure", "rounded"
 		   });	
 		addAnnotation
+		  (operationEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name",
+			 "figure", "ellipse"
+		   });	
+		addAnnotation
+		  (attributeEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
 		  (importEClass, 
 		   source, 
 		   new String[] {
@@ -1196,14 +1209,19 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 			 "figure", "ellipse"
 		   });	
 		addAnnotation
-		  (cleaningOpEClass, 
+		  (sourceEClass, 
 		   source, 
 		   new String[] {
-			 "label", "name",
-			 "figure", "ellipse"
+			 "label", "name"
 		   });	
 		addAnnotation
-		  (analysisOpEClass, 
+		  (fileEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (descriptiveEClass, 
 		   source, 
 		   new String[] {
 			 "label", "name",
@@ -1223,17 +1241,19 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 		  (dataflowEClass, 
 		   source, 
 		   new String[] {
-			 "source", "previous",
-			 "target", "incoming",
-			 "width", "2"
+			 "source", "source",
+			 "target", "target",
+			 "width", "2",
+			 "target.decoration", "arrow"
 		   });	
 		addAnnotation
 		  (internalDFEClass, 
 		   source, 
 		   new String[] {
-			 "source", "next",
-			 "target", "outgoing",
-			 "width", "2"
+			 "source", "source",
+			 "target", "target",
+			 "width", "2",
+			 "target.decoration", "arrow"
 		   });
 	}
 
@@ -1245,6 +1265,11 @@ public class ASEProjectPackageImpl extends EPackageImpl implements ASEProjectPac
 	 */
 	protected void createGmf_3Annotations() {
 		String source = "gmf.compartment";	
+		addAnnotation
+		  (getSchema_Attributes(), 
+		   source, 
+		   new String[] {
+		   });	
 		addAnnotation
 		  (getCollectionTask_Imports(), 
 		   source, 

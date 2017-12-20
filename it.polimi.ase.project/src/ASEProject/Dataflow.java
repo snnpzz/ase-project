@@ -17,12 +17,12 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ASEProject.Dataflow#getFormat <em>Format</em>}</li>
  *   <li>{@link ASEProject.Dataflow#getSchema <em>Schema</em>}</li>
- *   <li>{@link ASEProject.Dataflow#getPrevious <em>Previous</em>}</li>
- *   <li>{@link ASEProject.Dataflow#getIncoming <em>Incoming</em>}</li>
+ *   <li>{@link ASEProject.Dataflow#getTarget <em>Target</em>}</li>
+ *   <li>{@link ASEProject.Dataflow#getSource <em>Source</em>}</li>
  * </ul>
  *
  * @see ASEProject.ASEProjectPackage#getDataflow()
- * @model annotation="gmf.link source='previous' target='incoming' width='2'"
+ * @model annotation="gmf.link source='source' target='target' width='2' target.decoration='arrow'"
  * @generated
  */
 public interface Dataflow extends EObject {
@@ -82,49 +82,59 @@ public interface Dataflow extends EObject {
 	void setSchema(Schema value);
 
 	/**
-	 * Returns the value of the '<em><b>Previous</b></em>' reference list.
-	 * The list contents are of type {@link ASEProject.Task}.
-	 * It is bidirectional and its opposite is '{@link ASEProject.Task#getOutgoing <em>Outgoing</em>}'.
+	 * Returns the value of the '<em><b>Target</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link ASEProject.Task#getIncoming <em>Incoming</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Previous</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Target</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Previous</em>' reference list.
-	 * @see ASEProject.ASEProjectPackage#getDataflow_Previous()
+	 * @return the value of the '<em>Target</em>' reference.
+	 * @see #setTarget(Task)
+	 * @see ASEProject.ASEProjectPackage#getDataflow_Target()
+	 * @see ASEProject.Task#getIncoming
+	 * @model opposite="incoming"
+	 * @generated
+	 */
+	Task getTarget();
+
+	/**
+	 * Sets the value of the '{@link ASEProject.Dataflow#getTarget <em>Target</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Target</em>' reference.
+	 * @see #getTarget()
+	 * @generated
+	 */
+	void setTarget(Task value);
+
+	/**
+	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link ASEProject.Task#getOutgoing <em>Outgoing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Source</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source</em>' reference.
+	 * @see #setSource(Task)
+	 * @see ASEProject.ASEProjectPackage#getDataflow_Source()
 	 * @see ASEProject.Task#getOutgoing
 	 * @model opposite="outgoing"
 	 * @generated
 	 */
-	EList<Task> getPrevious();
+	Task getSource();
 
 	/**
-	 * Returns the value of the '<em><b>Incoming</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link ASEProject.Task#getNext <em>Next</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Incoming</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Incoming</em>' reference.
-	 * @see #setIncoming(Task)
-	 * @see ASEProject.ASEProjectPackage#getDataflow_Incoming()
-	 * @see ASEProject.Task#getNext
-	 * @model opposite="next"
-	 * @generated
-	 */
-	Task getIncoming();
-
-	/**
-	 * Sets the value of the '{@link ASEProject.Dataflow#getIncoming <em>Incoming</em>}' reference.
+	 * Sets the value of the '{@link ASEProject.Dataflow#getSource <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Incoming</em>' reference.
-	 * @see #getIncoming()
+	 * @param value the new value of the '<em>Source</em>' reference.
+	 * @see #getSource()
 	 * @generated
 	 */
-	void setIncoming(Task value);
+	void setSource(Task value);
 
 } // Dataflow

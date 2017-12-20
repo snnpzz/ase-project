@@ -13,44 +13,17 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ASEProject.Operation#getPrevious <em>Previous</em>}</li>
  *   <li>{@link ASEProject.Operation#getName <em>Name</em>}</li>
  *   <li>{@link ASEProject.Operation#getIncoming <em>Incoming</em>}</li>
+ *   <li>{@link ASEProject.Operation#getOutgoing <em>Outgoing</em>}</li>
  * </ul>
  *
  * @see ASEProject.ASEProjectPackage#getOperation()
  * @model abstract="true"
+ *        annotation="gmf.node label='name' figure='ellipse'"
  * @generated
  */
 public interface Operation extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Previous</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link ASEProject.InternalDF#getOutgoing <em>Outgoing</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Previous</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Previous</em>' reference.
-	 * @see #setPrevious(InternalDF)
-	 * @see ASEProject.ASEProjectPackage#getOperation_Previous()
-	 * @see ASEProject.InternalDF#getOutgoing
-	 * @model opposite="outgoing"
-	 * @generated
-	 */
-	InternalDF getPrevious();
-
-	/**
-	 * Sets the value of the '{@link ASEProject.Operation#getPrevious <em>Previous</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Previous</em>' reference.
-	 * @see #getPrevious()
-	 * @generated
-	 */
-	void setPrevious(InternalDF value);
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -79,7 +52,7 @@ public interface Operation extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Incoming</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link ASEProject.InternalDF#getNext <em>Next</em>}'.
+	 * It is bidirectional and its opposite is '{@link ASEProject.InternalDF#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Incoming</em>' reference isn't clear,
@@ -89,8 +62,8 @@ public interface Operation extends EObject {
 	 * @return the value of the '<em>Incoming</em>' reference.
 	 * @see #setIncoming(InternalDF)
 	 * @see ASEProject.ASEProjectPackage#getOperation_Incoming()
-	 * @see ASEProject.InternalDF#getNext
-	 * @model opposite="next"
+	 * @see ASEProject.InternalDF#getTarget
+	 * @model opposite="target"
 	 * @generated
 	 */
 	InternalDF getIncoming();
@@ -104,5 +77,33 @@ public interface Operation extends EObject {
 	 * @generated
 	 */
 	void setIncoming(InternalDF value);
+
+	/**
+	 * Returns the value of the '<em><b>Outgoing</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link ASEProject.InternalDF#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Outgoing</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outgoing</em>' reference.
+	 * @see #setOutgoing(InternalDF)
+	 * @see ASEProject.ASEProjectPackage#getOperation_Outgoing()
+	 * @see ASEProject.InternalDF#getSource
+	 * @model opposite="source"
+	 * @generated
+	 */
+	InternalDF getOutgoing();
+
+	/**
+	 * Sets the value of the '{@link ASEProject.Operation#getOutgoing <em>Outgoing</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Outgoing</em>' reference.
+	 * @see #getOutgoing()
+	 * @generated
+	 */
+	void setOutgoing(InternalDF value);
 
 } // Operation

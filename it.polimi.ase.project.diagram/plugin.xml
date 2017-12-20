@@ -7,13 +7,13 @@
 
    <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
       <?gmfgen generated="true"?>
-      <fileTypes type="text" extension="ase_project_diagram"/>
+      <fileTypes type="text" extension="aseproject_diagram"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
       <?gmfgen generated="true"?>
       <parser
-         type="ase_project_diagram"
+         type="aseproject_diagram"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
@@ -21,14 +21,14 @@
    <extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="true"?>
       <editor
-         id="ASE_Project.diagram.part.ASE_ProjectDiagramEditorID"
+         id="ASEProject.diagram.part.ASEProjectDiagramEditorID"
          name="%editorName"
-         icon="icons/obj16/ASE_ProjectDiagramFile.gif"
-         extensions="ase_project_diagram"
+         icon="icons/obj16/ASEProjectDiagramFile.gif"
+         extensions="aseproject_diagram"
          default="true"
-         class="ASE_Project.diagram.part.ASE_ProjectDiagramEditor"
-         matchingStrategy="ASE_Project.diagram.part.ASE_ProjectMatchingStrategy"
-         contributorClass="ASE_Project.diagram.part.ASE_ProjectDiagramActionBarContributor">
+         class="ASEProject.diagram.part.ASEProjectDiagramEditor"
+         matchingStrategy="ASEProject.diagram.part.ASEProjectMatchingStrategy"
+         contributorClass="ASEProject.diagram.part.ASEProjectDiagramActionBarContributor">
       </editor>
    </extension>
    
@@ -36,7 +36,7 @@
       <?gmfgen generated="true"?>
       <context
          description="%context.description"
-         id="ASE_Project.diagram.ui.diagramContext"
+         id="ASEProject.diagram.ui.diagramContext"
          name="%context.name"
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
@@ -46,10 +46,10 @@
       <?gmfgen generated="true"?>
   	  <wizard
   	     name="%newWizardName"
-  	     icon="icons/obj16/ASE_ProjectDiagramFile.gif"
+  	     icon="icons/obj16/ASEProjectDiagramFile.gif"
   	     category="org.eclipse.ui.Examples"
-  	     class="ASE_Project.diagram.part.ASE_ProjectCreationWizard"
-  	     id="ASE_Project.diagram.part.ASE_ProjectCreationWizardID">
+  	     class="ASEProject.diagram.part.ASEProjectCreationWizard"
+  	     id="ASEProject.diagram.part.ASEProjectCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
    </extension>
@@ -58,11 +58,11 @@
       <?gmfgen generated="true"?>
       <objectContribution
             id="it.polimi.ase.project.diagram.InitDiagram"
-            nameFilter="*.ase_project"
+            nameFilter="*.aseproject"
             objectClass="org.eclipse.core.resources.IFile">
          <action
                label="%initDiagramActionLabel"
-               class="ASE_Project.diagram.part.ASE_ProjectInitDiagramFileAction"
+               class="ASEProject.diagram.part.ASEProjectInitDiagramFileAction"
                menubarPath="additions"
                enablesFor="1"
                id="it.polimi.ase.project.diagram.InitDiagramAction">
@@ -74,9 +74,9 @@
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="ASE_ProjectPresentation">
+         id="ASEProjectPresentation">
          <Priority name="Lowest"/>
-         <ViewId id="ASE_Project.diagram.part.ASE_ProjectDiagramEditorID">
+         <ViewId id="ASEProject.diagram.part.ASEProjectDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="delete"/>
             </ElementType>
@@ -91,9 +91,9 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
-         id="ASE_ProjectPresentationPrint">
+         id="ASEProjectPresentationPrint">
          <Priority name="Lowest"/>
-         <ViewId id="ASE_Project.diagram.part.ASE_ProjectDiagramEditorID">
+         <ViewId id="ASEProject.diagram.part.ASEProjectDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="print"/>
             </ElementType>
@@ -101,9 +101,9 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="ASE_ProjectPresentationIDE">
+         id="ASEProjectPresentationIDE">
          <Priority name="Lowest"/>
-         <ViewId id="ASE_Project.diagram.part.ASE_ProjectDiagramEditorID">
+         <ViewId id="ASEProject.diagram.part.ASEProjectDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="bookmark"/>
             </ElementType>
@@ -111,9 +111,9 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="ASE_ProjectRender">
+            id="ASEProjectRender">
          <Priority name="Lowest"/>
-         <ViewId id="ASE_Project.diagram.part.ASE_ProjectDiagramEditorID">
+         <ViewId id="ASEProject.diagram.part.ASEProjectDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="cut"/>
                <GlobalActionId actionId="copy"/>
@@ -126,13 +126,13 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="ASE_Project.diagram.providers.ASE_ProjectMarkerNavigationProvider">
+      <MarkerNavigationProvider class="ASEProject.diagram.providers.ASEProjectMarkerNavigationProvider">
          <MarkerType name="it.polimi.ase.project.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
    </extension>
 
-   <extension id="diagnostic" name="ASE_Project Plugin problems" point="org.eclipse.core.resources.markers">
+   <extension id="diagnostic" name="ASEProject Plugin problems" point="org.eclipse.core.resources.markers">
       <?gmfgen generated="true"?>
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
@@ -141,7 +141,7 @@
 
    <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="ASE_Project.diagram.providers.ASE_ProjectValidationDecoratorProvider">
+      <decoratorProvider class="ASEProject.diagram.providers.ASEProjectValidationDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
@@ -150,7 +150,7 @@
 
    <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
-      <initializer class="ASE_Project.diagram.preferences.DiagramPreferenceInitializer"/>
+      <initializer class="ASEProject.diagram.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
@@ -158,31 +158,31 @@
       <page
             id="it.polimi.ase.project.diagram.general"
             name="%prefpage.it.polimi.ase.project.diagram.general"
-            class="ASE_Project.diagram.preferences.DiagramGeneralPreferencePage">
+            class="ASEProject.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="it.polimi.ase.project.diagram.appearance"
             name="%prefpage.it.polimi.ase.project.diagram.appearance"
             category="it.polimi.ase.project.diagram.general"
-            class="ASE_Project.diagram.preferences.DiagramAppearancePreferencePage">
+            class="ASEProject.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="it.polimi.ase.project.diagram.connections"
             name="%prefpage.it.polimi.ase.project.diagram.connections"
             category="it.polimi.ase.project.diagram.general"
-            class="ASE_Project.diagram.preferences.DiagramConnectionsPreferencePage">
+            class="ASEProject.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="it.polimi.ase.project.diagram.printing"
             name="%prefpage.it.polimi.ase.project.diagram.printing"
             category="it.polimi.ase.project.diagram.general"
-            class="ASE_Project.diagram.preferences.DiagramPrintingPreferencePage">
+            class="ASEProject.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="it.polimi.ase.project.diagram.rulersAndGrid"
             name="%prefpage.it.polimi.ase.project.diagram.rulersAndGrid"
             category="it.polimi.ase.project.diagram.general"
-            class="ASE_Project.diagram.preferences.DiagramRulersAndGridPreferencePage">
+            class="ASEProject.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
 
@@ -190,7 +190,7 @@
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="it.polimi.ase.project.diagram"
-            labelProvider="ASE_Project.diagram.sheet.ASE_ProjectSheetLabelProvider">
+            labelProvider="ASEProject.diagram.sheet.ASEProjectSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -241,46 +241,46 @@
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="ASE_Project.diagram.sheet.ASE_ProjectPropertySection">
+            class="ASEProject.diagram.sheet.ASEProjectPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="ASE_Project.diagram.navigator.ASE_ProjectAbstractNavigatorItem"/>
+            <input type="ASEProject.diagram.navigator.ASEProjectAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
-      <viewProvider class="ASE_Project.diagram.providers.ASE_ProjectViewProvider">
+      <viewProvider class="ASEProject.diagram.providers.ASEProjectViewProvider">
          <Priority name="Lowest"/>
          <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
-            <method name="getType()" value="ASE_Project"/>
+            <method name="getType()" value="ASEProject"/>
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="ASE_Project"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,3001,3002,3003,3004,3005,3006,3007,3008"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="ASEProject"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2007,2008,2009,2010,2011,2012,3009,3010,3011,3012,3013,3014,3015,3016"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4002"/>
       </viewProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
-      <editpartProvider class="ASE_Project.diagram.providers.ASE_ProjectEditPartProvider">
+      <editpartProvider class="ASEProject.diagram.providers.ASEProjectEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="ASE_Project"/>
+            <method name="getType()" value="ASEProject"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002,2003,2004,2005,2006,3001,3002,3003,3004,3005,3006,3007,3008"/>
+            <method name="getType()" value="2007,2008,2009,2010,2011,2012,3009,3010,3011,3012,3013,3014,3015,3016"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001"/>
+            <method name="getType()" value="4002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5002,5003,5006,5011,5012,5014,5015,5016,5017,5018,5019,5020,5021,5022"/>
+            <method name="getType()" value="5024,5025,5028,5033,5034,5036,5023,5026,5027,5029,5030,5031,5032,5035"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7001,7002,7003,7004"/>
+            <method name="getType()" value="7005,7006,7007,7008"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -289,80 +289,80 @@
    
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="ASE_Project.diagram.providers.assistants.ASE_ProjectModelingAssistantProviderOfPipelineEditPart">
+      <modelingAssistantProvider class="ASEProject.diagram.providers.assistants.ASEProjectModelingAssistantProviderOfPipelineEditPart">
          <Priority name="Lowest"/>
-         <object class="ASE_Project.diagram.edit.parts.PipelineEditPart" id="Pipeline_1000"/>
+         <object class="ASEProject.diagram.edit.parts.PipelineEditPart" id="Pipeline_1000"/>
          <context elements="Pipeline_1000"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="ASE_Project.diagram.providers.assistants.ASE_ProjectModelingAssistantProviderOfCollectionTaskEditPart">
+            <modelingAssistantProvider class="ASEProject.diagram.providers.assistants.ASEProjectModelingAssistantProviderOfCollectionTaskEditPart">
          <Priority name="Lowest"/>
-         <object class="ASE_Project.diagram.edit.parts.CollectionTaskEditPart" id="CollectionTask_2001"/>
-         <context elements="CollectionTask_2001"/>
+         <object class="ASEProject.diagram.edit.parts.CollectionTaskEditPart" id="CollectionTask_2007"/>
+         <context elements="CollectionTask_2007"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="ASE_Project.diagram.providers.assistants.ASE_ProjectModelingAssistantProviderOfIntegrationTaskEditPart">
+            <modelingAssistantProvider class="ASEProject.diagram.providers.assistants.ASEProjectModelingAssistantProviderOfIntegrationTaskEditPart">
          <Priority name="Lowest"/>
-         <object class="ASE_Project.diagram.edit.parts.IntegrationTaskEditPart" id="IntegrationTask_2002"/>
-         <context elements="IntegrationTask_2002"/>
+         <object class="ASEProject.diagram.edit.parts.IntegrationTaskEditPart" id="IntegrationTask_2008"/>
+         <context elements="IntegrationTask_2008"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="ASE_Project.diagram.providers.assistants.ASE_ProjectModelingAssistantProviderOfCleaningTaskEditPart">
+            <modelingAssistantProvider class="ASEProject.diagram.providers.assistants.ASEProjectModelingAssistantProviderOfCleaningTaskEditPart">
          <Priority name="Lowest"/>
-         <object class="ASE_Project.diagram.edit.parts.CleaningTaskEditPart" id="CleaningTask_2003"/>
-         <context elements="CleaningTask_2003"/>
+         <object class="ASEProject.diagram.edit.parts.CleaningTaskEditPart" id="CleaningTask_2009"/>
+         <context elements="CleaningTask_2009"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="ASE_Project.diagram.providers.assistants.ASE_ProjectModelingAssistantProviderOfAnalyzesTaskEditPart">
+            <modelingAssistantProvider class="ASEProject.diagram.providers.assistants.ASEProjectModelingAssistantProviderOfAnalyzesTaskEditPart">
          <Priority name="Lowest"/>
-         <object class="ASE_Project.diagram.edit.parts.AnalyzesTaskEditPart" id="AnalyzesTask_2004"/>
-         <context elements="AnalyzesTask_2004"/>
+         <object class="ASEProject.diagram.edit.parts.AnalyzesTaskEditPart" id="AnalyzesTask_2010"/>
+         <context elements="AnalyzesTask_2010"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="ASE_Project.diagram.providers.assistants.ASE_ProjectModelingAssistantProviderOfVisualizationTaskEditPart">
+            <modelingAssistantProvider class="ASEProject.diagram.providers.assistants.ASEProjectModelingAssistantProviderOfVisualizationTaskEditPart">
          <Priority name="Lowest"/>
-         <object class="ASE_Project.diagram.edit.parts.VisualizationTaskEditPart" id="VisualizationTask_2005"/>
-         <context elements="VisualizationTask_2005"/>
+         <object class="ASEProject.diagram.edit.parts.VisualizationTaskEditPart" id="VisualizationTask_2011"/>
+         <context elements="VisualizationTask_2011"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="ASE_Project.diagram.providers.assistants.ASE_ProjectModelingAssistantProviderOfExportingTaskEditPart">
+            <modelingAssistantProvider class="ASEProject.diagram.providers.assistants.ASEProjectModelingAssistantProviderOfExportingTaskEditPart">
          <Priority name="Lowest"/>
-         <object class="ASE_Project.diagram.edit.parts.ExportingTaskEditPart" id="ExportingTask_2006"/>
-         <context elements="ExportingTask_2006"/>
+         <object class="ASEProject.diagram.edit.parts.ExportingTaskEditPart" id="ExportingTask_2012"/>
+         <context elements="ExportingTask_2012"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="ASE_Project.diagram.providers.assistants.ASE_ProjectModelingAssistantProviderOfImportEditPart">
+            <modelingAssistantProvider class="ASEProject.diagram.providers.assistants.ASEProjectModelingAssistantProviderOfImportEditPart">
          <Priority name="Lowest"/>
-         <object class="ASE_Project.diagram.edit.parts.ImportEditPart" id="Import_3001"/>
-         <context elements="Import_3001"/>
+         <object class="ASEProject.diagram.edit.parts.ImportEditPart" id="Import_3009"/>
+         <context elements="Import_3009"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="ASE_Project.diagram.providers.assistants.ASE_ProjectModelingAssistantProviderOfUserDefinedEditPart">
+            <modelingAssistantProvider class="ASEProject.diagram.providers.assistants.ASEProjectModelingAssistantProviderOfUserDefinedEditPart">
          <Priority name="Lowest"/>
-         <object class="ASE_Project.diagram.edit.parts.UserDefinedEditPart" id="UserDefined_3002"/>
-         <context elements="UserDefined_3002"/>
+         <object class="ASEProject.diagram.edit.parts.UserDefinedEditPart" id="UserDefined_3010"/>
+         <context elements="UserDefined_3010"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="ASE_Project.diagram.providers.assistants.ASE_ProjectModelingAssistantProviderOfPredefinedEditPart">
+            <modelingAssistantProvider class="ASEProject.diagram.providers.assistants.ASEProjectModelingAssistantProviderOfPredefinedEditPart">
          <Priority name="Lowest"/>
-         <object class="ASE_Project.diagram.edit.parts.PredefinedEditPart" id="Predefined_3003"/>
-         <context elements="Predefined_3003"/>
+         <object class="ASEProject.diagram.edit.parts.PredefinedEditPart" id="Predefined_3011"/>
+         <context elements="Predefined_3011"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="ASE_Project.diagram.providers.assistants.ASE_ProjectModelingAssistantProviderOfDescriptiveEditPart">
+            <modelingAssistantProvider class="ASEProject.diagram.providers.assistants.ASEProjectModelingAssistantProviderOfDescriptiveEditPart">
          <Priority name="Lowest"/>
-         <object class="ASE_Project.diagram.edit.parts.DescriptiveEditPart" id="Descriptive_3004"/>
-         <context elements="Descriptive_3004"/>
+         <object class="ASEProject.diagram.edit.parts.DescriptiveEditPart" id="Descriptive_3012"/>
+         <context elements="Descriptive_3012"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="ASE_Project.diagram.providers.assistants.ASE_ProjectModelingAssistantProviderOfClassificationEditPart">
+            <modelingAssistantProvider class="ASEProject.diagram.providers.assistants.ASEProjectModelingAssistantProviderOfClassificationEditPart">
          <Priority name="Lowest"/>
-         <object class="ASE_Project.diagram.edit.parts.ClassificationEditPart" id="Classification_3005"/>
-         <context elements="Classification_3005"/>
+         <object class="ASEProject.diagram.edit.parts.ClassificationEditPart" id="Classification_3013"/>
+         <context elements="Classification_3013"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="ASE_Project.diagram.providers.assistants.ASE_ProjectModelingAssistantProviderOfPredictiveEditPart">
+            <modelingAssistantProvider class="ASEProject.diagram.providers.assistants.ASEProjectModelingAssistantProviderOfPredictiveEditPart">
          <Priority name="Lowest"/>
-         <object class="ASE_Project.diagram.edit.parts.PredictiveEditPart" id="Predictive_3006"/>
-         <context elements="Predictive_3006"/>
+         <object class="ASEProject.diagram.edit.parts.PredictiveEditPart" id="Predictive_3014"/>
+         <context elements="Predictive_3014"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="ASE_Project.diagram.providers.assistants.ASE_ProjectModelingAssistantProviderOfClusteringEditPart">
+            <modelingAssistantProvider class="ASEProject.diagram.providers.assistants.ASEProjectModelingAssistantProviderOfClusteringEditPart">
          <Priority name="Lowest"/>
-         <object class="ASE_Project.diagram.edit.parts.ClusteringEditPart" id="Clustering_3007"/>
-         <context elements="Clustering_3007"/>
+         <object class="ASEProject.diagram.edit.parts.ClusteringEditPart" id="Clustering_3015"/>
+         <context elements="Clustering_3015"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="ASE_Project.diagram.providers.assistants.ASE_ProjectModelingAssistantProviderOfExportEditPart">
+            <modelingAssistantProvider class="ASEProject.diagram.providers.assistants.ASEProjectModelingAssistantProviderOfExportEditPart">
          <Priority name="Lowest"/>
-         <object class="ASE_Project.diagram.edit.parts.ExportEditPart" id="Export_3008"/>
-         <context elements="Export_3008"/>
+         <object class="ASEProject.diagram.edit.parts.ExportEditPart" id="Export_3016"/>
+         <context elements="Export_3016"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -370,24 +370,24 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="ASE_Project.diagram.providers.ASE_ProjectIconProvider">
+      <IconProvider class="ASEProject.diagram.providers.ASEProjectIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="ASE_Project.diagram.providers.ASE_ProjectParserProvider">
+      <ParserProvider class="ASEProject.diagram.providers.ASEProjectParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders" id="decorator-provider">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="ASE_Project.diagram.providers.ASE_ProjectShortcutsDecoratorProvider">
+      <decoratorProvider class="ASEProject.diagram.providers.ASEProjectShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
-            <method name="getType()" value="2001,2002,2003,2004,2005,2006"/>
+            <method name="getType()" value="2007,2008,2009,2010,2011,2012"/>
          </object>
          <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
@@ -395,164 +395,164 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
                id="it.polimi.ase.project.diagram.Pipeline_1000"
                name="%metatype.name.Pipeline_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Pipeline"
-               edithelper="ASE_Project.diagram.edit.helpers.PipelineEditHelper">
+               edithelper="ASEProject.diagram.edit.helpers.PipelineEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
-               id="it.polimi.ase.project.diagram.CollectionTask_2001"
-               name="%metatype.name.CollectionTask_2001"
+               id="it.polimi.ase.project.diagram.CollectionTask_2007"
+               name="%metatype.name.CollectionTask_2007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="CollectionTask"
-               edithelper="ASE_Project.diagram.edit.helpers.CollectionTaskEditHelper">
-            <param name="semanticHint" value="2001"/>
+               edithelper="ASEProject.diagram.edit.helpers.CollectionTaskEditHelper">
+            <param name="semanticHint" value="2007"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
-               id="it.polimi.ase.project.diagram.IntegrationTask_2002"
-               name="%metatype.name.IntegrationTask_2002"
+               id="it.polimi.ase.project.diagram.IntegrationTask_2008"
+               name="%metatype.name.IntegrationTask_2008"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="IntegrationTask"
-               edithelper="ASE_Project.diagram.edit.helpers.IntegrationTaskEditHelper">
-            <param name="semanticHint" value="2002"/>
+               edithelper="ASEProject.diagram.edit.helpers.IntegrationTaskEditHelper">
+            <param name="semanticHint" value="2008"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
-               id="it.polimi.ase.project.diagram.CleaningTask_2003"
-               name="%metatype.name.CleaningTask_2003"
+               id="it.polimi.ase.project.diagram.CleaningTask_2009"
+               name="%metatype.name.CleaningTask_2009"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="CleaningTask"
-               edithelper="ASE_Project.diagram.edit.helpers.CleaningTaskEditHelper">
-            <param name="semanticHint" value="2003"/>
+               edithelper="ASEProject.diagram.edit.helpers.CleaningTaskEditHelper">
+            <param name="semanticHint" value="2009"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
-               id="it.polimi.ase.project.diagram.AnalyzesTask_2004"
-               name="%metatype.name.AnalyzesTask_2004"
+               id="it.polimi.ase.project.diagram.AnalyzesTask_2010"
+               name="%metatype.name.AnalyzesTask_2010"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="AnalyzesTask"
-               edithelper="ASE_Project.diagram.edit.helpers.AnalyzesTaskEditHelper">
-            <param name="semanticHint" value="2004"/>
+               edithelper="ASEProject.diagram.edit.helpers.AnalyzesTaskEditHelper">
+            <param name="semanticHint" value="2010"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
-               id="it.polimi.ase.project.diagram.VisualizationTask_2005"
-               name="%metatype.name.VisualizationTask_2005"
+               id="it.polimi.ase.project.diagram.VisualizationTask_2011"
+               name="%metatype.name.VisualizationTask_2011"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="VisualizationTask"
-               edithelper="ASE_Project.diagram.edit.helpers.VisualizationTaskEditHelper">
-            <param name="semanticHint" value="2005"/>
+               edithelper="ASEProject.diagram.edit.helpers.VisualizationTaskEditHelper">
+            <param name="semanticHint" value="2011"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
-               id="it.polimi.ase.project.diagram.ExportingTask_2006"
-               name="%metatype.name.ExportingTask_2006"
+               id="it.polimi.ase.project.diagram.ExportingTask_2012"
+               name="%metatype.name.ExportingTask_2012"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ExportingTask"
-               edithelper="ASE_Project.diagram.edit.helpers.ExportingTaskEditHelper">
-            <param name="semanticHint" value="2006"/>
+               edithelper="ASEProject.diagram.edit.helpers.ExportingTaskEditHelper">
+            <param name="semanticHint" value="2012"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
-               id="it.polimi.ase.project.diagram.Import_3001"
-               name="%metatype.name.Import_3001"
+               id="it.polimi.ase.project.diagram.Import_3009"
+               name="%metatype.name.Import_3009"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Import"
-               edithelper="ASE_Project.diagram.edit.helpers.ImportEditHelper">
-            <param name="semanticHint" value="3001"/>
+               edithelper="ASEProject.diagram.edit.helpers.ImportEditHelper">
+            <param name="semanticHint" value="3009"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
-               id="it.polimi.ase.project.diagram.UserDefined_3002"
-               name="%metatype.name.UserDefined_3002"
+               id="it.polimi.ase.project.diagram.UserDefined_3010"
+               name="%metatype.name.UserDefined_3010"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="UserDefined"
-               edithelper="ASE_Project.diagram.edit.helpers.UserDefinedEditHelper">
-            <param name="semanticHint" value="3002"/>
+               edithelper="ASEProject.diagram.edit.helpers.UserDefinedEditHelper">
+            <param name="semanticHint" value="3010"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
-               id="it.polimi.ase.project.diagram.Predefined_3003"
-               name="%metatype.name.Predefined_3003"
+               id="it.polimi.ase.project.diagram.Predefined_3011"
+               name="%metatype.name.Predefined_3011"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Predefined"
-               edithelper="ASE_Project.diagram.edit.helpers.PredefinedEditHelper">
-            <param name="semanticHint" value="3003"/>
+               edithelper="ASEProject.diagram.edit.helpers.PredefinedEditHelper">
+            <param name="semanticHint" value="3011"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
-               id="it.polimi.ase.project.diagram.Descriptive_3004"
-               name="%metatype.name.Descriptive_3004"
+               id="it.polimi.ase.project.diagram.Descriptive_3012"
+               name="%metatype.name.Descriptive_3012"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Descriptive"
-               edithelper="ASE_Project.diagram.edit.helpers.DescriptiveEditHelper">
-            <param name="semanticHint" value="3004"/>
+               edithelper="ASEProject.diagram.edit.helpers.DescriptiveEditHelper">
+            <param name="semanticHint" value="3012"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
-               id="it.polimi.ase.project.diagram.Classification_3005"
-               name="%metatype.name.Classification_3005"
+               id="it.polimi.ase.project.diagram.Classification_3013"
+               name="%metatype.name.Classification_3013"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Classification"
-               edithelper="ASE_Project.diagram.edit.helpers.ClassificationEditHelper">
-            <param name="semanticHint" value="3005"/>
+               edithelper="ASEProject.diagram.edit.helpers.ClassificationEditHelper">
+            <param name="semanticHint" value="3013"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
-               id="it.polimi.ase.project.diagram.Predictive_3006"
-               name="%metatype.name.Predictive_3006"
+               id="it.polimi.ase.project.diagram.Predictive_3014"
+               name="%metatype.name.Predictive_3014"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Predictive"
-               edithelper="ASE_Project.diagram.edit.helpers.PredictiveEditHelper">
-            <param name="semanticHint" value="3006"/>
+               edithelper="ASEProject.diagram.edit.helpers.PredictiveEditHelper">
+            <param name="semanticHint" value="3014"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
-               id="it.polimi.ase.project.diagram.Clustering_3007"
-               name="%metatype.name.Clustering_3007"
+               id="it.polimi.ase.project.diagram.Clustering_3015"
+               name="%metatype.name.Clustering_3015"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Clustering"
-               edithelper="ASE_Project.diagram.edit.helpers.ClusteringEditHelper">
-            <param name="semanticHint" value="3007"/>
+               edithelper="ASEProject.diagram.edit.helpers.ClusteringEditHelper">
+            <param name="semanticHint" value="3015"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
-               id="it.polimi.ase.project.diagram.Export_3008"
-               name="%metatype.name.Export_3008"
+               id="it.polimi.ase.project.diagram.Export_3016"
+               name="%metatype.name.Export_3016"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Export"
-               edithelper="ASE_Project.diagram.edit.helpers.ExportEditHelper">
-            <param name="semanticHint" value="3008"/>
+               edithelper="ASEProject.diagram.edit.helpers.ExportEditHelper">
+            <param name="semanticHint" value="3016"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.ase.it/">
+      <metamodel nsURI="http://www.ase.polimi.it/project">
          <metamodelType
-               id="it.polimi.ase.project.diagram.Dataflow_4001"
-               name="%metatype.name.Dataflow_4001"
+               id="it.polimi.ase.project.diagram.Dataflow_4002"
+               name="%metatype.name.Dataflow_4002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Dataflow"
-               edithelper="ASE_Project.diagram.edit.helpers.DataflowEditHelper">
-            <param name="semanticHint" value="4001"/>
+               edithelper="ASEProject.diagram.edit.helpers.DataflowEditHelper">
+            <param name="semanticHint" value="4002"/>
          </metamodelType>
       </metamodel>
    </extension>
@@ -568,21 +568,21 @@
       </clientContext> 
       <binding context="it.polimi.ase.project.diagram.TypeContext">
          <elementType ref="it.polimi.ase.project.diagram.Pipeline_1000"/>
-         <elementType ref="it.polimi.ase.project.diagram.CollectionTask_2001"/>
-         <elementType ref="it.polimi.ase.project.diagram.IntegrationTask_2002"/>
-         <elementType ref="it.polimi.ase.project.diagram.CleaningTask_2003"/>
-         <elementType ref="it.polimi.ase.project.diagram.AnalyzesTask_2004"/>
-         <elementType ref="it.polimi.ase.project.diagram.VisualizationTask_2005"/>
-         <elementType ref="it.polimi.ase.project.diagram.ExportingTask_2006"/>
-         <elementType ref="it.polimi.ase.project.diagram.Import_3001"/>
-         <elementType ref="it.polimi.ase.project.diagram.UserDefined_3002"/>
-         <elementType ref="it.polimi.ase.project.diagram.Predefined_3003"/>
-         <elementType ref="it.polimi.ase.project.diagram.Descriptive_3004"/>
-         <elementType ref="it.polimi.ase.project.diagram.Classification_3005"/>
-         <elementType ref="it.polimi.ase.project.diagram.Predictive_3006"/>
-         <elementType ref="it.polimi.ase.project.diagram.Clustering_3007"/>
-         <elementType ref="it.polimi.ase.project.diagram.Export_3008"/>
-         <elementType ref="it.polimi.ase.project.diagram.Dataflow_4001"/>
+         <elementType ref="it.polimi.ase.project.diagram.CollectionTask_2007"/>
+         <elementType ref="it.polimi.ase.project.diagram.IntegrationTask_2008"/>
+         <elementType ref="it.polimi.ase.project.diagram.CleaningTask_2009"/>
+         <elementType ref="it.polimi.ase.project.diagram.AnalyzesTask_2010"/>
+         <elementType ref="it.polimi.ase.project.diagram.VisualizationTask_2011"/>
+         <elementType ref="it.polimi.ase.project.diagram.ExportingTask_2012"/>
+         <elementType ref="it.polimi.ase.project.diagram.Import_3009"/>
+         <elementType ref="it.polimi.ase.project.diagram.UserDefined_3010"/>
+         <elementType ref="it.polimi.ase.project.diagram.Predefined_3011"/>
+         <elementType ref="it.polimi.ase.project.diagram.Descriptive_3012"/>
+         <elementType ref="it.polimi.ase.project.diagram.Classification_3013"/>
+         <elementType ref="it.polimi.ase.project.diagram.Predictive_3014"/>
+         <elementType ref="it.polimi.ase.project.diagram.Clustering_3015"/>
+         <elementType ref="it.polimi.ase.project.diagram.Export_3016"/>
+         <elementType ref="it.polimi.ase.project.diagram.Dataflow_4002"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -593,7 +593,7 @@
            type="org.eclipse.emf.common.ui.URIEditorInput"
            namespace="it.polimi.ase.project.diagram"
            properties="isURIEditorInput"
-           class="ASE_Project.diagram.part.ASE_ProjectUriEditorInputTester">
+           class="ASEProject.diagram.part.ASEProjectUriEditorInputTester">
        </propertyTester>
    </extension>
 
@@ -604,7 +604,7 @@
            type="org.eclipse.gmf.runtime.notation.View"
            namespace="it.polimi.ase.project.diagram"
            properties="isShortcut"
-           class="ASE_Project.diagram.part.ASE_ProjectShortcutPropertyTester">
+           class="ASEProject.diagram.part.ASEProjectShortcutPropertyTester">
        </propertyTester>
    </extension>
 
@@ -630,17 +630,17 @@
             id="it.polimi.ase.project.diagram.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
-            contentProvider="ASE_Project.diagram.navigator.ASE_ProjectNavigatorContentProvider" 
-            labelProvider="ASE_Project.diagram.navigator.ASE_ProjectNavigatorLabelProvider"
-            icon="icons/obj16/ASE_ProjectDiagramFile.gif"
+            contentProvider="ASEProject.diagram.navigator.ASEProjectNavigatorContentProvider" 
+            labelProvider="ASEProject.diagram.navigator.ASEProjectNavigatorLabelProvider"
+            icon="icons/obj16/ASEProjectDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="ase_project_diagram"/>
+        	      <test property="org.eclipse.core.resources.extension" value="aseproject_diagram"/>
                </and>
-               <instanceof value="ASE_Project.diagram.navigator.ASE_ProjectAbstractNavigatorItem"/>
+               <instanceof value="ASEProject.diagram.navigator.ASEProjectAbstractNavigatorItem"/>
            	   <adapt type="org.eclipse.gmf.runtime.notation.View">
            	      <test property="it.polimi.ase.project.diagram.isShortcut"/>
            	   </adapt>
@@ -648,7 +648,7 @@
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="ASE_Project.diagram.navigator.ASE_ProjectAbstractNavigatorItem"/>
+         	   <instanceof value="ASEProject.diagram.navigator.ASEProjectAbstractNavigatorItem"/>
            	   <adapt type="org.eclipse.gmf.runtime.notation.View">
            	      <test property="it.polimi.ase.project.diagram.isShortcut"/>
            	   </adapt>
@@ -656,14 +656,14 @@
          </possibleChildren>
          <commonSorter 
                id="it.polimi.ase.project.diagram.navigatorSorter" 
-               class="ASE_Project.diagram.navigator.ASE_ProjectNavigatorSorter">
+               class="ASEProject.diagram.navigator.ASEProjectNavigatorSorter">
             <parentExpression>
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
-        	         <test property="org.eclipse.core.resources.extension" value="ase_project_diagram"/>
+        	         <test property="org.eclipse.core.resources.extension" value="aseproject_diagram"/>
                   </and>
-                  <instanceof value="ASE_Project.diagram.navigator.ASE_ProjectAbstractNavigatorItem"/>
+                  <instanceof value="ASEProject.diagram.navigator.ASEProjectAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
@@ -672,29 +672,29 @@
             id="it.polimi.ase.project.diagram.domainResourceContent" 
             name="%domainNavigatorContentName" 
             priority="normal" 
-            contentProvider="ASE_Project.diagram.navigator.ASE_ProjectDomainNavigatorContentProvider" 
-            labelProvider="ASE_Project.diagram.navigator.ASE_ProjectDomainNavigatorLabelProvider"
-            icon="icons/obj16/ASE_ProjectDiagramFile.gif"
+            contentProvider="ASEProject.diagram.navigator.ASEProjectDomainNavigatorContentProvider" 
+            labelProvider="ASEProject.diagram.navigator.ASEProjectDomainNavigatorLabelProvider"
+            icon="icons/obj16/ASEProjectDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="ase_project"/>
+        	      <test property="org.eclipse.core.resources.extension" value="aseproject"/>
                </and>
-               <instanceof value="ASE_Project.diagram.navigator.ASE_ProjectDomainNavigatorItem"/>
+               <instanceof value="ASEProject.diagram.navigator.ASEProjectDomainNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
-            <instanceof value="ASE_Project.diagram.navigator.ASE_ProjectDomainNavigatorItem"/>
+            <instanceof value="ASEProject.diagram.navigator.ASEProjectDomainNavigatorItem"/>
          </possibleChildren>
       </navigatorContent>
       <actionProvider
             id="it.polimi.ase.project.diagram.navigatorActionProvider"
-            class="ASE_Project.diagram.navigator.ASE_ProjectNavigatorActionProvider">
+            class="ASEProject.diagram.navigator.ASEProjectNavigatorActionProvider">
          <enablement>
             <or>
-               <instanceof value="ASE_Project.diagram.navigator.ASE_ProjectAbstractNavigatorItem"/>
+               <instanceof value="ASEProject.diagram.navigator.ASEProjectAbstractNavigatorItem"/>
            	   <adapt type="org.eclipse.gmf.runtime.notation.View">
            	      <test property="it.polimi.ase.project.diagram.isShortcut"/>
            	   </adapt>
@@ -707,7 +707,7 @@
       <?gmfgen generated="true"?>
       <linkHelper
             id="it.polimi.ase.project.diagram.navigatorLinkHelper"
-            class="ASE_Project.diagram.navigator.ASE_ProjectNavigatorLinkHelper">
+            class="ASEProject.diagram.navigator.ASEProjectNavigatorLinkHelper">
          <editorInputEnablement>
             <and>
                <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
@@ -715,7 +715,7 @@
             </and>
          </editorInputEnablement>
          <selectionEnablement>
-            <instanceof value="ASE_Project.diagram.navigator.ASE_ProjectAbstractNavigatorItem"/>
+            <instanceof value="ASEProject.diagram.navigator.ASEProjectAbstractNavigatorItem"/>
          </selectionEnablement>
       </linkHelper>
    </extension>
@@ -723,17 +723,17 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="ASE_Project.diagram.part.ASE_ProjectDiagramUpdateCommand"
+         defaultHandler="ASEProject.diagram.part.ASEProjectDiagramUpdateCommand"
          description="%update.diagram.description"
-         id="ASE_Project.diagram.updateDiagram"
+         id="ASEProject.diagram.updateDiagram"
          name="%update.diagram.name"/>
    </extension>
    
    <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
       <?gmfgen generated="true"?>
       <key 
-         commandId="ASE_Project.diagram.updateDiagram"
-         contextId="ASE_Project.diagram.ui.diagramContext"
+         commandId="ASEProject.diagram.updateDiagram"
+         contextId="ASEProject.diagram.ui.diagramContext"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
    </extension>
@@ -748,9 +748,9 @@
          <command commandId="it.polimi.ase.project.diagram.LoadResourceAction">
             <visibleWhen>
                <and>
-                  <with variable="activePartId"><equals value="ASE_Project.diagram.part.ASE_ProjectDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="ASEProject.diagram.part.ASEProjectDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="ASE_Project.diagram.edit.parts.PipelineEditPart"/>
+                     <instanceof value="ASEProject.diagram.edit.parts.PipelineEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
@@ -760,11 +760,11 @@
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
-      <category id="ASE_Project.diagram.part.ASE_ProjectDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <category id="ASEProject.diagram.part.ASEProjectDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
       <command id="it.polimi.ase.project.diagram.LoadResourceAction"
          name="Load Resource"
-         categoryId="ASE_Project.diagram.part.ASE_ProjectDiagramEditorID"
-         defaultHandler="ASE_Project.diagram.part.LoadResourceAction"/>
+         categoryId="ASEProject.diagram.part.ASEProjectDiagramEditorID"
+         defaultHandler="ASEProject.diagram.part.LoadResourceAction"/>
    </extension>
 
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">

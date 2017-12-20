@@ -84,6 +84,12 @@ public class ASEProjectSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ASEProjectPackage.OPERATION: {
+				Operation operation = (Operation)theEObject;
+				T result = caseOperation(operation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ASEProjectPackage.INTERNAL_DF: {
 				InternalDF internalDF = (InternalDF)theEObject;
 				T result = caseInternalDF(internalDF);
@@ -153,12 +159,6 @@ public class ASEProjectSwitch<T> extends Switch<T> {
 			case ASEProjectPackage.EXPORT: {
 				Export export = (Export)theEObject;
 				T result = caseExport(export);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ASEProjectPackage.OPERATION: {
-				Operation operation = (Operation)theEObject;
-				T result = caseOperation(operation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

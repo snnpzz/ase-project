@@ -11,7 +11,6 @@ package ASEProject;
  *
  * @see ASEProject.ASEProjectPackage#getCleaningOp()
  * @model abstract="true"
- *        annotation="gmf.node label='name' figure='ellipse'"
  * @generated
  */
 public interface CleaningOp extends Operation {

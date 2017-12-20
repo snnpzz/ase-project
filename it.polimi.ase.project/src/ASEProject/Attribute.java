@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see ASEProject.ASEProjectPackage#getAttribute()
- * @model
+ * @model annotation="gmf.node label='name'"
  * @generated
  */
 public interface Attribute extends EObject {

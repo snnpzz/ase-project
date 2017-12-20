@@ -4,11 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: it.polimi.ase.project.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: ASE_Project.presentation.ASE_ProjectEditorPlugin$Implementation
+Bundle-Activator: ASEProject.presentation.ASEProjectEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: ASE_Project.presentation
+Export-Package: ASEProject.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  it.polimi.ase.project.edit;visibility:=reexport,

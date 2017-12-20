@@ -34,8 +34,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link ASEProject.impl.DataflowImpl#getFormat <em>Format</em>}</li>
  *   <li>{@link ASEProject.impl.DataflowImpl#getSchema <em>Schema</em>}</li>
- *   <li>{@link ASEProject.impl.DataflowImpl#getPrevious <em>Previous</em>}</li>
- *   <li>{@link ASEProject.impl.DataflowImpl#getIncoming <em>Incoming</em>}</li>
+ *   <li>{@link ASEProject.impl.DataflowImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link ASEProject.impl.DataflowImpl#getSource <em>Source</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,24 +72,24 @@ public class DataflowImpl extends EObjectImpl implements Dataflow {
 	protected Schema schema;
 
 	/**
-	 * The cached value of the '{@link #getPrevious() <em>Previous</em>}' reference list.
+	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPrevious()
+	 * @see #getTarget()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Task> previous;
+	protected Task target;
 
 	/**
-	 * The cached value of the '{@link #getIncoming() <em>Incoming</em>}' reference.
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIncoming()
+	 * @see #getSource()
 	 * @generated
 	 * @ordered
 	 */
-	protected Task incoming;
+	protected Task source;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,28 +179,16 @@ public class DataflowImpl extends EObjectImpl implements Dataflow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Task> getPrevious() {
-		if (previous == null) {
-			previous = new EObjectWithInverseResolvingEList<Task>(Task.class, this, ASEProjectPackage.DATAFLOW__PREVIOUS, ASEProjectPackage.TASK__OUTGOING);
-		}
-		return previous;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Task getIncoming() {
-		if (incoming != null && incoming.eIsProxy()) {
-			InternalEObject oldIncoming = (InternalEObject)incoming;
-			incoming = (Task)eResolveProxy(oldIncoming);
-			if (incoming != oldIncoming) {
+	public Task getTarget() {
+		if (target != null && target.eIsProxy()) {
+			InternalEObject oldTarget = (InternalEObject)target;
+			target = (Task)eResolveProxy(oldTarget);
+			if (target != oldTarget) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ASEProjectPackage.DATAFLOW__INCOMING, oldIncoming, incoming));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ASEProjectPackage.DATAFLOW__TARGET, oldTarget, target));
 			}
 		}
-		return incoming;
+		return target;
 	}
 
 	/**
@@ -208,8 +196,8 @@ public class DataflowImpl extends EObjectImpl implements Dataflow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Task basicGetIncoming() {
-		return incoming;
+	public Task basicGetTarget() {
+		return target;
 	}
 
 	/**
@@ -217,11 +205,11 @@ public class DataflowImpl extends EObjectImpl implements Dataflow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetIncoming(Task newIncoming, NotificationChain msgs) {
-		Task oldIncoming = incoming;
-		incoming = newIncoming;
+	public NotificationChain basicSetTarget(Task newTarget, NotificationChain msgs) {
+		Task oldTarget = target;
+		target = newTarget;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ASEProjectPackage.DATAFLOW__INCOMING, oldIncoming, newIncoming);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ASEProjectPackage.DATAFLOW__TARGET, oldTarget, newTarget);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -232,18 +220,78 @@ public class DataflowImpl extends EObjectImpl implements Dataflow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIncoming(Task newIncoming) {
-		if (newIncoming != incoming) {
+	public void setTarget(Task newTarget) {
+		if (newTarget != target) {
 			NotificationChain msgs = null;
-			if (incoming != null)
-				msgs = ((InternalEObject)incoming).eInverseRemove(this, ASEProjectPackage.TASK__NEXT, Task.class, msgs);
-			if (newIncoming != null)
-				msgs = ((InternalEObject)newIncoming).eInverseAdd(this, ASEProjectPackage.TASK__NEXT, Task.class, msgs);
-			msgs = basicSetIncoming(newIncoming, msgs);
+			if (target != null)
+				msgs = ((InternalEObject)target).eInverseRemove(this, ASEProjectPackage.TASK__INCOMING, Task.class, msgs);
+			if (newTarget != null)
+				msgs = ((InternalEObject)newTarget).eInverseAdd(this, ASEProjectPackage.TASK__INCOMING, Task.class, msgs);
+			msgs = basicSetTarget(newTarget, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ASEProjectPackage.DATAFLOW__INCOMING, newIncoming, newIncoming));
+			eNotify(new ENotificationImpl(this, Notification.SET, ASEProjectPackage.DATAFLOW__TARGET, newTarget, newTarget));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Task getSource() {
+		if (source != null && source.eIsProxy()) {
+			InternalEObject oldSource = (InternalEObject)source;
+			source = (Task)eResolveProxy(oldSource);
+			if (source != oldSource) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ASEProjectPackage.DATAFLOW__SOURCE, oldSource, source));
+			}
+		}
+		return source;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Task basicGetSource() {
+		return source;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSource(Task newSource, NotificationChain msgs) {
+		Task oldSource = source;
+		source = newSource;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ASEProjectPackage.DATAFLOW__SOURCE, oldSource, newSource);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSource(Task newSource) {
+		if (newSource != source) {
+			NotificationChain msgs = null;
+			if (source != null)
+				msgs = ((InternalEObject)source).eInverseRemove(this, ASEProjectPackage.TASK__OUTGOING, Task.class, msgs);
+			if (newSource != null)
+				msgs = ((InternalEObject)newSource).eInverseAdd(this, ASEProjectPackage.TASK__OUTGOING, Task.class, msgs);
+			msgs = basicSetSource(newSource, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ASEProjectPackage.DATAFLOW__SOURCE, newSource, newSource));
 	}
 
 	/**
@@ -255,12 +303,14 @@ public class DataflowImpl extends EObjectImpl implements Dataflow {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ASEProjectPackage.DATAFLOW__PREVIOUS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPrevious()).basicAdd(otherEnd, msgs);
-			case ASEProjectPackage.DATAFLOW__INCOMING:
-				if (incoming != null)
-					msgs = ((InternalEObject)incoming).eInverseRemove(this, ASEProjectPackage.TASK__NEXT, Task.class, msgs);
-				return basicSetIncoming((Task)otherEnd, msgs);
+			case ASEProjectPackage.DATAFLOW__TARGET:
+				if (target != null)
+					msgs = ((InternalEObject)target).eInverseRemove(this, ASEProjectPackage.TASK__INCOMING, Task.class, msgs);
+				return basicSetTarget((Task)otherEnd, msgs);
+			case ASEProjectPackage.DATAFLOW__SOURCE:
+				if (source != null)
+					msgs = ((InternalEObject)source).eInverseRemove(this, ASEProjectPackage.TASK__OUTGOING, Task.class, msgs);
+				return basicSetSource((Task)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -275,10 +325,10 @@ public class DataflowImpl extends EObjectImpl implements Dataflow {
 		switch (featureID) {
 			case ASEProjectPackage.DATAFLOW__SCHEMA:
 				return basicSetSchema(null, msgs);
-			case ASEProjectPackage.DATAFLOW__PREVIOUS:
-				return ((InternalEList<?>)getPrevious()).basicRemove(otherEnd, msgs);
-			case ASEProjectPackage.DATAFLOW__INCOMING:
-				return basicSetIncoming(null, msgs);
+			case ASEProjectPackage.DATAFLOW__TARGET:
+				return basicSetTarget(null, msgs);
+			case ASEProjectPackage.DATAFLOW__SOURCE:
+				return basicSetSource(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -295,11 +345,12 @@ public class DataflowImpl extends EObjectImpl implements Dataflow {
 				return getFormat();
 			case ASEProjectPackage.DATAFLOW__SCHEMA:
 				return getSchema();
-			case ASEProjectPackage.DATAFLOW__PREVIOUS:
-				return getPrevious();
-			case ASEProjectPackage.DATAFLOW__INCOMING:
-				if (resolve) return getIncoming();
-				return basicGetIncoming();
+			case ASEProjectPackage.DATAFLOW__TARGET:
+				if (resolve) return getTarget();
+				return basicGetTarget();
+			case ASEProjectPackage.DATAFLOW__SOURCE:
+				if (resolve) return getSource();
+				return basicGetSource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -319,12 +370,11 @@ public class DataflowImpl extends EObjectImpl implements Dataflow {
 			case ASEProjectPackage.DATAFLOW__SCHEMA:
 				setSchema((Schema)newValue);
 				return;
-			case ASEProjectPackage.DATAFLOW__PREVIOUS:
-				getPrevious().clear();
-				getPrevious().addAll((Collection<? extends Task>)newValue);
+			case ASEProjectPackage.DATAFLOW__TARGET:
+				setTarget((Task)newValue);
 				return;
-			case ASEProjectPackage.DATAFLOW__INCOMING:
-				setIncoming((Task)newValue);
+			case ASEProjectPackage.DATAFLOW__SOURCE:
+				setSource((Task)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -344,11 +394,11 @@ public class DataflowImpl extends EObjectImpl implements Dataflow {
 			case ASEProjectPackage.DATAFLOW__SCHEMA:
 				setSchema((Schema)null);
 				return;
-			case ASEProjectPackage.DATAFLOW__PREVIOUS:
-				getPrevious().clear();
+			case ASEProjectPackage.DATAFLOW__TARGET:
+				setTarget((Task)null);
 				return;
-			case ASEProjectPackage.DATAFLOW__INCOMING:
-				setIncoming((Task)null);
+			case ASEProjectPackage.DATAFLOW__SOURCE:
+				setSource((Task)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -366,10 +416,10 @@ public class DataflowImpl extends EObjectImpl implements Dataflow {
 				return format != FORMAT_EDEFAULT;
 			case ASEProjectPackage.DATAFLOW__SCHEMA:
 				return schema != null;
-			case ASEProjectPackage.DATAFLOW__PREVIOUS:
-				return previous != null && !previous.isEmpty();
-			case ASEProjectPackage.DATAFLOW__INCOMING:
-				return incoming != null;
+			case ASEProjectPackage.DATAFLOW__TARGET:
+				return target != null;
+			case ASEProjectPackage.DATAFLOW__SOURCE:
+				return source != null;
 		}
 		return super.eIsSet(featureID);
 	}

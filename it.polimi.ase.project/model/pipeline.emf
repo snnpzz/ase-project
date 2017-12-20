@@ -1,5 +1,5 @@
-@namespace(uri="http://www.ase.it/", prefix="ASE")
-package ASE_Project;
+@namespace(uri="http://www.ase.polimi.it/project", prefix="ASEP")
+package ASEProject;
 
 @gmf.diagram
 class Pipeline {
@@ -39,6 +39,7 @@ class InternalDF {
 }
 
 class Schema {
+
   @gmf.compartment
   val Attribute[+] attributes;
 }
@@ -53,6 +54,7 @@ class Attribute {
 }
 
 class CollectionTask extends Task {
+
   @gmf.compartment
   val Import[+] imports;
 }
@@ -61,11 +63,13 @@ class IntegrationTask extends Task {
 }
 
 class CleaningTask extends Task {
+
   @gmf.compartment
   val CleaningOp[+] operations;
 }
 
 class AnalyzesTask extends Task {
+
   @gmf.compartment
   val AnalysisOp[+] analyzes;
 }
@@ -74,6 +78,7 @@ class VisualizationTask extends Task {
 }
 
 class ExportingTask extends Task {
+
   @gmf.compartment
   val Export[+] exports;
 }

@@ -80,6 +80,10 @@ public class ASEProjectAdapterFactory extends AdapterFactoryImpl {
 				return createDataflowAdapter();
 			}
 			@Override
+			public Adapter caseOperation(Operation object) {
+				return createOperationAdapter();
+			}
+			@Override
 			public Adapter caseInternalDF(InternalDF object) {
 				return createInternalDFAdapter();
 			}
@@ -122,10 +126,6 @@ public class ASEProjectAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseExport(Export object) {
 				return createExportAdapter();
-			}
-			@Override
-			public Adapter caseOperation(Operation object) {
-				return createOperationAdapter();
 			}
 			@Override
 			public Adapter caseUserDefined(UserDefined object) {

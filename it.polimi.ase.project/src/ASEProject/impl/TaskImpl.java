@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link ASEProject.impl.TaskImpl#getName <em>Name</em>}</li>
  *   <li>{@link ASEProject.impl.TaskImpl#isIsRequired <em>Is Required</em>}</li>
- *   <li>{@link ASEProject.impl.TaskImpl#getNext <em>Next</em>}</li>
+ *   <li>{@link ASEProject.impl.TaskImpl#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link ASEProject.impl.TaskImpl#getOutgoing <em>Outgoing</em>}</li>
  * </ul>
  *
@@ -80,24 +80,24 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	protected boolean isRequired = IS_REQUIRED_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getNext() <em>Next</em>}' reference list.
+	 * The cached value of the '{@link #getIncoming() <em>Incoming</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNext()
+	 * @see #getIncoming()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Dataflow> next;
+	protected EList<Dataflow> incoming;
 
 	/**
-	 * The cached value of the '{@link #getOutgoing() <em>Outgoing</em>}' reference.
+	 * The cached value of the '{@link #getOutgoing() <em>Outgoing</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOutgoing()
 	 * @generated
 	 * @ordered
 	 */
-	protected Dataflow outgoing;
+	protected EList<Dataflow> outgoing;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,11 +165,11 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Dataflow> getNext() {
-		if (next == null) {
-			next = new EObjectWithInverseResolvingEList<Dataflow>(Dataflow.class, this, ASEProjectPackage.TASK__NEXT, ASEProjectPackage.DATAFLOW__INCOMING);
+	public EList<Dataflow> getIncoming() {
+		if (incoming == null) {
+			incoming = new EObjectWithInverseResolvingEList<Dataflow>(Dataflow.class, this, ASEProjectPackage.TASK__INCOMING, ASEProjectPackage.DATAFLOW__TARGET);
 		}
-		return next;
+		return incoming;
 	}
 
 	/**
@@ -177,59 +177,11 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Dataflow getOutgoing() {
-		if (outgoing != null && outgoing.eIsProxy()) {
-			InternalEObject oldOutgoing = (InternalEObject)outgoing;
-			outgoing = (Dataflow)eResolveProxy(oldOutgoing);
-			if (outgoing != oldOutgoing) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ASEProjectPackage.TASK__OUTGOING, oldOutgoing, outgoing));
-			}
+	public EList<Dataflow> getOutgoing() {
+		if (outgoing == null) {
+			outgoing = new EObjectWithInverseResolvingEList<Dataflow>(Dataflow.class, this, ASEProjectPackage.TASK__OUTGOING, ASEProjectPackage.DATAFLOW__SOURCE);
 		}
 		return outgoing;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Dataflow basicGetOutgoing() {
-		return outgoing;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetOutgoing(Dataflow newOutgoing, NotificationChain msgs) {
-		Dataflow oldOutgoing = outgoing;
-		outgoing = newOutgoing;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ASEProjectPackage.TASK__OUTGOING, oldOutgoing, newOutgoing);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOutgoing(Dataflow newOutgoing) {
-		if (newOutgoing != outgoing) {
-			NotificationChain msgs = null;
-			if (outgoing != null)
-				msgs = ((InternalEObject)outgoing).eInverseRemove(this, ASEProjectPackage.DATAFLOW__PREVIOUS, Dataflow.class, msgs);
-			if (newOutgoing != null)
-				msgs = ((InternalEObject)newOutgoing).eInverseAdd(this, ASEProjectPackage.DATAFLOW__PREVIOUS, Dataflow.class, msgs);
-			msgs = basicSetOutgoing(newOutgoing, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ASEProjectPackage.TASK__OUTGOING, newOutgoing, newOutgoing));
 	}
 
 	/**
@@ -241,12 +193,10 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ASEProjectPackage.TASK__NEXT:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getNext()).basicAdd(otherEnd, msgs);
+			case ASEProjectPackage.TASK__INCOMING:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncoming()).basicAdd(otherEnd, msgs);
 			case ASEProjectPackage.TASK__OUTGOING:
-				if (outgoing != null)
-					msgs = ((InternalEObject)outgoing).eInverseRemove(this, ASEProjectPackage.DATAFLOW__PREVIOUS, Dataflow.class, msgs);
-				return basicSetOutgoing((Dataflow)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoing()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -259,10 +209,10 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ASEProjectPackage.TASK__NEXT:
-				return ((InternalEList<?>)getNext()).basicRemove(otherEnd, msgs);
+			case ASEProjectPackage.TASK__INCOMING:
+				return ((InternalEList<?>)getIncoming()).basicRemove(otherEnd, msgs);
 			case ASEProjectPackage.TASK__OUTGOING:
-				return basicSetOutgoing(null, msgs);
+				return ((InternalEList<?>)getOutgoing()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -279,11 +229,10 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 				return getName();
 			case ASEProjectPackage.TASK__IS_REQUIRED:
 				return isIsRequired();
-			case ASEProjectPackage.TASK__NEXT:
-				return getNext();
+			case ASEProjectPackage.TASK__INCOMING:
+				return getIncoming();
 			case ASEProjectPackage.TASK__OUTGOING:
-				if (resolve) return getOutgoing();
-				return basicGetOutgoing();
+				return getOutgoing();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -303,12 +252,13 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 			case ASEProjectPackage.TASK__IS_REQUIRED:
 				setIsRequired((Boolean)newValue);
 				return;
-			case ASEProjectPackage.TASK__NEXT:
-				getNext().clear();
-				getNext().addAll((Collection<? extends Dataflow>)newValue);
+			case ASEProjectPackage.TASK__INCOMING:
+				getIncoming().clear();
+				getIncoming().addAll((Collection<? extends Dataflow>)newValue);
 				return;
 			case ASEProjectPackage.TASK__OUTGOING:
-				setOutgoing((Dataflow)newValue);
+				getOutgoing().clear();
+				getOutgoing().addAll((Collection<? extends Dataflow>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -328,11 +278,11 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 			case ASEProjectPackage.TASK__IS_REQUIRED:
 				setIsRequired(IS_REQUIRED_EDEFAULT);
 				return;
-			case ASEProjectPackage.TASK__NEXT:
-				getNext().clear();
+			case ASEProjectPackage.TASK__INCOMING:
+				getIncoming().clear();
 				return;
 			case ASEProjectPackage.TASK__OUTGOING:
-				setOutgoing((Dataflow)null);
+				getOutgoing().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -350,10 +300,10 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ASEProjectPackage.TASK__IS_REQUIRED:
 				return isRequired != IS_REQUIRED_EDEFAULT;
-			case ASEProjectPackage.TASK__NEXT:
-				return next != null && !next.isEmpty();
+			case ASEProjectPackage.TASK__INCOMING:
+				return incoming != null && !incoming.isEmpty();
 			case ASEProjectPackage.TASK__OUTGOING:
-				return outgoing != null;
+				return outgoing != null && !outgoing.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

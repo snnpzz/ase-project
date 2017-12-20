@@ -122,16 +122,16 @@ public interface ASEProjectPackage extends EPackage {
 	int TASK__IS_REQUIRED = 1;
 
 	/**
-	 * The feature id for the '<em><b>Next</b></em>' reference list.
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__NEXT = 2;
+	int TASK__INCOMING = 2;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -177,22 +177,22 @@ public interface ASEProjectPackage extends EPackage {
 	int DATAFLOW__SCHEMA = 1;
 
 	/**
-	 * The feature id for the '<em><b>Previous</b></em>' reference list.
+	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATAFLOW__PREVIOUS = 2;
+	int DATAFLOW__TARGET = 2;
 
 	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference.
+	 * The feature id for the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATAFLOW__INCOMING = 3;
+	int DATAFLOW__SOURCE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Dataflow</em>' class.
@@ -211,7 +211,153 @@ public interface ASEProjectPackage extends EPackage {
 	 * @see ASEProject.impl.ASEProjectPackageImpl#getInternalDF()
 	 * @generated
 	 */
-	int INTERNAL_DF = 3;
+	int INTERNAL_DF = 4;
+
+	/**
+	 * The meta object id for the '{@link ASEProject.impl.SchemaImpl <em>Schema</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ASEProject.impl.SchemaImpl
+	 * @see ASEProject.impl.ASEProjectPackageImpl#getSchema()
+	 * @generated
+	 */
+	int SCHEMA = 5;
+
+	/**
+	 * The meta object id for the '{@link ASEProject.impl.AttributeImpl <em>Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ASEProject.impl.AttributeImpl
+	 * @see ASEProject.impl.ASEProjectPackageImpl#getAttribute()
+	 * @generated
+	 */
+	int ATTRIBUTE = 6;
+
+	/**
+	 * The meta object id for the '{@link ASEProject.impl.CollectionTaskImpl <em>Collection Task</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ASEProject.impl.CollectionTaskImpl
+	 * @see ASEProject.impl.ASEProjectPackageImpl#getCollectionTask()
+	 * @generated
+	 */
+	int COLLECTION_TASK = 7;
+
+	/**
+	 * The meta object id for the '{@link ASEProject.impl.IntegrationTaskImpl <em>Integration Task</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ASEProject.impl.IntegrationTaskImpl
+	 * @see ASEProject.impl.ASEProjectPackageImpl#getIntegrationTask()
+	 * @generated
+	 */
+	int INTEGRATION_TASK = 8;
+
+	/**
+	 * The meta object id for the '{@link ASEProject.impl.CleaningTaskImpl <em>Cleaning Task</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ASEProject.impl.CleaningTaskImpl
+	 * @see ASEProject.impl.ASEProjectPackageImpl#getCleaningTask()
+	 * @generated
+	 */
+	int CLEANING_TASK = 9;
+
+	/**
+	 * The meta object id for the '{@link ASEProject.impl.AnalyzesTaskImpl <em>Analyzes Task</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ASEProject.impl.AnalyzesTaskImpl
+	 * @see ASEProject.impl.ASEProjectPackageImpl#getAnalyzesTask()
+	 * @generated
+	 */
+	int ANALYZES_TASK = 10;
+
+	/**
+	 * The meta object id for the '{@link ASEProject.impl.VisualizationTaskImpl <em>Visualization Task</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ASEProject.impl.VisualizationTaskImpl
+	 * @see ASEProject.impl.ASEProjectPackageImpl#getVisualizationTask()
+	 * @generated
+	 */
+	int VISUALIZATION_TASK = 11;
+
+	/**
+	 * The meta object id for the '{@link ASEProject.impl.ExportingTaskImpl <em>Exporting Task</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ASEProject.impl.ExportingTaskImpl
+	 * @see ASEProject.impl.ASEProjectPackageImpl#getExportingTask()
+	 * @generated
+	 */
+	int EXPORTING_TASK = 12;
+
+	/**
+	 * The meta object id for the '{@link ASEProject.impl.ImportImpl <em>Import</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ASEProject.impl.ImportImpl
+	 * @see ASEProject.impl.ASEProjectPackageImpl#getImport()
+	 * @generated
+	 */
+	int IMPORT = 13;
+
+	/**
+	 * The meta object id for the '{@link ASEProject.impl.ExportImpl <em>Export</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ASEProject.impl.ExportImpl
+	 * @see ASEProject.impl.ASEProjectPackageImpl#getExport()
+	 * @generated
+	 */
+	int EXPORT = 14;
+
+	/**
+	 * The meta object id for the '{@link ASEProject.impl.OperationImpl <em>Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ASEProject.impl.OperationImpl
+	 * @see ASEProject.impl.ASEProjectPackageImpl#getOperation()
+	 * @generated
+	 */
+	int OPERATION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__INCOMING = 1;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__OUTGOING = 2;
+
+	/**
+	 * The number of structural features of the '<em>Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Format</b></em>' attribute.
@@ -223,31 +369,31 @@ public interface ASEProjectPackage extends EPackage {
 	int INTERNAL_DF__FORMAT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Next</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_DF__NEXT = 1;
-
-	/**
 	 * The feature id for the '<em><b>Schema</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_DF__SCHEMA = 2;
+	int INTERNAL_DF__SCHEMA = 1;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * The feature id for the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_DF__OUTGOING = 3;
+	int INTERNAL_DF__SOURCE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_DF__TARGET = 3;
 
 	/**
 	 * The number of structural features of the '<em>Internal DF</em>' class.
@@ -257,16 +403,6 @@ public interface ASEProjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTERNAL_DF_FEATURE_COUNT = 4;
-
-	/**
-	 * The meta object id for the '{@link ASEProject.impl.SchemaImpl <em>Schema</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ASEProject.impl.SchemaImpl
-	 * @see ASEProject.impl.ASEProjectPackageImpl#getSchema()
-	 * @generated
-	 */
-	int SCHEMA = 4;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -285,16 +421,6 @@ public interface ASEProjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int SCHEMA_FEATURE_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link ASEProject.impl.AttributeImpl <em>Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ASEProject.impl.AttributeImpl
-	 * @see ASEProject.impl.ASEProjectPackageImpl#getAttribute()
-	 * @generated
-	 */
-	int ATTRIBUTE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -351,16 +477,6 @@ public interface ASEProjectPackage extends EPackage {
 	int ATTRIBUTE_FEATURE_COUNT = 5;
 
 	/**
-	 * The meta object id for the '{@link ASEProject.impl.CollectionTaskImpl <em>Collection Task</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ASEProject.impl.CollectionTaskImpl
-	 * @see ASEProject.impl.ASEProjectPackageImpl#getCollectionTask()
-	 * @generated
-	 */
-	int COLLECTION_TASK = 6;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -379,16 +495,16 @@ public interface ASEProjectPackage extends EPackage {
 	int COLLECTION_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
 
 	/**
-	 * The feature id for the '<em><b>Next</b></em>' reference list.
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_TASK__NEXT = TASK__NEXT;
+	int COLLECTION_TASK__INCOMING = TASK__INCOMING;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -415,16 +531,6 @@ public interface ASEProjectPackage extends EPackage {
 	int COLLECTION_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link ASEProject.impl.IntegrationTaskImpl <em>Integration Task</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ASEProject.impl.IntegrationTaskImpl
-	 * @see ASEProject.impl.ASEProjectPackageImpl#getIntegrationTask()
-	 * @generated
-	 */
-	int INTEGRATION_TASK = 7;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -443,16 +549,16 @@ public interface ASEProjectPackage extends EPackage {
 	int INTEGRATION_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
 
 	/**
-	 * The feature id for the '<em><b>Next</b></em>' reference list.
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_TASK__NEXT = TASK__NEXT;
+	int INTEGRATION_TASK__INCOMING = TASK__INCOMING;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -468,16 +574,6 @@ public interface ASEProjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTEGRATION_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link ASEProject.impl.CleaningTaskImpl <em>Cleaning Task</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ASEProject.impl.CleaningTaskImpl
-	 * @see ASEProject.impl.ASEProjectPackageImpl#getCleaningTask()
-	 * @generated
-	 */
-	int CLEANING_TASK = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -498,16 +594,16 @@ public interface ASEProjectPackage extends EPackage {
 	int CLEANING_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
 
 	/**
-	 * The feature id for the '<em><b>Next</b></em>' reference list.
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLEANING_TASK__NEXT = TASK__NEXT;
+	int CLEANING_TASK__INCOMING = TASK__INCOMING;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -534,16 +630,6 @@ public interface ASEProjectPackage extends EPackage {
 	int CLEANING_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link ASEProject.impl.AnalyzesTaskImpl <em>Analyzes Task</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ASEProject.impl.AnalyzesTaskImpl
-	 * @see ASEProject.impl.ASEProjectPackageImpl#getAnalyzesTask()
-	 * @generated
-	 */
-	int ANALYZES_TASK = 9;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -562,16 +648,16 @@ public interface ASEProjectPackage extends EPackage {
 	int ANALYZES_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
 
 	/**
-	 * The feature id for the '<em><b>Next</b></em>' reference list.
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYZES_TASK__NEXT = TASK__NEXT;
+	int ANALYZES_TASK__INCOMING = TASK__INCOMING;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -598,16 +684,6 @@ public interface ASEProjectPackage extends EPackage {
 	int ANALYZES_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link ASEProject.impl.VisualizationTaskImpl <em>Visualization Task</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ASEProject.impl.VisualizationTaskImpl
-	 * @see ASEProject.impl.ASEProjectPackageImpl#getVisualizationTask()
-	 * @generated
-	 */
-	int VISUALIZATION_TASK = 10;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -626,16 +702,16 @@ public interface ASEProjectPackage extends EPackage {
 	int VISUALIZATION_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
 
 	/**
-	 * The feature id for the '<em><b>Next</b></em>' reference list.
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VISUALIZATION_TASK__NEXT = TASK__NEXT;
+	int VISUALIZATION_TASK__INCOMING = TASK__INCOMING;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -651,16 +727,6 @@ public interface ASEProjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int VISUALIZATION_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link ASEProject.impl.ExportingTaskImpl <em>Exporting Task</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ASEProject.impl.ExportingTaskImpl
-	 * @see ASEProject.impl.ASEProjectPackageImpl#getExportingTask()
-	 * @generated
-	 */
-	int EXPORTING_TASK = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -681,16 +747,16 @@ public interface ASEProjectPackage extends EPackage {
 	int EXPORTING_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
 
 	/**
-	 * The feature id for the '<em><b>Next</b></em>' reference list.
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORTING_TASK__NEXT = TASK__NEXT;
+	int EXPORTING_TASK__INCOMING = TASK__INCOMING;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -715,16 +781,6 @@ public interface ASEProjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXPORTING_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link ASEProject.impl.ImportImpl <em>Import</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ASEProject.impl.ImportImpl
-	 * @see ASEProject.impl.ASEProjectPackageImpl#getImport()
-	 * @generated
-	 */
-	int IMPORT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Reads From</b></em>' reference.
@@ -763,16 +819,6 @@ public interface ASEProjectPackage extends EPackage {
 	int IMPORT_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link ASEProject.impl.ExportImpl <em>Export</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ASEProject.impl.ExportImpl
-	 * @see ASEProject.impl.ASEProjectPackageImpl#getExport()
-	 * @generated
-	 */
-	int EXPORT = 13;
-
-	/**
 	 * The feature id for the '<em><b>Generates</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -809,52 +855,6 @@ public interface ASEProjectPackage extends EPackage {
 	int EXPORT_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link ASEProject.impl.OperationImpl <em>Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ASEProject.impl.OperationImpl
-	 * @see ASEProject.impl.ASEProjectPackageImpl#getOperation()
-	 * @generated
-	 */
-	int OPERATION = 14;
-
-	/**
-	 * The feature id for the '<em><b>Previous</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION__PREVIOUS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION__NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION__INCOMING = 2;
-
-	/**
-	 * The number of structural features of the '<em>Operation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_FEATURE_COUNT = 3;
-
-	/**
 	 * The meta object id for the '{@link ASEProject.impl.CleaningOpImpl <em>Cleaning Op</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -863,15 +863,6 @@ public interface ASEProjectPackage extends EPackage {
 	 * @generated
 	 */
 	int CLEANING_OP = 18;
-
-	/**
-	 * The feature id for the '<em><b>Previous</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLEANING_OP__PREVIOUS = OPERATION__PREVIOUS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -890,6 +881,15 @@ public interface ASEProjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLEANING_OP__INCOMING = OPERATION__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLEANING_OP__OUTGOING = OPERATION__OUTGOING;
 
 	/**
 	 * The number of structural features of the '<em>Cleaning Op</em>' class.
@@ -911,15 +911,6 @@ public interface ASEProjectPackage extends EPackage {
 	int USER_DEFINED = 15;
 
 	/**
-	 * The feature id for the '<em><b>Previous</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_DEFINED__PREVIOUS = CLEANING_OP__PREVIOUS;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -936,6 +927,15 @@ public interface ASEProjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int USER_DEFINED__INCOMING = CLEANING_OP__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_DEFINED__OUTGOING = CLEANING_OP__OUTGOING;
 
 	/**
 	 * The number of structural features of the '<em>User Defined</em>' class.
@@ -1049,15 +1049,6 @@ public interface ASEProjectPackage extends EPackage {
 	int ANALYSIS_OP = 19;
 
 	/**
-	 * The feature id for the '<em><b>Previous</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS_OP__PREVIOUS = OPERATION__PREVIOUS;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1074,6 +1065,15 @@ public interface ASEProjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int ANALYSIS_OP__INCOMING = OPERATION__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_OP__OUTGOING = OPERATION__OUTGOING;
 
 	/**
 	 * The number of structural features of the '<em>Analysis Op</em>' class.
@@ -1095,15 +1095,6 @@ public interface ASEProjectPackage extends EPackage {
 	int DESCRIPTIVE = 20;
 
 	/**
-	 * The feature id for the '<em><b>Previous</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTIVE__PREVIOUS = ANALYSIS_OP__PREVIOUS;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1120,6 +1111,15 @@ public interface ASEProjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int DESCRIPTIVE__INCOMING = ANALYSIS_OP__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTIVE__OUTGOING = ANALYSIS_OP__OUTGOING;
 
 	/**
 	 * The number of structural features of the '<em>Descriptive</em>' class.
@@ -1141,15 +1141,6 @@ public interface ASEProjectPackage extends EPackage {
 	int CLASSIFICATION = 21;
 
 	/**
-	 * The feature id for the '<em><b>Previous</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSIFICATION__PREVIOUS = ANALYSIS_OP__PREVIOUS;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1166,6 +1157,15 @@ public interface ASEProjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLASSIFICATION__INCOMING = ANALYSIS_OP__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFICATION__OUTGOING = ANALYSIS_OP__OUTGOING;
 
 	/**
 	 * The number of structural features of the '<em>Classification</em>' class.
@@ -1187,15 +1187,6 @@ public interface ASEProjectPackage extends EPackage {
 	int PREDICTIVE = 22;
 
 	/**
-	 * The feature id for the '<em><b>Previous</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREDICTIVE__PREVIOUS = ANALYSIS_OP__PREVIOUS;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1212,6 +1203,15 @@ public interface ASEProjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int PREDICTIVE__INCOMING = ANALYSIS_OP__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICTIVE__OUTGOING = ANALYSIS_OP__OUTGOING;
 
 	/**
 	 * The number of structural features of the '<em>Predictive</em>' class.
@@ -1233,15 +1233,6 @@ public interface ASEProjectPackage extends EPackage {
 	int CLUSTERING = 23;
 
 	/**
-	 * The feature id for the '<em><b>Previous</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLUSTERING__PREVIOUS = ANALYSIS_OP__PREVIOUS;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1258,6 +1249,15 @@ public interface ASEProjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLUSTERING__INCOMING = ANALYSIS_OP__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTERING__OUTGOING = ANALYSIS_OP__OUTGOING;
 
 	/**
 	 * The number of structural features of the '<em>Clustering</em>' class.
@@ -1279,15 +1279,6 @@ public interface ASEProjectPackage extends EPackage {
 	int PREDEFINED = 24;
 
 	/**
-	 * The feature id for the '<em><b>Previous</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREDEFINED__PREVIOUS = CLEANING_OP__PREVIOUS;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1304,6 +1295,15 @@ public interface ASEProjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int PREDEFINED__INCOMING = CLEANING_OP__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDEFINED__OUTGOING = CLEANING_OP__OUTGOING;
 
 	/**
 	 * The number of structural features of the '<em>Predefined</em>' class.
@@ -1390,21 +1390,21 @@ public interface ASEProjectPackage extends EPackage {
 	EAttribute getTask_IsRequired();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ASEProject.Task#getNext <em>Next</em>}'.
+	 * Returns the meta object for the reference list '{@link ASEProject.Task#getIncoming <em>Incoming</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Next</em>'.
-	 * @see ASEProject.Task#getNext()
+	 * @return the meta object for the reference list '<em>Incoming</em>'.
+	 * @see ASEProject.Task#getIncoming()
 	 * @see #getTask()
 	 * @generated
 	 */
-	EReference getTask_Next();
+	EReference getTask_Incoming();
 
 	/**
-	 * Returns the meta object for the reference '{@link ASEProject.Task#getOutgoing <em>Outgoing</em>}'.
+	 * Returns the meta object for the reference list '{@link ASEProject.Task#getOutgoing <em>Outgoing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Outgoing</em>'.
+	 * @return the meta object for the reference list '<em>Outgoing</em>'.
 	 * @see ASEProject.Task#getOutgoing()
 	 * @see #getTask()
 	 * @generated
@@ -1444,26 +1444,26 @@ public interface ASEProjectPackage extends EPackage {
 	EReference getDataflow_Schema();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ASEProject.Dataflow#getPrevious <em>Previous</em>}'.
+	 * Returns the meta object for the reference '{@link ASEProject.Dataflow#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Previous</em>'.
-	 * @see ASEProject.Dataflow#getPrevious()
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see ASEProject.Dataflow#getTarget()
 	 * @see #getDataflow()
 	 * @generated
 	 */
-	EReference getDataflow_Previous();
+	EReference getDataflow_Target();
 
 	/**
-	 * Returns the meta object for the reference '{@link ASEProject.Dataflow#getIncoming <em>Incoming</em>}'.
+	 * Returns the meta object for the reference '{@link ASEProject.Dataflow#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Incoming</em>'.
-	 * @see ASEProject.Dataflow#getIncoming()
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see ASEProject.Dataflow#getSource()
 	 * @see #getDataflow()
 	 * @generated
 	 */
-	EReference getDataflow_Incoming();
+	EReference getDataflow_Source();
 
 	/**
 	 * Returns the meta object for class '{@link ASEProject.InternalDF <em>Internal DF</em>}'.
@@ -1487,17 +1487,6 @@ public interface ASEProjectPackage extends EPackage {
 	EAttribute getInternalDF_Format();
 
 	/**
-	 * Returns the meta object for the reference '{@link ASEProject.InternalDF#getNext <em>Next</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Next</em>'.
-	 * @see ASEProject.InternalDF#getNext()
-	 * @see #getInternalDF()
-	 * @generated
-	 */
-	EReference getInternalDF_Next();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link ASEProject.InternalDF#getSchema <em>Schema</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1509,15 +1498,26 @@ public interface ASEProjectPackage extends EPackage {
 	EReference getInternalDF_Schema();
 
 	/**
-	 * Returns the meta object for the reference '{@link ASEProject.InternalDF#getOutgoing <em>Outgoing</em>}'.
+	 * Returns the meta object for the reference '{@link ASEProject.InternalDF#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Outgoing</em>'.
-	 * @see ASEProject.InternalDF#getOutgoing()
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see ASEProject.InternalDF#getSource()
 	 * @see #getInternalDF()
 	 * @generated
 	 */
-	EReference getInternalDF_Outgoing();
+	EReference getInternalDF_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link ASEProject.InternalDF#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see ASEProject.InternalDF#getTarget()
+	 * @see #getInternalDF()
+	 * @generated
+	 */
+	EReference getInternalDF_Target();
 
 	/**
 	 * Returns the meta object for class '{@link ASEProject.Schema <em>Schema</em>}'.
@@ -1806,17 +1806,6 @@ public interface ASEProjectPackage extends EPackage {
 	EClass getOperation();
 
 	/**
-	 * Returns the meta object for the reference '{@link ASEProject.Operation#getPrevious <em>Previous</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Previous</em>'.
-	 * @see ASEProject.Operation#getPrevious()
-	 * @see #getOperation()
-	 * @generated
-	 */
-	EReference getOperation_Previous();
-
-	/**
 	 * Returns the meta object for the attribute '{@link ASEProject.Operation#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1837,6 +1826,17 @@ public interface ASEProjectPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOperation_Incoming();
+
+	/**
+	 * Returns the meta object for the reference '{@link ASEProject.Operation#getOutgoing <em>Outgoing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Outgoing</em>'.
+	 * @see ASEProject.Operation#getOutgoing()
+	 * @see #getOperation()
+	 * @generated
+	 */
+	EReference getOperation_Outgoing();
 
 	/**
 	 * Returns the meta object for class '{@link ASEProject.UserDefined <em>User Defined</em>}'.
@@ -2089,15 +2089,15 @@ public interface ASEProjectPackage extends EPackage {
 		EAttribute TASK__IS_REQUIRED = eINSTANCE.getTask_IsRequired();
 
 		/**
-		 * The meta object literal for the '<em><b>Next</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Incoming</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TASK__NEXT = eINSTANCE.getTask_Next();
+		EReference TASK__INCOMING = eINSTANCE.getTask_Incoming();
 
 		/**
-		 * The meta object literal for the '<em><b>Outgoing</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Outgoing</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2131,20 +2131,20 @@ public interface ASEProjectPackage extends EPackage {
 		EReference DATAFLOW__SCHEMA = eINSTANCE.getDataflow_Schema();
 
 		/**
-		 * The meta object literal for the '<em><b>Previous</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATAFLOW__PREVIOUS = eINSTANCE.getDataflow_Previous();
+		EReference DATAFLOW__TARGET = eINSTANCE.getDataflow_Target();
 
 		/**
-		 * The meta object literal for the '<em><b>Incoming</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATAFLOW__INCOMING = eINSTANCE.getDataflow_Incoming();
+		EReference DATAFLOW__SOURCE = eINSTANCE.getDataflow_Source();
 
 		/**
 		 * The meta object literal for the '{@link ASEProject.impl.InternalDFImpl <em>Internal DF</em>}' class.
@@ -2165,14 +2165,6 @@ public interface ASEProjectPackage extends EPackage {
 		EAttribute INTERNAL_DF__FORMAT = eINSTANCE.getInternalDF_Format();
 
 		/**
-		 * The meta object literal for the '<em><b>Next</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INTERNAL_DF__NEXT = eINSTANCE.getInternalDF_Next();
-
-		/**
 		 * The meta object literal for the '<em><b>Schema</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2181,12 +2173,20 @@ public interface ASEProjectPackage extends EPackage {
 		EReference INTERNAL_DF__SCHEMA = eINSTANCE.getInternalDF_Schema();
 
 		/**
-		 * The meta object literal for the '<em><b>Outgoing</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INTERNAL_DF__OUTGOING = eINSTANCE.getInternalDF_Outgoing();
+		EReference INTERNAL_DF__SOURCE = eINSTANCE.getInternalDF_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERNAL_DF__TARGET = eINSTANCE.getInternalDF_Target();
 
 		/**
 		 * The meta object literal for the '{@link ASEProject.impl.SchemaImpl <em>Schema</em>}' class.
@@ -2427,14 +2427,6 @@ public interface ASEProjectPackage extends EPackage {
 		EClass OPERATION = eINSTANCE.getOperation();
 
 		/**
-		 * The meta object literal for the '<em><b>Previous</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION__PREVIOUS = eINSTANCE.getOperation_Previous();
-
-		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2449,6 +2441,14 @@ public interface ASEProjectPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OPERATION__INCOMING = eINSTANCE.getOperation_Incoming();
+
+		/**
+		 * The meta object literal for the '<em><b>Outgoing</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATION__OUTGOING = eINSTANCE.getOperation_Outgoing();
 
 		/**
 		 * The meta object literal for the '{@link ASEProject.impl.UserDefinedImpl <em>User Defined</em>}' class.

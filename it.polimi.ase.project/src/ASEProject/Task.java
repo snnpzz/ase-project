@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ASEProject.Task#getName <em>Name</em>}</li>
  *   <li>{@link ASEProject.Task#isIsRequired <em>Is Required</em>}</li>
- *   <li>{@link ASEProject.Task#getNext <em>Next</em>}</li>
+ *   <li>{@link ASEProject.Task#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link ASEProject.Task#getOutgoing <em>Outgoing</em>}</li>
  * </ul>
  *
@@ -80,49 +80,39 @@ public interface Task extends EObject {
 	void setIsRequired(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Next</b></em>' reference list.
+	 * Returns the value of the '<em><b>Incoming</b></em>' reference list.
 	 * The list contents are of type {@link ASEProject.Dataflow}.
-	 * It is bidirectional and its opposite is '{@link ASEProject.Dataflow#getIncoming <em>Incoming</em>}'.
+	 * It is bidirectional and its opposite is '{@link ASEProject.Dataflow#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Next</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Incoming</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Next</em>' reference list.
-	 * @see ASEProject.ASEProjectPackage#getTask_Next()
-	 * @see ASEProject.Dataflow#getIncoming
-	 * @model opposite="incoming"
+	 * @return the value of the '<em>Incoming</em>' reference list.
+	 * @see ASEProject.ASEProjectPackage#getTask_Incoming()
+	 * @see ASEProject.Dataflow#getTarget
+	 * @model opposite="target"
 	 * @generated
 	 */
-	EList<Dataflow> getNext();
+	EList<Dataflow> getIncoming();
 
 	/**
-	 * Returns the value of the '<em><b>Outgoing</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link ASEProject.Dataflow#getPrevious <em>Previous</em>}'.
+	 * Returns the value of the '<em><b>Outgoing</b></em>' reference list.
+	 * The list contents are of type {@link ASEProject.Dataflow}.
+	 * It is bidirectional and its opposite is '{@link ASEProject.Dataflow#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Outgoing</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Outgoing</em>' reference.
-	 * @see #setOutgoing(Dataflow)
+	 * @return the value of the '<em>Outgoing</em>' reference list.
 	 * @see ASEProject.ASEProjectPackage#getTask_Outgoing()
-	 * @see ASEProject.Dataflow#getPrevious
-	 * @model opposite="previous"
+	 * @see ASEProject.Dataflow#getSource
+	 * @model opposite="source"
 	 * @generated
 	 */
-	Dataflow getOutgoing();
-
-	/**
-	 * Sets the value of the '{@link ASEProject.Task#getOutgoing <em>Outgoing</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Outgoing</em>' reference.
-	 * @see #getOutgoing()
-	 * @generated
-	 */
-	void setOutgoing(Dataflow value);
+	EList<Dataflow> getOutgoing();
 
 } // Task

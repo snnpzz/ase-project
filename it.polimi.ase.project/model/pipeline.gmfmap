@@ -337,7 +337,7 @@
   </links>
   <diagram>
     <diagramCanvas
-        href="pipeline.gmfgraph#ASE_Project"/>
+        href="pipeline.gmfgraph#ASEProject"/>
     <domainModel
         href="pipeline.ecore#/"/>
     <domainMetaElement

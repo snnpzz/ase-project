@@ -34,7 +34,7 @@ public class CollectionTaskCollectionTaskImportsCompartmentEditPart extends Shap
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 7009;
+	public static final int VISUAL_ID = 7017;
 
 	/**
 	* @generated
@@ -91,7 +91,7 @@ public class CollectionTaskCollectionTaskImportsCompartmentEditPart extends Shap
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == PipelineElementTypes.Import_3017) {
+			if (type == PipelineElementTypes.Import_3025) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

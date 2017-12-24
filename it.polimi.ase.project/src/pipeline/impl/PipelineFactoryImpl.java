@@ -57,7 +57,7 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case PipelinePackage.PL: return createPL();
+			case PipelinePackage.PIPELINE: return createPipeline();
 			case PipelinePackage.DATAFLOW: return createDataflow();
 			case PipelinePackage.INTERNAL_DF: return createInternalDF();
 			case PipelinePackage.SCHEMA: return createSchema();
@@ -118,9 +118,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PL createPL() {
-		PLImpl pl = new PLImpl();
-		return pl;
+	public Pipeline createPipeline() {
+		PipelineImpl pipeline = new PipelineImpl();
+		return pipeline;
 	}
 
 	/**

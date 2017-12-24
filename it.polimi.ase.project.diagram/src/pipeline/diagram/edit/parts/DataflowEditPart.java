@@ -22,7 +22,7 @@ public class DataflowEditPart extends ConnectionNodeEditPart implements ITreeBra
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 4003;
+	public static final int VISUAL_ID = 4004;
 
 	/**
 	* @generated

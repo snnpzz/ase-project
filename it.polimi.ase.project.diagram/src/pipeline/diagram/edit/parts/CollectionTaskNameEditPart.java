@@ -60,7 +60,7 @@ public class CollectionTaskNameEditPart extends CompartmentEditPart implements I
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5038;
+	public static final int VISUAL_ID = 5058;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class CollectionTaskNameEditPart extends CompartmentEditPart implements I
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = PipelineParserProvider.getParser(PipelineElementTypes.CollectionTask_2013, getParserElement(),
+			parser = PipelineParserProvider.getParser(PipelineElementTypes.CollectionTask_2025, getParserElement(),
 					PipelineVisualIDRegistry.getType(pipeline.diagram.edit.parts.CollectionTaskNameEditPart.VISUAL_ID));
 		}
 		return parser;

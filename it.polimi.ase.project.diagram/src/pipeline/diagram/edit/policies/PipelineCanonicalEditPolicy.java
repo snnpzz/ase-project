@@ -44,7 +44,7 @@ import pipeline.diagram.edit.parts.ExportEditPart;
 import pipeline.diagram.edit.parts.ExportingTaskEditPart;
 import pipeline.diagram.edit.parts.ImportEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
-import pipeline.diagram.edit.parts.PLEditPart;
+import pipeline.diagram.edit.parts.PipelineEditPart;
 import pipeline.diagram.edit.parts.PredefinedEditPart;
 import pipeline.diagram.edit.parts.PredictiveEditPart;
 import pipeline.diagram.edit.parts.UserDefinedEditPart;
@@ -57,7 +57,7 @@ import pipeline.diagram.part.PipelineVisualIDRegistry;
 /**
  * @generated
  */
-public class PLCanonicalEditPolicy extends CanonicalEditPolicy {
+public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	* @generated
@@ -75,7 +75,7 @@ public class PLCanonicalEditPolicy extends CanonicalEditPolicy {
 	* @generated
 	*/
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return PipelinePackage.eINSTANCE.getPL_Tasks();
+		return PipelinePackage.eINSTANCE.getPipeline_Tasks();
 	}
 
 	/**
@@ -86,7 +86,8 @@ public class PLCanonicalEditPolicy extends CanonicalEditPolicy {
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<PipelineNodeDescriptor> childDescriptors = PipelineDiagramUpdater.getPL_1000SemanticChildren(viewObject);
+		List<PipelineNodeDescriptor> childDescriptors = PipelineDiagramUpdater
+				.getPipeline_1000SemanticChildren(viewObject);
 		for (PipelineNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -136,7 +137,7 @@ public class PLCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<PipelineNodeDescriptor> childDescriptors = PipelineDiagramUpdater
-				.getPL_1000SemanticChildren((View) getHost().getModel());
+				.getPipeline_1000SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours and not shortcuts
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -262,119 +263,119 @@ public class PLCanonicalEditPolicy extends CanonicalEditPolicy {
 	* @generated
 	*/
 	private Collection<PipelineLinkDescriptor> collectAllLinks(View view, Domain2Notation domain2NotationMap) {
-		if (!PLEditPart.MODEL_ID.equals(PipelineVisualIDRegistry.getModelID(view))) {
+		if (!PipelineEditPart.MODEL_ID.equals(PipelineVisualIDRegistry.getModelID(view))) {
 			return Collections.emptyList();
 		}
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		switch (PipelineVisualIDRegistry.getVisualID(view)) {
-		case PLEditPart.VISUAL_ID: {
+		case PipelineEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getPL_1000ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getPipeline_1000ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case CollectionTaskEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getCollectionTask_2013ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getCollectionTask_2025ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case IntegrationTaskEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getIntegrationTask_2014ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getIntegrationTask_2026ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case CleaningTaskEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getCleaningTask_2015ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getCleaningTask_2027ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case AnalyzesTaskEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getAnalyzesTask_2016ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getAnalyzesTask_2028ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case VisualizationTaskEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getVisualizationTask_2017ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getVisualizationTask_2029ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ExportingTaskEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getExportingTask_2018ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getExportingTask_2030ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ImportEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getImport_3017ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getImport_3025ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case UserDefinedEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getUserDefined_3018ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getUserDefined_3026ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case PredefinedEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getPredefined_3019ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getPredefined_3027ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case DescriptiveEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getDescriptive_3020ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getDescriptive_3028ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ClassificationEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getClassification_3021ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getClassification_3029ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case PredictiveEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getPredictive_3022ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getPredictive_3030ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ClusteringEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getClustering_3023ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getClustering_3031ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ExportEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getExport_3024ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getExport_3032ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case DataflowEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getDataflow_4003ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getDataflow_4004ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

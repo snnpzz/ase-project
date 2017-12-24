@@ -461,77 +461,77 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_PL_1000_links;
+	public static String NavigatorGroupName_Pipeline_1000_links;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_CollectionTask_2013_incominglinks;
+	public static String NavigatorGroupName_CollectionTask_2025_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_CollectionTask_2013_outgoinglinks;
+	public static String NavigatorGroupName_CollectionTask_2025_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_IntegrationTask_2014_incominglinks;
+	public static String NavigatorGroupName_IntegrationTask_2026_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_IntegrationTask_2014_outgoinglinks;
+	public static String NavigatorGroupName_IntegrationTask_2026_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_CleaningTask_2015_incominglinks;
+	public static String NavigatorGroupName_CleaningTask_2027_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_CleaningTask_2015_outgoinglinks;
+	public static String NavigatorGroupName_CleaningTask_2027_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_AnalyzesTask_2016_incominglinks;
+	public static String NavigatorGroupName_AnalyzesTask_2028_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_AnalyzesTask_2016_outgoinglinks;
+	public static String NavigatorGroupName_AnalyzesTask_2028_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_VisualizationTask_2017_incominglinks;
+	public static String NavigatorGroupName_VisualizationTask_2029_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_VisualizationTask_2017_outgoinglinks;
+	public static String NavigatorGroupName_VisualizationTask_2029_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_ExportingTask_2018_incominglinks;
+	public static String NavigatorGroupName_ExportingTask_2030_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_ExportingTask_2018_outgoinglinks;
+	public static String NavigatorGroupName_ExportingTask_2030_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Dataflow_4003_target;
+	public static String NavigatorGroupName_Dataflow_4004_target;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Dataflow_4003_source;
+	public static String NavigatorGroupName_Dataflow_4004_source;
 
 	/**
 	* @generated

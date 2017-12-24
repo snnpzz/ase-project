@@ -25,8 +25,8 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			View view = (View) model;
 			switch (PipelineVisualIDRegistry.getVisualID(view)) {
 
-			case PLEditPart.VISUAL_ID:
-				return new PLEditPart(view);
+			case PipelineEditPart.VISUAL_ID:
+				return new PipelineEditPart(view);
 
 			case CollectionTaskEditPart.VISUAL_ID:
 				return new CollectionTaskEditPart(view);

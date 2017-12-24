@@ -40,7 +40,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
 
-import pipeline.diagram.edit.parts.PLEditPart;
+import pipeline.diagram.edit.parts.PipelineEditPart;
 import pipeline.diagram.part.PipelineDiagramEditor;
 import pipeline.diagram.part.PipelineDiagramEditorPlugin;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
@@ -102,7 +102,7 @@ public class PipelineValidationDecoratorProvider extends AbstractProvider implem
 		}
 		IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation) operation).getDecoratorTarget();
 		View view = (View) decoratorTarget.getAdapter(View.class);
-		return view != null && PLEditPart.MODEL_ID.equals(PipelineVisualIDRegistry.getModelID(view));
+		return view != null && PipelineEditPart.MODEL_ID.equals(PipelineVisualIDRegistry.getModelID(view));
 	}
 
 	/**

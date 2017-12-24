@@ -35,7 +35,7 @@ public class ExportingTaskItemSemanticEditPolicy extends PipelineBaseItemSemanti
 	* @generated
 	*/
 	public ExportingTaskItemSemanticEditPolicy() {
-		super(PipelineElementTypes.ExportingTask_2018);
+		super(PipelineElementTypes.ExportingTask_2030);
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class ExportingTaskItemSemanticEditPolicy extends PipelineBaseItemSemanti
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.Dataflow_4003 == req.getElementType()) {
+		if (PipelineElementTypes.Dataflow_4004 == req.getElementType()) {
 			return getGEFWrapper(new DataflowCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -124,7 +124,7 @@ public class ExportingTaskItemSemanticEditPolicy extends PipelineBaseItemSemanti
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.Dataflow_4003 == req.getElementType()) {
+		if (PipelineElementTypes.Dataflow_4004 == req.getElementType()) {
 			return getGEFWrapper(new DataflowCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;

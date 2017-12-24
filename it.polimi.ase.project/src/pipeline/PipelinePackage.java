@@ -38,7 +38,7 @@ public interface PipelinePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.ase.polimi.it/project/pipeline";
+	String eNS_URI = "http://www.project.ase.polimi.it/pipeline";
 
 	/**
 	 * The package namespace name.
@@ -57,14 +57,14 @@ public interface PipelinePackage extends EPackage {
 	PipelinePackage eINSTANCE = pipeline.impl.PipelinePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.PLImpl <em>PL</em>}' class.
+	 * The meta object id for the '{@link pipeline.impl.PipelineImpl <em>Pipeline</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.PLImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getPL()
+	 * @see pipeline.impl.PipelineImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getPipeline()
 	 * @generated
 	 */
-	int PL = 0;
+	int PIPELINE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Dataflows</b></em>' containment reference list.
@@ -73,7 +73,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PL__DATAFLOWS = 0;
+	int PIPELINE__DATAFLOWS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Tasks</b></em>' containment reference list.
@@ -82,16 +82,16 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PL__TASKS = 1;
+	int PIPELINE__TASKS = 1;
 
 	/**
-	 * The number of structural features of the '<em>PL</em>' class.
+	 * The number of structural features of the '<em>Pipeline</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PL_FEATURE_COUNT = 2;
+	int PIPELINE_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.TaskImpl <em>Task</em>}' class.
@@ -855,14 +855,14 @@ public interface PipelinePackage extends EPackage {
 	int EXPORT_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.CleaningOpImpl <em>Cleaning Op</em>}' class.
+	 * The meta object id for the '{@link pipeline.impl.CleaningOperationImpl <em>Cleaning Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.CleaningOpImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getCleaningOp()
+	 * @see pipeline.impl.CleaningOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getCleaningOperation()
 	 * @generated
 	 */
-	int CLEANING_OP = 18;
+	int CLEANING_OPERATION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -871,7 +871,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLEANING_OP__NAME = OPERATION__NAME;
+	int CLEANING_OPERATION__NAME = OPERATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -880,7 +880,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLEANING_OP__INCOMING = OPERATION__INCOMING;
+	int CLEANING_OPERATION__INCOMING = OPERATION__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
@@ -889,16 +889,16 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLEANING_OP__OUTGOING = OPERATION__OUTGOING;
+	int CLEANING_OPERATION__OUTGOING = OPERATION__OUTGOING;
 
 	/**
-	 * The number of structural features of the '<em>Cleaning Op</em>' class.
+	 * The number of structural features of the '<em>Cleaning Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLEANING_OP_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 0;
+	int CLEANING_OPERATION_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.UserDefinedImpl <em>User Defined</em>}' class.
@@ -917,7 +917,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_DEFINED__NAME = CLEANING_OP__NAME;
+	int USER_DEFINED__NAME = CLEANING_OPERATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -926,7 +926,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_DEFINED__INCOMING = CLEANING_OP__INCOMING;
+	int USER_DEFINED__INCOMING = CLEANING_OPERATION__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
@@ -935,7 +935,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_DEFINED__OUTGOING = CLEANING_OP__OUTGOING;
+	int USER_DEFINED__OUTGOING = CLEANING_OPERATION__OUTGOING;
 
 	/**
 	 * The number of structural features of the '<em>User Defined</em>' class.
@@ -944,7 +944,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_DEFINED_FEATURE_COUNT = CLEANING_OP_FEATURE_COUNT + 0;
+	int USER_DEFINED_FEATURE_COUNT = CLEANING_OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.SourceImpl <em>Source</em>}' class.
@@ -1285,7 +1285,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDEFINED__NAME = CLEANING_OP__NAME;
+	int PREDEFINED__NAME = CLEANING_OPERATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1294,7 +1294,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDEFINED__INCOMING = CLEANING_OP__INCOMING;
+	int PREDEFINED__INCOMING = CLEANING_OPERATION__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
@@ -1303,7 +1303,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDEFINED__OUTGOING = CLEANING_OP__OUTGOING;
+	int PREDEFINED__OUTGOING = CLEANING_OPERATION__OUTGOING;
 
 	/**
 	 * The number of structural features of the '<em>Predefined</em>' class.
@@ -1312,7 +1312,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDEFINED_FEATURE_COUNT = CLEANING_OP_FEATURE_COUNT + 0;
+	int PREDEFINED_FEATURE_COUNT = CLEANING_OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link pipeline.Format <em>Format</em>}' enum.
@@ -1326,36 +1326,36 @@ public interface PipelinePackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link pipeline.PL <em>PL</em>}'.
+	 * Returns the meta object for class '{@link pipeline.Pipeline <em>Pipeline</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>PL</em>'.
-	 * @see pipeline.PL
+	 * @return the meta object for class '<em>Pipeline</em>'.
+	 * @see pipeline.Pipeline
 	 * @generated
 	 */
-	EClass getPL();
+	EClass getPipeline();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link pipeline.PL#getDataflows <em>Dataflows</em>}'.
+	 * Returns the meta object for the containment reference list '{@link pipeline.Pipeline#getDataflows <em>Dataflows</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Dataflows</em>'.
-	 * @see pipeline.PL#getDataflows()
-	 * @see #getPL()
+	 * @see pipeline.Pipeline#getDataflows()
+	 * @see #getPipeline()
 	 * @generated
 	 */
-	EReference getPL_Dataflows();
+	EReference getPipeline_Dataflows();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link pipeline.PL#getTasks <em>Tasks</em>}'.
+	 * Returns the meta object for the containment reference list '{@link pipeline.Pipeline#getTasks <em>Tasks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Tasks</em>'.
-	 * @see pipeline.PL#getTasks()
-	 * @see #getPL()
+	 * @see pipeline.Pipeline#getTasks()
+	 * @see #getPipeline()
 	 * @generated
 	 */
-	EReference getPL_Tasks();
+	EReference getPipeline_Tasks();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Task <em>Task</em>}'.
@@ -1935,14 +1935,14 @@ public interface PipelinePackage extends EPackage {
 	EReference getFile_ComesFrom();
 
 	/**
-	 * Returns the meta object for class '{@link pipeline.CleaningOp <em>Cleaning Op</em>}'.
+	 * Returns the meta object for class '{@link pipeline.CleaningOperation <em>Cleaning Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Cleaning Op</em>'.
-	 * @see pipeline.CleaningOp
+	 * @return the meta object for class '<em>Cleaning Operation</em>'.
+	 * @see pipeline.CleaningOperation
 	 * @generated
 	 */
-	EClass getCleaningOp();
+	EClass getCleaningOperation();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.AnalysisOp <em>Analysis Op</em>}'.
@@ -2037,14 +2037,14 @@ public interface PipelinePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link pipeline.impl.PLImpl <em>PL</em>}' class.
+		 * The meta object literal for the '{@link pipeline.impl.PipelineImpl <em>Pipeline</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.PLImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getPL()
+		 * @see pipeline.impl.PipelineImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getPipeline()
 		 * @generated
 		 */
-		EClass PL = eINSTANCE.getPL();
+		EClass PIPELINE = eINSTANCE.getPipeline();
 
 		/**
 		 * The meta object literal for the '<em><b>Dataflows</b></em>' containment reference list feature.
@@ -2052,7 +2052,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PL__DATAFLOWS = eINSTANCE.getPL_Dataflows();
+		EReference PIPELINE__DATAFLOWS = eINSTANCE.getPipeline_Dataflows();
 
 		/**
 		 * The meta object literal for the '<em><b>Tasks</b></em>' containment reference list feature.
@@ -2060,7 +2060,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PL__TASKS = eINSTANCE.getPL_Tasks();
+		EReference PIPELINE__TASKS = eINSTANCE.getPipeline_Tasks();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.TaskImpl <em>Task</em>}' class.
@@ -2529,14 +2529,14 @@ public interface PipelinePackage extends EPackage {
 		EReference FILE__COMES_FROM = eINSTANCE.getFile_ComesFrom();
 
 		/**
-		 * The meta object literal for the '{@link pipeline.impl.CleaningOpImpl <em>Cleaning Op</em>}' class.
+		 * The meta object literal for the '{@link pipeline.impl.CleaningOperationImpl <em>Cleaning Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.CleaningOpImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getCleaningOp()
+		 * @see pipeline.impl.CleaningOperationImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getCleaningOperation()
 		 * @generated
 		 */
-		EClass CLEANING_OP = eINSTANCE.getCleaningOp();
+		EClass CLEANING_OPERATION = eINSTANCE.getCleaningOperation();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.AnalysisOpImpl <em>Analysis Op</em>}' class.

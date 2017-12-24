@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated pipeline -->
       <factory
-            uri="http://www.ase.polimi.it/project/pipeline"
+            uri="http://www.project.ase.polimi.it/pipeline"
             class="pipeline.provider.PipelineItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

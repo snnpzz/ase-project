@@ -60,7 +60,7 @@ public class ExportNameEditPart extends CompartmentEditPart implements ITextAwar
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5049;
+	public static final int VISUAL_ID = 5069;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class ExportNameEditPart extends CompartmentEditPart implements ITextAwar
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = PipelineParserProvider.getParser(PipelineElementTypes.Export_3024, getParserElement(),
+			parser = PipelineParserProvider.getParser(PipelineElementTypes.Export_3032, getParserElement(),
 					PipelineVisualIDRegistry.getType(pipeline.diagram.edit.parts.ExportNameEditPart.VISUAL_ID));
 		}
 		return parser;

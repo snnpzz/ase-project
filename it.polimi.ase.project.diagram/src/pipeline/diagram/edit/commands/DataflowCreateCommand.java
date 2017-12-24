@@ -16,6 +16,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
 import pipeline.Dataflow;
+import pipeline.Pipeline;
 import pipeline.PipelineFactory;
 import pipeline.Task;
 import pipeline.diagram.edit.policies.PipelineBaseItemSemanticEditPolicy;
@@ -38,7 +39,7 @@ public class DataflowCreateCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	private final pipeline.PL container;
+	private final Pipeline container;
 
 	/**
 	* @generated
@@ -70,7 +71,7 @@ public class DataflowCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canCreateDataflow_4003(getContainer(),
+		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canCreateDataflow_4004(getContainer(),
 				getSource(), getTarget());
 	}
 
@@ -133,7 +134,7 @@ public class DataflowCreateCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	public pipeline.PL getContainer() {
+	public Pipeline getContainer() {
 		return container;
 	}
 
@@ -142,13 +143,13 @@ public class DataflowCreateCommand extends EditElementCommand {
 	* Modify with appropriate logic.
 	* @generated
 	*/
-	private static pipeline.PL deduceContainer(EObject source, EObject target) {
+	private static Pipeline deduceContainer(EObject source, EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element.eContainer()) {
-			if (element instanceof pipeline.PL) {
-				return (pipeline.PL) element;
+			if (element instanceof Pipeline) {
+				return (Pipeline) element;
 			}
 		}
 		return null;

@@ -43,7 +43,7 @@ import pipeline.diagram.edit.parts.ExportingTaskEditPart;
 import pipeline.diagram.edit.parts.ExportingTaskExportingTaskExportsCompartmentEditPart;
 import pipeline.diagram.edit.parts.ImportEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
-import pipeline.diagram.edit.parts.PLEditPart;
+import pipeline.diagram.edit.parts.PipelineEditPart;
 import pipeline.diagram.edit.parts.PredefinedEditPart;
 import pipeline.diagram.edit.parts.PredictiveEditPart;
 import pipeline.diagram.edit.parts.UserDefinedEditPart;
@@ -205,7 +205,7 @@ public class PipelineNavigatorContentProvider implements ICommonContentProvider 
 					topViews.add((View) o);
 				}
 			}
-			result.addAll(createNavigatorItems(selectViewsByType(topViews, PLEditPart.MODEL_ID), file, false));
+			result.addAll(createNavigatorItems(selectViewsByType(topViews, PipelineEditPart.MODEL_ID), file, false));
 			return result.toArray();
 		}
 
@@ -242,11 +242,11 @@ public class PipelineNavigatorContentProvider implements ICommonContentProvider 
 	private Object[] getViewChildren(View view, Object parentElement) {
 		switch (PipelineVisualIDRegistry.getVisualID(view)) {
 
-		case PLEditPart.VISUAL_ID: {
+		case PipelineEditPart.VISUAL_ID: {
 			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
 			result.addAll(getForeignShortcuts((Diagram) view, parentElement));
 			Diagram sv = (Diagram) view;
-			PipelineNavigatorGroup links = new PipelineNavigatorGroup(Messages.NavigatorGroupName_PL_1000_links,
+			PipelineNavigatorGroup links = new PipelineNavigatorGroup(Messages.NavigatorGroupName_Pipeline_1000_links,
 					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
@@ -280,10 +280,10 @@ public class PipelineNavigatorContentProvider implements ICommonContentProvider 
 			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_CollectionTask_2013_incominglinks,
+					Messages.NavigatorGroupName_CollectionTask_2025_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_CollectionTask_2013_outgoinglinks,
+					Messages.NavigatorGroupName_CollectionTask_2025_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
@@ -310,10 +310,10 @@ public class PipelineNavigatorContentProvider implements ICommonContentProvider 
 			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_IntegrationTask_2014_incominglinks,
+					Messages.NavigatorGroupName_IntegrationTask_2026_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_IntegrationTask_2014_outgoinglinks,
+					Messages.NavigatorGroupName_IntegrationTask_2026_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
@@ -335,10 +335,10 @@ public class PipelineNavigatorContentProvider implements ICommonContentProvider 
 			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_CleaningTask_2015_incominglinks,
+					Messages.NavigatorGroupName_CleaningTask_2027_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_CleaningTask_2015_outgoinglinks,
+					Messages.NavigatorGroupName_CleaningTask_2027_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
@@ -370,10 +370,10 @@ public class PipelineNavigatorContentProvider implements ICommonContentProvider 
 			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_AnalyzesTask_2016_incominglinks,
+					Messages.NavigatorGroupName_AnalyzesTask_2028_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_AnalyzesTask_2016_outgoinglinks,
+					Messages.NavigatorGroupName_AnalyzesTask_2028_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
@@ -415,10 +415,10 @@ public class PipelineNavigatorContentProvider implements ICommonContentProvider 
 			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_VisualizationTask_2017_incominglinks,
+					Messages.NavigatorGroupName_VisualizationTask_2029_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_VisualizationTask_2017_outgoinglinks,
+					Messages.NavigatorGroupName_VisualizationTask_2029_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
@@ -440,10 +440,10 @@ public class PipelineNavigatorContentProvider implements ICommonContentProvider 
 			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_ExportingTask_2018_incominglinks,
+					Messages.NavigatorGroupName_ExportingTask_2030_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_ExportingTask_2018_outgoinglinks,
+					Messages.NavigatorGroupName_ExportingTask_2030_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
@@ -469,9 +469,9 @@ public class PipelineNavigatorContentProvider implements ICommonContentProvider 
 		case DataflowEditPart.VISUAL_ID: {
 			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
-			PipelineNavigatorGroup target = new PipelineNavigatorGroup(Messages.NavigatorGroupName_Dataflow_4003_target,
+			PipelineNavigatorGroup target = new PipelineNavigatorGroup(Messages.NavigatorGroupName_Dataflow_4004_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			PipelineNavigatorGroup source = new PipelineNavigatorGroup(Messages.NavigatorGroupName_Dataflow_4003_source,
+			PipelineNavigatorGroup source = new PipelineNavigatorGroup(Messages.NavigatorGroupName_Dataflow_4004_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
@@ -612,7 +612,7 @@ public class PipelineNavigatorContentProvider implements ICommonContentProvider 
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return PLEditPart.MODEL_ID.equals(PipelineVisualIDRegistry.getModelID(view));
+		return PipelineEditPart.MODEL_ID.equals(PipelineVisualIDRegistry.getModelID(view));
 	}
 
 	/**

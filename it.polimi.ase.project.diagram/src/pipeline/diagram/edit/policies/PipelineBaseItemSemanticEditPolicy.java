@@ -36,6 +36,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 
 import pipeline.Dataflow;
+import pipeline.Pipeline;
 import pipeline.Task;
 import pipeline.diagram.part.PipelineDiagramEditorPlugin;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
@@ -308,16 +309,16 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateDataflow_4003(pipeline.PL container, Task source, Task target) {
-			return canExistDataflow_4003(container, null, source, target);
+		* @generated
+		*/
+		public boolean canCreateDataflow_4004(Pipeline container, Task source, Task target) {
+			return canExistDataflow_4004(container, null, source, target);
 		}
 
 		/**
 		* @generated
 		*/
-		public boolean canExistDataflow_4003(pipeline.PL container, Dataflow linkInstance, Task source, Task target) {
+		public boolean canExistDataflow_4004(Pipeline container, Dataflow linkInstance, Task source, Task target) {
 			return true;
 		}
 	}

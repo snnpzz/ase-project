@@ -19,14 +19,14 @@ public class CollectionTaskCollectionTaskImportsCompartmentItemSemanticEditPolic
 	* @generated
 	*/
 	public CollectionTaskCollectionTaskImportsCompartmentItemSemanticEditPolicy() {
-		super(PipelineElementTypes.CollectionTask_2013);
+		super(PipelineElementTypes.CollectionTask_2025);
 	}
 
 	/**
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (PipelineElementTypes.Import_3017 == req.getElementType()) {
+		if (PipelineElementTypes.Import_3025 == req.getElementType()) {
 			return getGEFWrapper(new ImportCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

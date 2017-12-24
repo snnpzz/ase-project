@@ -22,13 +22,13 @@ public interface PipelineFactory extends EFactory {
 	PipelineFactory eINSTANCE = pipeline.impl.PipelineFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>PL</em>'.
+	 * Returns a new object of class '<em>Pipeline</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>PL</em>'.
+	 * @return a new object of class '<em>Pipeline</em>'.
 	 * @generated
 	 */
-	PL createPL();
+	Pipeline createPipeline();
 
 	/**
 	 * Returns a new object of class '<em>Dataflow</em>'.

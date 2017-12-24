@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
+import pipeline.Pipeline;
 import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.AnalyzesTaskAnalyzesTaskAnalyzesCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalyzesTaskEditPart;
@@ -36,7 +37,7 @@ import pipeline.diagram.edit.parts.ImportEditPart;
 import pipeline.diagram.edit.parts.ImportNameEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskNameEditPart;
-import pipeline.diagram.edit.parts.PLEditPart;
+import pipeline.diagram.edit.parts.PipelineEditPart;
 import pipeline.diagram.edit.parts.PredefinedEditPart;
 import pipeline.diagram.edit.parts.PredefinedNameEditPart;
 import pipeline.diagram.edit.parts.PredictiveEditPart;
@@ -65,8 +66,8 @@ public class PipelineVisualIDRegistry {
 	*/
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
-			if (PLEditPart.MODEL_ID.equals(view.getType())) {
-				return PLEditPart.VISUAL_ID;
+			if (PipelineEditPart.MODEL_ID.equals(view.getType())) {
+				return PipelineEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
@@ -118,9 +119,9 @@ public class PipelineVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (PipelinePackage.eINSTANCE.getPL().isSuperTypeOf(domainElement.eClass())
-				&& isDiagram((pipeline.PL) domainElement)) {
-			return PLEditPart.VISUAL_ID;
+		if (PipelinePackage.eINSTANCE.getPipeline().isSuperTypeOf(domainElement.eClass())
+				&& isDiagram((Pipeline) domainElement)) {
+			return PipelineEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -133,21 +134,21 @@ public class PipelineVisualIDRegistry {
 			return -1;
 		}
 		String containerModelID = pipeline.diagram.part.PipelineVisualIDRegistry.getModelID(containerView);
-		if (!PLEditPart.MODEL_ID.equals(containerModelID) && !"pipeline".equals(containerModelID)) { //$NON-NLS-1$
+		if (!PipelineEditPart.MODEL_ID.equals(containerModelID) && !"pipeline".equals(containerModelID)) { //$NON-NLS-1$
 			return -1;
 		}
 		int containerVisualID;
-		if (PLEditPart.MODEL_ID.equals(containerModelID)) {
+		if (PipelineEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = pipeline.diagram.part.PipelineVisualIDRegistry.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = PLEditPart.VISUAL_ID;
+				containerVisualID = PipelineEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
 		}
 		switch (containerVisualID) {
-		case PLEditPart.VISUAL_ID:
+		case PipelineEditPart.VISUAL_ID:
 			if (PipelinePackage.eINSTANCE.getCollectionTask().isSuperTypeOf(domainElement.eClass())) {
 				return CollectionTaskEditPart.VISUAL_ID;
 			}
@@ -208,21 +209,21 @@ public class PipelineVisualIDRegistry {
 	*/
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = pipeline.diagram.part.PipelineVisualIDRegistry.getModelID(containerView);
-		if (!PLEditPart.MODEL_ID.equals(containerModelID) && !"pipeline".equals(containerModelID)) { //$NON-NLS-1$
+		if (!PipelineEditPart.MODEL_ID.equals(containerModelID) && !"pipeline".equals(containerModelID)) { //$NON-NLS-1$
 			return false;
 		}
 		int containerVisualID;
-		if (PLEditPart.MODEL_ID.equals(containerModelID)) {
+		if (PipelineEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = pipeline.diagram.part.PipelineVisualIDRegistry.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = PLEditPart.VISUAL_ID;
+				containerVisualID = PipelineEditPart.VISUAL_ID;
 			} else {
 				return false;
 			}
 		}
 		switch (containerVisualID) {
-		case PLEditPart.VISUAL_ID:
+		case PipelineEditPart.VISUAL_ID:
 			if (CollectionTaskEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -379,7 +380,7 @@ public class PipelineVisualIDRegistry {
 	* 
 	* @generated
 	*/
-	private static boolean isDiagram(pipeline.PL element) {
+	private static boolean isDiagram(Pipeline element) {
 		return true;
 	}
 
@@ -416,7 +417,7 @@ public class PipelineVisualIDRegistry {
 	*/
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
-		case PLEditPart.VISUAL_ID:
+		case PipelineEditPart.VISUAL_ID:
 			return false;
 		case IntegrationTaskEditPart.VISUAL_ID:
 		case VisualizationTaskEditPart.VISUAL_ID:

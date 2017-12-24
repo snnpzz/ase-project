@@ -25,7 +25,7 @@ import org.eclipse.ui.navigator.ICommonActionExtensionSite;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 import org.eclipse.ui.part.FileEditorInput;
 
-import pipeline.diagram.edit.parts.PLEditPart;
+import pipeline.diagram.edit.parts.PipelineEditPart;
 import pipeline.diagram.part.Messages;
 import pipeline.diagram.part.PipelineDiagramEditor;
 import pipeline.diagram.part.PipelineDiagramEditorPlugin;
@@ -123,7 +123,7 @@ public class PipelineNavigatorActionProvider extends CommonActionProvider {
 				}
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;
-					if (PLEditPart.MODEL_ID.equals(PipelineVisualIDRegistry.getModelID(diagram))) {
+					if (PipelineEditPart.MODEL_ID.equals(PipelineVisualIDRegistry.getModelID(diagram))) {
 						myDiagram = diagram;
 					}
 				}

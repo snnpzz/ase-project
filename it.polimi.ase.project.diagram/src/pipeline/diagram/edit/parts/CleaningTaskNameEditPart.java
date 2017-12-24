@@ -60,7 +60,7 @@ public class CleaningTaskNameEditPart extends CompartmentEditPart implements ITe
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5042;
+	public static final int VISUAL_ID = 5062;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class CleaningTaskNameEditPart extends CompartmentEditPart implements ITe
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = PipelineParserProvider.getParser(PipelineElementTypes.CleaningTask_2015, getParserElement(),
+			parser = PipelineParserProvider.getParser(PipelineElementTypes.CleaningTask_2027, getParserElement(),
 					PipelineVisualIDRegistry.getType(pipeline.diagram.edit.parts.CleaningTaskNameEditPart.VISUAL_ID));
 		}
 		return parser;

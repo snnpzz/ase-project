@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
 public interface CleaningTask extends Task {
 	/**
 	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
-	 * The list contents are of type {@link pipeline.CleaningOp}.
+	 * The list contents are of type {@link pipeline.CleaningOperation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Operations</em>' containment reference list isn't clear,
@@ -35,6 +35,6 @@ public interface CleaningTask extends Task {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<CleaningOp> getOperations();
+	EList<CleaningOperation> getOperations();
 
 } // CleaningTask

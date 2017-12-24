@@ -20,17 +20,17 @@ public class CleaningTaskCleaningTaskOperationsCompartmentItemSemanticEditPolicy
 	* @generated
 	*/
 	public CleaningTaskCleaningTaskOperationsCompartmentItemSemanticEditPolicy() {
-		super(PipelineElementTypes.CleaningTask_2015);
+		super(PipelineElementTypes.CleaningTask_2027);
 	}
 
 	/**
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (PipelineElementTypes.UserDefined_3018 == req.getElementType()) {
+		if (PipelineElementTypes.UserDefined_3026 == req.getElementType()) {
 			return getGEFWrapper(new UserDefinedCreateCommand(req));
 		}
-		if (PipelineElementTypes.Predefined_3019 == req.getElementType()) {
+		if (PipelineElementTypes.Predefined_3027 == req.getElementType()) {
 			return getGEFWrapper(new PredefinedCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

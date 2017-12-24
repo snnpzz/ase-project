@@ -39,7 +39,7 @@ public class IntegrationTaskEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 2014;
+	public static final int VISUAL_ID = 2026;
 
 	/**
 	* @generated

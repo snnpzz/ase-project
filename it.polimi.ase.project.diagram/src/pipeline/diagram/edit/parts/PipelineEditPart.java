@@ -21,14 +21,14 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 
 import pipeline.diagram.edit.commands.PipelineCreateShortcutDecorationsCommand;
-import pipeline.diagram.edit.policies.PLCanonicalEditPolicy;
-import pipeline.diagram.edit.policies.PLItemSemanticEditPolicy;
+import pipeline.diagram.edit.policies.PipelineCanonicalEditPolicy;
+import pipeline.diagram.edit.policies.PipelineItemSemanticEditPolicy;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 
 /**
  * @generated
  */
-public class PLEditPart extends DiagramEditPart {
+public class PipelineEditPart extends DiagramEditPart {
 
 	/**
 	* @generated
@@ -43,7 +43,7 @@ public class PLEditPart extends DiagramEditPart {
 	/**
 	* @generated
 	*/
-	public PLEditPart(View view) {
+	public PipelineEditPart(View view) {
 		super(view);
 	}
 
@@ -52,8 +52,8 @@ public class PLEditPart extends DiagramEditPart {
 	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PLItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new PLCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PipelineItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new PipelineCanonicalEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(PipelineVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DiagramDragDropEditPolicy() {

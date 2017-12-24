@@ -34,7 +34,7 @@ public class AnalyzesTaskAnalyzesTaskAnalyzesCompartmentEditPart extends ShapeCo
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 7011;
+	public static final int VISUAL_ID = 7019;
 
 	/**
 	* @generated
@@ -91,16 +91,16 @@ public class AnalyzesTaskAnalyzesTaskAnalyzesCompartmentEditPart extends ShapeCo
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == PipelineElementTypes.Descriptive_3020) {
+			if (type == PipelineElementTypes.Descriptive_3028) {
 				return this;
 			}
-			if (type == PipelineElementTypes.Classification_3021) {
+			if (type == PipelineElementTypes.Classification_3029) {
 				return this;
 			}
-			if (type == PipelineElementTypes.Predictive_3022) {
+			if (type == PipelineElementTypes.Predictive_3030) {
 				return this;
 			}
-			if (type == PipelineElementTypes.Clustering_3023) {
+			if (type == PipelineElementTypes.Clustering_3031) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

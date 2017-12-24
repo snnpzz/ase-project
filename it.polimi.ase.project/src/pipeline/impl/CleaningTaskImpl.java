@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import pipeline.CleaningOp;
+import pipeline.CleaningOperation;
 import pipeline.CleaningTask;
 import pipeline.PipelinePackage;
 
@@ -40,7 +41,7 @@ public class CleaningTaskImpl extends TaskImpl implements CleaningTask {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CleaningOp> operations;
+	protected EList<CleaningOperation> operations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,9 +67,9 @@ public class CleaningTaskImpl extends TaskImpl implements CleaningTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CleaningOp> getOperations() {
+	public EList<CleaningOperation> getOperations() {
 		if (operations == null) {
-			operations = new EObjectContainmentEList<CleaningOp>(CleaningOp.class, this, PipelinePackage.CLEANING_TASK__OPERATIONS);
+			operations = new EObjectContainmentEList<CleaningOperation>(CleaningOperation.class, this, PipelinePackage.CLEANING_TASK__OPERATIONS);
 		}
 		return operations;
 	}
@@ -112,7 +113,7 @@ public class CleaningTaskImpl extends TaskImpl implements CleaningTask {
 		switch (featureID) {
 			case PipelinePackage.CLEANING_TASK__OPERATIONS:
 				getOperations().clear();
-				getOperations().addAll((Collection<? extends CleaningOp>)newValue);
+				getOperations().addAll((Collection<? extends CleaningOperation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

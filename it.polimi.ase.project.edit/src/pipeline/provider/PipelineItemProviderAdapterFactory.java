@@ -72,26 +72,26 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pipeline.PL} instances.
+	 * This keeps track of the one adapter used for all {@link pipeline.Pipeline} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PLItemProvider plItemProvider;
+	protected PipelineItemProvider pipelineItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pipeline.PL}.
+	 * This creates an adapter for a {@link pipeline.Pipeline}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPLAdapter() {
-		if (plItemProvider == null) {
-			plItemProvider = new PLItemProvider(this);
+	public Adapter createPipelineAdapter() {
+		if (pipelineItemProvider == null) {
+			pipelineItemProvider = new PipelineItemProvider(this);
 		}
 
-		return plItemProvider;
+		return pipelineItemProvider;
 	}
 
 	/**
@@ -653,7 +653,7 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 	 * @generated
 	 */
 	public void dispose() {
-		if (plItemProvider != null) plItemProvider.dispose();
+		if (pipelineItemProvider != null) pipelineItemProvider.dispose();
 		if (dataflowItemProvider != null) dataflowItemProvider.dispose();
 		if (internalDFItemProvider != null) internalDFItemProvider.dispose();
 		if (schemaItemProvider != null) schemaItemProvider.dispose();

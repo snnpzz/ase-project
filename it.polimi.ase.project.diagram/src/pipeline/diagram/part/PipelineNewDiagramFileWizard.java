@@ -31,7 +31,7 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 
-import pipeline.diagram.edit.parts.PLEditPart;
+import pipeline.diagram.edit.parts.PipelineEditPart;
 
 /**
  * @generated
@@ -66,7 +66,7 @@ public class PipelineNewDiagramFileWizard extends Wizard {
 				StructuredSelection.EMPTY);
 		myFileCreationPage.setTitle(Messages.PipelineNewDiagramFileWizard_CreationPageTitle);
 		myFileCreationPage.setDescription(
-				NLS.bind(Messages.PipelineNewDiagramFileWizard_CreationPageDescription, PLEditPart.MODEL_ID));
+				NLS.bind(Messages.PipelineNewDiagramFileWizard_CreationPageDescription, PipelineEditPart.MODEL_ID));
 		IPath filePath;
 		String fileName = URI.decode(domainModelURI.trimFileExtension().lastSegment());
 		if (domainModelURI.isPlatformResource()) {
@@ -117,12 +117,12 @@ public class PipelineNewDiagramFileWizard extends Wizard {
 					throws ExecutionException {
 				int diagramVID = PipelineVisualIDRegistry
 						.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
-				if (diagramVID != PLEditPart.VISUAL_ID) {
+				if (diagramVID != PipelineEditPart.VISUAL_ID) {
 					return CommandResult
 							.newErrorCommandResult(Messages.PipelineNewDiagramFileWizard_IncorrectRootError);
 				}
 				Diagram diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(),
-						PLEditPart.MODEL_ID, PipelineDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+						PipelineEditPart.MODEL_ID, PipelineDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
 				return CommandResult.newOKCommandResult();
 			}
@@ -169,8 +169,8 @@ public class PipelineNewDiagramFileWizard extends Wizard {
 				return false;
 			}
 			boolean result = ViewService.getInstance()
-					.provides(new CreateDiagramViewOperation(new EObjectAdapter(getModelElement()), PLEditPart.MODEL_ID,
-							PipelineDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+					.provides(new CreateDiagramViewOperation(new EObjectAdapter(getModelElement()),
+							PipelineEditPart.MODEL_ID, PipelineDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
 			setErrorMessage(
 					result ? null : Messages.PipelineNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
 			return result;

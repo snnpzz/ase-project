@@ -6,24 +6,24 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
-import pipeline.PL;
+import pipeline.Pipeline;
 import pipeline.PipelineFactory;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>PL</b></em>'.
+ * A test case for the model object '<em><b>Pipeline</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class PLTest extends TestCase {
+public class PipelineTest extends TestCase {
 
 	/**
-	 * The fixture for this PL test case.
+	 * The fixture for this Pipeline test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PL fixture = null;
+	protected Pipeline fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,36 +31,36 @@ public class PLTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(PLTest.class);
+		TestRunner.run(PipelineTest.class);
 	}
 
 	/**
-	 * Constructs a new PL test case with the given name.
+	 * Constructs a new Pipeline test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PLTest(String name) {
+	public PipelineTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this PL test case.
+	 * Sets the fixture for this Pipeline test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(PL fixture) {
+	protected void setFixture(Pipeline fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this PL test case.
+	 * Returns the fixture for this Pipeline test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PL getFixture() {
+	protected Pipeline getFixture() {
 		return fixture;
 	}
 
@@ -72,7 +72,7 @@ public class PLTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(PipelineFactory.eINSTANCE.createPL());
+		setFixture(PipelineFactory.eINSTANCE.createPipeline());
 	}
 
 	/**
@@ -86,4 +86,4 @@ public class PLTest extends TestCase {
 		setFixture(null);
 	}
 
-} //PLTest
+} //PipelineTest

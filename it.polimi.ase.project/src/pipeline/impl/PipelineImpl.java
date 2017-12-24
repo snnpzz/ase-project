@@ -17,25 +17,25 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import pipeline.Dataflow;
-import pipeline.PL;
+import pipeline.Pipeline;
 import pipeline.PipelinePackage;
 import pipeline.Task;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>PL</b></em>'.
+ * An implementation of the model object '<em><b>Pipeline</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.PLImpl#getDataflows <em>Dataflows</em>}</li>
- *   <li>{@link pipeline.impl.PLImpl#getTasks <em>Tasks</em>}</li>
+ *   <li>{@link pipeline.impl.PipelineImpl#getDataflows <em>Dataflows</em>}</li>
+ *   <li>{@link pipeline.impl.PipelineImpl#getTasks <em>Tasks</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PLImpl extends EObjectImpl implements PL {
+public class PipelineImpl extends EObjectImpl implements Pipeline {
 	/**
 	 * The cached value of the '{@link #getDataflows() <em>Dataflows</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public class PLImpl extends EObjectImpl implements PL {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PLImpl() {
+	protected PipelineImpl() {
 		super();
 	}
 
@@ -72,7 +72,7 @@ public class PLImpl extends EObjectImpl implements PL {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PipelinePackage.Literals.PL;
+		return PipelinePackage.Literals.PIPELINE;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class PLImpl extends EObjectImpl implements PL {
 	 */
 	public EList<Dataflow> getDataflows() {
 		if (dataflows == null) {
-			dataflows = new EObjectContainmentEList<Dataflow>(Dataflow.class, this, PipelinePackage.PL__DATAFLOWS);
+			dataflows = new EObjectContainmentEList<Dataflow>(Dataflow.class, this, PipelinePackage.PIPELINE__DATAFLOWS);
 		}
 		return dataflows;
 	}
@@ -94,7 +94,7 @@ public class PLImpl extends EObjectImpl implements PL {
 	 */
 	public EList<Task> getTasks() {
 		if (tasks == null) {
-			tasks = new EObjectContainmentEList<Task>(Task.class, this, PipelinePackage.PL__TASKS);
+			tasks = new EObjectContainmentEList<Task>(Task.class, this, PipelinePackage.PIPELINE__TASKS);
 		}
 		return tasks;
 	}
@@ -107,9 +107,9 @@ public class PLImpl extends EObjectImpl implements PL {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PipelinePackage.PL__DATAFLOWS:
+			case PipelinePackage.PIPELINE__DATAFLOWS:
 				return ((InternalEList<?>)getDataflows()).basicRemove(otherEnd, msgs);
-			case PipelinePackage.PL__TASKS:
+			case PipelinePackage.PIPELINE__TASKS:
 				return ((InternalEList<?>)getTasks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -123,9 +123,9 @@ public class PLImpl extends EObjectImpl implements PL {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.PL__DATAFLOWS:
+			case PipelinePackage.PIPELINE__DATAFLOWS:
 				return getDataflows();
-			case PipelinePackage.PL__TASKS:
+			case PipelinePackage.PIPELINE__TASKS:
 				return getTasks();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -140,11 +140,11 @@ public class PLImpl extends EObjectImpl implements PL {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.PL__DATAFLOWS:
+			case PipelinePackage.PIPELINE__DATAFLOWS:
 				getDataflows().clear();
 				getDataflows().addAll((Collection<? extends Dataflow>)newValue);
 				return;
-			case PipelinePackage.PL__TASKS:
+			case PipelinePackage.PIPELINE__TASKS:
 				getTasks().clear();
 				getTasks().addAll((Collection<? extends Task>)newValue);
 				return;
@@ -160,10 +160,10 @@ public class PLImpl extends EObjectImpl implements PL {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.PL__DATAFLOWS:
+			case PipelinePackage.PIPELINE__DATAFLOWS:
 				getDataflows().clear();
 				return;
-			case PipelinePackage.PL__TASKS:
+			case PipelinePackage.PIPELINE__TASKS:
 				getTasks().clear();
 				return;
 		}
@@ -178,12 +178,12 @@ public class PLImpl extends EObjectImpl implements PL {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.PL__DATAFLOWS:
+			case PipelinePackage.PIPELINE__DATAFLOWS:
 				return dataflows != null && !dataflows.isEmpty();
-			case PipelinePackage.PL__TASKS:
+			case PipelinePackage.PIPELINE__TASKS:
 				return tasks != null && !tasks.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //PLImpl
+} //PipelineImpl

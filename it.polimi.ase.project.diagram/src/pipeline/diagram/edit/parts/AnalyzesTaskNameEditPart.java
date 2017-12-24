@@ -60,7 +60,7 @@ public class AnalyzesTaskNameEditPart extends CompartmentEditPart implements ITe
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5047;
+	public static final int VISUAL_ID = 5067;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class AnalyzesTaskNameEditPart extends CompartmentEditPart implements ITe
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = PipelineParserProvider.getParser(PipelineElementTypes.AnalyzesTask_2016, getParserElement(),
+			parser = PipelineParserProvider.getParser(PipelineElementTypes.AnalyzesTask_2028, getParserElement(),
 					PipelineVisualIDRegistry.getType(pipeline.diagram.edit.parts.AnalyzesTaskNameEditPart.VISUAL_ID));
 		}
 		return parser;

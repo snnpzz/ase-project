@@ -60,7 +60,7 @@ public class IntegrationTaskNameEditPart extends CompartmentEditPart implements 
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5039;
+	public static final int VISUAL_ID = 5059;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class IntegrationTaskNameEditPart extends CompartmentEditPart implements 
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = PipelineParserProvider.getParser(PipelineElementTypes.IntegrationTask_2014, getParserElement(),
+			parser = PipelineParserProvider.getParser(PipelineElementTypes.IntegrationTask_2026, getParserElement(),
 					PipelineVisualIDRegistry
 							.getType(pipeline.diagram.edit.parts.IntegrationTaskNameEditPart.VISUAL_ID));
 		}

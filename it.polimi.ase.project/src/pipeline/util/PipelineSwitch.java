@@ -66,9 +66,9 @@ public class PipelineSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case PipelinePackage.PL: {
-				PL pl = (PL)theEObject;
-				T result = casePL(pl);
+			case PipelinePackage.PIPELINE: {
+				Pipeline pipeline = (Pipeline)theEObject;
+				T result = casePipeline(pipeline);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -165,7 +165,7 @@ public class PipelineSwitch<T> extends Switch<T> {
 			case PipelinePackage.USER_DEFINED: {
 				UserDefined userDefined = (UserDefined)theEObject;
 				T result = caseUserDefined(userDefined);
-				if (result == null) result = caseCleaningOp(userDefined);
+				if (result == null) result = caseCleaningOperation(userDefined);
 				if (result == null) result = caseOperation(userDefined);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -182,10 +182,10 @@ public class PipelineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.CLEANING_OP: {
-				CleaningOp cleaningOp = (CleaningOp)theEObject;
-				T result = caseCleaningOp(cleaningOp);
-				if (result == null) result = caseOperation(cleaningOp);
+			case PipelinePackage.CLEANING_OPERATION: {
+				CleaningOperation cleaningOperation = (CleaningOperation)theEObject;
+				T result = caseCleaningOperation(cleaningOperation);
+				if (result == null) result = caseOperation(cleaningOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -231,7 +231,7 @@ public class PipelineSwitch<T> extends Switch<T> {
 			case PipelinePackage.PREDEFINED: {
 				Predefined predefined = (Predefined)theEObject;
 				T result = casePredefined(predefined);
-				if (result == null) result = caseCleaningOp(predefined);
+				if (result == null) result = caseCleaningOperation(predefined);
 				if (result == null) result = caseOperation(predefined);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -241,17 +241,17 @@ public class PipelineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>PL</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Pipeline</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>PL</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Pipeline</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePL(PL object) {
+	public T casePipeline(Pipeline object) {
 		return null;
 	}
 
@@ -511,17 +511,17 @@ public class PipelineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Cleaning Op</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Cleaning Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Cleaning Op</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Cleaning Operation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCleaningOp(CleaningOp object) {
+	public T caseCleaningOperation(CleaningOperation object) {
 		return null;
 	}
 

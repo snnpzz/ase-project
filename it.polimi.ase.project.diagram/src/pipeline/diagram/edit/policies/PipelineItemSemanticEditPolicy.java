@@ -21,35 +21,35 @@ import pipeline.diagram.providers.PipelineElementTypes;
 /**
  * @generated
  */
-public class PLItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPolicy {
+public class PipelineItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPolicy {
 
 	/**
 	* @generated
 	*/
-	public PLItemSemanticEditPolicy() {
-		super(PipelineElementTypes.PL_1000);
+	public PipelineItemSemanticEditPolicy() {
+		super(PipelineElementTypes.Pipeline_1000);
 	}
 
 	/**
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (PipelineElementTypes.CollectionTask_2013 == req.getElementType()) {
+		if (PipelineElementTypes.CollectionTask_2025 == req.getElementType()) {
 			return getGEFWrapper(new CollectionTaskCreateCommand(req));
 		}
-		if (PipelineElementTypes.IntegrationTask_2014 == req.getElementType()) {
+		if (PipelineElementTypes.IntegrationTask_2026 == req.getElementType()) {
 			return getGEFWrapper(new IntegrationTaskCreateCommand(req));
 		}
-		if (PipelineElementTypes.CleaningTask_2015 == req.getElementType()) {
+		if (PipelineElementTypes.CleaningTask_2027 == req.getElementType()) {
 			return getGEFWrapper(new CleaningTaskCreateCommand(req));
 		}
-		if (PipelineElementTypes.AnalyzesTask_2016 == req.getElementType()) {
+		if (PipelineElementTypes.AnalyzesTask_2028 == req.getElementType()) {
 			return getGEFWrapper(new AnalyzesTaskCreateCommand(req));
 		}
-		if (PipelineElementTypes.VisualizationTask_2017 == req.getElementType()) {
+		if (PipelineElementTypes.VisualizationTask_2029 == req.getElementType()) {
 			return getGEFWrapper(new VisualizationTaskCreateCommand(req));
 		}
-		if (PipelineElementTypes.ExportingTask_2018 == req.getElementType()) {
+		if (PipelineElementTypes.ExportingTask_2030 == req.getElementType()) {
 			return getGEFWrapper(new ExportingTaskCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

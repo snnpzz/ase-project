@@ -53,8 +53,9 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
 
+import pipeline.Pipeline;
 import pipeline.PipelineFactory;
-import pipeline.diagram.edit.parts.PLEditPart;
+import pipeline.diagram.edit.parts.PipelineEditPart;
 
 /**
  * @generated
@@ -139,10 +140,10 @@ public class PipelineDiagramEditorUtil {
 				Messages.PipelineDiagramEditorUtil_CreateDiagramCommandLabel, Collections.EMPTY_LIST) {
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				pipeline.PL model = createInitialModel();
+				Pipeline model = createInitialModel();
 				attachModelToResource(model, modelResource);
 
-				Diagram diagram = ViewService.createDiagram(model, PLEditPart.MODEL_ID,
+				Diagram diagram = ViewService.createDiagram(model, PipelineEditPart.MODEL_ID,
 						PipelineDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);
@@ -178,8 +179,8 @@ public class PipelineDiagramEditorUtil {
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private static pipeline.PL createInitialModel() {
-		return PipelineFactory.eINSTANCE.createPL();
+	private static Pipeline createInitialModel() {
+		return PipelineFactory.eINSTANCE.createPipeline();
 	}
 
 	/**
@@ -188,7 +189,7 @@ public class PipelineDiagramEditorUtil {
 	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private static void attachModelToResource(pipeline.PL model, Resource resource) {
+	private static void attachModelToResource(Pipeline model, Resource resource) {
 		resource.getContents().add(model);
 	}
 

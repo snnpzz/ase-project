@@ -18,7 +18,7 @@ public class DataflowItemSemanticEditPolicy extends PipelineBaseItemSemanticEdit
 	* @generated
 	*/
 	public DataflowItemSemanticEditPolicy() {
-		super(PipelineElementTypes.Dataflow_4003);
+		super(PipelineElementTypes.Dataflow_4004);
 	}
 
 	/**

@@ -11,9 +11,9 @@
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/json"/>
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/xml"/>
     </genEnums>
-    <genClasses ecoreClass="pipeline.ecore#//PL">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//PL/dataflows"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//PL/tasks"/>
+    <genClasses ecoreClass="pipeline.ecore#//Pipeline">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/dataflows"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/tasks"/>
     </genClasses>
     <genClasses image="false" ecoreClass="pipeline.ecore#//Task">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Task/name"/>
@@ -83,7 +83,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//File/path"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//File/comesFrom"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="pipeline.ecore#//CleaningOp"/>
+    <genClasses image="false" ecoreClass="pipeline.ecore#//CleaningOperation"/>
     <genClasses image="false" ecoreClass="pipeline.ecore#//AnalysisOp"/>
     <genClasses ecoreClass="pipeline.ecore#//Descriptive"/>
     <genClasses ecoreClass="pipeline.ecore#//Classification"/>

@@ -37,7 +37,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
-import pipeline.diagram.edit.parts.PLEditPart;
+import pipeline.diagram.edit.parts.PipelineEditPart;
 import pipeline.diagram.part.Messages;
 import pipeline.diagram.part.PipelineDiagramEditor;
 import pipeline.diagram.part.PipelineDiagramEditorPlugin;
@@ -175,7 +175,7 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy {
 		* @generated
 		*/
 		protected String getDiagramKind() {
-			return PLEditPart.MODEL_ID;
+			return PipelineEditPart.MODEL_ID;
 		}
 
 		/**

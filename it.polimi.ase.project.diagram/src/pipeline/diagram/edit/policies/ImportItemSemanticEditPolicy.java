@@ -22,7 +22,7 @@ public class ImportItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 	* @generated
 	*/
 	public ImportItemSemanticEditPolicy() {
-		super(PipelineElementTypes.Import_3017);
+		super(PipelineElementTypes.Import_3025);
 	}
 
 	/**

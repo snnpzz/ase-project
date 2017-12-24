@@ -13,5 +13,5 @@ package pipeline;
  * @model
  * @generated
  */
-public interface UserDefined extends CleaningOp {
+public interface UserDefined extends CleaningOperation {
 } // UserDefined

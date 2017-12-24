@@ -19,14 +19,14 @@ public class ExportingTaskExportingTaskExportsCompartmentItemSemanticEditPolicy
 	* @generated
 	*/
 	public ExportingTaskExportingTaskExportsCompartmentItemSemanticEditPolicy() {
-		super(PipelineElementTypes.ExportingTask_2018);
+		super(PipelineElementTypes.ExportingTask_2030);
 	}
 
 	/**
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (PipelineElementTypes.Export_3024 == req.getElementType()) {
+		if (PipelineElementTypes.Export_3032 == req.getElementType()) {
 			return getGEFWrapper(new ExportCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

@@ -29,7 +29,7 @@ import pipeline.diagram.edit.parts.ExportEditPart;
 import pipeline.diagram.edit.parts.ExportingTaskEditPart;
 import pipeline.diagram.edit.parts.ImportEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
-import pipeline.diagram.edit.parts.PLEditPart;
+import pipeline.diagram.edit.parts.PipelineEditPart;
 import pipeline.diagram.edit.parts.PredefinedEditPart;
 import pipeline.diagram.edit.parts.PredictiveEditPart;
 import pipeline.diagram.edit.parts.UserDefinedEditPart;
@@ -66,76 +66,90 @@ public class PipelineElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType PL_1000 = getElementType("it.polimi.ase.project.diagram.PL_1000"); //$NON-NLS-1$
+	public static final IElementType Pipeline_1000 = getElementType("it.polimi.ase.project.diagram.Pipeline_1000"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType CollectionTask_2013 = getElementType(
-			"it.polimi.ase.project.diagram.CollectionTask_2013"); //$NON-NLS-1$
+	public static final IElementType CollectionTask_2025 = getElementType(
+			"it.polimi.ase.project.diagram.CollectionTask_2025"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType IntegrationTask_2014 = getElementType(
-			"it.polimi.ase.project.diagram.IntegrationTask_2014"); //$NON-NLS-1$
+	public static final IElementType IntegrationTask_2026 = getElementType(
+			"it.polimi.ase.project.diagram.IntegrationTask_2026"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType CleaningTask_2015 = getElementType(
-			"it.polimi.ase.project.diagram.CleaningTask_2015"); //$NON-NLS-1$
+	public static final IElementType CleaningTask_2027 = getElementType(
+			"it.polimi.ase.project.diagram.CleaningTask_2027"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType AnalyzesTask_2016 = getElementType(
-			"it.polimi.ase.project.diagram.AnalyzesTask_2016"); //$NON-NLS-1$
+	public static final IElementType AnalyzesTask_2028 = getElementType(
+			"it.polimi.ase.project.diagram.AnalyzesTask_2028"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType VisualizationTask_2017 = getElementType(
-			"it.polimi.ase.project.diagram.VisualizationTask_2017"); //$NON-NLS-1$
+	public static final IElementType VisualizationTask_2029 = getElementType(
+			"it.polimi.ase.project.diagram.VisualizationTask_2029"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType ExportingTask_2018 = getElementType(
-			"it.polimi.ase.project.diagram.ExportingTask_2018"); //$NON-NLS-1$
+	public static final IElementType ExportingTask_2030 = getElementType(
+			"it.polimi.ase.project.diagram.ExportingTask_2030"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType Import_3017 = getElementType("it.polimi.ase.project.diagram.Import_3017"); //$NON-NLS-1$
+	public static final IElementType Import_3025 = getElementType("it.polimi.ase.project.diagram.Import_3025"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType UserDefined_3018 = getElementType(
-			"it.polimi.ase.project.diagram.UserDefined_3018"); //$NON-NLS-1$
+	public static final IElementType UserDefined_3026 = getElementType(
+			"it.polimi.ase.project.diagram.UserDefined_3026"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType Predefined_3019 = getElementType("it.polimi.ase.project.diagram.Predefined_3019"); //$NON-NLS-1$
+	public static final IElementType Predefined_3027 = getElementType("it.polimi.ase.project.diagram.Predefined_3027"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType Descriptive_3020 = getElementType(
-			"it.polimi.ase.project.diagram.Descriptive_3020"); //$NON-NLS-1$
+	public static final IElementType Descriptive_3028 = getElementType(
+			"it.polimi.ase.project.diagram.Descriptive_3028"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType Classification_3021 = getElementType(
-			"it.polimi.ase.project.diagram.Classification_3021"); //$NON-NLS-1$
+	public static final IElementType Classification_3029 = getElementType(
+			"it.polimi.ase.project.diagram.Classification_3029"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType Predictive_3022 = getElementType("it.polimi.ase.project.diagram.Predictive_3022"); //$NON-NLS-1$
+	public static final IElementType Predictive_3030 = getElementType("it.polimi.ase.project.diagram.Predictive_3030"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType Clustering_3023 = getElementType("it.polimi.ase.project.diagram.Clustering_3023"); //$NON-NLS-1$
+	public static final IElementType Clustering_3031 = getElementType("it.polimi.ase.project.diagram.Clustering_3031"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType Export_3024 = getElementType("it.polimi.ase.project.diagram.Export_3024"); //$NON-NLS-1$
+	public static final IElementType Export_3032 = getElementType("it.polimi.ase.project.diagram.Export_3032"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType Dataflow_4003 = getElementType("it.polimi.ase.project.diagram.Dataflow_4003"); //$NON-NLS-1$
+	public static final IElementType Dataflow_4004 = getElementType("it.polimi.ase.project.diagram.Dataflow_4004"); //$NON-NLS-1$
 
 	/**
 	* @generated
@@ -175,37 +189,37 @@ public class PipelineElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(PL_1000, PipelinePackage.eINSTANCE.getPL());
+			elements.put(Pipeline_1000, PipelinePackage.eINSTANCE.getPipeline());
 
-			elements.put(CollectionTask_2013, PipelinePackage.eINSTANCE.getCollectionTask());
+			elements.put(CollectionTask_2025, PipelinePackage.eINSTANCE.getCollectionTask());
 
-			elements.put(IntegrationTask_2014, PipelinePackage.eINSTANCE.getIntegrationTask());
+			elements.put(IntegrationTask_2026, PipelinePackage.eINSTANCE.getIntegrationTask());
 
-			elements.put(CleaningTask_2015, PipelinePackage.eINSTANCE.getCleaningTask());
+			elements.put(CleaningTask_2027, PipelinePackage.eINSTANCE.getCleaningTask());
 
-			elements.put(AnalyzesTask_2016, PipelinePackage.eINSTANCE.getAnalyzesTask());
+			elements.put(AnalyzesTask_2028, PipelinePackage.eINSTANCE.getAnalyzesTask());
 
-			elements.put(VisualizationTask_2017, PipelinePackage.eINSTANCE.getVisualizationTask());
+			elements.put(VisualizationTask_2029, PipelinePackage.eINSTANCE.getVisualizationTask());
 
-			elements.put(ExportingTask_2018, PipelinePackage.eINSTANCE.getExportingTask());
+			elements.put(ExportingTask_2030, PipelinePackage.eINSTANCE.getExportingTask());
 
-			elements.put(Import_3017, PipelinePackage.eINSTANCE.getImport());
+			elements.put(Import_3025, PipelinePackage.eINSTANCE.getImport());
 
-			elements.put(UserDefined_3018, PipelinePackage.eINSTANCE.getUserDefined());
+			elements.put(UserDefined_3026, PipelinePackage.eINSTANCE.getUserDefined());
 
-			elements.put(Predefined_3019, PipelinePackage.eINSTANCE.getPredefined());
+			elements.put(Predefined_3027, PipelinePackage.eINSTANCE.getPredefined());
 
-			elements.put(Descriptive_3020, PipelinePackage.eINSTANCE.getDescriptive());
+			elements.put(Descriptive_3028, PipelinePackage.eINSTANCE.getDescriptive());
 
-			elements.put(Classification_3021, PipelinePackage.eINSTANCE.getClassification());
+			elements.put(Classification_3029, PipelinePackage.eINSTANCE.getClassification());
 
-			elements.put(Predictive_3022, PipelinePackage.eINSTANCE.getPredictive());
+			elements.put(Predictive_3030, PipelinePackage.eINSTANCE.getPredictive());
 
-			elements.put(Clustering_3023, PipelinePackage.eINSTANCE.getClustering());
+			elements.put(Clustering_3031, PipelinePackage.eINSTANCE.getClustering());
 
-			elements.put(Export_3024, PipelinePackage.eINSTANCE.getExport());
+			elements.put(Export_3032, PipelinePackage.eINSTANCE.getExport());
 
-			elements.put(Dataflow_4003, PipelinePackage.eINSTANCE.getDataflow());
+			elements.put(Dataflow_4004, PipelinePackage.eINSTANCE.getDataflow());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -223,22 +237,22 @@ public class PipelineElementTypes {
 	public static boolean isKnownElementType(IElementType elementType) {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
-			KNOWN_ELEMENT_TYPES.add(PL_1000);
-			KNOWN_ELEMENT_TYPES.add(CollectionTask_2013);
-			KNOWN_ELEMENT_TYPES.add(IntegrationTask_2014);
-			KNOWN_ELEMENT_TYPES.add(CleaningTask_2015);
-			KNOWN_ELEMENT_TYPES.add(AnalyzesTask_2016);
-			KNOWN_ELEMENT_TYPES.add(VisualizationTask_2017);
-			KNOWN_ELEMENT_TYPES.add(ExportingTask_2018);
-			KNOWN_ELEMENT_TYPES.add(Import_3017);
-			KNOWN_ELEMENT_TYPES.add(UserDefined_3018);
-			KNOWN_ELEMENT_TYPES.add(Predefined_3019);
-			KNOWN_ELEMENT_TYPES.add(Descriptive_3020);
-			KNOWN_ELEMENT_TYPES.add(Classification_3021);
-			KNOWN_ELEMENT_TYPES.add(Predictive_3022);
-			KNOWN_ELEMENT_TYPES.add(Clustering_3023);
-			KNOWN_ELEMENT_TYPES.add(Export_3024);
-			KNOWN_ELEMENT_TYPES.add(Dataflow_4003);
+			KNOWN_ELEMENT_TYPES.add(Pipeline_1000);
+			KNOWN_ELEMENT_TYPES.add(CollectionTask_2025);
+			KNOWN_ELEMENT_TYPES.add(IntegrationTask_2026);
+			KNOWN_ELEMENT_TYPES.add(CleaningTask_2027);
+			KNOWN_ELEMENT_TYPES.add(AnalyzesTask_2028);
+			KNOWN_ELEMENT_TYPES.add(VisualizationTask_2029);
+			KNOWN_ELEMENT_TYPES.add(ExportingTask_2030);
+			KNOWN_ELEMENT_TYPES.add(Import_3025);
+			KNOWN_ELEMENT_TYPES.add(UserDefined_3026);
+			KNOWN_ELEMENT_TYPES.add(Predefined_3027);
+			KNOWN_ELEMENT_TYPES.add(Descriptive_3028);
+			KNOWN_ELEMENT_TYPES.add(Classification_3029);
+			KNOWN_ELEMENT_TYPES.add(Predictive_3030);
+			KNOWN_ELEMENT_TYPES.add(Clustering_3031);
+			KNOWN_ELEMENT_TYPES.add(Export_3032);
+			KNOWN_ELEMENT_TYPES.add(Dataflow_4004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -248,38 +262,38 @@ public class PipelineElementTypes {
 	*/
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case PLEditPart.VISUAL_ID:
-			return PL_1000;
+		case PipelineEditPart.VISUAL_ID:
+			return Pipeline_1000;
 		case CollectionTaskEditPart.VISUAL_ID:
-			return CollectionTask_2013;
+			return CollectionTask_2025;
 		case IntegrationTaskEditPart.VISUAL_ID:
-			return IntegrationTask_2014;
+			return IntegrationTask_2026;
 		case CleaningTaskEditPart.VISUAL_ID:
-			return CleaningTask_2015;
+			return CleaningTask_2027;
 		case AnalyzesTaskEditPart.VISUAL_ID:
-			return AnalyzesTask_2016;
+			return AnalyzesTask_2028;
 		case VisualizationTaskEditPart.VISUAL_ID:
-			return VisualizationTask_2017;
+			return VisualizationTask_2029;
 		case ExportingTaskEditPart.VISUAL_ID:
-			return ExportingTask_2018;
+			return ExportingTask_2030;
 		case ImportEditPart.VISUAL_ID:
-			return Import_3017;
+			return Import_3025;
 		case UserDefinedEditPart.VISUAL_ID:
-			return UserDefined_3018;
+			return UserDefined_3026;
 		case PredefinedEditPart.VISUAL_ID:
-			return Predefined_3019;
+			return Predefined_3027;
 		case DescriptiveEditPart.VISUAL_ID:
-			return Descriptive_3020;
+			return Descriptive_3028;
 		case ClassificationEditPart.VISUAL_ID:
-			return Classification_3021;
+			return Classification_3029;
 		case PredictiveEditPart.VISUAL_ID:
-			return Predictive_3022;
+			return Predictive_3030;
 		case ClusteringEditPart.VISUAL_ID:
-			return Clustering_3023;
+			return Clustering_3031;
 		case ExportEditPart.VISUAL_ID:
-			return Export_3024;
+			return Export_3032;
 		case DataflowEditPart.VISUAL_ID:
-			return Dataflow_4003;
+			return Dataflow_4004;
 		}
 		return null;
 	}

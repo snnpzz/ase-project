@@ -4,23 +4,23 @@ package pipeline.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import pipeline.CleaningOp;
+import pipeline.CleaningOperation;
 import pipeline.PipelinePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Cleaning Op</b></em>'.
+ * An implementation of the model object '<em><b>Cleaning Operation</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class CleaningOpImpl extends OperationImpl implements CleaningOp {
+public abstract class CleaningOperationImpl extends OperationImpl implements CleaningOperation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CleaningOpImpl() {
+	protected CleaningOperationImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public abstract class CleaningOpImpl extends OperationImpl implements CleaningOp
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PipelinePackage.Literals.CLEANING_OP;
+		return PipelinePackage.Literals.CLEANING_OPERATION;
 	}
 
-} //CleaningOpImpl
+} //CleaningOperationImpl

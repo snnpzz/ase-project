@@ -13,7 +13,7 @@ import pipeline.UserDefined;
  * <!-- end-user-doc -->
  * @generated
  */
-public class UserDefinedTest extends CleaningOpTest {
+public class UserDefinedTest extends CleaningOperationTest {
 
 	/**
 	 * <!-- begin-user-doc -->

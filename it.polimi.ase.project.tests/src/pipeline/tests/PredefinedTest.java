@@ -13,7 +13,7 @@ import pipeline.Predefined;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PredefinedTest extends CleaningOpTest {
+public class PredefinedTest extends CleaningOperationTest {
 
 	/**
 	 * <!-- begin-user-doc -->

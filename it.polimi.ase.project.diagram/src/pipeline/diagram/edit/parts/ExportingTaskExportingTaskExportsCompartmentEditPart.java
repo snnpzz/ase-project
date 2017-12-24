@@ -34,7 +34,7 @@ public class ExportingTaskExportingTaskExportsCompartmentEditPart extends ShapeC
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 7012;
+	public static final int VISUAL_ID = 7020;
 
 	/**
 	* @generated
@@ -91,7 +91,7 @@ public class ExportingTaskExportingTaskExportsCompartmentEditPart extends ShapeC
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == PipelineElementTypes.Export_3024) {
+			if (type == PipelineElementTypes.Export_3032) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

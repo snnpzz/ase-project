@@ -40,7 +40,7 @@ public class PipelineModelingAssistantProviderOfVisualizationTaskEditPart extend
 	*/
 	public List<IElementType> doGetRelTypesOnSource(VisualizationTaskEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(PipelineElementTypes.Dataflow_4003);
+		types.add(PipelineElementTypes.Dataflow_4004);
 		return types;
 	}
 
@@ -62,22 +62,22 @@ public class PipelineModelingAssistantProviderOfVisualizationTaskEditPart extend
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof CollectionTaskEditPart) {
-			types.add(PipelineElementTypes.Dataflow_4003);
+			types.add(PipelineElementTypes.Dataflow_4004);
 		}
 		if (targetEditPart instanceof IntegrationTaskEditPart) {
-			types.add(PipelineElementTypes.Dataflow_4003);
+			types.add(PipelineElementTypes.Dataflow_4004);
 		}
 		if (targetEditPart instanceof CleaningTaskEditPart) {
-			types.add(PipelineElementTypes.Dataflow_4003);
+			types.add(PipelineElementTypes.Dataflow_4004);
 		}
 		if (targetEditPart instanceof AnalyzesTaskEditPart) {
-			types.add(PipelineElementTypes.Dataflow_4003);
+			types.add(PipelineElementTypes.Dataflow_4004);
 		}
 		if (targetEditPart instanceof VisualizationTaskEditPart) {
-			types.add(PipelineElementTypes.Dataflow_4003);
+			types.add(PipelineElementTypes.Dataflow_4004);
 		}
 		if (targetEditPart instanceof ExportingTaskEditPart) {
-			types.add(PipelineElementTypes.Dataflow_4003);
+			types.add(PipelineElementTypes.Dataflow_4004);
 		}
 		return types;
 	}
@@ -97,13 +97,13 @@ public class PipelineModelingAssistantProviderOfVisualizationTaskEditPart extend
 	*/
 	public List<IElementType> doGetTypesForTarget(VisualizationTaskEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == PipelineElementTypes.Dataflow_4003) {
-			types.add(PipelineElementTypes.CollectionTask_2013);
-			types.add(PipelineElementTypes.IntegrationTask_2014);
-			types.add(PipelineElementTypes.CleaningTask_2015);
-			types.add(PipelineElementTypes.AnalyzesTask_2016);
-			types.add(PipelineElementTypes.VisualizationTask_2017);
-			types.add(PipelineElementTypes.ExportingTask_2018);
+		if (relationshipType == PipelineElementTypes.Dataflow_4004) {
+			types.add(PipelineElementTypes.CollectionTask_2025);
+			types.add(PipelineElementTypes.IntegrationTask_2026);
+			types.add(PipelineElementTypes.CleaningTask_2027);
+			types.add(PipelineElementTypes.AnalyzesTask_2028);
+			types.add(PipelineElementTypes.VisualizationTask_2029);
+			types.add(PipelineElementTypes.ExportingTask_2030);
 		}
 		return types;
 	}
@@ -123,7 +123,7 @@ public class PipelineModelingAssistantProviderOfVisualizationTaskEditPart extend
 	*/
 	public List<IElementType> doGetRelTypesOnTarget(VisualizationTaskEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(PipelineElementTypes.Dataflow_4003);
+		types.add(PipelineElementTypes.Dataflow_4004);
 		return types;
 	}
 
@@ -142,13 +142,13 @@ public class PipelineModelingAssistantProviderOfVisualizationTaskEditPart extend
 	*/
 	public List<IElementType> doGetTypesForSource(VisualizationTaskEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == PipelineElementTypes.Dataflow_4003) {
-			types.add(PipelineElementTypes.CollectionTask_2013);
-			types.add(PipelineElementTypes.IntegrationTask_2014);
-			types.add(PipelineElementTypes.CleaningTask_2015);
-			types.add(PipelineElementTypes.AnalyzesTask_2016);
-			types.add(PipelineElementTypes.VisualizationTask_2017);
-			types.add(PipelineElementTypes.ExportingTask_2018);
+		if (relationshipType == PipelineElementTypes.Dataflow_4004) {
+			types.add(PipelineElementTypes.CollectionTask_2025);
+			types.add(PipelineElementTypes.IntegrationTask_2026);
+			types.add(PipelineElementTypes.CleaningTask_2027);
+			types.add(PipelineElementTypes.AnalyzesTask_2028);
+			types.add(PipelineElementTypes.VisualizationTask_2029);
+			types.add(PipelineElementTypes.ExportingTask_2030);
 		}
 		return types;
 	}

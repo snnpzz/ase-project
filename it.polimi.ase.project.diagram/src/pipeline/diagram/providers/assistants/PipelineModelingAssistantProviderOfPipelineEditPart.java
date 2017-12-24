@@ -15,7 +15,7 @@ import pipeline.diagram.providers.PipelineModelingAssistantProvider;
 /**
  * @generated
  */
-public class PipelineModelingAssistantProviderOfPLEditPart extends PipelineModelingAssistantProvider {
+public class PipelineModelingAssistantProviderOfPipelineEditPart extends PipelineModelingAssistantProvider {
 
 	/**
 	* @generated
@@ -24,12 +24,12 @@ public class PipelineModelingAssistantProviderOfPLEditPart extends PipelineModel
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(6);
-		types.add(PipelineElementTypes.CollectionTask_2013);
-		types.add(PipelineElementTypes.IntegrationTask_2014);
-		types.add(PipelineElementTypes.CleaningTask_2015);
-		types.add(PipelineElementTypes.AnalyzesTask_2016);
-		types.add(PipelineElementTypes.VisualizationTask_2017);
-		types.add(PipelineElementTypes.ExportingTask_2018);
+		types.add(PipelineElementTypes.CollectionTask_2025);
+		types.add(PipelineElementTypes.IntegrationTask_2026);
+		types.add(PipelineElementTypes.CleaningTask_2027);
+		types.add(PipelineElementTypes.AnalyzesTask_2028);
+		types.add(PipelineElementTypes.VisualizationTask_2029);
+		types.add(PipelineElementTypes.ExportingTask_2030);
 		return types;
 	}
 

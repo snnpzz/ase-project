@@ -36,7 +36,7 @@ public class CleaningTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 	* @generated
 	*/
 	public CleaningTaskItemSemanticEditPolicy() {
-		super(PipelineElementTypes.CleaningTask_2015);
+		super(PipelineElementTypes.CleaningTask_2027);
 	}
 
 	/**
@@ -121,7 +121,7 @@ public class CleaningTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.Dataflow_4003 == req.getElementType()) {
+		if (PipelineElementTypes.Dataflow_4004 == req.getElementType()) {
 			return getGEFWrapper(new DataflowCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -131,7 +131,7 @@ public class CleaningTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.Dataflow_4003 == req.getElementType()) {
+		if (PipelineElementTypes.Dataflow_4004 == req.getElementType()) {
 			return getGEFWrapper(new DataflowCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;

@@ -34,7 +34,7 @@ public class CleaningTaskCleaningTaskOperationsCompartmentEditPart extends Shape
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 7010;
+	public static final int VISUAL_ID = 7018;
 
 	/**
 	* @generated
@@ -91,10 +91,10 @@ public class CleaningTaskCleaningTaskOperationsCompartmentEditPart extends Shape
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == PipelineElementTypes.UserDefined_3018) {
+			if (type == PipelineElementTypes.UserDefined_3026) {
 				return this;
 			}
-			if (type == PipelineElementTypes.Predefined_3019) {
+			if (type == PipelineElementTypes.Predefined_3027) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

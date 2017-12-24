@@ -41,7 +41,7 @@ public class AnalyzesTaskEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 2016;
+	public static final int VISUAL_ID = 2028;
 
 	/**
 	* @generated

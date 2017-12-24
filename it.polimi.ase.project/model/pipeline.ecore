@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pipeline" nsURI="http://www.ase.polimi.it/project/pipeline"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pipeline" nsURI="http://www.project.ase.polimi.it/pipeline"
     nsPrefix="pipeline">
-  <eClassifiers xsi:type="ecore:EClass" name="PL">
+  <eClassifiers xsi:type="ecore:EClass" name="Pipeline">
     <eAnnotations source="gmf.diagram"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataflows" lowerBound="1"
         upperBound="-1" eType="#//Dataflow" containment="true"/>
@@ -90,7 +90,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="IntegrationTask" eSuperTypes="#//Task"/>
   <eClassifiers xsi:type="ecore:EClass" name="CleaningTask" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EReference" name="operations" lowerBound="1"
-        upperBound="-1" eType="#//CleaningOp" containment="true">
+        upperBound="-1" eType="#//CleaningOperation" containment="true">
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -129,7 +129,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="uses" lowerBound="1" eType="#//Schema"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UserDefined" eSuperTypes="#//CleaningOp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UserDefined" eSuperTypes="#//CleaningOperation"/>
   <eClassifiers xsi:type="ecore:EClass" name="Source">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
@@ -148,7 +148,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="comesFrom" lowerBound="1"
         eType="#//Export" eOpposite="#//Export/generates"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CleaningOp" abstract="true" eSuperTypes="#//Operation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CleaningOperation" abstract="true" eSuperTypes="#//Operation"/>
   <eClassifiers xsi:type="ecore:EClass" name="AnalysisOp" abstract="true" eSuperTypes="#//Operation"/>
   <eClassifiers xsi:type="ecore:EClass" name="Descriptive" eSuperTypes="#//AnalysisOp">
     <eAnnotations source="gmf.node">
@@ -159,7 +159,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Classification" eSuperTypes="#//AnalysisOp"/>
   <eClassifiers xsi:type="ecore:EClass" name="Predictive" eSuperTypes="#//AnalysisOp"/>
   <eClassifiers xsi:type="ecore:EClass" name="Clustering" eSuperTypes="#//AnalysisOp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Predefined" eSuperTypes="#//CleaningOp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Predefined" eSuperTypes="#//CleaningOperation"/>
   <eClassifiers xsi:type="ecore:EEnum" name="Format">
     <eLiterals name="txt"/>
     <eLiterals name="csv"/>

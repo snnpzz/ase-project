@@ -6,7 +6,7 @@ package pipeline.diagram.providers;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
 
-import pipeline.diagram.edit.parts.PLEditPart;
+import pipeline.diagram.edit.parts.PipelineEditPart;
 import pipeline.diagram.part.PipelineDiagramEditorPlugin;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 
@@ -61,7 +61,8 @@ public class PipelineValidationProvider {
 			return false;
 		}
 		if (object instanceof View) {
-			return constraintsActive && PLEditPart.MODEL_ID.equals(PipelineVisualIDRegistry.getModelID((View) object));
+			return constraintsActive
+					&& PipelineEditPart.MODEL_ID.equals(PipelineVisualIDRegistry.getModelID((View) object));
 		}
 		return true;
 	}

@@ -19,7 +19,7 @@ import pipeline.Predefined;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PredefinedItemProvider extends CleaningOpItemProvider {
+public class PredefinedItemProvider extends CleaningOperationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

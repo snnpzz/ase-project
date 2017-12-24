@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 
 import pipeline.Dataflow;
+import pipeline.Pipeline;
 import pipeline.Task;
 import pipeline.diagram.edit.policies.PipelineBaseItemSemanticEditPolicy;
 
@@ -69,11 +70,11 @@ public class DataflowReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Task target = getLink().getTarget();
-		if (!(getLink().eContainer() instanceof pipeline.PL)) {
+		if (!(getLink().eContainer() instanceof Pipeline)) {
 			return false;
 		}
-		pipeline.PL container = (pipeline.PL) getLink().eContainer();
-		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistDataflow_4003(container, getLink(),
+		Pipeline container = (Pipeline) getLink().eContainer();
+		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistDataflow_4004(container, getLink(),
 				getNewSource(), target);
 	}
 
@@ -85,11 +86,11 @@ public class DataflowReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Task source = getLink().getSource();
-		if (!(getLink().eContainer() instanceof pipeline.PL)) {
+		if (!(getLink().eContainer() instanceof Pipeline)) {
 			return false;
 		}
-		pipeline.PL container = (pipeline.PL) getLink().eContainer();
-		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistDataflow_4003(container, getLink(),
+		Pipeline container = (Pipeline) getLink().eContainer();
+		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistDataflow_4004(container, getLink(),
 				source, getNewTarget());
 	}
 

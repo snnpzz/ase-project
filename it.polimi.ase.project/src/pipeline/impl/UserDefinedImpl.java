@@ -14,7 +14,7 @@ import pipeline.UserDefined;
  *
  * @generated
  */
-public class UserDefinedImpl extends CleaningOpImpl implements UserDefined {
+public class UserDefinedImpl extends CleaningOperationImpl implements UserDefined {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

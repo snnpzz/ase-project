@@ -19,7 +19,7 @@ import pipeline.UserDefined;
  * <!-- end-user-doc -->
  * @generated
  */
-public class UserDefinedItemProvider extends CleaningOpItemProvider {
+public class UserDefinedItemProvider extends CleaningOperationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

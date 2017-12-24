@@ -68,8 +68,8 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 	protected PipelineSwitch<Adapter> modelSwitch =
 		new PipelineSwitch<Adapter>() {
 			@Override
-			public Adapter casePL(PL object) {
-				return createPLAdapter();
+			public Adapter casePipeline(Pipeline object) {
+				return createPipelineAdapter();
 			}
 			@Override
 			public Adapter caseTask(Task object) {
@@ -140,8 +140,8 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 				return createFileAdapter();
 			}
 			@Override
-			public Adapter caseCleaningOp(CleaningOp object) {
-				return createCleaningOpAdapter();
+			public Adapter caseCleaningOperation(CleaningOperation object) {
+				return createCleaningOperationAdapter();
 			}
 			@Override
 			public Adapter caseAnalysisOp(AnalysisOp object) {
@@ -188,16 +188,16 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.PL <em>PL</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.Pipeline <em>Pipeline</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.PL
+	 * @see pipeline.Pipeline
 	 * @generated
 	 */
-	public Adapter createPLAdapter() {
+	public Adapter createPipelineAdapter() {
 		return null;
 	}
 
@@ -440,16 +440,16 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.CleaningOp <em>Cleaning Op</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.CleaningOperation <em>Cleaning Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.CleaningOp
+	 * @see pipeline.CleaningOperation
 	 * @generated
 	 */
-	public Adapter createCleaningOpAdapter() {
+	public Adapter createCleaningOperationAdapter() {
 		return null;
 	}
 

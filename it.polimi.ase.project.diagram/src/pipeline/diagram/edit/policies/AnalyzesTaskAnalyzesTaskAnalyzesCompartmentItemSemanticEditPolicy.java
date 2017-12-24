@@ -22,23 +22,23 @@ public class AnalyzesTaskAnalyzesTaskAnalyzesCompartmentItemSemanticEditPolicy
 	* @generated
 	*/
 	public AnalyzesTaskAnalyzesTaskAnalyzesCompartmentItemSemanticEditPolicy() {
-		super(PipelineElementTypes.AnalyzesTask_2016);
+		super(PipelineElementTypes.AnalyzesTask_2028);
 	}
 
 	/**
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (PipelineElementTypes.Descriptive_3020 == req.getElementType()) {
+		if (PipelineElementTypes.Descriptive_3028 == req.getElementType()) {
 			return getGEFWrapper(new DescriptiveCreateCommand(req));
 		}
-		if (PipelineElementTypes.Classification_3021 == req.getElementType()) {
+		if (PipelineElementTypes.Classification_3029 == req.getElementType()) {
 			return getGEFWrapper(new ClassificationCreateCommand(req));
 		}
-		if (PipelineElementTypes.Predictive_3022 == req.getElementType()) {
+		if (PipelineElementTypes.Predictive_3030 == req.getElementType()) {
 			return getGEFWrapper(new PredictiveCreateCommand(req));
 		}
-		if (PipelineElementTypes.Clustering_3023 == req.getElementType()) {
+		if (PipelineElementTypes.Clustering_3031 == req.getElementType()) {
 			return getGEFWrapper(new ClusteringCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

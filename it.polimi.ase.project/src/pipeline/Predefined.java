@@ -13,5 +13,5 @@ package pipeline;
  * @model
  * @generated
  */
-public interface Predefined extends CleaningOp {
+public interface Predefined extends CleaningOperation {
 } // Predefined

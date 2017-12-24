@@ -15,6 +15,7 @@ import pipeline.AnalyzesTask;
 import pipeline.Attribute;
 import pipeline.Classification;
 import pipeline.CleaningOp;
+import pipeline.CleaningOperation;
 import pipeline.CleaningTask;
 import pipeline.Clustering;
 import pipeline.CollectionTask;
@@ -28,6 +29,7 @@ import pipeline.Import;
 import pipeline.IntegrationTask;
 import pipeline.InternalDF;
 import pipeline.Operation;
+import pipeline.Pipeline;
 import pipeline.PipelineFactory;
 import pipeline.PipelinePackage;
 import pipeline.Predefined;
@@ -50,7 +52,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass plEClass = null;
+	private EClass pipelineEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,7 +178,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass cleaningOpEClass = null;
+	private EClass cleaningOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,8 +295,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPL() {
-		return plEClass;
+	public EClass getPipeline() {
+		return pipelineEClass;
 	}
 
 	/**
@@ -302,8 +304,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPL_Dataflows() {
-		return (EReference)plEClass.getEStructuralFeatures().get(0);
+	public EReference getPipeline_Dataflows() {
+		return (EReference)pipelineEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -311,8 +313,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPL_Tasks() {
-		return (EReference)plEClass.getEStructuralFeatures().get(1);
+	public EReference getPipeline_Tasks() {
+		return (EReference)pipelineEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -806,8 +808,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCleaningOp() {
-		return cleaningOpEClass;
+	public EClass getCleaningOperation() {
+		return cleaningOperationEClass;
 	}
 
 	/**
@@ -901,9 +903,9 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		isCreated = true;
 
 		// Create classes and their features
-		plEClass = createEClass(PL);
-		createEReference(plEClass, PL__DATAFLOWS);
-		createEReference(plEClass, PL__TASKS);
+		pipelineEClass = createEClass(PIPELINE);
+		createEReference(pipelineEClass, PIPELINE__DATAFLOWS);
+		createEReference(pipelineEClass, PIPELINE__TASKS);
 
 		taskEClass = createEClass(TASK);
 		createEAttribute(taskEClass, TASK__NAME);
@@ -976,7 +978,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEAttribute(fileEClass, FILE__PATH);
 		createEReference(fileEClass, FILE__COMES_FROM);
 
-		cleaningOpEClass = createEClass(CLEANING_OP);
+		cleaningOperationEClass = createEClass(CLEANING_OPERATION);
 
 		analysisOpEClass = createEClass(ANALYSIS_OP);
 
@@ -1028,19 +1030,19 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		analyzesTaskEClass.getESuperTypes().add(this.getTask());
 		visualizationTaskEClass.getESuperTypes().add(this.getTask());
 		exportingTaskEClass.getESuperTypes().add(this.getTask());
-		userDefinedEClass.getESuperTypes().add(this.getCleaningOp());
-		cleaningOpEClass.getESuperTypes().add(this.getOperation());
+		userDefinedEClass.getESuperTypes().add(this.getCleaningOperation());
+		cleaningOperationEClass.getESuperTypes().add(this.getOperation());
 		analysisOpEClass.getESuperTypes().add(this.getOperation());
 		descriptiveEClass.getESuperTypes().add(this.getAnalysisOp());
 		classificationEClass.getESuperTypes().add(this.getAnalysisOp());
 		predictiveEClass.getESuperTypes().add(this.getAnalysisOp());
 		clusteringEClass.getESuperTypes().add(this.getAnalysisOp());
-		predefinedEClass.getESuperTypes().add(this.getCleaningOp());
+		predefinedEClass.getESuperTypes().add(this.getCleaningOperation());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(plEClass, pipeline.PL.class, "PL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPL_Dataflows(), this.getDataflow(), null, "dataflows", null, 1, -1, pipeline.PL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPL_Tasks(), this.getTask(), null, "tasks", null, 1, -1, pipeline.PL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(pipelineEClass, Pipeline.class, "Pipeline", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPipeline_Dataflows(), this.getDataflow(), null, "dataflows", null, 1, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPipeline_Tasks(), this.getTask(), null, "tasks", null, 1, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(taskEClass, Task.class, "Task", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTask_Name(), ecorePackage.getEString(), "name", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1081,7 +1083,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEClass(integrationTaskEClass, IntegrationTask.class, "IntegrationTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(cleaningTaskEClass, CleaningTask.class, "CleaningTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCleaningTask_Operations(), this.getCleaningOp(), null, "operations", null, 1, -1, CleaningTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCleaningTask_Operations(), this.getCleaningOperation(), null, "operations", null, 1, -1, CleaningTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(analyzesTaskEClass, AnalyzesTask.class, "AnalyzesTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAnalyzesTask_Analyzes(), this.getAnalysisOp(), null, "analyzes", null, 1, -1, AnalyzesTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1113,7 +1115,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEAttribute(getFile_Path(), ecorePackage.getEString(), "path", null, 0, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFile_ComesFrom(), this.getExport(), this.getExport_Generates(), "comesFrom", null, 1, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(cleaningOpEClass, CleaningOp.class, "CleaningOp", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(cleaningOperationEClass, CleaningOperation.class, "CleaningOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(analysisOpEClass, AnalysisOp.class, "AnalysisOp", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1157,7 +1159,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	protected void createGmfAnnotations() {
 		String source = "gmf.diagram";	
 		addAnnotation
-		  (plEClass, 
+		  (pipelineEClass, 
 		   source, 
 		   new String[] {
 		   });

@@ -7,7 +7,7 @@ import org.eclipse.core.expressions.PropertyTester;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gmf.runtime.notation.View;
 
-import pipeline.diagram.edit.parts.PLEditPart;
+import pipeline.diagram.edit.parts.PipelineEditPart;
 
 /**
  * @generated
@@ -30,7 +30,7 @@ public class PipelineShortcutPropertyTester extends PropertyTester {
 		if (SHORTCUT_PROPERTY.equals(method)) {
 			EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 			if (annotation != null) {
-				return PLEditPart.MODEL_ID.equals(annotation.getDetails().get("modelID")); //$NON-NLS-1$
+				return PipelineEditPart.MODEL_ID.equals(annotation.getDetails().get("modelID")); //$NON-NLS-1$
 			}
 		}
 		return false;

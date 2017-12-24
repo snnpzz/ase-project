@@ -14,7 +14,7 @@ import pipeline.Predefined;
  *
  * @generated
  */
-public class PredefinedImpl extends CleaningOpImpl implements Predefined {
+public class PredefinedImpl extends CleaningOperationImpl implements Predefined {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

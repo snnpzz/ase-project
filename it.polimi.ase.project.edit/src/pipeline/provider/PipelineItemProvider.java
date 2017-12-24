@@ -22,17 +22,17 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import pipeline.PL;
+import pipeline.Pipeline;
 import pipeline.PipelineFactory;
 import pipeline.PipelinePackage;
 
 /**
- * This is the item provider adapter for a {@link pipeline.PL} object.
+ * This is the item provider adapter for a {@link pipeline.Pipeline} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PLItemProvider 
+public class PipelineItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -46,7 +46,7 @@ public class PLItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PLItemProvider(AdapterFactory adapterFactory) {
+	public PipelineItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -77,8 +77,8 @@ public class PLItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PipelinePackage.Literals.PL__DATAFLOWS);
-			childrenFeatures.add(PipelinePackage.Literals.PL__TASKS);
+			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__DATAFLOWS);
+			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__TASKS);
 		}
 		return childrenFeatures;
 	}
@@ -97,14 +97,14 @@ public class PLItemProvider
 	}
 
 	/**
-	 * This returns PL.gif.
+	 * This returns Pipeline.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PL"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Pipeline"));
 	}
 
 	/**
@@ -115,7 +115,7 @@ public class PLItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_PL_type");
+		return getString("_UI_Pipeline_type");
 	}
 	
 
@@ -130,9 +130,9 @@ public class PLItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(PL.class)) {
-			case PipelinePackage.PL__DATAFLOWS:
-			case PipelinePackage.PL__TASKS:
+		switch (notification.getFeatureID(Pipeline.class)) {
+			case PipelinePackage.PIPELINE__DATAFLOWS:
+			case PipelinePackage.PIPELINE__TASKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -152,37 +152,37 @@ public class PLItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.PL__DATAFLOWS,
+				(PipelinePackage.Literals.PIPELINE__DATAFLOWS,
 				 PipelineFactory.eINSTANCE.createDataflow()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.PL__TASKS,
+				(PipelinePackage.Literals.PIPELINE__TASKS,
 				 PipelineFactory.eINSTANCE.createCollectionTask()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.PL__TASKS,
+				(PipelinePackage.Literals.PIPELINE__TASKS,
 				 PipelineFactory.eINSTANCE.createIntegrationTask()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.PL__TASKS,
+				(PipelinePackage.Literals.PIPELINE__TASKS,
 				 PipelineFactory.eINSTANCE.createCleaningTask()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.PL__TASKS,
+				(PipelinePackage.Literals.PIPELINE__TASKS,
 				 PipelineFactory.eINSTANCE.createAnalyzesTask()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.PL__TASKS,
+				(PipelinePackage.Literals.PIPELINE__TASKS,
 				 PipelineFactory.eINSTANCE.createVisualizationTask()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.PL__TASKS,
+				(PipelinePackage.Literals.PIPELINE__TASKS,
 				 PipelineFactory.eINSTANCE.createExportingTask()));
 	}
 

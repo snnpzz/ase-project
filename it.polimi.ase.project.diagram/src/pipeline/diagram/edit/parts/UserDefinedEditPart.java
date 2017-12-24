@@ -36,7 +36,7 @@ public class UserDefinedEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 3018;
+	public static final int VISUAL_ID = 3026;
 
 	/**
 	* @generated

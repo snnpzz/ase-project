@@ -60,7 +60,7 @@ public class ClusteringNameEditPart extends CompartmentEditPart implements IText
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5046;
+	public static final int VISUAL_ID = 5066;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class ClusteringNameEditPart extends CompartmentEditPart implements IText
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = PipelineParserProvider.getParser(PipelineElementTypes.Clustering_3023, getParserElement(),
+			parser = PipelineParserProvider.getParser(PipelineElementTypes.Clustering_3031, getParserElement(),
 					PipelineVisualIDRegistry.getType(pipeline.diagram.edit.parts.ClusteringNameEditPart.VISUAL_ID));
 		}
 		return parser;

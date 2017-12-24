@@ -1,8 +1,8 @@
-@namespace(uri="http://www.ase.polimi.it/project/pipeline", prefix="pipeline")
+@namespace(uri="http://www.project.ase.polimi.it/pipeline", prefix="pipeline")
 package pipeline;
 
 @gmf.diagram
-class PL {
+class Pipeline {
   val Dataflow[+] dataflows;
   val Task[+] tasks;
 }
@@ -65,7 +65,7 @@ class IntegrationTask extends Task {
 class CleaningTask extends Task {
 
   @gmf.compartment
-  val CleaningOp[+] operations;
+  val CleaningOperation[+] operations;
 }
 
 class AnalyzesTask extends Task {
@@ -97,7 +97,7 @@ class Export {
   attr String name;
 }
 
-class UserDefined extends CleaningOp {
+class UserDefined extends CleaningOperation {
 }
 
 @gmf.node(label="name")
@@ -114,7 +114,7 @@ class File {
   ref Export[1]#generates comesFrom;
 }
 
-abstract class CleaningOp extends Operation {
+abstract class CleaningOperation extends Operation {
 }
 
 abstract class AnalysisOp extends Operation {
@@ -133,7 +133,7 @@ class Predictive extends AnalysisOp {
 class Clustering extends AnalysisOp {
 }
 
-class Predefined extends CleaningOp {
+class Predefined extends CleaningOperation {
 }
 
 enum Format {

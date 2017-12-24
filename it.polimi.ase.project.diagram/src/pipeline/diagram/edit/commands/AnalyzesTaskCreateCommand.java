@@ -16,6 +16,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.AnalyzesTask;
+import pipeline.Pipeline;
 import pipeline.PipelineFactory;
 
 /**
@@ -56,7 +57,7 @@ public class AnalyzesTaskCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		AnalyzesTask newElement = PipelineFactory.eINSTANCE.createAnalyzesTask();
 
-		pipeline.PL owner = (pipeline.PL) getElementToEdit();
+		Pipeline owner = (Pipeline) getElementToEdit();
 		owner.getTasks().add(newElement);
 
 		doConfigure(newElement, monitor, info);

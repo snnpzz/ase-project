@@ -6,7 +6,7 @@
       <constraintsBinding
             compose="true"
             constraints="validation/pipeline.evl"
-            namespaceURI="http://www.ase.polimi.it/project">
+            namespaceURI="http://www.project.ase.polimi.it/pipeline">
       </constraintsBinding>
    </extension>
    <extension

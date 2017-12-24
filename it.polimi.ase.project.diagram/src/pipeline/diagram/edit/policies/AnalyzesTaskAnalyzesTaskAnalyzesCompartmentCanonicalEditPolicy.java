@@ -66,7 +66,7 @@ public class AnalyzesTaskAnalyzesTaskAnalyzesCompartmentCanonicalEditPolicy exte
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<PipelineNodeDescriptor> childDescriptors = PipelineDiagramUpdater
-				.getAnalyzesTaskAnalyzesTaskAnalyzesCompartment_7011SemanticChildren(viewObject);
+				.getAnalyzesTaskAnalyzesTaskAnalyzesCompartment_7019SemanticChildren(viewObject);
 		for (PipelineNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -104,7 +104,7 @@ public class AnalyzesTaskAnalyzesTaskAnalyzesCompartmentCanonicalEditPolicy exte
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<PipelineNodeDescriptor> childDescriptors = PipelineDiagramUpdater
-				.getAnalyzesTaskAnalyzesTaskAnalyzesCompartment_7011SemanticChildren((View) getHost().getModel());
+				.getAnalyzesTaskAnalyzesTaskAnalyzesCompartment_7019SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();

@@ -1,0 +1,8 @@
+context Pipeline {
+
+	constraint CollectionTask {
+		check: self.tasks -> select(t|t.isTypeOf(CollectionTask)).size() <= 1
+		message: ''
+	}
+	
+}

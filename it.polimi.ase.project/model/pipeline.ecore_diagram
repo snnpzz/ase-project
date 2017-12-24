@@ -14,7 +14,7 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_Jy9WweGVEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Jy9WwuGVEeeU3dy_CQ-Szg"/>
     </children>
-    <element xmi:type="ecore:EClass" href="pipeline.ecore#//Pipeline"/>
+    <element xmi:type="ecore:EClass" href="pipeline.ecore#//PL"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jy2pEeGVEeeU3dy_CQ-Szg" x="352" y="40"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_LHGfMOGVEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
@@ -522,7 +522,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_Sv5ck-GVEeeU3dy_CQ-Szg" x="6" y="-8"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_Sv41geGVEeeU3dy_CQ-Szg" fontName=".SF NS Text"/>
-    <element xmi:type="ecore:EReference" href="pipeline.ecore#//Pipeline/dataflows"/>
+    <element xmi:type="ecore:EReference" href="pipeline.ecore#//PL/dataflows"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Sv41guGVEeeU3dy_CQ-Szg" points="[26, 12, -96, -48]$[123, 51, 1, -9]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SwUTUOGVEeeU3dy_CQ-Szg" id="(0.5319148936170213,0.15254237288135594)"/>
   </edges>
@@ -534,7 +534,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_TQdL8-GVEeeU3dy_CQ-Szg" x="-5" y="10"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_TQck4eGVEeeU3dy_CQ-Szg" fontName=".SF NS Text"/>
-    <element xmi:type="ecore:EReference" href="pipeline.ecore#//Pipeline/tasks"/>
+    <element xmi:type="ecore:EReference" href="pipeline.ecore#//PL/tasks"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TQck4uGVEeeU3dy_CQ-Szg" points="[-25, 15, 89, -56]$[-110, 69, 4, -2]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TQg2UOGVEeeU3dy_CQ-Szg" id="(0.9,0.34615384615384615)"/>
   </edges>

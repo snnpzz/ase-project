@@ -1,8 +1,8 @@
-@namespace(uri="http://www.ase.polimi.it/project", prefix="ASEP")
-package ASEProject;
+@namespace(uri="http://www.ase.polimi.it/project/pipeline", prefix="pipeline")
+package pipeline;
 
 @gmf.diagram
-class Pipeline {
+class PL {
   val Dataflow[+] dataflows;
   val Task[+] tasks;
 }

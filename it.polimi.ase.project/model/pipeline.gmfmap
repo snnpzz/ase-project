@@ -8,7 +8,7 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="pipeline.ecore#//Pipeline/tasks"/>
+        href="pipeline.ecore#//PL/tasks"/>
     <ownedChild
         relatedDiagrams="//@diagram">
       <domainMetaElement
@@ -55,7 +55,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="pipeline.ecore#//Pipeline/tasks"/>
+        href="pipeline.ecore#//PL/tasks"/>
     <ownedChild>
       <domainMetaElement
           href="pipeline.ecore#//IntegrationTask"/>
@@ -75,7 +75,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="pipeline.ecore#//Pipeline/tasks"/>
+        href="pipeline.ecore#//PL/tasks"/>
     <ownedChild
         relatedDiagrams="//@diagram">
       <domainMetaElement
@@ -143,7 +143,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="pipeline.ecore#//Pipeline/tasks"/>
+        href="pipeline.ecore#//PL/tasks"/>
     <ownedChild
         relatedDiagrams="//@diagram">
       <domainMetaElement
@@ -253,7 +253,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="pipeline.ecore#//Pipeline/tasks"/>
+        href="pipeline.ecore#//PL/tasks"/>
     <ownedChild>
       <domainMetaElement
           href="pipeline.ecore#//VisualizationTask"/>
@@ -273,7 +273,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="pipeline.ecore#//Pipeline/tasks"/>
+        href="pipeline.ecore#//PL/tasks"/>
     <ownedChild
         relatedDiagrams="//@diagram">
       <domainMetaElement
@@ -322,7 +322,7 @@
     <domainMetaElement
         href="pipeline.ecore#//Dataflow"/>
     <containmentFeature
-        href="pipeline.ecore#//Pipeline/dataflows"/>
+        href="pipeline.ecore#//PL/dataflows"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="pipeline.gmftool#//@palette/@tools.1/@tools.0"/>
@@ -337,11 +337,11 @@
   </links>
   <diagram>
     <diagramCanvas
-        href="pipeline.gmfgraph#ASEProject"/>
+        href="pipeline.gmfgraph#pipeline"/>
     <domainModel
         href="pipeline.ecore#/"/>
     <domainMetaElement
-        href="pipeline.ecore#//Pipeline"/>
+        href="pipeline.ecore#//PL"/>
     <palette
         href="pipeline.gmftool#//@palette"/>
   </diagram>

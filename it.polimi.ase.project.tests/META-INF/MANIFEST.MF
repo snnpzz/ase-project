@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: ASEProject.tests
+Export-Package: pipeline.tests
 Require-Bundle: org.eclipse.core.runtime,
  it.polimi.ase.project;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

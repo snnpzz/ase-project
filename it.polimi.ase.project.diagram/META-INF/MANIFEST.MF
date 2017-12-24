@@ -4,12 +4,12 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: it.polimi.ase.project.diagram; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: ASEProject.diagram.part.ASEProjectDiagramEditorPlugin
+Bundle-Activator: pipeline.diagram.part.PipelineDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: ASEProject.diagram.edit.parts,
- ASEProject.diagram.part,
- ASEProject.diagram.providers
+Export-Package: pipeline.diagram.edit.parts,
+ pipeline.diagram.part,
+ pipeline.diagram.providers
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,

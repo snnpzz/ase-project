@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated pipeline -->
       <package
-            uri="http://www.ase.polimi.it/project"
-            class="ASEProject.ASEProjectPackage"/>
+            uri="http://www.ase.polimi.it/project/pipeline"
+            class="pipeline.PipelinePackage"/>
    </extension>
 
 </plugin>

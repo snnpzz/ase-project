@@ -5,6 +5,7 @@ package pipeline;
 class Pipeline {
   val Dataflow[+] dataflows;
   val Task[+] tasks;
+  attr String ID;
 }
 
 @gmf.node(label="name", figure="rounded")

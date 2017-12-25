@@ -85,13 +85,22 @@ public interface PipelinePackage extends EPackage {
 	int PIPELINE__TASKS = 1;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIPELINE__ID = 2;
+
+	/**
 	 * The number of structural features of the '<em>Pipeline</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIPELINE_FEATURE_COUNT = 2;
+	int PIPELINE_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.TaskImpl <em>Task</em>}' class.
@@ -1358,6 +1367,17 @@ public interface PipelinePackage extends EPackage {
 	EReference getPipeline_Tasks();
 
 	/**
+	 * Returns the meta object for the attribute '{@link pipeline.Pipeline#getID <em>ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>ID</em>'.
+	 * @see pipeline.Pipeline#getID()
+	 * @see #getPipeline()
+	 * @generated
+	 */
+	EAttribute getPipeline_ID();
+
+	/**
 	 * Returns the meta object for class '{@link pipeline.Task <em>Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2061,6 +2081,14 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PIPELINE__TASKS = eINSTANCE.getPipeline_Tasks();
+
+		/**
+		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PIPELINE__ID = eINSTANCE.getPipeline_ID();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.TaskImpl <em>Task</em>}' class.

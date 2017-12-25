@@ -322,6 +322,15 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPipeline_ID() {
+		return (EAttribute)pipelineEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTask() {
 		return taskEClass;
 	}
@@ -906,6 +915,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		pipelineEClass = createEClass(PIPELINE);
 		createEReference(pipelineEClass, PIPELINE__DATAFLOWS);
 		createEReference(pipelineEClass, PIPELINE__TASKS);
+		createEAttribute(pipelineEClass, PIPELINE__ID);
 
 		taskEClass = createEClass(TASK);
 		createEAttribute(taskEClass, TASK__NAME);
@@ -1043,6 +1053,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEClass(pipelineEClass, Pipeline.class, "Pipeline", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPipeline_Dataflows(), this.getDataflow(), null, "dataflows", null, 1, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPipeline_Tasks(), this.getTask(), null, "tasks", null, 1, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPipeline_ID(), ecorePackage.getEString(), "ID", null, 0, 1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(taskEClass, Task.class, "Task", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTask_Name(), ecorePackage.getEString(), "name", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

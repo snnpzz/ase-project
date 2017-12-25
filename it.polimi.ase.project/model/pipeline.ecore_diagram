@@ -3,6 +3,10 @@
   <children xmi:type="notation:Shape" xmi:id="_Jy2pEOGVEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_Jy6TcOGVEeeU3dy_CQ-Szg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_Jy8vsOGVEeeU3dy_CQ-Szg" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_wdN70Om-EeefCo6e3ARM-A" type="3001">
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Pipeline/ID"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wdN70em-EeefCo6e3ARM-A"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Jy8vseGVEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Jy8vsuGVEeeU3dy_CQ-Szg"/>
     </children>

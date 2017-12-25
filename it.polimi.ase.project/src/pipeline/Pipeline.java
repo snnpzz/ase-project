@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link pipeline.Pipeline#getDataflows <em>Dataflows</em>}</li>
  *   <li>{@link pipeline.Pipeline#getTasks <em>Tasks</em>}</li>
+ *   <li>{@link pipeline.Pipeline#getID <em>ID</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getPipeline()
@@ -55,5 +56,31 @@ public interface Pipeline extends EObject {
 	 * @generated
 	 */
 	EList<Task> getTasks();
+
+	/**
+	 * Returns the value of the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>ID</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>ID</em>' attribute.
+	 * @see #setID(String)
+	 * @see pipeline.PipelinePackage#getPipeline_ID()
+	 * @model
+	 * @generated
+	 */
+	String getID();
+
+	/**
+	 * Sets the value of the '{@link pipeline.Pipeline#getID <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>ID</em>' attribute.
+	 * @see #getID()
+	 * @generated
+	 */
+	void setID(String value);
 
 } // Pipeline

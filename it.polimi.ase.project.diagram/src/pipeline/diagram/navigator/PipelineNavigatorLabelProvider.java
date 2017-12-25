@@ -21,6 +21,7 @@ import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
 import pipeline.Dataflow;
+import pipeline.Pipeline;
 import pipeline.diagram.edit.parts.AnalyzesTaskEditPart;
 import pipeline.diagram.edit.parts.AnalyzesTaskNameEditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
@@ -263,7 +264,13 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	* @generated
 	*/
 	private String getPipeline_1000Text(View view) {
-		return ""; //$NON-NLS-1$
+		Pipeline domainModelElement = (Pipeline) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getID();
+		} else {
+			PipelineDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**

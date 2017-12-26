@@ -3,11 +3,11 @@
 
 
 [template public generate(aPipeline : Pipeline)]
-[file ('pipeline_.html', false, 'UTF-8')]
+[file ('pipeline_'.concat(aPipeline.ID).concat('.html'), false, 'UTF-8')]
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>Pipeline </title>
+		<title>Pipeline [aPipeline.ID/]</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Bootstrap CSS -->
@@ -16,7 +16,7 @@
 	<body>
 		<header>
 			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-				<a class="navbar-brand" href="#">Pipeline </a>
+				<a class="navbar-brand" href="#">Pipeline [aPipeline.ID/]</a>
 				<button class="navbar-toggler d-lg-none" type="button" data-target="" data-toggle="collapse">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -56,14 +56,12 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>1</td>
-									<td>b_1</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>b_2</td>
-								</tr>
+								[for (aTask : Task | aPipeline.tasks)]
+									<tr>
+										<td>1</td>
+										<td>[aTask.name/]</td>
+									</tr>
+								[/for]
 							</tbody>
 						</table>
 					</div>				

@@ -4,5 +4,6 @@
 [import it::polimi::ase::project::pipeline2html::files::generate /]
 
 [template public generate(aPipeline : Pipeline)]
-[comment @main/]
+[comment @main /]
+[aPipeline.generate()/]
 [/template]

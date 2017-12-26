@@ -177,7 +177,7 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_9jwZiOGVEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_9jwZieGVEeeU3dy_CQ-Szg"/>
     </children>
-    <element xmi:type="ecore:EClass" href="pipeline.ecore#//AnalyzesTask"/>
+    <element xmi:type="ecore:EClass" href="pipeline.ecore#//AnalysisTask"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9jvyceGVEeeU3dy_CQ-Szg" x="212" y="272"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_-nKXQOGVEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
@@ -211,7 +211,7 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="__aM9yOGVEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="__aM9yeGVEeeU3dy_CQ-Szg"/>
     </children>
-    <element xmi:type="ecore:EClass" href="pipeline.ecore#//ExportingTask"/>
+    <element xmi:type="ecore:EClass" href="pipeline.ecore#//ExportTask"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="__aMWseGVEeeU3dy_CQ-Szg" x="468" y="248"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_he0SoOGWEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
@@ -668,7 +668,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_rl9hw-GWEeeU3dy_CQ-Szg" x="-3" y="18"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_rl86seGWEeeU3dy_CQ-Szg" fontName=".SF NS Text"/>
-    <element xmi:type="ecore:EReference" href="pipeline.ecore#//ExportingTask/exports"/>
+    <element xmi:type="ecore:EReference" href="pipeline.ecore#//ExportTask/exports"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_rl86suGWEeeU3dy_CQ-Szg" points="[0, 26, 4, -65]$[0, 117, 4, 26]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_wxLCYOGWEeeU3dy_CQ-Szg" type="4003" source="_8yD20OGVEeeU3dy_CQ-Szg" target="_m1ZgUOGXEeeU3dy_CQ-Szg">
@@ -690,7 +690,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_xKW-duGWEeeU3dy_CQ-Szg" x="-12" y="-16"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_xKW-ceGWEeeU3dy_CQ-Szg" fontName=".SF NS Text"/>
-    <element xmi:type="ecore:EReference" href="pipeline.ecore#//AnalyzesTask/analyzes"/>
+    <element xmi:type="ecore:EReference" href="pipeline.ecore#//AnalysisTask/analyzes"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xKW-cuGWEeeU3dy_CQ-Szg" points="[-20, 26, 40, -53]$[-59, 74, 1, -5]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xKZasOGWEeeU3dy_CQ-Szg" id="(0.9242424242424242,0.15384615384615385)"/>
   </edges>

@@ -95,14 +95,14 @@
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnalyzesTask" eSuperTypes="#//Task">
+  <eClassifiers xsi:type="ecore:EClass" name="AnalysisTask" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EReference" name="analyzes" lowerBound="1"
         upperBound="-1" eType="#//AnalysisOp" containment="true">
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VisualizationTask" eSuperTypes="#//Task"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ExportingTask" eSuperTypes="#//Task">
+  <eClassifiers xsi:type="ecore:EClass" name="ExportTask" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EReference" name="exports" lowerBound="1"
         upperBound="-1" eType="#//Export" containment="true">
       <eAnnotations source="gmf.compartment"/>

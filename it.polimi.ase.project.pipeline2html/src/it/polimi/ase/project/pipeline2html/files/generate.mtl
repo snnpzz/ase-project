@@ -53,6 +53,7 @@
 								<tr>
 									<th>#</th>
 									<th>Task</th>
+									<th>Type</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -60,6 +61,21 @@
 									<tr>
 										<td>1</td>
 										<td>[aTask.name/]</td>
+										<td>
+											[if (aTask.oclIsTypeOf(CollectionTask))]
+												Data Collection
+											[elseif (aTask.oclIsTypeOf(IntegrationTask))]
+												Data Integration
+											[elseif (aTask.oclIsTypeOf(CleaningTask))]
+												Data Cleaning
+											[elseif (aTask.oclIsTypeOf(AnalysisTask))]
+												Data Analysis
+											[elseif (aTask.oclIsTypeOf(VisualizationTask))]
+												Data Visualization
+											[elseif (aTask.oclIsTypeOf(ExportTask))]
+												Data Export
+											[/if]
+										</td>
 									</tr>
 								[/for]
 							</tbody>

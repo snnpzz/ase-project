@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import pipeline.PL;
 import pipeline.Pipeline;
 import pipeline.PipelineFactory;
 import pipeline.PipelinePackage;

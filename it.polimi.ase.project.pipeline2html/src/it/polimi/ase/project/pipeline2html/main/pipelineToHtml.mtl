@@ -1,0 +1,8 @@
+[comment encoding = UTF-8 /]
+[module pipelineToHtml('http://www.project.ase.polimi.it/pipeline')]
+
+[import it::polimi::ase::project::pipeline2html::files::generate /]
+
+[template public generate(aPipeline : Pipeline)]
+[comment @main/]
+[/template]

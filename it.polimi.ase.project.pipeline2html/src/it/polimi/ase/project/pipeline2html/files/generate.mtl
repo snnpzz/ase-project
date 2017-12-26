@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.project.ase.polimi.it/pipeline')]
+
+
+[template public generate(aPipeline : Pipeline)]
+
+[/template]

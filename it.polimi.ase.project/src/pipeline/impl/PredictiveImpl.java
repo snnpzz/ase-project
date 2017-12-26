@@ -14,7 +14,7 @@ import pipeline.Predictive;
  *
  * @generated
  */
-public class PredictiveImpl extends AnalysisOpImpl implements Predictive {
+public class PredictiveImpl extends AnalysisOperationImpl implements Predictive {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

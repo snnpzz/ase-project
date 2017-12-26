@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
-import pipeline.AnalysisOp;
+import pipeline.AnalysisOperation;
 import pipeline.AnalysisTask;
 import pipeline.CleaningOperation;
 import pipeline.CleaningTask;
@@ -192,7 +192,7 @@ public class PipelineDiagramUpdater {
 		AnalysisTask modelElement = (AnalysisTask) containerView.getElement();
 		LinkedList<PipelineNodeDescriptor> result = new LinkedList<PipelineNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getAnalyzes().iterator(); it.hasNext();) {
-			AnalysisOp childElement = (AnalysisOp) it.next();
+			AnalysisOperation childElement = (AnalysisOperation) it.next();
 			int visualID = PipelineVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == DescriptiveEditPart.VISUAL_ID) {
 				result.add(new PipelineNodeDescriptor(childElement, visualID));

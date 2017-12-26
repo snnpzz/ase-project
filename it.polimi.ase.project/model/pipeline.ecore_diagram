@@ -375,7 +375,7 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_nQ8z4eGXEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_nQ8z4uGXEeeU3dy_CQ-Szg"/>
     </children>
-    <element xmi:type="ecore:EClass" href="pipeline.ecore#//AnalysisOp"/>
+    <element xmi:type="ecore:EClass" href="pipeline.ecore#//AnalysisOperation"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nQ8M0eGXEeeU3dy_CQ-Szg" x="217" y="500"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_w29r4OGXEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">

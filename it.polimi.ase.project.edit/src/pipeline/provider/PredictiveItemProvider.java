@@ -19,7 +19,7 @@ import pipeline.Predictive;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PredictiveItemProvider extends AnalysisOpItemProvider {
+public class PredictiveItemProvider extends AnalysisOperationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

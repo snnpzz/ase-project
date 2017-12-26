@@ -10,12 +10,10 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import pipeline.AnalysisOp;
+import pipeline.AnalysisOperation;
 import pipeline.AnalysisTask;
-import pipeline.AnalyzesTask;
 import pipeline.Attribute;
 import pipeline.Classification;
-import pipeline.CleaningOp;
 import pipeline.CleaningOperation;
 import pipeline.CleaningTask;
 import pipeline.Clustering;
@@ -24,7 +22,6 @@ import pipeline.Dataflow;
 import pipeline.Descriptive;
 import pipeline.Export;
 import pipeline.ExportTask;
-import pipeline.ExportingTask;
 import pipeline.File;
 import pipeline.Format;
 import pipeline.Import;
@@ -187,7 +184,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass analysisOpEClass = null;
+	private EClass analysisOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -828,8 +825,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAnalysisOp() {
-		return analysisOpEClass;
+	public EClass getAnalysisOperation() {
+		return analysisOperationEClass;
 	}
 
 	/**
@@ -992,7 +989,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		cleaningOperationEClass = createEClass(CLEANING_OPERATION);
 
-		analysisOpEClass = createEClass(ANALYSIS_OP);
+		analysisOperationEClass = createEClass(ANALYSIS_OPERATION);
 
 		descriptiveEClass = createEClass(DESCRIPTIVE);
 
@@ -1044,11 +1041,11 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		exportTaskEClass.getESuperTypes().add(this.getTask());
 		userDefinedEClass.getESuperTypes().add(this.getCleaningOperation());
 		cleaningOperationEClass.getESuperTypes().add(this.getOperation());
-		analysisOpEClass.getESuperTypes().add(this.getOperation());
-		descriptiveEClass.getESuperTypes().add(this.getAnalysisOp());
-		classificationEClass.getESuperTypes().add(this.getAnalysisOp());
-		predictiveEClass.getESuperTypes().add(this.getAnalysisOp());
-		clusteringEClass.getESuperTypes().add(this.getAnalysisOp());
+		analysisOperationEClass.getESuperTypes().add(this.getOperation());
+		descriptiveEClass.getESuperTypes().add(this.getAnalysisOperation());
+		classificationEClass.getESuperTypes().add(this.getAnalysisOperation());
+		predictiveEClass.getESuperTypes().add(this.getAnalysisOperation());
+		clusteringEClass.getESuperTypes().add(this.getAnalysisOperation());
 		predefinedEClass.getESuperTypes().add(this.getCleaningOperation());
 
 		// Initialize classes and features; add operations and parameters
@@ -1099,7 +1096,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEReference(getCleaningTask_Operations(), this.getCleaningOperation(), null, "operations", null, 1, -1, CleaningTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(analysisTaskEClass, AnalysisTask.class, "AnalysisTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnalysisTask_Analyzes(), this.getAnalysisOp(), null, "analyzes", null, 1, -1, AnalysisTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnalysisTask_Analyzes(), this.getAnalysisOperation(), null, "analyzes", null, 1, -1, AnalysisTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(visualizationTaskEClass, VisualizationTask.class, "VisualizationTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1130,7 +1127,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		initEClass(cleaningOperationEClass, CleaningOperation.class, "CleaningOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(analysisOpEClass, AnalysisOp.class, "AnalysisOp", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(analysisOperationEClass, AnalysisOperation.class, "AnalysisOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(descriptiveEClass, Descriptive.class, "Descriptive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

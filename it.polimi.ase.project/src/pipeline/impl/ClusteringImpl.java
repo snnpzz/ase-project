@@ -14,7 +14,7 @@ import pipeline.PipelinePackage;
  *
  * @generated
  */
-public class ClusteringImpl extends AnalysisOpImpl implements Clustering {
+public class ClusteringImpl extends AnalysisOperationImpl implements Clustering {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

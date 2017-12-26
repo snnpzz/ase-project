@@ -97,7 +97,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnalysisTask" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EReference" name="analyzes" lowerBound="1"
-        upperBound="-1" eType="#//AnalysisOp" containment="true">
+        upperBound="-1" eType="#//AnalysisOperation" containment="true">
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -150,16 +150,16 @@
         eType="#//Export" eOpposite="#//Export/generates"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CleaningOperation" abstract="true" eSuperTypes="#//Operation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AnalysisOp" abstract="true" eSuperTypes="#//Operation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Descriptive" eSuperTypes="#//AnalysisOp">
+  <eClassifiers xsi:type="ecore:EClass" name="AnalysisOperation" abstract="true" eSuperTypes="#//Operation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Descriptive" eSuperTypes="#//AnalysisOperation">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
       <details key="figure" value="ellipse"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Classification" eSuperTypes="#//AnalysisOp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Predictive" eSuperTypes="#//AnalysisOp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Clustering" eSuperTypes="#//AnalysisOp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Classification" eSuperTypes="#//AnalysisOperation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Predictive" eSuperTypes="#//AnalysisOperation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Clustering" eSuperTypes="#//AnalysisOperation"/>
   <eClassifiers xsi:type="ecore:EClass" name="Predefined" eSuperTypes="#//CleaningOperation"/>
   <eClassifiers xsi:type="ecore:EEnum" name="Format">
     <eLiterals name="txt"/>

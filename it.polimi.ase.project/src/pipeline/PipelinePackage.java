@@ -1048,14 +1048,14 @@ public interface PipelinePackage extends EPackage {
 	int FILE_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.AnalysisOpImpl <em>Analysis Op</em>}' class.
+	 * The meta object id for the '{@link pipeline.impl.AnalysisOperationImpl <em>Analysis Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.AnalysisOpImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getAnalysisOp()
+	 * @see pipeline.impl.AnalysisOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getAnalysisOperation()
 	 * @generated
 	 */
-	int ANALYSIS_OP = 19;
+	int ANALYSIS_OPERATION = 19;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1064,7 +1064,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_OP__NAME = OPERATION__NAME;
+	int ANALYSIS_OPERATION__NAME = OPERATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1073,7 +1073,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_OP__INCOMING = OPERATION__INCOMING;
+	int ANALYSIS_OPERATION__INCOMING = OPERATION__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
@@ -1082,16 +1082,16 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_OP__OUTGOING = OPERATION__OUTGOING;
+	int ANALYSIS_OPERATION__OUTGOING = OPERATION__OUTGOING;
 
 	/**
-	 * The number of structural features of the '<em>Analysis Op</em>' class.
+	 * The number of structural features of the '<em>Analysis Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_OP_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 0;
+	int ANALYSIS_OPERATION_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.DescriptiveImpl <em>Descriptive</em>}' class.
@@ -1110,7 +1110,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTIVE__NAME = ANALYSIS_OP__NAME;
+	int DESCRIPTIVE__NAME = ANALYSIS_OPERATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1119,7 +1119,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTIVE__INCOMING = ANALYSIS_OP__INCOMING;
+	int DESCRIPTIVE__INCOMING = ANALYSIS_OPERATION__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
@@ -1128,7 +1128,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTIVE__OUTGOING = ANALYSIS_OP__OUTGOING;
+	int DESCRIPTIVE__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
 
 	/**
 	 * The number of structural features of the '<em>Descriptive</em>' class.
@@ -1137,7 +1137,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTIVE_FEATURE_COUNT = ANALYSIS_OP_FEATURE_COUNT + 0;
+	int DESCRIPTIVE_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.ClassificationImpl <em>Classification</em>}' class.
@@ -1156,7 +1156,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFICATION__NAME = ANALYSIS_OP__NAME;
+	int CLASSIFICATION__NAME = ANALYSIS_OPERATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1165,7 +1165,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFICATION__INCOMING = ANALYSIS_OP__INCOMING;
+	int CLASSIFICATION__INCOMING = ANALYSIS_OPERATION__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
@@ -1174,7 +1174,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFICATION__OUTGOING = ANALYSIS_OP__OUTGOING;
+	int CLASSIFICATION__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
 
 	/**
 	 * The number of structural features of the '<em>Classification</em>' class.
@@ -1183,7 +1183,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFICATION_FEATURE_COUNT = ANALYSIS_OP_FEATURE_COUNT + 0;
+	int CLASSIFICATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.PredictiveImpl <em>Predictive</em>}' class.
@@ -1202,7 +1202,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDICTIVE__NAME = ANALYSIS_OP__NAME;
+	int PREDICTIVE__NAME = ANALYSIS_OPERATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1211,7 +1211,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDICTIVE__INCOMING = ANALYSIS_OP__INCOMING;
+	int PREDICTIVE__INCOMING = ANALYSIS_OPERATION__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
@@ -1220,7 +1220,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDICTIVE__OUTGOING = ANALYSIS_OP__OUTGOING;
+	int PREDICTIVE__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
 
 	/**
 	 * The number of structural features of the '<em>Predictive</em>' class.
@@ -1229,7 +1229,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDICTIVE_FEATURE_COUNT = ANALYSIS_OP_FEATURE_COUNT + 0;
+	int PREDICTIVE_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.ClusteringImpl <em>Clustering</em>}' class.
@@ -1248,7 +1248,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTERING__NAME = ANALYSIS_OP__NAME;
+	int CLUSTERING__NAME = ANALYSIS_OPERATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1257,7 +1257,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTERING__INCOMING = ANALYSIS_OP__INCOMING;
+	int CLUSTERING__INCOMING = ANALYSIS_OPERATION__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
@@ -1266,7 +1266,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTERING__OUTGOING = ANALYSIS_OP__OUTGOING;
+	int CLUSTERING__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
 
 	/**
 	 * The number of structural features of the '<em>Clustering</em>' class.
@@ -1275,7 +1275,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTERING_FEATURE_COUNT = ANALYSIS_OP_FEATURE_COUNT + 0;
+	int CLUSTERING_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.PredefinedImpl <em>Predefined</em>}' class.
@@ -1965,14 +1965,14 @@ public interface PipelinePackage extends EPackage {
 	EClass getCleaningOperation();
 
 	/**
-	 * Returns the meta object for class '{@link pipeline.AnalysisOp <em>Analysis Op</em>}'.
+	 * Returns the meta object for class '{@link pipeline.AnalysisOperation <em>Analysis Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Analysis Op</em>'.
-	 * @see pipeline.AnalysisOp
+	 * @return the meta object for class '<em>Analysis Operation</em>'.
+	 * @see pipeline.AnalysisOperation
 	 * @generated
 	 */
-	EClass getAnalysisOp();
+	EClass getAnalysisOperation();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Descriptive <em>Descriptive</em>}'.
@@ -2567,14 +2567,14 @@ public interface PipelinePackage extends EPackage {
 		EClass CLEANING_OPERATION = eINSTANCE.getCleaningOperation();
 
 		/**
-		 * The meta object literal for the '{@link pipeline.impl.AnalysisOpImpl <em>Analysis Op</em>}' class.
+		 * The meta object literal for the '{@link pipeline.impl.AnalysisOperationImpl <em>Analysis Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.AnalysisOpImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getAnalysisOp()
+		 * @see pipeline.impl.AnalysisOperationImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getAnalysisOperation()
 		 * @generated
 		 */
-		EClass ANALYSIS_OP = eINSTANCE.getAnalysisOp();
+		EClass ANALYSIS_OPERATION = eINSTANCE.getAnalysisOperation();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.DescriptiveImpl <em>Descriptive</em>}' class.

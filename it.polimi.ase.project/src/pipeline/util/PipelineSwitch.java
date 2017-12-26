@@ -189,17 +189,17 @@ public class PipelineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.ANALYSIS_OP: {
-				AnalysisOp analysisOp = (AnalysisOp)theEObject;
-				T result = caseAnalysisOp(analysisOp);
-				if (result == null) result = caseOperation(analysisOp);
+			case PipelinePackage.ANALYSIS_OPERATION: {
+				AnalysisOperation analysisOperation = (AnalysisOperation)theEObject;
+				T result = caseAnalysisOperation(analysisOperation);
+				if (result == null) result = caseOperation(analysisOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PipelinePackage.DESCRIPTIVE: {
 				Descriptive descriptive = (Descriptive)theEObject;
 				T result = caseDescriptive(descriptive);
-				if (result == null) result = caseAnalysisOp(descriptive);
+				if (result == null) result = caseAnalysisOperation(descriptive);
 				if (result == null) result = caseOperation(descriptive);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -207,7 +207,7 @@ public class PipelineSwitch<T> extends Switch<T> {
 			case PipelinePackage.CLASSIFICATION: {
 				Classification classification = (Classification)theEObject;
 				T result = caseClassification(classification);
-				if (result == null) result = caseAnalysisOp(classification);
+				if (result == null) result = caseAnalysisOperation(classification);
 				if (result == null) result = caseOperation(classification);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -215,7 +215,7 @@ public class PipelineSwitch<T> extends Switch<T> {
 			case PipelinePackage.PREDICTIVE: {
 				Predictive predictive = (Predictive)theEObject;
 				T result = casePredictive(predictive);
-				if (result == null) result = caseAnalysisOp(predictive);
+				if (result == null) result = caseAnalysisOperation(predictive);
 				if (result == null) result = caseOperation(predictive);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -223,7 +223,7 @@ public class PipelineSwitch<T> extends Switch<T> {
 			case PipelinePackage.CLUSTERING: {
 				Clustering clustering = (Clustering)theEObject;
 				T result = caseClustering(clustering);
-				if (result == null) result = caseAnalysisOp(clustering);
+				if (result == null) result = caseAnalysisOperation(clustering);
 				if (result == null) result = caseOperation(clustering);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -526,17 +526,17 @@ public class PipelineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Analysis Op</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Analysis Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Analysis Op</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Analysis Operation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAnalysisOp(AnalysisOp object) {
+	public T caseAnalysisOperation(AnalysisOperation object) {
 		return null;
 	}
 

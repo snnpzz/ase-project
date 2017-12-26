@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
 public interface AnalysisTask extends Task {
 	/**
 	 * Returns the value of the '<em><b>Analyzes</b></em>' containment reference list.
-	 * The list contents are of type {@link pipeline.AnalysisOp}.
+	 * The list contents are of type {@link pipeline.AnalysisOperation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Analyzes</em>' containment reference list isn't clear,
@@ -35,6 +35,6 @@ public interface AnalysisTask extends Task {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<AnalysisOp> getAnalyzes();
+	EList<AnalysisOperation> getAnalyzes();
 
 } // AnalysisTask

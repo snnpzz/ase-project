@@ -19,7 +19,7 @@ import pipeline.Classification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ClassificationItemProvider extends AnalysisOpItemProvider {
+public class ClassificationItemProvider extends AnalysisOperationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -13,5 +13,5 @@ package pipeline;
  * @model
  * @generated
  */
-public interface Classification extends AnalysisOp {
+public interface Classification extends AnalysisOperation {
 } // Classification

@@ -19,7 +19,7 @@ import pipeline.Clustering;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ClusteringItemProvider extends AnalysisOpItemProvider {
+public class ClusteringItemProvider extends AnalysisOperationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

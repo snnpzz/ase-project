@@ -72,7 +72,7 @@ class CleaningTask extends Task {
 class AnalysisTask extends Task {
 
   @gmf.compartment
-  val AnalysisOp[+] analyzes;
+  val AnalysisOperation[+] analyzes;
 }
 
 class VisualizationTask extends Task {
@@ -118,20 +118,20 @@ class File {
 abstract class CleaningOperation extends Operation {
 }
 
-abstract class AnalysisOp extends Operation {
+abstract class AnalysisOperation extends Operation {
 }
 
 @gmf.node(label="name", figure="ellipse")
-class Descriptive extends AnalysisOp {
+class Descriptive extends AnalysisOperation {
 }
 
-class Classification extends AnalysisOp {
+class Classification extends AnalysisOperation {
 }
 
-class Predictive extends AnalysisOp {
+class Predictive extends AnalysisOperation {
 }
 
-class Clustering extends AnalysisOp {
+class Clustering extends AnalysisOperation {
 }
 
 class Predefined extends CleaningOperation {

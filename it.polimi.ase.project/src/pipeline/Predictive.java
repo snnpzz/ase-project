@@ -13,5 +13,5 @@ package pipeline;
  * @model
  * @generated
  */
-public interface Predictive extends AnalysisOp {
+public interface Predictive extends AnalysisOperation {
 } // Predictive

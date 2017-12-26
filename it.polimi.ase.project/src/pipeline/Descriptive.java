@@ -13,5 +13,5 @@ package pipeline;
  * @model annotation="gmf.node label='name' figure='ellipse'"
  * @generated
  */
-public interface Descriptive extends AnalysisOp {
+public interface Descriptive extends AnalysisOperation {
 } // Descriptive

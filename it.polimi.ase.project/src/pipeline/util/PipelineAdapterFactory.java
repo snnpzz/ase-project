@@ -144,8 +144,8 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 				return createCleaningOperationAdapter();
 			}
 			@Override
-			public Adapter caseAnalysisOp(AnalysisOp object) {
-				return createAnalysisOpAdapter();
+			public Adapter caseAnalysisOperation(AnalysisOperation object) {
+				return createAnalysisOperationAdapter();
 			}
 			@Override
 			public Adapter caseDescriptive(Descriptive object) {
@@ -454,16 +454,16 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.AnalysisOp <em>Analysis Op</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.AnalysisOperation <em>Analysis Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.AnalysisOp
+	 * @see pipeline.AnalysisOperation
 	 * @generated
 	 */
-	public Adapter createAnalysisOpAdapter() {
+	public Adapter createAnalysisOperationAdapter() {
 		return null;
 	}
 

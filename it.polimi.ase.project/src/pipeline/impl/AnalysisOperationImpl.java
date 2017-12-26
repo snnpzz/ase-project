@@ -4,23 +4,23 @@ package pipeline.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import pipeline.Descriptive;
+import pipeline.AnalysisOperation;
 import pipeline.PipelinePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Descriptive</b></em>'.
+ * An implementation of the model object '<em><b>Analysis Operation</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class DescriptiveImpl extends AnalysisOperationImpl implements Descriptive {
+public abstract class AnalysisOperationImpl extends OperationImpl implements AnalysisOperation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DescriptiveImpl() {
+	protected AnalysisOperationImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public class DescriptiveImpl extends AnalysisOperationImpl implements Descriptiv
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PipelinePackage.Literals.DESCRIPTIVE;
+		return PipelinePackage.Literals.ANALYSIS_OPERATION;
 	}
 
-} //DescriptiveImpl
+} //AnalysisOperationImpl

@@ -13,7 +13,7 @@ import pipeline.PipelineFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ClusteringTest extends AnalysisOpTest {
+public class ClusteringTest extends AnalysisOperationTest {
 
 	/**
 	 * <!-- begin-user-doc -->

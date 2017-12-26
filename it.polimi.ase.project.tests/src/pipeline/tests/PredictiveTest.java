@@ -13,7 +13,7 @@ import pipeline.Predictive;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PredictiveTest extends AnalysisOpTest {
+public class PredictiveTest extends AnalysisOperationTest {
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -19,7 +19,7 @@ import pipeline.Descriptive;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DescriptiveItemProvider extends AnalysisOpItemProvider {
+public class DescriptiveItemProvider extends AnalysisOperationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

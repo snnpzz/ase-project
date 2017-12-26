@@ -13,5 +13,5 @@ package pipeline;
  * @model
  * @generated
  */
-public interface Clustering extends AnalysisOp {
+public interface Clustering extends AnalysisOperation {
 } // Clustering

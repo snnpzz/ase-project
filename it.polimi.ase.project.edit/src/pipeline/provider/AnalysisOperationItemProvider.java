@@ -11,22 +11,22 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import pipeline.AnalysisOp;
+import pipeline.AnalysisOperation;
 
 /**
- * This is the item provider adapter for a {@link pipeline.AnalysisOp} object.
+ * This is the item provider adapter for a {@link pipeline.AnalysisOperation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AnalysisOpItemProvider extends OperationItemProvider {
+public class AnalysisOperationItemProvider extends OperationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AnalysisOpItemProvider(AdapterFactory adapterFactory) {
+	public AnalysisOperationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,10 +53,10 @@ public class AnalysisOpItemProvider extends OperationItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AnalysisOp)object).getName();
+		String label = ((AnalysisOperation)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_AnalysisOp_type") :
-			getString("_UI_AnalysisOp_type") + " " + label;
+			getString("_UI_AnalysisOperation_type") :
+			getString("_UI_AnalysisOperation_type") + " " + label;
 	}
 	
 

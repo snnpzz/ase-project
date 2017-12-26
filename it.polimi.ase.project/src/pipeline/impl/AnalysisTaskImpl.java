@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import pipeline.AnalysisOp;
+import pipeline.AnalysisOperation;
 import pipeline.AnalysisTask;
 import pipeline.PipelinePackage;
 
@@ -40,7 +40,7 @@ public class AnalysisTaskImpl extends TaskImpl implements AnalysisTask {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AnalysisOp> analyzes;
+	protected EList<AnalysisOperation> analyzes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,9 +66,9 @@ public class AnalysisTaskImpl extends TaskImpl implements AnalysisTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AnalysisOp> getAnalyzes() {
+	public EList<AnalysisOperation> getAnalyzes() {
 		if (analyzes == null) {
-			analyzes = new EObjectContainmentEList<AnalysisOp>(AnalysisOp.class, this, PipelinePackage.ANALYSIS_TASK__ANALYZES);
+			analyzes = new EObjectContainmentEList<AnalysisOperation>(AnalysisOperation.class, this, PipelinePackage.ANALYSIS_TASK__ANALYZES);
 		}
 		return analyzes;
 	}
@@ -112,7 +112,7 @@ public class AnalysisTaskImpl extends TaskImpl implements AnalysisTask {
 		switch (featureID) {
 			case PipelinePackage.ANALYSIS_TASK__ANALYZES:
 				getAnalyzes().clear();
-				getAnalyzes().addAll((Collection<? extends AnalysisOp>)newValue);
+				getAnalyzes().addAll((Collection<? extends AnalysisOperation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

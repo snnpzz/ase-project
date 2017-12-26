@@ -14,7 +14,7 @@ import pipeline.PipelinePackage;
  *
  * @generated
  */
-public class ClassificationImpl extends AnalysisOpImpl implements Classification {
+public class ClassificationImpl extends AnalysisOperationImpl implements Classification {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

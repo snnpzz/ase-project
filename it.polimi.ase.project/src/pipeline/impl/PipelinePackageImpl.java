@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import pipeline.AnalysisOp;
+import pipeline.AnalysisTask;
 import pipeline.AnalyzesTask;
 import pipeline.Attribute;
 import pipeline.Classification;
@@ -22,6 +23,7 @@ import pipeline.CollectionTask;
 import pipeline.Dataflow;
 import pipeline.Descriptive;
 import pipeline.Export;
+import pipeline.ExportTask;
 import pipeline.ExportingTask;
 import pipeline.File;
 import pipeline.Format;
@@ -122,7 +124,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass analyzesTaskEClass = null;
+	private EClass analysisTaskEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,7 +138,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass exportingTaskEClass = null;
+	private EClass exportTaskEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -340,7 +342,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTask_Name() {
+	public EAttribute getTask_ID() {
 		return (EAttribute)taskEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -619,8 +621,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAnalyzesTask() {
-		return analyzesTaskEClass;
+	public EClass getAnalysisTask() {
+		return analysisTaskEClass;
 	}
 
 	/**
@@ -628,8 +630,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAnalyzesTask_Analyzes() {
-		return (EReference)analyzesTaskEClass.getEStructuralFeatures().get(0);
+	public EReference getAnalysisTask_Analyzes() {
+		return (EReference)analysisTaskEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -646,8 +648,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getExportingTask() {
-		return exportingTaskEClass;
+	public EClass getExportTask() {
+		return exportTaskEClass;
 	}
 
 	/**
@@ -655,8 +657,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExportingTask_Exports() {
-		return (EReference)exportingTaskEClass.getEStructuralFeatures().get(0);
+	public EReference getExportTask_Exports() {
+		return (EReference)exportTaskEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -918,7 +920,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEAttribute(pipelineEClass, PIPELINE__ID);
 
 		taskEClass = createEClass(TASK);
-		createEAttribute(taskEClass, TASK__NAME);
+		createEAttribute(taskEClass, TASK__ID);
 		createEAttribute(taskEClass, TASK__IS_REQUIRED);
 		createEReference(taskEClass, TASK__INCOMING);
 		createEReference(taskEClass, TASK__OUTGOING);
@@ -958,13 +960,13 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		cleaningTaskEClass = createEClass(CLEANING_TASK);
 		createEReference(cleaningTaskEClass, CLEANING_TASK__OPERATIONS);
 
-		analyzesTaskEClass = createEClass(ANALYZES_TASK);
-		createEReference(analyzesTaskEClass, ANALYZES_TASK__ANALYZES);
+		analysisTaskEClass = createEClass(ANALYSIS_TASK);
+		createEReference(analysisTaskEClass, ANALYSIS_TASK__ANALYZES);
 
 		visualizationTaskEClass = createEClass(VISUALIZATION_TASK);
 
-		exportingTaskEClass = createEClass(EXPORTING_TASK);
-		createEReference(exportingTaskEClass, EXPORTING_TASK__EXPORTS);
+		exportTaskEClass = createEClass(EXPORT_TASK);
+		createEReference(exportTaskEClass, EXPORT_TASK__EXPORTS);
 
 		importEClass = createEClass(IMPORT);
 		createEReference(importEClass, IMPORT__READS_FROM);
@@ -1037,9 +1039,9 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		collectionTaskEClass.getESuperTypes().add(this.getTask());
 		integrationTaskEClass.getESuperTypes().add(this.getTask());
 		cleaningTaskEClass.getESuperTypes().add(this.getTask());
-		analyzesTaskEClass.getESuperTypes().add(this.getTask());
+		analysisTaskEClass.getESuperTypes().add(this.getTask());
 		visualizationTaskEClass.getESuperTypes().add(this.getTask());
-		exportingTaskEClass.getESuperTypes().add(this.getTask());
+		exportTaskEClass.getESuperTypes().add(this.getTask());
 		userDefinedEClass.getESuperTypes().add(this.getCleaningOperation());
 		cleaningOperationEClass.getESuperTypes().add(this.getOperation());
 		analysisOpEClass.getESuperTypes().add(this.getOperation());
@@ -1056,7 +1058,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEAttribute(getPipeline_ID(), ecorePackage.getEString(), "ID", null, 0, 1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(taskEClass, Task.class, "Task", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTask_Name(), ecorePackage.getEString(), "name", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTask_ID(), ecorePackage.getEString(), "ID", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTask_IsRequired(), ecorePackage.getEBoolean(), "isRequired", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_Incoming(), this.getDataflow(), this.getDataflow_Target(), "incoming", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_Outgoing(), this.getDataflow(), this.getDataflow_Source(), "outgoing", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1096,13 +1098,13 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEClass(cleaningTaskEClass, CleaningTask.class, "CleaningTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCleaningTask_Operations(), this.getCleaningOperation(), null, "operations", null, 1, -1, CleaningTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(analyzesTaskEClass, AnalyzesTask.class, "AnalyzesTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnalyzesTask_Analyzes(), this.getAnalysisOp(), null, "analyzes", null, 1, -1, AnalyzesTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(analysisTaskEClass, AnalysisTask.class, "AnalysisTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAnalysisTask_Analyzes(), this.getAnalysisOp(), null, "analyzes", null, 1, -1, AnalysisTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(visualizationTaskEClass, VisualizationTask.class, "VisualizationTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(exportingTaskEClass, ExportingTask.class, "ExportingTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExportingTask_Exports(), this.getExport(), null, "exports", null, 1, -1, ExportingTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(exportTaskEClass, ExportTask.class, "ExportTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExportTask_Exports(), this.getExport(), null, "exports", null, 1, -1, ExportTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getImport_ReadsFrom(), this.getSource(), this.getSource_LinkedTo(), "readsFrom", null, 1, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1188,7 +1190,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		  (taskEClass, 
 		   source, 
 		   new String[] {
-			 "label", "name",
+			 "label", "ID",
 			 "figure", "rounded"
 		   });	
 		addAnnotation
@@ -1293,12 +1295,12 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getAnalyzesTask_Analyzes(), 
+		  (getAnalysisTask_Analyzes(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getExportingTask_Exports(), 
+		  (getExportTask_Exports(), 
 		   source, 
 		   new String[] {
 		   });

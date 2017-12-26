@@ -65,9 +65,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 			case PipelinePackage.COLLECTION_TASK: return createCollectionTask();
 			case PipelinePackage.INTEGRATION_TASK: return createIntegrationTask();
 			case PipelinePackage.CLEANING_TASK: return createCleaningTask();
-			case PipelinePackage.ANALYZES_TASK: return createAnalyzesTask();
+			case PipelinePackage.ANALYSIS_TASK: return createAnalysisTask();
 			case PipelinePackage.VISUALIZATION_TASK: return createVisualizationTask();
-			case PipelinePackage.EXPORTING_TASK: return createExportingTask();
+			case PipelinePackage.EXPORT_TASK: return createExportTask();
 			case PipelinePackage.IMPORT: return createImport();
 			case PipelinePackage.EXPORT: return createExport();
 			case PipelinePackage.USER_DEFINED: return createUserDefined();
@@ -198,9 +198,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AnalyzesTask createAnalyzesTask() {
-		AnalyzesTaskImpl analyzesTask = new AnalyzesTaskImpl();
-		return analyzesTask;
+	public AnalysisTask createAnalysisTask() {
+		AnalysisTaskImpl analysisTask = new AnalysisTaskImpl();
+		return analysisTask;
 	}
 
 	/**
@@ -218,9 +218,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExportingTask createExportingTask() {
-		ExportingTaskImpl exportingTask = new ExportingTaskImpl();
-		return exportingTask;
+	public ExportTask createExportTask() {
+		ExportTaskImpl exportTask = new ExportTaskImpl();
+		return exportTask;
 	}
 
 	/**

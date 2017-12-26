@@ -31,38 +31,38 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case CollectionTaskEditPart.VISUAL_ID:
 				return new CollectionTaskEditPart(view);
 
-			case CollectionTaskNameEditPart.VISUAL_ID:
-				return new CollectionTaskNameEditPart(view);
+			case CollectionTaskIDEditPart.VISUAL_ID:
+				return new CollectionTaskIDEditPart(view);
 
 			case IntegrationTaskEditPart.VISUAL_ID:
 				return new IntegrationTaskEditPart(view);
 
-			case IntegrationTaskNameEditPart.VISUAL_ID:
-				return new IntegrationTaskNameEditPart(view);
+			case IntegrationTaskIDEditPart.VISUAL_ID:
+				return new IntegrationTaskIDEditPart(view);
 
 			case CleaningTaskEditPart.VISUAL_ID:
 				return new CleaningTaskEditPart(view);
 
-			case CleaningTaskNameEditPart.VISUAL_ID:
-				return new CleaningTaskNameEditPart(view);
+			case CleaningTaskIDEditPart.VISUAL_ID:
+				return new CleaningTaskIDEditPart(view);
 
-			case AnalyzesTaskEditPart.VISUAL_ID:
-				return new AnalyzesTaskEditPart(view);
+			case AnalysisTaskEditPart.VISUAL_ID:
+				return new AnalysisTaskEditPart(view);
 
-			case AnalyzesTaskNameEditPart.VISUAL_ID:
-				return new AnalyzesTaskNameEditPart(view);
+			case AnalysisTaskIDEditPart.VISUAL_ID:
+				return new AnalysisTaskIDEditPart(view);
 
 			case VisualizationTaskEditPart.VISUAL_ID:
 				return new VisualizationTaskEditPart(view);
 
-			case VisualizationTaskNameEditPart.VISUAL_ID:
-				return new VisualizationTaskNameEditPart(view);
+			case VisualizationTaskIDEditPart.VISUAL_ID:
+				return new VisualizationTaskIDEditPart(view);
 
-			case ExportingTaskEditPart.VISUAL_ID:
-				return new ExportingTaskEditPart(view);
+			case ExportTaskEditPart.VISUAL_ID:
+				return new ExportTaskEditPart(view);
 
-			case ExportingTaskNameEditPart.VISUAL_ID:
-				return new ExportingTaskNameEditPart(view);
+			case ExportTaskIDEditPart.VISUAL_ID:
+				return new ExportTaskIDEditPart(view);
 
 			case ImportEditPart.VISUAL_ID:
 				return new ImportEditPart(view);
@@ -118,11 +118,11 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case CleaningTaskCleaningTaskOperationsCompartmentEditPart.VISUAL_ID:
 				return new CleaningTaskCleaningTaskOperationsCompartmentEditPart(view);
 
-			case AnalyzesTaskAnalyzesTaskAnalyzesCompartmentEditPart.VISUAL_ID:
-				return new AnalyzesTaskAnalyzesTaskAnalyzesCompartmentEditPart(view);
+			case AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID:
+				return new AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart(view);
 
-			case ExportingTaskExportingTaskExportsCompartmentEditPart.VISUAL_ID:
-				return new ExportingTaskExportingTaskExportsCompartmentEditPart(view);
+			case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
+				return new ExportTaskExportTaskExportsCompartmentEditPart(view);
 
 			case DataflowEditPart.VISUAL_ID:
 				return new DataflowEditPart(view);

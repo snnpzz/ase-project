@@ -22,7 +22,7 @@ public class ExportItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 	* @generated
 	*/
 	public ExportItemSemanticEditPolicy() {
-		super(PipelineElementTypes.Export_3032);
+		super(PipelineElementTypes.Export_3037);
 	}
 
 	/**

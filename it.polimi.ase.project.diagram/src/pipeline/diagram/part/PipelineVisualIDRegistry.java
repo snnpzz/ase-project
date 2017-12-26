@@ -12,31 +12,31 @@ import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
 import pipeline.Pipeline;
 import pipeline.PipelinePackage;
-import pipeline.diagram.edit.parts.AnalyzesTaskAnalyzesTaskAnalyzesCompartmentEditPart;
-import pipeline.diagram.edit.parts.AnalyzesTaskEditPart;
-import pipeline.diagram.edit.parts.AnalyzesTaskNameEditPart;
+import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart;
+import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
+import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.ClassificationNameEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
-import pipeline.diagram.edit.parts.CleaningTaskNameEditPart;
+import pipeline.diagram.edit.parts.CleaningTaskIDEditPart;
 import pipeline.diagram.edit.parts.ClusteringEditPart;
 import pipeline.diagram.edit.parts.ClusteringNameEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskCollectionTaskImportsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
-import pipeline.diagram.edit.parts.CollectionTaskNameEditPart;
+import pipeline.diagram.edit.parts.CollectionTaskIDEditPart;
 import pipeline.diagram.edit.parts.DataflowEditPart;
 import pipeline.diagram.edit.parts.DescriptiveEditPart;
 import pipeline.diagram.edit.parts.DescriptiveNameEditPart;
 import pipeline.diagram.edit.parts.ExportEditPart;
 import pipeline.diagram.edit.parts.ExportNameEditPart;
-import pipeline.diagram.edit.parts.ExportingTaskEditPart;
-import pipeline.diagram.edit.parts.ExportingTaskExportingTaskExportsCompartmentEditPart;
-import pipeline.diagram.edit.parts.ExportingTaskNameEditPart;
+import pipeline.diagram.edit.parts.ExportTaskEditPart;
+import pipeline.diagram.edit.parts.ExportTaskExportTaskExportsCompartmentEditPart;
+import pipeline.diagram.edit.parts.ExportTaskIDEditPart;
 import pipeline.diagram.edit.parts.ImportEditPart;
 import pipeline.diagram.edit.parts.ImportNameEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
-import pipeline.diagram.edit.parts.IntegrationTaskNameEditPart;
+import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
 import pipeline.diagram.edit.parts.PredefinedEditPart;
 import pipeline.diagram.edit.parts.PredefinedNameEditPart;
@@ -45,7 +45,7 @@ import pipeline.diagram.edit.parts.PredictiveNameEditPart;
 import pipeline.diagram.edit.parts.UserDefinedEditPart;
 import pipeline.diagram.edit.parts.UserDefinedNameEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
-import pipeline.diagram.edit.parts.VisualizationTaskNameEditPart;
+import pipeline.diagram.edit.parts.VisualizationTaskIDEditPart;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -158,14 +158,14 @@ public class PipelineVisualIDRegistry {
 			if (PipelinePackage.eINSTANCE.getCleaningTask().isSuperTypeOf(domainElement.eClass())) {
 				return CleaningTaskEditPart.VISUAL_ID;
 			}
-			if (PipelinePackage.eINSTANCE.getAnalyzesTask().isSuperTypeOf(domainElement.eClass())) {
-				return AnalyzesTaskEditPart.VISUAL_ID;
+			if (PipelinePackage.eINSTANCE.getAnalysisTask().isSuperTypeOf(domainElement.eClass())) {
+				return AnalysisTaskEditPart.VISUAL_ID;
 			}
 			if (PipelinePackage.eINSTANCE.getVisualizationTask().isSuperTypeOf(domainElement.eClass())) {
 				return VisualizationTaskEditPart.VISUAL_ID;
 			}
-			if (PipelinePackage.eINSTANCE.getExportingTask().isSuperTypeOf(domainElement.eClass())) {
-				return ExportingTaskEditPart.VISUAL_ID;
+			if (PipelinePackage.eINSTANCE.getExportTask().isSuperTypeOf(domainElement.eClass())) {
+				return ExportTaskEditPart.VISUAL_ID;
 			}
 			break;
 		case CollectionTaskCollectionTaskImportsCompartmentEditPart.VISUAL_ID:
@@ -181,7 +181,7 @@ public class PipelineVisualIDRegistry {
 				return PredefinedEditPart.VISUAL_ID;
 			}
 			break;
-		case AnalyzesTaskAnalyzesTaskAnalyzesCompartmentEditPart.VISUAL_ID:
+		case AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID:
 			if (PipelinePackage.eINSTANCE.getDescriptive().isSuperTypeOf(domainElement.eClass())) {
 				return DescriptiveEditPart.VISUAL_ID;
 			}
@@ -195,7 +195,7 @@ public class PipelineVisualIDRegistry {
 				return ClusteringEditPart.VISUAL_ID;
 			}
 			break;
-		case ExportingTaskExportingTaskExportsCompartmentEditPart.VISUAL_ID:
+		case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
 			if (PipelinePackage.eINSTANCE.getExport().isSuperTypeOf(domainElement.eClass())) {
 				return ExportEditPart.VISUAL_ID;
 			}
@@ -233,18 +233,18 @@ public class PipelineVisualIDRegistry {
 			if (CleaningTaskEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (AnalyzesTaskEditPart.VISUAL_ID == nodeVisualID) {
+			if (AnalysisTaskEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (VisualizationTaskEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ExportingTaskEditPart.VISUAL_ID == nodeVisualID) {
+			if (ExportTaskEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case CollectionTaskEditPart.VISUAL_ID:
-			if (CollectionTaskNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (CollectionTaskIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (CollectionTaskCollectionTaskImportsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
@@ -252,36 +252,36 @@ public class PipelineVisualIDRegistry {
 			}
 			break;
 		case IntegrationTaskEditPart.VISUAL_ID:
-			if (IntegrationTaskNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (IntegrationTaskIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case CleaningTaskEditPart.VISUAL_ID:
-			if (CleaningTaskNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (CleaningTaskIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (CleaningTaskCleaningTaskOperationsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case AnalyzesTaskEditPart.VISUAL_ID:
-			if (AnalyzesTaskNameEditPart.VISUAL_ID == nodeVisualID) {
+		case AnalysisTaskEditPart.VISUAL_ID:
+			if (AnalysisTaskIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (AnalyzesTaskAnalyzesTaskAnalyzesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case VisualizationTaskEditPart.VISUAL_ID:
-			if (VisualizationTaskNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (VisualizationTaskIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ExportingTaskEditPart.VISUAL_ID:
-			if (ExportingTaskNameEditPart.VISUAL_ID == nodeVisualID) {
+		case ExportTaskEditPart.VISUAL_ID:
+			if (ExportTaskIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ExportingTaskExportingTaskExportsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -338,7 +338,7 @@ public class PipelineVisualIDRegistry {
 				return true;
 			}
 			break;
-		case AnalyzesTaskAnalyzesTaskAnalyzesCompartmentEditPart.VISUAL_ID:
+		case AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID:
 			if (DescriptiveEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -352,7 +352,7 @@ public class PipelineVisualIDRegistry {
 				return true;
 			}
 			break;
-		case ExportingTaskExportingTaskExportsCompartmentEditPart.VISUAL_ID:
+		case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
 			if (ExportEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -403,8 +403,8 @@ public class PipelineVisualIDRegistry {
 		switch (visualID) {
 		case CollectionTaskCollectionTaskImportsCompartmentEditPart.VISUAL_ID:
 		case CleaningTaskCleaningTaskOperationsCompartmentEditPart.VISUAL_ID:
-		case AnalyzesTaskAnalyzesTaskAnalyzesCompartmentEditPart.VISUAL_ID:
-		case ExportingTaskExportingTaskExportsCompartmentEditPart.VISUAL_ID:
+		case AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID:
+		case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

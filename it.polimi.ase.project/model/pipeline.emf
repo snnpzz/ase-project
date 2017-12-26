@@ -8,9 +8,9 @@ class Pipeline {
   attr String ID;
 }
 
-@gmf.node(label="name", figure="rounded")
+@gmf.node(label="ID", figure="rounded")
 abstract class Task {
-  attr String name;
+  attr String ID;
   attr boolean isRequired;
   ref Dataflow[*]#target incoming;
   ref Dataflow[*]#source outgoing;
@@ -69,7 +69,7 @@ class CleaningTask extends Task {
   val CleaningOperation[+] operations;
 }
 
-class AnalyzesTask extends Task {
+class AnalysisTask extends Task {
 
   @gmf.compartment
   val AnalysisOp[+] analyzes;
@@ -78,7 +78,7 @@ class AnalyzesTask extends Task {
 class VisualizationTask extends Task {
 }
 
-class ExportingTask extends Task {
+class ExportTask extends Task {
 
   @gmf.compartment
   val Export[+] exports;

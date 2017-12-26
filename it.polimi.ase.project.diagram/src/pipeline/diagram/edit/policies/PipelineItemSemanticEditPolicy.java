@@ -10,10 +10,10 @@ import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsComma
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 
-import pipeline.diagram.edit.commands.AnalyzesTaskCreateCommand;
+import pipeline.diagram.edit.commands.AnalysisTaskCreateCommand;
 import pipeline.diagram.edit.commands.CleaningTaskCreateCommand;
 import pipeline.diagram.edit.commands.CollectionTaskCreateCommand;
-import pipeline.diagram.edit.commands.ExportingTaskCreateCommand;
+import pipeline.diagram.edit.commands.ExportTaskCreateCommand;
 import pipeline.diagram.edit.commands.IntegrationTaskCreateCommand;
 import pipeline.diagram.edit.commands.VisualizationTaskCreateCommand;
 import pipeline.diagram.providers.PipelineElementTypes;
@@ -43,14 +43,14 @@ public class PipelineItemSemanticEditPolicy extends PipelineBaseItemSemanticEdit
 		if (PipelineElementTypes.CleaningTask_2027 == req.getElementType()) {
 			return getGEFWrapper(new CleaningTaskCreateCommand(req));
 		}
-		if (PipelineElementTypes.AnalyzesTask_2028 == req.getElementType()) {
-			return getGEFWrapper(new AnalyzesTaskCreateCommand(req));
+		if (PipelineElementTypes.AnalysisTask_2031 == req.getElementType()) {
+			return getGEFWrapper(new AnalysisTaskCreateCommand(req));
 		}
 		if (PipelineElementTypes.VisualizationTask_2029 == req.getElementType()) {
 			return getGEFWrapper(new VisualizationTaskCreateCommand(req));
 		}
-		if (PipelineElementTypes.ExportingTask_2030 == req.getElementType()) {
-			return getGEFWrapper(new ExportingTaskCreateCommand(req));
+		if (PipelineElementTypes.ExportTask_2032 == req.getElementType()) {
+			return getGEFWrapper(new ExportTaskCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

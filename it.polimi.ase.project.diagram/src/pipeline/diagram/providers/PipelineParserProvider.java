@@ -17,20 +17,20 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.PipelinePackage;
-import pipeline.diagram.edit.parts.AnalyzesTaskNameEditPart;
+import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
 import pipeline.diagram.edit.parts.ClassificationNameEditPart;
-import pipeline.diagram.edit.parts.CleaningTaskNameEditPart;
+import pipeline.diagram.edit.parts.CleaningTaskIDEditPart;
 import pipeline.diagram.edit.parts.ClusteringNameEditPart;
-import pipeline.diagram.edit.parts.CollectionTaskNameEditPart;
+import pipeline.diagram.edit.parts.CollectionTaskIDEditPart;
 import pipeline.diagram.edit.parts.DescriptiveNameEditPart;
 import pipeline.diagram.edit.parts.ExportNameEditPart;
-import pipeline.diagram.edit.parts.ExportingTaskNameEditPart;
+import pipeline.diagram.edit.parts.ExportTaskIDEditPart;
 import pipeline.diagram.edit.parts.ImportNameEditPart;
-import pipeline.diagram.edit.parts.IntegrationTaskNameEditPart;
+import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
 import pipeline.diagram.edit.parts.PredefinedNameEditPart;
 import pipeline.diagram.edit.parts.PredictiveNameEditPart;
 import pipeline.diagram.edit.parts.UserDefinedNameEditPart;
-import pipeline.diagram.edit.parts.VisualizationTaskNameEditPart;
+import pipeline.diagram.edit.parts.VisualizationTaskIDEditPart;
 import pipeline.diagram.parsers.MessageFormatParser;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 
@@ -42,103 +42,103 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 	/**
 	* @generated
 	*/
-	private IParser collectionTaskName_5058Parser;
+	private IParser collectionTaskID_5058Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getCollectionTaskName_5058Parser() {
-		if (collectionTaskName_5058Parser == null) {
-			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getTask_Name() };
+	private IParser getCollectionTaskID_5058Parser() {
+		if (collectionTaskID_5058Parser == null) {
+			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getTask_ID() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			collectionTaskName_5058Parser = parser;
+			collectionTaskID_5058Parser = parser;
 		}
-		return collectionTaskName_5058Parser;
+		return collectionTaskID_5058Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser integrationTaskName_5059Parser;
+	private IParser integrationTaskID_5059Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getIntegrationTaskName_5059Parser() {
-		if (integrationTaskName_5059Parser == null) {
-			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getTask_Name() };
+	private IParser getIntegrationTaskID_5059Parser() {
+		if (integrationTaskID_5059Parser == null) {
+			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getTask_ID() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			integrationTaskName_5059Parser = parser;
+			integrationTaskID_5059Parser = parser;
 		}
-		return integrationTaskName_5059Parser;
+		return integrationTaskID_5059Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser cleaningTaskName_5062Parser;
+	private IParser cleaningTaskID_5062Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getCleaningTaskName_5062Parser() {
-		if (cleaningTaskName_5062Parser == null) {
-			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getTask_Name() };
+	private IParser getCleaningTaskID_5062Parser() {
+		if (cleaningTaskID_5062Parser == null) {
+			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getTask_ID() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			cleaningTaskName_5062Parser = parser;
+			cleaningTaskID_5062Parser = parser;
 		}
-		return cleaningTaskName_5062Parser;
+		return cleaningTaskID_5062Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser analyzesTaskName_5067Parser;
+	private IParser analysisTaskID_5075Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getAnalyzesTaskName_5067Parser() {
-		if (analyzesTaskName_5067Parser == null) {
-			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getTask_Name() };
+	private IParser getAnalysisTaskID_5075Parser() {
+		if (analysisTaskID_5075Parser == null) {
+			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getTask_ID() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			analyzesTaskName_5067Parser = parser;
+			analysisTaskID_5075Parser = parser;
 		}
-		return analyzesTaskName_5067Parser;
+		return analysisTaskID_5075Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser visualizationTaskName_5068Parser;
+	private IParser visualizationTaskID_5068Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getVisualizationTaskName_5068Parser() {
-		if (visualizationTaskName_5068Parser == null) {
-			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getTask_Name() };
+	private IParser getVisualizationTaskID_5068Parser() {
+		if (visualizationTaskID_5068Parser == null) {
+			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getTask_ID() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			visualizationTaskName_5068Parser = parser;
+			visualizationTaskID_5068Parser = parser;
 		}
-		return visualizationTaskName_5068Parser;
+		return visualizationTaskID_5068Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser exportingTaskName_5070Parser;
+	private IParser exportTaskID_5077Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getExportingTaskName_5070Parser() {
-		if (exportingTaskName_5070Parser == null) {
-			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getTask_Name() };
+	private IParser getExportTaskID_5077Parser() {
+		if (exportTaskID_5077Parser == null) {
+			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getTask_ID() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			exportingTaskName_5070Parser = parser;
+			exportTaskID_5077Parser = parser;
 		}
-		return exportingTaskName_5070Parser;
+		return exportTaskID_5077Parser;
 	}
 
 	/**
@@ -195,86 +195,86 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 	/**
 	* @generated
 	*/
-	private IParser descriptiveName_5063Parser;
+	private IParser descriptiveName_5071Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getDescriptiveName_5063Parser() {
-		if (descriptiveName_5063Parser == null) {
+	private IParser getDescriptiveName_5071Parser() {
+		if (descriptiveName_5071Parser == null) {
 			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getOperation_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			descriptiveName_5063Parser = parser;
+			descriptiveName_5071Parser = parser;
 		}
-		return descriptiveName_5063Parser;
+		return descriptiveName_5071Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser classificationName_5064Parser;
+	private IParser classificationName_5072Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getClassificationName_5064Parser() {
-		if (classificationName_5064Parser == null) {
+	private IParser getClassificationName_5072Parser() {
+		if (classificationName_5072Parser == null) {
 			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getOperation_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			classificationName_5064Parser = parser;
+			classificationName_5072Parser = parser;
 		}
-		return classificationName_5064Parser;
+		return classificationName_5072Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser predictiveName_5065Parser;
+	private IParser predictiveName_5073Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getPredictiveName_5065Parser() {
-		if (predictiveName_5065Parser == null) {
+	private IParser getPredictiveName_5073Parser() {
+		if (predictiveName_5073Parser == null) {
 			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getOperation_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			predictiveName_5065Parser = parser;
+			predictiveName_5073Parser = parser;
 		}
-		return predictiveName_5065Parser;
+		return predictiveName_5073Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser clusteringName_5066Parser;
+	private IParser clusteringName_5074Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getClusteringName_5066Parser() {
-		if (clusteringName_5066Parser == null) {
+	private IParser getClusteringName_5074Parser() {
+		if (clusteringName_5074Parser == null) {
 			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getOperation_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			clusteringName_5066Parser = parser;
+			clusteringName_5074Parser = parser;
 		}
-		return clusteringName_5066Parser;
+		return clusteringName_5074Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser exportName_5069Parser;
+	private IParser exportName_5076Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getExportName_5069Parser() {
-		if (exportName_5069Parser == null) {
+	private IParser getExportName_5076Parser() {
+		if (exportName_5076Parser == null) {
 			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getExport_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			exportName_5069Parser = parser;
+			exportName_5076Parser = parser;
 		}
-		return exportName_5069Parser;
+		return exportName_5076Parser;
 	}
 
 	/**
@@ -282,18 +282,18 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 	*/
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case CollectionTaskNameEditPart.VISUAL_ID:
-			return getCollectionTaskName_5058Parser();
-		case IntegrationTaskNameEditPart.VISUAL_ID:
-			return getIntegrationTaskName_5059Parser();
-		case CleaningTaskNameEditPart.VISUAL_ID:
-			return getCleaningTaskName_5062Parser();
-		case AnalyzesTaskNameEditPart.VISUAL_ID:
-			return getAnalyzesTaskName_5067Parser();
-		case VisualizationTaskNameEditPart.VISUAL_ID:
-			return getVisualizationTaskName_5068Parser();
-		case ExportingTaskNameEditPart.VISUAL_ID:
-			return getExportingTaskName_5070Parser();
+		case CollectionTaskIDEditPart.VISUAL_ID:
+			return getCollectionTaskID_5058Parser();
+		case IntegrationTaskIDEditPart.VISUAL_ID:
+			return getIntegrationTaskID_5059Parser();
+		case CleaningTaskIDEditPart.VISUAL_ID:
+			return getCleaningTaskID_5062Parser();
+		case AnalysisTaskIDEditPart.VISUAL_ID:
+			return getAnalysisTaskID_5075Parser();
+		case VisualizationTaskIDEditPart.VISUAL_ID:
+			return getVisualizationTaskID_5068Parser();
+		case ExportTaskIDEditPart.VISUAL_ID:
+			return getExportTaskID_5077Parser();
 		case ImportNameEditPart.VISUAL_ID:
 			return getImportName_5057Parser();
 		case UserDefinedNameEditPart.VISUAL_ID:
@@ -301,15 +301,15 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 		case PredefinedNameEditPart.VISUAL_ID:
 			return getPredefinedName_5061Parser();
 		case DescriptiveNameEditPart.VISUAL_ID:
-			return getDescriptiveName_5063Parser();
+			return getDescriptiveName_5071Parser();
 		case ClassificationNameEditPart.VISUAL_ID:
-			return getClassificationName_5064Parser();
+			return getClassificationName_5072Parser();
 		case PredictiveNameEditPart.VISUAL_ID:
-			return getPredictiveName_5065Parser();
+			return getPredictiveName_5073Parser();
 		case ClusteringNameEditPart.VISUAL_ID:
-			return getClusteringName_5066Parser();
+			return getClusteringName_5074Parser();
 		case ExportNameEditPart.VISUAL_ID:
-			return getExportName_5069Parser();
+			return getExportName_5076Parser();
 		}
 		return null;
 	}

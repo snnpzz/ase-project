@@ -256,26 +256,26 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pipeline.AnalyzesTask} instances.
+	 * This keeps track of the one adapter used for all {@link pipeline.AnalysisTask} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AnalyzesTaskItemProvider analyzesTaskItemProvider;
+	protected AnalysisTaskItemProvider analysisTaskItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pipeline.AnalyzesTask}.
+	 * This creates an adapter for a {@link pipeline.AnalysisTask}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAnalyzesTaskAdapter() {
-		if (analyzesTaskItemProvider == null) {
-			analyzesTaskItemProvider = new AnalyzesTaskItemProvider(this);
+	public Adapter createAnalysisTaskAdapter() {
+		if (analysisTaskItemProvider == null) {
+			analysisTaskItemProvider = new AnalysisTaskItemProvider(this);
 		}
 
-		return analyzesTaskItemProvider;
+		return analysisTaskItemProvider;
 	}
 
 	/**
@@ -302,26 +302,26 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pipeline.ExportingTask} instances.
+	 * This keeps track of the one adapter used for all {@link pipeline.ExportTask} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExportingTaskItemProvider exportingTaskItemProvider;
+	protected ExportTaskItemProvider exportTaskItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pipeline.ExportingTask}.
+	 * This creates an adapter for a {@link pipeline.ExportTask}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createExportingTaskAdapter() {
-		if (exportingTaskItemProvider == null) {
-			exportingTaskItemProvider = new ExportingTaskItemProvider(this);
+	public Adapter createExportTaskAdapter() {
+		if (exportTaskItemProvider == null) {
+			exportTaskItemProvider = new ExportTaskItemProvider(this);
 		}
 
-		return exportingTaskItemProvider;
+		return exportTaskItemProvider;
 	}
 
 	/**
@@ -661,9 +661,9 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 		if (collectionTaskItemProvider != null) collectionTaskItemProvider.dispose();
 		if (integrationTaskItemProvider != null) integrationTaskItemProvider.dispose();
 		if (cleaningTaskItemProvider != null) cleaningTaskItemProvider.dispose();
-		if (analyzesTaskItemProvider != null) analyzesTaskItemProvider.dispose();
+		if (analysisTaskItemProvider != null) analysisTaskItemProvider.dispose();
 		if (visualizationTaskItemProvider != null) visualizationTaskItemProvider.dispose();
-		if (exportingTaskItemProvider != null) exportingTaskItemProvider.dispose();
+		if (exportTaskItemProvider != null) exportTaskItemProvider.dispose();
 		if (importItemProvider != null) importItemProvider.dispose();
 		if (exportItemProvider != null) exportItemProvider.dispose();
 		if (userDefinedItemProvider != null) userDefinedItemProvider.dispose();

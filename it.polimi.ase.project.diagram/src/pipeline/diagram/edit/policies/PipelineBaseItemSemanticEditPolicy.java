@@ -309,8 +309,8 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public boolean canCreateDataflow_4004(Pipeline container, Task source, Task target) {
 			return canExistDataflow_4004(container, null, source, target);
 		}

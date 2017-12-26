@@ -113,13 +113,13 @@ public interface PipelinePackage extends EPackage {
 	int TASK = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__NAME = 0;
+	int TASK__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Is Required</b></em>' attribute.
@@ -416,13 +416,13 @@ public interface PipelinePackage extends EPackage {
 	int COLLECTION_TASK = 7;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_TASK__NAME = TASK__NAME;
+	int COLLECTION_TASK__ID = TASK__ID;
 
 	/**
 	 * The feature id for the '<em><b>Is Required</b></em>' attribute.
@@ -480,13 +480,13 @@ public interface PipelinePackage extends EPackage {
 	int INTEGRATION_TASK = 8;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_TASK__NAME = TASK__NAME;
+	int INTEGRATION_TASK__ID = TASK__ID;
 
 	/**
 	 * The feature id for the '<em><b>Is Required</b></em>' attribute.
@@ -535,13 +535,13 @@ public interface PipelinePackage extends EPackage {
 	int CLEANING_TASK = 9;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLEANING_TASK__NAME = TASK__NAME;
+	int CLEANING_TASK__ID = TASK__ID;
 
 	/**
 	 * The feature id for the '<em><b>Is Required</b></em>' attribute.
@@ -589,23 +589,23 @@ public interface PipelinePackage extends EPackage {
 	int CLEANING_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.AnalyzesTaskImpl <em>Analyzes Task</em>}' class.
+	 * The meta object id for the '{@link pipeline.impl.AnalysisTaskImpl <em>Analysis Task</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.AnalyzesTaskImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getAnalyzesTask()
+	 * @see pipeline.impl.AnalysisTaskImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getAnalysisTask()
 	 * @generated
 	 */
-	int ANALYZES_TASK = 10;
+	int ANALYSIS_TASK = 10;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYZES_TASK__NAME = TASK__NAME;
+	int ANALYSIS_TASK__ID = TASK__ID;
 
 	/**
 	 * The feature id for the '<em><b>Is Required</b></em>' attribute.
@@ -614,7 +614,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYZES_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
+	int ANALYSIS_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
@@ -623,7 +623,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYZES_TASK__INCOMING = TASK__INCOMING;
+	int ANALYSIS_TASK__INCOMING = TASK__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -632,7 +632,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYZES_TASK__OUTGOING = TASK__OUTGOING;
+	int ANALYSIS_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>Analyzes</b></em>' containment reference list.
@@ -641,16 +641,16 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYZES_TASK__ANALYZES = TASK_FEATURE_COUNT + 0;
+	int ANALYSIS_TASK__ANALYZES = TASK_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Analyzes Task</em>' class.
+	 * The number of structural features of the '<em>Analysis Task</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYZES_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
+	int ANALYSIS_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.VisualizationTaskImpl <em>Visualization Task</em>}' class.
@@ -663,13 +663,13 @@ public interface PipelinePackage extends EPackage {
 	int VISUALIZATION_TASK = 11;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VISUALIZATION_TASK__NAME = TASK__NAME;
+	int VISUALIZATION_TASK__ID = TASK__ID;
 
 	/**
 	 * The feature id for the '<em><b>Is Required</b></em>' attribute.
@@ -708,23 +708,23 @@ public interface PipelinePackage extends EPackage {
 	int VISUALIZATION_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.ExportingTaskImpl <em>Exporting Task</em>}' class.
+	 * The meta object id for the '{@link pipeline.impl.ExportTaskImpl <em>Export Task</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.ExportingTaskImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getExportingTask()
+	 * @see pipeline.impl.ExportTaskImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getExportTask()
 	 * @generated
 	 */
-	int EXPORTING_TASK = 12;
+	int EXPORT_TASK = 12;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORTING_TASK__NAME = TASK__NAME;
+	int EXPORT_TASK__ID = TASK__ID;
 
 	/**
 	 * The feature id for the '<em><b>Is Required</b></em>' attribute.
@@ -733,7 +733,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORTING_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
+	int EXPORT_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
@@ -742,7 +742,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORTING_TASK__INCOMING = TASK__INCOMING;
+	int EXPORT_TASK__INCOMING = TASK__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -751,7 +751,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORTING_TASK__OUTGOING = TASK__OUTGOING;
+	int EXPORT_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>Exports</b></em>' containment reference list.
@@ -760,16 +760,16 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORTING_TASK__EXPORTS = TASK_FEATURE_COUNT + 0;
+	int EXPORT_TASK__EXPORTS = TASK_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Exporting Task</em>' class.
+	 * The number of structural features of the '<em>Export Task</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORTING_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
+	int EXPORT_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.ImportImpl <em>Import</em>}' class.
@@ -1388,15 +1388,15 @@ public interface PipelinePackage extends EPackage {
 	EClass getTask();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Task#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.Task#getID <em>ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see pipeline.Task#getName()
+	 * @return the meta object for the attribute '<em>ID</em>'.
+	 * @see pipeline.Task#getID()
 	 * @see #getTask()
 	 * @generated
 	 */
-	EAttribute getTask_Name();
+	EAttribute getTask_ID();
 
 	/**
 	 * Returns the meta object for the attribute '{@link pipeline.Task#isIsRequired <em>Is Required</em>}'.
@@ -1721,25 +1721,25 @@ public interface PipelinePackage extends EPackage {
 	EReference getCleaningTask_Operations();
 
 	/**
-	 * Returns the meta object for class '{@link pipeline.AnalyzesTask <em>Analyzes Task</em>}'.
+	 * Returns the meta object for class '{@link pipeline.AnalysisTask <em>Analysis Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Analyzes Task</em>'.
-	 * @see pipeline.AnalyzesTask
+	 * @return the meta object for class '<em>Analysis Task</em>'.
+	 * @see pipeline.AnalysisTask
 	 * @generated
 	 */
-	EClass getAnalyzesTask();
+	EClass getAnalysisTask();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link pipeline.AnalyzesTask#getAnalyzes <em>Analyzes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link pipeline.AnalysisTask#getAnalyzes <em>Analyzes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Analyzes</em>'.
-	 * @see pipeline.AnalyzesTask#getAnalyzes()
-	 * @see #getAnalyzesTask()
+	 * @see pipeline.AnalysisTask#getAnalyzes()
+	 * @see #getAnalysisTask()
 	 * @generated
 	 */
-	EReference getAnalyzesTask_Analyzes();
+	EReference getAnalysisTask_Analyzes();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.VisualizationTask <em>Visualization Task</em>}'.
@@ -1752,25 +1752,25 @@ public interface PipelinePackage extends EPackage {
 	EClass getVisualizationTask();
 
 	/**
-	 * Returns the meta object for class '{@link pipeline.ExportingTask <em>Exporting Task</em>}'.
+	 * Returns the meta object for class '{@link pipeline.ExportTask <em>Export Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Exporting Task</em>'.
-	 * @see pipeline.ExportingTask
+	 * @return the meta object for class '<em>Export Task</em>'.
+	 * @see pipeline.ExportTask
 	 * @generated
 	 */
-	EClass getExportingTask();
+	EClass getExportTask();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link pipeline.ExportingTask#getExports <em>Exports</em>}'.
+	 * Returns the meta object for the containment reference list '{@link pipeline.ExportTask#getExports <em>Exports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Exports</em>'.
-	 * @see pipeline.ExportingTask#getExports()
-	 * @see #getExportingTask()
+	 * @see pipeline.ExportTask#getExports()
+	 * @see #getExportTask()
 	 * @generated
 	 */
-	EReference getExportingTask_Exports();
+	EReference getExportTask_Exports();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Import <em>Import</em>}'.
@@ -2101,12 +2101,12 @@ public interface PipelinePackage extends EPackage {
 		EClass TASK = eINSTANCE.getTask();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TASK__NAME = eINSTANCE.getTask_Name();
+		EAttribute TASK__ID = eINSTANCE.getTask_ID();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Required</b></em>' attribute feature.
@@ -2365,14 +2365,14 @@ public interface PipelinePackage extends EPackage {
 		EReference CLEANING_TASK__OPERATIONS = eINSTANCE.getCleaningTask_Operations();
 
 		/**
-		 * The meta object literal for the '{@link pipeline.impl.AnalyzesTaskImpl <em>Analyzes Task</em>}' class.
+		 * The meta object literal for the '{@link pipeline.impl.AnalysisTaskImpl <em>Analysis Task</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.AnalyzesTaskImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getAnalyzesTask()
+		 * @see pipeline.impl.AnalysisTaskImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getAnalysisTask()
 		 * @generated
 		 */
-		EClass ANALYZES_TASK = eINSTANCE.getAnalyzesTask();
+		EClass ANALYSIS_TASK = eINSTANCE.getAnalysisTask();
 
 		/**
 		 * The meta object literal for the '<em><b>Analyzes</b></em>' containment reference list feature.
@@ -2380,7 +2380,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ANALYZES_TASK__ANALYZES = eINSTANCE.getAnalyzesTask_Analyzes();
+		EReference ANALYSIS_TASK__ANALYZES = eINSTANCE.getAnalysisTask_Analyzes();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.VisualizationTaskImpl <em>Visualization Task</em>}' class.
@@ -2393,14 +2393,14 @@ public interface PipelinePackage extends EPackage {
 		EClass VISUALIZATION_TASK = eINSTANCE.getVisualizationTask();
 
 		/**
-		 * The meta object literal for the '{@link pipeline.impl.ExportingTaskImpl <em>Exporting Task</em>}' class.
+		 * The meta object literal for the '{@link pipeline.impl.ExportTaskImpl <em>Export Task</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.ExportingTaskImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getExportingTask()
+		 * @see pipeline.impl.ExportTaskImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getExportTask()
 		 * @generated
 		 */
-		EClass EXPORTING_TASK = eINSTANCE.getExportingTask();
+		EClass EXPORT_TASK = eINSTANCE.getExportTask();
 
 		/**
 		 * The meta object literal for the '<em><b>Exports</b></em>' containment reference list feature.
@@ -2408,7 +2408,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXPORTING_TASK__EXPORTS = eINSTANCE.getExportingTask_Exports();
+		EReference EXPORT_TASK__EXPORTS = eINSTANCE.getExportTask_Exports();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.ImportImpl <em>Import</em>}' class.

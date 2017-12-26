@@ -99,7 +99,7 @@ public class CollectionTaskItemProvider extends TaskItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CollectionTask)object).getName();
+		String label = ((CollectionTask)object).getID();
 		return label == null || label.length() == 0 ?
 			getString("_UI_CollectionTask_type") :
 			getString("_UI_CollectionTask_type") + " " + label;

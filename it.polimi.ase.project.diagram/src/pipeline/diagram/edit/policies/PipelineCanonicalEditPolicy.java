@@ -33,7 +33,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 
 import pipeline.PipelinePackage;
-import pipeline.diagram.edit.parts.AnalyzesTaskEditPart;
+import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
 import pipeline.diagram.edit.parts.ClusteringEditPart;
@@ -41,7 +41,7 @@ import pipeline.diagram.edit.parts.CollectionTaskEditPart;
 import pipeline.diagram.edit.parts.DataflowEditPart;
 import pipeline.diagram.edit.parts.DescriptiveEditPart;
 import pipeline.diagram.edit.parts.ExportEditPart;
-import pipeline.diagram.edit.parts.ExportingTaskEditPart;
+import pipeline.diagram.edit.parts.ExportTaskEditPart;
 import pipeline.diagram.edit.parts.ImportEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
@@ -113,9 +113,9 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 		case CollectionTaskEditPart.VISUAL_ID:
 		case IntegrationTaskEditPart.VISUAL_ID:
 		case CleaningTaskEditPart.VISUAL_ID:
-		case AnalyzesTaskEditPart.VISUAL_ID:
+		case AnalysisTaskEditPart.VISUAL_ID:
 		case VisualizationTaskEditPart.VISUAL_ID:
-		case ExportingTaskEditPart.VISUAL_ID:
+		case ExportTaskEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -296,9 +296,9 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case AnalyzesTaskEditPart.VISUAL_ID: {
+		case AnalysisTaskEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getAnalyzesTask_2028ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getAnalysisTask_2031ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -310,9 +310,9 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ExportingTaskEditPart.VISUAL_ID: {
+		case ExportTaskEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getExportingTask_2030ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getExportTask_2032ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -340,35 +340,35 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		case DescriptiveEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getDescriptive_3028ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getDescriptive_3033ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ClassificationEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getClassification_3029ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getClassification_3034ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case PredictiveEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getPredictive_3030ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getPredictive_3035ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ClusteringEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getClustering_3031ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getClustering_3036ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ExportEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getExport_3032ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getExport_3037ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

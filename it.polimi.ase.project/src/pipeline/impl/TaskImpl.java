@@ -30,7 +30,7 @@ import pipeline.Task;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.TaskImpl#getName <em>Name</em>}</li>
+ *   <li>{@link pipeline.impl.TaskImpl#getID <em>ID</em>}</li>
  *   <li>{@link pipeline.impl.TaskImpl#isIsRequired <em>Is Required</em>}</li>
  *   <li>{@link pipeline.impl.TaskImpl#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link pipeline.impl.TaskImpl#getOutgoing <em>Outgoing</em>}</li>
@@ -40,24 +40,24 @@ import pipeline.Task;
  */
 public abstract class TaskImpl extends EObjectImpl implements Task {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getID()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getID()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String id = ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isIsRequired() <em>Is Required</em>}' attribute.
@@ -123,8 +123,8 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getID() {
+		return id;
 	}
 
 	/**
@@ -132,11 +132,11 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setID(String newID) {
+		String oldID = id;
+		id = newID;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.TASK__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.TASK__ID, oldID, id));
 	}
 
 	/**
@@ -225,8 +225,8 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.TASK__NAME:
-				return getName();
+			case PipelinePackage.TASK__ID:
+				return getID();
 			case PipelinePackage.TASK__IS_REQUIRED:
 				return isIsRequired();
 			case PipelinePackage.TASK__INCOMING:
@@ -246,8 +246,8 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.TASK__NAME:
-				setName((String)newValue);
+			case PipelinePackage.TASK__ID:
+				setID((String)newValue);
 				return;
 			case PipelinePackage.TASK__IS_REQUIRED:
 				setIsRequired((Boolean)newValue);
@@ -272,8 +272,8 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.TASK__NAME:
-				setName(NAME_EDEFAULT);
+			case PipelinePackage.TASK__ID:
+				setID(ID_EDEFAULT);
 				return;
 			case PipelinePackage.TASK__IS_REQUIRED:
 				setIsRequired(IS_REQUIRED_EDEFAULT);
@@ -296,8 +296,8 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.TASK__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case PipelinePackage.TASK__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case PipelinePackage.TASK__IS_REQUIRED:
 				return isRequired != IS_REQUIRED_EDEFAULT;
 			case PipelinePackage.TASK__INCOMING:
@@ -318,8 +318,8 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (ID: ");
+		result.append(id);
 		result.append(", isRequired: ");
 		result.append(isRequired);
 		result.append(')');

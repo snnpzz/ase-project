@@ -60,7 +60,7 @@
 								[for (aTask : Task | aPipeline.tasks)]
 									<tr>
 										<td>1</td>
-										<td>[aTask.name/]</td>
+										<td>[aTask.ID/]</td>
 										<td>
 											[if (aTask.oclIsTypeOf(CollectionTask))]
 												Data Collection

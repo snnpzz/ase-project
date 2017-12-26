@@ -129,10 +129,10 @@ public class PipelineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.ANALYZES_TASK: {
-				AnalyzesTask analyzesTask = (AnalyzesTask)theEObject;
-				T result = caseAnalyzesTask(analyzesTask);
-				if (result == null) result = caseTask(analyzesTask);
+			case PipelinePackage.ANALYSIS_TASK: {
+				AnalysisTask analysisTask = (AnalysisTask)theEObject;
+				T result = caseAnalysisTask(analysisTask);
+				if (result == null) result = caseTask(analysisTask);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -143,10 +143,10 @@ public class PipelineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.EXPORTING_TASK: {
-				ExportingTask exportingTask = (ExportingTask)theEObject;
-				T result = caseExportingTask(exportingTask);
-				if (result == null) result = caseTask(exportingTask);
+			case PipelinePackage.EXPORT_TASK: {
+				ExportTask exportTask = (ExportTask)theEObject;
+				T result = caseExportTask(exportTask);
+				if (result == null) result = caseTask(exportTask);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -391,17 +391,17 @@ public class PipelineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Analyzes Task</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Analysis Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Analyzes Task</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Analysis Task</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAnalyzesTask(AnalyzesTask object) {
+	public T caseAnalysisTask(AnalysisTask object) {
 		return null;
 	}
 
@@ -421,17 +421,17 @@ public class PipelineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Exporting Task</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Export Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Exporting Task</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Export Task</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseExportingTask(ExportingTask object) {
+	public T caseExportTask(ExportTask object) {
 		return null;
 	}
 

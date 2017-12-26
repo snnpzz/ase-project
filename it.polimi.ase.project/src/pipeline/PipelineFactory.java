@@ -94,13 +94,13 @@ public interface PipelineFactory extends EFactory {
 	CleaningTask createCleaningTask();
 
 	/**
-	 * Returns a new object of class '<em>Analyzes Task</em>'.
+	 * Returns a new object of class '<em>Analysis Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Analyzes Task</em>'.
+	 * @return a new object of class '<em>Analysis Task</em>'.
 	 * @generated
 	 */
-	AnalyzesTask createAnalyzesTask();
+	AnalysisTask createAnalysisTask();
 
 	/**
 	 * Returns a new object of class '<em>Visualization Task</em>'.
@@ -112,13 +112,13 @@ public interface PipelineFactory extends EFactory {
 	VisualizationTask createVisualizationTask();
 
 	/**
-	 * Returns a new object of class '<em>Exporting Task</em>'.
+	 * Returns a new object of class '<em>Export Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Exporting Task</em>'.
+	 * @return a new object of class '<em>Export Task</em>'.
 	 * @generated
 	 */
-	ExportingTask createExportingTask();
+	ExportTask createExportTask();
 
 	/**
 	 * Returns a new object of class '<em>Import</em>'.

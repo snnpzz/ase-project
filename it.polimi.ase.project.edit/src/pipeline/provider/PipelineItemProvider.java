@@ -204,7 +204,7 @@ public class PipelineItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PipelinePackage.Literals.PIPELINE__TASKS,
-				 PipelineFactory.eINSTANCE.createAnalyzesTask()));
+				 PipelineFactory.eINSTANCE.createAnalysisTask()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -214,7 +214,7 @@ public class PipelineItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PipelinePackage.Literals.PIPELINE__TASKS,
-				 PipelineFactory.eINSTANCE.createExportingTask()));
+				 PipelineFactory.eINSTANCE.createExportTask()));
 	}
 
 	/**

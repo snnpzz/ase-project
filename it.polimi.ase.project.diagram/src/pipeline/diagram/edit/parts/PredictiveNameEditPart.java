@@ -60,7 +60,7 @@ public class PredictiveNameEditPart extends CompartmentEditPart implements IText
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5065;
+	public static final int VISUAL_ID = 5073;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class PredictiveNameEditPart extends CompartmentEditPart implements IText
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = PipelineParserProvider.getParser(PipelineElementTypes.Predictive_3030, getParserElement(),
+			parser = PipelineParserProvider.getParser(PipelineElementTypes.Predictive_3035, getParserElement(),
 					PipelineVisualIDRegistry.getType(pipeline.diagram.edit.parts.PredictiveNameEditPart.VISUAL_ID));
 		}
 		return parser;

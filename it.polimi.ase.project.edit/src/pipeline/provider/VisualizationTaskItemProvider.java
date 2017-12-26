@@ -64,7 +64,7 @@ public class VisualizationTaskItemProvider extends TaskItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((VisualizationTask)object).getName();
+		String label = ((VisualizationTask)object).getID();
 		return label == null || label.length() == 0 ?
 			getString("_UI_VisualizationTask_type") :
 			getString("_UI_VisualizationTask_type") + " " + label;

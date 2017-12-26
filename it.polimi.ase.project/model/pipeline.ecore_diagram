@@ -25,7 +25,7 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_LHGfMuGVEeeU3dy_CQ-Szg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_LHGfM-GVEeeU3dy_CQ-Szg" type="7001">
       <children xmi:type="notation:Node" xmi:id="_GrQwkOGWEeeU3dy_CQ-Szg" type="3001">
-        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Task/name"/>
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Task/ID"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_GrQwkeGWEeeU3dy_CQ-Szg"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_GxmpIOGWEeeU3dy_CQ-Szg" type="3001">

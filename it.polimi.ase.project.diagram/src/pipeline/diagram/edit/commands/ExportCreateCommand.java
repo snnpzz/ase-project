@@ -16,7 +16,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.Export;
-import pipeline.ExportingTask;
+import pipeline.ExportTask;
 import pipeline.PipelineFactory;
 
 /**
@@ -57,7 +57,7 @@ public class ExportCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Export newElement = PipelineFactory.eINSTANCE.createExport();
 
-		ExportingTask owner = (ExportingTask) getElementToEdit();
+		ExportTask owner = (ExportTask) getElementToEdit();
 		owner.getExports().add(newElement);
 
 		doConfigure(newElement, monitor, info);

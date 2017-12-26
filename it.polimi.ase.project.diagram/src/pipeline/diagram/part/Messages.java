@@ -256,12 +256,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String AnalyzesTask1CreationTool_title;
+	public static String AnalysisTask1CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String AnalyzesTask1CreationTool_desc;
+	public static String AnalysisTask1CreationTool_desc;
 
 	/**
 	* @generated
@@ -336,12 +336,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String ExportingTask9CreationTool_title;
+	public static String ExportTask9CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ExportingTask9CreationTool_desc;
+	public static String ExportTask9CreationTool_desc;
 
 	/**
 	* @generated
@@ -446,12 +446,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String AnalyzesTaskAnalyzesTaskAnalyzesCompartmentEditPart_title;
+	public static String AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart_title;
 
 	/**
 	* @generated
 	*/
-	public static String ExportingTaskExportingTaskExportsCompartmentEditPart_title;
+	public static String ExportTaskExportTaskExportsCompartmentEditPart_title;
 
 	/**
 	* @generated
@@ -496,16 +496,6 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_AnalyzesTask_2028_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_AnalyzesTask_2028_outgoinglinks;
-
-	/**
-	* @generated
-	*/
 	public static String NavigatorGroupName_VisualizationTask_2029_incominglinks;
 
 	/**
@@ -516,12 +506,22 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_ExportingTask_2030_incominglinks;
+	public static String NavigatorGroupName_AnalysisTask_2031_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_ExportingTask_2030_outgoinglinks;
+	public static String NavigatorGroupName_AnalysisTask_2031_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ExportTask_2032_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ExportTask_2032_outgoinglinks;
 
 	/**
 	* @generated

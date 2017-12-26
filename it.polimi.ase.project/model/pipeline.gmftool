@@ -12,8 +12,8 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="AnalyzesTask"
-          description="Create new AnalyzesTask">
+          title="AnalysisTask"
+          description="Create new AnalysisTask">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -84,8 +84,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="ExportingTask"
-          description="Create new ExportingTask">
+          title="ExportTask"
+          description="Create new ExportTask">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

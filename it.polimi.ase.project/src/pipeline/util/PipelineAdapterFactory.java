@@ -108,16 +108,16 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 				return createCleaningTaskAdapter();
 			}
 			@Override
-			public Adapter caseAnalyzesTask(AnalyzesTask object) {
-				return createAnalyzesTaskAdapter();
+			public Adapter caseAnalysisTask(AnalysisTask object) {
+				return createAnalysisTaskAdapter();
 			}
 			@Override
 			public Adapter caseVisualizationTask(VisualizationTask object) {
 				return createVisualizationTaskAdapter();
 			}
 			@Override
-			public Adapter caseExportingTask(ExportingTask object) {
-				return createExportingTaskAdapter();
+			public Adapter caseExportTask(ExportTask object) {
+				return createExportTaskAdapter();
 			}
 			@Override
 			public Adapter caseImport(Import object) {
@@ -328,16 +328,16 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.AnalyzesTask <em>Analyzes Task</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.AnalysisTask <em>Analysis Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.AnalyzesTask
+	 * @see pipeline.AnalysisTask
 	 * @generated
 	 */
-	public Adapter createAnalyzesTaskAdapter() {
+	public Adapter createAnalysisTaskAdapter() {
 		return null;
 	}
 
@@ -356,16 +356,16 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.ExportingTask <em>Exporting Task</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.ExportTask <em>Export Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.ExportingTask
+	 * @see pipeline.ExportTask
 	 * @generated
 	 */
-	public Adapter createExportingTaskAdapter() {
+	public Adapter createExportTaskAdapter() {
 		return null;
 	}
 

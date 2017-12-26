@@ -114,9 +114,8 @@ public class CollectionTaskEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof CollectionTaskNameEditPart) {
-			((CollectionTaskNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureCollectionTaskLabelFigure());
+		if (childEditPart instanceof CollectionTaskIDEditPart) {
+			((CollectionTaskIDEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCollectionTaskLabelFigure());
 			return true;
 		}
 		if (childEditPart instanceof CollectionTaskCollectionTaskImportsCompartmentEditPart) {
@@ -132,7 +131,7 @@ public class CollectionTaskEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof CollectionTaskNameEditPart) {
+		if (childEditPart instanceof CollectionTaskIDEditPart) {
 			return true;
 		}
 		if (childEditPart instanceof CollectionTaskCollectionTaskImportsCompartmentEditPart) {
@@ -263,7 +262,7 @@ public class CollectionTaskEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(PipelineVisualIDRegistry.getType(CollectionTaskNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(PipelineVisualIDRegistry.getType(CollectionTaskIDEditPart.VISUAL_ID));
 	}
 
 	/**

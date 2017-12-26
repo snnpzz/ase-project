@@ -99,7 +99,7 @@ public class CleaningTaskItemProvider extends TaskItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CleaningTask)object).getName();
+		String label = ((CleaningTask)object).getID();
 		return label == null || label.length() == 0 ?
 			getString("_UI_CleaningTask_type") :
 			getString("_UI_CleaningTask_type") + " " + label;

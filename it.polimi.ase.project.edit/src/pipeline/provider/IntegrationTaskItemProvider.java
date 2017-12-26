@@ -64,7 +64,7 @@ public class IntegrationTaskItemProvider extends TaskItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((IntegrationTask)object).getName();
+		String label = ((IntegrationTask)object).getID();
 		return label == null || label.length() == 0 ?
 			getString("_UI_IntegrationTask_type") :
 			getString("_UI_IntegrationTask_type") + " " + label;

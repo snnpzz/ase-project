@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.Task#getName <em>Name</em>}</li>
+ *   <li>{@link pipeline.Task#getID <em>ID</em>}</li>
  *   <li>{@link pipeline.Task#isIsRequired <em>Is Required</em>}</li>
  *   <li>{@link pipeline.Task#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link pipeline.Task#getOutgoing <em>Outgoing</em>}</li>
@@ -23,35 +23,35 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see pipeline.PipelinePackage#getTask()
  * @model abstract="true"
- *        annotation="gmf.node label='name' figure='rounded'"
+ *        annotation="gmf.node label='ID' figure='rounded'"
  * @generated
  */
 public interface Task extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>ID</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see pipeline.PipelinePackage#getTask_Name()
+	 * @return the value of the '<em>ID</em>' attribute.
+	 * @see #setID(String)
+	 * @see pipeline.PipelinePackage#getTask_ID()
 	 * @model
 	 * @generated
 	 */
-	String getName();
+	String getID();
 
 	/**
-	 * Sets the value of the '{@link pipeline.Task#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link pipeline.Task#getID <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>ID</em>' attribute.
+	 * @see #getID()
 	 * @generated
 	 */
-	void setName(String value);
+	void setID(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Is Required</b></em>' attribute.

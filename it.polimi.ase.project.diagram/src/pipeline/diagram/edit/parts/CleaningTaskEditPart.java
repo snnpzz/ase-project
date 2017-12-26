@@ -114,8 +114,8 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof CleaningTaskNameEditPart) {
-			((CleaningTaskNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCleaningTaskLabelFigure());
+		if (childEditPart instanceof CleaningTaskIDEditPart) {
+			((CleaningTaskIDEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCleaningTaskLabelFigure());
 			return true;
 		}
 		if (childEditPart instanceof CleaningTaskCleaningTaskOperationsCompartmentEditPart) {
@@ -131,7 +131,7 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof CleaningTaskNameEditPart) {
+		if (childEditPart instanceof CleaningTaskIDEditPart) {
 			return true;
 		}
 		if (childEditPart instanceof CleaningTaskCleaningTaskOperationsCompartmentEditPart) {
@@ -262,7 +262,7 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(PipelineVisualIDRegistry.getType(CleaningTaskNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(PipelineVisualIDRegistry.getType(CleaningTaskIDEditPart.VISUAL_ID));
 	}
 
 	/**

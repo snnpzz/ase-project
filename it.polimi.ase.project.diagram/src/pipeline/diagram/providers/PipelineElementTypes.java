@@ -18,7 +18,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
 import pipeline.PipelinePackage;
-import pipeline.diagram.edit.parts.AnalyzesTaskEditPart;
+import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
 import pipeline.diagram.edit.parts.ClusteringEditPart;
@@ -26,7 +26,7 @@ import pipeline.diagram.edit.parts.CollectionTaskEditPart;
 import pipeline.diagram.edit.parts.DataflowEditPart;
 import pipeline.diagram.edit.parts.DescriptiveEditPart;
 import pipeline.diagram.edit.parts.ExportEditPart;
-import pipeline.diagram.edit.parts.ExportingTaskEditPart;
+import pipeline.diagram.edit.parts.ExportTaskEditPart;
 import pipeline.diagram.edit.parts.ImportEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
@@ -72,80 +72,65 @@ public class PipelineElementTypes {
 	*/
 	public static final IElementType CollectionTask_2025 = getElementType(
 			"it.polimi.ase.project.diagram.CollectionTask_2025"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType IntegrationTask_2026 = getElementType(
 			"it.polimi.ase.project.diagram.IntegrationTask_2026"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType CleaningTask_2027 = getElementType(
 			"it.polimi.ase.project.diagram.CleaningTask_2027"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
-	public static final IElementType AnalyzesTask_2028 = getElementType(
-			"it.polimi.ase.project.diagram.AnalyzesTask_2028"); //$NON-NLS-1$
-
+	public static final IElementType AnalysisTask_2031 = getElementType(
+			"it.polimi.ase.project.diagram.AnalysisTask_2031"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType VisualizationTask_2029 = getElementType(
 			"it.polimi.ase.project.diagram.VisualizationTask_2029"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
-	public static final IElementType ExportingTask_2030 = getElementType(
-			"it.polimi.ase.project.diagram.ExportingTask_2030"); //$NON-NLS-1$
-
+	public static final IElementType ExportTask_2032 = getElementType("it.polimi.ase.project.diagram.ExportTask_2032"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType Import_3025 = getElementType("it.polimi.ase.project.diagram.Import_3025"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType UserDefined_3026 = getElementType(
 			"it.polimi.ase.project.diagram.UserDefined_3026"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType Predefined_3027 = getElementType("it.polimi.ase.project.diagram.Predefined_3027"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
-	public static final IElementType Descriptive_3028 = getElementType(
-			"it.polimi.ase.project.diagram.Descriptive_3028"); //$NON-NLS-1$
-
+	public static final IElementType Descriptive_3033 = getElementType(
+			"it.polimi.ase.project.diagram.Descriptive_3033"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Classification_3029 = getElementType(
-			"it.polimi.ase.project.diagram.Classification_3029"); //$NON-NLS-1$
-
+	public static final IElementType Classification_3034 = getElementType(
+			"it.polimi.ase.project.diagram.Classification_3034"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Predictive_3030 = getElementType("it.polimi.ase.project.diagram.Predictive_3030"); //$NON-NLS-1$
-
+	public static final IElementType Predictive_3035 = getElementType("it.polimi.ase.project.diagram.Predictive_3035"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Clustering_3031 = getElementType("it.polimi.ase.project.diagram.Clustering_3031"); //$NON-NLS-1$
-
+	public static final IElementType Clustering_3036 = getElementType("it.polimi.ase.project.diagram.Clustering_3036"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Export_3032 = getElementType("it.polimi.ase.project.diagram.Export_3032"); //$NON-NLS-1$
-
+	public static final IElementType Export_3037 = getElementType("it.polimi.ase.project.diagram.Export_3037"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -197,11 +182,11 @@ public class PipelineElementTypes {
 
 			elements.put(CleaningTask_2027, PipelinePackage.eINSTANCE.getCleaningTask());
 
-			elements.put(AnalyzesTask_2028, PipelinePackage.eINSTANCE.getAnalyzesTask());
+			elements.put(AnalysisTask_2031, PipelinePackage.eINSTANCE.getAnalysisTask());
 
 			elements.put(VisualizationTask_2029, PipelinePackage.eINSTANCE.getVisualizationTask());
 
-			elements.put(ExportingTask_2030, PipelinePackage.eINSTANCE.getExportingTask());
+			elements.put(ExportTask_2032, PipelinePackage.eINSTANCE.getExportTask());
 
 			elements.put(Import_3025, PipelinePackage.eINSTANCE.getImport());
 
@@ -209,15 +194,15 @@ public class PipelineElementTypes {
 
 			elements.put(Predefined_3027, PipelinePackage.eINSTANCE.getPredefined());
 
-			elements.put(Descriptive_3028, PipelinePackage.eINSTANCE.getDescriptive());
+			elements.put(Descriptive_3033, PipelinePackage.eINSTANCE.getDescriptive());
 
-			elements.put(Classification_3029, PipelinePackage.eINSTANCE.getClassification());
+			elements.put(Classification_3034, PipelinePackage.eINSTANCE.getClassification());
 
-			elements.put(Predictive_3030, PipelinePackage.eINSTANCE.getPredictive());
+			elements.put(Predictive_3035, PipelinePackage.eINSTANCE.getPredictive());
 
-			elements.put(Clustering_3031, PipelinePackage.eINSTANCE.getClustering());
+			elements.put(Clustering_3036, PipelinePackage.eINSTANCE.getClustering());
 
-			elements.put(Export_3032, PipelinePackage.eINSTANCE.getExport());
+			elements.put(Export_3037, PipelinePackage.eINSTANCE.getExport());
 
 			elements.put(Dataflow_4004, PipelinePackage.eINSTANCE.getDataflow());
 		}
@@ -241,17 +226,17 @@ public class PipelineElementTypes {
 			KNOWN_ELEMENT_TYPES.add(CollectionTask_2025);
 			KNOWN_ELEMENT_TYPES.add(IntegrationTask_2026);
 			KNOWN_ELEMENT_TYPES.add(CleaningTask_2027);
-			KNOWN_ELEMENT_TYPES.add(AnalyzesTask_2028);
+			KNOWN_ELEMENT_TYPES.add(AnalysisTask_2031);
 			KNOWN_ELEMENT_TYPES.add(VisualizationTask_2029);
-			KNOWN_ELEMENT_TYPES.add(ExportingTask_2030);
+			KNOWN_ELEMENT_TYPES.add(ExportTask_2032);
 			KNOWN_ELEMENT_TYPES.add(Import_3025);
 			KNOWN_ELEMENT_TYPES.add(UserDefined_3026);
 			KNOWN_ELEMENT_TYPES.add(Predefined_3027);
-			KNOWN_ELEMENT_TYPES.add(Descriptive_3028);
-			KNOWN_ELEMENT_TYPES.add(Classification_3029);
-			KNOWN_ELEMENT_TYPES.add(Predictive_3030);
-			KNOWN_ELEMENT_TYPES.add(Clustering_3031);
-			KNOWN_ELEMENT_TYPES.add(Export_3032);
+			KNOWN_ELEMENT_TYPES.add(Descriptive_3033);
+			KNOWN_ELEMENT_TYPES.add(Classification_3034);
+			KNOWN_ELEMENT_TYPES.add(Predictive_3035);
+			KNOWN_ELEMENT_TYPES.add(Clustering_3036);
+			KNOWN_ELEMENT_TYPES.add(Export_3037);
 			KNOWN_ELEMENT_TYPES.add(Dataflow_4004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -270,12 +255,12 @@ public class PipelineElementTypes {
 			return IntegrationTask_2026;
 		case CleaningTaskEditPart.VISUAL_ID:
 			return CleaningTask_2027;
-		case AnalyzesTaskEditPart.VISUAL_ID:
-			return AnalyzesTask_2028;
+		case AnalysisTaskEditPart.VISUAL_ID:
+			return AnalysisTask_2031;
 		case VisualizationTaskEditPart.VISUAL_ID:
 			return VisualizationTask_2029;
-		case ExportingTaskEditPart.VISUAL_ID:
-			return ExportingTask_2030;
+		case ExportTaskEditPart.VISUAL_ID:
+			return ExportTask_2032;
 		case ImportEditPart.VISUAL_ID:
 			return Import_3025;
 		case UserDefinedEditPart.VISUAL_ID:
@@ -283,15 +268,15 @@ public class PipelineElementTypes {
 		case PredefinedEditPart.VISUAL_ID:
 			return Predefined_3027;
 		case DescriptiveEditPart.VISUAL_ID:
-			return Descriptive_3028;
+			return Descriptive_3033;
 		case ClassificationEditPart.VISUAL_ID:
-			return Classification_3029;
+			return Classification_3034;
 		case PredictiveEditPart.VISUAL_ID:
-			return Predictive_3030;
+			return Predictive_3035;
 		case ClusteringEditPart.VISUAL_ID:
-			return Clustering_3031;
+			return Clustering_3036;
 		case ExportEditPart.VISUAL_ID:
-			return Export_3032;
+			return Export_3037;
 		case DataflowEditPart.VISUAL_ID:
 			return Dataflow_4004;
 		}

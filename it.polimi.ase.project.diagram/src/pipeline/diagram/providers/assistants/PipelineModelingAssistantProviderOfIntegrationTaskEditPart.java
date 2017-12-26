@@ -11,10 +11,10 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
-import pipeline.diagram.edit.parts.AnalyzesTaskEditPart;
+import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
-import pipeline.diagram.edit.parts.ExportingTaskEditPart;
+import pipeline.diagram.edit.parts.ExportTaskEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.providers.PipelineElementTypes;
@@ -70,13 +70,13 @@ public class PipelineModelingAssistantProviderOfIntegrationTaskEditPart extends 
 		if (targetEditPart instanceof CleaningTaskEditPart) {
 			types.add(PipelineElementTypes.Dataflow_4004);
 		}
-		if (targetEditPart instanceof AnalyzesTaskEditPart) {
+		if (targetEditPart instanceof AnalysisTaskEditPart) {
 			types.add(PipelineElementTypes.Dataflow_4004);
 		}
 		if (targetEditPart instanceof VisualizationTaskEditPart) {
 			types.add(PipelineElementTypes.Dataflow_4004);
 		}
-		if (targetEditPart instanceof ExportingTaskEditPart) {
+		if (targetEditPart instanceof ExportTaskEditPart) {
 			types.add(PipelineElementTypes.Dataflow_4004);
 		}
 		return types;
@@ -101,9 +101,9 @@ public class PipelineModelingAssistantProviderOfIntegrationTaskEditPart extends 
 			types.add(PipelineElementTypes.CollectionTask_2025);
 			types.add(PipelineElementTypes.IntegrationTask_2026);
 			types.add(PipelineElementTypes.CleaningTask_2027);
-			types.add(PipelineElementTypes.AnalyzesTask_2028);
+			types.add(PipelineElementTypes.AnalysisTask_2031);
 			types.add(PipelineElementTypes.VisualizationTask_2029);
-			types.add(PipelineElementTypes.ExportingTask_2030);
+			types.add(PipelineElementTypes.ExportTask_2032);
 		}
 		return types;
 	}
@@ -146,9 +146,9 @@ public class PipelineModelingAssistantProviderOfIntegrationTaskEditPart extends 
 			types.add(PipelineElementTypes.CollectionTask_2025);
 			types.add(PipelineElementTypes.IntegrationTask_2026);
 			types.add(PipelineElementTypes.CleaningTask_2027);
-			types.add(PipelineElementTypes.AnalyzesTask_2028);
+			types.add(PipelineElementTypes.AnalysisTask_2031);
 			types.add(PipelineElementTypes.VisualizationTask_2029);
-			types.add(PipelineElementTypes.ExportingTask_2030);
+			types.add(PipelineElementTypes.ExportTask_2032);
 		}
 		return types;
 	}

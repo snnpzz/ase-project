@@ -60,7 +60,7 @@ public class TaskItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addIDPropertyDescriptor(object);
 			addIsRequiredPropertyDescriptor(object);
 			addIncomingPropertyDescriptor(object);
 			addOutgoingPropertyDescriptor(object);
@@ -69,19 +69,19 @@ public class TaskItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the ID feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addIDPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Task_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Task_name_feature", "_UI_Task_type"),
-				 PipelinePackage.Literals.TASK__NAME,
+				 getString("_UI_Task_ID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Task_ID_feature", "_UI_Task_type"),
+				 PipelinePackage.Literals.TASK__ID,
 				 true,
 				 false,
 				 false,
@@ -164,7 +164,7 @@ public class TaskItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Task)object).getName();
+		String label = ((Task)object).getID();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Task_type") :
 			getString("_UI_Task_type") + " " + label;
@@ -183,7 +183,7 @@ public class TaskItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Task.class)) {
-			case PipelinePackage.TASK__NAME:
+			case PipelinePackage.TASK__ID:
 			case PipelinePackage.TASK__IS_REQUIRED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

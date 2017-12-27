@@ -37,6 +37,7 @@ public interface Import extends EObject {
 	 * @see pipeline.PipelinePackage#getImport_ReadsFrom()
 	 * @see pipeline.Source#getLinkedTo
 	 * @model opposite="linkedTo" required="true"
+	 *        annotation="gmf.link width='2' target.decoration='square' style='dash'"
 	 * @generated
 	 */
 	Source getReadsFrom();

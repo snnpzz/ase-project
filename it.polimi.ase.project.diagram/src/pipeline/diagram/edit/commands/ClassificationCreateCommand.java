@@ -17,6 +17,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.AnalysisTask;
 import pipeline.Classification;
+import pipeline.Pipeline;
 import pipeline.PipelineFactory;
 
 /**
@@ -57,8 +58,8 @@ public class ClassificationCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Classification newElement = PipelineFactory.eINSTANCE.createClassification();
 
-		AnalysisTask owner = (AnalysisTask) getElementToEdit();
-		owner.getAnalyzes().add(newElement);
+		Pipeline owner = (Pipeline) getElementToEdit();
+		owner.getOperations().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

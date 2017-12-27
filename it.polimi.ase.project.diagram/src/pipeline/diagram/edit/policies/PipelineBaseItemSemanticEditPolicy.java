@@ -35,8 +35,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 
-import pipeline.Dataflow;
+import pipeline.DataFlow;
+import pipeline.Export;
+import pipeline.File;
+import pipeline.Import;
+import pipeline.InternalDataFlow;
+import pipeline.Operation;
 import pipeline.Pipeline;
+import pipeline.Source;
 import pipeline.Task;
 import pipeline.diagram.part.PipelineDiagramEditorPlugin;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
@@ -311,14 +317,75 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateDataflow_4004(Pipeline container, Task source, Task target) {
-			return canExistDataflow_4004(container, null, source, target);
+		public boolean canCreateDataFlow_4005(Pipeline container, Task source, Task target) {
+			return canExistDataFlow_4005(container, null, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateInternalDataFlow_4006(Pipeline container, Operation source, Operation target) {
+			return canExistInternalDataFlow_4006(container, null, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateImportReadsFrom_4007(Import source, Source target) {
+			if (source != null) {
+				if (source.getReadsFrom() != null) {
+					return false;
+				}
+			}
+			if (target != null && (target.getLinkedTo() != null)) {
+				return false;
+			}
+
+			return canExistImportReadsFrom_4007(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateExportGenerates_4008(Export source, File target) {
+			if (source != null) {
+				if (source.getGenerates() != null) {
+					return false;
+				}
+			}
+			if (target != null && (target.getComesFrom() != null)) {
+				return false;
+			}
+
+			return canExistExportGenerates_4008(source, target);
 		}
 
 		/**
 		* @generated
 		*/
-		public boolean canExistDataflow_4004(Pipeline container, Dataflow linkInstance, Task source, Task target) {
+		public boolean canExistDataFlow_4005(Pipeline container, DataFlow linkInstance, Task source, Task target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistInternalDataFlow_4006(Pipeline container, InternalDataFlow linkInstance,
+				Operation source, Operation target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistImportReadsFrom_4007(Import source, Source target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistExportGenerates_4008(Export source, File target) {
 			return true;
 		}
 	}

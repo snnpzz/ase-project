@@ -78,9 +78,9 @@ public class PipelineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.DATAFLOW: {
-				Dataflow dataflow = (Dataflow)theEObject;
-				T result = caseDataflow(dataflow);
+			case PipelinePackage.DATA_FLOW: {
+				DataFlow dataFlow = (DataFlow)theEObject;
+				T result = caseDataFlow(dataFlow);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -90,9 +90,9 @@ public class PipelineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.INTERNAL_DF: {
-				InternalDF internalDF = (InternalDF)theEObject;
-				T result = caseInternalDF(internalDF);
+			case PipelinePackage.INTERNAL_DATA_FLOW: {
+				InternalDataFlow internalDataFlow = (InternalDataFlow)theEObject;
+				T result = caseInternalDataFlow(internalDataFlow);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -271,17 +271,17 @@ public class PipelineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Dataflow</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Data Flow</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Dataflow</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Data Flow</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDataflow(Dataflow object) {
+	public T caseDataFlow(DataFlow object) {
 		return null;
 	}
 
@@ -301,17 +301,17 @@ public class PipelineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Internal DF</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Internal Data Flow</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Internal DF</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Internal Data Flow</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseInternalDF(InternalDF object) {
+	public T caseInternalDataFlow(InternalDataFlow object) {
 		return null;
 	}
 

@@ -3,21 +3,25 @@ package pipeline;
 
 @gmf.diagram
 class Pipeline {
-  val Dataflow[+] dataflows;
+  val DataFlow[+] dataFlows;
   val Task[+] tasks;
   attr String ID;
+  val InternalDataFlow[*] internalDataFlows;
+  val Source[+] sources;
+  val File[*] files;
+  val Operation[+] operations;
 }
 
 @gmf.node(label="ID", figure="rounded")
 abstract class Task {
   attr String ID;
   attr boolean isRequired;
-  ref Dataflow[*]#target incoming;
-  ref Dataflow[*]#source outgoing;
+  ref DataFlow[*]#target incoming;
+  ref DataFlow[*]#source outgoing;
 }
 
-@gmf.link(source="source", target="target", width="2", target.decoration="arrow")
-class Dataflow {
+@gmf.link(source="source", target="target", width="2", target.decoration="closedarrow")
+class DataFlow {
   attr Format format;
   val Schema[1] schema;
   ref Task#incoming target;
@@ -27,12 +31,12 @@ class Dataflow {
 @gmf.node(label="name", figure="ellipse")
 abstract class Operation {
   attr String name;
-  ref InternalDF#target incoming;
-  ref InternalDF#source outgoing;
+  ref InternalDataFlow#target incoming;
+  ref InternalDataFlow#source outgoing;
 }
 
-@gmf.link(source="source", target="target", width="2", target.decoration="arrow")
-class InternalDF {
+@gmf.link(source="source", target="target", width="2", target.decoration="arrow", style="dash")
+class InternalDataFlow {
   attr Format format;
   val Schema[1] schema;
   ref Operation#outgoing source;
@@ -40,7 +44,6 @@ class InternalDF {
 }
 
 class Schema {
-
   @gmf.compartment
   val Attribute[+] attributes;
 }
@@ -55,7 +58,6 @@ class Attribute {
 }
 
 class CollectionTask extends Task {
-
   @gmf.compartment
   val Import[+] imports;
 }
@@ -64,13 +66,11 @@ class IntegrationTask extends Task {
 }
 
 class CleaningTask extends Task {
-
   @gmf.compartment
   val CleaningOperation[+] operations;
 }
 
 class AnalysisTask extends Task {
-
   @gmf.compartment
   val AnalysisOperation[+] analyzes;
 }
@@ -79,13 +79,13 @@ class VisualizationTask extends Task {
 }
 
 class ExportTask extends Task {
-
   @gmf.compartment
   val Export[+] exports;
 }
 
 @gmf.node(label="name", label.text="Import", figure="ellipse")
 class Import {
+  @gmf.link(width="2", target.decoration="square", style="dash")
   ref Source[1]#linkedTo readsFrom;
   ref Schema[1] uses;
   attr String name;
@@ -93,6 +93,7 @@ class Import {
 
 @gmf.node(label="name", label.text="Export", figure="ellipse")
 class Export {
+  @gmf.link(width="2", target.decoration="square", style="dash")
   ref File[1]#comesFrom generates;
   ref Schema[1] uses;
   attr String name;

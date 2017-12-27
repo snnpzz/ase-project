@@ -60,7 +60,7 @@ public class ClassificationNameEditPart extends CompartmentEditPart implements I
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5072;
+	public static final int VISUAL_ID = 5080;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class ClassificationNameEditPart extends CompartmentEditPart implements I
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = PipelineParserProvider.getParser(PipelineElementTypes.Classification_3034, getParserElement(),
+			parser = PipelineParserProvider.getParser(PipelineElementTypes.Classification_2035, getParserElement(),
 					PipelineVisualIDRegistry.getType(pipeline.diagram.edit.parts.ClassificationNameEditPart.VISUAL_ID));
 		}
 		return parser;

@@ -24,18 +24,18 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import pipeline.Dataflow;
+import pipeline.DataFlow;
 import pipeline.Format;
 import pipeline.PipelineFactory;
 import pipeline.PipelinePackage;
 
 /**
- * This is the item provider adapter for a {@link pipeline.Dataflow} object.
+ * This is the item provider adapter for a {@link pipeline.DataFlow} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DataflowItemProvider 
+public class DataFlowItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -49,7 +49,7 @@ public class DataflowItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataflowItemProvider(AdapterFactory adapterFactory) {
+	public DataFlowItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -82,9 +82,9 @@ public class DataflowItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Dataflow_format_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Dataflow_format_feature", "_UI_Dataflow_type"),
-				 PipelinePackage.Literals.DATAFLOW__FORMAT,
+				 getString("_UI_DataFlow_format_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlow_format_feature", "_UI_DataFlow_type"),
+				 PipelinePackage.Literals.DATA_FLOW__FORMAT,
 				 true,
 				 false,
 				 false,
@@ -104,9 +104,9 @@ public class DataflowItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Dataflow_target_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Dataflow_target_feature", "_UI_Dataflow_type"),
-				 PipelinePackage.Literals.DATAFLOW__TARGET,
+				 getString("_UI_DataFlow_target_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlow_target_feature", "_UI_DataFlow_type"),
+				 PipelinePackage.Literals.DATA_FLOW__TARGET,
 				 true,
 				 false,
 				 true,
@@ -126,9 +126,9 @@ public class DataflowItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Dataflow_source_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Dataflow_source_feature", "_UI_Dataflow_type"),
-				 PipelinePackage.Literals.DATAFLOW__SOURCE,
+				 getString("_UI_DataFlow_source_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlow_source_feature", "_UI_DataFlow_type"),
+				 PipelinePackage.Literals.DATA_FLOW__SOURCE,
 				 true,
 				 false,
 				 true,
@@ -149,7 +149,7 @@ public class DataflowItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PipelinePackage.Literals.DATAFLOW__SCHEMA);
+			childrenFeatures.add(PipelinePackage.Literals.DATA_FLOW__SCHEMA);
 		}
 		return childrenFeatures;
 	}
@@ -168,14 +168,14 @@ public class DataflowItemProvider
 	}
 
 	/**
-	 * This returns Dataflow.gif.
+	 * This returns DataFlow.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Dataflow"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/DataFlow"));
 	}
 
 	/**
@@ -186,11 +186,11 @@ public class DataflowItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Format labelValue = ((Dataflow)object).getFormat();
+		Format labelValue = ((DataFlow)object).getFormat();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Dataflow_type") :
-			getString("_UI_Dataflow_type") + " " + label;
+			getString("_UI_DataFlow_type") :
+			getString("_UI_DataFlow_type") + " " + label;
 	}
 	
 
@@ -205,11 +205,11 @@ public class DataflowItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Dataflow.class)) {
-			case PipelinePackage.DATAFLOW__FORMAT:
+		switch (notification.getFeatureID(DataFlow.class)) {
+			case PipelinePackage.DATA_FLOW__FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case PipelinePackage.DATAFLOW__SCHEMA:
+			case PipelinePackage.DATA_FLOW__SCHEMA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -229,7 +229,7 @@ public class DataflowItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.DATAFLOW__SCHEMA,
+				(PipelinePackage.Literals.DATA_FLOW__SCHEMA,
 				 PipelineFactory.eINSTANCE.createSchema()));
 	}
 

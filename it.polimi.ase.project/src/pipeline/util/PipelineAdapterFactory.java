@@ -76,16 +76,16 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 				return createTaskAdapter();
 			}
 			@Override
-			public Adapter caseDataflow(Dataflow object) {
-				return createDataflowAdapter();
+			public Adapter caseDataFlow(DataFlow object) {
+				return createDataFlowAdapter();
 			}
 			@Override
 			public Adapter caseOperation(Operation object) {
 				return createOperationAdapter();
 			}
 			@Override
-			public Adapter caseInternalDF(InternalDF object) {
-				return createInternalDFAdapter();
+			public Adapter caseInternalDataFlow(InternalDataFlow object) {
+				return createInternalDataFlowAdapter();
 			}
 			@Override
 			public Adapter caseSchema(Schema object) {
@@ -216,16 +216,16 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.Dataflow <em>Dataflow</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.DataFlow <em>Data Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.Dataflow
+	 * @see pipeline.DataFlow
 	 * @generated
 	 */
-	public Adapter createDataflowAdapter() {
+	public Adapter createDataFlowAdapter() {
 		return null;
 	}
 
@@ -244,16 +244,16 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.InternalDF <em>Internal DF</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.InternalDataFlow <em>Internal Data Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.InternalDF
+	 * @see pipeline.InternalDataFlow
 	 * @generated
 	 */
-	public Adapter createInternalDFAdapter() {
+	public Adapter createInternalDataFlowAdapter() {
 		return null;
 	}
 

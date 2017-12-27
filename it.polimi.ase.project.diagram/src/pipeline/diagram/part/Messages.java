@@ -426,12 +426,42 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Dataflow1CreationTool_title;
+	public static String DataFlow1CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Dataflow1CreationTool_desc;
+	public static String DataFlow1CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String Generates2CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Generates2CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String InternalDataFlow3CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String InternalDataFlow3CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String ReadsFrom4CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String ReadsFrom4CreationTool_desc;
 
 	/**
 	* @generated
@@ -526,12 +556,182 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Dataflow_4004_target;
+	public static String NavigatorGroupName_UserDefined_2033_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Dataflow_4004_source;
+	public static String NavigatorGroupName_UserDefined_2033_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Descriptive_2034_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Descriptive_2034_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Classification_2035_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Classification_2035_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Predictive_2036_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Predictive_2036_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Clustering_2037_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Clustering_2037_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Predefined_2038_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Predefined_2038_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Source_2039_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_File_2040_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Import_3025_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_UserDefined_3026_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_UserDefined_3026_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Predefined_3027_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Predefined_3027_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Descriptive_3033_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Descriptive_3033_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Classification_3034_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Classification_3034_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Predictive_3035_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Predictive_3035_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Clustering_3036_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Clustering_3036_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Export_3037_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_DataFlow_4005_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_DataFlow_4005_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_InternalDataFlow_4006_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_InternalDataFlow_4006_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ImportReadsFrom_4007_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ImportReadsFrom_4007_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ExportGenerates_4008_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ExportGenerates_4008_source;
 
 	/**
 	* @generated

@@ -4,11 +4,19 @@
     nsPrefix="pipeline">
   <eClassifiers xsi:type="ecore:EClass" name="Pipeline">
     <eAnnotations source="gmf.diagram"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dataflows" lowerBound="1"
-        upperBound="-1" eType="#//Dataflow" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataFlows" lowerBound="1"
+        upperBound="-1" eType="#//DataFlow" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" lowerBound="1" upperBound="-1"
         eType="#//Task" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internalDataFlows" upperBound="-1"
+        eType="#//InternalDataFlow" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sources" lowerBound="1"
+        upperBound="-1" eType="#//Source" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="files" upperBound="-1"
+        eType="#//File" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" lowerBound="1"
+        upperBound="-1" eType="#//Operation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Task" abstract="true">
     <eAnnotations source="gmf.node">
@@ -18,16 +26,16 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRequired" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" upperBound="-1"
-        eType="#//Dataflow" eOpposite="#//Dataflow/target"/>
+        eType="#//DataFlow" eOpposite="#//DataFlow/target"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" upperBound="-1"
-        eType="#//Dataflow" eOpposite="#//Dataflow/source"/>
+        eType="#//DataFlow" eOpposite="#//DataFlow/source"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Dataflow">
+  <eClassifiers xsi:type="ecore:EClass" name="DataFlow">
     <eAnnotations source="gmf.link">
       <details key="source" value="source"/>
       <details key="target" value="target"/>
       <details key="width" value="2"/>
-      <details key="target.decoration" value="arrow"/>
+      <details key="target.decoration" value="closedarrow"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="#//Format"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="schema" lowerBound="1"
@@ -43,17 +51,18 @@
       <details key="figure" value="ellipse"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" eType="#//InternalDF"
-        eOpposite="#//InternalDF/target"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" eType="#//InternalDF"
-        eOpposite="#//InternalDF/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" eType="#//InternalDataFlow"
+        eOpposite="#//InternalDataFlow/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" eType="#//InternalDataFlow"
+        eOpposite="#//InternalDataFlow/source"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InternalDF">
+  <eClassifiers xsi:type="ecore:EClass" name="InternalDataFlow">
     <eAnnotations source="gmf.link">
       <details key="source" value="source"/>
       <details key="target" value="target"/>
       <details key="width" value="2"/>
       <details key="target.decoration" value="arrow"/>
+      <details key="style" value="dash"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="#//Format"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="schema" lowerBound="1"
@@ -115,7 +124,13 @@
       <details key="figure" value="ellipse"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="readsFrom" lowerBound="1"
-        eType="#//Source" eOpposite="#//Source/linkedTo"/>
+        eType="#//Source" eOpposite="#//Source/linkedTo">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="2"/>
+        <details key="target.decoration" value="square"/>
+        <details key="style" value="dash"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="uses" lowerBound="1" eType="#//Schema"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -126,7 +141,13 @@
       <details key="figure" value="ellipse"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="generates" lowerBound="1"
-        eType="#//File" eOpposite="#//File/comesFrom"/>
+        eType="#//File" eOpposite="#//File/comesFrom">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="2"/>
+        <details key="target.decoration" value="square"/>
+        <details key="style" value="dash"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="uses" lowerBound="1" eType="#//Schema"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

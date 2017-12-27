@@ -16,6 +16,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.AnalysisTask;
+import pipeline.Pipeline;
 import pipeline.PipelineFactory;
 import pipeline.Predictive;
 
@@ -57,8 +58,8 @@ public class PredictiveCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Predictive newElement = PipelineFactory.eINSTANCE.createPredictive();
 
-		AnalysisTask owner = (AnalysisTask) getElementToEdit();
-		owner.getAnalyzes().add(newElement);
+		Pipeline owner = (Pipeline) getElementToEdit();
+		owner.getOperations().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

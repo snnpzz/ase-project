@@ -18,14 +18,15 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
-import pipeline.diagram.edit.commands.DataflowCreateCommand;
-import pipeline.diagram.edit.commands.DataflowReorientCommand;
+import pipeline.diagram.edit.commands.DataFlowCreateCommand;
+import pipeline.diagram.edit.commands.DataFlowReorientCommand;
 import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart;
-import pipeline.diagram.edit.parts.ClassificationEditPart;
-import pipeline.diagram.edit.parts.ClusteringEditPart;
-import pipeline.diagram.edit.parts.DataflowEditPart;
-import pipeline.diagram.edit.parts.DescriptiveEditPart;
-import pipeline.diagram.edit.parts.PredictiveEditPart;
+import pipeline.diagram.edit.parts.Classification2EditPart;
+import pipeline.diagram.edit.parts.Clustering2EditPart;
+import pipeline.diagram.edit.parts.DataFlowEditPart;
+import pipeline.diagram.edit.parts.Descriptive2EditPart;
+import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
+import pipeline.diagram.edit.parts.Predictive2EditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 import pipeline.diagram.providers.PipelineElementTypes;
 
@@ -50,7 +51,7 @@ public class AnalysisTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == DataflowEditPart.VISUAL_ID) {
+			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == DataFlowEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -59,7 +60,7 @@ public class AnalysisTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (PipelineVisualIDRegistry.getVisualID(outgoingLink) == DataflowEditPart.VISUAL_ID) {
+			if (PipelineVisualIDRegistry.getVisualID(outgoingLink) == DataFlowEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -91,25 +92,105 @@ public class AnalysisTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (PipelineVisualIDRegistry.getVisualID(cnode)) {
-					case DescriptiveEditPart.VISUAL_ID:
+					case Descriptive2EditPart.VISUAL_ID:
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
+							Edge incomingLink = (Edge) it.next();
+							if (PipelineVisualIDRegistry
+									.getVisualID(incomingLink) == InternalDataFlowEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+								cmd.add(new DestroyElementCommand(r));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								continue;
+							}
+						}
+						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+							Edge outgoingLink = (Edge) it.next();
+							if (PipelineVisualIDRegistry
+									.getVisualID(outgoingLink) == InternalDataFlowEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+								cmd.add(new DestroyElementCommand(r));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+								continue;
+							}
+						}
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
-					case ClassificationEditPart.VISUAL_ID:
+					case Classification2EditPart.VISUAL_ID:
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
+							Edge incomingLink = (Edge) it.next();
+							if (PipelineVisualIDRegistry
+									.getVisualID(incomingLink) == InternalDataFlowEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+								cmd.add(new DestroyElementCommand(r));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								continue;
+							}
+						}
+						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+							Edge outgoingLink = (Edge) it.next();
+							if (PipelineVisualIDRegistry
+									.getVisualID(outgoingLink) == InternalDataFlowEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+								cmd.add(new DestroyElementCommand(r));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+								continue;
+							}
+						}
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
-					case PredictiveEditPart.VISUAL_ID:
+					case Predictive2EditPart.VISUAL_ID:
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
+							Edge incomingLink = (Edge) it.next();
+							if (PipelineVisualIDRegistry
+									.getVisualID(incomingLink) == InternalDataFlowEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+								cmd.add(new DestroyElementCommand(r));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								continue;
+							}
+						}
+						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+							Edge outgoingLink = (Edge) it.next();
+							if (PipelineVisualIDRegistry
+									.getVisualID(outgoingLink) == InternalDataFlowEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+								cmd.add(new DestroyElementCommand(r));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+								continue;
+							}
+						}
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
-					case ClusteringEditPart.VISUAL_ID:
+					case Clustering2EditPart.VISUAL_ID:
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
+							Edge incomingLink = (Edge) it.next();
+							if (PipelineVisualIDRegistry
+									.getVisualID(incomingLink) == InternalDataFlowEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+								cmd.add(new DestroyElementCommand(r));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								continue;
+							}
+						}
+						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+							Edge outgoingLink = (Edge) it.next();
+							if (PipelineVisualIDRegistry
+									.getVisualID(outgoingLink) == InternalDataFlowEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+								cmd.add(new DestroyElementCommand(r));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+								continue;
+							}
+						}
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
@@ -135,8 +216,8 @@ public class AnalysisTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.Dataflow_4004 == req.getElementType()) {
-			return getGEFWrapper(new DataflowCreateCommand(req, req.getSource(), req.getTarget()));
+		if (PipelineElementTypes.DataFlow_4005 == req.getElementType()) {
+			return getGEFWrapper(new DataFlowCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -145,8 +226,8 @@ public class AnalysisTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.Dataflow_4004 == req.getElementType()) {
-			return getGEFWrapper(new DataflowCreateCommand(req, req.getSource(), req.getTarget()));
+		if (PipelineElementTypes.DataFlow_4005 == req.getElementType()) {
+			return getGEFWrapper(new DataFlowCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -159,8 +240,8 @@ public class AnalysisTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 	 */
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case DataflowEditPart.VISUAL_ID:
-			return getGEFWrapper(new DataflowReorientCommand(req));
+		case DataFlowEditPart.VISUAL_ID:
+			return getGEFWrapper(new DataFlowReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

@@ -8,6 +8,126 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
+        href="pipeline.ecore#//Pipeline/operations"/>
+    <ownedChild>
+      <domainMetaElement
+          href="pipeline.ecore#//UserDefined"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="pipeline.gmfgraph#UserDefinedLabel"/>
+        <features
+            href="pipeline.ecore#//Operation/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.15"/>
+      <diagramNode
+          href="pipeline.gmfgraph#UserDefined"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="pipeline.ecore#//Pipeline/operations"/>
+    <ownedChild>
+      <domainMetaElement
+          href="pipeline.ecore#//Descriptive"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="pipeline.gmfgraph#DescriptiveLabel"/>
+        <features
+            href="pipeline.ecore#//Operation/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.6"/>
+      <diagramNode
+          href="pipeline.gmfgraph#Descriptive"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="pipeline.ecore#//Pipeline/operations"/>
+    <ownedChild>
+      <domainMetaElement
+          href="pipeline.ecore#//Classification"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="pipeline.gmfgraph#ClassificationLabel"/>
+        <features
+            href="pipeline.ecore#//Operation/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.2"/>
+      <diagramNode
+          href="pipeline.gmfgraph#Classification"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="pipeline.ecore#//Pipeline/operations"/>
+    <ownedChild>
+      <domainMetaElement
+          href="pipeline.ecore#//Predictive"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="pipeline.gmfgraph#PredictiveLabel"/>
+        <features
+            href="pipeline.ecore#//Operation/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.13"/>
+      <diagramNode
+          href="pipeline.gmfgraph#Predictive"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="pipeline.ecore#//Pipeline/operations"/>
+    <ownedChild>
+      <domainMetaElement
+          href="pipeline.ecore#//Clustering"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="pipeline.gmfgraph#ClusteringLabel"/>
+        <features
+            href="pipeline.ecore#//Operation/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.4"/>
+      <diagramNode
+          href="pipeline.gmfgraph#Clustering"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="pipeline.ecore#//Pipeline/operations"/>
+    <ownedChild>
+      <domainMetaElement
+          href="pipeline.ecore#//Predefined"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="pipeline.gmfgraph#PredefinedLabel"/>
+        <features
+            href="pipeline.ecore#//Operation/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.12"/>
+      <diagramNode
+          href="pipeline.gmfgraph#Predefined"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
         href="pipeline.ecore#//Pipeline/tasks"/>
     <ownedChild
         relatedDiagrams="//@diagram">
@@ -26,7 +146,7 @@
       <diagramNode
           href="pipeline.gmfgraph#CollectionTask"/>
       <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+          compartment="//@nodes.6/@ownedChild/@compartments.0">
         <containmentFeature
             href="pipeline.ecore#//CollectionTask/imports"/>
         <ownedChild>
@@ -47,7 +167,7 @@
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.0/@ownedChild/@children.0">
+          children="//@nodes.6/@ownedChild/@children.0">
         <compartment
             href="pipeline.gmfgraph#CollectionTaskImportsCompartment"/>
       </compartments>
@@ -93,49 +213,19 @@
       <diagramNode
           href="pipeline.gmfgraph#CleaningTask"/>
       <children
-          compartment="//@nodes.2/@ownedChild/@compartments.0">
+          compartment="//@nodes.8/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild">
         <containmentFeature
             href="pipeline.ecore#//CleaningTask/operations"/>
-        <ownedChild>
-          <domainMetaElement
-              href="pipeline.ecore#//UserDefined"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="pipeline.gmfgraph#UserDefinedLabel"/>
-            <features
-                href="pipeline.ecore#//Operation/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.15"/>
-          <diagramNode
-              href="pipeline.gmfgraph#UserDefined"/>
-        </ownedChild>
       </children>
       <children
-          compartment="//@nodes.2/@ownedChild/@compartments.0">
+          compartment="//@nodes.8/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.5/@ownedChild">
         <containmentFeature
             href="pipeline.ecore#//CleaningTask/operations"/>
-        <ownedChild>
-          <domainMetaElement
-              href="pipeline.ecore#//Predefined"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="pipeline.gmfgraph#PredefinedLabel"/>
-            <features
-                href="pipeline.ecore#//Operation/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.12"/>
-          <diagramNode
-              href="pipeline.gmfgraph#Predefined"/>
-        </ownedChild>
       </children>
       <compartments
-          children="//@nodes.2/@ownedChild/@children.0 //@nodes.2/@ownedChild/@children.1">
+          children="//@nodes.8/@ownedChild/@children.0 //@nodes.8/@ownedChild/@children.1">
         <compartment
             href="pipeline.gmfgraph#CleaningTaskOperationsCompartment"/>
       </compartments>
@@ -161,91 +251,31 @@
       <diagramNode
           href="pipeline.gmfgraph#AnalysisTask"/>
       <children
-          compartment="//@nodes.3/@ownedChild/@compartments.0">
+          compartment="//@nodes.9/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.1/@ownedChild">
         <containmentFeature
             href="pipeline.ecore#//AnalysisTask/analyzes"/>
-        <ownedChild>
-          <domainMetaElement
-              href="pipeline.ecore#//Descriptive"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="pipeline.gmfgraph#DescriptiveLabel"/>
-            <features
-                href="pipeline.ecore#//Operation/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.6"/>
-          <diagramNode
-              href="pipeline.gmfgraph#Descriptive"/>
-        </ownedChild>
       </children>
       <children
-          compartment="//@nodes.3/@ownedChild/@compartments.0">
+          compartment="//@nodes.9/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.2/@ownedChild">
         <containmentFeature
             href="pipeline.ecore#//AnalysisTask/analyzes"/>
-        <ownedChild>
-          <domainMetaElement
-              href="pipeline.ecore#//Classification"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="pipeline.gmfgraph#ClassificationLabel"/>
-            <features
-                href="pipeline.ecore#//Operation/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.2"/>
-          <diagramNode
-              href="pipeline.gmfgraph#Classification"/>
-        </ownedChild>
       </children>
       <children
-          compartment="//@nodes.3/@ownedChild/@compartments.0">
+          compartment="//@nodes.9/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.3/@ownedChild">
         <containmentFeature
             href="pipeline.ecore#//AnalysisTask/analyzes"/>
-        <ownedChild>
-          <domainMetaElement
-              href="pipeline.ecore#//Predictive"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="pipeline.gmfgraph#PredictiveLabel"/>
-            <features
-                href="pipeline.ecore#//Operation/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.13"/>
-          <diagramNode
-              href="pipeline.gmfgraph#Predictive"/>
-        </ownedChild>
       </children>
       <children
-          compartment="//@nodes.3/@ownedChild/@compartments.0">
+          compartment="//@nodes.9/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.4/@ownedChild">
         <containmentFeature
             href="pipeline.ecore#//AnalysisTask/analyzes"/>
-        <ownedChild>
-          <domainMetaElement
-              href="pipeline.ecore#//Clustering"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="pipeline.gmfgraph#ClusteringLabel"/>
-            <features
-                href="pipeline.ecore#//Operation/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.4"/>
-          <diagramNode
-              href="pipeline.gmfgraph#Clustering"/>
-        </ownedChild>
       </children>
       <compartments
-          children="//@nodes.3/@ownedChild/@children.0 //@nodes.3/@ownedChild/@children.1 //@nodes.3/@ownedChild/@children.2 //@nodes.3/@ownedChild/@children.3">
+          children="//@nodes.9/@ownedChild/@children.0 //@nodes.9/@ownedChild/@children.1 //@nodes.9/@ownedChild/@children.2 //@nodes.9/@ownedChild/@children.3">
         <compartment
             href="pipeline.gmfgraph#AnalysisTaskAnalyzesCompartment"/>
       </compartments>
@@ -291,7 +321,7 @@
       <diagramNode
           href="pipeline.gmfgraph#ExportTask"/>
       <children
-          compartment="//@nodes.5/@ownedChild/@compartments.0">
+          compartment="//@nodes.11/@ownedChild/@compartments.0">
         <containmentFeature
             href="pipeline.ecore#//ExportTask/exports"/>
         <ownedChild>
@@ -312,28 +342,117 @@
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.5/@ownedChild/@children.0">
+          children="//@nodes.11/@ownedChild/@children.0">
         <compartment
             href="pipeline.gmfgraph#ExportTaskExportsCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="pipeline.ecore#//Pipeline/sources"/>
+    <ownedChild>
+      <domainMetaElement
+          href="pipeline.ecore#//Source"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="pipeline.gmfgraph#SourceLabel"/>
+        <features
+            href="pipeline.ecore#//Source/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.14"/>
+      <diagramNode
+          href="pipeline.gmfgraph#Source"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="pipeline.ecore#//Pipeline/files"/>
+    <ownedChild>
+      <domainMetaElement
+          href="pipeline.ecore#//File"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="pipeline.gmfgraph#FileLabel"/>
+        <features
+            href="pipeline.ecore#//File/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.9"/>
+      <diagramNode
+          href="pipeline.gmfgraph#File"/>
+    </ownedChild>
+  </nodes>
   <links>
     <domainMetaElement
-        href="pipeline.ecore#//Dataflow"/>
+        href="pipeline.ecore#//DataFlow"/>
     <containmentFeature
-        href="pipeline.ecore#//Pipeline/dataflows"/>
+        href="pipeline.ecore#//Pipeline/dataFlows"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="pipeline.gmftool#//@palette/@tools.1/@tools.0"/>
     <diagramLink
-        href="pipeline.gmfgraph#Dataflow"/>
+        href="pipeline.gmfgraph#DataFlow"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="pipeline.ecore#//Dataflow/source"/>
+        href="pipeline.ecore#//DataFlow/source"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="pipeline.ecore#//Dataflow/target"/>
+        href="pipeline.ecore#//DataFlow/target"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="pipeline.ecore#//InternalDataFlow"/>
+    <containmentFeature
+        href="pipeline.ecore#//Pipeline/internalDataFlows"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="pipeline.gmftool#//@palette/@tools.1/@tools.2"/>
+    <diagramLink
+        href="pipeline.gmfgraph#InternalDataFlow"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="pipeline.ecore#//InternalDataFlow/source"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="pipeline.ecore#//InternalDataFlow/target"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="pipeline.gmfgraph#ImportReadsFromExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="pipeline.gmftool#//@palette/@tools.1/@tools.3"/>
+    <diagramLink
+        href="pipeline.gmfgraph#ImportReadsFrom"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="pipeline.ecore#//Import/readsFrom"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="pipeline.gmfgraph#ExportGeneratesExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="pipeline.gmftool#//@palette/@tools.1/@tools.1"/>
+    <diagramLink
+        href="pipeline.gmfgraph#ExportGenerates"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="pipeline.ecore#//Export/generates"/>
   </links>
   <diagram>
     <diagramCanvas

@@ -67,13 +67,13 @@ public interface PipelinePackage extends EPackage {
 	int PIPELINE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Dataflows</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Data Flows</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIPELINE__DATAFLOWS = 0;
+	int PIPELINE__DATA_FLOWS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Tasks</b></em>' containment reference list.
@@ -94,13 +94,49 @@ public interface PipelinePackage extends EPackage {
 	int PIPELINE__ID = 2;
 
 	/**
+	 * The feature id for the '<em><b>Internal Data Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIPELINE__INTERNAL_DATA_FLOWS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Sources</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIPELINE__SOURCES = 4;
+
+	/**
+	 * The feature id for the '<em><b>Files</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIPELINE__FILES = 5;
+
+	/**
+	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIPELINE__OPERATIONS = 6;
+
+	/**
 	 * The number of structural features of the '<em>Pipeline</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIPELINE_FEATURE_COUNT = 3;
+	int PIPELINE_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.TaskImpl <em>Task</em>}' class.
@@ -158,14 +194,14 @@ public interface PipelinePackage extends EPackage {
 	int TASK_FEATURE_COUNT = 4;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.DataflowImpl <em>Dataflow</em>}' class.
+	 * The meta object id for the '{@link pipeline.impl.DataFlowImpl <em>Data Flow</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.DataflowImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getDataflow()
+	 * @see pipeline.impl.DataFlowImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getDataFlow()
 	 * @generated
 	 */
-	int DATAFLOW = 2;
+	int DATA_FLOW = 2;
 
 	/**
 	 * The feature id for the '<em><b>Format</b></em>' attribute.
@@ -174,7 +210,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATAFLOW__FORMAT = 0;
+	int DATA_FLOW__FORMAT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Schema</b></em>' containment reference.
@@ -183,7 +219,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATAFLOW__SCHEMA = 1;
+	int DATA_FLOW__SCHEMA = 1;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -192,7 +228,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATAFLOW__TARGET = 2;
+	int DATA_FLOW__TARGET = 2;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -201,16 +237,16 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATAFLOW__SOURCE = 3;
+	int DATA_FLOW__SOURCE = 3;
 
 	/**
-	 * The number of structural features of the '<em>Dataflow</em>' class.
+	 * The number of structural features of the '<em>Data Flow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATAFLOW_FEATURE_COUNT = 4;
+	int DATA_FLOW_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.OperationImpl <em>Operation</em>}' class.
@@ -259,14 +295,14 @@ public interface PipelinePackage extends EPackage {
 	int OPERATION_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.InternalDFImpl <em>Internal DF</em>}' class.
+	 * The meta object id for the '{@link pipeline.impl.InternalDataFlowImpl <em>Internal Data Flow</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.InternalDFImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getInternalDF()
+	 * @see pipeline.impl.InternalDataFlowImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getInternalDataFlow()
 	 * @generated
 	 */
-	int INTERNAL_DF = 4;
+	int INTERNAL_DATA_FLOW = 4;
 
 	/**
 	 * The feature id for the '<em><b>Format</b></em>' attribute.
@@ -275,7 +311,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_DF__FORMAT = 0;
+	int INTERNAL_DATA_FLOW__FORMAT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Schema</b></em>' containment reference.
@@ -284,7 +320,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_DF__SCHEMA = 1;
+	int INTERNAL_DATA_FLOW__SCHEMA = 1;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -293,7 +329,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_DF__SOURCE = 2;
+	int INTERNAL_DATA_FLOW__SOURCE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -302,16 +338,16 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_DF__TARGET = 3;
+	int INTERNAL_DATA_FLOW__TARGET = 3;
 
 	/**
-	 * The number of structural features of the '<em>Internal DF</em>' class.
+	 * The number of structural features of the '<em>Internal Data Flow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_DF_FEATURE_COUNT = 4;
+	int INTERNAL_DATA_FLOW_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.SchemaImpl <em>Schema</em>}' class.
@@ -1345,15 +1381,15 @@ public interface PipelinePackage extends EPackage {
 	EClass getPipeline();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link pipeline.Pipeline#getDataflows <em>Dataflows</em>}'.
+	 * Returns the meta object for the containment reference list '{@link pipeline.Pipeline#getDataFlows <em>Data Flows</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Dataflows</em>'.
-	 * @see pipeline.Pipeline#getDataflows()
+	 * @return the meta object for the containment reference list '<em>Data Flows</em>'.
+	 * @see pipeline.Pipeline#getDataFlows()
 	 * @see #getPipeline()
 	 * @generated
 	 */
-	EReference getPipeline_Dataflows();
+	EReference getPipeline_DataFlows();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link pipeline.Pipeline#getTasks <em>Tasks</em>}'.
@@ -1376,6 +1412,50 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPipeline_ID();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link pipeline.Pipeline#getInternalDataFlows <em>Internal Data Flows</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Internal Data Flows</em>'.
+	 * @see pipeline.Pipeline#getInternalDataFlows()
+	 * @see #getPipeline()
+	 * @generated
+	 */
+	EReference getPipeline_InternalDataFlows();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link pipeline.Pipeline#getSources <em>Sources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Sources</em>'.
+	 * @see pipeline.Pipeline#getSources()
+	 * @see #getPipeline()
+	 * @generated
+	 */
+	EReference getPipeline_Sources();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link pipeline.Pipeline#getFiles <em>Files</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Files</em>'.
+	 * @see pipeline.Pipeline#getFiles()
+	 * @see #getPipeline()
+	 * @generated
+	 */
+	EReference getPipeline_Files();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link pipeline.Pipeline#getOperations <em>Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Operations</em>'.
+	 * @see pipeline.Pipeline#getOperations()
+	 * @see #getPipeline()
+	 * @generated
+	 */
+	EReference getPipeline_Operations();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Task <em>Task</em>}'.
@@ -1432,58 +1512,58 @@ public interface PipelinePackage extends EPackage {
 	EReference getTask_Outgoing();
 
 	/**
-	 * Returns the meta object for class '{@link pipeline.Dataflow <em>Dataflow</em>}'.
+	 * Returns the meta object for class '{@link pipeline.DataFlow <em>Data Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Dataflow</em>'.
-	 * @see pipeline.Dataflow
+	 * @return the meta object for class '<em>Data Flow</em>'.
+	 * @see pipeline.DataFlow
 	 * @generated
 	 */
-	EClass getDataflow();
+	EClass getDataFlow();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Dataflow#getFormat <em>Format</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.DataFlow#getFormat <em>Format</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Format</em>'.
-	 * @see pipeline.Dataflow#getFormat()
-	 * @see #getDataflow()
+	 * @see pipeline.DataFlow#getFormat()
+	 * @see #getDataFlow()
 	 * @generated
 	 */
-	EAttribute getDataflow_Format();
+	EAttribute getDataFlow_Format();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link pipeline.Dataflow#getSchema <em>Schema</em>}'.
+	 * Returns the meta object for the containment reference '{@link pipeline.DataFlow#getSchema <em>Schema</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Schema</em>'.
-	 * @see pipeline.Dataflow#getSchema()
-	 * @see #getDataflow()
+	 * @see pipeline.DataFlow#getSchema()
+	 * @see #getDataFlow()
 	 * @generated
 	 */
-	EReference getDataflow_Schema();
+	EReference getDataFlow_Schema();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.Dataflow#getTarget <em>Target</em>}'.
+	 * Returns the meta object for the reference '{@link pipeline.DataFlow#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see pipeline.Dataflow#getTarget()
-	 * @see #getDataflow()
+	 * @see pipeline.DataFlow#getTarget()
+	 * @see #getDataFlow()
 	 * @generated
 	 */
-	EReference getDataflow_Target();
+	EReference getDataFlow_Target();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.Dataflow#getSource <em>Source</em>}'.
+	 * Returns the meta object for the reference '{@link pipeline.DataFlow#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see pipeline.Dataflow#getSource()
-	 * @see #getDataflow()
+	 * @see pipeline.DataFlow#getSource()
+	 * @see #getDataFlow()
 	 * @generated
 	 */
-	EReference getDataflow_Source();
+	EReference getDataFlow_Source();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Operation <em>Operation</em>}'.
@@ -1529,58 +1609,58 @@ public interface PipelinePackage extends EPackage {
 	EReference getOperation_Outgoing();
 
 	/**
-	 * Returns the meta object for class '{@link pipeline.InternalDF <em>Internal DF</em>}'.
+	 * Returns the meta object for class '{@link pipeline.InternalDataFlow <em>Internal Data Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Internal DF</em>'.
-	 * @see pipeline.InternalDF
+	 * @return the meta object for class '<em>Internal Data Flow</em>'.
+	 * @see pipeline.InternalDataFlow
 	 * @generated
 	 */
-	EClass getInternalDF();
+	EClass getInternalDataFlow();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.InternalDF#getFormat <em>Format</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.InternalDataFlow#getFormat <em>Format</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Format</em>'.
-	 * @see pipeline.InternalDF#getFormat()
-	 * @see #getInternalDF()
+	 * @see pipeline.InternalDataFlow#getFormat()
+	 * @see #getInternalDataFlow()
 	 * @generated
 	 */
-	EAttribute getInternalDF_Format();
+	EAttribute getInternalDataFlow_Format();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link pipeline.InternalDF#getSchema <em>Schema</em>}'.
+	 * Returns the meta object for the containment reference '{@link pipeline.InternalDataFlow#getSchema <em>Schema</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Schema</em>'.
-	 * @see pipeline.InternalDF#getSchema()
-	 * @see #getInternalDF()
+	 * @see pipeline.InternalDataFlow#getSchema()
+	 * @see #getInternalDataFlow()
 	 * @generated
 	 */
-	EReference getInternalDF_Schema();
+	EReference getInternalDataFlow_Schema();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.InternalDF#getSource <em>Source</em>}'.
+	 * Returns the meta object for the reference '{@link pipeline.InternalDataFlow#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see pipeline.InternalDF#getSource()
-	 * @see #getInternalDF()
+	 * @see pipeline.InternalDataFlow#getSource()
+	 * @see #getInternalDataFlow()
 	 * @generated
 	 */
-	EReference getInternalDF_Source();
+	EReference getInternalDataFlow_Source();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.InternalDF#getTarget <em>Target</em>}'.
+	 * Returns the meta object for the reference '{@link pipeline.InternalDataFlow#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see pipeline.InternalDF#getTarget()
-	 * @see #getInternalDF()
+	 * @see pipeline.InternalDataFlow#getTarget()
+	 * @see #getInternalDataFlow()
 	 * @generated
 	 */
-	EReference getInternalDF_Target();
+	EReference getInternalDataFlow_Target();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Schema <em>Schema</em>}'.
@@ -2067,12 +2147,12 @@ public interface PipelinePackage extends EPackage {
 		EClass PIPELINE = eINSTANCE.getPipeline();
 
 		/**
-		 * The meta object literal for the '<em><b>Dataflows</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Data Flows</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PIPELINE__DATAFLOWS = eINSTANCE.getPipeline_Dataflows();
+		EReference PIPELINE__DATA_FLOWS = eINSTANCE.getPipeline_DataFlows();
 
 		/**
 		 * The meta object literal for the '<em><b>Tasks</b></em>' containment reference list feature.
@@ -2089,6 +2169,38 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PIPELINE__ID = eINSTANCE.getPipeline_ID();
+
+		/**
+		 * The meta object literal for the '<em><b>Internal Data Flows</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PIPELINE__INTERNAL_DATA_FLOWS = eINSTANCE.getPipeline_InternalDataFlows();
+
+		/**
+		 * The meta object literal for the '<em><b>Sources</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PIPELINE__SOURCES = eINSTANCE.getPipeline_Sources();
+
+		/**
+		 * The meta object literal for the '<em><b>Files</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PIPELINE__FILES = eINSTANCE.getPipeline_Files();
+
+		/**
+		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PIPELINE__OPERATIONS = eINSTANCE.getPipeline_Operations();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.TaskImpl <em>Task</em>}' class.
@@ -2133,14 +2245,14 @@ public interface PipelinePackage extends EPackage {
 		EReference TASK__OUTGOING = eINSTANCE.getTask_Outgoing();
 
 		/**
-		 * The meta object literal for the '{@link pipeline.impl.DataflowImpl <em>Dataflow</em>}' class.
+		 * The meta object literal for the '{@link pipeline.impl.DataFlowImpl <em>Data Flow</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.DataflowImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getDataflow()
+		 * @see pipeline.impl.DataFlowImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getDataFlow()
 		 * @generated
 		 */
-		EClass DATAFLOW = eINSTANCE.getDataflow();
+		EClass DATA_FLOW = eINSTANCE.getDataFlow();
 
 		/**
 		 * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
@@ -2148,7 +2260,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DATAFLOW__FORMAT = eINSTANCE.getDataflow_Format();
+		EAttribute DATA_FLOW__FORMAT = eINSTANCE.getDataFlow_Format();
 
 		/**
 		 * The meta object literal for the '<em><b>Schema</b></em>' containment reference feature.
@@ -2156,7 +2268,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATAFLOW__SCHEMA = eINSTANCE.getDataflow_Schema();
+		EReference DATA_FLOW__SCHEMA = eINSTANCE.getDataFlow_Schema();
 
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -2164,7 +2276,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATAFLOW__TARGET = eINSTANCE.getDataflow_Target();
+		EReference DATA_FLOW__TARGET = eINSTANCE.getDataFlow_Target();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -2172,7 +2284,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATAFLOW__SOURCE = eINSTANCE.getDataflow_Source();
+		EReference DATA_FLOW__SOURCE = eINSTANCE.getDataFlow_Source();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.OperationImpl <em>Operation</em>}' class.
@@ -2209,14 +2321,14 @@ public interface PipelinePackage extends EPackage {
 		EReference OPERATION__OUTGOING = eINSTANCE.getOperation_Outgoing();
 
 		/**
-		 * The meta object literal for the '{@link pipeline.impl.InternalDFImpl <em>Internal DF</em>}' class.
+		 * The meta object literal for the '{@link pipeline.impl.InternalDataFlowImpl <em>Internal Data Flow</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.InternalDFImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getInternalDF()
+		 * @see pipeline.impl.InternalDataFlowImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getInternalDataFlow()
 		 * @generated
 		 */
-		EClass INTERNAL_DF = eINSTANCE.getInternalDF();
+		EClass INTERNAL_DATA_FLOW = eINSTANCE.getInternalDataFlow();
 
 		/**
 		 * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
@@ -2224,7 +2336,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INTERNAL_DF__FORMAT = eINSTANCE.getInternalDF_Format();
+		EAttribute INTERNAL_DATA_FLOW__FORMAT = eINSTANCE.getInternalDataFlow_Format();
 
 		/**
 		 * The meta object literal for the '<em><b>Schema</b></em>' containment reference feature.
@@ -2232,7 +2344,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INTERNAL_DF__SCHEMA = eINSTANCE.getInternalDF_Schema();
+		EReference INTERNAL_DATA_FLOW__SCHEMA = eINSTANCE.getInternalDataFlow_Schema();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -2240,7 +2352,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INTERNAL_DF__SOURCE = eINSTANCE.getInternalDF_Source();
+		EReference INTERNAL_DATA_FLOW__SOURCE = eINSTANCE.getInternalDataFlow_Source();
 
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -2248,7 +2360,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INTERNAL_DF__TARGET = eINSTANCE.getInternalDF_Target();
+		EReference INTERNAL_DATA_FLOW__TARGET = eINSTANCE.getInternalDataFlow_Target();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.SchemaImpl <em>Schema</em>}' class.

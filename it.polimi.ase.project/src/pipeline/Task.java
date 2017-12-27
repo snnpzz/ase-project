@@ -81,8 +81,8 @@ public interface Task extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Incoming</b></em>' reference list.
-	 * The list contents are of type {@link pipeline.Dataflow}.
-	 * It is bidirectional and its opposite is '{@link pipeline.Dataflow#getTarget <em>Target</em>}'.
+	 * The list contents are of type {@link pipeline.DataFlow}.
+	 * It is bidirectional and its opposite is '{@link pipeline.DataFlow#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Incoming</em>' reference list isn't clear,
@@ -91,16 +91,16 @@ public interface Task extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Incoming</em>' reference list.
 	 * @see pipeline.PipelinePackage#getTask_Incoming()
-	 * @see pipeline.Dataflow#getTarget
+	 * @see pipeline.DataFlow#getTarget
 	 * @model opposite="target"
 	 * @generated
 	 */
-	EList<Dataflow> getIncoming();
+	EList<DataFlow> getIncoming();
 
 	/**
 	 * Returns the value of the '<em><b>Outgoing</b></em>' reference list.
-	 * The list contents are of type {@link pipeline.Dataflow}.
-	 * It is bidirectional and its opposite is '{@link pipeline.Dataflow#getSource <em>Source</em>}'.
+	 * The list contents are of type {@link pipeline.DataFlow}.
+	 * It is bidirectional and its opposite is '{@link pipeline.DataFlow#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Outgoing</em>' reference list isn't clear,
@@ -109,10 +109,10 @@ public interface Task extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Outgoing</em>' reference list.
 	 * @see pipeline.PipelinePackage#getTask_Outgoing()
-	 * @see pipeline.Dataflow#getSource
+	 * @see pipeline.DataFlow#getSource
 	 * @model opposite="source"
 	 * @generated
 	 */
-	EList<Dataflow> getOutgoing();
+	EList<DataFlow> getOutgoing();
 
 } // Task

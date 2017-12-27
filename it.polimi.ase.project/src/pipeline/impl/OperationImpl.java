@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import pipeline.InternalDF;
+import pipeline.InternalDataFlow;
 import pipeline.Operation;
 import pipeline.PipelinePackage;
 
@@ -59,7 +59,7 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * @generated
 	 * @ordered
 	 */
-	protected InternalDF incoming;
+	protected InternalDataFlow incoming;
 
 	/**
 	 * The cached value of the '{@link #getOutgoing() <em>Outgoing</em>}' reference.
@@ -69,7 +69,7 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * @generated
 	 * @ordered
 	 */
-	protected InternalDF outgoing;
+	protected InternalDataFlow outgoing;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,10 +116,10 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InternalDF getIncoming() {
+	public InternalDataFlow getIncoming() {
 		if (incoming != null && incoming.eIsProxy()) {
 			InternalEObject oldIncoming = (InternalEObject)incoming;
-			incoming = (InternalDF)eResolveProxy(oldIncoming);
+			incoming = (InternalDataFlow)eResolveProxy(oldIncoming);
 			if (incoming != oldIncoming) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.OPERATION__INCOMING, oldIncoming, incoming));
@@ -133,7 +133,7 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InternalDF basicGetIncoming() {
+	public InternalDataFlow basicGetIncoming() {
 		return incoming;
 	}
 
@@ -142,8 +142,8 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetIncoming(InternalDF newIncoming, NotificationChain msgs) {
-		InternalDF oldIncoming = incoming;
+	public NotificationChain basicSetIncoming(InternalDataFlow newIncoming, NotificationChain msgs) {
+		InternalDataFlow oldIncoming = incoming;
 		incoming = newIncoming;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PipelinePackage.OPERATION__INCOMING, oldIncoming, newIncoming);
@@ -157,13 +157,13 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIncoming(InternalDF newIncoming) {
+	public void setIncoming(InternalDataFlow newIncoming) {
 		if (newIncoming != incoming) {
 			NotificationChain msgs = null;
 			if (incoming != null)
-				msgs = ((InternalEObject)incoming).eInverseRemove(this, PipelinePackage.INTERNAL_DF__TARGET, InternalDF.class, msgs);
+				msgs = ((InternalEObject)incoming).eInverseRemove(this, PipelinePackage.INTERNAL_DATA_FLOW__TARGET, InternalDataFlow.class, msgs);
 			if (newIncoming != null)
-				msgs = ((InternalEObject)newIncoming).eInverseAdd(this, PipelinePackage.INTERNAL_DF__TARGET, InternalDF.class, msgs);
+				msgs = ((InternalEObject)newIncoming).eInverseAdd(this, PipelinePackage.INTERNAL_DATA_FLOW__TARGET, InternalDataFlow.class, msgs);
 			msgs = basicSetIncoming(newIncoming, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -176,10 +176,10 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InternalDF getOutgoing() {
+	public InternalDataFlow getOutgoing() {
 		if (outgoing != null && outgoing.eIsProxy()) {
 			InternalEObject oldOutgoing = (InternalEObject)outgoing;
-			outgoing = (InternalDF)eResolveProxy(oldOutgoing);
+			outgoing = (InternalDataFlow)eResolveProxy(oldOutgoing);
 			if (outgoing != oldOutgoing) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.OPERATION__OUTGOING, oldOutgoing, outgoing));
@@ -193,7 +193,7 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InternalDF basicGetOutgoing() {
+	public InternalDataFlow basicGetOutgoing() {
 		return outgoing;
 	}
 
@@ -202,8 +202,8 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOutgoing(InternalDF newOutgoing, NotificationChain msgs) {
-		InternalDF oldOutgoing = outgoing;
+	public NotificationChain basicSetOutgoing(InternalDataFlow newOutgoing, NotificationChain msgs) {
+		InternalDataFlow oldOutgoing = outgoing;
 		outgoing = newOutgoing;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PipelinePackage.OPERATION__OUTGOING, oldOutgoing, newOutgoing);
@@ -217,13 +217,13 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOutgoing(InternalDF newOutgoing) {
+	public void setOutgoing(InternalDataFlow newOutgoing) {
 		if (newOutgoing != outgoing) {
 			NotificationChain msgs = null;
 			if (outgoing != null)
-				msgs = ((InternalEObject)outgoing).eInverseRemove(this, PipelinePackage.INTERNAL_DF__SOURCE, InternalDF.class, msgs);
+				msgs = ((InternalEObject)outgoing).eInverseRemove(this, PipelinePackage.INTERNAL_DATA_FLOW__SOURCE, InternalDataFlow.class, msgs);
 			if (newOutgoing != null)
-				msgs = ((InternalEObject)newOutgoing).eInverseAdd(this, PipelinePackage.INTERNAL_DF__SOURCE, InternalDF.class, msgs);
+				msgs = ((InternalEObject)newOutgoing).eInverseAdd(this, PipelinePackage.INTERNAL_DATA_FLOW__SOURCE, InternalDataFlow.class, msgs);
 			msgs = basicSetOutgoing(newOutgoing, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -241,12 +241,12 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 		switch (featureID) {
 			case PipelinePackage.OPERATION__INCOMING:
 				if (incoming != null)
-					msgs = ((InternalEObject)incoming).eInverseRemove(this, PipelinePackage.INTERNAL_DF__TARGET, InternalDF.class, msgs);
-				return basicSetIncoming((InternalDF)otherEnd, msgs);
+					msgs = ((InternalEObject)incoming).eInverseRemove(this, PipelinePackage.INTERNAL_DATA_FLOW__TARGET, InternalDataFlow.class, msgs);
+				return basicSetIncoming((InternalDataFlow)otherEnd, msgs);
 			case PipelinePackage.OPERATION__OUTGOING:
 				if (outgoing != null)
-					msgs = ((InternalEObject)outgoing).eInverseRemove(this, PipelinePackage.INTERNAL_DF__SOURCE, InternalDF.class, msgs);
-				return basicSetOutgoing((InternalDF)otherEnd, msgs);
+					msgs = ((InternalEObject)outgoing).eInverseRemove(this, PipelinePackage.INTERNAL_DATA_FLOW__SOURCE, InternalDataFlow.class, msgs);
+				return basicSetOutgoing((InternalDataFlow)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -299,10 +299,10 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 				setName((String)newValue);
 				return;
 			case PipelinePackage.OPERATION__INCOMING:
-				setIncoming((InternalDF)newValue);
+				setIncoming((InternalDataFlow)newValue);
 				return;
 			case PipelinePackage.OPERATION__OUTGOING:
-				setOutgoing((InternalDF)newValue);
+				setOutgoing((InternalDataFlow)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -320,10 +320,10 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 				setName(NAME_EDEFAULT);
 				return;
 			case PipelinePackage.OPERATION__INCOMING:
-				setIncoming((InternalDF)null);
+				setIncoming((InternalDataFlow)null);
 				return;
 			case PipelinePackage.OPERATION__OUTGOING:
-				setOutgoing((InternalDF)null);
+				setOutgoing((InternalDataFlow)null);
 				return;
 		}
 		super.eUnset(featureID);

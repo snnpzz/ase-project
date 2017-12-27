@@ -12,9 +12,13 @@
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/xml"/>
     </genEnums>
     <genClasses ecoreClass="pipeline.ecore#//Pipeline">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/dataflows"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/dataFlows"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/tasks"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Pipeline/ID"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/internalDataFlows"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/sources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/files"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/operations"/>
     </genClasses>
     <genClasses image="false" ecoreClass="pipeline.ecore#//Task">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Task/ID"/>
@@ -22,22 +26,22 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Task/incoming"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Task/outgoing"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//Dataflow">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Dataflow/format"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Dataflow/schema"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Dataflow/target"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Dataflow/source"/>
+    <genClasses ecoreClass="pipeline.ecore#//DataFlow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//DataFlow/format"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//DataFlow/schema"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//DataFlow/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//DataFlow/source"/>
     </genClasses>
     <genClasses image="false" ecoreClass="pipeline.ecore#//Operation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Operation/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Operation/incoming"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Operation/outgoing"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//InternalDF">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//InternalDF/format"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDF/schema"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDF/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDF/target"/>
+    <genClasses ecoreClass="pipeline.ecore#//InternalDataFlow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//InternalDataFlow/format"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDataFlow/schema"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDataFlow/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDataFlow/target"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Schema">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Schema/attributes"/>

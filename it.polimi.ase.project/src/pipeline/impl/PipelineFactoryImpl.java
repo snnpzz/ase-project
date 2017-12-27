@@ -58,8 +58,8 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case PipelinePackage.PIPELINE: return createPipeline();
-			case PipelinePackage.DATAFLOW: return createDataflow();
-			case PipelinePackage.INTERNAL_DF: return createInternalDF();
+			case PipelinePackage.DATA_FLOW: return createDataFlow();
+			case PipelinePackage.INTERNAL_DATA_FLOW: return createInternalDataFlow();
 			case PipelinePackage.SCHEMA: return createSchema();
 			case PipelinePackage.ATTRIBUTE: return createAttribute();
 			case PipelinePackage.COLLECTION_TASK: return createCollectionTask();
@@ -128,9 +128,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Dataflow createDataflow() {
-		DataflowImpl dataflow = new DataflowImpl();
-		return dataflow;
+	public DataFlow createDataFlow() {
+		DataFlowImpl dataFlow = new DataFlowImpl();
+		return dataFlow;
 	}
 
 	/**
@@ -138,9 +138,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InternalDF createInternalDF() {
-		InternalDFImpl internalDF = new InternalDFImpl();
-		return internalDF;
+	public InternalDataFlow createInternalDataFlow() {
+		InternalDataFlowImpl internalDataFlow = new InternalDataFlowImpl();
+		return internalDataFlow;
 	}
 
 	/**

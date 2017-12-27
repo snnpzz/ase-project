@@ -95,49 +95,49 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pipeline.Dataflow} instances.
+	 * This keeps track of the one adapter used for all {@link pipeline.DataFlow} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DataflowItemProvider dataflowItemProvider;
+	protected DataFlowItemProvider dataFlowItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pipeline.Dataflow}.
+	 * This creates an adapter for a {@link pipeline.DataFlow}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDataflowAdapter() {
-		if (dataflowItemProvider == null) {
-			dataflowItemProvider = new DataflowItemProvider(this);
+	public Adapter createDataFlowAdapter() {
+		if (dataFlowItemProvider == null) {
+			dataFlowItemProvider = new DataFlowItemProvider(this);
 		}
 
-		return dataflowItemProvider;
+		return dataFlowItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pipeline.InternalDF} instances.
+	 * This keeps track of the one adapter used for all {@link pipeline.InternalDataFlow} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InternalDFItemProvider internalDFItemProvider;
+	protected InternalDataFlowItemProvider internalDataFlowItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pipeline.InternalDF}.
+	 * This creates an adapter for a {@link pipeline.InternalDataFlow}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createInternalDFAdapter() {
-		if (internalDFItemProvider == null) {
-			internalDFItemProvider = new InternalDFItemProvider(this);
+	public Adapter createInternalDataFlowAdapter() {
+		if (internalDataFlowItemProvider == null) {
+			internalDataFlowItemProvider = new InternalDataFlowItemProvider(this);
 		}
 
-		return internalDFItemProvider;
+		return internalDataFlowItemProvider;
 	}
 
 	/**
@@ -654,8 +654,8 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 	 */
 	public void dispose() {
 		if (pipelineItemProvider != null) pipelineItemProvider.dispose();
-		if (dataflowItemProvider != null) dataflowItemProvider.dispose();
-		if (internalDFItemProvider != null) internalDFItemProvider.dispose();
+		if (dataFlowItemProvider != null) dataFlowItemProvider.dispose();
+		if (internalDataFlowItemProvider != null) internalDataFlowItemProvider.dispose();
 		if (schemaItemProvider != null) schemaItemProvider.dispose();
 		if (attributeItemProvider != null) attributeItemProvider.dispose();
 		if (collectionTaskItemProvider != null) collectionTaskItemProvider.dispose();

@@ -18,9 +18,13 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import pipeline.Dataflow;
+import pipeline.DataFlow;
+import pipeline.File;
+import pipeline.InternalDataFlow;
+import pipeline.Operation;
 import pipeline.Pipeline;
 import pipeline.PipelinePackage;
+import pipeline.Source;
 import pipeline.Task;
 
 /**
@@ -31,23 +35,27 @@ import pipeline.Task;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.PipelineImpl#getDataflows <em>Dataflows</em>}</li>
+ *   <li>{@link pipeline.impl.PipelineImpl#getDataFlows <em>Data Flows</em>}</li>
  *   <li>{@link pipeline.impl.PipelineImpl#getTasks <em>Tasks</em>}</li>
  *   <li>{@link pipeline.impl.PipelineImpl#getID <em>ID</em>}</li>
+ *   <li>{@link pipeline.impl.PipelineImpl#getInternalDataFlows <em>Internal Data Flows</em>}</li>
+ *   <li>{@link pipeline.impl.PipelineImpl#getSources <em>Sources</em>}</li>
+ *   <li>{@link pipeline.impl.PipelineImpl#getFiles <em>Files</em>}</li>
+ *   <li>{@link pipeline.impl.PipelineImpl#getOperations <em>Operations</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class PipelineImpl extends EObjectImpl implements Pipeline {
 	/**
-	 * The cached value of the '{@link #getDataflows() <em>Dataflows</em>}' containment reference list.
+	 * The cached value of the '{@link #getDataFlows() <em>Data Flows</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDataflows()
+	 * @see #getDataFlows()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Dataflow> dataflows;
+	protected EList<DataFlow> dataFlows;
 
 	/**
 	 * The cached value of the '{@link #getTasks() <em>Tasks</em>}' containment reference list.
@@ -80,6 +88,46 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	protected String id = ID_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getInternalDataFlows() <em>Internal Data Flows</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInternalDataFlows()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<InternalDataFlow> internalDataFlows;
+
+	/**
+	 * The cached value of the '{@link #getSources() <em>Sources</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSources()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Source> sources;
+
+	/**
+	 * The cached value of the '{@link #getFiles() <em>Files</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFiles()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<File> files;
+
+	/**
+	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Operation> operations;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -103,11 +151,11 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Dataflow> getDataflows() {
-		if (dataflows == null) {
-			dataflows = new EObjectContainmentEList<Dataflow>(Dataflow.class, this, PipelinePackage.PIPELINE__DATAFLOWS);
+	public EList<DataFlow> getDataFlows() {
+		if (dataFlows == null) {
+			dataFlows = new EObjectContainmentEList<DataFlow>(DataFlow.class, this, PipelinePackage.PIPELINE__DATA_FLOWS);
 		}
-		return dataflows;
+		return dataFlows;
 	}
 
 	/**
@@ -148,13 +196,69 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<InternalDataFlow> getInternalDataFlows() {
+		if (internalDataFlows == null) {
+			internalDataFlows = new EObjectContainmentEList<InternalDataFlow>(InternalDataFlow.class, this, PipelinePackage.PIPELINE__INTERNAL_DATA_FLOWS);
+		}
+		return internalDataFlows;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Source> getSources() {
+		if (sources == null) {
+			sources = new EObjectContainmentEList<Source>(Source.class, this, PipelinePackage.PIPELINE__SOURCES);
+		}
+		return sources;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<File> getFiles() {
+		if (files == null) {
+			files = new EObjectContainmentEList<File>(File.class, this, PipelinePackage.PIPELINE__FILES);
+		}
+		return files;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Operation> getOperations() {
+		if (operations == null) {
+			operations = new EObjectContainmentEList<Operation>(Operation.class, this, PipelinePackage.PIPELINE__OPERATIONS);
+		}
+		return operations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PipelinePackage.PIPELINE__DATAFLOWS:
-				return ((InternalEList<?>)getDataflows()).basicRemove(otherEnd, msgs);
+			case PipelinePackage.PIPELINE__DATA_FLOWS:
+				return ((InternalEList<?>)getDataFlows()).basicRemove(otherEnd, msgs);
 			case PipelinePackage.PIPELINE__TASKS:
 				return ((InternalEList<?>)getTasks()).basicRemove(otherEnd, msgs);
+			case PipelinePackage.PIPELINE__INTERNAL_DATA_FLOWS:
+				return ((InternalEList<?>)getInternalDataFlows()).basicRemove(otherEnd, msgs);
+			case PipelinePackage.PIPELINE__SOURCES:
+				return ((InternalEList<?>)getSources()).basicRemove(otherEnd, msgs);
+			case PipelinePackage.PIPELINE__FILES:
+				return ((InternalEList<?>)getFiles()).basicRemove(otherEnd, msgs);
+			case PipelinePackage.PIPELINE__OPERATIONS:
+				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -167,12 +271,20 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.PIPELINE__DATAFLOWS:
-				return getDataflows();
+			case PipelinePackage.PIPELINE__DATA_FLOWS:
+				return getDataFlows();
 			case PipelinePackage.PIPELINE__TASKS:
 				return getTasks();
 			case PipelinePackage.PIPELINE__ID:
 				return getID();
+			case PipelinePackage.PIPELINE__INTERNAL_DATA_FLOWS:
+				return getInternalDataFlows();
+			case PipelinePackage.PIPELINE__SOURCES:
+				return getSources();
+			case PipelinePackage.PIPELINE__FILES:
+				return getFiles();
+			case PipelinePackage.PIPELINE__OPERATIONS:
+				return getOperations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -186,9 +298,9 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.PIPELINE__DATAFLOWS:
-				getDataflows().clear();
-				getDataflows().addAll((Collection<? extends Dataflow>)newValue);
+			case PipelinePackage.PIPELINE__DATA_FLOWS:
+				getDataFlows().clear();
+				getDataFlows().addAll((Collection<? extends DataFlow>)newValue);
 				return;
 			case PipelinePackage.PIPELINE__TASKS:
 				getTasks().clear();
@@ -196,6 +308,22 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 				return;
 			case PipelinePackage.PIPELINE__ID:
 				setID((String)newValue);
+				return;
+			case PipelinePackage.PIPELINE__INTERNAL_DATA_FLOWS:
+				getInternalDataFlows().clear();
+				getInternalDataFlows().addAll((Collection<? extends InternalDataFlow>)newValue);
+				return;
+			case PipelinePackage.PIPELINE__SOURCES:
+				getSources().clear();
+				getSources().addAll((Collection<? extends Source>)newValue);
+				return;
+			case PipelinePackage.PIPELINE__FILES:
+				getFiles().clear();
+				getFiles().addAll((Collection<? extends File>)newValue);
+				return;
+			case PipelinePackage.PIPELINE__OPERATIONS:
+				getOperations().clear();
+				getOperations().addAll((Collection<? extends Operation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -209,14 +337,26 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.PIPELINE__DATAFLOWS:
-				getDataflows().clear();
+			case PipelinePackage.PIPELINE__DATA_FLOWS:
+				getDataFlows().clear();
 				return;
 			case PipelinePackage.PIPELINE__TASKS:
 				getTasks().clear();
 				return;
 			case PipelinePackage.PIPELINE__ID:
 				setID(ID_EDEFAULT);
+				return;
+			case PipelinePackage.PIPELINE__INTERNAL_DATA_FLOWS:
+				getInternalDataFlows().clear();
+				return;
+			case PipelinePackage.PIPELINE__SOURCES:
+				getSources().clear();
+				return;
+			case PipelinePackage.PIPELINE__FILES:
+				getFiles().clear();
+				return;
+			case PipelinePackage.PIPELINE__OPERATIONS:
+				getOperations().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -230,12 +370,20 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.PIPELINE__DATAFLOWS:
-				return dataflows != null && !dataflows.isEmpty();
+			case PipelinePackage.PIPELINE__DATA_FLOWS:
+				return dataFlows != null && !dataFlows.isEmpty();
 			case PipelinePackage.PIPELINE__TASKS:
 				return tasks != null && !tasks.isEmpty();
 			case PipelinePackage.PIPELINE__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case PipelinePackage.PIPELINE__INTERNAL_DATA_FLOWS:
+				return internalDataFlows != null && !internalDataFlows.isEmpty();
+			case PipelinePackage.PIPELINE__SOURCES:
+				return sources != null && !sources.isEmpty();
+			case PipelinePackage.PIPELINE__FILES:
+				return files != null && !files.isEmpty();
+			case PipelinePackage.PIPELINE__OPERATIONS:
+				return operations != null && !operations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

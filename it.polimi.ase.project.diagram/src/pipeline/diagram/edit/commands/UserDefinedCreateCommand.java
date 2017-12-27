@@ -16,6 +16,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.CleaningTask;
+import pipeline.Pipeline;
 import pipeline.PipelineFactory;
 import pipeline.UserDefined;
 
@@ -57,7 +58,7 @@ public class UserDefinedCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		UserDefined newElement = PipelineFactory.eINSTANCE.createUserDefined();
 
-		CleaningTask owner = (CleaningTask) getElementToEdit();
+		Pipeline owner = (Pipeline) getElementToEdit();
 		owner.getOperations().add(newElement);
 
 		doConfigure(newElement, monitor, info);

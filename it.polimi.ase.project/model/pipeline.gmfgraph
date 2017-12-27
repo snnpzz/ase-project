@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="ASCII"?>
 <gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="pipeline">
   <figures name="Default">
-    <figures xsi:type="gmfgraph:PolylineDecoration" name="DataflowFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template x="-2" y="2"/>
+      <template x="-2" y="-2"/>
+      <template/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="InternalDataFlowFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="Sqare">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template y="1"/>
+      <template x="-1" y="1"/>
+      <template x="-1" y="-1"/>
+      <template y="-1"/>
+      <template y="1"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="Sqare">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template y="1"/>
+      <template x="-1" y="1"/>
+      <template x="-1" y="-1"/>
+      <template y="-1"/>
+      <template y="1"/>
+    </figures>
     <descriptors name="AttributeFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="AttributeFigure">
         <border xsi:type="gmfgraph:MarginBorder">
@@ -171,8 +194,23 @@
       </actualFigure>
       <accessors accessor="getFigurePredefinedLabelFigure" figure="//@figures.0/@descriptors.16/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="DataflowFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DataflowFigure" lineWidth="2" targetDecoration="//@figures.0/@figures.0"/>
+    <descriptors name="DataFlowFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DataFlowFigure" lineWidth="2" targetDecoration="//@figures.0/@figures.0"/>
+    </descriptors>
+    <descriptors name="InternalDataFlowFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="InternalDataFlowFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.1"/>
+    </descriptors>
+    <descriptors name="ImportReadsFromFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ImportReadsFromFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.2"/>
+    </descriptors>
+    <descriptors name="ImportReadsFromExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ImportReadsFromExternalLabel"/>
+    </descriptors>
+    <descriptors name="ExportGeneratesFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ExportGeneratesFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.3"/>
+    </descriptors>
+    <descriptors name="ExportGeneratesExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ExportGeneratesExternalLabel"/>
     </descriptors>
   </figures>
   <nodes name="Attribute" figure="AttributeFigure"/>
@@ -192,7 +230,10 @@
   <nodes name="Predictive" figure="PredictiveFigure"/>
   <nodes name="Clustering" figure="ClusteringFigure"/>
   <nodes name="Predefined" figure="PredefinedFigure"/>
-  <connections name="Dataflow" figure="DataflowFigure"/>
+  <connections name="DataFlow" figure="DataFlowFigure"/>
+  <connections name="InternalDataFlow" figure="InternalDataFlowFigure"/>
+  <connections name="ImportReadsFrom" figure="ImportReadsFromFigure"/>
+  <connections name="ExportGenerates" figure="ExportGeneratesFigure"/>
   <compartments name="CollectionTaskImportsCompartment" figure="CollectionTaskFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <compartments name="CleaningTaskOperationsCompartment" figure="CleaningTaskFigure" collapsible="true" accessor="//@figures.0/@descriptors.3/@accessors.1"/>
   <compartments name="AnalysisTaskAnalyzesCompartment" figure="AnalysisTaskFigure" collapsible="true" accessor="//@figures.0/@descriptors.4/@accessors.1"/>
@@ -214,4 +255,6 @@
   <labels name="PredictiveLabel" figure="PredictiveFigure" accessor="//@figures.0/@descriptors.14/@accessors.0"/>
   <labels name="ClusteringLabel" figure="ClusteringFigure" accessor="//@figures.0/@descriptors.15/@accessors.0"/>
   <labels name="PredefinedLabel" figure="PredefinedFigure" accessor="//@figures.0/@descriptors.16/@accessors.0"/>
+  <labels name="ImportReadsFromExternalLabel" figure="ImportReadsFromExternalLabelFigure" elementIcon="false"/>
+  <labels name="ExportGeneratesExternalLabel" figure="ExportGeneratesExternalLabelFigure" elementIcon="false"/>
 </gmfgraph:Canvas>

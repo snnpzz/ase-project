@@ -102,8 +102,12 @@ public class PipelineItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__DATAFLOWS);
+			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__DATA_FLOWS);
 			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__TASKS);
+			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__INTERNAL_DATA_FLOWS);
+			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__SOURCES);
+			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__FILES);
+			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__OPERATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -162,8 +166,12 @@ public class PipelineItemProvider
 			case PipelinePackage.PIPELINE__ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case PipelinePackage.PIPELINE__DATAFLOWS:
+			case PipelinePackage.PIPELINE__DATA_FLOWS:
 			case PipelinePackage.PIPELINE__TASKS:
+			case PipelinePackage.PIPELINE__INTERNAL_DATA_FLOWS:
+			case PipelinePackage.PIPELINE__SOURCES:
+			case PipelinePackage.PIPELINE__FILES:
+			case PipelinePackage.PIPELINE__OPERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -183,8 +191,8 @@ public class PipelineItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.PIPELINE__DATAFLOWS,
-				 PipelineFactory.eINSTANCE.createDataflow()));
+				(PipelinePackage.Literals.PIPELINE__DATA_FLOWS,
+				 PipelineFactory.eINSTANCE.createDataFlow()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -215,6 +223,51 @@ public class PipelineItemProvider
 			(createChildParameter
 				(PipelinePackage.Literals.PIPELINE__TASKS,
 				 PipelineFactory.eINSTANCE.createExportTask()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PipelinePackage.Literals.PIPELINE__INTERNAL_DATA_FLOWS,
+				 PipelineFactory.eINSTANCE.createInternalDataFlow()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PipelinePackage.Literals.PIPELINE__SOURCES,
+				 PipelineFactory.eINSTANCE.createSource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PipelinePackage.Literals.PIPELINE__FILES,
+				 PipelineFactory.eINSTANCE.createFile()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PipelinePackage.Literals.PIPELINE__OPERATIONS,
+				 PipelineFactory.eINSTANCE.createUserDefined()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PipelinePackage.Literals.PIPELINE__OPERATIONS,
+				 PipelineFactory.eINSTANCE.createDescriptive()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PipelinePackage.Literals.PIPELINE__OPERATIONS,
+				 PipelineFactory.eINSTANCE.createClassification()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PipelinePackage.Literals.PIPELINE__OPERATIONS,
+				 PipelineFactory.eINSTANCE.createPredictive()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PipelinePackage.Literals.PIPELINE__OPERATIONS,
+				 PipelineFactory.eINSTANCE.createClustering()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PipelinePackage.Literals.PIPELINE__OPERATIONS,
+				 PipelineFactory.eINSTANCE.createPredefined()));
 	}
 
 	/**

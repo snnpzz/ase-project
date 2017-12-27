@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import pipeline.Dataflow;
+import pipeline.DataFlow;
 import pipeline.PipelinePackage;
 import pipeline.Task;
 
@@ -87,7 +87,7 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Dataflow> incoming;
+	protected EList<DataFlow> incoming;
 
 	/**
 	 * The cached value of the '{@link #getOutgoing() <em>Outgoing</em>}' reference list.
@@ -97,7 +97,7 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Dataflow> outgoing;
+	protected EList<DataFlow> outgoing;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,9 +165,9 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Dataflow> getIncoming() {
+	public EList<DataFlow> getIncoming() {
 		if (incoming == null) {
-			incoming = new EObjectWithInverseResolvingEList<Dataflow>(Dataflow.class, this, PipelinePackage.TASK__INCOMING, PipelinePackage.DATAFLOW__TARGET);
+			incoming = new EObjectWithInverseResolvingEList<DataFlow>(DataFlow.class, this, PipelinePackage.TASK__INCOMING, PipelinePackage.DATA_FLOW__TARGET);
 		}
 		return incoming;
 	}
@@ -177,9 +177,9 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Dataflow> getOutgoing() {
+	public EList<DataFlow> getOutgoing() {
 		if (outgoing == null) {
-			outgoing = new EObjectWithInverseResolvingEList<Dataflow>(Dataflow.class, this, PipelinePackage.TASK__OUTGOING, PipelinePackage.DATAFLOW__SOURCE);
+			outgoing = new EObjectWithInverseResolvingEList<DataFlow>(DataFlow.class, this, PipelinePackage.TASK__OUTGOING, PipelinePackage.DATA_FLOW__SOURCE);
 		}
 		return outgoing;
 	}
@@ -254,11 +254,11 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 				return;
 			case PipelinePackage.TASK__INCOMING:
 				getIncoming().clear();
-				getIncoming().addAll((Collection<? extends Dataflow>)newValue);
+				getIncoming().addAll((Collection<? extends DataFlow>)newValue);
 				return;
 			case PipelinePackage.TASK__OUTGOING:
 				getOutgoing().clear();
-				getOutgoing().addAll((Collection<? extends Dataflow>)newValue);
+				getOutgoing().addAll((Collection<? extends DataFlow>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

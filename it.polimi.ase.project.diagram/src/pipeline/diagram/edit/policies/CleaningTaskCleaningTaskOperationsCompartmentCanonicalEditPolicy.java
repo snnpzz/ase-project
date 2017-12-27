@@ -25,7 +25,9 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.PipelinePackage;
+import pipeline.diagram.edit.parts.Predefined2EditPart;
 import pipeline.diagram.edit.parts.PredefinedEditPart;
+import pipeline.diagram.edit.parts.UserDefined2EditPart;
 import pipeline.diagram.edit.parts.UserDefinedEditPart;
 import pipeline.diagram.part.PipelineDiagramUpdater;
 import pipeline.diagram.part.PipelineNodeDescriptor;
@@ -83,7 +85,7 @@ public class CleaningTaskCleaningTaskOperationsCompartmentCanonicalEditPolicy ex
 	*/
 	private boolean isMyDiagramElement(View view) {
 		int visualID = PipelineVisualIDRegistry.getVisualID(view);
-		return visualID == UserDefinedEditPart.VISUAL_ID || visualID == PredefinedEditPart.VISUAL_ID;
+		return visualID == UserDefined2EditPart.VISUAL_ID || visualID == Predefined2EditPart.VISUAL_ID;
 	}
 
 	/**

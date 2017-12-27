@@ -6,24 +6,24 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
-import pipeline.Dataflow;
+import pipeline.DataFlow;
 import pipeline.PipelineFactory;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Dataflow</b></em>'.
+ * A test case for the model object '<em><b>Data Flow</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class DataflowTest extends TestCase {
+public class DataFlowTest extends TestCase {
 
 	/**
-	 * The fixture for this Dataflow test case.
+	 * The fixture for this Data Flow test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Dataflow fixture = null;
+	protected DataFlow fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,36 +31,36 @@ public class DataflowTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(DataflowTest.class);
+		TestRunner.run(DataFlowTest.class);
 	}
 
 	/**
-	 * Constructs a new Dataflow test case with the given name.
+	 * Constructs a new Data Flow test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataflowTest(String name) {
+	public DataFlowTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Dataflow test case.
+	 * Sets the fixture for this Data Flow test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Dataflow fixture) {
+	protected void setFixture(DataFlow fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Dataflow test case.
+	 * Returns the fixture for this Data Flow test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Dataflow getFixture() {
+	protected DataFlow getFixture() {
 		return fixture;
 	}
 
@@ -72,7 +72,7 @@ public class DataflowTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(PipelineFactory.eINSTANCE.createDataflow());
+		setFixture(PipelineFactory.eINSTANCE.createDataFlow());
 	}
 
 	/**
@@ -86,4 +86,4 @@ public class DataflowTest extends TestCase {
 		setFixture(null);
 	}
 
-} //DataflowTest
+} //DataFlowTest

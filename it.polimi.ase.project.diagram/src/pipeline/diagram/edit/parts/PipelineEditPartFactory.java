@@ -28,6 +28,42 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case PipelineEditPart.VISUAL_ID:
 				return new PipelineEditPart(view);
 
+			case UserDefinedEditPart.VISUAL_ID:
+				return new UserDefinedEditPart(view);
+
+			case UserDefinedNameEditPart.VISUAL_ID:
+				return new UserDefinedNameEditPart(view);
+
+			case DescriptiveEditPart.VISUAL_ID:
+				return new DescriptiveEditPart(view);
+
+			case DescriptiveNameEditPart.VISUAL_ID:
+				return new DescriptiveNameEditPart(view);
+
+			case ClassificationEditPart.VISUAL_ID:
+				return new ClassificationEditPart(view);
+
+			case ClassificationNameEditPart.VISUAL_ID:
+				return new ClassificationNameEditPart(view);
+
+			case PredictiveEditPart.VISUAL_ID:
+				return new PredictiveEditPart(view);
+
+			case PredictiveNameEditPart.VISUAL_ID:
+				return new PredictiveNameEditPart(view);
+
+			case ClusteringEditPart.VISUAL_ID:
+				return new ClusteringEditPart(view);
+
+			case ClusteringNameEditPart.VISUAL_ID:
+				return new ClusteringNameEditPart(view);
+
+			case PredefinedEditPart.VISUAL_ID:
+				return new PredefinedEditPart(view);
+
+			case PredefinedNameEditPart.VISUAL_ID:
+				return new PredefinedNameEditPart(view);
+
 			case CollectionTaskEditPart.VISUAL_ID:
 				return new CollectionTaskEditPart(view);
 
@@ -64,47 +100,59 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case ExportTaskIDEditPart.VISUAL_ID:
 				return new ExportTaskIDEditPart(view);
 
+			case SourceEditPart.VISUAL_ID:
+				return new SourceEditPart(view);
+
+			case SourceNameEditPart.VISUAL_ID:
+				return new SourceNameEditPart(view);
+
+			case FileEditPart.VISUAL_ID:
+				return new FileEditPart(view);
+
+			case FileNameEditPart.VISUAL_ID:
+				return new FileNameEditPart(view);
+
 			case ImportEditPart.VISUAL_ID:
 				return new ImportEditPart(view);
 
 			case ImportNameEditPart.VISUAL_ID:
 				return new ImportNameEditPart(view);
 
-			case UserDefinedEditPart.VISUAL_ID:
-				return new UserDefinedEditPart(view);
+			case UserDefined2EditPart.VISUAL_ID:
+				return new UserDefined2EditPart(view);
 
-			case UserDefinedNameEditPart.VISUAL_ID:
-				return new UserDefinedNameEditPart(view);
+			case UserDefinedName2EditPart.VISUAL_ID:
+				return new UserDefinedName2EditPart(view);
 
-			case PredefinedEditPart.VISUAL_ID:
-				return new PredefinedEditPart(view);
+			case Predefined2EditPart.VISUAL_ID:
+				return new Predefined2EditPart(view);
 
-			case PredefinedNameEditPart.VISUAL_ID:
-				return new PredefinedNameEditPart(view);
+			case PredefinedName2EditPart.VISUAL_ID:
+				return new PredefinedName2EditPart(view);
 
-			case DescriptiveEditPart.VISUAL_ID:
-				return new DescriptiveEditPart(view);
+			case Descriptive2EditPart.VISUAL_ID:
+				return new Descriptive2EditPart(view);
 
-			case DescriptiveNameEditPart.VISUAL_ID:
-				return new DescriptiveNameEditPart(view);
+			case DescriptiveName2EditPart.VISUAL_ID:
+				return new DescriptiveName2EditPart(view);
 
-			case ClassificationEditPart.VISUAL_ID:
-				return new ClassificationEditPart(view);
+			case Classification2EditPart.VISUAL_ID:
+				return new Classification2EditPart(view);
 
-			case ClassificationNameEditPart.VISUAL_ID:
-				return new ClassificationNameEditPart(view);
+			case ClassificationName2EditPart.VISUAL_ID:
+				return new ClassificationName2EditPart(view);
 
-			case PredictiveEditPart.VISUAL_ID:
-				return new PredictiveEditPart(view);
+			case Predictive2EditPart.VISUAL_ID:
+				return new Predictive2EditPart(view);
 
-			case PredictiveNameEditPart.VISUAL_ID:
-				return new PredictiveNameEditPart(view);
+			case PredictiveName2EditPart.VISUAL_ID:
+				return new PredictiveName2EditPart(view);
 
-			case ClusteringEditPart.VISUAL_ID:
-				return new ClusteringEditPart(view);
+			case Clustering2EditPart.VISUAL_ID:
+				return new Clustering2EditPart(view);
 
-			case ClusteringNameEditPart.VISUAL_ID:
-				return new ClusteringNameEditPart(view);
+			case ClusteringName2EditPart.VISUAL_ID:
+				return new ClusteringName2EditPart(view);
 
 			case ExportEditPart.VISUAL_ID:
 				return new ExportEditPart(view);
@@ -124,8 +172,23 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
 				return new ExportTaskExportTaskExportsCompartmentEditPart(view);
 
-			case DataflowEditPart.VISUAL_ID:
-				return new DataflowEditPart(view);
+			case DataFlowEditPart.VISUAL_ID:
+				return new DataFlowEditPart(view);
+
+			case InternalDataFlowEditPart.VISUAL_ID:
+				return new InternalDataFlowEditPart(view);
+
+			case ImportReadsFromEditPart.VISUAL_ID:
+				return new ImportReadsFromEditPart(view);
+
+			case WrappingLabelEditPart.VISUAL_ID:
+				return new WrappingLabelEditPart(view);
+
+			case ExportGeneratesEditPart.VISUAL_ID:
+				return new ExportGeneratesEditPart(view);
+
+			case WrappingLabel2EditPart.VISUAL_ID:
+				return new WrappingLabel2EditPart(view);
 
 			}
 		}

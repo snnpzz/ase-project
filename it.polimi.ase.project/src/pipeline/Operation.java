@@ -52,7 +52,7 @@ public interface Operation extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Incoming</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link pipeline.InternalDF#getTarget <em>Target</em>}'.
+	 * It is bidirectional and its opposite is '{@link pipeline.InternalDataFlow#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Incoming</em>' reference isn't clear,
@@ -60,13 +60,13 @@ public interface Operation extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Incoming</em>' reference.
-	 * @see #setIncoming(InternalDF)
+	 * @see #setIncoming(InternalDataFlow)
 	 * @see pipeline.PipelinePackage#getOperation_Incoming()
-	 * @see pipeline.InternalDF#getTarget
+	 * @see pipeline.InternalDataFlow#getTarget
 	 * @model opposite="target"
 	 * @generated
 	 */
-	InternalDF getIncoming();
+	InternalDataFlow getIncoming();
 
 	/**
 	 * Sets the value of the '{@link pipeline.Operation#getIncoming <em>Incoming</em>}' reference.
@@ -76,11 +76,11 @@ public interface Operation extends EObject {
 	 * @see #getIncoming()
 	 * @generated
 	 */
-	void setIncoming(InternalDF value);
+	void setIncoming(InternalDataFlow value);
 
 	/**
 	 * Returns the value of the '<em><b>Outgoing</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link pipeline.InternalDF#getSource <em>Source</em>}'.
+	 * It is bidirectional and its opposite is '{@link pipeline.InternalDataFlow#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Outgoing</em>' reference isn't clear,
@@ -88,13 +88,13 @@ public interface Operation extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Outgoing</em>' reference.
-	 * @see #setOutgoing(InternalDF)
+	 * @see #setOutgoing(InternalDataFlow)
 	 * @see pipeline.PipelinePackage#getOperation_Outgoing()
-	 * @see pipeline.InternalDF#getSource
+	 * @see pipeline.InternalDataFlow#getSource
 	 * @model opposite="source"
 	 * @generated
 	 */
-	InternalDF getOutgoing();
+	InternalDataFlow getOutgoing();
 
 	/**
 	 * Sets the value of the '{@link pipeline.Operation#getOutgoing <em>Outgoing</em>}' reference.
@@ -104,6 +104,6 @@ public interface Operation extends EObject {
 	 * @see #getOutgoing()
 	 * @generated
 	 */
-	void setOutgoing(InternalDF value);
+	void setOutgoing(InternalDataFlow value);
 
 } // Operation

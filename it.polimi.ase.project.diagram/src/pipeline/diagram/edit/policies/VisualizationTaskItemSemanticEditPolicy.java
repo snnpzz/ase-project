@@ -16,9 +16,9 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 
-import pipeline.diagram.edit.commands.DataflowCreateCommand;
-import pipeline.diagram.edit.commands.DataflowReorientCommand;
-import pipeline.diagram.edit.parts.DataflowEditPart;
+import pipeline.diagram.edit.commands.DataFlowCreateCommand;
+import pipeline.diagram.edit.commands.DataFlowReorientCommand;
+import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 import pipeline.diagram.providers.PipelineElementTypes;
 
@@ -43,7 +43,7 @@ public class VisualizationTaskItemSemanticEditPolicy extends PipelineBaseItemSem
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == DataflowEditPart.VISUAL_ID) {
+			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == DataFlowEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -52,7 +52,7 @@ public class VisualizationTaskItemSemanticEditPolicy extends PipelineBaseItemSem
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (PipelineVisualIDRegistry.getVisualID(outgoingLink) == DataflowEditPart.VISUAL_ID) {
+			if (PipelineVisualIDRegistry.getVisualID(outgoingLink) == DataFlowEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -84,8 +84,8 @@ public class VisualizationTaskItemSemanticEditPolicy extends PipelineBaseItemSem
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.Dataflow_4004 == req.getElementType()) {
-			return getGEFWrapper(new DataflowCreateCommand(req, req.getSource(), req.getTarget()));
+		if (PipelineElementTypes.DataFlow_4005 == req.getElementType()) {
+			return getGEFWrapper(new DataFlowCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -94,8 +94,8 @@ public class VisualizationTaskItemSemanticEditPolicy extends PipelineBaseItemSem
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.Dataflow_4004 == req.getElementType()) {
-			return getGEFWrapper(new DataflowCreateCommand(req, req.getSource(), req.getTarget()));
+		if (PipelineElementTypes.DataFlow_4005 == req.getElementType()) {
+			return getGEFWrapper(new DataFlowCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -108,8 +108,8 @@ public class VisualizationTaskItemSemanticEditPolicy extends PipelineBaseItemSem
 	 */
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case DataflowEditPart.VISUAL_ID:
-			return getGEFWrapper(new DataflowReorientCommand(req));
+		case DataFlowEditPart.VISUAL_ID:
+			return getGEFWrapper(new DataFlowReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

@@ -40,7 +40,7 @@ public class PipelineModelingAssistantProviderOfExportTaskEditPart extends Pipel
 	*/
 	public List<IElementType> doGetRelTypesOnSource(ExportTaskEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(PipelineElementTypes.Dataflow_4004);
+		types.add(PipelineElementTypes.DataFlow_4005);
 		return types;
 	}
 
@@ -62,22 +62,22 @@ public class PipelineModelingAssistantProviderOfExportTaskEditPart extends Pipel
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof CollectionTaskEditPart) {
-			types.add(PipelineElementTypes.Dataflow_4004);
+			types.add(PipelineElementTypes.DataFlow_4005);
 		}
 		if (targetEditPart instanceof IntegrationTaskEditPart) {
-			types.add(PipelineElementTypes.Dataflow_4004);
+			types.add(PipelineElementTypes.DataFlow_4005);
 		}
 		if (targetEditPart instanceof CleaningTaskEditPart) {
-			types.add(PipelineElementTypes.Dataflow_4004);
+			types.add(PipelineElementTypes.DataFlow_4005);
 		}
 		if (targetEditPart instanceof AnalysisTaskEditPart) {
-			types.add(PipelineElementTypes.Dataflow_4004);
+			types.add(PipelineElementTypes.DataFlow_4005);
 		}
 		if (targetEditPart instanceof VisualizationTaskEditPart) {
-			types.add(PipelineElementTypes.Dataflow_4004);
+			types.add(PipelineElementTypes.DataFlow_4005);
 		}
 		if (targetEditPart instanceof ExportTaskEditPart) {
-			types.add(PipelineElementTypes.Dataflow_4004);
+			types.add(PipelineElementTypes.DataFlow_4005);
 		}
 		return types;
 	}
@@ -97,7 +97,7 @@ public class PipelineModelingAssistantProviderOfExportTaskEditPart extends Pipel
 	*/
 	public List<IElementType> doGetTypesForTarget(ExportTaskEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == PipelineElementTypes.Dataflow_4004) {
+		if (relationshipType == PipelineElementTypes.DataFlow_4005) {
 			types.add(PipelineElementTypes.CollectionTask_2025);
 			types.add(PipelineElementTypes.IntegrationTask_2026);
 			types.add(PipelineElementTypes.CleaningTask_2027);
@@ -123,7 +123,7 @@ public class PipelineModelingAssistantProviderOfExportTaskEditPart extends Pipel
 	*/
 	public List<IElementType> doGetRelTypesOnTarget(ExportTaskEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(PipelineElementTypes.Dataflow_4004);
+		types.add(PipelineElementTypes.DataFlow_4005);
 		return types;
 	}
 
@@ -142,7 +142,7 @@ public class PipelineModelingAssistantProviderOfExportTaskEditPart extends Pipel
 	*/
 	public List<IElementType> doGetTypesForSource(ExportTaskEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == PipelineElementTypes.Dataflow_4004) {
+		if (relationshipType == PipelineElementTypes.DataFlow_4005) {
 			types.add(PipelineElementTypes.CollectionTask_2025);
 			types.add(PipelineElementTypes.IntegrationTask_2026);
 			types.add(PipelineElementTypes.CleaningTask_2027);

@@ -31,22 +31,22 @@ public interface PipelineFactory extends EFactory {
 	Pipeline createPipeline();
 
 	/**
-	 * Returns a new object of class '<em>Dataflow</em>'.
+	 * Returns a new object of class '<em>Data Flow</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Dataflow</em>'.
+	 * @return a new object of class '<em>Data Flow</em>'.
 	 * @generated
 	 */
-	Dataflow createDataflow();
+	DataFlow createDataFlow();
 
 	/**
-	 * Returns a new object of class '<em>Internal DF</em>'.
+	 * Returns a new object of class '<em>Internal Data Flow</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Internal DF</em>'.
+	 * @return a new object of class '<em>Internal Data Flow</em>'.
 	 * @generated
 	 */
-	InternalDF createInternalDF();
+	InternalDataFlow createInternalDataFlow();
 
 	/**
 	 * Returns a new object of class '<em>Schema</em>'.

@@ -95,7 +95,9 @@
     <genClasses ecoreClass="pipeline.ecore#//Descriptive"/>
     <genClasses ecoreClass="pipeline.ecore#//Classification"/>
     <genClasses ecoreClass="pipeline.ecore#//Predictive"/>
-    <genClasses ecoreClass="pipeline.ecore#//Clustering"/>
+    <genClasses ecoreClass="pipeline.ecore#//Clustering">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Clustering/k"/>
+    </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Predefined"/>
   </genPackages>
 </genmodel:GenModel>

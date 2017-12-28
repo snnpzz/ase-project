@@ -213,7 +213,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="Descriptive" eSuperTypes="#//AnalysisOperation"/>
   <eClassifiers xsi:type="ecore:EClass" name="Classification" eSuperTypes="#//AnalysisOperation"/>
   <eClassifiers xsi:type="ecore:EClass" name="Predictive" eSuperTypes="#//AnalysisOperation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Clustering" eSuperTypes="#//AnalysisOperation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Clustering" eSuperTypes="#//AnalysisOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="k" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Predefined" eSuperTypes="#//CleaningOperation"/>
   <eClassifiers xsi:type="ecore:EEnum" name="Format">
     <eLiterals name="txt"/>

@@ -1323,13 +1323,22 @@ public interface PipelinePackage extends EPackage {
 	int CLUSTERING__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>K</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTERING__K = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Clustering</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTERING_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
+	int CLUSTERING_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.PredefinedImpl <em>Predefined</em>}' class.
@@ -2135,6 +2144,17 @@ public interface PipelinePackage extends EPackage {
 	EClass getClustering();
 
 	/**
+	 * Returns the meta object for the attribute '{@link pipeline.Clustering#getK <em>K</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>K</em>'.
+	 * @see pipeline.Clustering#getK()
+	 * @see #getClustering()
+	 * @generated
+	 */
+	EAttribute getClustering_K();
+
+	/**
 	 * Returns the meta object for class '{@link pipeline.Predefined <em>Predefined</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2783,6 +2803,14 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EClass CLUSTERING = eINSTANCE.getClustering();
+
+		/**
+		 * The meta object literal for the '<em><b>K</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLUSTERING__K = eINSTANCE.getClustering_K();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.PredefinedImpl <em>Predefined</em>}' class.

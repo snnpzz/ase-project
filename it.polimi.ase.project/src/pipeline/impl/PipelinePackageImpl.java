@@ -924,6 +924,15 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getClustering_K() {
+		return (EAttribute)clusteringEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPredefined() {
 		return predefinedEClass;
 	}
@@ -1058,6 +1067,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		predictiveEClass = createEClass(PREDICTIVE);
 
 		clusteringEClass = createEClass(CLUSTERING);
+		createEAttribute(clusteringEClass, CLUSTERING__K);
 
 		predefinedEClass = createEClass(PREDEFINED);
 
@@ -1202,6 +1212,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEClass(predictiveEClass, Predictive.class, "Predictive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(clusteringEClass, Clustering.class, "Clustering", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getClustering_K(), ecorePackage.getEInt(), "k", null, 0, 1, Clustering.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(predefinedEClass, Predefined.class, "Predefined", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

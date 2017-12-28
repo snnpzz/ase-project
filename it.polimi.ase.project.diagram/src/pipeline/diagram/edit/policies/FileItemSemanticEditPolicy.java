@@ -33,7 +33,7 @@ public class FileItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPoli
 	* @generated
 	*/
 	public FileItemSemanticEditPolicy() {
-		super(PipelineElementTypes.File_2040);
+		super(PipelineElementTypes.File_2042);
 	}
 
 	/**

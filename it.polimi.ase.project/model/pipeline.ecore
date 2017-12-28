@@ -11,12 +11,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="internalDataFlows" upperBound="-1"
         eType="#//InternalDataFlow" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sources" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputSources" lowerBound="1"
         upperBound="-1" eType="#//Source" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="files" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputFiles" upperBound="-1"
         eType="#//File" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operations" lowerBound="1"
         upperBound="-1" eType="#//Operation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schemas" lowerBound="1"
+        upperBound="-1" eType="#//Schema" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Task" abstract="true">
     <eAnnotations source="gmf.node">
@@ -38,12 +40,18 @@
       <details key="target.decoration" value="closedarrow"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="#//Format"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="schema" lowerBound="1"
-        eType="#//Schema" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Task"
         eOpposite="#//Task/incoming"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Task"
         eOpposite="#//Task/outgoing"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DFschema" lowerBound="1"
+        eType="#//Schema">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="target.decoration" value="arrow"/>
+        <details key="style" value="dash"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operation" abstract="true">
     <eAnnotations source="gmf.node">
@@ -65,18 +73,32 @@
       <details key="style" value="dash"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="#//Format"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="schema" lowerBound="1"
-        eType="#//Schema" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Operation"
         eOpposite="#//Operation/outgoing"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Operation"
         eOpposite="#//Operation/incoming"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intDFschema" lowerBound="1"
+        eType="#//Schema">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="target.decoration" value="arrow"/>
+        <details key="style" value="dash"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Schema">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="label.placement" value="none"/>
+      <details key="figure" value="rounded"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
         upperBound="-1" eType="#//Attribute" containment="true">
-      <eAnnotations source="gmf.compartment"/>
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+      </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
     <eAnnotations source="gmf.node">
@@ -87,7 +109,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//Attribute"
         eOpposite="#//Attribute/previous"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute" containment="true"/>
+        eType="#//Attribute" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="previous" eType="#//Attribute"
         eOpposite="#//Attribute/next"/>
   </eClassifiers>
@@ -131,7 +157,13 @@
         <details key="style" value="dash"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="uses" lowerBound="1" eType="#//Schema"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="impUses" lowerBound="1"
+        eType="#//Schema">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="target.decoration" value="arrow"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Export">
@@ -148,7 +180,13 @@
         <details key="style" value="dash"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="uses" lowerBound="1" eType="#//Schema"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expUses" lowerBound="1"
+        eType="#//Schema">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="target.decoration" value="arrow"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UserDefined" eSuperTypes="#//CleaningOperation"/>
@@ -172,12 +210,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CleaningOperation" abstract="true" eSuperTypes="#//Operation"/>
   <eClassifiers xsi:type="ecore:EClass" name="AnalysisOperation" abstract="true" eSuperTypes="#//Operation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Descriptive" eSuperTypes="#//AnalysisOperation">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
-      <details key="figure" value="ellipse"/>
-    </eAnnotations>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Descriptive" eSuperTypes="#//AnalysisOperation"/>
   <eClassifiers xsi:type="ecore:EClass" name="Classification" eSuperTypes="#//AnalysisOperation"/>
   <eClassifiers xsi:type="ecore:EClass" name="Predictive" eSuperTypes="#//AnalysisOperation"/>
   <eClassifiers xsi:type="ecore:EClass" name="Clustering" eSuperTypes="#//AnalysisOperation"/>

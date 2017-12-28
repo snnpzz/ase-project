@@ -26,9 +26,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.Predefined2EditPart;
-import pipeline.diagram.edit.parts.PredefinedEditPart;
 import pipeline.diagram.edit.parts.UserDefined2EditPart;
-import pipeline.diagram.edit.parts.UserDefinedEditPart;
 import pipeline.diagram.part.PipelineDiagramUpdater;
 import pipeline.diagram.part.PipelineNodeDescriptor;
 import pipeline.diagram.part.PipelineVisualIDRegistry;

@@ -36,6 +36,8 @@ import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 
 import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
+import pipeline.diagram.edit.parts.Attribute2EditPart;
+import pipeline.diagram.edit.parts.AttributeEditPart;
 import pipeline.diagram.edit.parts.Classification2EditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
@@ -56,6 +58,7 @@ import pipeline.diagram.edit.parts.Predefined2EditPart;
 import pipeline.diagram.edit.parts.PredefinedEditPart;
 import pipeline.diagram.edit.parts.Predictive2EditPart;
 import pipeline.diagram.edit.parts.PredictiveEditPart;
+import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.edit.parts.SourceEditPart;
 import pipeline.diagram.edit.parts.UserDefined2EditPart;
 import pipeline.diagram.edit.parts.UserDefinedEditPart;
@@ -95,8 +98,9 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_Operations());
 			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_Tasks());
-			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_Sources());
-			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_Files());
+			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_InputSources());
+			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_OutputFiles());
+			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_Schemas());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -147,6 +151,7 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ExportTaskEditPart.VISUAL_ID:
 		case SourceEditPart.VISUAL_ID:
 		case FileEditPart.VISUAL_ID:
+		case SchemaEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -392,14 +397,21 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		case SourceEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getSource_2039ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getSource_2041ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case FileEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getFile_2040ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getFile_2042ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case SchemaEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(PipelineDiagramUpdater.getSchema_2043ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -456,6 +468,20 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ExportEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(PipelineDiagramUpdater.getExport_3037ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case AttributeEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(PipelineDiagramUpdater.getAttribute_3038ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case Attribute2EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(PipelineDiagramUpdater.getAttribute_3039ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

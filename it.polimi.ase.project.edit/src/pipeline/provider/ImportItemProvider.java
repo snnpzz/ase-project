@@ -61,7 +61,7 @@ public class ImportItemProvider
 			super.getPropertyDescriptors(object);
 
 			addReadsFromPropertyDescriptor(object);
-			addUsesPropertyDescriptor(object);
+			addImpUsesPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -90,19 +90,19 @@ public class ImportItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Uses feature.
+	 * This adds a property descriptor for the Imp Uses feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUsesPropertyDescriptor(Object object) {
+	protected void addImpUsesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Import_uses_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Import_uses_feature", "_UI_Import_type"),
-				 PipelinePackage.Literals.IMPORT__USES,
+				 getString("_UI_Import_impUses_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Import_impUses_feature", "_UI_Import_type"),
+				 PipelinePackage.Literals.IMPORT__IMP_USES,
 				 true,
 				 false,
 				 true,

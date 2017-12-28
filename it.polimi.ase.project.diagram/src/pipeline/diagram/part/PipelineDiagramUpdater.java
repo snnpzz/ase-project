@@ -18,6 +18,7 @@ import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
 import pipeline.AnalysisOperation;
 import pipeline.AnalysisTask;
+import pipeline.Attribute;
 import pipeline.Classification;
 import pipeline.CleaningOperation;
 import pipeline.CleaningTask;
@@ -36,12 +37,17 @@ import pipeline.Pipeline;
 import pipeline.PipelinePackage;
 import pipeline.Predefined;
 import pipeline.Predictive;
+import pipeline.Schema;
 import pipeline.Source;
 import pipeline.Task;
 import pipeline.UserDefined;
 import pipeline.VisualizationTask;
 import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
+import pipeline.diagram.edit.parts.Attribute2EditPart;
+import pipeline.diagram.edit.parts.AttributeAttributeAttributesCompartment2EditPart;
+import pipeline.diagram.edit.parts.AttributeAttributeAttributesCompartmentEditPart;
+import pipeline.diagram.edit.parts.AttributeEditPart;
 import pipeline.diagram.edit.parts.Classification2EditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskOperationsCompartmentEditPart;
@@ -50,23 +56,29 @@ import pipeline.diagram.edit.parts.Clustering2EditPart;
 import pipeline.diagram.edit.parts.ClusteringEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskCollectionTaskImportsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
+import pipeline.diagram.edit.parts.DataFlowDFschemaEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.Descriptive2EditPart;
 import pipeline.diagram.edit.parts.DescriptiveEditPart;
 import pipeline.diagram.edit.parts.ExportEditPart;
+import pipeline.diagram.edit.parts.ExportExpUsesEditPart;
 import pipeline.diagram.edit.parts.ExportGeneratesEditPart;
 import pipeline.diagram.edit.parts.ExportTaskEditPart;
 import pipeline.diagram.edit.parts.ExportTaskExportTaskExportsCompartmentEditPart;
 import pipeline.diagram.edit.parts.FileEditPart;
 import pipeline.diagram.edit.parts.ImportEditPart;
+import pipeline.diagram.edit.parts.ImportImpUsesEditPart;
 import pipeline.diagram.edit.parts.ImportReadsFromEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
+import pipeline.diagram.edit.parts.InternalDataFlowIntDFschemaEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
 import pipeline.diagram.edit.parts.Predefined2EditPart;
 import pipeline.diagram.edit.parts.PredefinedEditPart;
 import pipeline.diagram.edit.parts.Predictive2EditPart;
 import pipeline.diagram.edit.parts.PredictiveEditPart;
+import pipeline.diagram.edit.parts.SchemaEditPart;
+import pipeline.diagram.edit.parts.SchemaSchemaAttributesCompartmentEditPart;
 import pipeline.diagram.edit.parts.SourceEditPart;
 import pipeline.diagram.edit.parts.UserDefined2EditPart;
 import pipeline.diagram.edit.parts.UserDefinedEditPart;
@@ -100,6 +112,12 @@ public class PipelineDiagramUpdater {
 			return getAnalysisTaskAnalysisTaskAnalyzesCompartment_7021SemanticChildren(view);
 		case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
 			return getExportTaskExportTaskExportsCompartment_7022SemanticChildren(view);
+		case SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID:
+			return getSchemaSchemaAttributesCompartment_7023SemanticChildren(view);
+		case AttributeAttributeAttributesCompartmentEditPart.VISUAL_ID:
+			return getAttributeAttributeAttributesCompartment_7024SemanticChildren(view);
+		case AttributeAttributeAttributesCompartment2EditPart.VISUAL_ID:
+			return getAttributeAttributeAttributesCompartment_7025SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -169,7 +187,7 @@ public class PipelineDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getSources().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getInputSources().iterator(); it.hasNext();) {
 			Source childElement = (Source) it.next();
 			int visualID = PipelineVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == SourceEditPart.VISUAL_ID) {
@@ -177,10 +195,18 @@ public class PipelineDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getFiles().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getOutputFiles().iterator(); it.hasNext();) {
 			File childElement = (File) it.next();
 			int visualID = PipelineVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == FileEditPart.VISUAL_ID) {
+				result.add(new PipelineNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator<?> it = modelElement.getSchemas().iterator(); it.hasNext();) {
+			Schema childElement = (Schema) it.next();
+			int visualID = PipelineVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == SchemaEditPart.VISUAL_ID) {
 				result.add(new PipelineNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -307,6 +333,80 @@ public class PipelineDiagramUpdater {
 	/**
 	* @generated
 	*/
+	public static List<PipelineNodeDescriptor> getSchemaSchemaAttributesCompartment_7023SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Schema modelElement = (Schema) containerView.getElement();
+		LinkedList<PipelineNodeDescriptor> result = new LinkedList<PipelineNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getAttributes().iterator(); it.hasNext();) {
+			Attribute childElement = (Attribute) it.next();
+			int visualID = PipelineVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == AttributeEditPart.VISUAL_ID) {
+				result.add(new PipelineNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<PipelineNodeDescriptor> getAttributeAttributeAttributesCompartment_7024SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Attribute modelElement = (Attribute) containerView.getElement();
+		LinkedList<PipelineNodeDescriptor> result = new LinkedList<PipelineNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getAttributes().iterator(); it.hasNext();) {
+			Attribute childElement = (Attribute) it.next();
+			int visualID = PipelineVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Attribute2EditPart.VISUAL_ID) {
+				result.add(new PipelineNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<PipelineNodeDescriptor> getAttributeAttributeAttributesCompartment_7025SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Attribute modelElement = (Attribute) containerView.getElement();
+		LinkedList<PipelineNodeDescriptor> result = new LinkedList<PipelineNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getAttributes().iterator(); it.hasNext();) {
+			Attribute childElement = (Attribute) it.next();
+			int visualID = PipelineVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Attribute2EditPart.VISUAL_ID) {
+				result.add(new PipelineNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
 	public static List<PipelineLinkDescriptor> getContainedLinks(View view) {
 		switch (PipelineVisualIDRegistry.getVisualID(view)) {
 		case PipelineEditPart.VISUAL_ID:
@@ -336,9 +436,11 @@ public class PipelineDiagramUpdater {
 		case ExportTaskEditPart.VISUAL_ID:
 			return getExportTask_2032ContainedLinks(view);
 		case SourceEditPart.VISUAL_ID:
-			return getSource_2039ContainedLinks(view);
+			return getSource_2041ContainedLinks(view);
 		case FileEditPart.VISUAL_ID:
-			return getFile_2040ContainedLinks(view);
+			return getFile_2042ContainedLinks(view);
+		case SchemaEditPart.VISUAL_ID:
+			return getSchema_2043ContainedLinks(view);
 		case ImportEditPart.VISUAL_ID:
 			return getImport_3025ContainedLinks(view);
 		case UserDefined2EditPart.VISUAL_ID:
@@ -355,6 +457,10 @@ public class PipelineDiagramUpdater {
 			return getClustering_3036ContainedLinks(view);
 		case ExportEditPart.VISUAL_ID:
 			return getExport_3037ContainedLinks(view);
+		case AttributeEditPart.VISUAL_ID:
+			return getAttribute_3038ContainedLinks(view);
+		case Attribute2EditPart.VISUAL_ID:
+			return getAttribute_3039ContainedLinks(view);
 		case DataFlowEditPart.VISUAL_ID:
 			return getDataFlow_4005ContainedLinks(view);
 		case InternalDataFlowEditPart.VISUAL_ID:
@@ -393,9 +499,11 @@ public class PipelineDiagramUpdater {
 		case ExportTaskEditPart.VISUAL_ID:
 			return getExportTask_2032IncomingLinks(view);
 		case SourceEditPart.VISUAL_ID:
-			return getSource_2039IncomingLinks(view);
+			return getSource_2041IncomingLinks(view);
 		case FileEditPart.VISUAL_ID:
-			return getFile_2040IncomingLinks(view);
+			return getFile_2042IncomingLinks(view);
+		case SchemaEditPart.VISUAL_ID:
+			return getSchema_2043IncomingLinks(view);
 		case ImportEditPart.VISUAL_ID:
 			return getImport_3025IncomingLinks(view);
 		case UserDefined2EditPart.VISUAL_ID:
@@ -412,6 +520,10 @@ public class PipelineDiagramUpdater {
 			return getClustering_3036IncomingLinks(view);
 		case ExportEditPart.VISUAL_ID:
 			return getExport_3037IncomingLinks(view);
+		case AttributeEditPart.VISUAL_ID:
+			return getAttribute_3038IncomingLinks(view);
+		case Attribute2EditPart.VISUAL_ID:
+			return getAttribute_3039IncomingLinks(view);
 		case DataFlowEditPart.VISUAL_ID:
 			return getDataFlow_4005IncomingLinks(view);
 		case InternalDataFlowEditPart.VISUAL_ID:
@@ -450,9 +562,11 @@ public class PipelineDiagramUpdater {
 		case ExportTaskEditPart.VISUAL_ID:
 			return getExportTask_2032OutgoingLinks(view);
 		case SourceEditPart.VISUAL_ID:
-			return getSource_2039OutgoingLinks(view);
+			return getSource_2041OutgoingLinks(view);
 		case FileEditPart.VISUAL_ID:
-			return getFile_2040OutgoingLinks(view);
+			return getFile_2042OutgoingLinks(view);
+		case SchemaEditPart.VISUAL_ID:
+			return getSchema_2043OutgoingLinks(view);
 		case ImportEditPart.VISUAL_ID:
 			return getImport_3025OutgoingLinks(view);
 		case UserDefined2EditPart.VISUAL_ID:
@@ -469,6 +583,10 @@ public class PipelineDiagramUpdater {
 			return getClustering_3036OutgoingLinks(view);
 		case ExportEditPart.VISUAL_ID:
 			return getExport_3037OutgoingLinks(view);
+		case AttributeEditPart.VISUAL_ID:
+			return getAttribute_3038OutgoingLinks(view);
+		case Attribute2EditPart.VISUAL_ID:
+			return getAttribute_3039OutgoingLinks(view);
 		case DataFlowEditPart.VISUAL_ID:
 			return getDataFlow_4005OutgoingLinks(view);
 		case InternalDataFlowEditPart.VISUAL_ID:
@@ -575,14 +693,21 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getSource_2039ContainedLinks(View view) {
+	public static List<PipelineLinkDescriptor> getSource_2041ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getFile_2040ContainedLinks(View view) {
+	public static List<PipelineLinkDescriptor> getFile_2042ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PipelineLinkDescriptor> getSchema_2043ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -593,6 +718,7 @@ public class PipelineDiagramUpdater {
 		Import modelElement = (Import) view.getElement();
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Import_ReadsFrom_4007(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Import_ImpUses_4013(modelElement));
 		return result;
 	}
 
@@ -645,21 +771,42 @@ public class PipelineDiagramUpdater {
 		Export modelElement = (Export) view.getElement();
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Export_Generates_4008(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Export_ExpUses_4014(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getDataFlow_4005ContainedLinks(View view) {
+	public static List<PipelineLinkDescriptor> getAttribute_3038ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getInternalDataFlow_4006ContainedLinks(View view) {
+	public static List<PipelineLinkDescriptor> getAttribute_3039ContainedLinks(View view) {
 		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PipelineLinkDescriptor> getDataFlow_4005ContainedLinks(View view) {
+		DataFlow modelElement = (DataFlow) view.getElement();
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_DataFlow_DFschema_4017(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PipelineLinkDescriptor> getInternalDataFlow_4006ContainedLinks(View view) {
+		InternalDataFlow modelElement = (InternalDataFlow) view.getElement();
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_InternalDataFlow_IntDFschema_4018(modelElement));
+		return result;
 	}
 
 	/**
@@ -809,7 +956,7 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getSource_2039IncomingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getSource_2041IncomingLinks(View view) {
 		Source modelElement = (Source) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -821,12 +968,28 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getFile_2040IncomingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getFile_2042IncomingLinks(View view) {
 		File modelElement = (File) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Export_Generates_4008(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PipelineLinkDescriptor> getSchema_2043IncomingLinks(View view) {
+		Schema modelElement = (Schema) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_DataFlow_DFschema_4017(modelElement, crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_InternalDataFlow_IntDFschema_4018(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Import_ImpUses_4013(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Export_ExpUses_4014(modelElement, crossReferences));
 		return result;
 	}
 
@@ -913,6 +1076,20 @@ public class PipelineDiagramUpdater {
 	 * @generated
 	 */
 	public static List<PipelineLinkDescriptor> getExport_3037IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PipelineLinkDescriptor> getAttribute_3038IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PipelineLinkDescriptor> getAttribute_3039IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -1053,14 +1230,21 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getSource_2039OutgoingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getSource_2041OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getFile_2040OutgoingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getFile_2042OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PipelineLinkDescriptor> getSchema_2043OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -1071,6 +1255,7 @@ public class PipelineDiagramUpdater {
 		Import modelElement = (Import) view.getElement();
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Import_ReadsFrom_4007(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Import_ImpUses_4013(modelElement));
 		return result;
 	}
 
@@ -1141,21 +1326,42 @@ public class PipelineDiagramUpdater {
 		Export modelElement = (Export) view.getElement();
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Export_Generates_4008(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Export_ExpUses_4014(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getDataFlow_4005OutgoingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getAttribute_3038OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getInternalDataFlow_4006OutgoingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getAttribute_3039OutgoingLinks(View view) {
 		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PipelineLinkDescriptor> getDataFlow_4005OutgoingLinks(View view) {
+		DataFlow modelElement = (DataFlow) view.getElement();
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_DataFlow_DFschema_4017(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PipelineLinkDescriptor> getInternalDataFlow_4006OutgoingLinks(View view) {
+		InternalDataFlow modelElement = (InternalDataFlow) view.getElement();
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_InternalDataFlow_IntDFschema_4018(modelElement));
+		return result;
 	}
 
 	/**
@@ -1253,6 +1459,39 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_DataFlow_DFschema_4017(
+			Schema target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == PipelinePackage.eINSTANCE.getDataFlow_DFschema()) {
+				result.add(new PipelineLinkDescriptor(setting.getEObject(), target,
+						PipelineElementTypes.DataFlowDFschema_4017, DataFlowDFschemaEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_InternalDataFlow_IntDFschema_4018(
+			Schema target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == PipelinePackage.eINSTANCE.getInternalDataFlow_IntDFschema()) {
+				result.add(new PipelineLinkDescriptor(setting.getEObject(), target,
+						PipelineElementTypes.InternalDataFlowIntDFschema_4018,
+						InternalDataFlowIntDFschemaEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_Import_ReadsFrom_4007(
 			Source target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
@@ -1269,6 +1508,22 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_Import_ImpUses_4013(
+			Schema target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == PipelinePackage.eINSTANCE.getImport_ImpUses()) {
+				result.add(new PipelineLinkDescriptor(setting.getEObject(), target,
+						PipelineElementTypes.ImportImpUses_4013, ImportImpUsesEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_Export_Generates_4008(
 			File target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
@@ -1277,6 +1532,22 @@ public class PipelineDiagramUpdater {
 			if (setting.getEStructuralFeature() == PipelinePackage.eINSTANCE.getExport_Generates()) {
 				result.add(new PipelineLinkDescriptor(setting.getEObject(), target,
 						PipelineElementTypes.ExportGenerates_4008, ExportGeneratesEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_Export_ExpUses_4014(
+			Schema target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == PipelinePackage.eINSTANCE.getExport_ExpUses()) {
+				result.add(new PipelineLinkDescriptor(setting.getEObject(), target,
+						PipelineElementTypes.ExportExpUses_4014, ExportExpUsesEditPart.VISUAL_ID));
 			}
 		}
 		return result;
@@ -1360,6 +1631,36 @@ public class PipelineDiagramUpdater {
 	/**
 	* @generated
 	*/
+	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_DataFlow_DFschema_4017(
+			DataFlow source) {
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		Schema destination = source.getDFschema();
+		if (destination == null) {
+			return result;
+		}
+		result.add(new PipelineLinkDescriptor(source, destination, PipelineElementTypes.DataFlowDFschema_4017,
+				DataFlowDFschemaEditPart.VISUAL_ID));
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_InternalDataFlow_IntDFschema_4018(
+			InternalDataFlow source) {
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		Schema destination = source.getIntDFschema();
+		if (destination == null) {
+			return result;
+		}
+		result.add(new PipelineLinkDescriptor(source, destination,
+				PipelineElementTypes.InternalDataFlowIntDFschema_4018, InternalDataFlowIntDFschemaEditPart.VISUAL_ID));
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
 	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_Import_ReadsFrom_4007(
 			Import source) {
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
@@ -1375,6 +1676,21 @@ public class PipelineDiagramUpdater {
 	/**
 	* @generated
 	*/
+	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_Import_ImpUses_4013(
+			Import source) {
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		Schema destination = source.getImpUses();
+		if (destination == null) {
+			return result;
+		}
+		result.add(new PipelineLinkDescriptor(source, destination, PipelineElementTypes.ImportImpUses_4013,
+				ImportImpUsesEditPart.VISUAL_ID));
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
 	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_Export_Generates_4008(
 			Export source) {
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
@@ -1384,6 +1700,21 @@ public class PipelineDiagramUpdater {
 		}
 		result.add(new PipelineLinkDescriptor(source, destination, PipelineElementTypes.ExportGenerates_4008,
 				ExportGeneratesEditPart.VISUAL_ID));
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_Export_ExpUses_4014(
+			Export source) {
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		Schema destination = source.getExpUses();
+		if (destination == null) {
+			return result;
+		}
+		result.add(new PipelineLinkDescriptor(source, destination, PipelineElementTypes.ExportExpUses_4014,
+				ExportExpUsesEditPart.VISUAL_ID));
 		return result;
 	}
 

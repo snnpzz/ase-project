@@ -7,9 +7,10 @@ class Pipeline {
   val Task[+] tasks;
   attr String ID;
   val InternalDataFlow[*] internalDataFlows;
-  val Source[+] sources;
-  val File[*] files;
+  val Source[+] inputSources;
+  val File[*] outputFiles;
   val Operation[+] operations;
+  val Schema[+] schemas;
 }
 
 @gmf.node(label="ID", figure="rounded")
@@ -23,9 +24,11 @@ abstract class Task {
 @gmf.link(source="source", target="target", width="2", target.decoration="closedarrow")
 class DataFlow {
   attr Format format;
-  val Schema[1] schema;
   ref Task#incoming target;
   ref Task#outgoing source;
+
+  @gmf.link(width="1", target.decoration="arrow", style="dash")
+  ref Schema[1] DFschema;
 }
 
 @gmf.node(label="name", figure="ellipse")
@@ -38,14 +41,18 @@ abstract class Operation {
 @gmf.link(source="source", target="target", width="2", target.decoration="arrow", style="dash")
 class InternalDataFlow {
   attr Format format;
-  val Schema[1] schema;
   ref Operation#outgoing source;
   ref Operation#incoming target;
+  @gmf.link(width="1", target.decoration="arrow", style="dash")
+  ref Schema[1] intDFschema;
 }
 
+@gmf.node(label="name", label.placement="none", figure="rounded")
 class Schema {
-  @gmf.compartment
+
+  @gmf.compartment(layout="list")
   val Attribute[+] attributes;
+  attr String name;
 }
 
 @gmf.node(label="name")
@@ -53,11 +60,14 @@ class Attribute {
   attr String name;
   attr String type;
   ref Attribute#previous next;
+
+  @gmf.compartment(layout="list")
   val Attribute[*] attributes;
   ref Attribute#next previous;
 }
 
 class CollectionTask extends Task {
+
   @gmf.compartment
   val Import[+] imports;
 }
@@ -66,11 +76,13 @@ class IntegrationTask extends Task {
 }
 
 class CleaningTask extends Task {
+
   @gmf.compartment
   val CleaningOperation[+] operations;
 }
 
 class AnalysisTask extends Task {
+
   @gmf.compartment
   val AnalysisOperation[+] analyzes;
 }
@@ -79,23 +91,30 @@ class VisualizationTask extends Task {
 }
 
 class ExportTask extends Task {
+
   @gmf.compartment
   val Export[+] exports;
 }
 
 @gmf.node(label="name", label.text="Import", figure="ellipse")
 class Import {
+
   @gmf.link(width="2", target.decoration="square", style="dash")
   ref Source[1]#linkedTo readsFrom;
-  ref Schema[1] uses;
+
+  @gmf.link(width="1", target.decoration="arrow")
+  ref Schema[1] impUses;
   attr String name;
 }
 
 @gmf.node(label="name", label.text="Export", figure="ellipse")
 class Export {
+
   @gmf.link(width="2", target.decoration="square", style="dash")
   ref File[1]#comesFrom generates;
-  ref Schema[1] uses;
+
+  @gmf.link(width="1", target.decoration="arrow")
+  ref Schema[1] expUses;
   attr String name;
 }
 
@@ -122,7 +141,6 @@ abstract class CleaningOperation extends Operation {
 abstract class AnalysisOperation extends Operation {
 }
 
-@gmf.node(label="name", figure="ellipse")
 class Descriptive extends AnalysisOperation {
 }
 

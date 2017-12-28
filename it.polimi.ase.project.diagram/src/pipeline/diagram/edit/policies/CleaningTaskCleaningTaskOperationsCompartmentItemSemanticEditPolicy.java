@@ -7,9 +7,7 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
 import pipeline.diagram.edit.commands.Predefined2CreateCommand;
-import pipeline.diagram.edit.commands.PredefinedCreateCommand;
 import pipeline.diagram.edit.commands.UserDefined2CreateCommand;
-import pipeline.diagram.edit.commands.UserDefinedCreateCommand;
 import pipeline.diagram.providers.PipelineElementTypes;
 
 /**

@@ -42,6 +42,7 @@ import pipeline.Import;
 import pipeline.InternalDataFlow;
 import pipeline.Operation;
 import pipeline.Pipeline;
+import pipeline.Schema;
 import pipeline.Source;
 import pipeline.Task;
 import pipeline.diagram.part.PipelineDiagramEditorPlugin;
@@ -331,6 +332,32 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public boolean canCreateDataFlowDFschema_4017(DataFlow source, Schema target) {
+			if (source != null) {
+				if (source.getDFschema() != null) {
+					return false;
+				}
+			}
+
+			return canExistDataFlowDFschema_4017(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateInternalDataFlowIntDFschema_4018(InternalDataFlow source, Schema target) {
+			if (source != null) {
+				if (source.getIntDFschema() != null) {
+					return false;
+				}
+			}
+
+			return canExistInternalDataFlowIntDFschema_4018(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canCreateImportReadsFrom_4007(Import source, Source target) {
 			if (source != null) {
 				if (source.getReadsFrom() != null) {
@@ -347,6 +374,19 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public boolean canCreateImportImpUses_4013(Import source, Schema target) {
+			if (source != null) {
+				if (source.getImpUses() != null) {
+					return false;
+				}
+			}
+
+			return canExistImportImpUses_4013(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canCreateExportGenerates_4008(Export source, File target) {
 			if (source != null) {
 				if (source.getGenerates() != null) {
@@ -358,6 +398,19 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			}
 
 			return canExistExportGenerates_4008(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateExportExpUses_4014(Export source, Schema target) {
+			if (source != null) {
+				if (source.getExpUses() != null) {
+					return false;
+				}
+			}
+
+			return canExistExportExpUses_4014(source, target);
 		}
 
 		/**
@@ -378,6 +431,20 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		* @generated
 		*/
+		public boolean canExistDataFlowDFschema_4017(DataFlow source, Schema target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistInternalDataFlowIntDFschema_4018(InternalDataFlow source, Schema target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
 		public boolean canExistImportReadsFrom_4007(Import source, Source target) {
 			return true;
 		}
@@ -385,7 +452,21 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		* @generated
 		*/
+		public boolean canExistImportImpUses_4013(Import source, Schema target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
 		public boolean canExistExportGenerates_4008(Export source, File target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistExportExpUses_4014(Export source, Schema target) {
 			return true;
 		}
 	}

@@ -24,6 +24,7 @@ import pipeline.diagram.edit.commands.DataFlowCreateCommand;
 import pipeline.diagram.edit.commands.DataFlowReorientCommand;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.ExportEditPart;
+import pipeline.diagram.edit.parts.ExportExpUsesEditPart;
 import pipeline.diagram.edit.parts.ExportGeneratesEditPart;
 import pipeline.diagram.edit.parts.ExportTaskExportTaskExportsCompartmentEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
@@ -96,6 +97,14 @@ public class ExportTaskItemSemanticEditPolicy extends PipelineBaseItemSemanticEd
 							Edge outgoingLink = (Edge) it.next();
 							if (PipelineVisualIDRegistry
 									.getVisualID(outgoingLink) == ExportGeneratesEditPart.VISUAL_ID) {
+								DestroyReferenceRequest r = new DestroyReferenceRequest(
+										outgoingLink.getSource().getElement(), null,
+										outgoingLink.getTarget().getElement(), false);
+								cmd.add(new DestroyReferenceCommand(r));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+								continue;
+							}
+							if (PipelineVisualIDRegistry.getVisualID(outgoingLink) == ExportExpUsesEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
 										outgoingLink.getSource().getElement(), null,
 										outgoingLink.getTarget().getElement(), false);

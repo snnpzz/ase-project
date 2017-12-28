@@ -33,4 +33,5 @@
             contributorClass="pipeline.presentation.PipelineActionBarContributor">
       </editor>
    </extension>
+
 </plugin>

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pipeline.Import#getReadsFrom <em>Reads From</em>}</li>
- *   <li>{@link pipeline.Import#getUses <em>Uses</em>}</li>
+ *   <li>{@link pipeline.Import#getImpUses <em>Imp Uses</em>}</li>
  *   <li>{@link pipeline.Import#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -53,30 +53,31 @@ public interface Import extends EObject {
 	void setReadsFrom(Source value);
 
 	/**
-	 * Returns the value of the '<em><b>Uses</b></em>' reference.
+	 * Returns the value of the '<em><b>Imp Uses</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Uses</em>' reference isn't clear,
+	 * If the meaning of the '<em>Imp Uses</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uses</em>' reference.
-	 * @see #setUses(Schema)
-	 * @see pipeline.PipelinePackage#getImport_Uses()
+	 * @return the value of the '<em>Imp Uses</em>' reference.
+	 * @see #setImpUses(Schema)
+	 * @see pipeline.PipelinePackage#getImport_ImpUses()
 	 * @model required="true"
+	 *        annotation="gmf.link width='1' target.decoration='arrow'"
 	 * @generated
 	 */
-	Schema getUses();
+	Schema getImpUses();
 
 	/**
-	 * Sets the value of the '{@link pipeline.Import#getUses <em>Uses</em>}' reference.
+	 * Sets the value of the '{@link pipeline.Import#getImpUses <em>Imp Uses</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uses</em>' reference.
-	 * @see #getUses()
+	 * @param value the new value of the '<em>Imp Uses</em>' reference.
+	 * @see #getImpUses()
 	 * @generated
 	 */
-	void setUses(Schema value);
+	void setImpUses(Schema value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

@@ -60,7 +60,7 @@ public class SourceNameEditPart extends CompartmentEditPart implements ITextAwar
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5084;
+	public static final int VISUAL_ID = 5086;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class SourceNameEditPart extends CompartmentEditPart implements ITextAwar
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = PipelineParserProvider.getParser(PipelineElementTypes.Source_2039, getParserElement(),
+			parser = PipelineParserProvider.getParser(PipelineElementTypes.Source_2041, getParserElement(),
 					PipelineVisualIDRegistry.getType(pipeline.diagram.edit.parts.SourceNameEditPart.VISUAL_ID));
 		}
 		return parser;

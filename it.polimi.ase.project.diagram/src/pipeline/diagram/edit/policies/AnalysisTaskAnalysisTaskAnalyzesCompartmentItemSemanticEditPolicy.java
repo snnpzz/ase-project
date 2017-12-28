@@ -7,13 +7,9 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
 import pipeline.diagram.edit.commands.Classification2CreateCommand;
-import pipeline.diagram.edit.commands.ClassificationCreateCommand;
 import pipeline.diagram.edit.commands.Clustering2CreateCommand;
-import pipeline.diagram.edit.commands.ClusteringCreateCommand;
 import pipeline.diagram.edit.commands.Descriptive2CreateCommand;
-import pipeline.diagram.edit.commands.DescriptiveCreateCommand;
 import pipeline.diagram.edit.commands.Predictive2CreateCommand;
-import pipeline.diagram.edit.commands.PredictiveCreateCommand;
 import pipeline.diagram.providers.PipelineElementTypes;
 
 /**

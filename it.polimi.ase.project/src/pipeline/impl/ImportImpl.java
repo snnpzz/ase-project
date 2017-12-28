@@ -25,7 +25,7 @@ import pipeline.Source;
  * </p>
  * <ul>
  *   <li>{@link pipeline.impl.ImportImpl#getReadsFrom <em>Reads From</em>}</li>
- *   <li>{@link pipeline.impl.ImportImpl#getUses <em>Uses</em>}</li>
+ *   <li>{@link pipeline.impl.ImportImpl#getImpUses <em>Imp Uses</em>}</li>
  *   <li>{@link pipeline.impl.ImportImpl#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -43,14 +43,14 @@ public class ImportImpl extends EObjectImpl implements Import {
 	protected Source readsFrom;
 
 	/**
-	 * The cached value of the '{@link #getUses() <em>Uses</em>}' reference.
+	 * The cached value of the '{@link #getImpUses() <em>Imp Uses</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUses()
+	 * @see #getImpUses()
 	 * @generated
 	 * @ordered
 	 */
-	protected Schema uses;
+	protected Schema impUses;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -156,16 +156,16 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Schema getUses() {
-		if (uses != null && uses.eIsProxy()) {
-			InternalEObject oldUses = (InternalEObject)uses;
-			uses = (Schema)eResolveProxy(oldUses);
-			if (uses != oldUses) {
+	public Schema getImpUses() {
+		if (impUses != null && impUses.eIsProxy()) {
+			InternalEObject oldImpUses = (InternalEObject)impUses;
+			impUses = (Schema)eResolveProxy(oldImpUses);
+			if (impUses != oldImpUses) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.IMPORT__USES, oldUses, uses));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.IMPORT__IMP_USES, oldImpUses, impUses));
 			}
 		}
-		return uses;
+		return impUses;
 	}
 
 	/**
@@ -173,8 +173,8 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Schema basicGetUses() {
-		return uses;
+	public Schema basicGetImpUses() {
+		return impUses;
 	}
 
 	/**
@@ -182,11 +182,11 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUses(Schema newUses) {
-		Schema oldUses = uses;
-		uses = newUses;
+	public void setImpUses(Schema newImpUses) {
+		Schema oldImpUses = impUses;
+		impUses = newImpUses;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.IMPORT__USES, oldUses, uses));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.IMPORT__IMP_USES, oldImpUses, impUses));
 	}
 
 	/**
@@ -251,9 +251,9 @@ public class ImportImpl extends EObjectImpl implements Import {
 			case PipelinePackage.IMPORT__READS_FROM:
 				if (resolve) return getReadsFrom();
 				return basicGetReadsFrom();
-			case PipelinePackage.IMPORT__USES:
-				if (resolve) return getUses();
-				return basicGetUses();
+			case PipelinePackage.IMPORT__IMP_USES:
+				if (resolve) return getImpUses();
+				return basicGetImpUses();
 			case PipelinePackage.IMPORT__NAME:
 				return getName();
 		}
@@ -271,8 +271,8 @@ public class ImportImpl extends EObjectImpl implements Import {
 			case PipelinePackage.IMPORT__READS_FROM:
 				setReadsFrom((Source)newValue);
 				return;
-			case PipelinePackage.IMPORT__USES:
-				setUses((Schema)newValue);
+			case PipelinePackage.IMPORT__IMP_USES:
+				setImpUses((Schema)newValue);
 				return;
 			case PipelinePackage.IMPORT__NAME:
 				setName((String)newValue);
@@ -292,8 +292,8 @@ public class ImportImpl extends EObjectImpl implements Import {
 			case PipelinePackage.IMPORT__READS_FROM:
 				setReadsFrom((Source)null);
 				return;
-			case PipelinePackage.IMPORT__USES:
-				setUses((Schema)null);
+			case PipelinePackage.IMPORT__IMP_USES:
+				setImpUses((Schema)null);
 				return;
 			case PipelinePackage.IMPORT__NAME:
 				setName(NAME_EDEFAULT);
@@ -312,8 +312,8 @@ public class ImportImpl extends EObjectImpl implements Import {
 		switch (featureID) {
 			case PipelinePackage.IMPORT__READS_FROM:
 				return readsFrom != null;
-			case PipelinePackage.IMPORT__USES:
-				return uses != null;
+			case PipelinePackage.IMPORT__IMP_USES:
+				return impUses != null;
 			case PipelinePackage.IMPORT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}

@@ -10,7 +10,7 @@ package pipeline;
  *
  *
  * @see pipeline.PipelinePackage#getDescriptive()
- * @model annotation="gmf.node label='name' figure='ellipse'"
+ * @model
  * @generated
  */
 public interface Descriptive extends AnalysisOperation {

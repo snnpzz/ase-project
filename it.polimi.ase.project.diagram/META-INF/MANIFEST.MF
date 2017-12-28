@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: pipeline.diagram.part.PipelineDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: pipeline.diagram.edit.parts,
+Export-Package: pipeline.diagram.edit.parts, 
  pipeline.diagram.part,
  pipeline.diagram.providers
 Require-Bundle: org.eclipse.core.runtime,

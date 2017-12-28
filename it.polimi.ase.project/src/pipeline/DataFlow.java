@@ -14,9 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pipeline.DataFlow#getFormat <em>Format</em>}</li>
- *   <li>{@link pipeline.DataFlow#getSchema <em>Schema</em>}</li>
  *   <li>{@link pipeline.DataFlow#getTarget <em>Target</em>}</li>
  *   <li>{@link pipeline.DataFlow#getSource <em>Source</em>}</li>
+ *   <li>{@link pipeline.DataFlow#getDFschema <em>DFschema</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getDataFlow()
@@ -52,32 +52,6 @@ public interface DataFlow extends EObject {
 	 * @generated
 	 */
 	void setFormat(Format value);
-
-	/**
-	 * Returns the value of the '<em><b>Schema</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Schema</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Schema</em>' containment reference.
-	 * @see #setSchema(Schema)
-	 * @see pipeline.PipelinePackage#getDataFlow_Schema()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	Schema getSchema();
-
-	/**
-	 * Sets the value of the '{@link pipeline.DataFlow#getSchema <em>Schema</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Schema</em>' containment reference.
-	 * @see #getSchema()
-	 * @generated
-	 */
-	void setSchema(Schema value);
 
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
@@ -134,5 +108,32 @@ public interface DataFlow extends EObject {
 	 * @generated
 	 */
 	void setSource(Task value);
+
+	/**
+	 * Returns the value of the '<em><b>DFschema</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>DFschema</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>DFschema</em>' reference.
+	 * @see #setDFschema(Schema)
+	 * @see pipeline.PipelinePackage#getDataFlow_DFschema()
+	 * @model required="true"
+	 *        annotation="gmf.link width='1' target.decoration='arrow' style='dash'"
+	 * @generated
+	 */
+	Schema getDFschema();
+
+	/**
+	 * Sets the value of the '{@link pipeline.DataFlow#getDFschema <em>DFschema</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>DFschema</em>' reference.
+	 * @see #getDFschema()
+	 * @generated
+	 */
+	void setDFschema(Schema value);
 
 } // DataFlow

@@ -60,7 +60,7 @@ public class FileNameEditPart extends CompartmentEditPart implements ITextAwareE
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5085;
+	public static final int VISUAL_ID = 5087;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class FileNameEditPart extends CompartmentEditPart implements ITextAwareE
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = PipelineParserProvider.getParser(PipelineElementTypes.File_2040, getParserElement(),
+			parser = PipelineParserProvider.getParser(PipelineElementTypes.File_2042, getParserElement(),
 					PipelineVisualIDRegistry.getType(pipeline.diagram.edit.parts.FileNameEditPart.VISUAL_ID));
 		}
 		return parser;

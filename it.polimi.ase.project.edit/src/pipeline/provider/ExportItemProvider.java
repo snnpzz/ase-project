@@ -61,7 +61,7 @@ public class ExportItemProvider
 			super.getPropertyDescriptors(object);
 
 			addGeneratesPropertyDescriptor(object);
-			addUsesPropertyDescriptor(object);
+			addExpUsesPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -90,19 +90,19 @@ public class ExportItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Uses feature.
+	 * This adds a property descriptor for the Exp Uses feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUsesPropertyDescriptor(Object object) {
+	protected void addExpUsesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Export_uses_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Export_uses_feature", "_UI_Export_type"),
-				 PipelinePackage.Literals.EXPORT__USES,
+				 getString("_UI_Export_expUses_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Export_expUses_feature", "_UI_Export_type"),
+				 PipelinePackage.Literals.EXPORT__EXP_USES,
 				 true,
 				 false,
 				 true,

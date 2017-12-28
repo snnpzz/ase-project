@@ -25,7 +25,7 @@ import pipeline.Schema;
  * </p>
  * <ul>
  *   <li>{@link pipeline.impl.ExportImpl#getGenerates <em>Generates</em>}</li>
- *   <li>{@link pipeline.impl.ExportImpl#getUses <em>Uses</em>}</li>
+ *   <li>{@link pipeline.impl.ExportImpl#getExpUses <em>Exp Uses</em>}</li>
  *   <li>{@link pipeline.impl.ExportImpl#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -43,14 +43,14 @@ public class ExportImpl extends EObjectImpl implements Export {
 	protected File generates;
 
 	/**
-	 * The cached value of the '{@link #getUses() <em>Uses</em>}' reference.
+	 * The cached value of the '{@link #getExpUses() <em>Exp Uses</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUses()
+	 * @see #getExpUses()
 	 * @generated
 	 * @ordered
 	 */
-	protected Schema uses;
+	protected Schema expUses;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -156,16 +156,16 @@ public class ExportImpl extends EObjectImpl implements Export {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Schema getUses() {
-		if (uses != null && uses.eIsProxy()) {
-			InternalEObject oldUses = (InternalEObject)uses;
-			uses = (Schema)eResolveProxy(oldUses);
-			if (uses != oldUses) {
+	public Schema getExpUses() {
+		if (expUses != null && expUses.eIsProxy()) {
+			InternalEObject oldExpUses = (InternalEObject)expUses;
+			expUses = (Schema)eResolveProxy(oldExpUses);
+			if (expUses != oldExpUses) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.EXPORT__USES, oldUses, uses));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.EXPORT__EXP_USES, oldExpUses, expUses));
 			}
 		}
-		return uses;
+		return expUses;
 	}
 
 	/**
@@ -173,8 +173,8 @@ public class ExportImpl extends EObjectImpl implements Export {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Schema basicGetUses() {
-		return uses;
+	public Schema basicGetExpUses() {
+		return expUses;
 	}
 
 	/**
@@ -182,11 +182,11 @@ public class ExportImpl extends EObjectImpl implements Export {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUses(Schema newUses) {
-		Schema oldUses = uses;
-		uses = newUses;
+	public void setExpUses(Schema newExpUses) {
+		Schema oldExpUses = expUses;
+		expUses = newExpUses;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT__USES, oldUses, uses));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT__EXP_USES, oldExpUses, expUses));
 	}
 
 	/**
@@ -251,9 +251,9 @@ public class ExportImpl extends EObjectImpl implements Export {
 			case PipelinePackage.EXPORT__GENERATES:
 				if (resolve) return getGenerates();
 				return basicGetGenerates();
-			case PipelinePackage.EXPORT__USES:
-				if (resolve) return getUses();
-				return basicGetUses();
+			case PipelinePackage.EXPORT__EXP_USES:
+				if (resolve) return getExpUses();
+				return basicGetExpUses();
 			case PipelinePackage.EXPORT__NAME:
 				return getName();
 		}
@@ -271,8 +271,8 @@ public class ExportImpl extends EObjectImpl implements Export {
 			case PipelinePackage.EXPORT__GENERATES:
 				setGenerates((File)newValue);
 				return;
-			case PipelinePackage.EXPORT__USES:
-				setUses((Schema)newValue);
+			case PipelinePackage.EXPORT__EXP_USES:
+				setExpUses((Schema)newValue);
 				return;
 			case PipelinePackage.EXPORT__NAME:
 				setName((String)newValue);
@@ -292,8 +292,8 @@ public class ExportImpl extends EObjectImpl implements Export {
 			case PipelinePackage.EXPORT__GENERATES:
 				setGenerates((File)null);
 				return;
-			case PipelinePackage.EXPORT__USES:
-				setUses((Schema)null);
+			case PipelinePackage.EXPORT__EXP_USES:
+				setExpUses((Schema)null);
 				return;
 			case PipelinePackage.EXPORT__NAME:
 				setName(NAME_EDEFAULT);
@@ -312,8 +312,8 @@ public class ExportImpl extends EObjectImpl implements Export {
 		switch (featureID) {
 			case PipelinePackage.EXPORT__GENERATES:
 				return generates != null;
-			case PipelinePackage.EXPORT__USES:
-				return uses != null;
+			case PipelinePackage.EXPORT__EXP_USES:
+				return expUses != null;
 			case PipelinePackage.EXPORT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}

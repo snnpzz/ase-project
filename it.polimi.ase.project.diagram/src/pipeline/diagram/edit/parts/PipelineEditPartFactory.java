@@ -112,6 +112,9 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case FileNameEditPart.VISUAL_ID:
 				return new FileNameEditPart(view);
 
+			case SchemaEditPart.VISUAL_ID:
+				return new SchemaEditPart(view);
+
 			case ImportEditPart.VISUAL_ID:
 				return new ImportEditPart(view);
 
@@ -160,6 +163,18 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case ExportNameEditPart.VISUAL_ID:
 				return new ExportNameEditPart(view);
 
+			case AttributeEditPart.VISUAL_ID:
+				return new AttributeEditPart(view);
+
+			case AttributeNameEditPart.VISUAL_ID:
+				return new AttributeNameEditPart(view);
+
+			case Attribute2EditPart.VISUAL_ID:
+				return new Attribute2EditPart(view);
+
+			case AttributeName2EditPart.VISUAL_ID:
+				return new AttributeName2EditPart(view);
+
 			case CollectionTaskCollectionTaskImportsCompartmentEditPart.VISUAL_ID:
 				return new CollectionTaskCollectionTaskImportsCompartmentEditPart(view);
 
@@ -172,23 +187,56 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
 				return new ExportTaskExportTaskExportsCompartmentEditPart(view);
 
+			case SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID:
+				return new SchemaSchemaAttributesCompartmentEditPart(view);
+
+			case AttributeAttributeAttributesCompartmentEditPart.VISUAL_ID:
+				return new AttributeAttributeAttributesCompartmentEditPart(view);
+
+			case AttributeAttributeAttributesCompartment2EditPart.VISUAL_ID:
+				return new AttributeAttributeAttributesCompartment2EditPart(view);
+
 			case DataFlowEditPart.VISUAL_ID:
 				return new DataFlowEditPart(view);
 
 			case InternalDataFlowEditPart.VISUAL_ID:
 				return new InternalDataFlowEditPart(view);
 
-			case ImportReadsFromEditPart.VISUAL_ID:
-				return new ImportReadsFromEditPart(view);
+			case DataFlowDFschemaEditPart.VISUAL_ID:
+				return new DataFlowDFschemaEditPart(view);
 
 			case WrappingLabelEditPart.VISUAL_ID:
 				return new WrappingLabelEditPart(view);
 
-			case ExportGeneratesEditPart.VISUAL_ID:
-				return new ExportGeneratesEditPart(view);
+			case InternalDataFlowIntDFschemaEditPart.VISUAL_ID:
+				return new InternalDataFlowIntDFschemaEditPart(view);
 
 			case WrappingLabel2EditPart.VISUAL_ID:
 				return new WrappingLabel2EditPart(view);
+
+			case ImportReadsFromEditPart.VISUAL_ID:
+				return new ImportReadsFromEditPart(view);
+
+			case WrappingLabel3EditPart.VISUAL_ID:
+				return new WrappingLabel3EditPart(view);
+
+			case ImportImpUsesEditPart.VISUAL_ID:
+				return new ImportImpUsesEditPart(view);
+
+			case WrappingLabel4EditPart.VISUAL_ID:
+				return new WrappingLabel4EditPart(view);
+
+			case ExportGeneratesEditPart.VISUAL_ID:
+				return new ExportGeneratesEditPart(view);
+
+			case WrappingLabel5EditPart.VISUAL_ID:
+				return new WrappingLabel5EditPart(view);
+
+			case ExportExpUsesEditPart.VISUAL_ID:
+				return new ExportExpUsesEditPart(view);
+
+			case WrappingLabel6EditPart.VISUAL_ID:
+				return new WrappingLabel6EditPart(view);
 
 			}
 		}

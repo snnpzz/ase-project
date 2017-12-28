@@ -4,6 +4,7 @@
 package pipeline.diagram.edit.policies;
 
 import java.util.Iterator;
+
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
@@ -71,8 +72,8 @@ public class UserDefinedItemSemanticEditPolicy extends PipelineBaseItemSemanticE
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
@@ -80,8 +81,8 @@ public class UserDefinedItemSemanticEditPolicy extends PipelineBaseItemSemanticE
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (PipelineElementTypes.InternalDataFlow_4006 == req.getElementType()) {
 			return getGEFWrapper(new InternalDataFlowCreateCommand(req, req.getSource(), req.getTarget()));
@@ -90,8 +91,8 @@ public class UserDefinedItemSemanticEditPolicy extends PipelineBaseItemSemanticE
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (PipelineElementTypes.InternalDataFlow_4006 == req.getElementType()) {
 			return getGEFWrapper(new InternalDataFlowCreateCommand(req, req.getSource(), req.getTarget()));
@@ -100,11 +101,11 @@ public class UserDefinedItemSemanticEditPolicy extends PipelineBaseItemSemanticE
 	}
 
 	/**
-	* Returns command to reorient EClass based link. New link target or source
-	* should be the domain model element associated with this node.
-	* 
-	* @generated
-	*/
+	 * Returns command to reorient EClass based link. New link target or source
+	 * should be the domain model element associated with this node.
+	 * 
+	 * @generated
+	 */
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case InternalDataFlowEditPart.VISUAL_ID:

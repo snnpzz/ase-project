@@ -6,10 +6,13 @@ package pipeline.diagram.providers.assistants;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+
 import pipeline.diagram.edit.parts.ImportEditPart;
+import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.edit.parts.SourceEditPart;
 import pipeline.diagram.providers.PipelineElementTypes;
 import pipeline.diagram.providers.PipelineModelingAssistantProvider;
@@ -33,8 +36,9 @@ public class PipelineModelingAssistantProviderOfImportEditPart extends PipelineM
 	* @generated
 	*/
 	public List<IElementType> doGetRelTypesOnSource(ImportEditPart source) {
-		List<IElementType> types = new ArrayList<IElementType>(1);
+		List<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(PipelineElementTypes.ImportReadsFrom_4007);
+		types.add(PipelineElementTypes.ImportImpUses_4013);
 		return types;
 	}
 
@@ -57,6 +61,9 @@ public class PipelineModelingAssistantProviderOfImportEditPart extends PipelineM
 		if (targetEditPart instanceof SourceEditPart) {
 			types.add(PipelineElementTypes.ImportReadsFrom_4007);
 		}
+		if (targetEditPart instanceof SchemaEditPart) {
+			types.add(PipelineElementTypes.ImportImpUses_4013);
+		}
 		return types;
 	}
 
@@ -76,7 +83,9 @@ public class PipelineModelingAssistantProviderOfImportEditPart extends PipelineM
 	public List<IElementType> doGetTypesForTarget(ImportEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == PipelineElementTypes.ImportReadsFrom_4007) {
-			types.add(PipelineElementTypes.Source_2039);
+			types.add(PipelineElementTypes.Source_2041);
+		} else if (relationshipType == PipelineElementTypes.ImportImpUses_4013) {
+			types.add(PipelineElementTypes.Schema_2043);
 		}
 		return types;
 	}

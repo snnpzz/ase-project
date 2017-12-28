@@ -24,6 +24,7 @@ import pipeline.InternalDataFlow;
 import pipeline.Operation;
 import pipeline.Pipeline;
 import pipeline.PipelinePackage;
+import pipeline.Schema;
 import pipeline.Source;
 import pipeline.Task;
 
@@ -39,9 +40,10 @@ import pipeline.Task;
  *   <li>{@link pipeline.impl.PipelineImpl#getTasks <em>Tasks</em>}</li>
  *   <li>{@link pipeline.impl.PipelineImpl#getID <em>ID</em>}</li>
  *   <li>{@link pipeline.impl.PipelineImpl#getInternalDataFlows <em>Internal Data Flows</em>}</li>
- *   <li>{@link pipeline.impl.PipelineImpl#getSources <em>Sources</em>}</li>
- *   <li>{@link pipeline.impl.PipelineImpl#getFiles <em>Files</em>}</li>
+ *   <li>{@link pipeline.impl.PipelineImpl#getInputSources <em>Input Sources</em>}</li>
+ *   <li>{@link pipeline.impl.PipelineImpl#getOutputFiles <em>Output Files</em>}</li>
  *   <li>{@link pipeline.impl.PipelineImpl#getOperations <em>Operations</em>}</li>
+ *   <li>{@link pipeline.impl.PipelineImpl#getSchemas <em>Schemas</em>}</li>
  * </ul>
  *
  * @generated
@@ -98,24 +100,24 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	protected EList<InternalDataFlow> internalDataFlows;
 
 	/**
-	 * The cached value of the '{@link #getSources() <em>Sources</em>}' containment reference list.
+	 * The cached value of the '{@link #getInputSources() <em>Input Sources</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSources()
+	 * @see #getInputSources()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Source> sources;
+	protected EList<Source> inputSources;
 
 	/**
-	 * The cached value of the '{@link #getFiles() <em>Files</em>}' containment reference list.
+	 * The cached value of the '{@link #getOutputFiles() <em>Output Files</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFiles()
+	 * @see #getOutputFiles()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<File> files;
+	protected EList<File> outputFiles;
 
 	/**
 	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
@@ -126,6 +128,16 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	 * @ordered
 	 */
 	protected EList<Operation> operations;
+
+	/**
+	 * The cached value of the '{@link #getSchemas() <em>Schemas</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSchemas()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Schema> schemas;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,11 +220,11 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Source> getSources() {
-		if (sources == null) {
-			sources = new EObjectContainmentEList<Source>(Source.class, this, PipelinePackage.PIPELINE__SOURCES);
+	public EList<Source> getInputSources() {
+		if (inputSources == null) {
+			inputSources = new EObjectContainmentEList<Source>(Source.class, this, PipelinePackage.PIPELINE__INPUT_SOURCES);
 		}
-		return sources;
+		return inputSources;
 	}
 
 	/**
@@ -220,11 +232,11 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<File> getFiles() {
-		if (files == null) {
-			files = new EObjectContainmentEList<File>(File.class, this, PipelinePackage.PIPELINE__FILES);
+	public EList<File> getOutputFiles() {
+		if (outputFiles == null) {
+			outputFiles = new EObjectContainmentEList<File>(File.class, this, PipelinePackage.PIPELINE__OUTPUT_FILES);
 		}
-		return files;
+		return outputFiles;
 	}
 
 	/**
@@ -244,6 +256,18 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Schema> getSchemas() {
+		if (schemas == null) {
+			schemas = new EObjectContainmentEList<Schema>(Schema.class, this, PipelinePackage.PIPELINE__SCHEMAS);
+		}
+		return schemas;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -253,12 +277,14 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 				return ((InternalEList<?>)getTasks()).basicRemove(otherEnd, msgs);
 			case PipelinePackage.PIPELINE__INTERNAL_DATA_FLOWS:
 				return ((InternalEList<?>)getInternalDataFlows()).basicRemove(otherEnd, msgs);
-			case PipelinePackage.PIPELINE__SOURCES:
-				return ((InternalEList<?>)getSources()).basicRemove(otherEnd, msgs);
-			case PipelinePackage.PIPELINE__FILES:
-				return ((InternalEList<?>)getFiles()).basicRemove(otherEnd, msgs);
+			case PipelinePackage.PIPELINE__INPUT_SOURCES:
+				return ((InternalEList<?>)getInputSources()).basicRemove(otherEnd, msgs);
+			case PipelinePackage.PIPELINE__OUTPUT_FILES:
+				return ((InternalEList<?>)getOutputFiles()).basicRemove(otherEnd, msgs);
 			case PipelinePackage.PIPELINE__OPERATIONS:
 				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
+			case PipelinePackage.PIPELINE__SCHEMAS:
+				return ((InternalEList<?>)getSchemas()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -279,12 +305,14 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 				return getID();
 			case PipelinePackage.PIPELINE__INTERNAL_DATA_FLOWS:
 				return getInternalDataFlows();
-			case PipelinePackage.PIPELINE__SOURCES:
-				return getSources();
-			case PipelinePackage.PIPELINE__FILES:
-				return getFiles();
+			case PipelinePackage.PIPELINE__INPUT_SOURCES:
+				return getInputSources();
+			case PipelinePackage.PIPELINE__OUTPUT_FILES:
+				return getOutputFiles();
 			case PipelinePackage.PIPELINE__OPERATIONS:
 				return getOperations();
+			case PipelinePackage.PIPELINE__SCHEMAS:
+				return getSchemas();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -313,17 +341,21 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 				getInternalDataFlows().clear();
 				getInternalDataFlows().addAll((Collection<? extends InternalDataFlow>)newValue);
 				return;
-			case PipelinePackage.PIPELINE__SOURCES:
-				getSources().clear();
-				getSources().addAll((Collection<? extends Source>)newValue);
+			case PipelinePackage.PIPELINE__INPUT_SOURCES:
+				getInputSources().clear();
+				getInputSources().addAll((Collection<? extends Source>)newValue);
 				return;
-			case PipelinePackage.PIPELINE__FILES:
-				getFiles().clear();
-				getFiles().addAll((Collection<? extends File>)newValue);
+			case PipelinePackage.PIPELINE__OUTPUT_FILES:
+				getOutputFiles().clear();
+				getOutputFiles().addAll((Collection<? extends File>)newValue);
 				return;
 			case PipelinePackage.PIPELINE__OPERATIONS:
 				getOperations().clear();
 				getOperations().addAll((Collection<? extends Operation>)newValue);
+				return;
+			case PipelinePackage.PIPELINE__SCHEMAS:
+				getSchemas().clear();
+				getSchemas().addAll((Collection<? extends Schema>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -349,14 +381,17 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 			case PipelinePackage.PIPELINE__INTERNAL_DATA_FLOWS:
 				getInternalDataFlows().clear();
 				return;
-			case PipelinePackage.PIPELINE__SOURCES:
-				getSources().clear();
+			case PipelinePackage.PIPELINE__INPUT_SOURCES:
+				getInputSources().clear();
 				return;
-			case PipelinePackage.PIPELINE__FILES:
-				getFiles().clear();
+			case PipelinePackage.PIPELINE__OUTPUT_FILES:
+				getOutputFiles().clear();
 				return;
 			case PipelinePackage.PIPELINE__OPERATIONS:
 				getOperations().clear();
+				return;
+			case PipelinePackage.PIPELINE__SCHEMAS:
+				getSchemas().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -378,12 +413,14 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case PipelinePackage.PIPELINE__INTERNAL_DATA_FLOWS:
 				return internalDataFlows != null && !internalDataFlows.isEmpty();
-			case PipelinePackage.PIPELINE__SOURCES:
-				return sources != null && !sources.isEmpty();
-			case PipelinePackage.PIPELINE__FILES:
-				return files != null && !files.isEmpty();
+			case PipelinePackage.PIPELINE__INPUT_SOURCES:
+				return inputSources != null && !inputSources.isEmpty();
+			case PipelinePackage.PIPELINE__OUTPUT_FILES:
+				return outputFiles != null && !outputFiles.isEmpty();
 			case PipelinePackage.PIPELINE__OPERATIONS:
 				return operations != null && !operations.isEmpty();
+			case PipelinePackage.PIPELINE__SCHEMAS:
+				return schemas != null && !schemas.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

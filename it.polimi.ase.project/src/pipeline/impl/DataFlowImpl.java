@@ -26,9 +26,9 @@ import pipeline.Task;
  * </p>
  * <ul>
  *   <li>{@link pipeline.impl.DataFlowImpl#getFormat <em>Format</em>}</li>
- *   <li>{@link pipeline.impl.DataFlowImpl#getSchema <em>Schema</em>}</li>
  *   <li>{@link pipeline.impl.DataFlowImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link pipeline.impl.DataFlowImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link pipeline.impl.DataFlowImpl#getDFschema <em>DFschema</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,16 +55,6 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	protected Format format = FORMAT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSchema() <em>Schema</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSchema()
-	 * @generated
-	 * @ordered
-	 */
-	protected Schema schema;
-
-	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,6 +73,16 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	 * @ordered
 	 */
 	protected Task source;
+
+	/**
+	 * The cached value of the '{@link #getDFschema() <em>DFschema</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDFschema()
+	 * @generated
+	 * @ordered
+	 */
+	protected Schema dFschema;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,49 +122,6 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 		format = newFormat == null ? FORMAT_EDEFAULT : newFormat;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.DATA_FLOW__FORMAT, oldFormat, format));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Schema getSchema() {
-		return schema;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSchema(Schema newSchema, NotificationChain msgs) {
-		Schema oldSchema = schema;
-		schema = newSchema;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PipelinePackage.DATA_FLOW__SCHEMA, oldSchema, newSchema);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSchema(Schema newSchema) {
-		if (newSchema != schema) {
-			NotificationChain msgs = null;
-			if (schema != null)
-				msgs = ((InternalEObject)schema).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PipelinePackage.DATA_FLOW__SCHEMA, null, msgs);
-			if (newSchema != null)
-				msgs = ((InternalEObject)newSchema).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PipelinePackage.DATA_FLOW__SCHEMA, null, msgs);
-			msgs = basicSetSchema(newSchema, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.DATA_FLOW__SCHEMA, newSchema, newSchema));
 	}
 
 	/**
@@ -292,6 +249,44 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Schema getDFschema() {
+		if (dFschema != null && dFschema.eIsProxy()) {
+			InternalEObject oldDFschema = (InternalEObject)dFschema;
+			dFschema = (Schema)eResolveProxy(oldDFschema);
+			if (dFschema != oldDFschema) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.DATA_FLOW__DFSCHEMA, oldDFschema, dFschema));
+			}
+		}
+		return dFschema;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Schema basicGetDFschema() {
+		return dFschema;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDFschema(Schema newDFschema) {
+		Schema oldDFschema = dFschema;
+		dFschema = newDFschema;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.DATA_FLOW__DFSCHEMA, oldDFschema, dFschema));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -315,8 +310,6 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PipelinePackage.DATA_FLOW__SCHEMA:
-				return basicSetSchema(null, msgs);
 			case PipelinePackage.DATA_FLOW__TARGET:
 				return basicSetTarget(null, msgs);
 			case PipelinePackage.DATA_FLOW__SOURCE:
@@ -335,14 +328,15 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 		switch (featureID) {
 			case PipelinePackage.DATA_FLOW__FORMAT:
 				return getFormat();
-			case PipelinePackage.DATA_FLOW__SCHEMA:
-				return getSchema();
 			case PipelinePackage.DATA_FLOW__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
 			case PipelinePackage.DATA_FLOW__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
+			case PipelinePackage.DATA_FLOW__DFSCHEMA:
+				if (resolve) return getDFschema();
+				return basicGetDFschema();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -358,14 +352,14 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 			case PipelinePackage.DATA_FLOW__FORMAT:
 				setFormat((Format)newValue);
 				return;
-			case PipelinePackage.DATA_FLOW__SCHEMA:
-				setSchema((Schema)newValue);
-				return;
 			case PipelinePackage.DATA_FLOW__TARGET:
 				setTarget((Task)newValue);
 				return;
 			case PipelinePackage.DATA_FLOW__SOURCE:
 				setSource((Task)newValue);
+				return;
+			case PipelinePackage.DATA_FLOW__DFSCHEMA:
+				setDFschema((Schema)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -382,14 +376,14 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 			case PipelinePackage.DATA_FLOW__FORMAT:
 				setFormat(FORMAT_EDEFAULT);
 				return;
-			case PipelinePackage.DATA_FLOW__SCHEMA:
-				setSchema((Schema)null);
-				return;
 			case PipelinePackage.DATA_FLOW__TARGET:
 				setTarget((Task)null);
 				return;
 			case PipelinePackage.DATA_FLOW__SOURCE:
 				setSource((Task)null);
+				return;
+			case PipelinePackage.DATA_FLOW__DFSCHEMA:
+				setDFschema((Schema)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -405,12 +399,12 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 		switch (featureID) {
 			case PipelinePackage.DATA_FLOW__FORMAT:
 				return format != FORMAT_EDEFAULT;
-			case PipelinePackage.DATA_FLOW__SCHEMA:
-				return schema != null;
 			case PipelinePackage.DATA_FLOW__TARGET:
 				return target != null;
 			case PipelinePackage.DATA_FLOW__SOURCE:
 				return source != null;
+			case PipelinePackage.DATA_FLOW__DFSCHEMA:
+				return dFschema != null;
 		}
 		return super.eIsSet(featureID);
 	}

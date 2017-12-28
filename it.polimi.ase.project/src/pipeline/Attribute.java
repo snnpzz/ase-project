@@ -119,6 +119,7 @@ public interface Attribute extends EObject {
 	 * @return the value of the '<em>Attributes</em>' containment reference list.
 	 * @see pipeline.PipelinePackage#getAttribute_Attributes()
 	 * @model containment="true"
+	 *        annotation="gmf.compartment layout='list'"
 	 * @generated
 	 */
 	EList<Attribute> getAttributes();

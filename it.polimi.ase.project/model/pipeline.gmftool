@@ -138,6 +138,15 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Schema"
+          description="Create new Schema">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Source"
           description="Create new Source">
         <smallIcon
@@ -170,6 +179,15 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
+          title="DFschema"
+          description="Create new DFschema">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="DataFlow"
           description="Create new DataFlow">
         <smallIcon
@@ -179,8 +197,35 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="ExpUses"
+          description="Create new ExpUses">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Generates"
           description="Create new Generates">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ImpUses"
+          description="Create new ImpUses">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="IntDFschema"
+          description="Create new IntDFschema">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

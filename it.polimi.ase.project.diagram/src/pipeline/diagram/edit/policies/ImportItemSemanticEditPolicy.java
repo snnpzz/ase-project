@@ -4,6 +4,7 @@
 package pipeline.diagram.edit.policies;
 
 import java.util.Iterator;
+
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
@@ -17,8 +18,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 
+import pipeline.diagram.edit.commands.ImportImpUsesCreateCommand;
+import pipeline.diagram.edit.commands.ImportImpUsesReorientCommand;
 import pipeline.diagram.edit.commands.ImportReadsFromCreateCommand;
 import pipeline.diagram.edit.commands.ImportReadsFromReorientCommand;
+import pipeline.diagram.edit.parts.ImportImpUsesEditPart;
 import pipeline.diagram.edit.parts.ImportReadsFromEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 import pipeline.diagram.providers.PipelineElementTypes;
@@ -51,6 +55,13 @@ public class ImportItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
+			if (PipelineVisualIDRegistry.getVisualID(outgoingLink) == ImportImpUsesEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
 		}
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
@@ -65,8 +76,8 @@ public class ImportItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
@@ -74,35 +85,43 @@ public class ImportItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (PipelineElementTypes.ImportReadsFrom_4007 == req.getElementType()) {
 			return getGEFWrapper(new ImportReadsFromCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (PipelineElementTypes.ImportImpUses_4013 == req.getElementType()) {
+			return getGEFWrapper(new ImportImpUsesCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (PipelineElementTypes.ImportReadsFrom_4007 == req.getElementType()) {
+			return null;
+		}
+		if (PipelineElementTypes.ImportImpUses_4013 == req.getElementType()) {
 			return null;
 		}
 		return null;
 	}
 
 	/**
-	* Returns command to reorient EReference based link. New link target or source
-	* should be the domain model element associated with this node.
-	* 
-	* @generated
-	*/
+	 * Returns command to reorient EReference based link. New link target or source
+	 * should be the domain model element associated with this node.
+	 * 
+	 * @generated
+	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case ImportReadsFromEditPart.VISUAL_ID:
 			return getGEFWrapper(new ImportReadsFromReorientCommand(req));
+		case ImportImpUsesEditPart.VISUAL_ID:
+			return getGEFWrapper(new ImportImpUsesReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

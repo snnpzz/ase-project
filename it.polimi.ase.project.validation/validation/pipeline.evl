@@ -1,8 +1,48 @@
-context Pipeline {
-
-	constraint CollectionTask {
-		check: self.tasks -> select(t|t.isTypeOf(CollectionTask)).size() <= 1
-		message: ''
+context Task {
+	constraint uniqueTasks {
+		check: select(t|t.isTypeOf(CollectionTask)).size() <= 1 and 
+			select(t|t.isTypeOf(IntegrationTask)).size() <= 1 and
+			select(t|t.isTypeOf(CleaningTask)).size() <= 1 and
+			select(t|t.isTypeOf(AnalysisTask)).size() <= 1 and
+			select(t|t.isTypeOf(VisualizationTask)).size() <= 1 and
+			select(t|t.isTypeOf(ExportTask)).size() <= 1
+		message: 'Tasks must be unique!'
 	}
 	
+	constraint mandatoryTasks {
+		check: select(t|t.isTypeOf(CollectionTask)).size() == 1 and 
+			select(t|t.isTypeOf(AnalysisTask)).size() == 1 and
+			select(t|t.isTypeOf(ExportingTask)).size() == 1
+		message: 'Missing some mandatory task!'
+	}
+}
+
+
+context CollectionTask {
+	constraint initialTask {
+		check: self.incoming -> size() == 0
+		message: "Collection task can't have incoming dataflow!"
+	}
+}
+
+context ExportTask {
+	constraint finalTask {
+		check: self.outgoing -> size() == 0
+		message: "Exporting task can't have outgoing dataflow!"
+	}
+	
+}
+
+context Schema {
+	constraint uniqueAttrib {
+		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
+		message: "There can't be more attributes with the same name!"
+	}	
+}
+
+context Attribute {
+	constraint uniqueAttrib {
+		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
+		message: "There can't be more attributes with the same name!"
+	}	
 }

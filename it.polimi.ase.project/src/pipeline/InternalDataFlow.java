@@ -14,9 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pipeline.InternalDataFlow#getFormat <em>Format</em>}</li>
- *   <li>{@link pipeline.InternalDataFlow#getSchema <em>Schema</em>}</li>
  *   <li>{@link pipeline.InternalDataFlow#getSource <em>Source</em>}</li>
  *   <li>{@link pipeline.InternalDataFlow#getTarget <em>Target</em>}</li>
+ *   <li>{@link pipeline.InternalDataFlow#getIntDFschema <em>Int DFschema</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getInternalDataFlow()
@@ -52,32 +52,6 @@ public interface InternalDataFlow extends EObject {
 	 * @generated
 	 */
 	void setFormat(Format value);
-
-	/**
-	 * Returns the value of the '<em><b>Schema</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Schema</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Schema</em>' containment reference.
-	 * @see #setSchema(Schema)
-	 * @see pipeline.PipelinePackage#getInternalDataFlow_Schema()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	Schema getSchema();
-
-	/**
-	 * Sets the value of the '{@link pipeline.InternalDataFlow#getSchema <em>Schema</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Schema</em>' containment reference.
-	 * @see #getSchema()
-	 * @generated
-	 */
-	void setSchema(Schema value);
 
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
@@ -134,5 +108,32 @@ public interface InternalDataFlow extends EObject {
 	 * @generated
 	 */
 	void setTarget(Operation value);
+
+	/**
+	 * Returns the value of the '<em><b>Int DFschema</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Int DFschema</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Int DFschema</em>' reference.
+	 * @see #setIntDFschema(Schema)
+	 * @see pipeline.PipelinePackage#getInternalDataFlow_IntDFschema()
+	 * @model required="true"
+	 *        annotation="gmf.link width='1' target.decoration='arrow' style='dash'"
+	 * @generated
+	 */
+	Schema getIntDFschema();
+
+	/**
+	 * Sets the value of the '{@link pipeline.InternalDataFlow#getIntDFschema <em>Int DFschema</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Int DFschema</em>' reference.
+	 * @see #getIntDFschema()
+	 * @generated
+	 */
+	void setIntDFschema(Schema value);
 
 } // InternalDataFlow

@@ -15,6 +15,12 @@ import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
+import pipeline.diagram.edit.parts.Attribute2EditPart;
+import pipeline.diagram.edit.parts.AttributeAttributeAttributesCompartment2EditPart;
+import pipeline.diagram.edit.parts.AttributeAttributeAttributesCompartmentEditPart;
+import pipeline.diagram.edit.parts.AttributeEditPart;
+import pipeline.diagram.edit.parts.AttributeName2EditPart;
+import pipeline.diagram.edit.parts.AttributeNameEditPart;
 import pipeline.diagram.edit.parts.Classification2EditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.ClassificationName2EditPart;
@@ -29,12 +35,14 @@ import pipeline.diagram.edit.parts.ClusteringNameEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskCollectionTaskImportsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskIDEditPart;
+import pipeline.diagram.edit.parts.DataFlowDFschemaEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.Descriptive2EditPart;
 import pipeline.diagram.edit.parts.DescriptiveEditPart;
 import pipeline.diagram.edit.parts.DescriptiveName2EditPart;
 import pipeline.diagram.edit.parts.DescriptiveNameEditPart;
 import pipeline.diagram.edit.parts.ExportEditPart;
+import pipeline.diagram.edit.parts.ExportExpUsesEditPart;
 import pipeline.diagram.edit.parts.ExportGeneratesEditPart;
 import pipeline.diagram.edit.parts.ExportNameEditPart;
 import pipeline.diagram.edit.parts.ExportTaskEditPart;
@@ -43,11 +51,13 @@ import pipeline.diagram.edit.parts.ExportTaskIDEditPart;
 import pipeline.diagram.edit.parts.FileEditPart;
 import pipeline.diagram.edit.parts.FileNameEditPart;
 import pipeline.diagram.edit.parts.ImportEditPart;
+import pipeline.diagram.edit.parts.ImportImpUsesEditPart;
 import pipeline.diagram.edit.parts.ImportNameEditPart;
 import pipeline.diagram.edit.parts.ImportReadsFromEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
+import pipeline.diagram.edit.parts.InternalDataFlowIntDFschemaEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
 import pipeline.diagram.edit.parts.Predefined2EditPart;
 import pipeline.diagram.edit.parts.PredefinedEditPart;
@@ -57,6 +67,8 @@ import pipeline.diagram.edit.parts.Predictive2EditPart;
 import pipeline.diagram.edit.parts.PredictiveEditPart;
 import pipeline.diagram.edit.parts.PredictiveName2EditPart;
 import pipeline.diagram.edit.parts.PredictiveNameEditPart;
+import pipeline.diagram.edit.parts.SchemaEditPart;
+import pipeline.diagram.edit.parts.SchemaSchemaAttributesCompartmentEditPart;
 import pipeline.diagram.edit.parts.SourceEditPart;
 import pipeline.diagram.edit.parts.SourceNameEditPart;
 import pipeline.diagram.edit.parts.UserDefined2EditPart;
@@ -66,6 +78,10 @@ import pipeline.diagram.edit.parts.UserDefinedNameEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskIDEditPart;
 import pipeline.diagram.edit.parts.WrappingLabel2EditPart;
+import pipeline.diagram.edit.parts.WrappingLabel3EditPart;
+import pipeline.diagram.edit.parts.WrappingLabel4EditPart;
+import pipeline.diagram.edit.parts.WrappingLabel5EditPart;
+import pipeline.diagram.edit.parts.WrappingLabel6EditPart;
 import pipeline.diagram.edit.parts.WrappingLabelEditPart;
 
 /**
@@ -212,6 +228,9 @@ public class PipelineVisualIDRegistry {
 			if (PipelinePackage.eINSTANCE.getFile().isSuperTypeOf(domainElement.eClass())) {
 				return FileEditPart.VISUAL_ID;
 			}
+			if (PipelinePackage.eINSTANCE.getSchema().isSuperTypeOf(domainElement.eClass())) {
+				return SchemaEditPart.VISUAL_ID;
+			}
 			break;
 		case CollectionTaskCollectionTaskImportsCompartmentEditPart.VISUAL_ID:
 			if (PipelinePackage.eINSTANCE.getImport().isSuperTypeOf(domainElement.eClass())) {
@@ -243,6 +262,21 @@ public class PipelineVisualIDRegistry {
 		case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
 			if (PipelinePackage.eINSTANCE.getExport().isSuperTypeOf(domainElement.eClass())) {
 				return ExportEditPart.VISUAL_ID;
+			}
+			break;
+		case SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID:
+			if (PipelinePackage.eINSTANCE.getAttribute().isSuperTypeOf(domainElement.eClass())) {
+				return AttributeEditPart.VISUAL_ID;
+			}
+			break;
+		case AttributeAttributeAttributesCompartmentEditPart.VISUAL_ID:
+			if (PipelinePackage.eINSTANCE.getAttribute().isSuperTypeOf(domainElement.eClass())) {
+				return Attribute2EditPart.VISUAL_ID;
+			}
+			break;
+		case AttributeAttributeAttributesCompartment2EditPart.VISUAL_ID:
+			if (PipelinePackage.eINSTANCE.getAttribute().isSuperTypeOf(domainElement.eClass())) {
+				return Attribute2EditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -309,6 +343,9 @@ public class PipelineVisualIDRegistry {
 				return true;
 			}
 			if (FileEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (SchemaEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -394,6 +431,11 @@ public class PipelineVisualIDRegistry {
 				return true;
 			}
 			break;
+		case SchemaEditPart.VISUAL_ID:
+			if (SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case ImportEditPart.VISUAL_ID:
 			if (ImportNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -434,6 +476,22 @@ public class PipelineVisualIDRegistry {
 				return true;
 			}
 			break;
+		case AttributeEditPart.VISUAL_ID:
+			if (AttributeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AttributeAttributeAttributesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case Attribute2EditPart.VISUAL_ID:
+			if (AttributeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AttributeAttributeAttributesCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case CollectionTaskCollectionTaskImportsCompartmentEditPart.VISUAL_ID:
 			if (ImportEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -466,13 +524,48 @@ public class PipelineVisualIDRegistry {
 				return true;
 			}
 			break;
-		case ImportReadsFromEditPart.VISUAL_ID:
+		case SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID:
+			if (AttributeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case AttributeAttributeAttributesCompartmentEditPart.VISUAL_ID:
+			if (Attribute2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case AttributeAttributeAttributesCompartment2EditPart.VISUAL_ID:
+			if (Attribute2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case DataFlowDFschemaEditPart.VISUAL_ID:
 			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ExportGeneratesEditPart.VISUAL_ID:
+		case InternalDataFlowIntDFschemaEditPart.VISUAL_ID:
 			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ImportReadsFromEditPart.VISUAL_ID:
+			if (WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ImportImpUsesEditPart.VISUAL_ID:
+			if (WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ExportGeneratesEditPart.VISUAL_ID:
+			if (WrappingLabel5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ExportExpUsesEditPart.VISUAL_ID:
+			if (WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -527,6 +620,9 @@ public class PipelineVisualIDRegistry {
 		case CleaningTaskCleaningTaskOperationsCompartmentEditPart.VISUAL_ID:
 		case AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID:
 		case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
+		case SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID:
+		case AttributeAttributeAttributesCompartmentEditPart.VISUAL_ID:
+		case AttributeAttributeAttributesCompartment2EditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

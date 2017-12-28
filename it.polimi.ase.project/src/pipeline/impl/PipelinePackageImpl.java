@@ -339,7 +339,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPipeline_Sources() {
+	public EReference getPipeline_InputSources() {
 		return (EReference)pipelineEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -348,7 +348,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPipeline_Files() {
+	public EReference getPipeline_OutputFiles() {
 		return (EReference)pipelineEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -359,6 +359,15 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 */
 	public EReference getPipeline_Operations() {
 		return (EReference)pipelineEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPipeline_Schemas() {
+		return (EReference)pipelineEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -429,7 +438,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataFlow_Schema() {
+	public EReference getDataFlow_Target() {
 		return (EReference)dataFlowEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -438,7 +447,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataFlow_Target() {
+	public EReference getDataFlow_Source() {
 		return (EReference)dataFlowEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -447,7 +456,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataFlow_Source() {
+	public EReference getDataFlow_DFschema() {
 		return (EReference)dataFlowEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -510,7 +519,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInternalDataFlow_Schema() {
+	public EReference getInternalDataFlow_Source() {
 		return (EReference)internalDataFlowEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -519,7 +528,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInternalDataFlow_Source() {
+	public EReference getInternalDataFlow_Target() {
 		return (EReference)internalDataFlowEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -528,7 +537,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInternalDataFlow_Target() {
+	public EReference getInternalDataFlow_IntDFschema() {
 		return (EReference)internalDataFlowEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -548,6 +557,15 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 */
 	public EReference getSchema_Attributes() {
 		return (EReference)schemaEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSchema_Name() {
+		return (EAttribute)schemaEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -717,7 +735,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getImport_Uses() {
+	public EReference getImport_ImpUses() {
 		return (EReference)importEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -753,7 +771,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExport_Uses() {
+	public EReference getExport_ExpUses() {
 		return (EReference)exportEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -952,9 +970,10 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEReference(pipelineEClass, PIPELINE__TASKS);
 		createEAttribute(pipelineEClass, PIPELINE__ID);
 		createEReference(pipelineEClass, PIPELINE__INTERNAL_DATA_FLOWS);
-		createEReference(pipelineEClass, PIPELINE__SOURCES);
-		createEReference(pipelineEClass, PIPELINE__FILES);
+		createEReference(pipelineEClass, PIPELINE__INPUT_SOURCES);
+		createEReference(pipelineEClass, PIPELINE__OUTPUT_FILES);
 		createEReference(pipelineEClass, PIPELINE__OPERATIONS);
+		createEReference(pipelineEClass, PIPELINE__SCHEMAS);
 
 		taskEClass = createEClass(TASK);
 		createEAttribute(taskEClass, TASK__ID);
@@ -964,9 +983,9 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		dataFlowEClass = createEClass(DATA_FLOW);
 		createEAttribute(dataFlowEClass, DATA_FLOW__FORMAT);
-		createEReference(dataFlowEClass, DATA_FLOW__SCHEMA);
 		createEReference(dataFlowEClass, DATA_FLOW__TARGET);
 		createEReference(dataFlowEClass, DATA_FLOW__SOURCE);
+		createEReference(dataFlowEClass, DATA_FLOW__DFSCHEMA);
 
 		operationEClass = createEClass(OPERATION);
 		createEAttribute(operationEClass, OPERATION__NAME);
@@ -975,12 +994,13 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		internalDataFlowEClass = createEClass(INTERNAL_DATA_FLOW);
 		createEAttribute(internalDataFlowEClass, INTERNAL_DATA_FLOW__FORMAT);
-		createEReference(internalDataFlowEClass, INTERNAL_DATA_FLOW__SCHEMA);
 		createEReference(internalDataFlowEClass, INTERNAL_DATA_FLOW__SOURCE);
 		createEReference(internalDataFlowEClass, INTERNAL_DATA_FLOW__TARGET);
+		createEReference(internalDataFlowEClass, INTERNAL_DATA_FLOW__INT_DFSCHEMA);
 
 		schemaEClass = createEClass(SCHEMA);
 		createEReference(schemaEClass, SCHEMA__ATTRIBUTES);
+		createEAttribute(schemaEClass, SCHEMA__NAME);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEAttribute(attributeEClass, ATTRIBUTE__NAME);
@@ -1007,12 +1027,12 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		importEClass = createEClass(IMPORT);
 		createEReference(importEClass, IMPORT__READS_FROM);
-		createEReference(importEClass, IMPORT__USES);
+		createEReference(importEClass, IMPORT__IMP_USES);
 		createEAttribute(importEClass, IMPORT__NAME);
 
 		exportEClass = createEClass(EXPORT);
 		createEReference(exportEClass, EXPORT__GENERATES);
-		createEReference(exportEClass, EXPORT__USES);
+		createEReference(exportEClass, EXPORT__EXP_USES);
 		createEAttribute(exportEClass, EXPORT__NAME);
 
 		userDefinedEClass = createEClass(USER_DEFINED);
@@ -1094,9 +1114,10 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEReference(getPipeline_Tasks(), this.getTask(), null, "tasks", null, 1, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPipeline_ID(), ecorePackage.getEString(), "ID", null, 0, 1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPipeline_InternalDataFlows(), this.getInternalDataFlow(), null, "internalDataFlows", null, 0, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPipeline_Sources(), this.getSource(), null, "sources", null, 1, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPipeline_Files(), this.getFile(), null, "files", null, 0, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPipeline_InputSources(), this.getSource(), null, "inputSources", null, 1, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPipeline_OutputFiles(), this.getFile(), null, "outputFiles", null, 0, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPipeline_Operations(), this.getOperation(), null, "operations", null, 1, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPipeline_Schemas(), this.getSchema(), null, "schemas", null, 1, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(taskEClass, Task.class, "Task", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTask_ID(), ecorePackage.getEString(), "ID", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1106,9 +1127,9 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		initEClass(dataFlowEClass, DataFlow.class, "DataFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataFlow_Format(), this.getFormat(), "format", null, 0, 1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataFlow_Schema(), this.getSchema(), null, "schema", null, 1, 1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataFlow_Target(), this.getTask(), this.getTask_Incoming(), "target", null, 0, 1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataFlow_Source(), this.getTask(), this.getTask_Outgoing(), "source", null, 0, 1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataFlow_DFschema(), this.getSchema(), null, "DFschema", null, 1, 1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationEClass, Operation.class, "Operation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1117,12 +1138,13 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		initEClass(internalDataFlowEClass, InternalDataFlow.class, "InternalDataFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInternalDataFlow_Format(), this.getFormat(), "format", null, 0, 1, InternalDataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInternalDataFlow_Schema(), this.getSchema(), null, "schema", null, 1, 1, InternalDataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInternalDataFlow_Source(), this.getOperation(), this.getOperation_Outgoing(), "source", null, 0, 1, InternalDataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInternalDataFlow_Target(), this.getOperation(), this.getOperation_Incoming(), "target", null, 0, 1, InternalDataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInternalDataFlow_IntDFschema(), this.getSchema(), null, "intDFschema", null, 1, 1, InternalDataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(schemaEClass, Schema.class, "Schema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSchema_Attributes(), this.getAttribute(), null, "attributes", null, 1, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSchema_Name(), ecorePackage.getEString(), "name", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1149,12 +1171,12 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getImport_ReadsFrom(), this.getSource(), this.getSource_LinkedTo(), "readsFrom", null, 1, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getImport_Uses(), this.getSchema(), null, "uses", null, 1, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImport_ImpUses(), this.getSchema(), null, "impUses", null, 1, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImport_Name(), ecorePackage.getEString(), "name", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exportEClass, Export.class, "Export", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExport_Generates(), this.getFile(), this.getFile_ComesFrom(), "generates", null, 1, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExport_Uses(), this.getSchema(), null, "uses", null, 1, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExport_ExpUses(), this.getSchema(), null, "expUses", null, 1, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExport_Name(), ecorePackage.getEString(), "name", null, 0, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(userDefinedEClass, UserDefined.class, "UserDefined", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1242,6 +1264,14 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 			 "figure", "ellipse"
 		   });	
 		addAnnotation
+		  (schemaEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name",
+			 "label.placement", "none",
+			 "figure", "rounded"
+		   });	
+		addAnnotation
 		  (attributeEClass, 
 		   source, 
 		   new String[] {
@@ -1274,13 +1304,6 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		   source, 
 		   new String[] {
 			 "label", "name"
-		   });	
-		addAnnotation
-		  (descriptiveEClass, 
-		   source, 
-		   new String[] {
-			 "label", "name",
-			 "figure", "ellipse"
 		   });
 	}
 
@@ -1302,12 +1325,28 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 			 "target.decoration", "closedarrow"
 		   });	
 		addAnnotation
+		  (getDataFlow_DFschema(), 
+		   source, 
+		   new String[] {
+			 "width", "1",
+			 "target.decoration", "arrow",
+			 "style", "dash"
+		   });	
+		addAnnotation
 		  (internalDataFlowEClass, 
 		   source, 
 		   new String[] {
 			 "source", "source",
 			 "target", "target",
 			 "width", "2",
+			 "target.decoration", "arrow",
+			 "style", "dash"
+		   });	
+		addAnnotation
+		  (getInternalDataFlow_IntDFschema(), 
+		   source, 
+		   new String[] {
+			 "width", "1",
 			 "target.decoration", "arrow",
 			 "style", "dash"
 		   });	
@@ -1320,12 +1359,26 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 			 "style", "dash"
 		   });	
 		addAnnotation
+		  (getImport_ImpUses(), 
+		   source, 
+		   new String[] {
+			 "width", "1",
+			 "target.decoration", "arrow"
+		   });	
+		addAnnotation
 		  (getExport_Generates(), 
 		   source, 
 		   new String[] {
 			 "width", "2",
 			 "target.decoration", "square",
 			 "style", "dash"
+		   });	
+		addAnnotation
+		  (getExport_ExpUses(), 
+		   source, 
+		   new String[] {
+			 "width", "1",
+			 "target.decoration", "arrow"
 		   });
 	}
 
@@ -1341,6 +1394,13 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		  (getSchema_Attributes(), 
 		   source, 
 		   new String[] {
+			 "layout", "list"
+		   });	
+		addAnnotation
+		  (getAttribute_Attributes(), 
+		   source, 
+		   new String[] {
+			 "layout", "list"
 		   });	
 		addAnnotation
 		  (getCollectionTask_Imports(), 

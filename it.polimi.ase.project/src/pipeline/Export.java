@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pipeline.Export#getGenerates <em>Generates</em>}</li>
- *   <li>{@link pipeline.Export#getUses <em>Uses</em>}</li>
+ *   <li>{@link pipeline.Export#getExpUses <em>Exp Uses</em>}</li>
  *   <li>{@link pipeline.Export#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -53,30 +53,31 @@ public interface Export extends EObject {
 	void setGenerates(File value);
 
 	/**
-	 * Returns the value of the '<em><b>Uses</b></em>' reference.
+	 * Returns the value of the '<em><b>Exp Uses</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Uses</em>' reference isn't clear,
+	 * If the meaning of the '<em>Exp Uses</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uses</em>' reference.
-	 * @see #setUses(Schema)
-	 * @see pipeline.PipelinePackage#getExport_Uses()
+	 * @return the value of the '<em>Exp Uses</em>' reference.
+	 * @see #setExpUses(Schema)
+	 * @see pipeline.PipelinePackage#getExport_ExpUses()
 	 * @model required="true"
+	 *        annotation="gmf.link width='1' target.decoration='arrow'"
 	 * @generated
 	 */
-	Schema getUses();
+	Schema getExpUses();
 
 	/**
-	 * Sets the value of the '{@link pipeline.Export#getUses <em>Uses</em>}' reference.
+	 * Sets the value of the '{@link pipeline.Export#getExpUses <em>Exp Uses</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uses</em>' reference.
-	 * @see #getUses()
+	 * @param value the new value of the '<em>Exp Uses</em>' reference.
+	 * @see #getExpUses()
 	 * @generated
 	 */
-	void setUses(Schema value);
+	void setExpUses(Schema value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

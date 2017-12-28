@@ -26,13 +26,9 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.Classification2EditPart;
-import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.Clustering2EditPart;
-import pipeline.diagram.edit.parts.ClusteringEditPart;
 import pipeline.diagram.edit.parts.Descriptive2EditPart;
-import pipeline.diagram.edit.parts.DescriptiveEditPart;
 import pipeline.diagram.edit.parts.Predictive2EditPart;
-import pipeline.diagram.edit.parts.PredictiveEditPart;
 import pipeline.diagram.part.PipelineDiagramUpdater;
 import pipeline.diagram.part.PipelineNodeDescriptor;
 import pipeline.diagram.part.PipelineVisualIDRegistry;

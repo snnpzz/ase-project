@@ -18,6 +18,8 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
+import pipeline.diagram.edit.parts.AttributeName2EditPart;
+import pipeline.diagram.edit.parts.AttributeNameEditPart;
 import pipeline.diagram.edit.parts.ClassificationName2EditPart;
 import pipeline.diagram.edit.parts.ClassificationNameEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskIDEditPart;
@@ -254,35 +256,35 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 	/**
 	* @generated
 	*/
-	private IParser sourceName_5084Parser;
+	private IParser sourceName_5086Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getSourceName_5084Parser() {
-		if (sourceName_5084Parser == null) {
+	private IParser getSourceName_5086Parser() {
+		if (sourceName_5086Parser == null) {
 			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getSource_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			sourceName_5084Parser = parser;
+			sourceName_5086Parser = parser;
 		}
-		return sourceName_5084Parser;
+		return sourceName_5086Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser fileName_5085Parser;
+	private IParser fileName_5087Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getFileName_5085Parser() {
-		if (fileName_5085Parser == null) {
+	private IParser getFileName_5087Parser() {
+		if (fileName_5087Parser == null) {
 			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getFile_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			fileName_5085Parser = parser;
+			fileName_5087Parser = parser;
 		}
-		return fileName_5085Parser;
+		return fileName_5087Parser;
 	}
 
 	/**
@@ -424,6 +426,40 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 	/**
 	* @generated
 	*/
+	private IParser attributeName_5089Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getAttributeName_5089Parser() {
+		if (attributeName_5089Parser == null) {
+			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getAttribute_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			attributeName_5089Parser = parser;
+		}
+		return attributeName_5089Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser attributeName_5088Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getAttributeName_5088Parser() {
+		if (attributeName_5088Parser == null) {
+			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getAttribute_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			attributeName_5088Parser = parser;
+		}
+		return attributeName_5088Parser;
+	}
+
+	/**
+	* @generated
+	*/
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case UserDefinedNameEditPart.VISUAL_ID:
@@ -451,9 +487,9 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 		case ExportTaskIDEditPart.VISUAL_ID:
 			return getExportTaskID_5077Parser();
 		case SourceNameEditPart.VISUAL_ID:
-			return getSourceName_5084Parser();
+			return getSourceName_5086Parser();
 		case FileNameEditPart.VISUAL_ID:
-			return getFileName_5085Parser();
+			return getFileName_5087Parser();
 		case ImportNameEditPart.VISUAL_ID:
 			return getImportName_5057Parser();
 		case UserDefinedName2EditPart.VISUAL_ID:
@@ -470,6 +506,10 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 			return getClusteringName_5074Parser();
 		case ExportNameEditPart.VISUAL_ID:
 			return getExportName_5076Parser();
+		case AttributeNameEditPart.VISUAL_ID:
+			return getAttributeName_5089Parser();
+		case AttributeName2EditPart.VISUAL_ID:
+			return getAttributeName_5088Parser();
 		}
 		return null;
 	}

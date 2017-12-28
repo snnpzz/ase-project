@@ -21,6 +21,7 @@ import pipeline.diagram.edit.commands.FileCreateCommand;
 import pipeline.diagram.edit.commands.IntegrationTaskCreateCommand;
 import pipeline.diagram.edit.commands.PredefinedCreateCommand;
 import pipeline.diagram.edit.commands.PredictiveCreateCommand;
+import pipeline.diagram.edit.commands.SchemaCreateCommand;
 import pipeline.diagram.edit.commands.SourceCreateCommand;
 import pipeline.diagram.edit.commands.UserDefinedCreateCommand;
 import pipeline.diagram.edit.commands.VisualizationTaskCreateCommand;
@@ -78,11 +79,14 @@ public class PipelineItemSemanticEditPolicy extends PipelineBaseItemSemanticEdit
 		if (PipelineElementTypes.ExportTask_2032 == req.getElementType()) {
 			return getGEFWrapper(new ExportTaskCreateCommand(req));
 		}
-		if (PipelineElementTypes.Source_2039 == req.getElementType()) {
+		if (PipelineElementTypes.Source_2041 == req.getElementType()) {
 			return getGEFWrapper(new SourceCreateCommand(req));
 		}
-		if (PipelineElementTypes.File_2040 == req.getElementType()) {
+		if (PipelineElementTypes.File_2042 == req.getElementType()) {
 			return getGEFWrapper(new FileCreateCommand(req));
+		}
+		if (PipelineElementTypes.Schema_2043 == req.getElementType()) {
+			return getGEFWrapper(new SchemaCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

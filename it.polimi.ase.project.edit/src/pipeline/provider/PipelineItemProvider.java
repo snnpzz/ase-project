@@ -105,9 +105,10 @@ public class PipelineItemProvider
 			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__DATA_FLOWS);
 			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__TASKS);
 			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__INTERNAL_DATA_FLOWS);
-			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__SOURCES);
-			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__FILES);
+			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__INPUT_SOURCES);
+			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__OUTPUT_FILES);
 			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__OPERATIONS);
+			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__SCHEMAS);
 		}
 		return childrenFeatures;
 	}
@@ -169,9 +170,10 @@ public class PipelineItemProvider
 			case PipelinePackage.PIPELINE__DATA_FLOWS:
 			case PipelinePackage.PIPELINE__TASKS:
 			case PipelinePackage.PIPELINE__INTERNAL_DATA_FLOWS:
-			case PipelinePackage.PIPELINE__SOURCES:
-			case PipelinePackage.PIPELINE__FILES:
+			case PipelinePackage.PIPELINE__INPUT_SOURCES:
+			case PipelinePackage.PIPELINE__OUTPUT_FILES:
 			case PipelinePackage.PIPELINE__OPERATIONS:
+			case PipelinePackage.PIPELINE__SCHEMAS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -231,12 +233,12 @@ public class PipelineItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.PIPELINE__SOURCES,
+				(PipelinePackage.Literals.PIPELINE__INPUT_SOURCES,
 				 PipelineFactory.eINSTANCE.createSource()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.PIPELINE__FILES,
+				(PipelinePackage.Literals.PIPELINE__OUTPUT_FILES,
 				 PipelineFactory.eINSTANCE.createFile()));
 
 		newChildDescriptors.add
@@ -268,6 +270,11 @@ public class PipelineItemProvider
 			(createChildParameter
 				(PipelinePackage.Literals.PIPELINE__OPERATIONS,
 				 PipelineFactory.eINSTANCE.createPredefined()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PipelinePackage.Literals.PIPELINE__SCHEMAS,
+				 PipelineFactory.eINSTANCE.createSchema()));
 	}
 
 	/**

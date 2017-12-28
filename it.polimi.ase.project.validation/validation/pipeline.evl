@@ -6,7 +6,7 @@ context Task {
 			select(t|t.isTypeOf(AnalysisTask)).size() <= 1 and
 			select(t|t.isTypeOf(VisualizationTask)).size() <= 1 and
 			select(t|t.isTypeOf(ExportTask)).size() <= 1
-		message: 'Tasks must be unique!'
+		message: 'There can be at most 1 task per type.'
 	}
 	
 	constraint mandatoryTasks {
@@ -21,14 +21,14 @@ context Task {
 context CollectionTask {
 	constraint initialTask {
 		check: self.incoming -> size() == 0
-		message: "Collection task can't have incoming dataflow!"
+		message: "Collection Task can't have an incoming data flow."
 	}
 }
 
 context ExportTask {
 	constraint finalTask {
 		check: self.outgoing -> size() == 0
-		message: "Exporting task can't have outgoing dataflow!"
+		message: "Exporting Task can't have an outgoing data flow."
 	}
 	
 }

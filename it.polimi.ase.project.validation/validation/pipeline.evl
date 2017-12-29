@@ -49,16 +49,11 @@ context Pipeline {
 		message: "Analysis operations can be linked only to analysis operations"
 	}
 	
-	constraint uniqueIntDF {
-		check: self.operations.outgoing -> size() <= 1
-		message: "Operations can have at maximum one outgoing internal dataflow"
-	}
-	
 	constraint sameIntDFschemaClean {
 		check: self.internalDataFlows -> select(DF1 | DF1.source.isKindOf(CleaningOperation) and 
 			DF1.target.isKindOf(CleaningOperation)) -> forAll(d1 | self.internalDataFlows -> 
 			select(DF2 | DF2.source.isKindOf(CleaningOperation) and DF2.target.isKindOf(CleaningOperation)) ->
-			forAll(d2 | d1.intDFschema == d2.intDFschema))
+			forAll(d2 | d1 <> d2 implies d1.intDFschema == d2.intDFschema))
 		message: "Dataflows between cleaning operations must be linked to the same schema"
 	}
 	
@@ -68,6 +63,20 @@ context Pipeline {
 			select(DF2 | DF2.source.isKindOf(AnalysisOperation) and DF2.target.isKindOf(AnalysisOperation)) ->
 			forAll(d2 | d1.intDFschema == d2.intDFschema))
 		message: "Dataflows between analysis operations must be linked to the same schema"
+	}
+	
+	constraint DFbetweenCleanOper {
+		check: self.tasks -> collect(t:CleaningTask | t.operations -> size()) -> sum() == 
+			(self.internalDataFlows -> select(d | d.source.isKindOf(CleaningOperation) and 
+			d.target.isKindOf(CleaningOperation)) -> size() + 1)
+		message: "Missing one or more dataflows between cleaning operations"
+	}
+	
+	constraint DFbetweenAnalyzesOper {
+		check: self.tasks -> collect(t:AnalysisTask | t.analyzes -> size()) -> sum() == 
+			(self.internalDataFlows -> select(d | d.source.isKindOf(AnalysisOperation) and 
+			d.target.isKindOf(AnalysisOperation)) -> size() + 1)
+		message: "Missing one or more dataflows between analysis operations"
 	}
 	
 }
@@ -102,6 +111,16 @@ context CleaningTask {
 		message: "Cleaning task can be linked only to analysis task"
 	}
 	
+	constraint uniqueIntDFin {
+		check: self.operations -> forAll(o | o.outgoing -> size() <= 1)
+		message: "Cleaning operations can have at maximum one outgoing internal dataflow"
+	}
+	
+	constraint uniqueIntDFout {
+		check: self.operations -> forAll(o | o.incoming -> size() <= 1)
+		message: "Cleaning operations can have at maximum one incoming internal dataflow"
+	}
+	
 }
 
 
@@ -110,6 +129,16 @@ context AnalysisTask {
 		check: self.outgoing.target -> select(t | t.isTypeOf(CollectionTask) or t.isTypeOf(IntegrationTask) or
 			t.isTypeOf(CleaningTask) or t.isTypeOf(AnalysisTask)) -> size() == 0
 		message: "Analysis task must be linked to visualization or export task"
+	}
+	
+	constraint uniqueIntDFin {
+		check: self.analyzes -> forAll(o | o.outgoing -> size() <= 1)
+		message: "Analyzes operations can have at maximum one outgoing internal dataflow"
+	}
+	
+	constraint uniqueIntDFout {
+		check: self.analyzes -> forAll(o | o.incoming -> size() <= 1)
+		message: "Analyzes operations can have at maximum one incoming internal dataflow"
 	}
 }
 
@@ -145,3 +174,4 @@ context Attribute {
 		message: "There can't be more attributes with the same name!"
 	}	
 }
+

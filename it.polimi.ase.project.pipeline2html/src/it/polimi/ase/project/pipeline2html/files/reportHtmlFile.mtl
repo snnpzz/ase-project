@@ -55,25 +55,7 @@
 							</thead>
 							<tbody>
 								[for (aTask : Task | aPipeline.tasks)]
-									<tr>
-										<td>1</td>
-										<td>[aTask.ID/]</td>
-										<td>
-											[if (aTask.oclIsTypeOf(CollectionTask))]
-												Data Collection
-											[elseif (aTask.oclIsTypeOf(IntegrationTask))]
-												Data Integration
-											[elseif (aTask.oclIsTypeOf(CleaningTask))]
-												Data Cleaning
-											[elseif (aTask.oclIsTypeOf(AnalysisTask))]
-												Data Analysis
-											[elseif (aTask.oclIsTypeOf(VisualizationTask))]
-												Data Visualization
-											[elseif (aTask.oclIsTypeOf(ExportTask))]
-												Data Export
-											[/if]
-										</td>
-									</tr>
+									[aTask.generateTask()/]
 								[/for]
 							</tbody>
 						</table>
@@ -88,4 +70,26 @@
 	</body>
 </html>
 [/file]
+[/template]
+
+[template private generateTask(aTask : Task)]
+<tr>
+	<td>1</td>
+	<td>[aTask.ID/]</td>
+	<td>
+		[if (aTask.oclIsTypeOf(CollectionTask))]
+			Data Collection
+		[elseif (aTask.oclIsTypeOf(IntegrationTask))]
+			Data Integration
+		[elseif (aTask.oclIsTypeOf(CleaningTask))]
+			Data Cleaning
+		[elseif (aTask.oclIsTypeOf(AnalysisTask))]
+			Data Analysis
+		[elseif (aTask.oclIsTypeOf(VisualizationTask))]
+			Data Visualization
+		[elseif (aTask.oclIsTypeOf(ExportTask))]
+			Data Export
+		[/if]
+	</td>
+</tr>
 [/template]

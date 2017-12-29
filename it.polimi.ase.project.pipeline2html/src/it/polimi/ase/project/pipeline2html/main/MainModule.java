@@ -29,13 +29,13 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  *
  * @generated
  */
-public class PipelineToHtml extends AbstractAcceleoGenerator {
+public class MainModule extends AbstractAcceleoGenerator {
     /**
      * The name of the module.
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/it/polimi/ase/project/pipeline2html/main/pipelineToHtml";
+    public static final String MODULE_FILE_NAME = "/it/polimi/ase/project/pipeline2html/main/mainModule";
     
     /**
      * The name of the templates that are to be generated.
@@ -65,7 +65,7 @@ public class PipelineToHtml extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public PipelineToHtml() {
+    public MainModule() {
         // Empty implementation
     }
 
@@ -85,7 +85,7 @@ public class PipelineToHtml extends AbstractAcceleoGenerator {
      *             the model cannot be loaded.
      * @generated
      */
-    public PipelineToHtml(URI modelURI, File targetFolder,
+    public MainModule(URI modelURI, File targetFolder,
             List<? extends Object> arguments) throws IOException {
         initialize(modelURI, targetFolder, arguments);
     }
@@ -106,7 +106,7 @@ public class PipelineToHtml extends AbstractAcceleoGenerator {
      *             This can be thrown in two scenarios : the module cannot be found, or it cannot be loaded.
      * @generated
      */
-    public PipelineToHtml(EObject model, File targetFolder,
+    public MainModule(EObject model, File targetFolder,
             List<? extends Object> arguments) throws IOException {
         initialize(model, targetFolder, arguments);
     }
@@ -141,7 +141,7 @@ public class PipelineToHtml extends AbstractAcceleoGenerator {
                  * add in "arguments" this "String" attribute.
                  */
                 
-                PipelineToHtml generator = new PipelineToHtml(modelURI, folder, arguments);
+                MainModule generator = new MainModule(modelURI, folder, arguments);
                 
                 /*
                  * Add the properties from the launch arguments.

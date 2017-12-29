@@ -1,4 +1,4 @@
-# ase-project
+﻿# ase-project
 ## Advanced Software Engineering Project
 Design a modeling language that supports the specification of data analysis pipelines over integrated web, social media and IoT (Internet of Things) sources.  
 A pipeline is described as a flow or process of individual tasks applied over the data.  
@@ -7,7 +7,7 @@ Tasks are connected by data flows that define the sequence and the exchange of i
 * The **data collection** tasks specify input sources (file, db, rest service, etc.), its format (json, csv, …), its query endpoint and condition(s), and the input data schema (attributes and types). 
 * The **data integration** tasks specify two or more inputs and fuse the data based on a value-matching approach, by specifying the attributes over which to perform “the join” and the attributes to produce in output.
 * **Data cleaning** tasks define operations to be run on the data. Some predefined ones are there (e.g., remove nulls, format data, …) . Further extensions must be allowed to support custom cleaning functions.
-* The **data analysis** tasks are further classified by category (description, classification, clustering, prediction).  For each category, a list of predefined analyses are available and can be chosen.When used in a pipeline, the task defines the type of analysis to be applied on the data with the needed parameters, input and output.
+* The **data analysis** tasks are further classified by category (description, classification, clustering, prediction).  For each category, a list of predefined analyses are available and can be chosen. When used in a pipeline, the task defines the type of analysis to be applied on the data with the needed parameters, input and output.
 * **Data visualization** tasks produce graphs and diagrams out of the data. 
 * **Export tasks** produce output files in various formats.
 

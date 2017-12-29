@@ -35,8 +35,8 @@ import pipeline.diagram.edit.parts.ClusteringNameEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskCollectionTaskImportsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskIDEditPart;
-import pipeline.diagram.edit.parts.DataFlowDFschemaEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
+import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.Descriptive2EditPart;
 import pipeline.diagram.edit.parts.DescriptiveEditPart;
 import pipeline.diagram.edit.parts.DescriptiveName2EditPart;
@@ -539,7 +539,7 @@ public class PipelineVisualIDRegistry {
 				return true;
 			}
 			break;
-		case DataFlowDFschemaEditPart.VISUAL_ID:
+		case DataFlowSchemaEditPart.VISUAL_ID:
 			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}

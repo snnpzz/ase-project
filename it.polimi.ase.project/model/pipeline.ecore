@@ -43,7 +43,7 @@
         eOpposite="#//Task/incoming"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Task"
         eOpposite="#//Task/outgoing"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="DFschema" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schema" lowerBound="1"
         eType="#//Schema">
       <eAnnotations source="gmf.link">
         <details key="width" value="1"/>
@@ -220,6 +220,6 @@
     <eLiterals name="txt"/>
     <eLiterals name="csv"/>
     <eLiterals name="json"/>
-    <eLiterals name="xml"/>
+    <eLiterals name="XML"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -202,8 +202,8 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case InternalDataFlowEditPart.VISUAL_ID:
 				return new InternalDataFlowEditPart(view);
 
-			case DataFlowDFschemaEditPart.VISUAL_ID:
-				return new DataFlowDFschemaEditPart(view);
+			case DataFlowSchemaEditPart.VISUAL_ID:
+				return new DataFlowSchemaEditPart(view);
 
 			case WrappingLabelEditPart.VISUAL_ID:
 				return new WrappingLabelEditPart(view);

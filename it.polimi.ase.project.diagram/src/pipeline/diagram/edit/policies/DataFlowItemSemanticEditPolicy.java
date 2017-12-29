@@ -9,9 +9,9 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 
-import pipeline.diagram.edit.commands.DataFlowDFschemaCreateCommand;
-import pipeline.diagram.edit.commands.DataFlowDFschemaReorientCommand;
-import pipeline.diagram.edit.parts.DataFlowDFschemaEditPart;
+import pipeline.diagram.edit.commands.DataFlowSchemaCreateCommand;
+import pipeline.diagram.edit.commands.DataFlowSchemaReorientCommand;
+import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
 import pipeline.diagram.providers.PipelineElementTypes;
 
 /**
@@ -46,8 +46,8 @@ public class DataFlowItemSemanticEditPolicy extends PipelineBaseItemSemanticEdit
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.DataFlowDFschema_4017 == req.getElementType()) {
-			return getGEFWrapper(new DataFlowDFschemaCreateCommand(req, req.getSource(), req.getTarget()));
+		if (PipelineElementTypes.DataFlowSchema_4019 == req.getElementType()) {
+			return getGEFWrapper(new DataFlowSchemaCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -56,7 +56,7 @@ public class DataFlowItemSemanticEditPolicy extends PipelineBaseItemSemanticEdit
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.DataFlowDFschema_4017 == req.getElementType()) {
+		if (PipelineElementTypes.DataFlowSchema_4019 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -70,8 +70,8 @@ public class DataFlowItemSemanticEditPolicy extends PipelineBaseItemSemanticEdit
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case DataFlowDFschemaEditPart.VISUAL_ID:
-			return getGEFWrapper(new DataFlowDFschemaReorientCommand(req));
+		case DataFlowSchemaEditPart.VISUAL_ID:
+			return getGEFWrapper(new DataFlowSchemaReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

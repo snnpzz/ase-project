@@ -447,7 +447,7 @@
         href="pipeline.ecore#//Pipeline/dataFlows"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="pipeline.gmftool#//@palette/@tools.1/@tools.1"/>
+        href="pipeline.gmftool#//@palette/@tools.1/@tools.0"/>
     <diagramLink
         href="pipeline.gmfgraph#DataFlow"/>
     <sourceMetaFeature
@@ -464,7 +464,7 @@
         href="pipeline.ecore#//Pipeline/internalDataFlows"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="pipeline.gmftool#//@palette/@tools.1/@tools.6"/>
+        href="pipeline.gmftool#//@palette/@tools.1/@tools.5"/>
     <diagramLink
         href="pipeline.gmfgraph#InternalDataFlow"/>
     <sourceMetaFeature
@@ -479,16 +479,16 @@
         xsi:type="gmfmap:DesignLabelMapping"
         readOnly="true">
       <diagramLabel
-          href="pipeline.gmfgraph#DataFlowDFschemaExternalLabel"/>
+          href="pipeline.gmfgraph#DataFlowSchemaExternalLabel"/>
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="pipeline.gmftool#//@palette/@tools.1/@tools.0"/>
+        href="pipeline.gmftool#//@palette/@tools.1/@tools.7"/>
     <diagramLink
-        href="pipeline.gmfgraph#DataFlowDFschema"/>
+        href="pipeline.gmfgraph#DataFlowSchema"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="pipeline.ecore#//DataFlow/DFschema"/>
+        href="pipeline.ecore#//DataFlow/schema"/>
   </links>
   <links>
     <labelMappings
@@ -499,7 +499,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="pipeline.gmftool#//@palette/@tools.1/@tools.5"/>
+        href="pipeline.gmftool#//@palette/@tools.1/@tools.4"/>
     <diagramLink
         href="pipeline.gmfgraph#InternalDataFlowIntDFschema"/>
     <linkMetaFeature
@@ -515,7 +515,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="pipeline.gmftool#//@palette/@tools.1/@tools.7"/>
+        href="pipeline.gmftool#//@palette/@tools.1/@tools.6"/>
     <diagramLink
         href="pipeline.gmfgraph#ImportReadsFrom"/>
     <linkMetaFeature
@@ -531,7 +531,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="pipeline.gmftool#//@palette/@tools.1/@tools.4"/>
+        href="pipeline.gmftool#//@palette/@tools.1/@tools.3"/>
     <diagramLink
         href="pipeline.gmfgraph#ImportImpUses"/>
     <linkMetaFeature
@@ -547,7 +547,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="pipeline.gmftool#//@palette/@tools.1/@tools.3"/>
+        href="pipeline.gmftool#//@palette/@tools.1/@tools.2"/>
     <diagramLink
         href="pipeline.gmfgraph#ExportGenerates"/>
     <linkMetaFeature
@@ -563,7 +563,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="pipeline.gmftool#//@palette/@tools.1/@tools.2"/>
+        href="pipeline.gmftool#//@palette/@tools.1/@tools.1"/>
     <diagramLink
         href="pipeline.gmfgraph#ExportExpUses"/>
     <linkMetaFeature

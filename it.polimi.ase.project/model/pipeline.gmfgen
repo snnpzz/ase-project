@@ -456,14 +456,14 @@
         <targetMetaFeature href="pipeline.genmodel#//pipeline/InternalDataFlow/target"/>
       </modelFacet>
     </links>
-    <links visualID="4017" editPartClassName="DataFlowDFschemaEditPart" itemSemanticEditPolicyClassName="DataFlowDFschemaItemSemanticEditPolicy" createCommandClassName="DataFlowDFschemaCreateCommand" reorientCommandClassName="DataFlowDFschemaReorientCommand">
+    <links visualID="4019" editPartClassName="DataFlowSchemaEditPart" itemSemanticEditPolicyClassName="DataFlowSchemaItemSemanticEditPolicy" createCommandClassName="DataFlowSchemaCreateCommand" reorientCommandClassName="DataFlowSchemaReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:SpecializationType"/>
-      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="DataFlowDFschemaFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class DataFlowDFschemaFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public DataFlowDFschemaFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="DataFlowSchemaFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class DataFlowSchemaFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public DataFlowSchemaFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature href="pipeline.genmodel#//pipeline/DataFlow/DFschema"/>
+        <metaFeature href="pipeline.genmodel#//pipeline/DataFlow/schema"/>
       </modelFacet>
-      <labels visualID="6011" editPartClassName="WrappingLabelEditPart" itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy" readOnly="true">
+      <labels visualID="6013" editPartClassName="WrappingLabelEditPart" itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
@@ -596,7 +596,6 @@
         <entries xsi:type="gmfgen:ToolEntry" title="VisualizationTask" description="Create new VisualizationTask" genNodes="//@diagram/@topLevelNodes.10"/>
       </groups>
       <groups title="Connections" collapse="true">
-        <entries xsi:type="gmfgen:ToolEntry" title="DFschema" description="Create new DFschema" genLinks="//@diagram/@links.2"/>
         <entries xsi:type="gmfgen:ToolEntry" title="DataFlow" description="Create new DataFlow" genLinks="//@diagram/@links.0"/>
         <entries xsi:type="gmfgen:ToolEntry" title="ExpUses" description="Create new ExpUses" genLinks="//@diagram/@links.7"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Generates" description="Create new Generates" genLinks="//@diagram/@links.6"/>
@@ -604,6 +603,7 @@
         <entries xsi:type="gmfgen:ToolEntry" title="IntDFschema" description="Create new IntDFschema" genLinks="//@diagram/@links.3"/>
         <entries xsi:type="gmfgen:ToolEntry" title="InternalDataFlow" description="Create new InternalDataFlow" genLinks="//@diagram/@links.1"/>
         <entries xsi:type="gmfgen:ToolEntry" title="ReadsFrom" description="Create new ReadsFrom" genLinks="//@diagram/@links.4"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Schema" description="Create new Schema" genLinks="//@diagram/@links.2"/>
       </groups>
     </palette>
     <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="it.polimi.ase.project.diagram.general" name="Pipeline Diagram">

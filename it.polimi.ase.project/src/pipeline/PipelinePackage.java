@@ -231,13 +231,13 @@ public interface PipelinePackage extends EPackage {
 	int DATA_FLOW__SOURCE = 2;
 
 	/**
-	 * The feature id for the '<em><b>DFschema</b></em>' reference.
+	 * The feature id for the '<em><b>Schema</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW__DFSCHEMA = 3;
+	int DATA_FLOW__SCHEMA = 3;
 
 	/**
 	 * The number of structural features of the '<em>Data Flow</em>' class.
@@ -1519,15 +1519,15 @@ public interface PipelinePackage extends EPackage {
 	EReference getDataFlow_Source();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.DataFlow#getDFschema <em>DFschema</em>}'.
+	 * Returns the meta object for the reference '{@link pipeline.DataFlow#getSchema <em>Schema</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>DFschema</em>'.
-	 * @see pipeline.DataFlow#getDFschema()
+	 * @return the meta object for the reference '<em>Schema</em>'.
+	 * @see pipeline.DataFlow#getSchema()
 	 * @see #getDataFlow()
 	 * @generated
 	 */
-	EReference getDataFlow_DFschema();
+	EReference getDataFlow_Schema();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Operation <em>Operation</em>}'.
@@ -2265,12 +2265,12 @@ public interface PipelinePackage extends EPackage {
 		EReference DATA_FLOW__SOURCE = eINSTANCE.getDataFlow_Source();
 
 		/**
-		 * The meta object literal for the '<em><b>DFschema</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Schema</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_FLOW__DFSCHEMA = eINSTANCE.getDataFlow_DFschema();
+		EReference DATA_FLOW__SCHEMA = eINSTANCE.getDataFlow_Schema();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.OperationImpl <em>Operation</em>}' class.

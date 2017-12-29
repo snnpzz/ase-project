@@ -69,8 +69,8 @@ import pipeline.diagram.edit.parts.ClusteringNameEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskCollectionTaskImportsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskIDEditPart;
-import pipeline.diagram.edit.parts.DataFlowDFschemaEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
+import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.Descriptive2EditPart;
 import pipeline.diagram.edit.parts.DescriptiveEditPart;
 import pipeline.diagram.edit.parts.DescriptiveName2EditPart;
@@ -147,10 +147,10 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 	*/
 	protected boolean provides(CreateViewForKindOperation op) {
 		/*
-		    if (op.getViewKind() == Node.class)
-		      return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
-		    if (op.getViewKind() == Edge.class)
-		      return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+				if (op.getViewKind() == Node.class)
+					return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+				if (op.getViewKind() == Edge.class)
+					return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
 		*/
 		return true;
 	}
@@ -365,8 +365,8 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		case InternalDataFlowEditPart.VISUAL_ID:
 			return createInternalDataFlow_4006(getSemanticElement(semanticAdapter), containerView, index, persisted,
 					preferencesHint);
-		case DataFlowDFschemaEditPart.VISUAL_ID:
-			return createDataFlowDFschema_4017(containerView, index, persisted, preferencesHint);
+		case DataFlowSchemaEditPart.VISUAL_ID:
+			return createDataFlowSchema_4019(containerView, index, persisted, preferencesHint);
 		case InternalDataFlowIntDFschemaEditPart.VISUAL_ID:
 			return createInternalDataFlowIntDFschema_4018(containerView, index, persisted, preferencesHint);
 		case ImportReadsFromEditPart.VISUAL_ID:
@@ -1408,7 +1408,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 	/**
 	* @generated
 	*/
-	public Edge createDataFlowDFschema_4017(View containerView, int index, boolean persisted,
+	public Edge createDataFlowSchema_4019(View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
@@ -1419,7 +1419,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		bendpoints.setPoints(points);
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
-		edge.setType(PipelineVisualIDRegistry.getType(DataFlowDFschemaEditPart.VISUAL_ID));
+		edge.setType(PipelineVisualIDRegistry.getType(DataFlowSchemaEditPart.VISUAL_ID));
 		edge.setElement(null);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
@@ -1443,12 +1443,12 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		if (routing != null) {
 			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
 		}
-		Node label6011 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabelEditPart.VISUAL_ID));
-		label6011.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		label6011.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
-		Location location6011 = (Location) label6011.getLayoutConstraint();
-		location6011.setX(0);
-		location6011.setY(40);
+		Node label6013 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabelEditPart.VISUAL_ID));
+		label6013.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6013.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6013 = (Location) label6013.getLayoutConstraint();
+		location6013.setX(0);
+		location6013.setY(40);
 		return edge;
 	}
 

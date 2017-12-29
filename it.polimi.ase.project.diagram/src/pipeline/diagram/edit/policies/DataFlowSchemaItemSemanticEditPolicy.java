@@ -12,13 +12,13 @@ import pipeline.diagram.providers.PipelineElementTypes;
 /**
  * @generated
  */
-public class DataFlowDFschemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPolicy {
+public class DataFlowSchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPolicy {
 
 	/**
 	* @generated
 	*/
-	public DataFlowDFschemaItemSemanticEditPolicy() {
-		super(PipelineElementTypes.DataFlowDFschema_4017);
+	public DataFlowSchemaItemSemanticEditPolicy() {
+		super(PipelineElementTypes.DataFlowSchema_4019);
 	}
 
 	/**

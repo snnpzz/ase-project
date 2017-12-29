@@ -436,82 +436,82 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String DFschema1CreationTool_title;
+	public static String DataFlow1CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String DFschema1CreationTool_desc;
+	public static String DataFlow1CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String DataFlow2CreationTool_title;
+	public static String ExpUses2CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String DataFlow2CreationTool_desc;
+	public static String ExpUses2CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ExpUses3CreationTool_title;
+	public static String Generates3CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ExpUses3CreationTool_desc;
+	public static String Generates3CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Generates4CreationTool_title;
+	public static String ImpUses4CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Generates4CreationTool_desc;
+	public static String ImpUses4CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ImpUses5CreationTool_title;
+	public static String IntDFschema5CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ImpUses5CreationTool_desc;
+	public static String IntDFschema5CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String IntDFschema6CreationTool_title;
+	public static String InternalDataFlow6CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String IntDFschema6CreationTool_desc;
+	public static String InternalDataFlow6CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String InternalDataFlow7CreationTool_title;
+	public static String ReadsFrom7CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String InternalDataFlow7CreationTool_desc;
+	public static String ReadsFrom7CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ReadsFrom8CreationTool_title;
+	public static String Schema8CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ReadsFrom8CreationTool_desc;
+	public static String Schema8CreationTool_desc;
 
 	/**
 	* @generated
@@ -836,22 +836,22 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_DataFlowDFschema_4017_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_DataFlowDFschema_4017_source;
-
-	/**
-	* @generated
-	*/
 	public static String NavigatorGroupName_InternalDataFlowIntDFschema_4018_target;
 
 	/**
 	* @generated
 	*/
 	public static String NavigatorGroupName_InternalDataFlowIntDFschema_4018_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_DataFlowSchema_4019_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_DataFlowSchema_4019_source;
 
 	/**
 	* @generated

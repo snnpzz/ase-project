@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pipeline.DataFlow#getFormat <em>Format</em>}</li>
  *   <li>{@link pipeline.DataFlow#getTarget <em>Target</em>}</li>
  *   <li>{@link pipeline.DataFlow#getSource <em>Source</em>}</li>
- *   <li>{@link pipeline.DataFlow#getDFschema <em>DFschema</em>}</li>
+ *   <li>{@link pipeline.DataFlow#getSchema <em>Schema</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getDataFlow()
@@ -110,30 +110,30 @@ public interface DataFlow extends EObject {
 	void setSource(Task value);
 
 	/**
-	 * Returns the value of the '<em><b>DFschema</b></em>' reference.
+	 * Returns the value of the '<em><b>Schema</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>DFschema</em>' reference isn't clear,
+	 * If the meaning of the '<em>Schema</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>DFschema</em>' reference.
-	 * @see #setDFschema(Schema)
-	 * @see pipeline.PipelinePackage#getDataFlow_DFschema()
+	 * @return the value of the '<em>Schema</em>' reference.
+	 * @see #setSchema(Schema)
+	 * @see pipeline.PipelinePackage#getDataFlow_Schema()
 	 * @model required="true"
 	 *        annotation="gmf.link width='1' target.decoration='arrow' style='dash'"
 	 * @generated
 	 */
-	Schema getDFschema();
+	Schema getSchema();
 
 	/**
-	 * Sets the value of the '{@link pipeline.DataFlow#getDFschema <em>DFschema</em>}' reference.
+	 * Sets the value of the '{@link pipeline.DataFlow#getSchema <em>Schema</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>DFschema</em>' reference.
-	 * @see #getDFschema()
+	 * @param value the new value of the '<em>Schema</em>' reference.
+	 * @see #getSchema()
 	 * @generated
 	 */
-	void setDFschema(Schema value);
+	void setSchema(Schema value);
 
 } // DataFlow

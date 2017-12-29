@@ -510,7 +510,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_j4LAkeGfEeeU3dy_CQ-Szg"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_AG45EOGgEeeU3dy_CQ-Szg" type="3009">
-        <element xmi:type="ecore:EEnumLiteral" href="pipeline.ecore#//Format/xml"/>
+        <element xmi:type="ecore:EEnumLiteral" href="pipeline.ecore#//Format/XML"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_AG45EeGgEeeU3dy_CQ-Szg"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_fOEo9OGfEeeU3dy_CQ-Szg"/>
@@ -996,7 +996,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_JedPU-u6Eee4hrsBN4wSAg" y="60"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_JecoQeu6Eee4hrsBN4wSAg" fontName=".SF NS Text"/>
-    <element xmi:type="ecore:EReference" href="pipeline.ecore#//DataFlow/DFschema"/>
+    <element xmi:type="ecore:EReference" href="pipeline.ecore#//DataFlow/schema"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JecoQuu6Eee4hrsBN4wSAg" points="[15, 20, -87, -128]$[101, 115, -1, -33]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Jed2YOu6Eee4hrsBN4wSAg" id="(0.8404255319148937,0.5606060606060606)"/>
   </edges>

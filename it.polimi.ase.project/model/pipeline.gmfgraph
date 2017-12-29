@@ -10,7 +10,7 @@
         <template/>
       </figures>
       <figures xsi:type="gmfgraph:PolylineDecoration" name="InternalDataFlowFigureTargetDecoration"/>
-      <figures xsi:type="gmfgraph:PolylineDecoration" name="DataFlowDFschemaFigureTargetDecoration"/>
+      <figures xsi:type="gmfgraph:PolylineDecoration" name="DataFlowSchemaFigureTargetDecoration"/>
       <figures xsi:type="gmfgraph:PolylineDecoration" name="InternalDataFlowIntDFschemaFigureTargetDecoration"/>
       <figures xsi:type="gmfgraph:PolygonDecoration" name="Sqare">
         <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
@@ -218,11 +218,11 @@
       <descriptors name="InternalDataFlowFigure">
         <actualFigure xsi:type="gmfgraph:PolylineConnection" name="InternalDataFlowFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.1"/>
       </descriptors>
-      <descriptors name="DataFlowDFschemaFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DataFlowDFschemaFigure" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.2"/>
+      <descriptors name="DataFlowSchemaFigure">
+        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DataFlowSchemaFigure" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.2"/>
       </descriptors>
-      <descriptors name="DataFlowDFschemaExternalLabelFigure">
-        <actualFigure xsi:type="gmfgraph:Label" name="DataFlowDFschemaExternalLabel"/>
+      <descriptors name="DataFlowSchemaExternalLabelFigure">
+        <actualFigure xsi:type="gmfgraph:Label" name="DataFlowSchemaExternalLabel"/>
       </descriptors>
       <descriptors name="InternalDataFlowIntDFschemaFigure">
         <actualFigure xsi:type="gmfgraph:PolylineConnection" name="InternalDataFlowIntDFschemaFigure" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.3"/>
@@ -275,7 +275,7 @@
     <nodes name="Predefined" figure="PredefinedFigure"/>
     <connections name="DataFlow" figure="DataFlowFigure"/>
     <connections name="InternalDataFlow" figure="InternalDataFlowFigure"/>
-    <connections name="DataFlowDFschema" figure="DataFlowDFschemaFigure"/>
+    <connections name="DataFlowSchema" figure="DataFlowSchemaFigure"/>
     <connections name="InternalDataFlowIntDFschema" figure="InternalDataFlowIntDFschemaFigure"/>
     <connections name="ImportReadsFrom" figure="ImportReadsFromFigure"/>
     <connections name="ImportImpUses" figure="ImportImpUsesFigure"/>
@@ -304,7 +304,7 @@
     <labels name="PredictiveLabel" figure="PredictiveFigure" accessor="/0/@figures.0/@descriptors.15/@accessors.0"/>
     <labels name="ClusteringLabel" figure="ClusteringFigure" accessor="/0/@figures.0/@descriptors.16/@accessors.0"/>
     <labels name="PredefinedLabel" figure="PredefinedFigure" accessor="/0/@figures.0/@descriptors.17/@accessors.0"/>
-    <labels name="DataFlowDFschemaExternalLabel" figure="DataFlowDFschemaExternalLabelFigure" elementIcon="false"/>
+    <labels name="DataFlowSchemaExternalLabel" figure="DataFlowSchemaExternalLabelFigure" elementIcon="false"/>
     <labels name="InternalDataFlowIntDFschemaExternalLabel" figure="InternalDataFlowIntDFschemaExternalLabelFigure" elementIcon="false"/>
     <labels name="ImportReadsFromExternalLabel" figure="ImportReadsFromExternalLabelFigure" elementIcon="false"/>
     <labels name="ImportImpUsesExternalLabel" figure="ImportImpUsesExternalLabelFigure" elementIcon="false"/>

@@ -13,22 +13,22 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
 
-import pipeline.diagram.edit.policies.DataFlowDFschemaItemSemanticEditPolicy;
+import pipeline.diagram.edit.policies.DataFlowSchemaItemSemanticEditPolicy;
 
 /**
  * @generated
  */
-public class DataFlowDFschemaEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class DataFlowSchemaEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 4017;
+	public static final int VISUAL_ID = 4019;
 
 	/**
 	* @generated
 	*/
-	public DataFlowDFschemaEditPart(View view) {
+	public DataFlowSchemaEditPart(View view) {
 		super(view);
 	}
 
@@ -37,7 +37,7 @@ public class DataFlowDFschemaEditPart extends ConnectionNodeEditPart implements 
 	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DataFlowDFschemaItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DataFlowSchemaItemSemanticEditPolicy());
 	}
 
 	/**
@@ -50,25 +50,25 @@ public class DataFlowDFschemaEditPart extends ConnectionNodeEditPart implements 
 	*/
 
 	protected Connection createConnectionFigure() {
-		return new DataFlowDFschemaFigure();
+		return new DataFlowSchemaFigure();
 	}
 
 	/**
 	* @generated
 	*/
-	public DataFlowDFschemaFigure getPrimaryShape() {
-		return (DataFlowDFschemaFigure) getFigure();
+	public DataFlowSchemaFigure getPrimaryShape() {
+		return (DataFlowSchemaFigure) getFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public class DataFlowDFschemaFigure extends PolylineConnectionEx {
+	public class DataFlowSchemaFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated
 		 */
-		public DataFlowDFschemaFigure() {
+		public DataFlowSchemaFigure() {
 			this.setLineStyle(Graphics.LINE_DASH);
 
 			setTargetDecoration(createTargetDecoration());

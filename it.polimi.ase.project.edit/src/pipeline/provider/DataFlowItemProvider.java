@@ -64,7 +64,7 @@ public class DataFlowItemProvider
 			addFormatPropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
-			addDFschemaPropertyDescriptor(object);
+			addSchemaPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -136,19 +136,19 @@ public class DataFlowItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the DFschema feature.
+	 * This adds a property descriptor for the Schema feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDFschemaPropertyDescriptor(Object object) {
+	protected void addSchemaPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DataFlow_DFschema_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlow_DFschema_feature", "_UI_DataFlow_type"),
-				 PipelinePackage.Literals.DATA_FLOW__DFSCHEMA,
+				 getString("_UI_DataFlow_schema_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlow_schema_feature", "_UI_DataFlow_type"),
+				 PipelinePackage.Literals.DATA_FLOW__SCHEMA,
 				 true,
 				 false,
 				 true,

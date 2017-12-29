@@ -259,7 +259,7 @@
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Pipeline"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2033,2034,2035,2036,2037,2038,2025,2026,2027,2031,2029,2032,2041,2042,2043,3025,3026,3027,3033,3034,3035,3036,3037,3038,3039"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4005,4006,4017,4018,4007,4013,4008,4014"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4005,4006,4019,4018,4007,4013,4008,4014"/>
       </viewProvider>
    </extension>
 
@@ -274,7 +274,7 @@
             <method name="getType()" value="2033,2034,2035,2036,2037,2038,2025,2026,2027,2031,2029,2032,2041,2042,2043,3025,3026,3027,3033,3034,3035,3036,3037,3038,3039"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4005,4006,4017,4018,4007,4013,4008,4014"/>
+            <method name="getType()" value="4005,4006,4019,4018,4007,4013,4008,4014"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5078,5079,5080,5081,5082,5083,5058,5059,5062,5075,5068,5077,5086,5087,5057,5060,5061,5071,5072,5073,5074,5076,5089,5088"/>
@@ -725,11 +725,11 @@
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <specializationType
-               id="it.polimi.ase.project.diagram.DataFlowDFschema_4017"
-               name="%metatype.name.DataFlowDFschema_4017"
+               id="it.polimi.ase.project.diagram.DataFlowSchema_4019"
+               name="%metatype.name.DataFlowSchema_4019"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4017"/>
+            <param name="semanticHint" value="4019"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
@@ -817,7 +817,7 @@
          <elementType ref="it.polimi.ase.project.diagram.Attribute_3039"/>
          <elementType ref="it.polimi.ase.project.diagram.DataFlow_4005"/>
          <elementType ref="it.polimi.ase.project.diagram.InternalDataFlow_4006"/>
-         <elementType ref="it.polimi.ase.project.diagram.DataFlowDFschema_4017"/>
+         <elementType ref="it.polimi.ase.project.diagram.DataFlowSchema_4019"/>
          <elementType ref="it.polimi.ase.project.diagram.InternalDataFlowIntDFschema_4018"/>
          <elementType ref="it.polimi.ase.project.diagram.ImportReadsFrom_4007"/>
          <elementType ref="it.polimi.ase.project.diagram.ImportImpUses_4013"/>

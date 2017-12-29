@@ -20,8 +20,8 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
-import pipeline.diagram.edit.commands.DataFlowDFschemaCreateCommand;
-import pipeline.diagram.edit.commands.DataFlowDFschemaReorientCommand;
+import pipeline.diagram.edit.commands.DataFlowSchemaCreateCommand;
+import pipeline.diagram.edit.commands.DataFlowSchemaReorientCommand;
 import pipeline.diagram.edit.commands.ExportExpUsesCreateCommand;
 import pipeline.diagram.edit.commands.ExportExpUsesReorientCommand;
 import pipeline.diagram.edit.commands.ImportImpUsesCreateCommand;
@@ -29,7 +29,7 @@ import pipeline.diagram.edit.commands.ImportImpUsesReorientCommand;
 import pipeline.diagram.edit.commands.InternalDataFlowIntDFschemaCreateCommand;
 import pipeline.diagram.edit.commands.InternalDataFlowIntDFschemaReorientCommand;
 import pipeline.diagram.edit.parts.AttributeEditPart;
-import pipeline.diagram.edit.parts.DataFlowDFschemaEditPart;
+import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.ExportExpUsesEditPart;
 import pipeline.diagram.edit.parts.ImportImpUsesEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowIntDFschemaEditPart;
@@ -58,7 +58,7 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == DataFlowDFschemaEditPart.VISUAL_ID) {
+			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == DataFlowSchemaEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
@@ -138,7 +138,7 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.DataFlowDFschema_4017 == req.getElementType()) {
+		if (PipelineElementTypes.DataFlowSchema_4019 == req.getElementType()) {
 			return null;
 		}
 		if (PipelineElementTypes.InternalDataFlowIntDFschema_4018 == req.getElementType()) {
@@ -157,8 +157,8 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.DataFlowDFschema_4017 == req.getElementType()) {
-			return getGEFWrapper(new DataFlowDFschemaCreateCommand(req, req.getSource(), req.getTarget()));
+		if (PipelineElementTypes.DataFlowSchema_4019 == req.getElementType()) {
+			return getGEFWrapper(new DataFlowSchemaCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		if (PipelineElementTypes.InternalDataFlowIntDFschema_4018 == req.getElementType()) {
 			return getGEFWrapper(new InternalDataFlowIntDFschemaCreateCommand(req, req.getSource(), req.getTarget()));
@@ -180,8 +180,8 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case DataFlowDFschemaEditPart.VISUAL_ID:
-			return getGEFWrapper(new DataFlowDFschemaReorientCommand(req));
+		case DataFlowSchemaEditPart.VISUAL_ID:
+			return getGEFWrapper(new DataFlowSchemaReorientCommand(req));
 		case InternalDataFlowIntDFschemaEditPart.VISUAL_ID:
 			return getGEFWrapper(new InternalDataFlowIntDFschemaReorientCommand(req));
 		case ImportImpUsesEditPart.VISUAL_ID:

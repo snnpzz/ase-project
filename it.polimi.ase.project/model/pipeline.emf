@@ -27,7 +27,7 @@ class DataFlow {
   ref Task#outgoing source;
 
   @gmf.link(width="1", target.decoration="arrow", style="dash")
-  ref Schema[1] DFschema;
+  ref Schema[1] schema;
 }
 
 @gmf.node(label="name", figure="ellipse")
@@ -161,6 +161,6 @@ enum Format {
   txt = 0;
   csv = 0;
   json = 0;
-  xml = 0;
+  XML = 0;
 }
 

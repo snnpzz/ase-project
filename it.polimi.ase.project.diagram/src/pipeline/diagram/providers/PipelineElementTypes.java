@@ -27,8 +27,8 @@ import pipeline.diagram.edit.parts.CleaningTaskEditPart;
 import pipeline.diagram.edit.parts.Clustering2EditPart;
 import pipeline.diagram.edit.parts.ClusteringEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
-import pipeline.diagram.edit.parts.DataFlowDFschemaEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
+import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.Descriptive2EditPart;
 import pipeline.diagram.edit.parts.DescriptiveEditPart;
 import pipeline.diagram.edit.parts.ExportEditPart;
@@ -208,8 +208,8 @@ public class PipelineElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType DataFlowDFschema_4017 = getElementType(
-			"it.polimi.ase.project.diagram.DataFlowDFschema_4017"); //$NON-NLS-1$
+	public static final IElementType DataFlowSchema_4019 = getElementType(
+			"it.polimi.ase.project.diagram.DataFlowSchema_4019"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -330,7 +330,7 @@ public class PipelineElementTypes {
 
 			elements.put(InternalDataFlow_4006, PipelinePackage.eINSTANCE.getInternalDataFlow());
 
-			elements.put(DataFlowDFschema_4017, PipelinePackage.eINSTANCE.getDataFlow_DFschema());
+			elements.put(DataFlowSchema_4019, PipelinePackage.eINSTANCE.getDataFlow_Schema());
 
 			elements.put(InternalDataFlowIntDFschema_4018, PipelinePackage.eINSTANCE.getInternalDataFlow_IntDFschema());
 
@@ -386,7 +386,7 @@ public class PipelineElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Attribute_3039);
 			KNOWN_ELEMENT_TYPES.add(DataFlow_4005);
 			KNOWN_ELEMENT_TYPES.add(InternalDataFlow_4006);
-			KNOWN_ELEMENT_TYPES.add(DataFlowDFschema_4017);
+			KNOWN_ELEMENT_TYPES.add(DataFlowSchema_4019);
 			KNOWN_ELEMENT_TYPES.add(InternalDataFlowIntDFschema_4018);
 			KNOWN_ELEMENT_TYPES.add(ImportReadsFrom_4007);
 			KNOWN_ELEMENT_TYPES.add(ImportImpUses_4013);
@@ -457,8 +457,8 @@ public class PipelineElementTypes {
 			return DataFlow_4005;
 		case InternalDataFlowEditPart.VISUAL_ID:
 			return InternalDataFlow_4006;
-		case DataFlowDFschemaEditPart.VISUAL_ID:
-			return DataFlowDFschema_4017;
+		case DataFlowSchemaEditPart.VISUAL_ID:
+			return DataFlowSchema_4019;
 		case InternalDataFlowIntDFschemaEditPart.VISUAL_ID:
 			return InternalDataFlowIntDFschema_4018;
 		case ImportReadsFromEditPart.VISUAL_ID:

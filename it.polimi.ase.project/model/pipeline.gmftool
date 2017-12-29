@@ -179,15 +179,6 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="DFschema"
-          description="Create new DFschema">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="DataFlow"
           description="Create new DataFlow">
         <smallIcon
@@ -244,6 +235,15 @@
           xsi:type="gmftool:CreationTool"
           title="ReadsFrom"
           description="Create new ReadsFrom">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Schema"
+          description="Create new Schema">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

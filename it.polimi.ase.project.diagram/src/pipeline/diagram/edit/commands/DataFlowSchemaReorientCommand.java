@@ -19,7 +19,7 @@ import pipeline.diagram.edit.policies.PipelineBaseItemSemanticEditPolicy;
 /**
  * @generated
  */
-public class DataFlowDFschemaReorientCommand extends EditElementCommand {
+public class DataFlowSchemaReorientCommand extends EditElementCommand {
 
 	/**
 	* @generated
@@ -44,7 +44,7 @@ public class DataFlowDFschemaReorientCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	public DataFlowDFschemaReorientCommand(ReorientReferenceRelationshipRequest request) {
+	public DataFlowSchemaReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
@@ -75,7 +75,7 @@ public class DataFlowDFschemaReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Schema && newEnd instanceof DataFlow)) {
 			return false;
 		}
-		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistDataFlowDFschema_4017(getNewSource(),
+		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistDataFlowSchema_4019(getNewSource(),
 				getOldTarget());
 	}
 
@@ -86,7 +86,7 @@ public class DataFlowDFschemaReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Schema && newEnd instanceof Schema)) {
 			return false;
 		}
-		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistDataFlowDFschema_4017(getOldSource(),
+		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistDataFlowSchema_4019(getOldSource(),
 				getNewTarget());
 	}
 
@@ -110,8 +110,8 @@ public class DataFlowDFschemaReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().setDFschema(null);
-		getNewSource().setDFschema(getOldTarget());
+		getOldSource().setSchema(null);
+		getNewSource().setSchema(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -119,7 +119,7 @@ public class DataFlowDFschemaReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().setDFschema(getNewTarget());
+		getOldSource().setSchema(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 

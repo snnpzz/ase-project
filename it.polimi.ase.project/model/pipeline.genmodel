@@ -9,7 +9,7 @@
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/txt"/>
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/csv"/>
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/json"/>
-      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/xml"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/XML"/>
     </genEnums>
     <genClasses ecoreClass="pipeline.ecore#//Pipeline">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/dataFlows"/>
@@ -30,7 +30,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//DataFlow/format"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//DataFlow/target"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//DataFlow/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//DataFlow/DFschema"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//DataFlow/schema"/>
     </genClasses>
     <genClasses image="false" ecoreClass="pipeline.ecore#//Operation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Operation/name"/>

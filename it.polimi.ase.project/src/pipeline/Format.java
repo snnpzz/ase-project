@@ -49,14 +49,14 @@ public enum Format implements Enumerator {
 	JSON(0, "json", "json"),
 
 	/**
-	 * The '<em><b>Xml</b></em>' literal object.
+	 * The '<em><b>XML</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #XML_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	XML(0, "xml", "xml");
+	XML(0, "XML", "XML");
 
 	/**
 	 * The '<em><b>Txt</b></em>' literal value.
@@ -104,7 +104,7 @@ public enum Format implements Enumerator {
 	public static final int JSON_VALUE = 0;
 
 	/**
-	 * The '<em><b>Xml</b></em>' literal value.
+	 * The '<em><b>XML</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Xml</b></em>' literal object isn't clear,
@@ -112,7 +112,7 @@ public enum Format implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #XML
-	 * @model name="xml"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */

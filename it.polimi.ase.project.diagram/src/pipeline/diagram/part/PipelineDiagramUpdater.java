@@ -56,8 +56,8 @@ import pipeline.diagram.edit.parts.Clustering2EditPart;
 import pipeline.diagram.edit.parts.ClusteringEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskCollectionTaskImportsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
-import pipeline.diagram.edit.parts.DataFlowDFschemaEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
+import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.Descriptive2EditPart;
 import pipeline.diagram.edit.parts.DescriptiveEditPart;
 import pipeline.diagram.edit.parts.ExportEditPart;
@@ -795,7 +795,7 @@ public class PipelineDiagramUpdater {
 	public static List<PipelineLinkDescriptor> getDataFlow_4005ContainedLinks(View view) {
 		DataFlow modelElement = (DataFlow) view.getElement();
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_DataFlow_DFschema_4017(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_DataFlow_Schema_4019(modelElement));
 		return result;
 	}
 
@@ -985,7 +985,7 @@ public class PipelineDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_DataFlow_DFschema_4017(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_DataFlow_Schema_4019(modelElement, crossReferences));
 		result.addAll(
 				getIncomingFeatureModelFacetLinks_InternalDataFlow_IntDFschema_4018(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Import_ImpUses_4013(modelElement, crossReferences));
@@ -1350,7 +1350,7 @@ public class PipelineDiagramUpdater {
 	public static List<PipelineLinkDescriptor> getDataFlow_4005OutgoingLinks(View view) {
 		DataFlow modelElement = (DataFlow) view.getElement();
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_DataFlow_DFschema_4017(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_DataFlow_Schema_4019(modelElement));
 		return result;
 	}
 
@@ -1459,14 +1459,14 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_DataFlow_DFschema_4017(
+	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_DataFlow_Schema_4019(
 			Schema target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() == PipelinePackage.eINSTANCE.getDataFlow_DFschema()) {
+			if (setting.getEStructuralFeature() == PipelinePackage.eINSTANCE.getDataFlow_Schema()) {
 				result.add(new PipelineLinkDescriptor(setting.getEObject(), target,
-						PipelineElementTypes.DataFlowDFschema_4017, DataFlowDFschemaEditPart.VISUAL_ID));
+						PipelineElementTypes.DataFlowSchema_4019, DataFlowSchemaEditPart.VISUAL_ID));
 			}
 		}
 		return result;
@@ -1631,15 +1631,15 @@ public class PipelineDiagramUpdater {
 	/**
 	* @generated
 	*/
-	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_DataFlow_DFschema_4017(
+	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_DataFlow_Schema_4019(
 			DataFlow source) {
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		Schema destination = source.getDFschema();
+		Schema destination = source.getSchema();
 		if (destination == null) {
 			return result;
 		}
-		result.add(new PipelineLinkDescriptor(source, destination, PipelineElementTypes.DataFlowDFschema_4017,
-				DataFlowDFschemaEditPart.VISUAL_ID));
+		result.add(new PipelineLinkDescriptor(source, destination, PipelineElementTypes.DataFlowSchema_4019,
+				DataFlowSchemaEditPart.VISUAL_ID));
 		return result;
 	}
 

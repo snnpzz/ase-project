@@ -18,7 +18,7 @@ import pipeline.diagram.edit.policies.PipelineBaseItemSemanticEditPolicy;
 /**
  * @generated
  */
-public class DataFlowDFschemaCreateCommand extends EditElementCommand {
+public class DataFlowSchemaCreateCommand extends EditElementCommand {
 
 	/**
 	* @generated
@@ -33,7 +33,7 @@ public class DataFlowDFschemaCreateCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	public DataFlowDFschemaCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
+	public DataFlowSchemaCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
@@ -56,7 +56,7 @@ public class DataFlowDFschemaCreateCommand extends EditElementCommand {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canCreateDataFlowDFschema_4017(getSource(),
+		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canCreateDataFlowSchema_4019(getSource(),
 				getTarget());
 	}
 
@@ -69,7 +69,7 @@ public class DataFlowDFschemaCreateCommand extends EditElementCommand {
 		}
 
 		if (getSource() != null && getTarget() != null) {
-			getSource().setDFschema(getTarget());
+			getSource().setSchema(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
 

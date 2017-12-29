@@ -330,21 +330,21 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateDataFlowDFschema_4017(DataFlow source, Schema target) {
+		* @generated
+		*/
+		public boolean canCreateDataFlowSchema_4019(DataFlow source, Schema target) {
 			if (source != null) {
-				if (source.getDFschema() != null) {
+				if (source.getSchema() != null) {
 					return false;
 				}
 			}
 
-			return canExistDataFlowDFschema_4017(source, target);
+			return canExistDataFlowSchema_4019(source, target);
 		}
 
 		/**
-		 * @generated
-		 */
+			 * @generated
+			 */
 		public boolean canCreateInternalDataFlowIntDFschema_4018(InternalDataFlow source, Schema target) {
 			if (source != null) {
 				if (source.getIntDFschema() != null) {
@@ -431,13 +431,13 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		* @generated
 		*/
-		public boolean canExistDataFlowDFschema_4017(DataFlow source, Schema target) {
+		public boolean canExistDataFlowSchema_4019(DataFlow source, Schema target) {
 			return true;
 		}
 
 		/**
-		* @generated
-		*/
+			* @generated
+			*/
 		public boolean canExistInternalDataFlowIntDFschema_4018(InternalDataFlow source, Schema target) {
 			return true;
 		}

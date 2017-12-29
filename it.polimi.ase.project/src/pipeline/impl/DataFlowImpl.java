@@ -28,7 +28,7 @@ import pipeline.Task;
  *   <li>{@link pipeline.impl.DataFlowImpl#getFormat <em>Format</em>}</li>
  *   <li>{@link pipeline.impl.DataFlowImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link pipeline.impl.DataFlowImpl#getSource <em>Source</em>}</li>
- *   <li>{@link pipeline.impl.DataFlowImpl#getDFschema <em>DFschema</em>}</li>
+ *   <li>{@link pipeline.impl.DataFlowImpl#getSchema <em>Schema</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,14 +75,14 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	protected Task source;
 
 	/**
-	 * The cached value of the '{@link #getDFschema() <em>DFschema</em>}' reference.
+	 * The cached value of the '{@link #getSchema() <em>Schema</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDFschema()
+	 * @see #getSchema()
 	 * @generated
 	 * @ordered
 	 */
-	protected Schema dFschema;
+	protected Schema schema;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,16 +249,16 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Schema getDFschema() {
-		if (dFschema != null && dFschema.eIsProxy()) {
-			InternalEObject oldDFschema = (InternalEObject)dFschema;
-			dFschema = (Schema)eResolveProxy(oldDFschema);
-			if (dFschema != oldDFschema) {
+	public Schema getSchema() {
+		if (schema != null && schema.eIsProxy()) {
+			InternalEObject oldSchema = (InternalEObject)schema;
+			schema = (Schema)eResolveProxy(oldSchema);
+			if (schema != oldSchema) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.DATA_FLOW__DFSCHEMA, oldDFschema, dFschema));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.DATA_FLOW__SCHEMA, oldSchema, schema));
 			}
 		}
-		return dFschema;
+		return schema;
 	}
 
 	/**
@@ -266,8 +266,8 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Schema basicGetDFschema() {
-		return dFschema;
+	public Schema basicGetSchema() {
+		return schema;
 	}
 
 	/**
@@ -275,11 +275,11 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDFschema(Schema newDFschema) {
-		Schema oldDFschema = dFschema;
-		dFschema = newDFschema;
+	public void setSchema(Schema newSchema) {
+		Schema oldSchema = schema;
+		schema = newSchema;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.DATA_FLOW__DFSCHEMA, oldDFschema, dFschema));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.DATA_FLOW__SCHEMA, oldSchema, schema));
 	}
 
 	/**
@@ -334,9 +334,9 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 			case PipelinePackage.DATA_FLOW__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
-			case PipelinePackage.DATA_FLOW__DFSCHEMA:
-				if (resolve) return getDFschema();
-				return basicGetDFschema();
+			case PipelinePackage.DATA_FLOW__SCHEMA:
+				if (resolve) return getSchema();
+				return basicGetSchema();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -358,8 +358,8 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 			case PipelinePackage.DATA_FLOW__SOURCE:
 				setSource((Task)newValue);
 				return;
-			case PipelinePackage.DATA_FLOW__DFSCHEMA:
-				setDFschema((Schema)newValue);
+			case PipelinePackage.DATA_FLOW__SCHEMA:
+				setSchema((Schema)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -382,8 +382,8 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 			case PipelinePackage.DATA_FLOW__SOURCE:
 				setSource((Task)null);
 				return;
-			case PipelinePackage.DATA_FLOW__DFSCHEMA:
-				setDFschema((Schema)null);
+			case PipelinePackage.DATA_FLOW__SCHEMA:
+				setSchema((Schema)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -403,8 +403,8 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 				return target != null;
 			case PipelinePackage.DATA_FLOW__SOURCE:
 				return source != null;
-			case PipelinePackage.DATA_FLOW__DFSCHEMA:
-				return dFschema != null;
+			case PipelinePackage.DATA_FLOW__SCHEMA:
+				return schema != null;
 		}
 		return super.eIsSet(featureID);
 	}

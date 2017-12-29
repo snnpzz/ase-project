@@ -43,8 +43,8 @@ import pipeline.diagram.edit.parts.ClusteringName2EditPart;
 import pipeline.diagram.edit.parts.ClusteringNameEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskIDEditPart;
-import pipeline.diagram.edit.parts.DataFlowDFschemaEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
+import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.Descriptive2EditPart;
 import pipeline.diagram.edit.parts.DescriptiveEditPart;
 import pipeline.diagram.edit.parts.DescriptiveName2EditPart;
@@ -245,12 +245,12 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 		case ExportExpUsesEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.project.ase.polimi.it/pipeline?Export?expUses", //$NON-NLS-1$
 					PipelineElementTypes.ExportExpUses_4014);
-		case DataFlowDFschemaEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.project.ase.polimi.it/pipeline?DataFlow?DFschema", //$NON-NLS-1$
-					PipelineElementTypes.DataFlowDFschema_4017);
 		case InternalDataFlowIntDFschemaEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.project.ase.polimi.it/pipeline?InternalDataFlow?intDFschema", //$NON-NLS-1$
 					PipelineElementTypes.InternalDataFlowIntDFschema_4018);
+		case DataFlowSchemaEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.project.ase.polimi.it/pipeline?DataFlow?schema", //$NON-NLS-1$
+					PipelineElementTypes.DataFlowSchema_4019);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -373,10 +373,10 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 			return getImportImpUses_4013Text(view);
 		case ExportExpUsesEditPart.VISUAL_ID:
 			return getExportExpUses_4014Text(view);
-		case DataFlowDFschemaEditPart.VISUAL_ID:
-			return getDataFlowDFschema_4017Text(view);
 		case InternalDataFlowIntDFschemaEditPart.VISUAL_ID:
 			return getInternalDataFlowIntDFschema_4018Text(view);
+		case DataFlowSchemaEditPart.VISUAL_ID:
+			return getDataFlowSchema_4019Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -880,21 +880,6 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	/**
 	* @generated
 	*/
-	private String getDataFlowDFschema_4017Text(View view) {
-		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.DataFlowDFschema_4017,
-				view.getElement() != null ? view.getElement() : view, CommonParserHint.DESCRIPTION);
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6011); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	* @generated
-	*/
 	private String getInternalDataFlowIntDFschema_4018Text(View view) {
 		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.InternalDataFlowIntDFschema_4018,
 				view.getElement() != null ? view.getElement() : view, CommonParserHint.DESCRIPTION);
@@ -903,6 +888,21 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 					ParserOptions.NONE.intValue());
 		} else {
 			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6012); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getDataFlowSchema_4019Text(View view) {
+		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.DataFlowSchema_4019,
+				view.getElement() != null ? view.getElement() : view, CommonParserHint.DESCRIPTION);
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6013); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

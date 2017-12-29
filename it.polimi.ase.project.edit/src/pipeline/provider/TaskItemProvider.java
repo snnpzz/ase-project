@@ -61,7 +61,6 @@ public class TaskItemProvider
 			super.getPropertyDescriptors(object);
 
 			addIDPropertyDescriptor(object);
-			addIsRequiredPropertyDescriptor(object);
 			addIncomingPropertyDescriptor(object);
 			addOutgoingPropertyDescriptor(object);
 		}
@@ -86,28 +85,6 @@ public class TaskItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Required feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsRequiredPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Task_isRequired_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Task_isRequired_feature", "_UI_Task_type"),
-				 PipelinePackage.Literals.TASK__IS_REQUIRED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -184,7 +161,6 @@ public class TaskItemProvider
 
 		switch (notification.getFeatureID(Task.class)) {
 			case PipelinePackage.TASK__ID:
-			case PipelinePackage.TASK__IS_REQUIRED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

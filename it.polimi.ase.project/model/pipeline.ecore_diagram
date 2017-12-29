@@ -28,10 +28,6 @@
         <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Task/ID"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_GrQwkeGWEeeU3dy_CQ-Szg"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_GxmpIOGWEeeU3dy_CQ-Szg" type="3001">
-        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Task/isRequired"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_GxmpIeGWEeeU3dy_CQ-Szg"/>
-      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_LHGfNOGVEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_LHGfNeGVEeeU3dy_CQ-Szg"/>
     </children>

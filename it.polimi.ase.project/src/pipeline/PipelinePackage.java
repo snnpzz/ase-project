@@ -167,22 +167,13 @@ public interface PipelinePackage extends EPackage {
 	int TASK__ID = 0;
 
 	/**
-	 * The feature id for the '<em><b>Is Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TASK__IS_REQUIRED = 1;
-
-	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__INCOMING = 2;
+	int TASK__INCOMING = 1;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -191,7 +182,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__OUTGOING = 3;
+	int TASK__OUTGOING = 2;
 
 	/**
 	 * The number of structural features of the '<em>Task</em>' class.
@@ -200,7 +191,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_FEATURE_COUNT = 4;
+	int TASK_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.DataFlowImpl <em>Data Flow</em>}' class.
@@ -479,15 +470,6 @@ public interface PipelinePackage extends EPackage {
 	int COLLECTION_TASK__ID = TASK__ID;
 
 	/**
-	 * The feature id for the '<em><b>Is Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLLECTION_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
-
-	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -543,15 +525,6 @@ public interface PipelinePackage extends EPackage {
 	int INTEGRATION_TASK__ID = TASK__ID;
 
 	/**
-	 * The feature id for the '<em><b>Is Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGRATION_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
-
-	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -596,15 +569,6 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int CLEANING_TASK__ID = TASK__ID;
-
-	/**
-	 * The feature id for the '<em><b>Is Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLEANING_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
@@ -662,15 +626,6 @@ public interface PipelinePackage extends EPackage {
 	int ANALYSIS_TASK__ID = TASK__ID;
 
 	/**
-	 * The feature id for the '<em><b>Is Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
-
-	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -726,15 +681,6 @@ public interface PipelinePackage extends EPackage {
 	int VISUALIZATION_TASK__ID = TASK__ID;
 
 	/**
-	 * The feature id for the '<em><b>Is Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VISUALIZATION_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
-
-	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -779,15 +725,6 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int EXPORT_TASK__ID = TASK__ID;
-
-	/**
-	 * The feature id for the '<em><b>Is Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPORT_TASK__IS_REQUIRED = TASK__IS_REQUIRED;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
@@ -1515,17 +1452,6 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTask_ID();
-
-	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Task#isIsRequired <em>Is Required</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Required</em>'.
-	 * @see pipeline.Task#isIsRequired()
-	 * @see #getTask()
-	 * @generated
-	 */
-	EAttribute getTask_IsRequired();
 
 	/**
 	 * Returns the meta object for the reference list '{@link pipeline.Task#getIncoming <em>Incoming</em>}'.
@@ -2287,14 +2213,6 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TASK__ID = eINSTANCE.getTask_ID();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Required</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TASK__IS_REQUIRED = eINSTANCE.getTask_IsRequired();
 
 		/**
 		 * The meta object literal for the '<em><b>Incoming</b></em>' reference list feature.

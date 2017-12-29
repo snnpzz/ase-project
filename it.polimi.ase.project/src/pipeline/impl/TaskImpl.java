@@ -31,7 +31,6 @@ import pipeline.Task;
  * </p>
  * <ul>
  *   <li>{@link pipeline.impl.TaskImpl#getID <em>ID</em>}</li>
- *   <li>{@link pipeline.impl.TaskImpl#isIsRequired <em>Is Required</em>}</li>
  *   <li>{@link pipeline.impl.TaskImpl#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link pipeline.impl.TaskImpl#getOutgoing <em>Outgoing</em>}</li>
  * </ul>
@@ -58,26 +57,6 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isIsRequired() <em>Is Required</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsRequired()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean IS_REQUIRED_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isIsRequired() <em>Is Required</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsRequired()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean isRequired = IS_REQUIRED_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getIncoming() <em>Incoming</em>}' reference list.
@@ -137,27 +116,6 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 		id = newID;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.TASK__ID, oldID, id));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isIsRequired() {
-		return isRequired;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIsRequired(boolean newIsRequired) {
-		boolean oldIsRequired = isRequired;
-		isRequired = newIsRequired;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.TASK__IS_REQUIRED, oldIsRequired, isRequired));
 	}
 
 	/**
@@ -227,8 +185,6 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 		switch (featureID) {
 			case PipelinePackage.TASK__ID:
 				return getID();
-			case PipelinePackage.TASK__IS_REQUIRED:
-				return isIsRequired();
 			case PipelinePackage.TASK__INCOMING:
 				return getIncoming();
 			case PipelinePackage.TASK__OUTGOING:
@@ -248,9 +204,6 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 		switch (featureID) {
 			case PipelinePackage.TASK__ID:
 				setID((String)newValue);
-				return;
-			case PipelinePackage.TASK__IS_REQUIRED:
-				setIsRequired((Boolean)newValue);
 				return;
 			case PipelinePackage.TASK__INCOMING:
 				getIncoming().clear();
@@ -275,9 +228,6 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 			case PipelinePackage.TASK__ID:
 				setID(ID_EDEFAULT);
 				return;
-			case PipelinePackage.TASK__IS_REQUIRED:
-				setIsRequired(IS_REQUIRED_EDEFAULT);
-				return;
 			case PipelinePackage.TASK__INCOMING:
 				getIncoming().clear();
 				return;
@@ -298,8 +248,6 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 		switch (featureID) {
 			case PipelinePackage.TASK__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case PipelinePackage.TASK__IS_REQUIRED:
-				return isRequired != IS_REQUIRED_EDEFAULT;
 			case PipelinePackage.TASK__INCOMING:
 				return incoming != null && !incoming.isEmpty();
 			case PipelinePackage.TASK__OUTGOING:
@@ -320,8 +268,6 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (ID: ");
 		result.append(id);
-		result.append(", isRequired: ");
-		result.append(isRequired);
 		result.append(')');
 		return result.toString();
 	}

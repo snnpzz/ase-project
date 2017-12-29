@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pipeline.Task#getID <em>ID</em>}</li>
- *   <li>{@link pipeline.Task#isIsRequired <em>Is Required</em>}</li>
  *   <li>{@link pipeline.Task#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link pipeline.Task#getOutgoing <em>Outgoing</em>}</li>
  * </ul>
@@ -52,32 +51,6 @@ public interface Task extends EObject {
 	 * @generated
 	 */
 	void setID(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Is Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Required</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Required</em>' attribute.
-	 * @see #setIsRequired(boolean)
-	 * @see pipeline.PipelinePackage#getTask_IsRequired()
-	 * @model
-	 * @generated
-	 */
-	boolean isIsRequired();
-
-	/**
-	 * Sets the value of the '{@link pipeline.Task#isIsRequired <em>Is Required</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Required</em>' attribute.
-	 * @see #isIsRequired()
-	 * @generated
-	 */
-	void setIsRequired(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Incoming</b></em>' reference list.

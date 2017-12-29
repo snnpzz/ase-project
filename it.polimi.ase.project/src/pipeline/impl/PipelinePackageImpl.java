@@ -393,17 +393,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTask_IsRequired() {
-		return (EAttribute)taskEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getTask_Incoming() {
-		return (EReference)taskEClass.getEStructuralFeatures().get(2);
+		return (EReference)taskEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -412,7 +403,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * @generated
 	 */
 	public EReference getTask_Outgoing() {
-		return (EReference)taskEClass.getEStructuralFeatures().get(3);
+		return (EReference)taskEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -986,7 +977,6 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		taskEClass = createEClass(TASK);
 		createEAttribute(taskEClass, TASK__ID);
-		createEAttribute(taskEClass, TASK__IS_REQUIRED);
 		createEReference(taskEClass, TASK__INCOMING);
 		createEReference(taskEClass, TASK__OUTGOING);
 
@@ -1131,7 +1121,6 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		initEClass(taskEClass, Task.class, "Task", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTask_ID(), ecorePackage.getEString(), "ID", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTask_IsRequired(), ecorePackage.getEBoolean(), "isRequired", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_Incoming(), this.getDataFlow(), this.getDataFlow_Target(), "incoming", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_Outgoing(), this.getDataFlow(), this.getDataFlow_Source(), "outgoing", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

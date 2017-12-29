@@ -16,7 +16,6 @@ class Pipeline {
 @gmf.node(label="ID", figure="rounded")
 abstract class Task {
   attr String ID;
-  attr boolean isRequired;
   ref DataFlow[*]#target incoming;
   ref DataFlow[*]#source outgoing;
 }

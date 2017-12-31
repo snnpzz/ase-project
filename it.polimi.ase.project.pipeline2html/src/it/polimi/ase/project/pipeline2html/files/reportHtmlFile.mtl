@@ -13,17 +13,17 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	</head>
-	<body>
+	<body style="padding-top:3.5rem">
 		<header>
 			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-				<a class="navbar-brand" href="#">Pipeline [aPipeline.ID/]</a>
-				<button class="navbar-toggler d-lg-none" type="button" data-target="" data-toggle="collapse">
+				<h1 class="navbar-brand mb-0">Project</h1>
+				<button class="navbar-toggler d-lg-none" aria-expanded="false" aria-controls="navbar" aria-label="Toogle navigation" type="button" data-target="#navbar" data-toggle="collapse">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse">
+				<div class="collapse navbar-collapse" id="navbar">
 					<ul class="navbar-nav mr-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="#">Item</a>
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Pipeline [aPipeline.ID/]<span class="s-only">(current)</span></a>
 						</li>
 					</ul>
 				</div>
@@ -39,7 +39,7 @@
 					</ul>
 				</nav>
 				<main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
-					<h1>Pipeline </h1>
+					<h1>Pipeline [aPipeline.ID/]</h1>
 					<section>
 
 					</section>
@@ -51,15 +51,19 @@
 									<th>#</th>
 									<th>ID</th>
 									<th>Type</th>
+									<th>Details</th>
 								</tr>
 							</thead>
 							<tbody>
 								[for (aTask : Task | aPipeline.tasks)]
-									[aTask.generateTask()/]
+									[aTask.generateTask(0)/]
 								[/for]
 							</tbody>
 						</table>
-					</div>				
+					</div>
+					[for (aTask : Task | aPipeline.tasks)]
+						[aTask.generateTask()/]
+					[/for]			
 				</main>
 			</div>
 		</div>
@@ -72,9 +76,9 @@
 [/file]
 [/template]
 
-[template private generateTask(aTask : Task)]
+[template private generateTask(aTask : Task, aInteger : Integer)]
 <tr>
-	<td>1</td>
+	<td>[aInteger/]</td>
 	<td>[aTask.ID/]</td>
 	<td>
 		[if (aTask.oclIsTypeOf(CollectionTask))]
@@ -91,5 +95,29 @@
 			Data Export
 		[/if]
 	</td>
+	<td>
+		<a href="#task-[aTask.ID/]">+</a>
+	</td>
 </tr>
+[/template]
+
+[template private generateTask(aTask : Task)]
+<h3>Task [aTask.ID/]</h3>
+<div>
+ID: [aTask.ID/]
+Type: 
+[if (aTask.oclIsTypeOf(CollectionTask))]
+	Data Collection
+[elseif (aTask.oclIsTypeOf(IntegrationTask))]
+	Data Integration
+[elseif (aTask.oclIsTypeOf(CleaningTask))]
+	Data Cleaning
+[elseif (aTask.oclIsTypeOf(AnalysisTask))]
+	Data Analysis
+[elseif (aTask.oclIsTypeOf(VisualizationTask))]
+	Data Visualization
+[elseif (aTask.oclIsTypeOf(ExportTask))]
+	Data Export
+[/if]
+</div>
 [/template]

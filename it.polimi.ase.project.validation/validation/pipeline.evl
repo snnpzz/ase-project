@@ -1,4 +1,4 @@
-context Pipeline {
+context Pipeline{
 	constraint uniqueTasks {
 		check: self.tasks -> select(t|t.isTypeOf(CollectionTask)) -> size() <= 1 and 
 			self.tasks -> select(t|t.isTypeOf(IntegrationTask)) -> size() <= 1 and
@@ -82,7 +82,7 @@ context Pipeline {
 }
 
 
-context CollectionTask {
+context CollectionTask{
 	constraint initialTask {
 		check: self.incoming -> size() == 0
 		message: "Collection Task can't have an incoming data flow."
@@ -96,7 +96,7 @@ context CollectionTask {
 }
 
 
-context IntegrationTask {
+context IntegrationTask{
 	constraint nextTypeIntegration {
 		check: self.outgoing.target -> select(t | t.isTypeOf(CollectionTask) or t.isTypeOf(IntegrationTask) or
 			t.isTypeOf(VisualizationTask) or t.isTypeOf(ExportTask)) -> size() == 0
@@ -105,7 +105,7 @@ context IntegrationTask {
 }
 
 
-context CleaningTask {
+context CleaningTask{
 	constraint nextTypeCleaning {
 		check: self.outgoing.target -> reject(t | t.isTypeOf(AnalysisTask)) -> size() == 0
 		message: "Cleaning task can be linked only to analysis task"
@@ -124,7 +124,7 @@ context CleaningTask {
 }
 
 
-context AnalysisTask {
+context AnalysisTask{
 	constraint nextTypeAnalysis {
 		check: self.outgoing.target -> select(t | t.isTypeOf(CollectionTask) or t.isTypeOf(IntegrationTask) or
 			t.isTypeOf(CleaningTask) or t.isTypeOf(AnalysisTask)) -> size() == 0
@@ -143,7 +143,7 @@ context AnalysisTask {
 }
 
 
-context VisualizationTask {
+context VisualizationTask{
 	constraint nextTypeVisualization {
 		check: self.outgoing.target -> reject(t | t.isTypeOf(ExportTask)) -> size() == 0
 		message: "Visualization task can be linked only to export task"
@@ -151,7 +151,7 @@ context VisualizationTask {
 }
 
 
-context ExportTask {
+context ExportTask{
 	constraint finalTask {
 		check: self.outgoing -> size() == 0
 		message: "Exporting Task can't have an outgoing data flow."
@@ -160,7 +160,7 @@ context ExportTask {
 }
 
 
-context Schema {
+context Schema{
 	constraint uniqueAttribute {
 		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
 		message: "There can't be more attributes with the same name!"
@@ -168,7 +168,7 @@ context Schema {
 }
 
 
-context Attribute {
+context Attribute{
 	constraint uniqueAttribute {
 		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
 		message: "There can't be more attributes with the same name!"

@@ -7,8 +7,8 @@ class Pipeline {
   val Task[+] tasks;
   attr String ID;
   val InternalDataFlow[*] internalDataFlows;
-  val Source[+] inputSources;
-  val File[*] outputFiles;
+  val Source[+] sources;
+  val File[*] files;
   val Operation[+] operations;
   val Schema[+] schemas;
 }

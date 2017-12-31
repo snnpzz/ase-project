@@ -79,10 +79,10 @@ public class PipelineItemSemanticEditPolicy extends PipelineBaseItemSemanticEdit
 		if (PipelineElementTypes.ExportTask_2032 == req.getElementType()) {
 			return getGEFWrapper(new ExportTaskCreateCommand(req));
 		}
-		if (PipelineElementTypes.Source_2041 == req.getElementType()) {
+		if (PipelineElementTypes.Source_2044 == req.getElementType()) {
 			return getGEFWrapper(new SourceCreateCommand(req));
 		}
-		if (PipelineElementTypes.File_2042 == req.getElementType()) {
+		if (PipelineElementTypes.File_2045 == req.getElementType()) {
 			return getGEFWrapper(new FileCreateCommand(req));
 		}
 		if (PipelineElementTypes.Schema_2043 == req.getElementType()) {

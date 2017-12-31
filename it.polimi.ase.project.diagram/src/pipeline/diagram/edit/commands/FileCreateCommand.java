@@ -58,7 +58,7 @@ public class FileCreateCommand extends EditElementCommand {
 		File newElement = PipelineFactory.eINSTANCE.createFile();
 
 		Pipeline owner = (Pipeline) getElementToEdit();
-		owner.getOutputFiles().add(newElement);
+		owner.getFiles().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

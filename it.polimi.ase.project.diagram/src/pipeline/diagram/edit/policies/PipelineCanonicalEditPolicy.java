@@ -98,8 +98,8 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_Operations());
 			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_Tasks());
-			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_InputSources());
-			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_OutputFiles());
+			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_Sources());
+			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_Files());
 			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_Schemas());
 		}
 		return myFeaturesToSynchronize;
@@ -397,14 +397,14 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		case SourceEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getSource_2041ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getSource_2044ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case FileEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getFile_2042ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getFile_2045ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

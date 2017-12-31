@@ -39,7 +39,7 @@ public class SourceEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 2041;
+	public static final int VISUAL_ID = 2044;
 
 	/**
 	* @generated

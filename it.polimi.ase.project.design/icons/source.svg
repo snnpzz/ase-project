@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 14.817 20.108"
+   height="20.108mm"
+   width="14.817mm">
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-276.892)"
+     id="layer1">
+    <g
+       transform="matrix(0.26458333,0,0,0.26458333,-5.2916666,274.24583)"
+       id="g18">
+      <ellipse
+         cx="48"
+         cy="18"
+         rx="28"
+         ry="8"
+         id="ellipse10" />
+      <path
+         d="m 68,38 c -1.2,0 -2,-0.8 -2,-2 0,-1.2 0.8,-2 2,-2 1.2,0 2,0.8 2,2 0,1.2 -0.8,2 -2,2 z M 48,30 C 32.6,30 20,26.4 20,22 v 16 c 0,4.4 12.6,8 28,8 15.4,0 28,-3.6 28,-8 V 22 c 0,4.4 -12.6,8 -28,8 z"
+         id="path12" />
+      <path
+         d="m 68,58 c -1.2,0 -2,-0.8 -2,-2 0,-1.2 0.8,-2 2,-2 1.2,0 2,0.8 2,2 0,1.2 -0.8,2 -2,2 z M 48,50 C 32.6,50 20,46.4 20,42 v 16 c 0,4.4 12.6,8 28,8 15.4,0 28,-3.6 28,-8 V 42 c 0,4.4 -12.6,8 -28,8 z"
+         id="path14" />
+      <path
+         d="m 68,78 c -1.2,0 -2,-0.8 -2,-2 0,-1.2 0.8,-2 2,-2 1.2,0 2,0.8 2,2 0,1.2 -0.8,2 -2,2 z M 48,70 C 32.6,70 20,66.4 20,62 v 16 c 0,4.4 12.6,8 28,8 15.4,0 28,-3.6 28,-8 V 62 c 0,4.4 -12.6,8 -28,8 z"
+         id="path16" />
+    </g>
+  </g>
+</svg>

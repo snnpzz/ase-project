@@ -387,16 +387,16 @@
         </modelFacet>
       </labels>
     </topLevelNodes>
-    <topLevelNodes visualID="2041" editPartClassName="SourceEditPart" itemSemanticEditPolicyClassName="SourceItemSemanticEditPolicy" canonicalEditPolicyClassName="SourceCanonicalEditPolicy" graphicalNodeEditPolicyClassName="SourceGraphicalNodeEditPolicy" createCommandClassName="SourceCreateCommand">
+    <topLevelNodes visualID="2044" editPartClassName="SourceEditPart" itemSemanticEditPolicyClassName="SourceItemSemanticEditPolicy" canonicalEditPolicyClassName="SourceCanonicalEditPolicy" graphicalNodeEditPolicyClassName="SourceGraphicalNodeEditPolicy" createCommandClassName="SourceCreateCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="SourceEditHelper"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="SourceFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SourceFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureSourceLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SourceFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSourceLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureSourceLabelFigure.setText(&quot;Source&quot;);&#xA;&#xA;this.add(fFigureSourceLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureSourceLabelFigure() {&#xA;&#x9;&#x9;return fFigureSourceLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass href="pipeline.genmodel#//pipeline/Source"/>
-        <containmentMetaFeature href="pipeline.genmodel#//pipeline/Pipeline/inputSources"/>
-        <childMetaFeature href="pipeline.genmodel#//pipeline/Pipeline/inputSources"/>
+        <containmentMetaFeature href="pipeline.genmodel#//pipeline/Pipeline/sources"/>
+        <childMetaFeature href="pipeline.genmodel#//pipeline/Pipeline/sources"/>
       </modelFacet>
-      <labels visualID="5086" editPartClassName="SourceNameEditPart" itemSemanticEditPolicyClassName="SourceNameItemSemanticEditPolicy" elementIcon="true">
+      <labels visualID="5096" editPartClassName="SourceNameEditPart" itemSemanticEditPolicyClassName="SourceNameItemSemanticEditPolicy" elementIcon="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureSourceLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
@@ -404,16 +404,16 @@
         </modelFacet>
       </labels>
     </topLevelNodes>
-    <topLevelNodes visualID="2042" editPartClassName="FileEditPart" itemSemanticEditPolicyClassName="FileItemSemanticEditPolicy" canonicalEditPolicyClassName="FileCanonicalEditPolicy" graphicalNodeEditPolicyClassName="FileGraphicalNodeEditPolicy" createCommandClassName="FileCreateCommand">
+    <topLevelNodes visualID="2045" editPartClassName="FileEditPart" itemSemanticEditPolicyClassName="FileItemSemanticEditPolicy" canonicalEditPolicyClassName="FileCanonicalEditPolicy" graphicalNodeEditPolicyClassName="FileGraphicalNodeEditPolicy" createCommandClassName="FileCreateCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="FileEditHelper"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="FileFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class FileFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureFileLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public FileFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureFileLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureFileLabelFigure.setText(&quot;File&quot;);&#xA;&#xA;this.add(fFigureFileLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureFileLabelFigure() {&#xA;&#x9;&#x9;return fFigureFileLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass href="pipeline.genmodel#//pipeline/File"/>
-        <containmentMetaFeature href="pipeline.genmodel#//pipeline/Pipeline/outputFiles"/>
-        <childMetaFeature href="pipeline.genmodel#//pipeline/Pipeline/outputFiles"/>
+        <containmentMetaFeature href="pipeline.genmodel#//pipeline/Pipeline/files"/>
+        <childMetaFeature href="pipeline.genmodel#//pipeline/Pipeline/files"/>
       </modelFacet>
-      <labels visualID="5087" editPartClassName="FileNameEditPart" itemSemanticEditPolicyClassName="FileNameItemSemanticEditPolicy" elementIcon="true">
+      <labels visualID="5097" editPartClassName="FileNameEditPart" itemSemanticEditPolicyClassName="FileNameItemSemanticEditPolicy" elementIcon="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureFileLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">

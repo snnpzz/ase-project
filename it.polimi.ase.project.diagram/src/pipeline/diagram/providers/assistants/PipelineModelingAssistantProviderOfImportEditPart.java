@@ -83,7 +83,7 @@ public class PipelineModelingAssistantProviderOfImportEditPart extends PipelineM
 	public List<IElementType> doGetTypesForTarget(ImportEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == PipelineElementTypes.ImportReadsFrom_4007) {
-			types.add(PipelineElementTypes.Source_2041);
+			types.add(PipelineElementTypes.Source_2044);
 		} else if (relationshipType == PipelineElementTypes.ImportImpUses_4013) {
 			types.add(PipelineElementTypes.Schema_2043);
 		}

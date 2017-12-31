@@ -350,7 +350,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="pipeline.ecore#//Pipeline/inputSources"/>
+        href="pipeline.ecore#//Pipeline/sources"/>
     <ownedChild>
       <domainMetaElement
           href="pipeline.ecore#//Source"/>
@@ -370,7 +370,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="pipeline.ecore#//Pipeline/outputFiles"/>
+        href="pipeline.ecore#//Pipeline/files"/>
     <ownedChild>
       <domainMetaElement
           href="pipeline.ecore#//File"/>

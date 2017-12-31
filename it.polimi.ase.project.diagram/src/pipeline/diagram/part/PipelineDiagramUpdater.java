@@ -187,7 +187,7 @@ public class PipelineDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getInputSources().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getSources().iterator(); it.hasNext();) {
 			Source childElement = (Source) it.next();
 			int visualID = PipelineVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == SourceEditPart.VISUAL_ID) {
@@ -195,7 +195,7 @@ public class PipelineDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getOutputFiles().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getFiles().iterator(); it.hasNext();) {
 			File childElement = (File) it.next();
 			int visualID = PipelineVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == FileEditPart.VISUAL_ID) {
@@ -436,9 +436,9 @@ public class PipelineDiagramUpdater {
 		case ExportTaskEditPart.VISUAL_ID:
 			return getExportTask_2032ContainedLinks(view);
 		case SourceEditPart.VISUAL_ID:
-			return getSource_2041ContainedLinks(view);
+			return getSource_2044ContainedLinks(view);
 		case FileEditPart.VISUAL_ID:
-			return getFile_2042ContainedLinks(view);
+			return getFile_2045ContainedLinks(view);
 		case SchemaEditPart.VISUAL_ID:
 			return getSchema_2043ContainedLinks(view);
 		case ImportEditPart.VISUAL_ID:
@@ -499,9 +499,9 @@ public class PipelineDiagramUpdater {
 		case ExportTaskEditPart.VISUAL_ID:
 			return getExportTask_2032IncomingLinks(view);
 		case SourceEditPart.VISUAL_ID:
-			return getSource_2041IncomingLinks(view);
+			return getSource_2044IncomingLinks(view);
 		case FileEditPart.VISUAL_ID:
-			return getFile_2042IncomingLinks(view);
+			return getFile_2045IncomingLinks(view);
 		case SchemaEditPart.VISUAL_ID:
 			return getSchema_2043IncomingLinks(view);
 		case ImportEditPart.VISUAL_ID:
@@ -562,9 +562,9 @@ public class PipelineDiagramUpdater {
 		case ExportTaskEditPart.VISUAL_ID:
 			return getExportTask_2032OutgoingLinks(view);
 		case SourceEditPart.VISUAL_ID:
-			return getSource_2041OutgoingLinks(view);
+			return getSource_2044OutgoingLinks(view);
 		case FileEditPart.VISUAL_ID:
-			return getFile_2042OutgoingLinks(view);
+			return getFile_2045OutgoingLinks(view);
 		case SchemaEditPart.VISUAL_ID:
 			return getSchema_2043OutgoingLinks(view);
 		case ImportEditPart.VISUAL_ID:
@@ -691,16 +691,16 @@ public class PipelineDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getSource_2041ContainedLinks(View view) {
+	* @generated
+	*/
+	public static List<PipelineLinkDescriptor> getSource_2044ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getFile_2042ContainedLinks(View view) {
+	* @generated
+	*/
+	public static List<PipelineLinkDescriptor> getFile_2045ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -954,9 +954,9 @@ public class PipelineDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getSource_2041IncomingLinks(View view) {
+	* @generated
+	*/
+	public static List<PipelineLinkDescriptor> getSource_2044IncomingLinks(View view) {
 		Source modelElement = (Source) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -966,9 +966,9 @@ public class PipelineDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getFile_2042IncomingLinks(View view) {
+	* @generated
+	*/
+	public static List<PipelineLinkDescriptor> getFile_2045IncomingLinks(View view) {
 		File modelElement = (File) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -1228,16 +1228,16 @@ public class PipelineDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getSource_2041OutgoingLinks(View view) {
+	* @generated
+	*/
+	public static List<PipelineLinkDescriptor> getSource_2044OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getFile_2042OutgoingLinks(View view) {
+	* @generated
+	*/
+	public static List<PipelineLinkDescriptor> getFile_2045OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 

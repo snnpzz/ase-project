@@ -100,24 +100,24 @@
         queryText="true"/>
   </nodeTraces>
   <nodeTraces
-      visualID="2041"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Source') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Pipeline') and _containmentMF_.name = 'inputSources')">
-    <nodeLabelTraces
-        visualID="5086"
-        queryText="true"/>
-  </nodeTraces>
-  <nodeTraces
-      visualID="2042"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'File') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Pipeline') and _containmentMF_.name = 'outputFiles')">
-    <nodeLabelTraces
-        visualID="5087"
-        queryText="true"/>
-  </nodeTraces>
-  <nodeTraces
       visualID="2043"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Schema') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Pipeline') and _containmentMF_.name = 'schemas')">
     <compartmentTraces
         visualID="7023"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2044"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Source') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Pipeline') and _containmentMF_.name = 'sources')">
+    <nodeLabelTraces
+        visualID="5096"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2045"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'File') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Pipeline') and _containmentMF_.name = 'files')">
+    <nodeLabelTraces
+        visualID="5097"
         queryText="true"/>
   </nodeTraces>
   <childNodeTraces

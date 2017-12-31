@@ -144,11 +144,13 @@ public class PipelineElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType Source_2041 = getElementType("it.polimi.ase.project.diagram.Source_2041"); //$NON-NLS-1$
+	public static final IElementType Source_2044 = getElementType("it.polimi.ase.project.diagram.Source_2044"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType File_2042 = getElementType("it.polimi.ase.project.diagram.File_2042"); //$NON-NLS-1$
+	public static final IElementType File_2045 = getElementType("it.polimi.ase.project.diagram.File_2045"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
@@ -300,9 +302,9 @@ public class PipelineElementTypes {
 
 			elements.put(ExportTask_2032, PipelinePackage.eINSTANCE.getExportTask());
 
-			elements.put(Source_2041, PipelinePackage.eINSTANCE.getSource());
+			elements.put(Source_2044, PipelinePackage.eINSTANCE.getSource());
 
-			elements.put(File_2042, PipelinePackage.eINSTANCE.getFile());
+			elements.put(File_2045, PipelinePackage.eINSTANCE.getFile());
 
 			elements.put(Schema_2043, PipelinePackage.eINSTANCE.getSchema());
 
@@ -371,8 +373,8 @@ public class PipelineElementTypes {
 			KNOWN_ELEMENT_TYPES.add(AnalysisTask_2031);
 			KNOWN_ELEMENT_TYPES.add(VisualizationTask_2029);
 			KNOWN_ELEMENT_TYPES.add(ExportTask_2032);
-			KNOWN_ELEMENT_TYPES.add(Source_2041);
-			KNOWN_ELEMENT_TYPES.add(File_2042);
+			KNOWN_ELEMENT_TYPES.add(Source_2044);
+			KNOWN_ELEMENT_TYPES.add(File_2045);
 			KNOWN_ELEMENT_TYPES.add(Schema_2043);
 			KNOWN_ELEMENT_TYPES.add(Import_3025);
 			KNOWN_ELEMENT_TYPES.add(UserDefined_3040);
@@ -428,9 +430,9 @@ public class PipelineElementTypes {
 		case ExportTaskEditPart.VISUAL_ID:
 			return ExportTask_2032;
 		case SourceEditPart.VISUAL_ID:
-			return Source_2041;
+			return Source_2044;
 		case FileEditPart.VISUAL_ID:
-			return File_2042;
+			return File_2045;
 		case SchemaEditPart.VISUAL_ID:
 			return Schema_2043;
 		case ImportEditPart.VISUAL_ID:

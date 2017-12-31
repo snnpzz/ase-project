@@ -188,15 +188,15 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 		case PredefinedEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.project.ase.polimi.it/pipeline?Predefined", //$NON-NLS-1$
 					PipelineElementTypes.Predefined_2038);
-		case SourceEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.project.ase.polimi.it/pipeline?Source", //$NON-NLS-1$
-					PipelineElementTypes.Source_2041);
-		case FileEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.project.ase.polimi.it/pipeline?File", //$NON-NLS-1$
-					PipelineElementTypes.File_2042);
 		case SchemaEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.project.ase.polimi.it/pipeline?Schema", //$NON-NLS-1$
 					PipelineElementTypes.Schema_2043);
+		case SourceEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.project.ase.polimi.it/pipeline?Source", //$NON-NLS-1$
+					PipelineElementTypes.Source_2044);
+		case FileEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.project.ase.polimi.it/pipeline?File", //$NON-NLS-1$
+					PipelineElementTypes.File_2045);
 		case ImportEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?Import", //$NON-NLS-1$
 					PipelineElementTypes.Import_3025);
@@ -335,12 +335,12 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 			return getClustering_2037Text(view);
 		case PredefinedEditPart.VISUAL_ID:
 			return getPredefined_2038Text(view);
-		case SourceEditPart.VISUAL_ID:
-			return getSource_2041Text(view);
-		case FileEditPart.VISUAL_ID:
-			return getFile_2042Text(view);
 		case SchemaEditPart.VISUAL_ID:
 			return getSchema_2043Text(view);
+		case SourceEditPart.VISUAL_ID:
+			return getSource_2044Text(view);
+		case FileEditPart.VISUAL_ID:
+			return getFile_2045Text(view);
 		case ImportEditPart.VISUAL_ID:
 			return getImport_3025Text(view);
 		case ExportEditPart.VISUAL_ID:
@@ -589,44 +589,44 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	/**
 	* @generated
 	*/
-	private String getSource_2041Text(View view) {
-		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.Source_2041,
-				view.getElement() != null ? view.getElement() : view,
-				PipelineVisualIDRegistry.getType(SourceNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5086); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	* @generated
-	*/
-	private String getFile_2042Text(View view) {
-		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.File_2042,
-				view.getElement() != null ? view.getElement() : view,
-				PipelineVisualIDRegistry.getType(FileNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5087); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	* @generated
-	*/
 	private String getSchema_2043Text(View view) {
 		Schema domainModelElement = (Schema) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
 		} else {
 			PipelineDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2043); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getSource_2044Text(View view) {
+		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.Source_2044,
+				view.getElement() != null ? view.getElement() : view,
+				PipelineVisualIDRegistry.getType(SourceNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5096); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getFile_2045Text(View view) {
+		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.File_2045,
+				view.getElement() != null ? view.getElement() : view,
+				PipelineVisualIDRegistry.getType(FileNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5097); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

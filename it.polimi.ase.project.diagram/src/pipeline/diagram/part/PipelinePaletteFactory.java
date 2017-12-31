@@ -204,9 +204,9 @@ public class PipelinePaletteFactory {
 	*/
 	private ToolEntry createFile10CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.File10CreationTool_title,
-				Messages.File10CreationTool_desc, Collections.singletonList(PipelineElementTypes.File_2042));
+				Messages.File10CreationTool_desc, Collections.singletonList(PipelineElementTypes.File_2045));
 		entry.setId("createFile10CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(PipelineElementTypes.getImageDescriptor(PipelineElementTypes.File_2042));
+		entry.setSmallIcon(PipelineElementTypes.getImageDescriptor(PipelineElementTypes.File_2045));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -283,9 +283,9 @@ public class PipelinePaletteFactory {
 	*/
 	private ToolEntry createSource16CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Source16CreationTool_title,
-				Messages.Source16CreationTool_desc, Collections.singletonList(PipelineElementTypes.Source_2041));
+				Messages.Source16CreationTool_desc, Collections.singletonList(PipelineElementTypes.Source_2044));
 		entry.setId("createSource16CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(PipelineElementTypes.getImageDescriptor(PipelineElementTypes.Source_2041));
+		entry.setSmallIcon(PipelineElementTypes.getImageDescriptor(PipelineElementTypes.Source_2044));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

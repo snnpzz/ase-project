@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pipeline.Pipeline#getTasks <em>Tasks</em>}</li>
  *   <li>{@link pipeline.Pipeline#getID <em>ID</em>}</li>
  *   <li>{@link pipeline.Pipeline#getInternalDataFlows <em>Internal Data Flows</em>}</li>
- *   <li>{@link pipeline.Pipeline#getInputSources <em>Input Sources</em>}</li>
- *   <li>{@link pipeline.Pipeline#getOutputFiles <em>Output Files</em>}</li>
+ *   <li>{@link pipeline.Pipeline#getSources <em>Sources</em>}</li>
+ *   <li>{@link pipeline.Pipeline#getFiles <em>Files</em>}</li>
  *   <li>{@link pipeline.Pipeline#getOperations <em>Operations</em>}</li>
  *   <li>{@link pipeline.Pipeline#getSchemas <em>Schemas</em>}</li>
  * </ul>
@@ -105,36 +105,36 @@ public interface Pipeline extends EObject {
 	EList<InternalDataFlow> getInternalDataFlows();
 
 	/**
-	 * Returns the value of the '<em><b>Input Sources</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Sources</b></em>' containment reference list.
 	 * The list contents are of type {@link pipeline.Source}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Input Sources</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Sources</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Input Sources</em>' containment reference list.
-	 * @see pipeline.PipelinePackage#getPipeline_InputSources()
+	 * @return the value of the '<em>Sources</em>' containment reference list.
+	 * @see pipeline.PipelinePackage#getPipeline_Sources()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Source> getInputSources();
+	EList<Source> getSources();
 
 	/**
-	 * Returns the value of the '<em><b>Output Files</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Files</b></em>' containment reference list.
 	 * The list contents are of type {@link pipeline.File}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Output Files</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Files</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Output Files</em>' containment reference list.
-	 * @see pipeline.PipelinePackage#getPipeline_OutputFiles()
+	 * @return the value of the '<em>Files</em>' containment reference list.
+	 * @see pipeline.PipelinePackage#getPipeline_Files()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<File> getOutputFiles();
+	EList<File> getFiles();
 
 	/**
 	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.

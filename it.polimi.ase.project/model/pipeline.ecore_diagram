@@ -978,7 +978,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_1bDZlutEEee4hrsBN4wSAg" x="-235" y="13"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_1bDZketEEee4hrsBN4wSAg" fontName=".SF NS Text"/>
-    <element xmi:type="ecore:EReference" href="pipeline.ecore#//Pipeline/inputSources"/>
+    <element xmi:type="ecore:EReference" href="pipeline.ecore#//Pipeline/sources"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1bDZkutEEee4hrsBN4wSAg" points="[8, 33, -56, -595]$[64, 243, 0, -385]$[64, 587, 0, -41]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_1bEnsOtEEee4hrsBN4wSAg" type="4003" source="_Jy2pEOGVEeeU3dy_CQ-Szg" target="_BVphUOGXEeeU3dy_CQ-Szg">
@@ -989,7 +989,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_1bEntutEEee4hrsBN4wSAg" x="-87" y="-51"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_1bEnsetEEee4hrsBN4wSAg" fontName=".SF NS Text"/>
-    <element xmi:type="ecore:EReference" href="pipeline.ecore#//Pipeline/outputFiles"/>
+    <element xmi:type="ecore:EReference" href="pipeline.ecore#//Pipeline/files"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1bEnsutEEee4hrsBN4wSAg" points="[28, 33, -160, -479]$[91, 107, -97, -405]$[91, 383, -97, -129]$[157, 471, -31, -41]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_1bF10OtEEee4hrsBN4wSAg" type="4003" source="_Jy2pEOGVEeeU3dy_CQ-Szg" target="_oivoYOGWEeeU3dy_CQ-Szg">

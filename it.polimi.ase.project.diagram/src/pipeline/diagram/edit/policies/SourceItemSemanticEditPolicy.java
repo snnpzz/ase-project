@@ -33,7 +33,7 @@ public class SourceItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 	* @generated
 	*/
 	public SourceItemSemanticEditPolicy() {
-		super(PipelineElementTypes.Source_2041);
+		super(PipelineElementTypes.Source_2044);
 	}
 
 	/**

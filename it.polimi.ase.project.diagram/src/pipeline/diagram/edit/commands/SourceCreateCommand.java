@@ -58,7 +58,7 @@ public class SourceCreateCommand extends EditElementCommand {
 		Source newElement = PipelineFactory.eINSTANCE.createSource();
 
 		Pipeline owner = (Pipeline) getElementToEdit();
-		owner.getInputSources().add(newElement);
+		owner.getSources().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -36,8 +36,8 @@ public class PipelineModelingAssistantProviderOfPipelineEditPart extends Pipelin
 		types.add(PipelineElementTypes.AnalysisTask_2031);
 		types.add(PipelineElementTypes.VisualizationTask_2029);
 		types.add(PipelineElementTypes.ExportTask_2032);
-		types.add(PipelineElementTypes.Source_2041);
-		types.add(PipelineElementTypes.File_2042);
+		types.add(PipelineElementTypes.Source_2044);
+		types.add(PipelineElementTypes.File_2045);
 		types.add(PipelineElementTypes.Schema_2043);
 		return types;
 	}

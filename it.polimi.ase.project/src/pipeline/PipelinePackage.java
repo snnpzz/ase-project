@@ -103,22 +103,22 @@ public interface PipelinePackage extends EPackage {
 	int PIPELINE__INTERNAL_DATA_FLOWS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Input Sources</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Sources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIPELINE__INPUT_SOURCES = 4;
+	int PIPELINE__SOURCES = 4;
 
 	/**
-	 * The feature id for the '<em><b>Output Files</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Files</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIPELINE__OUTPUT_FILES = 5;
+	int PIPELINE__FILES = 5;
 
 	/**
 	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
@@ -1418,26 +1418,26 @@ public interface PipelinePackage extends EPackage {
 	EReference getPipeline_InternalDataFlows();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link pipeline.Pipeline#getInputSources <em>Input Sources</em>}'.
+	 * Returns the meta object for the containment reference list '{@link pipeline.Pipeline#getSources <em>Sources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Input Sources</em>'.
-	 * @see pipeline.Pipeline#getInputSources()
+	 * @return the meta object for the containment reference list '<em>Sources</em>'.
+	 * @see pipeline.Pipeline#getSources()
 	 * @see #getPipeline()
 	 * @generated
 	 */
-	EReference getPipeline_InputSources();
+	EReference getPipeline_Sources();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link pipeline.Pipeline#getOutputFiles <em>Output Files</em>}'.
+	 * Returns the meta object for the containment reference list '{@link pipeline.Pipeline#getFiles <em>Files</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Output Files</em>'.
-	 * @see pipeline.Pipeline#getOutputFiles()
+	 * @return the meta object for the containment reference list '<em>Files</em>'.
+	 * @see pipeline.Pipeline#getFiles()
 	 * @see #getPipeline()
 	 * @generated
 	 */
-	EReference getPipeline_OutputFiles();
+	EReference getPipeline_Files();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link pipeline.Pipeline#getOperations <em>Operations</em>}'.
@@ -2226,20 +2226,20 @@ public interface PipelinePackage extends EPackage {
 		EReference PIPELINE__INTERNAL_DATA_FLOWS = eINSTANCE.getPipeline_InternalDataFlows();
 
 		/**
-		 * The meta object literal for the '<em><b>Input Sources</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Sources</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PIPELINE__INPUT_SOURCES = eINSTANCE.getPipeline_InputSources();
+		EReference PIPELINE__SOURCES = eINSTANCE.getPipeline_Sources();
 
 		/**
-		 * The meta object literal for the '<em><b>Output Files</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Files</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PIPELINE__OUTPUT_FILES = eINSTANCE.getPipeline_OutputFiles();
+		EReference PIPELINE__FILES = eINSTANCE.getPipeline_Files();
 
 		/**
 		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.

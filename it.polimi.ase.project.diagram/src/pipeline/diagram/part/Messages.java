@@ -681,17 +681,17 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Source_2041_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_File_2042_incominglinks;
-
-	/**
-	* @generated
-	*/
 	public static String NavigatorGroupName_Schema_2043_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Source_2044_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_File_2045_incominglinks;
 
 	/**
 	* @generated

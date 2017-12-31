@@ -31,7 +31,7 @@ public class Predefined2ItemSemanticEditPolicy extends PipelineBaseItemSemanticE
 	* @generated
 	*/
 	public Predefined2ItemSemanticEditPolicy() {
-		super(PipelineElementTypes.Predefined_3027);
+		super(PipelineElementTypes.Predefined_3041);
 	}
 
 	/**

@@ -118,10 +118,10 @@ public class AnalysisTaskEditPart extends ShapeNodeEditPart {
 			((AnalysisTaskIDEditPart) childEditPart).setLabel(getPrimaryShape().getFigureAnalysisTaskLabelFigure());
 			return true;
 		}
-		if (childEditPart instanceof AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getAnalysisTaskAnalyzesCompartmentFigure();
+		if (childEditPart instanceof AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getAnalysisTaskAnalysisOperationsCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart) childEditPart).getFigure());
+			pane.add(((AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -134,9 +134,9 @@ public class AnalysisTaskEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof AnalysisTaskIDEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getAnalysisTaskAnalyzesCompartmentFigure();
-			pane.remove(((AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart) childEditPart).getFigure());
+		if (childEditPart instanceof AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getAnalysisTaskAnalysisOperationsCompartmentFigure();
+			pane.remove(((AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -166,8 +166,8 @@ public class AnalysisTaskEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart) {
-			return getPrimaryShape().getAnalysisTaskAnalyzesCompartmentFigure();
+		if (editPart instanceof AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart) {
+			return getPrimaryShape().getAnalysisTaskAnalysisOperationsCompartmentFigure();
 		}
 		return getContentPane();
 	}
@@ -289,7 +289,7 @@ public class AnalysisTaskEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fAnalysisTaskAnalyzesCompartmentFigure;
+		private RectangleFigure fAnalysisTaskAnalysisOperationsCompartmentFigure;
 
 		/**
 		 * @generated
@@ -314,11 +314,11 @@ public class AnalysisTaskEditPart extends ShapeNodeEditPart {
 
 			this.add(fFigureAnalysisTaskLabelFigure);
 
-			fAnalysisTaskAnalyzesCompartmentFigure = new RectangleFigure();
+			fAnalysisTaskAnalysisOperationsCompartmentFigure = new RectangleFigure();
 
-			fAnalysisTaskAnalyzesCompartmentFigure.setOutline(false);
+			fAnalysisTaskAnalysisOperationsCompartmentFigure.setOutline(false);
 
-			this.add(fAnalysisTaskAnalyzesCompartmentFigure);
+			this.add(fAnalysisTaskAnalysisOperationsCompartmentFigure);
 
 		}
 
@@ -332,8 +332,8 @@ public class AnalysisTaskEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getAnalysisTaskAnalyzesCompartmentFigure() {
-			return fAnalysisTaskAnalyzesCompartmentFigure;
+		public RectangleFigure getAnalysisTaskAnalysisOperationsCompartmentFigure() {
+			return fAnalysisTaskAnalysisOperationsCompartmentFigure;
 		}
 
 	}

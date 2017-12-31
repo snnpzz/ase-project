@@ -128,12 +128,12 @@ public class PipelineModelingAssistantProviderOfDescriptive2EditPart extends Pip
 			types.add(PipelineElementTypes.Predictive_2036);
 			types.add(PipelineElementTypes.Clustering_2037);
 			types.add(PipelineElementTypes.Predefined_2038);
-			types.add(PipelineElementTypes.UserDefined_3026);
-			types.add(PipelineElementTypes.Predefined_3027);
-			types.add(PipelineElementTypes.Descriptive_3033);
-			types.add(PipelineElementTypes.Classification_3034);
-			types.add(PipelineElementTypes.Predictive_3035);
-			types.add(PipelineElementTypes.Clustering_3036);
+			types.add(PipelineElementTypes.UserDefined_3040);
+			types.add(PipelineElementTypes.Predefined_3041);
+			types.add(PipelineElementTypes.Descriptive_3042);
+			types.add(PipelineElementTypes.Classification_3043);
+			types.add(PipelineElementTypes.Predictive_3044);
+			types.add(PipelineElementTypes.Clustering_3045);
 		}
 		return types;
 	}
@@ -179,12 +179,12 @@ public class PipelineModelingAssistantProviderOfDescriptive2EditPart extends Pip
 			types.add(PipelineElementTypes.Predictive_2036);
 			types.add(PipelineElementTypes.Clustering_2037);
 			types.add(PipelineElementTypes.Predefined_2038);
-			types.add(PipelineElementTypes.UserDefined_3026);
-			types.add(PipelineElementTypes.Predefined_3027);
-			types.add(PipelineElementTypes.Descriptive_3033);
-			types.add(PipelineElementTypes.Classification_3034);
-			types.add(PipelineElementTypes.Predictive_3035);
-			types.add(PipelineElementTypes.Clustering_3036);
+			types.add(PipelineElementTypes.UserDefined_3040);
+			types.add(PipelineElementTypes.Predefined_3041);
+			types.add(PipelineElementTypes.Descriptive_3042);
+			types.add(PipelineElementTypes.Classification_3043);
+			types.add(PipelineElementTypes.Predictive_3044);
+			types.add(PipelineElementTypes.Clustering_3045);
 		}
 		return types;
 	}

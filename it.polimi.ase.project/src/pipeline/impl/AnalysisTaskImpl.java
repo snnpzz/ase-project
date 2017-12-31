@@ -26,22 +26,21 @@ import pipeline.PipelinePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.AnalysisTaskImpl#getAnalyzes <em>Analyzes</em>}</li>
+ *   <li>{@link pipeline.impl.AnalysisTaskImpl#getAnalysisOperations <em>Analysis Operations</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AnalysisTaskImpl extends TaskImpl implements AnalysisTask {
 	/**
-	 * The cached value of the '{@link #getAnalyzes() <em>Analyzes</em>}' containment reference list.
+	 * The cached value of the '{@link #getAnalysisOperations() <em>Analysis Operations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAnalyzes()
+	 * @see #getAnalysisOperations()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AnalysisOperation> analyzes;
-
+	protected EList<AnalysisOperation> analysisOperations;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,11 +65,11 @@ public class AnalysisTaskImpl extends TaskImpl implements AnalysisTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AnalysisOperation> getAnalyzes() {
-		if (analyzes == null) {
-			analyzes = new EObjectContainmentEList<AnalysisOperation>(AnalysisOperation.class, this, PipelinePackage.ANALYSIS_TASK__ANALYZES);
+	public EList<AnalysisOperation> getAnalysisOperations() {
+		if (analysisOperations == null) {
+			analysisOperations = new EObjectContainmentEList<AnalysisOperation>(AnalysisOperation.class, this, PipelinePackage.ANALYSIS_TASK__ANALYSIS_OPERATIONS);
 		}
-		return analyzes;
+		return analysisOperations;
 	}
 
 	/**
@@ -81,8 +80,8 @@ public class AnalysisTaskImpl extends TaskImpl implements AnalysisTask {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PipelinePackage.ANALYSIS_TASK__ANALYZES:
-				return ((InternalEList<?>)getAnalyzes()).basicRemove(otherEnd, msgs);
+			case PipelinePackage.ANALYSIS_TASK__ANALYSIS_OPERATIONS:
+				return ((InternalEList<?>)getAnalysisOperations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -95,8 +94,8 @@ public class AnalysisTaskImpl extends TaskImpl implements AnalysisTask {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.ANALYSIS_TASK__ANALYZES:
-				return getAnalyzes();
+			case PipelinePackage.ANALYSIS_TASK__ANALYSIS_OPERATIONS:
+				return getAnalysisOperations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,9 +109,9 @@ public class AnalysisTaskImpl extends TaskImpl implements AnalysisTask {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.ANALYSIS_TASK__ANALYZES:
-				getAnalyzes().clear();
-				getAnalyzes().addAll((Collection<? extends AnalysisOperation>)newValue);
+			case PipelinePackage.ANALYSIS_TASK__ANALYSIS_OPERATIONS:
+				getAnalysisOperations().clear();
+				getAnalysisOperations().addAll((Collection<? extends AnalysisOperation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +125,8 @@ public class AnalysisTaskImpl extends TaskImpl implements AnalysisTask {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.ANALYSIS_TASK__ANALYZES:
-				getAnalyzes().clear();
+			case PipelinePackage.ANALYSIS_TASK__ANALYSIS_OPERATIONS:
+				getAnalysisOperations().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -141,8 +140,8 @@ public class AnalysisTaskImpl extends TaskImpl implements AnalysisTask {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.ANALYSIS_TASK__ANALYZES:
-				return analyzes != null && !analyzes.isEmpty();
+			case PipelinePackage.ANALYSIS_TASK__ANALYSIS_OPERATIONS:
+				return analysisOperations != null && !analysisOperations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

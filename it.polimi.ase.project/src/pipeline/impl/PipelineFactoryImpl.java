@@ -93,6 +93,8 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 		switch (eDataType.getClassifierID()) {
 			case PipelinePackage.FORMAT:
 				return createFormatFromString(eDataType, initialValue);
+			case PipelinePackage.SIZE:
+				return createSizeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -108,6 +110,8 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 		switch (eDataType.getClassifierID()) {
 			case PipelinePackage.FORMAT:
 				return convertFormatToString(eDataType, instanceValue);
+			case PipelinePackage.SIZE:
+				return convertSizeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -340,6 +344,26 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * @generated
 	 */
 	public String convertFormatToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Size createSizeFromString(EDataType eDataType, String initialValue) {
+		Size result = Size.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSizeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -31,7 +31,7 @@ public class Descriptive2ItemSemanticEditPolicy extends PipelineBaseItemSemantic
 	* @generated
 	*/
 	public Descriptive2ItemSemanticEditPolicy() {
-		super(PipelineElementTypes.Descriptive_3033);
+		super(PipelineElementTypes.Descriptive_3042);
 	}
 
 	/**

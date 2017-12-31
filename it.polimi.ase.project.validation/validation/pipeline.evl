@@ -33,7 +33,7 @@ context Pipeline {
 	constraint sameDataFlowSchema {
 		check: self.tasks -> reject(T1 | T1.isTypeOf(IntegrationTask) or T1.isTypeOf(ExportTask)) ->
 			forAll(t1 | self.tasks -> reject(T2 | T2.isTypeOf(IntegrationTask) or T2.isTypeOf(ExportTask)) ->
-			forAll(t2 | t1.outgoing.DFschema == t2.outgoing.DFschema))
+			forAll(t2 | t1.outgoing.schema == t2.outgoing.schema))
 		message: "Dataflow between tasks must be linked to the same schema"
 	}
 	

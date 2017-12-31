@@ -34,6 +34,7 @@ import pipeline.PipelinePackage;
 import pipeline.Predefined;
 import pipeline.Predictive;
 import pipeline.Schema;
+import pipeline.Size;
 import pipeline.Source;
 import pipeline.Task;
 import pipeline.UserDefined;
@@ -227,6 +228,13 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * @generated
 	 */
 	private EEnum formatEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum sizeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -645,6 +653,15 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getIntegrationTask_Attributes() {
+		return (EReference)integrationTaskEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCleaningTask() {
 		return cleaningTaskEClass;
 	}
@@ -654,7 +671,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCleaningTask_Operations() {
+	public EReference getCleaningTask_CleaningOperations() {
 		return (EReference)cleaningTaskEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -672,7 +689,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAnalysisTask_Analyzes() {
+	public EReference getAnalysisTask_AnalysisOperations() {
 		return (EReference)analysisTaskEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -683,6 +700,15 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 */
 	public EClass getVisualizationTask() {
 		return visualizationTaskEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVisualizationTask_Size() {
+		return (EAttribute)visualizationTaskEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -942,6 +968,15 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getSize() {
+		return sizeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PipelineFactory getPipelineFactory() {
 		return (PipelineFactory)getEFactoryInstance();
 	}
@@ -1012,14 +1047,16 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEReference(collectionTaskEClass, COLLECTION_TASK__IMPORTS);
 
 		integrationTaskEClass = createEClass(INTEGRATION_TASK);
+		createEReference(integrationTaskEClass, INTEGRATION_TASK__ATTRIBUTES);
 
 		cleaningTaskEClass = createEClass(CLEANING_TASK);
-		createEReference(cleaningTaskEClass, CLEANING_TASK__OPERATIONS);
+		createEReference(cleaningTaskEClass, CLEANING_TASK__CLEANING_OPERATIONS);
 
 		analysisTaskEClass = createEClass(ANALYSIS_TASK);
-		createEReference(analysisTaskEClass, ANALYSIS_TASK__ANALYZES);
+		createEReference(analysisTaskEClass, ANALYSIS_TASK__ANALYSIS_OPERATIONS);
 
 		visualizationTaskEClass = createEClass(VISUALIZATION_TASK);
+		createEAttribute(visualizationTaskEClass, VISUALIZATION_TASK__SIZE);
 
 		exportTaskEClass = createEClass(EXPORT_TASK);
 		createEReference(exportTaskEClass, EXPORT_TASK__EXPORTS);
@@ -1063,6 +1100,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		// Create enums
 		formatEEnum = createEEnum(FORMAT);
+		sizeEEnum = createEEnum(SIZE);
 	}
 
 	/**
@@ -1156,14 +1194,16 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEReference(getCollectionTask_Imports(), this.getImport(), null, "imports", null, 1, -1, CollectionTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(integrationTaskEClass, IntegrationTask.class, "IntegrationTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIntegrationTask_Attributes(), this.getAttribute(), null, "attributes", null, 1, -1, IntegrationTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(cleaningTaskEClass, CleaningTask.class, "CleaningTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCleaningTask_Operations(), this.getCleaningOperation(), null, "operations", null, 1, -1, CleaningTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCleaningTask_CleaningOperations(), this.getCleaningOperation(), null, "cleaningOperations", null, 1, -1, CleaningTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(analysisTaskEClass, AnalysisTask.class, "AnalysisTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnalysisTask_Analyzes(), this.getAnalysisOperation(), null, "analyzes", null, 1, -1, AnalysisTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnalysisTask_AnalysisOperations(), this.getAnalysisOperation(), null, "analysisOperations", null, 1, -1, AnalysisTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(visualizationTaskEClass, VisualizationTask.class, "VisualizationTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVisualizationTask_Size(), this.getSize(), "size", null, 0, 1, VisualizationTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exportTaskEClass, ExportTask.class, "ExportTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExportTask_Exports(), this.getExport(), null, "exports", null, 1, -1, ExportTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1211,6 +1251,11 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		addEEnumLiteral(formatEEnum, Format.CSV);
 		addEEnumLiteral(formatEEnum, Format.JSON);
 		addEEnumLiteral(formatEEnum, Format.XML);
+
+		initEEnum(sizeEEnum, Size.class, "Size");
+		addEEnumLiteral(sizeEEnum, Size.SMALL);
+		addEEnumLiteral(sizeEEnum, Size.MEDIUM);
+		addEEnumLiteral(sizeEEnum, Size.LARGE);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -1408,12 +1453,12 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getCleaningTask_Operations(), 
+		  (getCleaningTask_CleaningOperations(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getAnalysisTask_Analyzes(), 
+		  (getAnalysisTask_AnalysisOperations(), 
 		   source, 
 		   new String[] {
 		   });	

@@ -28,7 +28,7 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
 
-import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart;
+import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.Attribute2EditPart;
 import pipeline.diagram.edit.parts.AttributeAttributeAttributesCompartment2EditPart;
@@ -36,7 +36,7 @@ import pipeline.diagram.edit.parts.AttributeAttributeAttributesCompartmentEditPa
 import pipeline.diagram.edit.parts.AttributeEditPart;
 import pipeline.diagram.edit.parts.Classification2EditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
-import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskOperationsCompartmentEditPart;
+import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
 import pipeline.diagram.edit.parts.Clustering2EditPart;
 import pipeline.diagram.edit.parts.ClusteringEditPart;
@@ -410,13 +410,13 @@ public class PipelineNavigatorContentProvider implements ICommonContentProvider 
 					Messages.NavigatorGroupName_CleaningTask_2027_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(CleaningTaskCleaningTaskOperationsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), PipelineVisualIDRegistry
+					.getType(CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
 					PipelineVisualIDRegistry.getType(UserDefined2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(CleaningTaskCleaningTaskOperationsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), PipelineVisualIDRegistry
+					.getType(CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
 					PipelineVisualIDRegistry.getType(Predefined2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
@@ -470,23 +470,23 @@ public class PipelineNavigatorContentProvider implements ICommonContentProvider 
 					Messages.NavigatorGroupName_AnalysisTask_2031_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), PipelineVisualIDRegistry
+					.getType(AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
 					PipelineVisualIDRegistry.getType(Descriptive2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), PipelineVisualIDRegistry
+					.getType(AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
 					PipelineVisualIDRegistry.getType(Classification2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), PipelineVisualIDRegistry
+					.getType(AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
 					PipelineVisualIDRegistry.getType(Predictive2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), PipelineVisualIDRegistry
+					.getType(AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
 					PipelineVisualIDRegistry.getType(Clustering2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
@@ -766,156 +766,6 @@ public class PipelineNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case UserDefined2EditPart.VISUAL_ID: {
-			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_UserDefined_3026_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_UserDefined_3026_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case Predefined2EditPart.VISUAL_ID: {
-			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_Predefined_3027_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_Predefined_3027_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case Descriptive2EditPart.VISUAL_ID: {
-			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_Descriptive_3033_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_Descriptive_3033_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case Classification2EditPart.VISUAL_ID: {
-			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_Classification_3034_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_Classification_3034_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case Predictive2EditPart.VISUAL_ID: {
-			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_Predictive_3035_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_Predictive_3035_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case Clustering2EditPart.VISUAL_ID: {
-			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_Clustering_3036_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
-					Messages.NavigatorGroupName_Clustering_3036_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
 		case ExportEditPart.VISUAL_ID: {
 			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
 			Node sv = (Node) view;
@@ -956,6 +806,156 @@ public class PipelineNavigatorContentProvider implements ICommonContentProvider 
 			connectedViews = getChildrenByType(connectedViews,
 					PipelineVisualIDRegistry.getType(Attribute2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			return result.toArray();
+		}
+
+		case UserDefined2EditPart.VISUAL_ID: {
+			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
+					Messages.NavigatorGroupName_UserDefined_3040_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
+					Messages.NavigatorGroupName_UserDefined_3040_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case Predefined2EditPart.VISUAL_ID: {
+			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
+					Messages.NavigatorGroupName_Predefined_3041_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
+					Messages.NavigatorGroupName_Predefined_3041_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case Descriptive2EditPart.VISUAL_ID: {
+			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
+					Messages.NavigatorGroupName_Descriptive_3042_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
+					Messages.NavigatorGroupName_Descriptive_3042_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case Classification2EditPart.VISUAL_ID: {
+			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
+					Messages.NavigatorGroupName_Classification_3043_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
+					Messages.NavigatorGroupName_Classification_3043_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case Predictive2EditPart.VISUAL_ID: {
+			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
+					Messages.NavigatorGroupName_Predictive_3044_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
+					Messages.NavigatorGroupName_Predictive_3044_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case Clustering2EditPart.VISUAL_ID: {
+			LinkedList<PipelineAbstractNavigatorItem> result = new LinkedList<PipelineAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			PipelineNavigatorGroup incominglinks = new PipelineNavigatorGroup(
+					Messages.NavigatorGroupName_Clustering_3045_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			PipelineNavigatorGroup outgoinglinks = new PipelineNavigatorGroup(
+					Messages.NavigatorGroupName_Clustering_3045_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					PipelineVisualIDRegistry.getType(InternalDataFlowEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
 			return result.toArray();
 		}
 

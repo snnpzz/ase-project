@@ -258,7 +258,7 @@
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Pipeline"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2033,2034,2035,2036,2037,2038,2025,2026,2027,2031,2029,2032,2041,2042,2043,3025,3026,3027,3033,3034,3035,3036,3037,3038,3039"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2033,2034,2035,2036,2037,2038,2025,2026,2027,2031,2029,2032,2041,2042,2043,3025,3040,3041,3042,3043,3044,3045,3037,3038,3039"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4005,4006,4019,4018,4007,4013,4008,4014"/>
       </viewProvider>
    </extension>
@@ -271,13 +271,13 @@
             <method name="getType()" value="Pipeline"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2033,2034,2035,2036,2037,2038,2025,2026,2027,2031,2029,2032,2041,2042,2043,3025,3026,3027,3033,3034,3035,3036,3037,3038,3039"/>
+            <method name="getType()" value="2033,2034,2035,2036,2037,2038,2025,2026,2027,2031,2029,2032,2041,2042,2043,3025,3040,3041,3042,3043,3044,3045,3037,3038,3039"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4005,4006,4019,4018,4007,4013,4008,4014"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5078,5079,5080,5081,5082,5083,5058,5059,5062,5075,5068,5077,5086,5087,5057,5060,5061,5071,5072,5073,5074,5076,5089,5088"/>
+            <method name="getType()" value="5078,5079,5080,5081,5082,5083,5058,5059,5062,5075,5068,5077,5086,5087,5057,5090,5091,5092,5093,5094,5095,5076,5089,5088"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7017,7018,7021,7022,7023,7024,7025"/>
@@ -376,33 +376,33 @@
       </modelingAssistantProvider>
             <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfUserDefined2EditPart">
          <Priority name="Lowest"/>
-         <object class="pipeline.diagram.edit.parts.UserDefined2EditPart" id="UserDefined_3026"/>
-         <context elements="UserDefined_3026"/>
+         <object class="pipeline.diagram.edit.parts.UserDefined2EditPart" id="UserDefined_3040"/>
+         <context elements="UserDefined_3040"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfPredefined2EditPart">
          <Priority name="Lowest"/>
-         <object class="pipeline.diagram.edit.parts.Predefined2EditPart" id="Predefined_3027"/>
-         <context elements="Predefined_3027"/>
+         <object class="pipeline.diagram.edit.parts.Predefined2EditPart" id="Predefined_3041"/>
+         <context elements="Predefined_3041"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfDescriptive2EditPart">
          <Priority name="Lowest"/>
-         <object class="pipeline.diagram.edit.parts.Descriptive2EditPart" id="Descriptive_3033"/>
-         <context elements="Descriptive_3033"/>
+         <object class="pipeline.diagram.edit.parts.Descriptive2EditPart" id="Descriptive_3042"/>
+         <context elements="Descriptive_3042"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfClassification2EditPart">
          <Priority name="Lowest"/>
-         <object class="pipeline.diagram.edit.parts.Classification2EditPart" id="Classification_3034"/>
-         <context elements="Classification_3034"/>
+         <object class="pipeline.diagram.edit.parts.Classification2EditPart" id="Classification_3043"/>
+         <context elements="Classification_3043"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfPredictive2EditPart">
          <Priority name="Lowest"/>
-         <object class="pipeline.diagram.edit.parts.Predictive2EditPart" id="Predictive_3035"/>
-         <context elements="Predictive_3035"/>
+         <object class="pipeline.diagram.edit.parts.Predictive2EditPart" id="Predictive_3044"/>
+         <context elements="Predictive_3044"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfClustering2EditPart">
          <Priority name="Lowest"/>
-         <object class="pipeline.diagram.edit.parts.Clustering2EditPart" id="Clustering_3036"/>
-         <context elements="Clustering_3036"/>
+         <object class="pipeline.diagram.edit.parts.Clustering2EditPart" id="Clustering_3045"/>
+         <context elements="Clustering_3045"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfExportEditPart">
          <Priority name="Lowest"/>
@@ -622,56 +622,56 @@
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <specializationType
-               id="it.polimi.ase.project.diagram.UserDefined_3026"
-               name="%metatype.name.UserDefined_3026"
+               id="it.polimi.ase.project.diagram.UserDefined_3040"
+               name="%metatype.name.UserDefined_3040"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="it.polimi.ase.project.diagram.UserDefined_2033"/>
-            <param name="semanticHint" value="3026"/>
+            <param name="semanticHint" value="3040"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <specializationType
-               id="it.polimi.ase.project.diagram.Predefined_3027"
-               name="%metatype.name.Predefined_3027"
+               id="it.polimi.ase.project.diagram.Predefined_3041"
+               name="%metatype.name.Predefined_3041"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="it.polimi.ase.project.diagram.Predefined_2038"/>
-            <param name="semanticHint" value="3027"/>
+            <param name="semanticHint" value="3041"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <specializationType
-               id="it.polimi.ase.project.diagram.Descriptive_3033"
-               name="%metatype.name.Descriptive_3033"
+               id="it.polimi.ase.project.diagram.Descriptive_3042"
+               name="%metatype.name.Descriptive_3042"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="it.polimi.ase.project.diagram.Descriptive_2034"/>
-            <param name="semanticHint" value="3033"/>
+            <param name="semanticHint" value="3042"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <specializationType
-               id="it.polimi.ase.project.diagram.Classification_3034"
-               name="%metatype.name.Classification_3034"
+               id="it.polimi.ase.project.diagram.Classification_3043"
+               name="%metatype.name.Classification_3043"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="it.polimi.ase.project.diagram.Classification_2035"/>
-            <param name="semanticHint" value="3034"/>
+            <param name="semanticHint" value="3043"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <specializationType
-               id="it.polimi.ase.project.diagram.Predictive_3035"
-               name="%metatype.name.Predictive_3035"
+               id="it.polimi.ase.project.diagram.Predictive_3044"
+               name="%metatype.name.Predictive_3044"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="it.polimi.ase.project.diagram.Predictive_2036"/>
-            <param name="semanticHint" value="3035"/>
+            <param name="semanticHint" value="3044"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <specializationType
-               id="it.polimi.ase.project.diagram.Clustering_3036"
-               name="%metatype.name.Clustering_3036"
+               id="it.polimi.ase.project.diagram.Clustering_3045"
+               name="%metatype.name.Clustering_3045"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="it.polimi.ase.project.diagram.Clustering_2037"/>
-            <param name="semanticHint" value="3036"/>
+            <param name="semanticHint" value="3045"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
@@ -806,12 +806,12 @@
          <elementType ref="it.polimi.ase.project.diagram.File_2042"/>
          <elementType ref="it.polimi.ase.project.diagram.Schema_2043"/>
          <elementType ref="it.polimi.ase.project.diagram.Import_3025"/>
-         <elementType ref="it.polimi.ase.project.diagram.UserDefined_3026"/>
-         <elementType ref="it.polimi.ase.project.diagram.Predefined_3027"/>
-         <elementType ref="it.polimi.ase.project.diagram.Descriptive_3033"/>
-         <elementType ref="it.polimi.ase.project.diagram.Classification_3034"/>
-         <elementType ref="it.polimi.ase.project.diagram.Predictive_3035"/>
-         <elementType ref="it.polimi.ase.project.diagram.Clustering_3036"/>
+         <elementType ref="it.polimi.ase.project.diagram.UserDefined_3040"/>
+         <elementType ref="it.polimi.ase.project.diagram.Predefined_3041"/>
+         <elementType ref="it.polimi.ase.project.diagram.Descriptive_3042"/>
+         <elementType ref="it.polimi.ase.project.diagram.Classification_3043"/>
+         <elementType ref="it.polimi.ase.project.diagram.Predictive_3044"/>
+         <elementType ref="it.polimi.ase.project.diagram.Clustering_3045"/>
          <elementType ref="it.polimi.ase.project.diagram.Export_3037"/>
          <elementType ref="it.polimi.ase.project.diagram.Attribute_3038"/>
          <elementType ref="it.polimi.ase.project.diagram.Attribute_3039"/>

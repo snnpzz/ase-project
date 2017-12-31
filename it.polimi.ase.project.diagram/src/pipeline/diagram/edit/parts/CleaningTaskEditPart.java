@@ -118,10 +118,10 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 			((CleaningTaskIDEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCleaningTaskLabelFigure());
 			return true;
 		}
-		if (childEditPart instanceof CleaningTaskCleaningTaskOperationsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getCleaningTaskOperationsCompartmentFigure();
+		if (childEditPart instanceof CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getCleaningTaskCleaningOperationsCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((CleaningTaskCleaningTaskOperationsCompartmentEditPart) childEditPart).getFigure());
+			pane.add(((CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -134,9 +134,9 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof CleaningTaskIDEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof CleaningTaskCleaningTaskOperationsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getCleaningTaskOperationsCompartmentFigure();
-			pane.remove(((CleaningTaskCleaningTaskOperationsCompartmentEditPart) childEditPart).getFigure());
+		if (childEditPart instanceof CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getCleaningTaskCleaningOperationsCompartmentFigure();
+			pane.remove(((CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -166,8 +166,8 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof CleaningTaskCleaningTaskOperationsCompartmentEditPart) {
-			return getPrimaryShape().getCleaningTaskOperationsCompartmentFigure();
+		if (editPart instanceof CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart) {
+			return getPrimaryShape().getCleaningTaskCleaningOperationsCompartmentFigure();
 		}
 		return getContentPane();
 	}
@@ -287,13 +287,13 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 		 */
 		private WrappingLabel fFigureCleaningTaskLabelFigure;
 		/**
-		 * @generated
-		 */
-		private RectangleFigure fCleaningTaskOperationsCompartmentFigure;
+		* @generated
+		*/
+		private RectangleFigure fCleaningTaskCleaningOperationsCompartmentFigure;
 
 		/**
-		 * @generated
-		 */
+			 * @generated
+			 */
 		public CleaningTaskFigure() {
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
@@ -314,11 +314,11 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 
 			this.add(fFigureCleaningTaskLabelFigure);
 
-			fCleaningTaskOperationsCompartmentFigure = new RectangleFigure();
+			fCleaningTaskCleaningOperationsCompartmentFigure = new RectangleFigure();
 
-			fCleaningTaskOperationsCompartmentFigure.setOutline(false);
+			fCleaningTaskCleaningOperationsCompartmentFigure.setOutline(false);
 
-			this.add(fCleaningTaskOperationsCompartmentFigure);
+			this.add(fCleaningTaskCleaningOperationsCompartmentFigure);
 
 		}
 
@@ -330,10 +330,10 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
-		 */
-		public RectangleFigure getCleaningTaskOperationsCompartmentFigure() {
-			return fCleaningTaskOperationsCompartmentFigure;
+		* @generated
+		*/
+		public RectangleFigure getCleaningTaskCleaningOperationsCompartmentFigure() {
+			return fCleaningTaskCleaningOperationsCompartmentFigure;
 		}
 
 	}

@@ -62,7 +62,7 @@ public class CleaningTaskItemProvider extends TaskItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PipelinePackage.Literals.CLEANING_TASK__OPERATIONS);
+			childrenFeatures.add(PipelinePackage.Literals.CLEANING_TASK__CLEANING_OPERATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -118,7 +118,7 @@ public class CleaningTaskItemProvider extends TaskItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CleaningTask.class)) {
-			case PipelinePackage.CLEANING_TASK__OPERATIONS:
+			case PipelinePackage.CLEANING_TASK__CLEANING_OPERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -138,12 +138,12 @@ public class CleaningTaskItemProvider extends TaskItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.CLEANING_TASK__OPERATIONS,
+				(PipelinePackage.Literals.CLEANING_TASK__CLEANING_OPERATIONS,
 				 PipelineFactory.eINSTANCE.createUserDefined()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.CLEANING_TASK__OPERATIONS,
+				(PipelinePackage.Literals.CLEANING_TASK__CLEANING_OPERATIONS,
 				 PipelineFactory.eINSTANCE.createPredefined()));
 	}
 

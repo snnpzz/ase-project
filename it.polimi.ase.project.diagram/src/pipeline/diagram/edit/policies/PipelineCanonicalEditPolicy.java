@@ -425,42 +425,42 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		case UserDefined2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getUserDefined_3026ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getUserDefined_3040ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Predefined2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getPredefined_3027ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getPredefined_3041ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Descriptive2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getDescriptive_3033ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getDescriptive_3042ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Classification2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getClassification_3034ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getClassification_3043ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Predictive2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getPredictive_3035ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getPredictive_3044ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Clustering2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getClustering_3036ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getClustering_3045ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

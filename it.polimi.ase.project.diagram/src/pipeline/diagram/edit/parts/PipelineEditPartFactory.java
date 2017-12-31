@@ -178,11 +178,11 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case CollectionTaskCollectionTaskImportsCompartmentEditPart.VISUAL_ID:
 				return new CollectionTaskCollectionTaskImportsCompartmentEditPart(view);
 
-			case CleaningTaskCleaningTaskOperationsCompartmentEditPart.VISUAL_ID:
-				return new CleaningTaskCleaningTaskOperationsCompartmentEditPart(view);
+			case CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID:
+				return new CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart(view);
 
-			case AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID:
-				return new AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart(view);
+			case AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID:
+				return new AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart(view);
 
 			case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
 				return new ExportTaskExportTaskExportsCompartmentEditPart(view);

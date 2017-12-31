@@ -26,22 +26,21 @@ import pipeline.PipelinePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.CleaningTaskImpl#getOperations <em>Operations</em>}</li>
+ *   <li>{@link pipeline.impl.CleaningTaskImpl#getCleaningOperations <em>Cleaning Operations</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class CleaningTaskImpl extends TaskImpl implements CleaningTask {
 	/**
-	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
+	 * The cached value of the '{@link #getCleaningOperations() <em>Cleaning Operations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOperations()
+	 * @see #getCleaningOperations()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CleaningOperation> operations;
-
+	protected EList<CleaningOperation> cleaningOperations;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,11 +65,11 @@ public class CleaningTaskImpl extends TaskImpl implements CleaningTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CleaningOperation> getOperations() {
-		if (operations == null) {
-			operations = new EObjectContainmentEList<CleaningOperation>(CleaningOperation.class, this, PipelinePackage.CLEANING_TASK__OPERATIONS);
+	public EList<CleaningOperation> getCleaningOperations() {
+		if (cleaningOperations == null) {
+			cleaningOperations = new EObjectContainmentEList<CleaningOperation>(CleaningOperation.class, this, PipelinePackage.CLEANING_TASK__CLEANING_OPERATIONS);
 		}
-		return operations;
+		return cleaningOperations;
 	}
 
 	/**
@@ -81,8 +80,8 @@ public class CleaningTaskImpl extends TaskImpl implements CleaningTask {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PipelinePackage.CLEANING_TASK__OPERATIONS:
-				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
+			case PipelinePackage.CLEANING_TASK__CLEANING_OPERATIONS:
+				return ((InternalEList<?>)getCleaningOperations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -95,8 +94,8 @@ public class CleaningTaskImpl extends TaskImpl implements CleaningTask {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.CLEANING_TASK__OPERATIONS:
-				return getOperations();
+			case PipelinePackage.CLEANING_TASK__CLEANING_OPERATIONS:
+				return getCleaningOperations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,9 +109,9 @@ public class CleaningTaskImpl extends TaskImpl implements CleaningTask {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.CLEANING_TASK__OPERATIONS:
-				getOperations().clear();
-				getOperations().addAll((Collection<? extends CleaningOperation>)newValue);
+			case PipelinePackage.CLEANING_TASK__CLEANING_OPERATIONS:
+				getCleaningOperations().clear();
+				getCleaningOperations().addAll((Collection<? extends CleaningOperation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +125,8 @@ public class CleaningTaskImpl extends TaskImpl implements CleaningTask {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.CLEANING_TASK__OPERATIONS:
-				getOperations().clear();
+			case PipelinePackage.CLEANING_TASK__CLEANING_OPERATIONS:
+				getCleaningOperations().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -141,8 +140,8 @@ public class CleaningTaskImpl extends TaskImpl implements CleaningTask {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.CLEANING_TASK__OPERATIONS:
-				return operations != null && !operations.isEmpty();
+			case PipelinePackage.CLEANING_TASK__CLEANING_OPERATIONS:
+				return cleaningOperations != null && !cleaningOperations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

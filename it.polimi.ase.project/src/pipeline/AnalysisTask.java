@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.AnalysisTask#getAnalyzes <em>Analyzes</em>}</li>
+ *   <li>{@link pipeline.AnalysisTask#getAnalysisOperations <em>Analysis Operations</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getAnalysisTask()
@@ -22,19 +22,19 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface AnalysisTask extends Task {
 	/**
-	 * Returns the value of the '<em><b>Analyzes</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Analysis Operations</b></em>' containment reference list.
 	 * The list contents are of type {@link pipeline.AnalysisOperation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Analyzes</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Analysis Operations</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Analyzes</em>' containment reference list.
-	 * @see pipeline.PipelinePackage#getAnalysisTask_Analyzes()
+	 * @return the value of the '<em>Analysis Operations</em>' containment reference list.
+	 * @see pipeline.PipelinePackage#getAnalysisTask_AnalysisOperations()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<AnalysisOperation> getAnalyzes();
+	EList<AnalysisOperation> getAnalysisOperations();
 
 } // AnalysisTask

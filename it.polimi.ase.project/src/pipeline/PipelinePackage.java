@@ -543,13 +543,22 @@ public interface PipelinePackage extends EPackage {
 	int INTEGRATION_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_TASK__ATTRIBUTES = TASK_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Integration Task</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 0;
+	int INTEGRATION_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.CleaningTaskImpl <em>Cleaning Task</em>}' class.
@@ -589,13 +598,13 @@ public interface PipelinePackage extends EPackage {
 	int CLEANING_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
-	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Cleaning Operations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLEANING_TASK__OPERATIONS = TASK_FEATURE_COUNT + 0;
+	int CLEANING_TASK__CLEANING_OPERATIONS = TASK_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Cleaning Task</em>' class.
@@ -644,13 +653,13 @@ public interface PipelinePackage extends EPackage {
 	int ANALYSIS_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
-	 * The feature id for the '<em><b>Analyzes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Analysis Operations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_TASK__ANALYZES = TASK_FEATURE_COUNT + 0;
+	int ANALYSIS_TASK__ANALYSIS_OPERATIONS = TASK_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Analysis Task</em>' class.
@@ -699,13 +708,22 @@ public interface PipelinePackage extends EPackage {
 	int VISUALIZATION_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_TASK__SIZE = TASK_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Visualization Task</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VISUALIZATION_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 0;
+	int VISUALIZATION_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.ExportTaskImpl <em>Export Task</em>}' class.
@@ -1335,6 +1353,17 @@ public interface PipelinePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link pipeline.Size <em>Size</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.Size
+	 * @see pipeline.impl.PipelinePackageImpl#getSize()
+	 * @generated
+	 */
+	int SIZE = 26;
+
+
+	/**
 	 * Returns the meta object for class '{@link pipeline.Pipeline <em>Pipeline</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1755,6 +1784,17 @@ public interface PipelinePackage extends EPackage {
 	EClass getIntegrationTask();
 
 	/**
+	 * Returns the meta object for the reference list '{@link pipeline.IntegrationTask#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Attributes</em>'.
+	 * @see pipeline.IntegrationTask#getAttributes()
+	 * @see #getIntegrationTask()
+	 * @generated
+	 */
+	EReference getIntegrationTask_Attributes();
+
+	/**
 	 * Returns the meta object for class '{@link pipeline.CleaningTask <em>Cleaning Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1765,15 +1805,15 @@ public interface PipelinePackage extends EPackage {
 	EClass getCleaningTask();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link pipeline.CleaningTask#getOperations <em>Operations</em>}'.
+	 * Returns the meta object for the containment reference list '{@link pipeline.CleaningTask#getCleaningOperations <em>Cleaning Operations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Operations</em>'.
-	 * @see pipeline.CleaningTask#getOperations()
+	 * @return the meta object for the containment reference list '<em>Cleaning Operations</em>'.
+	 * @see pipeline.CleaningTask#getCleaningOperations()
 	 * @see #getCleaningTask()
 	 * @generated
 	 */
-	EReference getCleaningTask_Operations();
+	EReference getCleaningTask_CleaningOperations();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.AnalysisTask <em>Analysis Task</em>}'.
@@ -1786,15 +1826,15 @@ public interface PipelinePackage extends EPackage {
 	EClass getAnalysisTask();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link pipeline.AnalysisTask#getAnalyzes <em>Analyzes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link pipeline.AnalysisTask#getAnalysisOperations <em>Analysis Operations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Analyzes</em>'.
-	 * @see pipeline.AnalysisTask#getAnalyzes()
+	 * @return the meta object for the containment reference list '<em>Analysis Operations</em>'.
+	 * @see pipeline.AnalysisTask#getAnalysisOperations()
 	 * @see #getAnalysisTask()
 	 * @generated
 	 */
-	EReference getAnalysisTask_Analyzes();
+	EReference getAnalysisTask_AnalysisOperations();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.VisualizationTask <em>Visualization Task</em>}'.
@@ -1805,6 +1845,17 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getVisualizationTask();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pipeline.VisualizationTask#getSize <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Size</em>'.
+	 * @see pipeline.VisualizationTask#getSize()
+	 * @see #getVisualizationTask()
+	 * @generated
+	 */
+	EAttribute getVisualizationTask_Size();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.ExportTask <em>Export Task</em>}'.
@@ -2099,6 +2150,16 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getFormat();
+
+	/**
+	 * Returns the meta object for enum '{@link pipeline.Size <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Size</em>'.
+	 * @see pipeline.Size
+	 * @generated
+	 */
+	EEnum getSize();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2453,6 +2514,14 @@ public interface PipelinePackage extends EPackage {
 		EClass INTEGRATION_TASK = eINSTANCE.getIntegrationTask();
 
 		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTEGRATION_TASK__ATTRIBUTES = eINSTANCE.getIntegrationTask_Attributes();
+
+		/**
 		 * The meta object literal for the '{@link pipeline.impl.CleaningTaskImpl <em>Cleaning Task</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2463,12 +2532,12 @@ public interface PipelinePackage extends EPackage {
 		EClass CLEANING_TASK = eINSTANCE.getCleaningTask();
 
 		/**
-		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Cleaning Operations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CLEANING_TASK__OPERATIONS = eINSTANCE.getCleaningTask_Operations();
+		EReference CLEANING_TASK__CLEANING_OPERATIONS = eINSTANCE.getCleaningTask_CleaningOperations();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.AnalysisTaskImpl <em>Analysis Task</em>}' class.
@@ -2481,12 +2550,12 @@ public interface PipelinePackage extends EPackage {
 		EClass ANALYSIS_TASK = eINSTANCE.getAnalysisTask();
 
 		/**
-		 * The meta object literal for the '<em><b>Analyzes</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Analysis Operations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ANALYSIS_TASK__ANALYZES = eINSTANCE.getAnalysisTask_Analyzes();
+		EReference ANALYSIS_TASK__ANALYSIS_OPERATIONS = eINSTANCE.getAnalysisTask_AnalysisOperations();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.VisualizationTaskImpl <em>Visualization Task</em>}' class.
@@ -2497,6 +2566,14 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EClass VISUALIZATION_TASK = eINSTANCE.getVisualizationTask();
+
+		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VISUALIZATION_TASK__SIZE = eINSTANCE.getVisualizationTask_Size();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.ExportTaskImpl <em>Export Task</em>}' class.
@@ -2749,6 +2826,16 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum FORMAT = eINSTANCE.getFormat();
+
+		/**
+		 * The meta object literal for the '{@link pipeline.Size <em>Size</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pipeline.Size
+		 * @see pipeline.impl.PipelinePackageImpl#getSize()
+		 * @generated
+		 */
+		EEnum SIZE = eINSTANCE.getSize();
 
 	}
 

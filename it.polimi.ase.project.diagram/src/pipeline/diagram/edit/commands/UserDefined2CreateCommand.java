@@ -58,7 +58,7 @@ public class UserDefined2CreateCommand extends EditElementCommand {
 		UserDefined newElement = PipelineFactory.eINSTANCE.createUserDefined();
 
 		CleaningTask owner = (CleaningTask) getElementToEdit();
-		owner.getOperations().add(newElement);
+		owner.getCleaningOperations().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

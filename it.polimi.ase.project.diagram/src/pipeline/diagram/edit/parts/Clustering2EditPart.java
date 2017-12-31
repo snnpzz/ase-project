@@ -36,7 +36,7 @@ public class Clustering2EditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 3036;
+	public static final int VISUAL_ID = 3045;
 
 	/**
 	* @generated

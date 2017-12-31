@@ -82,10 +82,10 @@
           <children xsi:type="gmfgraph:Label" name="CleaningTaskLabelFigure" text="CleaningTask">
             <maximumSize dx="10000" dy="50"/>
           </children>
-          <children xsi:type="gmfgraph:Rectangle" name="CleaningTaskOperationsCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="CleaningTaskCleaningOperationsCompartmentFigure" outline="false"/>
         </actualFigure>
         <accessors accessor="getFigureCleaningTaskLabelFigure" figure="/0/@figures.0/@descriptors.4/@actualFigure/@children.0"/>
-        <accessors accessor="getCleaningTaskOperationsCompartmentFigure" figure="/0/@figures.0/@descriptors.4/@actualFigure/@children.1"/>
+        <accessors accessor="getCleaningTaskCleaningOperationsCompartmentFigure" figure="/0/@figures.0/@descriptors.4/@actualFigure/@children.1"/>
       </descriptors>
       <descriptors name="AnalysisTaskFigure">
         <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="AnalysisTaskFigure">
@@ -95,10 +95,10 @@
           <children xsi:type="gmfgraph:Label" name="AnalysisTaskLabelFigure" text="AnalysisTask">
             <maximumSize dx="10000" dy="50"/>
           </children>
-          <children xsi:type="gmfgraph:Rectangle" name="AnalysisTaskAnalyzesCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="AnalysisTaskAnalysisOperationsCompartmentFigure" outline="false"/>
         </actualFigure>
         <accessors accessor="getFigureAnalysisTaskLabelFigure" figure="/0/@figures.0/@descriptors.5/@actualFigure/@children.0"/>
-        <accessors accessor="getAnalysisTaskAnalyzesCompartmentFigure" figure="/0/@figures.0/@descriptors.5/@actualFigure/@children.1"/>
+        <accessors accessor="getAnalysisTaskAnalysisOperationsCompartmentFigure" figure="/0/@figures.0/@descriptors.5/@actualFigure/@children.1"/>
       </descriptors>
       <descriptors name="VisualizationTaskFigure">
         <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="VisualizationTaskFigure">
@@ -284,8 +284,8 @@
     <compartments name="SchemaAttributesCompartment" figure="SchemaFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.0/@accessors.0"/>
     <compartments name="AttributeAttributesCompartment" figure="AttributeFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.1/@accessors.1"/>
     <compartments name="CollectionTaskImportsCompartment" figure="CollectionTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.2/@accessors.1"/>
-    <compartments name="CleaningTaskOperationsCompartment" figure="CleaningTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.4/@accessors.1"/>
-    <compartments name="AnalysisTaskAnalyzesCompartment" figure="AnalysisTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.5/@accessors.1"/>
+    <compartments name="CleaningTaskCleaningOperationsCompartment" figure="CleaningTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.4/@accessors.1"/>
+    <compartments name="AnalysisTaskAnalysisOperationsCompartment" figure="AnalysisTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.5/@accessors.1"/>
     <compartments name="ExportTaskExportsCompartment" figure="ExportTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.7/@accessors.1"/>
     <labels name="AttributeLabel" figure="AttributeFigure" accessor="/0/@figures.0/@descriptors.1/@accessors.0"/>
     <labels name="CollectionTaskLabel" figure="CollectionTaskFigure" accessor="/0/@figures.0/@descriptors.2/@accessors.0"/>

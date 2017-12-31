@@ -36,7 +36,7 @@ public class Descriptive2EditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 3033;
+	public static final int VISUAL_ID = 3042;
 
 	/**
 	* @generated

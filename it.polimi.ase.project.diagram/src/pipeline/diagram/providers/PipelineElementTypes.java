@@ -160,30 +160,30 @@ public class PipelineElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType UserDefined_3026 = getElementType(
-			"it.polimi.ase.project.diagram.UserDefined_3026"); //$NON-NLS-1$
+	public static final IElementType UserDefined_3040 = getElementType(
+			"it.polimi.ase.project.diagram.UserDefined_3040"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Predefined_3027 = getElementType("it.polimi.ase.project.diagram.Predefined_3027"); //$NON-NLS-1$
+	public static final IElementType Predefined_3041 = getElementType("it.polimi.ase.project.diagram.Predefined_3041"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Descriptive_3033 = getElementType(
-			"it.polimi.ase.project.diagram.Descriptive_3033"); //$NON-NLS-1$
+	public static final IElementType Descriptive_3042 = getElementType(
+			"it.polimi.ase.project.diagram.Descriptive_3042"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Classification_3034 = getElementType(
-			"it.polimi.ase.project.diagram.Classification_3034"); //$NON-NLS-1$
+	public static final IElementType Classification_3043 = getElementType(
+			"it.polimi.ase.project.diagram.Classification_3043"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Predictive_3035 = getElementType("it.polimi.ase.project.diagram.Predictive_3035"); //$NON-NLS-1$
+	public static final IElementType Predictive_3044 = getElementType("it.polimi.ase.project.diagram.Predictive_3044"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Clustering_3036 = getElementType("it.polimi.ase.project.diagram.Clustering_3036"); //$NON-NLS-1$
+	public static final IElementType Clustering_3045 = getElementType("it.polimi.ase.project.diagram.Clustering_3045"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -308,17 +308,17 @@ public class PipelineElementTypes {
 
 			elements.put(Import_3025, PipelinePackage.eINSTANCE.getImport());
 
-			elements.put(UserDefined_3026, PipelinePackage.eINSTANCE.getUserDefined());
+			elements.put(UserDefined_3040, PipelinePackage.eINSTANCE.getUserDefined());
 
-			elements.put(Predefined_3027, PipelinePackage.eINSTANCE.getPredefined());
+			elements.put(Predefined_3041, PipelinePackage.eINSTANCE.getPredefined());
 
-			elements.put(Descriptive_3033, PipelinePackage.eINSTANCE.getDescriptive());
+			elements.put(Descriptive_3042, PipelinePackage.eINSTANCE.getDescriptive());
 
-			elements.put(Classification_3034, PipelinePackage.eINSTANCE.getClassification());
+			elements.put(Classification_3043, PipelinePackage.eINSTANCE.getClassification());
 
-			elements.put(Predictive_3035, PipelinePackage.eINSTANCE.getPredictive());
+			elements.put(Predictive_3044, PipelinePackage.eINSTANCE.getPredictive());
 
-			elements.put(Clustering_3036, PipelinePackage.eINSTANCE.getClustering());
+			elements.put(Clustering_3045, PipelinePackage.eINSTANCE.getClustering());
 
 			elements.put(Export_3037, PipelinePackage.eINSTANCE.getExport());
 
@@ -375,12 +375,12 @@ public class PipelineElementTypes {
 			KNOWN_ELEMENT_TYPES.add(File_2042);
 			KNOWN_ELEMENT_TYPES.add(Schema_2043);
 			KNOWN_ELEMENT_TYPES.add(Import_3025);
-			KNOWN_ELEMENT_TYPES.add(UserDefined_3026);
-			KNOWN_ELEMENT_TYPES.add(Predefined_3027);
-			KNOWN_ELEMENT_TYPES.add(Descriptive_3033);
-			KNOWN_ELEMENT_TYPES.add(Classification_3034);
-			KNOWN_ELEMENT_TYPES.add(Predictive_3035);
-			KNOWN_ELEMENT_TYPES.add(Clustering_3036);
+			KNOWN_ELEMENT_TYPES.add(UserDefined_3040);
+			KNOWN_ELEMENT_TYPES.add(Predefined_3041);
+			KNOWN_ELEMENT_TYPES.add(Descriptive_3042);
+			KNOWN_ELEMENT_TYPES.add(Classification_3043);
+			KNOWN_ELEMENT_TYPES.add(Predictive_3044);
+			KNOWN_ELEMENT_TYPES.add(Clustering_3045);
 			KNOWN_ELEMENT_TYPES.add(Export_3037);
 			KNOWN_ELEMENT_TYPES.add(Attribute_3038);
 			KNOWN_ELEMENT_TYPES.add(Attribute_3039);
@@ -436,17 +436,17 @@ public class PipelineElementTypes {
 		case ImportEditPart.VISUAL_ID:
 			return Import_3025;
 		case UserDefined2EditPart.VISUAL_ID:
-			return UserDefined_3026;
+			return UserDefined_3040;
 		case Predefined2EditPart.VISUAL_ID:
-			return Predefined_3027;
+			return Predefined_3041;
 		case Descriptive2EditPart.VISUAL_ID:
-			return Descriptive_3033;
+			return Descriptive_3042;
 		case Classification2EditPart.VISUAL_ID:
-			return Classification_3034;
+			return Classification_3043;
 		case Predictive2EditPart.VISUAL_ID:
-			return Predictive_3035;
+			return Predictive_3044;
 		case Clustering2EditPart.VISUAL_ID:
-			return Clustering_3036;
+			return Clustering_3045;
 		case ExportEditPart.VISUAL_ID:
 			return Export_3037;
 		case AttributeEditPart.VISUAL_ID:

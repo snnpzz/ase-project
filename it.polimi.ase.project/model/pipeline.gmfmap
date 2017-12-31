@@ -216,18 +216,18 @@
           compartment="//@nodes.8/@ownedChild/@compartments.0"
           referencedChild="//@nodes.0/@ownedChild">
         <containmentFeature
-            href="pipeline.ecore#//CleaningTask/operations"/>
+            href="pipeline.ecore#//CleaningTask/cleaningOperations"/>
       </children>
       <children
           compartment="//@nodes.8/@ownedChild/@compartments.0"
           referencedChild="//@nodes.5/@ownedChild">
         <containmentFeature
-            href="pipeline.ecore#//CleaningTask/operations"/>
+            href="pipeline.ecore#//CleaningTask/cleaningOperations"/>
       </children>
       <compartments
           children="//@nodes.8/@ownedChild/@children.0 //@nodes.8/@ownedChild/@children.1">
         <compartment
-            href="pipeline.gmfgraph#CleaningTaskOperationsCompartment"/>
+            href="pipeline.gmfgraph#CleaningTaskCleaningOperationsCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -254,30 +254,30 @@
           compartment="//@nodes.9/@ownedChild/@compartments.0"
           referencedChild="//@nodes.1/@ownedChild">
         <containmentFeature
-            href="pipeline.ecore#//AnalysisTask/analyzes"/>
+            href="pipeline.ecore#//AnalysisTask/analysisOperations"/>
       </children>
       <children
           compartment="//@nodes.9/@ownedChild/@compartments.0"
           referencedChild="//@nodes.2/@ownedChild">
         <containmentFeature
-            href="pipeline.ecore#//AnalysisTask/analyzes"/>
+            href="pipeline.ecore#//AnalysisTask/analysisOperations"/>
       </children>
       <children
           compartment="//@nodes.9/@ownedChild/@compartments.0"
           referencedChild="//@nodes.3/@ownedChild">
         <containmentFeature
-            href="pipeline.ecore#//AnalysisTask/analyzes"/>
+            href="pipeline.ecore#//AnalysisTask/analysisOperations"/>
       </children>
       <children
           compartment="//@nodes.9/@ownedChild/@compartments.0"
           referencedChild="//@nodes.4/@ownedChild">
         <containmentFeature
-            href="pipeline.ecore#//AnalysisTask/analyzes"/>
+            href="pipeline.ecore#//AnalysisTask/analysisOperations"/>
       </children>
       <compartments
           children="//@nodes.9/@ownedChild/@children.0 //@nodes.9/@ownedChild/@children.1 //@nodes.9/@ownedChild/@children.2 //@nodes.9/@ownedChild/@children.3">
         <compartment
-            href="pipeline.gmfgraph#AnalysisTaskAnalyzesCompartment"/>
+            href="pipeline.gmfgraph#AnalysisTaskAnalysisOperationsCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>

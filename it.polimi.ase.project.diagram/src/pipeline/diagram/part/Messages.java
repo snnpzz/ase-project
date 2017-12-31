@@ -521,12 +521,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String CleaningTaskCleaningTaskOperationsCompartmentEditPart_title;
+	public static String CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart_title;
 
 	/**
 	* @generated
 	*/
-	public static String AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart_title;
+	public static String AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart_title;
 
 	/**
 	* @generated
@@ -701,67 +701,67 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_UserDefined_3026_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_UserDefined_3026_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Predefined_3027_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Predefined_3027_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Descriptive_3033_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Descriptive_3033_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Classification_3034_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Classification_3034_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Predictive_3035_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Predictive_3035_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Clustering_3036_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Clustering_3036_outgoinglinks;
-
-	/**
-	* @generated
-	*/
 	public static String NavigatorGroupName_Export_3037_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_UserDefined_3040_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_UserDefined_3040_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Predefined_3041_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Predefined_3041_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Descriptive_3042_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Descriptive_3042_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Classification_3043_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Classification_3043_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Predictive_3044_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Predictive_3044_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Clustering_3045_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Clustering_3045_outgoinglinks;
 
 	/**
 	* @generated

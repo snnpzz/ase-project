@@ -20,7 +20,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.diagram.edit.commands.DataFlowCreateCommand;
 import pipeline.diagram.edit.commands.DataFlowReorientCommand;
-import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart;
+import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.Classification2EditPart;
 import pipeline.diagram.edit.parts.Clustering2EditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
@@ -88,7 +88,7 @@ public class AnalysisTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
 			switch (PipelineVisualIDRegistry.getVisualID(node)) {
-			case AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID:
+			case AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (PipelineVisualIDRegistry.getVisualID(cnode)) {

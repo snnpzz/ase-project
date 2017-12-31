@@ -21,8 +21,8 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 
-import pipeline.diagram.edit.policies.CleaningTaskCleaningTaskOperationsCompartmentCanonicalEditPolicy;
-import pipeline.diagram.edit.policies.CleaningTaskCleaningTaskOperationsCompartmentItemSemanticEditPolicy;
+import pipeline.diagram.edit.policies.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentCanonicalEditPolicy;
+import pipeline.diagram.edit.policies.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentItemSemanticEditPolicy;
 import pipeline.diagram.part.Messages;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 import pipeline.diagram.providers.PipelineElementTypes;
@@ -30,17 +30,17 @@ import pipeline.diagram.providers.PipelineElementTypes;
 /**
  * @generated
  */
-public class CleaningTaskCleaningTaskOperationsCompartmentEditPart extends ShapeCompartmentEditPart {
+public class AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart extends ShapeCompartmentEditPart {
 
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 7018;
+	public static final int VISUAL_ID = 7021;
 
 	/**
 	* @generated
 	*/
-	public CleaningTaskCleaningTaskOperationsCompartmentEditPart(View view) {
+	public AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart(View view) {
 		super(view);
 	}
 
@@ -48,7 +48,7 @@ public class CleaningTaskCleaningTaskOperationsCompartmentEditPart extends Shape
 	* @generated
 	*/
 	public String getCompartmentName() {
-		return Messages.CleaningTaskCleaningTaskOperationsCompartmentEditPart_title;
+		return Messages.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart_title;
 	}
 
 	/**
@@ -67,12 +67,12 @@ public class CleaningTaskCleaningTaskOperationsCompartmentEditPart extends Shape
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new CleaningTaskCleaningTaskOperationsCompartmentItemSemanticEditPolicy());
+				new AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(PipelineVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new CleaningTaskCleaningTaskOperationsCompartmentCanonicalEditPolicy());
+				new AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -92,10 +92,16 @@ public class CleaningTaskCleaningTaskOperationsCompartmentEditPart extends Shape
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == PipelineElementTypes.UserDefined_3026) {
+			if (type == PipelineElementTypes.Descriptive_3042) {
 				return this;
 			}
-			if (type == PipelineElementTypes.Predefined_3027) {
+			if (type == PipelineElementTypes.Classification_3043) {
+				return this;
+			}
+			if (type == PipelineElementTypes.Predictive_3044) {
+				return this;
+			}
+			if (type == PipelineElementTypes.Clustering_3045) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

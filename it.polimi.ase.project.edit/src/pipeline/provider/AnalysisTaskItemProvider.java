@@ -62,7 +62,7 @@ public class AnalysisTaskItemProvider extends TaskItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PipelinePackage.Literals.ANALYSIS_TASK__ANALYZES);
+			childrenFeatures.add(PipelinePackage.Literals.ANALYSIS_TASK__ANALYSIS_OPERATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -118,7 +118,7 @@ public class AnalysisTaskItemProvider extends TaskItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AnalysisTask.class)) {
-			case PipelinePackage.ANALYSIS_TASK__ANALYZES:
+			case PipelinePackage.ANALYSIS_TASK__ANALYSIS_OPERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -138,22 +138,22 @@ public class AnalysisTaskItemProvider extends TaskItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.ANALYSIS_TASK__ANALYZES,
+				(PipelinePackage.Literals.ANALYSIS_TASK__ANALYSIS_OPERATIONS,
 				 PipelineFactory.eINSTANCE.createDescriptive()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.ANALYSIS_TASK__ANALYZES,
+				(PipelinePackage.Literals.ANALYSIS_TASK__ANALYSIS_OPERATIONS,
 				 PipelineFactory.eINSTANCE.createClassification()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.ANALYSIS_TASK__ANALYZES,
+				(PipelinePackage.Literals.ANALYSIS_TASK__ANALYSIS_OPERATIONS,
 				 PipelineFactory.eINSTANCE.createPredictive()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PipelinePackage.Literals.ANALYSIS_TASK__ANALYZES,
+				(PipelinePackage.Literals.ANALYSIS_TASK__ANALYSIS_OPERATIONS,
 				 PipelineFactory.eINSTANCE.createClustering()));
 	}
 

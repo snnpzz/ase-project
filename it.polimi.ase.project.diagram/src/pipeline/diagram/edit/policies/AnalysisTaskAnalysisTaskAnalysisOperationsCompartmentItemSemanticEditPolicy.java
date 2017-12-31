@@ -15,13 +15,13 @@ import pipeline.diagram.providers.PipelineElementTypes;
 /**
  * @generated
  */
-public class AnalysisTaskAnalysisTaskAnalyzesCompartmentItemSemanticEditPolicy
+public class AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentItemSemanticEditPolicy
 		extends PipelineBaseItemSemanticEditPolicy {
 
 	/**
 	* @generated
 	*/
-	public AnalysisTaskAnalysisTaskAnalyzesCompartmentItemSemanticEditPolicy() {
+	public AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentItemSemanticEditPolicy() {
 		super(PipelineElementTypes.AnalysisTask_2031);
 	}
 
@@ -29,16 +29,16 @@ public class AnalysisTaskAnalysisTaskAnalyzesCompartmentItemSemanticEditPolicy
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (PipelineElementTypes.Descriptive_3033 == req.getElementType()) {
+		if (PipelineElementTypes.Descriptive_3042 == req.getElementType()) {
 			return getGEFWrapper(new Descriptive2CreateCommand(req));
 		}
-		if (PipelineElementTypes.Classification_3034 == req.getElementType()) {
+		if (PipelineElementTypes.Classification_3043 == req.getElementType()) {
 			return getGEFWrapper(new Classification2CreateCommand(req));
 		}
-		if (PipelineElementTypes.Predictive_3035 == req.getElementType()) {
+		if (PipelineElementTypes.Predictive_3044 == req.getElementType()) {
 			return getGEFWrapper(new Predictive2CreateCommand(req));
 		}
-		if (PipelineElementTypes.Clustering_3036 == req.getElementType()) {
+		if (PipelineElementTypes.Clustering_3045 == req.getElementType()) {
 			return getGEFWrapper(new Clustering2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

@@ -3,84 +3,151 @@
   <ownedViewpoints name="pipeline" modelFileExtension="pipeline">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Pipeline Diagram" domainClass="Pipeline">
       <metamodel href="http://www.project.ase.polimi.it/pipeline#/"/>
-      <validationSet>
-        <ownedRules xsi:type="validation:SemanticValidationRule" level="ERROR"/>
+      <validationSet name="PipelineValidation">
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="AtMost1TaskPerType" level="ERROR" targetClass="Pipeline">
+          <audits auditExpression="aql:self.tasks -> select(t | t.oclAsType(CollectionTask)) -> size() = 1"/>
+        </ownedRules>
       </validationSet>
       <defaultLayer name="Default">
-        <nodeMappings name="Integration Task" domainClass="IntegrationTask">
-          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelPosition="node" resizeKind="NSEW">
+        <nodeMappings name="IntegrationTaskNode" label="Integration Task" domainClass="IntegrationTask">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Integration Task" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Visualization Task" domainClass="VisualizationTask">
-          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelPosition="node" resizeKind="NSEW">
+        <nodeMappings name="VisualizationTaskNode" label="Visualization Task" domainClass="VisualizationTask">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Visualization Task" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="Data Flow" deletionDescription="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='unsetNext']" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='Integration%20Task'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='Visualization%20Task'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Export%20Task']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='Integration%20Task'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='Visualization%20Task'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Export%20Task']" targetFinderExpression="feature:target">
+        <edgeMappings name="attributesEdge" label="Attributes" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='IntegrationTaskNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='AttributeBorderedNode']" targetFinderExpression="feature:attributes">
           <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="CollectionTaskContainer" label="Collection Task" domainClass="CollectionTask">
-          <subNodeMappings name="Import Operation" label="Import Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="Import">
-            <style xsi:type="style:WorkspaceImageDescription" labelExpression="Import Operation" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+        <edgeMappings name="dataFlowEdge" label="Data Flow" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='IntegrationTaskNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='VisualizationTaskNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Export%20Task']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='IntegrationTaskNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='VisualizationTaskNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Export%20Task']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="DataFlow" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </style>
-          </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="Collection Task">
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="schemaEdge" label="Schema" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']" targetFinderExpression="feature:schema">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="internalDataFlowEdge" label="Internal Data Flow" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='Cleaning%20Operation']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='Cleaning%20Operation']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="InternalDataFlow" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Analysis Task" label="Analysis Task" domainClass="AnalysisTask">
+          <subNodeMappings name="AnalysisOperationNode" label="Analysis Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="AnalysisOperation"/>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Analysis Task">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </containerMappings>
         <containerMappings name="Cleaning Task" label="Cleaning Task" domainClass="CleaningTask">
-          <subNodeMappings name="Cleaning Operation" label="Cleaning Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="CleaningOperation">
-            <style xsi:type="style:WorkspaceImageDescription" labelExpression="Cleaning Operation" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </style>
-          </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="Cleaning Task">
+          <subNodeMappings name="Cleaning Operation" label="Cleaning Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="CleaningOperation"/>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Cleaning Task">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </containerMappings>
-        <containerMappings name="Analysis Task" label="Analysis Task" domainClass="AnalysisTask">
-          <subNodeMappings name="Analysis Operation" label="Analysis Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="AnalysisOperation"/>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="Analysis Task">
+        <containerMappings name="CollectionTaskContainer" label="Collection Task" domainClass="CollectionTask">
+          <subNodeMappings name="Import Operation" label="Import Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="Import"/>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Collection Task">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </containerMappings>
         <containerMappings name="Export Task" label="Export Task" domainClass="ExportTask">
-          <subNodeMappings name="Export Operation" label="Export Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="Export">
-            <style xsi:type="style:WorkspaceImageDescription" labelExpression="Export Operation" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW">
+          <subNodeMappings name="Export Operation" label="Export Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="Export"/>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Export Task">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="SchemaContainer" label="Schema" domainClass="Schema">
+          <borderedNodeMappings name="AttributeBorderedNode" label="Attribute" semanticCandidatesExpression="feature:eAllContents" domainClass="Attribute">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelPosition="node" resizeKind="EAST_WEST">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
-          </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="Export Task">
+          </borderedNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Schema">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </containerMappings>
         <toolSections>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createAttribute" label="Attribute">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Attribute" referenceName="attributes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createCleaningOperation" label="Cleaning Operation" nodeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='Cleaning%20Operation']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="CleaningOperation" referenceName="cleaningOperations"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createExportOperation" label="Export Operation" nodeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Export%20Task']/@subNodeMappings[name='Export%20Operation']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Export" referenceName="exports"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createImportOperation" label="Import Operation" nodeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer']/@subNodeMappings[name='Import%20Operation']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Import" referenceName="imports"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
           <ownedTools xsi:type="tool:NodeCreationDescription" name="createIntegrationTask">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -99,27 +166,6 @@
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="CollectionTask" referenceName="tasks">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="Collection Task"/>
                 </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="setNext" edgeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='Data%20Flow']">
-            <sourceVariable name="source"/>
-            <targetVariable name="target"/>
-            <sourceViewVariable name="sourceView"/>
-            <targetViewVariable name="targetView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:target"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DeleteElementDescription" name="unsetNext">
-            <element name="element"/>
-            <elementView name="elementView"/>
-            <containerView name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:Unset" featureName="next"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -150,21 +196,51 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="createImportOperation" label="Import Operation" nodeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer']/@subNodeMappings[name='Import%20Operation']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createSchema" label="Schema" containerMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Import" referenceName="imports"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Schema" referenceName="schemas"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="createExportOperation" label="Export Operation" nodeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Export%20Task']/@subNodeMappings[name='Export%20Operation']">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="setTargetTask" label="Data Flow" edgeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Export" referenceName="exports"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.eContainer()">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlow" referenceName="dataFlows">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="setSchema" label="Schema" edgeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='schemaEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="schema" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="setTargetOperation" label="Internal Data Floew" edgeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='internalDataFlowEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.eContainer()">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="InternalDataFlow" referenceName="internalDataFlows">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>

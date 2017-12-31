@@ -73,21 +73,23 @@ class CollectionTask extends Task {
 }
 
 class IntegrationTask extends Task {
+  ref Attribute[+] attributes;
 }
 
 class CleaningTask extends Task {
 
   @gmf.compartment
-  val CleaningOperation[+] operations;
+  val CleaningOperation[+] cleaningOperations;
 }
 
 class AnalysisTask extends Task {
 
   @gmf.compartment
-  val AnalysisOperation[+] analyzes;
+  val AnalysisOperation[+] analysisOperations;
 }
 
 class VisualizationTask extends Task {
+  attr Size size;
 }
 
 class ExportTask extends Task {
@@ -162,5 +164,11 @@ enum Format {
   csv = 0;
   json = 0;
   XML = 0;
+}
+
+enum Size {
+  Small = 0;
+  Medium = 0;
+  Large = 0;
 }
 

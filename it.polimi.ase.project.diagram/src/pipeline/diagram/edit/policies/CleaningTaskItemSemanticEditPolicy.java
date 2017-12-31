@@ -20,7 +20,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.diagram.edit.commands.DataFlowCreateCommand;
 import pipeline.diagram.edit.commands.DataFlowReorientCommand;
-import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskOperationsCompartmentEditPart;
+import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.Predefined2EditPart;
@@ -86,7 +86,7 @@ public class CleaningTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
 			switch (PipelineVisualIDRegistry.getVisualID(node)) {
-			case CleaningTaskCleaningTaskOperationsCompartmentEditPart.VISUAL_ID:
+			case CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (PipelineVisualIDRegistry.getVisualID(cnode)) {

@@ -58,7 +58,7 @@ public class Descriptive2CreateCommand extends EditElementCommand {
 		Descriptive newElement = PipelineFactory.eINSTANCE.createDescriptive();
 
 		AnalysisTask owner = (AnalysisTask) getElementToEdit();
-		owner.getAnalyzes().add(newElement);
+		owner.getAnalysisOperations().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

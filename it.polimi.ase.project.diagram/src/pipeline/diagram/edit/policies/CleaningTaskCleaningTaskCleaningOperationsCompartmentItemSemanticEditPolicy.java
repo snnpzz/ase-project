@@ -13,13 +13,13 @@ import pipeline.diagram.providers.PipelineElementTypes;
 /**
  * @generated
  */
-public class CleaningTaskCleaningTaskOperationsCompartmentItemSemanticEditPolicy
+public class CleaningTaskCleaningTaskCleaningOperationsCompartmentItemSemanticEditPolicy
 		extends PipelineBaseItemSemanticEditPolicy {
 
 	/**
 	* @generated
 	*/
-	public CleaningTaskCleaningTaskOperationsCompartmentItemSemanticEditPolicy() {
+	public CleaningTaskCleaningTaskCleaningOperationsCompartmentItemSemanticEditPolicy() {
 		super(PipelineElementTypes.CleaningTask_2027);
 	}
 
@@ -27,10 +27,10 @@ public class CleaningTaskCleaningTaskOperationsCompartmentItemSemanticEditPolicy
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (PipelineElementTypes.UserDefined_3026 == req.getElementType()) {
+		if (PipelineElementTypes.UserDefined_3040 == req.getElementType()) {
 			return getGEFWrapper(new UserDefined2CreateCommand(req));
 		}
-		if (PipelineElementTypes.Predefined_3027 == req.getElementType()) {
+		if (PipelineElementTypes.Predefined_3041 == req.getElementType()) {
 			return getGEFWrapper(new Predefined2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

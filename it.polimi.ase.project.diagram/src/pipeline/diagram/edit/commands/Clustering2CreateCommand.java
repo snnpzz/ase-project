@@ -58,7 +58,7 @@ public class Clustering2CreateCommand extends EditElementCommand {
 		Clustering newElement = PipelineFactory.eINSTANCE.createClustering();
 
 		AnalysisTask owner = (AnalysisTask) getElementToEdit();
-		owner.getAnalyzes().add(newElement);
+		owner.getAnalysisOperations().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

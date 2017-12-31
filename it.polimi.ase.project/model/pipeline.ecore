@@ -122,20 +122,25 @@
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IntegrationTask" eSuperTypes="#//Task"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegrationTask" eSuperTypes="#//Task">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
+        upperBound="-1" eType="#//Attribute"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CleaningTask" eSuperTypes="#//Task">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cleaningOperations" lowerBound="1"
         upperBound="-1" eType="#//CleaningOperation" containment="true">
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnalysisTask" eSuperTypes="#//Task">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="analyzes" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="analysisOperations" lowerBound="1"
         upperBound="-1" eType="#//AnalysisOperation" containment="true">
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VisualizationTask" eSuperTypes="#//Task"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VisualizationTask" eSuperTypes="#//Task">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="#//Size"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExportTask" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EReference" name="exports" lowerBound="1"
         upperBound="-1" eType="#//Export" containment="true">
@@ -221,5 +226,10 @@
     <eLiterals name="csv"/>
     <eLiterals name="json"/>
     <eLiterals name="XML"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Size">
+    <eLiterals name="Small"/>
+    <eLiterals name="Medium"/>
+    <eLiterals name="Large"/>
   </eClassifiers>
 </ecore:EPackage>

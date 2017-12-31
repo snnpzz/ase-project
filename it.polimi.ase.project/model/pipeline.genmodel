@@ -11,6 +11,11 @@
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/json"/>
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/XML"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//Size">
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Size/Small"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Size/Medium"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Size/Large"/>
+    </genEnums>
     <genClasses ecoreClass="pipeline.ecore#//Pipeline">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/dataFlows"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/tasks"/>
@@ -57,14 +62,18 @@
     <genClasses ecoreClass="pipeline.ecore#//CollectionTask">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//CollectionTask/imports"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//IntegrationTask"/>
+    <genClasses ecoreClass="pipeline.ecore#//IntegrationTask">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//IntegrationTask/attributes"/>
+    </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//CleaningTask">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//CleaningTask/operations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//CleaningTask/cleaningOperations"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//AnalysisTask">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//AnalysisTask/analyzes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//AnalysisTask/analysisOperations"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//VisualizationTask"/>
+    <genClasses ecoreClass="pipeline.ecore#//VisualizationTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//VisualizationTask/size"/>
+    </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//ExportTask">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//ExportTask/exports"/>
     </genClasses>

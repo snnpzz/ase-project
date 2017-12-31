@@ -12,7 +12,7 @@ import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
 import pipeline.Pipeline;
 import pipeline.PipelinePackage;
-import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart;
+import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
 import pipeline.diagram.edit.parts.Attribute2EditPart;
@@ -25,7 +25,7 @@ import pipeline.diagram.edit.parts.Classification2EditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.ClassificationName2EditPart;
 import pipeline.diagram.edit.parts.ClassificationNameEditPart;
-import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskOperationsCompartmentEditPart;
+import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskIDEditPart;
 import pipeline.diagram.edit.parts.Clustering2EditPart;
@@ -237,7 +237,7 @@ public class PipelineVisualIDRegistry {
 				return ImportEditPart.VISUAL_ID;
 			}
 			break;
-		case CleaningTaskCleaningTaskOperationsCompartmentEditPart.VISUAL_ID:
+		case CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID:
 			if (PipelinePackage.eINSTANCE.getUserDefined().isSuperTypeOf(domainElement.eClass())) {
 				return UserDefined2EditPart.VISUAL_ID;
 			}
@@ -245,7 +245,7 @@ public class PipelineVisualIDRegistry {
 				return Predefined2EditPart.VISUAL_ID;
 			}
 			break;
-		case AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID:
+		case AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID:
 			if (PipelinePackage.eINSTANCE.getDescriptive().isSuperTypeOf(domainElement.eClass())) {
 				return Descriptive2EditPart.VISUAL_ID;
 			}
@@ -396,7 +396,7 @@ public class PipelineVisualIDRegistry {
 			if (CleaningTaskIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (CleaningTaskCleaningTaskOperationsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -404,7 +404,7 @@ public class PipelineVisualIDRegistry {
 			if (AnalysisTaskIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -497,7 +497,7 @@ public class PipelineVisualIDRegistry {
 				return true;
 			}
 			break;
-		case CleaningTaskCleaningTaskOperationsCompartmentEditPart.VISUAL_ID:
+		case CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID:
 			if (UserDefined2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -505,7 +505,7 @@ public class PipelineVisualIDRegistry {
 				return true;
 			}
 			break;
-		case AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID:
+		case AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID:
 			if (Descriptive2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -617,8 +617,8 @@ public class PipelineVisualIDRegistry {
 	public static boolean isCompartmentVisualID(int visualID) {
 		switch (visualID) {
 		case CollectionTaskCollectionTaskImportsCompartmentEditPart.VISUAL_ID:
-		case CleaningTaskCleaningTaskOperationsCompartmentEditPart.VISUAL_ID:
-		case AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID:
+		case CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID:
+		case AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID:
 		case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
 		case SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID:
 		case AttributeAttributeAttributesCompartmentEditPart.VISUAL_ID:
@@ -648,13 +648,13 @@ public class PipelineVisualIDRegistry {
 		case SourceEditPart.VISUAL_ID:
 		case FileEditPart.VISUAL_ID:
 		case ImportEditPart.VISUAL_ID:
+		case ExportEditPart.VISUAL_ID:
 		case UserDefined2EditPart.VISUAL_ID:
 		case Predefined2EditPart.VISUAL_ID:
 		case Descriptive2EditPart.VISUAL_ID:
 		case Classification2EditPart.VISUAL_ID:
 		case Predictive2EditPart.VISUAL_ID:
 		case Clustering2EditPart.VISUAL_ID:
-		case ExportEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

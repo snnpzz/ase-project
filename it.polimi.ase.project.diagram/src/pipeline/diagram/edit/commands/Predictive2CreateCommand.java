@@ -58,7 +58,7 @@ public class Predictive2CreateCommand extends EditElementCommand {
 		Predictive newElement = PipelineFactory.eINSTANCE.createPredictive();
 
 		AnalysisTask owner = (AnalysisTask) getElementToEdit();
-		owner.getAnalyzes().add(newElement);
+		owner.getAnalysisOperations().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

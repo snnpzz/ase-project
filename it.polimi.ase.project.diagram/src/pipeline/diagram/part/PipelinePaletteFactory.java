@@ -110,7 +110,7 @@ public class PipelinePaletteFactory {
 	private ToolEntry createClassification3CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(PipelineElementTypes.Classification_2035);
-		types.add(PipelineElementTypes.Classification_3034);
+		types.add(PipelineElementTypes.Classification_3043);
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Classification3CreationTool_title,
 				Messages.Classification3CreationTool_desc, types);
 		entry.setId("createClassification3CreationTool"); //$NON-NLS-1$
@@ -138,7 +138,7 @@ public class PipelinePaletteFactory {
 	private ToolEntry createClustering5CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(PipelineElementTypes.Clustering_2037);
-		types.add(PipelineElementTypes.Clustering_3036);
+		types.add(PipelineElementTypes.Clustering_3045);
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Clustering5CreationTool_title,
 				Messages.Clustering5CreationTool_desc, types);
 		entry.setId("createClustering5CreationTool"); //$NON-NLS-1$
@@ -166,7 +166,7 @@ public class PipelinePaletteFactory {
 	private ToolEntry createDescriptive7CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(PipelineElementTypes.Descriptive_2034);
-		types.add(PipelineElementTypes.Descriptive_3033);
+		types.add(PipelineElementTypes.Descriptive_3042);
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Descriptive7CreationTool_title,
 				Messages.Descriptive7CreationTool_desc, types);
 		entry.setId("createDescriptive7CreationTool"); //$NON-NLS-1$
@@ -242,7 +242,7 @@ public class PipelinePaletteFactory {
 	private ToolEntry createPredefined13CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(PipelineElementTypes.Predefined_2038);
-		types.add(PipelineElementTypes.Predefined_3027);
+		types.add(PipelineElementTypes.Predefined_3041);
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Predefined13CreationTool_title,
 				Messages.Predefined13CreationTool_desc, types);
 		entry.setId("createPredefined13CreationTool"); //$NON-NLS-1$
@@ -257,7 +257,7 @@ public class PipelinePaletteFactory {
 	private ToolEntry createPredictive14CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(PipelineElementTypes.Predictive_2036);
-		types.add(PipelineElementTypes.Predictive_3035);
+		types.add(PipelineElementTypes.Predictive_3044);
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Predictive14CreationTool_title,
 				Messages.Predictive14CreationTool_desc, types);
 		entry.setId("createPredictive14CreationTool"); //$NON-NLS-1$
@@ -296,7 +296,7 @@ public class PipelinePaletteFactory {
 	private ToolEntry createUserDefined17CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(PipelineElementTypes.UserDefined_2033);
-		types.add(PipelineElementTypes.UserDefined_3026);
+		types.add(PipelineElementTypes.UserDefined_3040);
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.UserDefined17CreationTool_title,
 				Messages.UserDefined17CreationTool_desc, types);
 		entry.setId("createUserDefined17CreationTool"); //$NON-NLS-1$

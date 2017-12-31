@@ -46,7 +46,7 @@ import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
 
-import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart;
+import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
 import pipeline.diagram.edit.parts.Attribute2EditPart;
@@ -59,7 +59,7 @@ import pipeline.diagram.edit.parts.Classification2EditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.ClassificationName2EditPart;
 import pipeline.diagram.edit.parts.ClassificationNameEditPart;
-import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskOperationsCompartmentEditPart;
+import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskIDEditPart;
 import pipeline.diagram.edit.parts.Clustering2EditPart;
@@ -147,10 +147,10 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 	*/
 	protected boolean provides(CreateViewForKindOperation op) {
 		/*
-				if (op.getViewKind() == Node.class)
-					return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
-				if (op.getViewKind() == Edge.class)
-					return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+		    if (op.getViewKind() == Node.class)
+		      return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+		    if (op.getViewKind() == Edge.class)
+		      return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
 		*/
 		return true;
 	}
@@ -329,17 +329,17 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		case ImportEditPart.VISUAL_ID:
 			return createImport_3025(domainElement, containerView, index, persisted, preferencesHint);
 		case UserDefined2EditPart.VISUAL_ID:
-			return createUserDefined_3026(domainElement, containerView, index, persisted, preferencesHint);
+			return createUserDefined_3040(domainElement, containerView, index, persisted, preferencesHint);
 		case Predefined2EditPart.VISUAL_ID:
-			return createPredefined_3027(domainElement, containerView, index, persisted, preferencesHint);
+			return createPredefined_3041(domainElement, containerView, index, persisted, preferencesHint);
 		case Descriptive2EditPart.VISUAL_ID:
-			return createDescriptive_3033(domainElement, containerView, index, persisted, preferencesHint);
+			return createDescriptive_3042(domainElement, containerView, index, persisted, preferencesHint);
 		case Classification2EditPart.VISUAL_ID:
-			return createClassification_3034(domainElement, containerView, index, persisted, preferencesHint);
+			return createClassification_3043(domainElement, containerView, index, persisted, preferencesHint);
 		case Predictive2EditPart.VISUAL_ID:
-			return createPredictive_3035(domainElement, containerView, index, persisted, preferencesHint);
+			return createPredictive_3044(domainElement, containerView, index, persisted, preferencesHint);
 		case Clustering2EditPart.VISUAL_ID:
-			return createClustering_3036(domainElement, containerView, index, persisted, preferencesHint);
+			return createClustering_3045(domainElement, containerView, index, persisted, preferencesHint);
 		case ExportEditPart.VISUAL_ID:
 			return createExport_3037(domainElement, containerView, index, persisted, preferencesHint);
 		case AttributeEditPart.VISUAL_ID:
@@ -718,8 +718,9 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5062 = createLabel(node, PipelineVisualIDRegistry.getType(CleaningTaskIDEditPart.VISUAL_ID));
 		createCompartment(node,
-				PipelineVisualIDRegistry.getType(CleaningTaskCleaningTaskOperationsCompartmentEditPart.VISUAL_ID), true,
-				false, false, false);
+				PipelineVisualIDRegistry
+						.getType(CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID),
+				true, false, false, false);
 		return node;
 	}
 
@@ -759,8 +760,9 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5075 = createLabel(node, PipelineVisualIDRegistry.getType(AnalysisTaskIDEditPart.VISUAL_ID));
 		createCompartment(node,
-				PipelineVisualIDRegistry.getType(AnalysisTaskAnalysisTaskAnalyzesCompartmentEditPart.VISUAL_ID), true,
-				false, false, false);
+				PipelineVisualIDRegistry
+						.getType(AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID),
+				true, false, false, false);
 		return node;
 	}
 
@@ -994,7 +996,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 	/**
 	* @generated
 	*/
-	public Node createUserDefined_3026(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createUserDefined_3040(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -1023,14 +1025,14 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5060 = createLabel(node, PipelineVisualIDRegistry.getType(UserDefinedName2EditPart.VISUAL_ID));
+		Node label5090 = createLabel(node, PipelineVisualIDRegistry.getType(UserDefinedName2EditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Node createPredefined_3027(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createPredefined_3041(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -1059,14 +1061,14 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5061 = createLabel(node, PipelineVisualIDRegistry.getType(PredefinedName2EditPart.VISUAL_ID));
+		Node label5091 = createLabel(node, PipelineVisualIDRegistry.getType(PredefinedName2EditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Node createDescriptive_3033(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createDescriptive_3042(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -1095,14 +1097,14 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5071 = createLabel(node, PipelineVisualIDRegistry.getType(DescriptiveName2EditPart.VISUAL_ID));
+		Node label5092 = createLabel(node, PipelineVisualIDRegistry.getType(DescriptiveName2EditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Node createClassification_3034(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createClassification_3043(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -1131,14 +1133,14 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5072 = createLabel(node, PipelineVisualIDRegistry.getType(ClassificationName2EditPart.VISUAL_ID));
+		Node label5093 = createLabel(node, PipelineVisualIDRegistry.getType(ClassificationName2EditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Node createPredictive_3035(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createPredictive_3044(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -1167,14 +1169,14 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5073 = createLabel(node, PipelineVisualIDRegistry.getType(PredictiveName2EditPart.VISUAL_ID));
+		Node label5094 = createLabel(node, PipelineVisualIDRegistry.getType(PredictiveName2EditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Node createClustering_3036(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createClustering_3045(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -1203,7 +1205,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5074 = createLabel(node, PipelineVisualIDRegistry.getType(ClusteringName2EditPart.VISUAL_ID));
+		Node label5095 = createLabel(node, PipelineVisualIDRegistry.getType(ClusteringName2EditPart.VISUAL_ID));
 		return node;
 	}
 

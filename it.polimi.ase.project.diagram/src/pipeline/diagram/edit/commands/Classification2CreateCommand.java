@@ -58,7 +58,7 @@ public class Classification2CreateCommand extends EditElementCommand {
 		Classification newElement = PipelineFactory.eINSTANCE.createClassification();
 
 		AnalysisTask owner = (AnalysisTask) getElementToEdit();
-		owner.getAnalyzes().add(newElement);
+		owner.getAnalysisOperations().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

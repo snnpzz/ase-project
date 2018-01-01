@@ -41,7 +41,7 @@ class InternalDataFlow {
   ref Operation#outgoing source;
   ref Operation#incoming target;
 
-  @gmf.link(width="1", target.decoration="arrow", style="dash")
+  @gmf.link(width="1", target.decoration="arrow")
   ref Schema[1] schema;
 }
 
@@ -67,6 +67,7 @@ class CollectionTask extends Task {
 }
 
 class IntegrationTask extends Task {
+  @gmf.link(width="1", target.decoration="arrow", style="dash")
   ref Attribute[+] attributes;
 }
 
@@ -106,7 +107,7 @@ class Import {
 @gmf.node(label="name", label.text="Export", figure="ellipse")
 class Export {
 
-  @gmf.link(width="2", target.decoration="square", style="dash")
+  @gmf.link(width="2", target.decoration="filledsquare", style="dash")
   ref File[1]#comesFrom generates;
 
   @gmf.link(width="1", target.decoration="arrow")

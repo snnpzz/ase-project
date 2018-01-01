@@ -26,8 +26,14 @@ context Pipeline{
 	
 	constraint uniqueDataFow {
 		check: self.tasks -> reject(t | t.isTypeOf(CollectionTask) or t.isTypeOf(ExportTask)) ->
-			forAll(t | t.outgoing -> size() == 1)
+			forAll(t | t.outgoing -> size() <= 1)
 		message: "All task except collection task must have a unique outgoing dataflow"
+	}
+	
+	constraint uniqueDataFow {
+		check: self.tasks -> reject(t | t.isTypeOf(CollectionTask) or t.isTypeOf(ExportTask)) ->
+			forAll(t | t.outgoing -> size() > 0)
+		message: "Missing outgoing dataflow for some tasks"
 	}
 	
 	constraint sameDataFlowSchema {
@@ -68,7 +74,7 @@ context Pipeline{
 			DF1.target.isKindOf(CleaningOperation)) -> forAll(d1 | self.internalDataFlows -> 
 			select(DF2 | DF2.source.isKindOf(CleaningOperation) and DF2.target.isKindOf(CleaningOperation)) ->
 			forAll(d2 | d1.schema == d2.schema and 
-			d1.schema == select(t | t.isTypeOf(CleaningTask)).incoming.schema)))
+			d1.schema == self.dataFlows -> select(D | D.target.isTypeOf(CleaningTask)).schema)))
 		message: "Dataflow between cleaning operations must be linked to the same schema as the external dataflow"
 	}
 	
@@ -92,12 +98,12 @@ context Pipeline{
 			DF1.target.isKindOf(AnalysisOperation)) -> forAll(d1 | self.internalDataFlows -> 
 			select(DF2 | DF2.source.isKindOf(AnalysisOperation) and DF2.target.isKindOf(AnalysisOperation)) ->
 			forAll(d2 | d1<> d2 implies (d1.schema == d2.schema and
-			d1.schema == self.tasks -> select(t | t.isTypeOf(AnalysisTask)).incoming.schema))))
+			d1.schema == self.dataFlows -> select(D | D.target.isTypeOf(AnalysisTask)).schema))))
 		message: "Dataflow between analysis operations must be linked to the same schema as the external dataflow"
 	}
 	
 	constraint DataFlowBetweenCleaningOperation {
-		check: self.tasks -> collect(t:CleaningTask | t.operations -> size()) -> sum() == 
+		check: self.tasks -> collect(t:CleaningTask | t.operations -> size()) -> sum() <= 
 			(self.internalDataFlows -> select(d | d.source.isKindOf(CleaningOperation) and 
 			d.target.isKindOf(CleaningOperation)) -> size() + 1) or 
 			collect(t:CleaningTask | t.operations -> size()) -> sum() == 0
@@ -105,7 +111,7 @@ context Pipeline{
 	}
 	
 	constraint DataFlowBetweenAnalysisOperation {
-		check: self.tasks -> collect(t:AnalysisTask | t.analysisOperations -> size()) -> sum() == 
+		check: self.tasks -> collect(t:AnalysisTask | t.analysisOperations -> size()) -> sum() <= 
 			(self.internalDataFlows -> select(d | d.source.isKindOf(AnalysisOperation) and 
 			d.target.isKindOf(AnalysisOperation)) -> size() + 1) or 
 			self.tasks -> collect(t:AnalysisTask | t.analysisOperations -> size()) -> sum() == 0
@@ -159,6 +165,16 @@ context CleaningTask{
 		message: "Cleaning operations can have at maximum one incoming internal dataflow"
 	}
 	
+	constraint initialCleaningOperation {
+		check: self.cleaningOperations -> select(op | op.incoming == null) -> size() == 1
+		message: "There can be just one initial cleaning operation. Some internal dataflows are wrong"
+	}
+	
+	constraint finalCleaningOperation {
+		check: self.cleaningOperations -> select(op | op.outgoing == null) -> size() == 1
+		message: "There can be just one final cleaning operation. Some internal dataflows are wrong"
+	}
+	
 }
 
 
@@ -178,6 +194,16 @@ context AnalysisTask{
 		check: self.analysisOperations -> forAll(o | o.incoming -> size() <= 1)
 		message: "Analyzes operations can have at maximum one incoming internal dataflow"
 	}
+	
+	constraint initialAnalysisOperation {
+		check: self.analysisOperations -> select(op | op.incoming == null) -> size() == 1
+		message: "There can be just one initial analysis operation. Some internal dataflows are wrong"
+	}
+	
+	constraint finalAnalysisOperation {
+		check: self.analysisOperations -> select(op | op.outgoing == null) -> size() == 1
+		message: "There can be just one final analysis operation. Some internal dataflows are wrong"
+	}
 }
 
 
@@ -192,7 +218,7 @@ context VisualizationTask{
 context ExportTask{
 	constraint finalTask {
 		check: self.outgoing -> size() == 0
-		message: "Exporting Task can't have an outgoing data flow."
+		message: "Export task can't have an outgoing data flow"
 	}
 	
 }
@@ -201,7 +227,7 @@ context ExportTask{
 context Schema{
 	constraint uniqueAttribute {
 		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
-		message: "There can't be more attributes with the same name!"
+		message: "There can't be more attributes with the same name in the same schema"
 	}	
 }
 
@@ -209,7 +235,7 @@ context Schema{
 context ComplexAttribute{
 	constraint uniqueAttribute {
 		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
-		message: "There can't be more attributes with the same name!"
+		message: "There can't be more attributes with the same name in the same attribute"
 	}	
 }
 

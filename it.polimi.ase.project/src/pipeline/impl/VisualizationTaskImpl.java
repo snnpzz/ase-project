@@ -2,12 +2,19 @@
  */
 package pipeline.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import pipeline.Chart;
 import pipeline.ChartType;
 import pipeline.PipelinePackage;
 import pipeline.Size;
@@ -21,52 +28,21 @@ import pipeline.VisualizationTask;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.VisualizationTaskImpl#getSize <em>Size</em>}</li>
- *   <li>{@link pipeline.impl.VisualizationTaskImpl#getChartType <em>Chart Type</em>}</li>
+ *   <li>{@link pipeline.impl.VisualizationTaskImpl#getCharts <em>Charts</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask {
 	/**
-	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
+	 * The cached value of the '{@link #getCharts() <em>Charts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSize()
+	 * @see #getCharts()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Size SIZE_EDEFAULT = Size.SMALL;
-
-	/**
-	 * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected Size size = SIZE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getChartType() <em>Chart Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChartType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final ChartType CHART_TYPE_EDEFAULT = ChartType.COLUMN;
-
-	/**
-	 * The cached value of the '{@link #getChartType() <em>Chart Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChartType()
-	 * @generated
-	 * @ordered
-	 */
-	protected ChartType chartType = CHART_TYPE_EDEFAULT;
+	protected EList<Chart> charts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,8 +68,11 @@ public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Size getSize() {
-		return size;
+	public EList<Chart> getCharts() {
+		if (charts == null) {
+			charts = new EObjectContainmentEList<Chart>(Chart.class, this, PipelinePackage.VISUALIZATION_TASK__CHARTS);
+		}
+		return charts;
 	}
 
 	/**
@@ -101,32 +80,13 @@ public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSize(Size newSize) {
-		Size oldSize = size;
-		size = newSize == null ? SIZE_EDEFAULT : newSize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.VISUALIZATION_TASK__SIZE, oldSize, size));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ChartType getChartType() {
-		return chartType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setChartType(ChartType newChartType) {
-		ChartType oldChartType = chartType;
-		chartType = newChartType == null ? CHART_TYPE_EDEFAULT : newChartType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.VISUALIZATION_TASK__CHART_TYPE, oldChartType, chartType));
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PipelinePackage.VISUALIZATION_TASK__CHARTS:
+				return ((InternalEList<?>)getCharts()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -137,10 +97,8 @@ public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.VISUALIZATION_TASK__SIZE:
-				return getSize();
-			case PipelinePackage.VISUALIZATION_TASK__CHART_TYPE:
-				return getChartType();
+			case PipelinePackage.VISUALIZATION_TASK__CHARTS:
+				return getCharts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,14 +108,13 @@ public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.VISUALIZATION_TASK__SIZE:
-				setSize((Size)newValue);
-				return;
-			case PipelinePackage.VISUALIZATION_TASK__CHART_TYPE:
-				setChartType((ChartType)newValue);
+			case PipelinePackage.VISUALIZATION_TASK__CHARTS:
+				getCharts().clear();
+				getCharts().addAll((Collection<? extends Chart>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -171,11 +128,8 @@ public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.VISUALIZATION_TASK__SIZE:
-				setSize(SIZE_EDEFAULT);
-				return;
-			case PipelinePackage.VISUALIZATION_TASK__CHART_TYPE:
-				setChartType(CHART_TYPE_EDEFAULT);
+			case PipelinePackage.VISUALIZATION_TASK__CHARTS:
+				getCharts().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -189,30 +143,10 @@ public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.VISUALIZATION_TASK__SIZE:
-				return size != SIZE_EDEFAULT;
-			case PipelinePackage.VISUALIZATION_TASK__CHART_TYPE:
-				return chartType != CHART_TYPE_EDEFAULT;
+			case PipelinePackage.VISUALIZATION_TASK__CHARTS:
+				return charts != null && !charts.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (size: ");
-		result.append(size);
-		result.append(", chartType: ");
-		result.append(chartType);
-		result.append(')');
-		return result.toString();
 	}
 
 } //VisualizationTaskImpl

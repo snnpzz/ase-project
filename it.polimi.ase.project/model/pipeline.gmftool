@@ -21,6 +21,15 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Chart"
+          description="Create new Chart">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Classification"
           description="Create new Classification">
         <smallIcon

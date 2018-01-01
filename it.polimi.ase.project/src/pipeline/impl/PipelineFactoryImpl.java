@@ -79,6 +79,7 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 			case PipelinePackage.PREDEFINED: return createPredefined();
 			case PipelinePackage.SIMPLE_ATTRIBUTE: return createSimpleAttribute();
 			case PipelinePackage.COMPLEX_ATTRIBUTE: return createComplexAttribute();
+			case PipelinePackage.CHART: return createChart();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -364,6 +365,16 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	public ComplexAttribute createComplexAttribute() {
 		ComplexAttributeImpl complexAttribute = new ComplexAttributeImpl();
 		return complexAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Chart createChart() {
+		ChartImpl chart = new ChartImpl();
+		return chart;
 	}
 
 	/**

@@ -36,6 +36,7 @@ import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 
 import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
+import pipeline.diagram.edit.parts.ChartEditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
 import pipeline.diagram.edit.parts.ClusteringEditPart;
@@ -408,6 +409,13 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ClusteringEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(PipelineDiagramUpdater.getClustering_3061ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case ChartEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(PipelineDiagramUpdater.getChart_3062ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

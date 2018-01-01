@@ -15,6 +15,8 @@ import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
+import pipeline.diagram.edit.parts.ChartEditPart;
+import pipeline.diagram.edit.parts.ChartNameEditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.ClassificationNameEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart;
@@ -70,6 +72,7 @@ import pipeline.diagram.edit.parts.UserDefinedEditPart;
 import pipeline.diagram.edit.parts.UserDefinedNameEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskIDEditPart;
+import pipeline.diagram.edit.parts.VisualizationTaskVisualizationTaskChartsCompartmentEditPart;
 import pipeline.diagram.edit.parts.WrappingLabel2EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel3EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel4EditPart;
@@ -235,6 +238,11 @@ public class PipelineVisualIDRegistry {
 				return ClusteringEditPart.VISUAL_ID;
 			}
 			break;
+		case VisualizationTaskVisualizationTaskChartsCompartmentEditPart.VISUAL_ID:
+			if (PipelinePackage.eINSTANCE.getChart().isSuperTypeOf(domainElement.eClass())) {
+				return ChartEditPart.VISUAL_ID;
+			}
+			break;
 		case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
 			if (PipelinePackage.eINSTANCE.getExport().isSuperTypeOf(domainElement.eClass())) {
 				return ExportEditPart.VISUAL_ID;
@@ -349,6 +357,9 @@ public class PipelineVisualIDRegistry {
 			if (VisualizationTaskIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (VisualizationTaskVisualizationTaskChartsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ExportTaskEditPart.VISUAL_ID:
 			if (ExportTaskIDEditPart.VISUAL_ID == nodeVisualID) {
@@ -408,6 +419,11 @@ public class PipelineVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ChartEditPart.VISUAL_ID:
+			if (ChartNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case ExportEditPart.VISUAL_ID:
 			if (ExportNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -463,6 +479,11 @@ public class PipelineVisualIDRegistry {
 				return true;
 			}
 			if (ClusteringEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case VisualizationTaskVisualizationTaskChartsCompartmentEditPart.VISUAL_ID:
+			if (ChartEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -580,6 +601,7 @@ public class PipelineVisualIDRegistry {
 		case CollectionTaskCollectionTaskImportsCompartmentEditPart.VISUAL_ID:
 		case CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID:
 		case AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID:
+		case VisualizationTaskVisualizationTaskChartsCompartmentEditPart.VISUAL_ID:
 		case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
 		case SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID:
 		case ComplexAttributeComplexAttributeAttributesCompartmentEditPart.VISUAL_ID:
@@ -599,7 +621,6 @@ public class PipelineVisualIDRegistry {
 		case PipelineEditPart.VISUAL_ID:
 			return false;
 		case IntegrationTaskEditPart.VISUAL_ID:
-		case VisualizationTaskEditPart.VISUAL_ID:
 		case SourceEditPart.VISUAL_ID:
 		case FileEditPart.VISUAL_ID:
 		case ImportEditPart.VISUAL_ID:
@@ -612,6 +633,7 @@ public class PipelineVisualIDRegistry {
 		case ClassificationEditPart.VISUAL_ID:
 		case PredictiveEditPart.VISUAL_ID:
 		case ClusteringEditPart.VISUAL_ID:
+		case ChartEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

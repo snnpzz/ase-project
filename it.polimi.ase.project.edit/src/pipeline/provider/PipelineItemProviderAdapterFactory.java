@@ -578,6 +578,29 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link pipeline.Chart} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChartItemProvider chartItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pipeline.Chart}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChartAdapter() {
+		if (chartItemProvider == null) {
+			chartItemProvider = new ChartItemProvider(this);
+		}
+
+		return chartItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -698,6 +721,7 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 		if (predefinedItemProvider != null) predefinedItemProvider.dispose();
 		if (simpleAttributeItemProvider != null) simpleAttributeItemProvider.dispose();
 		if (complexAttributeItemProvider != null) complexAttributeItemProvider.dispose();
+		if (chartItemProvider != null) chartItemProvider.dispose();
 	}
 
 }

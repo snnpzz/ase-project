@@ -121,6 +121,12 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case ClusteringNameEditPart.VISUAL_ID:
 				return new ClusteringNameEditPart(view);
 
+			case ChartEditPart.VISUAL_ID:
+				return new ChartEditPart(view);
+
+			case ChartNameEditPart.VISUAL_ID:
+				return new ChartNameEditPart(view);
+
 			case ExportEditPart.VISUAL_ID:
 				return new ExportEditPart(view);
 
@@ -159,6 +165,9 @@ public class PipelineEditPartFactory implements EditPartFactory {
 
 			case AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID:
 				return new AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart(view);
+
+			case VisualizationTaskVisualizationTaskChartsCompartmentEditPart.VISUAL_ID:
+				return new VisualizationTaskVisualizationTaskChartsCompartmentEditPart(view);
 
 			case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
 				return new ExportTaskExportTaskExportsCompartmentEditPart(view);

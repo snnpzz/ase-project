@@ -258,7 +258,7 @@
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Pipeline"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2025,2026,2027,2031,2029,2032,2044,2045,2043,3025,3056,3057,3058,3059,3060,3061,3037,3046,3047,3048,3049"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2025,2026,2027,2031,2029,2032,2044,2045,2043,3025,3056,3057,3058,3059,3060,3061,3062,3037,3046,3047,3048,3049"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4005,4006,4019,4024,4025,4021,4013,4022,4014"/>
       </viewProvider>
    </extension>
@@ -271,16 +271,16 @@
             <method name="getType()" value="Pipeline"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2025,2026,2027,2031,2029,2032,2044,2045,2043,3025,3056,3057,3058,3059,3060,3061,3037,3046,3047,3048,3049"/>
+            <method name="getType()" value="2025,2026,2027,2031,2029,2032,2044,2045,2043,3025,3056,3057,3058,3059,3060,3061,3062,3037,3046,3047,3048,3049"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4005,4006,4019,4024,4025,4021,4013,4022,4014"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5058,5059,5062,5075,5068,5077,5096,5097,5057,5108,5109,5110,5111,5112,5113,5076,5098,5101,5099,5100"/>
+            <method name="getType()" value="5058,5059,5062,5075,5068,5077,5096,5097,5057,5108,5109,5110,5111,5112,5113,5114,5076,5098,5101,5099,5100"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7017,7018,7021,7022,7023,7026,7027"/>
+            <method name="getType()" value="7017,7018,7021,7028,7022,7023,7026,7027"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -373,6 +373,11 @@
          <Priority name="Lowest"/>
          <object class="pipeline.diagram.edit.parts.ClusteringEditPart" id="Clustering_3061"/>
          <context elements="Clustering_3061"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfChartEditPart">
+         <Priority name="Lowest"/>
+         <object class="pipeline.diagram.edit.parts.ChartEditPart" id="Chart_3062"/>
+         <context elements="Chart_3062"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfExportEditPart">
          <Priority name="Lowest"/>
@@ -602,6 +607,16 @@
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <metamodelType
+               id="it.polimi.ase.project.diagram.Chart_3062"
+               name="%metatype.name.Chart_3062"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Chart"
+               edithelper="pipeline.diagram.edit.helpers.ChartEditHelper">
+            <param name="semanticHint" value="3062"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
+         <metamodelType
                id="it.polimi.ase.project.diagram.Export_3037"
                name="%metatype.name.Export_3037"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -760,6 +775,7 @@
          <elementType ref="it.polimi.ase.project.diagram.Classification_3059"/>
          <elementType ref="it.polimi.ase.project.diagram.Predictive_3060"/>
          <elementType ref="it.polimi.ase.project.diagram.Clustering_3061"/>
+         <elementType ref="it.polimi.ase.project.diagram.Chart_3062"/>
          <elementType ref="it.polimi.ase.project.diagram.Export_3037"/>
          <elementType ref="it.polimi.ase.project.diagram.SimpleAttribute_3046"/>
          <elementType ref="it.polimi.ase.project.diagram.ComplexAttribute_3047"/>

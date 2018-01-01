@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import pipeline.AnalysisOperation;
 import pipeline.AnalysisTask;
 import pipeline.Attribute;
+import pipeline.Chart;
 import pipeline.ChartType;
 import pipeline.Classification;
 import pipeline.ClassificationOperation;
@@ -244,6 +245,13 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * @generated
 	 */
 	private EClass complexAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass chartEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -743,17 +751,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVisualizationTask_Size() {
-		return (EAttribute)visualizationTaskEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVisualizationTask_ChartType() {
-		return (EAttribute)visualizationTaskEClass.getEStructuralFeatures().get(1);
+	public EReference getVisualizationTask_Charts() {
+		return (EReference)visualizationTaskEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1094,6 +1093,42 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getChart() {
+		return chartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getChart_Name() {
+		return (EAttribute)chartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getChart_Type() {
+		return (EAttribute)chartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getChart_Size() {
+		return (EAttribute)chartEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getFormat() {
 		return formatEEnum;
 	}
@@ -1250,8 +1285,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEReference(analysisTaskEClass, ANALYSIS_TASK__ANALYSIS_OPERATIONS);
 
 		visualizationTaskEClass = createEClass(VISUALIZATION_TASK);
-		createEAttribute(visualizationTaskEClass, VISUALIZATION_TASK__SIZE);
-		createEAttribute(visualizationTaskEClass, VISUALIZATION_TASK__CHART_TYPE);
+		createEReference(visualizationTaskEClass, VISUALIZATION_TASK__CHARTS);
 
 		exportTaskEClass = createEClass(EXPORT_TASK);
 		createEReference(exportTaskEClass, EXPORT_TASK__EXPORTS);
@@ -1304,6 +1338,11 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		complexAttributeEClass = createEClass(COMPLEX_ATTRIBUTE);
 		createEReference(complexAttributeEClass, COMPLEX_ATTRIBUTE__ATTRIBUTES);
+
+		chartEClass = createEClass(CHART);
+		createEAttribute(chartEClass, CHART__NAME);
+		createEAttribute(chartEClass, CHART__TYPE);
+		createEAttribute(chartEClass, CHART__SIZE);
 
 		// Create enums
 		formatEEnum = createEEnum(FORMAT);
@@ -1415,8 +1454,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEReference(getAnalysisTask_AnalysisOperations(), this.getAnalysisOperation(), null, "analysisOperations", null, 1, -1, AnalysisTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(visualizationTaskEClass, VisualizationTask.class, "VisualizationTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVisualizationTask_Size(), this.getSize(), "size", null, 0, 1, VisualizationTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisualizationTask_ChartType(), this.getChartType(), "chartType", null, 0, 1, VisualizationTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVisualizationTask_Charts(), this.getChart(), null, "charts", null, 1, -1, VisualizationTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exportTaskEClass, ExportTask.class, "ExportTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExportTask_Exports(), this.getExport(), null, "exports", null, 1, -1, ExportTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1469,6 +1507,11 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		initEClass(complexAttributeEClass, ComplexAttribute.class, "ComplexAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComplexAttribute_Attributes(), this.getAttribute(), null, "attributes", null, 1, -1, ComplexAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(chartEClass, Chart.class, "Chart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getChart_Name(), ecorePackage.getEString(), "name", null, 0, 1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChart_Type(), this.getChartType(), "type", null, 0, 1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChart_Size(), this.getSize(), "size", null, 0, 1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(formatEEnum, Format.class, "Format");
@@ -1630,6 +1673,13 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		   source, 
 		   new String[] {
 			 "label", "name"
+		   });	
+		addAnnotation
+		  (chartEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name",
+			 "figure", "rounded"
 		   });
 	}
 
@@ -1746,6 +1796,12 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		  (getAnalysisTask_AnalysisOperations(), 
 		   source, 
 		   new String[] {
+		   });	
+		addAnnotation
+		  (getVisualizationTask_Charts(), 
+		   source, 
+		   new String[] {
+			 "layout", "list"
 		   });	
 		addAnnotation
 		  (getExportTask_Exports(), 

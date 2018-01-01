@@ -19,6 +19,7 @@ import org.eclipse.gmf.tooling.runtime.parsers.EnumParser;
 
 import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
+import pipeline.diagram.edit.parts.ChartNameEditPart;
 import pipeline.diagram.edit.parts.ClassificationNameEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskIDEditPart;
 import pipeline.diagram.edit.parts.ClusteringNameEditPart;
@@ -304,6 +305,23 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 	/**
 	* @generated
 	*/
+	private IParser chartName_5114Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getChartName_5114Parser() {
+		if (chartName_5114Parser == null) {
+			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getChart_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			chartName_5114Parser = parser;
+		}
+		return chartName_5114Parser;
+	}
+
+	/**
+	* @generated
+	*/
 	private IParser exportName_5076Parser;
 
 	/**
@@ -426,6 +444,8 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 
 		case ClusteringNameEditPart.VISUAL_ID:
 			return getClusteringName_5113Parser();
+		case ChartNameEditPart.VISUAL_ID:
+			return getChartName_5114Parser();
 		case ExportNameEditPart.VISUAL_ID:
 			return getExportName_5076Parser();
 		case SimpleAttributeNameEditPart.VISUAL_ID:

@@ -266,182 +266,192 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Classification2CreationTool_title;
+	public static String Chart2CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Classification2CreationTool_desc;
+	public static String Chart2CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String CleaningTask3CreationTool_title;
+	public static String Classification3CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String CleaningTask3CreationTool_desc;
+	public static String Classification3CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Clustering4CreationTool_title;
+	public static String CleaningTask4CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Clustering4CreationTool_desc;
+	public static String CleaningTask4CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String CollectionTask5CreationTool_title;
+	public static String Clustering5CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String CollectionTask5CreationTool_desc;
+	public static String Clustering5CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ComplexAttribute6CreationTool_title;
+	public static String CollectionTask6CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ComplexAttribute6CreationTool_desc;
+	public static String CollectionTask6CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Descriptive7CreationTool_title;
+	public static String ComplexAttribute7CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Descriptive7CreationTool_desc;
+	public static String ComplexAttribute7CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Export8CreationTool_title;
+	public static String Descriptive8CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Export8CreationTool_desc;
+	public static String Descriptive8CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ExportTask9CreationTool_title;
+	public static String Export9CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ExportTask9CreationTool_desc;
+	public static String Export9CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String File10CreationTool_title;
+	public static String ExportTask10CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String File10CreationTool_desc;
+	public static String ExportTask10CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Import11CreationTool_title;
+	public static String File11CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Import11CreationTool_desc;
+	public static String File11CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String IntegrationTask12CreationTool_title;
+	public static String Import12CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String IntegrationTask12CreationTool_desc;
+	public static String Import12CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Predefined13CreationTool_title;
+	public static String IntegrationTask13CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Predefined13CreationTool_desc;
+	public static String IntegrationTask13CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Predictive14CreationTool_title;
+	public static String Predefined14CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Predictive14CreationTool_desc;
+	public static String Predefined14CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Schema15CreationTool_title;
+	public static String Predictive15CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Schema15CreationTool_desc;
+	public static String Predictive15CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String SimpleAttribute16CreationTool_title;
+	public static String Schema16CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String SimpleAttribute16CreationTool_desc;
+	public static String Schema16CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Source17CreationTool_title;
+	public static String SimpleAttribute17CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Source17CreationTool_desc;
+	public static String SimpleAttribute17CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String UserDefined18CreationTool_title;
+	public static String Source18CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String UserDefined18CreationTool_desc;
+	public static String Source18CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String VisualizationTask19CreationTool_title;
+	public static String UserDefined19CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String VisualizationTask19CreationTool_desc;
+	public static String UserDefined19CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String VisualizationTask20CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String VisualizationTask20CreationTool_desc;
 
 	/**
 	* @generated
@@ -547,6 +557,11 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String VisualizationTaskVisualizationTaskChartsCompartmentEditPart_title;
 
 	/**
 	* @generated

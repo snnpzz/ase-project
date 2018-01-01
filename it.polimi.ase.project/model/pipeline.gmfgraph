@@ -102,9 +102,13 @@
           <border xsi:type="gmfgraph:MarginBorder">
             <insets top="5" left="5" bottom="5" right="5"/>
           </border>
-          <children xsi:type="gmfgraph:Label" name="VisualizationTaskLabelFigure" text="VisualizationTask"/>
+          <children xsi:type="gmfgraph:Label" name="VisualizationTaskLabelFigure" text="VisualizationTask">
+            <maximumSize dx="10000" dy="50"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="VisualizationTaskChartsCompartmentFigure" outline="false"/>
         </actualFigure>
         <accessors accessor="getFigureVisualizationTaskLabelFigure" figure="/0/@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+        <accessors accessor="getVisualizationTaskChartsCompartmentFigure" figure="/0/@figures.0/@descriptors.5/@actualFigure/@children.1"/>
       </descriptors>
       <descriptors name="ExportTaskFigure">
         <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ExportTaskFigure">
@@ -231,6 +235,15 @@
         <accessors accessor="getFigureComplexAttributeLabelFigure" figure="/0/@figures.0/@descriptors.18/@actualFigure/@children.0"/>
         <accessors accessor="getComplexAttributeAttributesCompartmentFigure" figure="/0/@figures.0/@descriptors.18/@actualFigure/@children.1"/>
       </descriptors>
+      <descriptors name="ChartFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ChartFigure">
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="ChartLabelFigure" text="Chart"/>
+        </actualFigure>
+        <accessors accessor="getFigureChartLabelFigure" figure="/0/@figures.0/@descriptors.19/@actualFigure/@children.0"/>
+      </descriptors>
       <descriptors name="DataFlowFigure">
         <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DataFlowFigure" lineWidth="2" targetDecoration="/0/@figures.0/@figures.0"/>
       </descriptors>
@@ -299,6 +312,7 @@
     <nodes name="Predefined" figure="PredefinedFigure"/>
     <nodes name="SimpleAttribute" figure="SimpleAttributeFigure"/>
     <nodes name="ComplexAttribute" figure="ComplexAttributeFigure"/>
+    <nodes name="Chart" figure="ChartFigure"/>
     <connections name="DataFlow" figure="DataFlowFigure"/>
     <connections name="InternalDataFlow" figure="InternalDataFlowFigure"/>
     <connections name="DataFlowSchema" figure="DataFlowSchemaFigure"/>
@@ -312,6 +326,7 @@
     <compartments name="CollectionTaskImportsCompartment" figure="CollectionTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.1/@accessors.1"/>
     <compartments name="CleaningTaskCleaningOperationsCompartment" figure="CleaningTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.3/@accessors.1"/>
     <compartments name="AnalysisTaskAnalysisOperationsCompartment" figure="AnalysisTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.4/@accessors.1"/>
+    <compartments name="VisualizationTaskChartsCompartment" figure="VisualizationTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.5/@accessors.1"/>
     <compartments name="ExportTaskExportsCompartment" figure="ExportTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.6/@accessors.1"/>
     <compartments name="ComplexAttributeAttributesCompartment" figure="ComplexAttributeFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.18/@accessors.1"/>
     <labels name="CollectionTaskLabel" figure="CollectionTaskFigure" accessor="/0/@figures.0/@descriptors.1/@accessors.0"/>
@@ -332,6 +347,7 @@
     <labels name="PredefinedLabel" figure="PredefinedFigure" accessor="/0/@figures.0/@descriptors.16/@accessors.0"/>
     <labels name="SimpleAttributeLabel" figure="SimpleAttributeFigure" accessor="/0/@figures.0/@descriptors.17/@accessors.0"/>
     <labels name="ComplexAttributeLabel" figure="ComplexAttributeFigure" accessor="/0/@figures.0/@descriptors.18/@accessors.0"/>
+    <labels name="ChartLabel" figure="ChartFigure" accessor="/0/@figures.0/@descriptors.19/@accessors.0"/>
     <labels name="DataFlowSchemaExternalLabel" figure="DataFlowSchemaExternalLabelFigure" elementIcon="false"/>
     <labels name="InternalDataFlowSchemaExternalLabel" figure="InternalDataFlowSchemaExternalLabelFigure" elementIcon="false"/>
     <labels name="IntegrationTaskAttributesExternalLabel" figure="IntegrationTaskAttributesExternalLabelFigure" elementIcon="false"/>

@@ -49,6 +49,8 @@ import org.eclipse.swt.graphics.FontData;
 import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
+import pipeline.diagram.edit.parts.ChartEditPart;
+import pipeline.diagram.edit.parts.ChartNameEditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.ClassificationNameEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart;
@@ -104,6 +106,7 @@ import pipeline.diagram.edit.parts.UserDefinedEditPart;
 import pipeline.diagram.edit.parts.UserDefinedNameEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskIDEditPart;
+import pipeline.diagram.edit.parts.VisualizationTaskVisualizationTaskChartsCompartmentEditPart;
 import pipeline.diagram.edit.parts.WrappingLabel2EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel3EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel4EditPart;
@@ -210,6 +213,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				case ClassificationEditPart.VISUAL_ID:
 				case PredictiveEditPart.VISUAL_ID:
 				case ClusteringEditPart.VISUAL_ID:
+				case ChartEditPart.VISUAL_ID:
 				case ExportEditPart.VISUAL_ID:
 				case SimpleAttributeEditPart.VISUAL_ID:
 				case ComplexAttributeEditPart.VISUAL_ID:
@@ -233,9 +237,9 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				|| UserDefinedEditPart.VISUAL_ID == visualID || PredefinedEditPart.VISUAL_ID == visualID
 				|| DescriptiveEditPart.VISUAL_ID == visualID || ClassificationEditPart.VISUAL_ID == visualID
 				|| PredictiveEditPart.VISUAL_ID == visualID || ClusteringEditPart.VISUAL_ID == visualID
-				|| ExportEditPart.VISUAL_ID == visualID || SimpleAttributeEditPart.VISUAL_ID == visualID
-				|| ComplexAttributeEditPart.VISUAL_ID == visualID || SimpleAttribute2EditPart.VISUAL_ID == visualID
-				|| ComplexAttribute2EditPart.VISUAL_ID == visualID;
+				|| ChartEditPart.VISUAL_ID == visualID || ExportEditPart.VISUAL_ID == visualID
+				|| SimpleAttributeEditPart.VISUAL_ID == visualID || ComplexAttributeEditPart.VISUAL_ID == visualID
+				|| SimpleAttribute2EditPart.VISUAL_ID == visualID || ComplexAttribute2EditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -316,6 +320,8 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 			return createPredictive_3060(domainElement, containerView, index, persisted, preferencesHint);
 		case ClusteringEditPart.VISUAL_ID:
 			return createClustering_3061(domainElement, containerView, index, persisted, preferencesHint);
+		case ChartEditPart.VISUAL_ID:
+			return createChart_3062(domainElement, containerView, index, persisted, preferencesHint);
 		case ExportEditPart.VISUAL_ID:
 			return createExport_3037(domainElement, containerView, index, persisted, preferencesHint);
 		case SimpleAttributeEditPart.VISUAL_ID:
@@ -532,6 +538,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 	public Node createVisualizationTask_2029(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(PipelineVisualIDRegistry.getType(VisualizationTaskEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -560,6 +567,9 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5068 = createLabel(node, PipelineVisualIDRegistry.getType(VisualizationTaskIDEditPart.VISUAL_ID));
+		createCompartment(node,
+				PipelineVisualIDRegistry.getType(VisualizationTaskVisualizationTaskChartsCompartmentEditPart.VISUAL_ID),
+				true, false, true, true);
 		return node;
 	}
 
@@ -966,6 +976,42 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5113 = createLabel(node, PipelineVisualIDRegistry.getType(ClusteringNameEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createChart_3062(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(PipelineVisualIDRegistry.getType(ChartEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5114 = createLabel(node, PipelineVisualIDRegistry.getType(ChartNameEditPart.VISUAL_ID));
 		return node;
 	}
 

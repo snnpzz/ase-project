@@ -22,7 +22,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="pipeline.gmftool#//@palette/@tools.0/@tools.4"/>
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.5"/>
       <diagramNode
           href="pipeline.gmfgraph#CollectionTask"/>
       <children
@@ -41,7 +41,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.10"/>
+              href="pipeline.gmftool#//@palette/@tools.0/@tools.11"/>
           <diagramNode
               href="pipeline.gmfgraph#Import"/>
         </ownedChild>
@@ -68,7 +68,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="pipeline.gmftool#//@palette/@tools.0/@tools.11"/>
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.12"/>
       <diagramNode
           href="pipeline.gmfgraph#IntegrationTask"/>
     </ownedChild>
@@ -89,7 +89,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="pipeline.gmftool#//@palette/@tools.0/@tools.2"/>
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.3"/>
       <diagramNode
           href="pipeline.gmfgraph#CleaningTask"/>
       <children
@@ -108,7 +108,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.17"/>
+              href="pipeline.gmftool#//@palette/@tools.0/@tools.18"/>
           <diagramNode
               href="pipeline.gmfgraph#UserDefined"/>
         </ownedChild>
@@ -129,7 +129,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.12"/>
+              href="pipeline.gmftool#//@palette/@tools.0/@tools.13"/>
           <diagramNode
               href="pipeline.gmfgraph#Predefined"/>
         </ownedChild>
@@ -176,7 +176,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.6"/>
+              href="pipeline.gmftool#//@palette/@tools.0/@tools.7"/>
           <diagramNode
               href="pipeline.gmfgraph#Descriptive"/>
         </ownedChild>
@@ -197,7 +197,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.1"/>
+              href="pipeline.gmftool#//@palette/@tools.0/@tools.2"/>
           <diagramNode
               href="pipeline.gmfgraph#Classification"/>
         </ownedChild>
@@ -218,7 +218,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.13"/>
+              href="pipeline.gmftool#//@palette/@tools.0/@tools.14"/>
           <diagramNode
               href="pipeline.gmfgraph#Predictive"/>
         </ownedChild>
@@ -239,7 +239,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.3"/>
+              href="pipeline.gmftool#//@palette/@tools.0/@tools.4"/>
           <diagramNode
               href="pipeline.gmfgraph#Clustering"/>
         </ownedChild>
@@ -254,7 +254,8 @@
   <nodes>
     <containmentFeature
         href="pipeline.ecore#//Pipeline/tasks"/>
-    <ownedChild>
+    <ownedChild
+        relatedDiagrams="//@diagram">
       <domainMetaElement
           href="pipeline.ecore#//VisualizationTask"/>
       <labelMappings
@@ -266,9 +267,35 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="pipeline.gmftool#//@palette/@tools.0/@tools.18"/>
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.19"/>
       <diagramNode
           href="pipeline.gmfgraph#VisualizationTask"/>
+      <children
+          compartment="//@nodes.4/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="pipeline.ecore#//VisualizationTask/charts"/>
+        <ownedChild>
+          <domainMetaElement
+              href="pipeline.ecore#//Chart"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="pipeline.gmfgraph#ChartLabel"/>
+            <features
+                href="pipeline.ecore#//Chart/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="pipeline.gmftool#//@palette/@tools.0/@tools.1"/>
+          <diagramNode
+              href="pipeline.gmfgraph#Chart"/>
+        </ownedChild>
+      </children>
+      <compartments
+          children="//@nodes.4/@ownedChild/@children.0">
+        <compartment
+            href="pipeline.gmfgraph#VisualizationTaskChartsCompartment"/>
+      </compartments>
     </ownedChild>
   </nodes>
   <nodes>
@@ -287,7 +314,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="pipeline.gmftool#//@palette/@tools.0/@tools.8"/>
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.9"/>
       <diagramNode
           href="pipeline.gmfgraph#ExportTask"/>
       <children
@@ -306,7 +333,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.7"/>
+              href="pipeline.gmftool#//@palette/@tools.0/@tools.8"/>
           <diagramNode
               href="pipeline.gmfgraph#Export"/>
         </ownedChild>
@@ -333,7 +360,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="pipeline.gmftool#//@palette/@tools.0/@tools.16"/>
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.17"/>
       <diagramNode
           href="pipeline.gmfgraph#Source"/>
     </ownedChild>
@@ -353,7 +380,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="pipeline.gmftool#//@palette/@tools.0/@tools.9"/>
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.10"/>
       <diagramNode
           href="pipeline.gmfgraph#File"/>
     </ownedChild>
@@ -367,7 +394,7 @@
           href="pipeline.ecore#//Schema"/>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="pipeline.gmftool#//@palette/@tools.0/@tools.14"/>
+          href="pipeline.gmftool#//@palette/@tools.0/@tools.15"/>
       <diagramNode
           href="pipeline.gmfgraph#Schema"/>
       <children
@@ -386,7 +413,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.15"/>
+              href="pipeline.gmftool#//@palette/@tools.0/@tools.16"/>
           <diagramNode
               href="pipeline.gmfgraph#SimpleAttribute"/>
         </ownedChild>
@@ -408,7 +435,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="pipeline.gmftool#//@palette/@tools.0/@tools.5"/>
+              href="pipeline.gmftool#//@palette/@tools.0/@tools.6"/>
           <diagramNode
               href="pipeline.gmfgraph#ComplexAttribute"/>
           <children

@@ -19,6 +19,7 @@ import org.eclipse.swt.graphics.Image;
 
 import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
+import pipeline.diagram.edit.parts.ChartEditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
 import pipeline.diagram.edit.parts.ClusteringEditPart;
@@ -154,6 +155,11 @@ public class PipelineElementTypes {
 	* @generated
 	*/
 	public static final IElementType Clustering_3061 = getElementType("it.polimi.ase.project.diagram.Clustering_3061"); //$NON-NLS-1$
+	/**
+	* @generated
+	*/
+	public static final IElementType Chart_3062 = getElementType("it.polimi.ase.project.diagram.Chart_3062"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
@@ -294,6 +300,8 @@ public class PipelineElementTypes {
 
 			elements.put(Clustering_3061, PipelinePackage.eINSTANCE.getClustering());
 
+			elements.put(Chart_3062, PipelinePackage.eINSTANCE.getChart());
+
 			elements.put(Export_3037, PipelinePackage.eINSTANCE.getExport());
 
 			elements.put(SimpleAttribute_3046, PipelinePackage.eINSTANCE.getSimpleAttribute());
@@ -355,6 +363,7 @@ public class PipelineElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Classification_3059);
 			KNOWN_ELEMENT_TYPES.add(Predictive_3060);
 			KNOWN_ELEMENT_TYPES.add(Clustering_3061);
+			KNOWN_ELEMENT_TYPES.add(Chart_3062);
 			KNOWN_ELEMENT_TYPES.add(Export_3037);
 			KNOWN_ELEMENT_TYPES.add(SimpleAttribute_3046);
 			KNOWN_ELEMENT_TYPES.add(ComplexAttribute_3047);
@@ -412,6 +421,8 @@ public class PipelineElementTypes {
 			return Predictive_3060;
 		case ClusteringEditPart.VISUAL_ID:
 			return Clustering_3061;
+		case ChartEditPart.VISUAL_ID:
+			return Chart_3062;
 		case ExportEditPart.VISUAL_ID:
 			return Export_3037;
 		case SimpleAttributeEditPart.VISUAL_ID:

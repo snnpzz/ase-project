@@ -176,6 +176,10 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 				return createComplexAttributeAdapter();
 			}
 			@Override
+			public Adapter caseChart(Chart object) {
+				return createChartAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -570,6 +574,20 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComplexAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pipeline.Chart <em>Chart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pipeline.Chart
+	 * @generated
+	 */
+	public Adapter createChartAdapter() {
 		return null;
 	}
 

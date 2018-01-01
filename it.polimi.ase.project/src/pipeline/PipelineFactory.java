@@ -220,6 +220,15 @@ public interface PipelineFactory extends EFactory {
 	ComplexAttribute createComplexAttribute();
 
 	/**
+	 * Returns a new object of class '<em>Chart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Chart</em>'.
+	 * @generated
+	 */
+	Chart createChart();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

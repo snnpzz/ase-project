@@ -124,8 +124,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//AnalysisTask/analysisOperations"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//VisualizationTask">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//VisualizationTask/size"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//VisualizationTask/chartType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//VisualizationTask/charts"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//ExportTask">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//ExportTask/exports"/>
@@ -176,6 +175,11 @@
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//ComplexAttribute">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//ComplexAttribute/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="pipeline.ecore#//Chart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/size"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

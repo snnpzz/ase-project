@@ -19,6 +19,7 @@ import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import pipeline.AnalysisOperation;
 import pipeline.AnalysisTask;
 import pipeline.Attribute;
+import pipeline.Chart;
 import pipeline.Classification;
 import pipeline.CleaningOperation;
 import pipeline.CleaningTask;
@@ -46,6 +47,7 @@ import pipeline.UserDefined;
 import pipeline.VisualizationTask;
 import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
+import pipeline.diagram.edit.parts.ChartEditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
@@ -82,6 +84,7 @@ import pipeline.diagram.edit.parts.SimpleAttributeEditPart;
 import pipeline.diagram.edit.parts.SourceEditPart;
 import pipeline.diagram.edit.parts.UserDefinedEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
+import pipeline.diagram.edit.parts.VisualizationTaskVisualizationTaskChartsCompartmentEditPart;
 import pipeline.diagram.providers.PipelineElementTypes;
 
 /**
@@ -109,6 +112,8 @@ public class PipelineDiagramUpdater {
 			return getCleaningTaskCleaningTaskCleaningOperationsCompartment_7018SemanticChildren(view);
 		case AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID:
 			return getAnalysisTaskAnalysisTaskAnalysisOperationsCompartment_7021SemanticChildren(view);
+		case VisualizationTaskVisualizationTaskChartsCompartmentEditPart.VISUAL_ID:
+			return getVisualizationTaskVisualizationTaskChartsCompartment_7028SemanticChildren(view);
 		case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
 			return getExportTaskExportTaskExportsCompartment_7022SemanticChildren(view);
 		case SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID:
@@ -279,6 +284,31 @@ public class PipelineDiagramUpdater {
 	/**
 	* @generated
 	*/
+	public static List<PipelineNodeDescriptor> getVisualizationTaskVisualizationTaskChartsCompartment_7028SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		VisualizationTask modelElement = (VisualizationTask) containerView.getElement();
+		LinkedList<PipelineNodeDescriptor> result = new LinkedList<PipelineNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getCharts().iterator(); it.hasNext();) {
+			Chart childElement = (Chart) it.next();
+			int visualID = PipelineVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ChartEditPart.VISUAL_ID) {
+				result.add(new PipelineNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
 	public static List<PipelineNodeDescriptor> getExportTaskExportTaskExportsCompartment_7022SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -426,6 +456,8 @@ public class PipelineDiagramUpdater {
 			return getPredictive_3060ContainedLinks(view);
 		case ClusteringEditPart.VISUAL_ID:
 			return getClustering_3061ContainedLinks(view);
+		case ChartEditPart.VISUAL_ID:
+			return getChart_3062ContainedLinks(view);
 		case ExportEditPart.VISUAL_ID:
 			return getExport_3037ContainedLinks(view);
 		case SimpleAttributeEditPart.VISUAL_ID:
@@ -481,6 +513,8 @@ public class PipelineDiagramUpdater {
 			return getPredictive_3060IncomingLinks(view);
 		case ClusteringEditPart.VISUAL_ID:
 			return getClustering_3061IncomingLinks(view);
+		case ChartEditPart.VISUAL_ID:
+			return getChart_3062IncomingLinks(view);
 		case ExportEditPart.VISUAL_ID:
 			return getExport_3037IncomingLinks(view);
 		case SimpleAttributeEditPart.VISUAL_ID:
@@ -536,6 +570,8 @@ public class PipelineDiagramUpdater {
 			return getPredictive_3060OutgoingLinks(view);
 		case ClusteringEditPart.VISUAL_ID:
 			return getClustering_3061OutgoingLinks(view);
+		case ChartEditPart.VISUAL_ID:
+			return getChart_3062OutgoingLinks(view);
 		case ExportEditPart.VISUAL_ID:
 			return getExport_3037OutgoingLinks(view);
 		case SimpleAttributeEditPart.VISUAL_ID:
@@ -681,6 +717,13 @@ public class PipelineDiagramUpdater {
 	 * @generated
 	 */
 	public static List<PipelineLinkDescriptor> getClustering_3061ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<PipelineLinkDescriptor> getChart_3062ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -934,6 +977,13 @@ public class PipelineDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	public static List<PipelineLinkDescriptor> getChart_3062IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List<PipelineLinkDescriptor> getExport_3037IncomingLinks(View view) {
@@ -1153,6 +1203,13 @@ public class PipelineDiagramUpdater {
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_InternalDataFlow_4006(modelElement));
 		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<PipelineLinkDescriptor> getChart_3062OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**

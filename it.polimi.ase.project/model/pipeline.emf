@@ -67,6 +67,7 @@ class CollectionTask extends Task {
 }
 
 class IntegrationTask extends Task {
+
   @gmf.link(width="2", target.decoration="closedarrow", tool.name="IntegrationAttributes")
   ref Attribute[+] attributes;
 }
@@ -84,8 +85,8 @@ class AnalysisTask extends Task {
 }
 
 class VisualizationTask extends Task {
-  attr Size size;
-  attr ChartType chartType;
+  @gmf.compartment(layout="list")
+  val Chart[+] charts;
 }
 
 class ExportTask extends Task {
@@ -245,5 +246,12 @@ enum ChartType {
   Waterfall = 0;
   Funnel = 0;
   Combo = 0;
+}
+
+@gmf.node(label="name", figure="rounded")
+class Chart {
+  attr String name;
+  attr ChartType type;
+  attr Size size;
 }
 

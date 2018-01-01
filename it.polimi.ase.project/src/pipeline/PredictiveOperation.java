@@ -10,121 +10,121 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Size</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Predictive Operation</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see pipeline.PipelinePackage#getSize()
+ * @see pipeline.PipelinePackage#getPredictiveOperation()
  * @model
  * @generated
  */
-public enum Size implements Enumerator {
+public enum PredictiveOperation implements Enumerator {
 	/**
-	 * The '<em><b>Small</b></em>' literal object.
+	 * The '<em><b>Simple Regression</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SMALL_VALUE
+	 * @see #SIMPLE_REGRESSION_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SMALL(0, "Small", "Small"),
+	SIMPLE_REGRESSION(0, "SimpleRegression", "SimpleRegression"),
 
 	/**
-	 * The '<em><b>Medium</b></em>' literal object.
+	 * The '<em><b>Multiple Lin Regr</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MEDIUM_VALUE
+	 * @see #MULTIPLE_LIN_REGR_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	MEDIUM(1, "Medium", "Medium"),
+	MULTIPLE_LIN_REGR(1, "MultipleLinRegr", "MultipleLinRegr"),
 
 	/**
-	 * The '<em><b>Large</b></em>' literal object.
+	 * The '<em><b>Random Forests</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #LARGE_VALUE
+	 * @see #RANDOM_FORESTS_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	LARGE(2, "Large", "Large");
+	RANDOM_FORESTS(2, "RandomForests", "RandomForests");
 
 	/**
-	 * The '<em><b>Small</b></em>' literal value.
+	 * The '<em><b>Simple Regression</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Small</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Simple Regression</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SMALL
-	 * @model name="Small"
+	 * @see #SIMPLE_REGRESSION
+	 * @model name="SimpleRegression"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SMALL_VALUE = 0;
+	public static final int SIMPLE_REGRESSION_VALUE = 0;
 
 	/**
-	 * The '<em><b>Medium</b></em>' literal value.
+	 * The '<em><b>Multiple Lin Regr</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Medium</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Multiple Lin Regr</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #MEDIUM
-	 * @model name="Medium"
+	 * @see #MULTIPLE_LIN_REGR
+	 * @model name="MultipleLinRegr"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEDIUM_VALUE = 1;
+	public static final int MULTIPLE_LIN_REGR_VALUE = 1;
 
 	/**
-	 * The '<em><b>Large</b></em>' literal value.
+	 * The '<em><b>Random Forests</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Large</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Random Forests</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #LARGE
-	 * @model name="Large"
+	 * @see #RANDOM_FORESTS
+	 * @model name="RandomForests"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LARGE_VALUE = 2;
+	public static final int RANDOM_FORESTS_VALUE = 2;
 
 	/**
-	 * An array of all the '<em><b>Size</b></em>' enumerators.
+	 * An array of all the '<em><b>Predictive Operation</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final Size[] VALUES_ARRAY =
-		new Size[] {
-			SMALL,
-			MEDIUM,
-			LARGE,
+	private static final PredictiveOperation[] VALUES_ARRAY =
+		new PredictiveOperation[] {
+			SIMPLE_REGRESSION,
+			MULTIPLE_LIN_REGR,
+			RANDOM_FORESTS,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Size</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Predictive Operation</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<Size> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<PredictiveOperation> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Size</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Predictive Operation</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Size get(String literal) {
+	public static PredictiveOperation get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Size result = VALUES_ARRAY[i];
+			PredictiveOperation result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -133,16 +133,16 @@ public enum Size implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Size</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Predictive Operation</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Size getByName(String name) {
+	public static PredictiveOperation getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Size result = VALUES_ARRAY[i];
+			PredictiveOperation result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -151,18 +151,18 @@ public enum Size implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Size</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Predictive Operation</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Size get(int value) {
+	public static PredictiveOperation get(int value) {
 		switch (value) {
-			case SMALL_VALUE: return SMALL;
-			case MEDIUM_VALUE: return MEDIUM;
-			case LARGE_VALUE: return LARGE;
+			case SIMPLE_REGRESSION_VALUE: return SIMPLE_REGRESSION;
+			case MULTIPLE_LIN_REGR_VALUE: return MULTIPLE_LIN_REGR;
+			case RANDOM_FORESTS_VALUE: return RANDOM_FORESTS;
 		}
 		return null;
 	}
@@ -194,7 +194,7 @@ public enum Size implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private Size(int value, String name, String literal) {
+	private PredictiveOperation(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -238,4 +238,4 @@ public enum Size implements Enumerator {
 		return literal;
 	}
 	
-} //Size
+} //PredictiveOperation

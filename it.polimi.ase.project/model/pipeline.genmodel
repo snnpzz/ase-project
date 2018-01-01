@@ -9,12 +9,47 @@
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/txt"/>
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/csv"/>
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/json"/>
-      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/XML"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/xml"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//Size">
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Size/Small"/>
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Size/Medium"/>
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Size/Large"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//PredefinedOperation">
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//PredefinedOperation/removeNulls"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//PredefinedOperation/removeNegative"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//PredefinedOperation/round"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//ClusteringOperation">
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ClusteringOperation/kMeans"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ClusteringOperation/kMedoids"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ClusteringOperation/fuzzyCMeans"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ClusteringOperation/QT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//ClassificationOperation">
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ClassificationOperation/LogisticRegression"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ClassificationOperation/LDA"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ClassificationOperation/QDA"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ClassificationOperation/KNN"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ClassificationOperation/SVM"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//PredictiveOperation">
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//PredictiveOperation/SimpleRegression"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//PredictiveOperation/MultipleLinRegr"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//PredictiveOperation/RandomForests"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//DescriptiveOperation">
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//DescriptiveOperation/Histogram"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//DescriptiveOperation/Boxplot"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//DescriptiveOperation/PieChart"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//Type">
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mString"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mInteger"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mDouble"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mBoolean"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mDate"/>
     </genEnums>
     <genClasses ecoreClass="pipeline.ecore#//Pipeline">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/dataFlows"/>
@@ -23,7 +58,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/internalDataFlows"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/sources"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/files"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/operations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/schemas"/>
     </genClasses>
     <genClasses image="false" ecoreClass="pipeline.ecore#//Task">
@@ -38,7 +72,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//DataFlow/schema"/>
     </genClasses>
     <genClasses image="false" ecoreClass="pipeline.ecore#//Operation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Operation/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Operation/incoming"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Operation/outgoing"/>
     </genClasses>
@@ -46,17 +79,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//InternalDataFlow/format"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDataFlow/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDataFlow/target"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDataFlow/intDFschema"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDataFlow/schema"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Schema">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Schema/attributes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Schema/name"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//Attribute">
+    <genClasses image="false" ecoreClass="pipeline.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Attribute/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Attribute/type"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Attribute/next"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Attribute/attributes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Attribute/previous"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//CollectionTask">
@@ -87,7 +118,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Export/expUses"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Export/name"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//UserDefined"/>
+    <genClasses ecoreClass="pipeline.ecore#//UserDefined">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//UserDefined/name"/>
+    </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Source">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Source/linkedTo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Source/name"/>
@@ -100,12 +133,27 @@
     </genClasses>
     <genClasses image="false" ecoreClass="pipeline.ecore#//CleaningOperation"/>
     <genClasses image="false" ecoreClass="pipeline.ecore#//AnalysisOperation"/>
-    <genClasses ecoreClass="pipeline.ecore#//Descriptive"/>
-    <genClasses ecoreClass="pipeline.ecore#//Classification"/>
-    <genClasses ecoreClass="pipeline.ecore#//Predictive"/>
+    <genClasses ecoreClass="pipeline.ecore#//Descriptive">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Descriptive/name"/>
+    </genClasses>
+    <genClasses ecoreClass="pipeline.ecore#//Classification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Classification/name"/>
+    </genClasses>
+    <genClasses ecoreClass="pipeline.ecore#//Predictive">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Predictive/name"/>
+    </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Clustering">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Clustering/k"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Clustering/name"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//Predefined"/>
+    <genClasses ecoreClass="pipeline.ecore#//Predefined">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Predefined/name"/>
+    </genClasses>
+    <genClasses ecoreClass="pipeline.ecore#//SimpleAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//SimpleAttribute/type"/>
+    </genClasses>
+    <genClasses ecoreClass="pipeline.ecore#//ComplexAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//ComplexAttribute/attributes"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

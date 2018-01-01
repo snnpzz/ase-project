@@ -168,6 +168,14 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 				return createPredefinedAdapter();
 			}
 			@Override
+			public Adapter caseSimpleAttribute(SimpleAttribute object) {
+				return createSimpleAttributeAdapter();
+			}
+			@Override
+			public Adapter caseComplexAttribute(ComplexAttribute object) {
+				return createComplexAttributeAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -534,6 +542,34 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPredefinedAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pipeline.SimpleAttribute <em>Simple Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pipeline.SimpleAttribute
+	 * @generated
+	 */
+	public Adapter createSimpleAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pipeline.ComplexAttribute <em>Complex Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pipeline.ComplexAttribute
+	 * @generated
+	 */
+	public Adapter createComplexAttributeAdapter() {
 		return null;
 	}
 

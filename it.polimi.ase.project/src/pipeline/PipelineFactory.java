@@ -58,15 +58,6 @@ public interface PipelineFactory extends EFactory {
 	Schema createSchema();
 
 	/**
-	 * Returns a new object of class '<em>Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Attribute</em>'.
-	 * @generated
-	 */
-	Attribute createAttribute();
-
-	/**
 	 * Returns a new object of class '<em>Collection Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -209,6 +200,24 @@ public interface PipelineFactory extends EFactory {
 	 * @generated
 	 */
 	Predefined createPredefined();
+
+	/**
+	 * Returns a new object of class '<em>Simple Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Simple Attribute</em>'.
+	 * @generated
+	 */
+	SimpleAttribute createSimpleAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Complex Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Complex Attribute</em>'.
+	 * @generated
+	 */
+	ComplexAttribute createComplexAttribute();
 
 	/**
 	 * Returns the package supported by this factory.

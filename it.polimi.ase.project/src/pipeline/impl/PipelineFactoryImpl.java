@@ -61,7 +61,6 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 			case PipelinePackage.DATA_FLOW: return createDataFlow();
 			case PipelinePackage.INTERNAL_DATA_FLOW: return createInternalDataFlow();
 			case PipelinePackage.SCHEMA: return createSchema();
-			case PipelinePackage.ATTRIBUTE: return createAttribute();
 			case PipelinePackage.COLLECTION_TASK: return createCollectionTask();
 			case PipelinePackage.INTEGRATION_TASK: return createIntegrationTask();
 			case PipelinePackage.CLEANING_TASK: return createCleaningTask();
@@ -78,6 +77,8 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 			case PipelinePackage.PREDICTIVE: return createPredictive();
 			case PipelinePackage.CLUSTERING: return createClustering();
 			case PipelinePackage.PREDEFINED: return createPredefined();
+			case PipelinePackage.SIMPLE_ATTRIBUTE: return createSimpleAttribute();
+			case PipelinePackage.COMPLEX_ATTRIBUTE: return createComplexAttribute();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -95,6 +96,18 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 				return createFormatFromString(eDataType, initialValue);
 			case PipelinePackage.SIZE:
 				return createSizeFromString(eDataType, initialValue);
+			case PipelinePackage.PREDEFINED_OPERATION:
+				return createPredefinedOperationFromString(eDataType, initialValue);
+			case PipelinePackage.CLUSTERING_OPERATION:
+				return createClusteringOperationFromString(eDataType, initialValue);
+			case PipelinePackage.CLASSIFICATION_OPERATION:
+				return createClassificationOperationFromString(eDataType, initialValue);
+			case PipelinePackage.PREDICTIVE_OPERATION:
+				return createPredictiveOperationFromString(eDataType, initialValue);
+			case PipelinePackage.DESCRIPTIVE_OPERATION:
+				return createDescriptiveOperationFromString(eDataType, initialValue);
+			case PipelinePackage.TYPE:
+				return createTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -112,6 +125,18 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 				return convertFormatToString(eDataType, instanceValue);
 			case PipelinePackage.SIZE:
 				return convertSizeToString(eDataType, instanceValue);
+			case PipelinePackage.PREDEFINED_OPERATION:
+				return convertPredefinedOperationToString(eDataType, instanceValue);
+			case PipelinePackage.CLUSTERING_OPERATION:
+				return convertClusteringOperationToString(eDataType, instanceValue);
+			case PipelinePackage.CLASSIFICATION_OPERATION:
+				return convertClassificationOperationToString(eDataType, instanceValue);
+			case PipelinePackage.PREDICTIVE_OPERATION:
+				return convertPredictiveOperationToString(eDataType, instanceValue);
+			case PipelinePackage.DESCRIPTIVE_OPERATION:
+				return convertDescriptiveOperationToString(eDataType, instanceValue);
+			case PipelinePackage.TYPE:
+				return convertTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -155,16 +180,6 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	public Schema createSchema() {
 		SchemaImpl schema = new SchemaImpl();
 		return schema;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attribute createAttribute() {
-		AttributeImpl attribute = new AttributeImpl();
-		return attribute;
 	}
 
 	/**
@@ -332,6 +347,26 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SimpleAttribute createSimpleAttribute() {
+		SimpleAttributeImpl simpleAttribute = new SimpleAttributeImpl();
+		return simpleAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComplexAttribute createComplexAttribute() {
+		ComplexAttributeImpl complexAttribute = new ComplexAttributeImpl();
+		return complexAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Format createFormatFromString(EDataType eDataType, String initialValue) {
 		Format result = Format.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -364,6 +399,126 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * @generated
 	 */
 	public String convertSizeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PredefinedOperation createPredefinedOperationFromString(EDataType eDataType, String initialValue) {
+		PredefinedOperation result = PredefinedOperation.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPredefinedOperationToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ClusteringOperation createClusteringOperationFromString(EDataType eDataType, String initialValue) {
+		ClusteringOperation result = ClusteringOperation.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertClusteringOperationToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ClassificationOperation createClassificationOperationFromString(EDataType eDataType, String initialValue) {
+		ClassificationOperation result = ClassificationOperation.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertClassificationOperationToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PredictiveOperation createPredictiveOperationFromString(EDataType eDataType, String initialValue) {
+		PredictiveOperation result = PredictiveOperation.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPredictiveOperationToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DescriptiveOperation createDescriptiveOperationFromString(EDataType eDataType, String initialValue) {
+		DescriptiveOperation result = DescriptiveOperation.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDescriptiveOperationToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Type createTypeFromString(EDataType eDataType, String initialValue) {
+		Type result = Type.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

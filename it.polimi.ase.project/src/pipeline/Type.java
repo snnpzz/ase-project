@@ -10,147 +10,173 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Format</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see pipeline.PipelinePackage#getFormat()
+ * @see pipeline.PipelinePackage#getType()
  * @model
  * @generated
  */
-public enum Format implements Enumerator {
+public enum Type implements Enumerator {
 	/**
-	 * The '<em><b>Txt</b></em>' literal object.
+	 * The '<em><b>MString</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #TXT_VALUE
+	 * @see #MSTRING_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TXT(0, "txt", "txt"),
+	MSTRING(0, "mString", "mString"),
 
 	/**
-	 * The '<em><b>Csv</b></em>' literal object.
+	 * The '<em><b>MInteger</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CSV_VALUE
+	 * @see #MINTEGER_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CSV(1, "csv", "csv"),
+	MINTEGER(1, "mInteger", "mInteger"),
 
 	/**
-	 * The '<em><b>Json</b></em>' literal object.
+	 * The '<em><b>MDouble</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #JSON_VALUE
+	 * @see #MDOUBLE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	JSON(2, "json", "json"),
+	MDOUBLE(2, "mDouble", "mDouble"),
 
 	/**
-	 * The '<em><b>Xml</b></em>' literal object.
+	 * The '<em><b>MBoolean</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #XML_VALUE
+	 * @see #MBOOLEAN_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	XML(3, "xml", "xml");
+	MBOOLEAN(3, "mBoolean", "mBoolean"),
 
 	/**
-	 * The '<em><b>Txt</b></em>' literal value.
+	 * The '<em><b>MDate</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MDATE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MDATE(4, "mDate", "mDate");
+
+	/**
+	 * The '<em><b>MString</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Txt</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>MString</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #TXT
-	 * @model name="txt"
+	 * @see #MSTRING
+	 * @model name="mString"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TXT_VALUE = 0;
+	public static final int MSTRING_VALUE = 0;
 
 	/**
-	 * The '<em><b>Csv</b></em>' literal value.
+	 * The '<em><b>MInteger</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Csv</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>MInteger</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #CSV
-	 * @model name="csv"
+	 * @see #MINTEGER
+	 * @model name="mInteger"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CSV_VALUE = 1;
+	public static final int MINTEGER_VALUE = 1;
 
 	/**
-	 * The '<em><b>Json</b></em>' literal value.
+	 * The '<em><b>MDouble</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Json</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>MDouble</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #JSON
-	 * @model name="json"
+	 * @see #MDOUBLE
+	 * @model name="mDouble"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int JSON_VALUE = 2;
+	public static final int MDOUBLE_VALUE = 2;
 
 	/**
-	 * The '<em><b>Xml</b></em>' literal value.
+	 * The '<em><b>MBoolean</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Xml</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>MBoolean</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #XML
-	 * @model name="xml"
+	 * @see #MBOOLEAN
+	 * @model name="mBoolean"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int XML_VALUE = 3;
+	public static final int MBOOLEAN_VALUE = 3;
 
 	/**
-	 * An array of all the '<em><b>Format</b></em>' enumerators.
+	 * The '<em><b>MDate</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>MDate</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #MDATE
+	 * @model name="mDate"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDATE_VALUE = 4;
+
+	/**
+	 * An array of all the '<em><b>Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final Format[] VALUES_ARRAY =
-		new Format[] {
-			TXT,
-			CSV,
-			JSON,
-			XML,
+	private static final Type[] VALUES_ARRAY =
+		new Type[] {
+			MSTRING,
+			MINTEGER,
+			MDOUBLE,
+			MBOOLEAN,
+			MDATE,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Format</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<Format> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<Type> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Format</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Format get(String literal) {
+	public static Type get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Format result = VALUES_ARRAY[i];
+			Type result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -159,16 +185,16 @@ public enum Format implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Format</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Format getByName(String name) {
+	public static Type getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Format result = VALUES_ARRAY[i];
+			Type result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -177,19 +203,20 @@ public enum Format implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Format</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Format get(int value) {
+	public static Type get(int value) {
 		switch (value) {
-			case TXT_VALUE: return TXT;
-			case CSV_VALUE: return CSV;
-			case JSON_VALUE: return JSON;
-			case XML_VALUE: return XML;
+			case MSTRING_VALUE: return MSTRING;
+			case MINTEGER_VALUE: return MINTEGER;
+			case MDOUBLE_VALUE: return MDOUBLE;
+			case MBOOLEAN_VALUE: return MBOOLEAN;
+			case MDATE_VALUE: return MDATE;
 		}
 		return null;
 	}
@@ -221,7 +248,7 @@ public enum Format implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private Format(int value, String name, String literal) {
+	private Type(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -265,4 +292,4 @@ public enum Format implements Enumerator {
 		return literal;
 	}
 	
-} //Format
+} //Type

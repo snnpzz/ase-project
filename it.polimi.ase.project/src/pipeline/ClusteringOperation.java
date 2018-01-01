@@ -10,121 +10,147 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Size</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Clustering Operation</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see pipeline.PipelinePackage#getSize()
+ * @see pipeline.PipelinePackage#getClusteringOperation()
  * @model
  * @generated
  */
-public enum Size implements Enumerator {
+public enum ClusteringOperation implements Enumerator {
 	/**
-	 * The '<em><b>Small</b></em>' literal object.
+	 * The '<em><b>KMeans</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SMALL_VALUE
+	 * @see #KMEANS_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SMALL(0, "Small", "Small"),
+	KMEANS(0, "kMeans", "kMeans"),
 
 	/**
-	 * The '<em><b>Medium</b></em>' literal object.
+	 * The '<em><b>KMedoids</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MEDIUM_VALUE
+	 * @see #KMEDOIDS_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	MEDIUM(1, "Medium", "Medium"),
+	KMEDOIDS(1, "kMedoids", "kMedoids"),
 
 	/**
-	 * The '<em><b>Large</b></em>' literal object.
+	 * The '<em><b>Fuzzy CMeans</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #LARGE_VALUE
+	 * @see #FUZZY_CMEANS_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	LARGE(2, "Large", "Large");
+	FUZZY_CMEANS(2, "fuzzyCMeans", "fuzzyCMeans"),
 
 	/**
-	 * The '<em><b>Small</b></em>' literal value.
+	 * The '<em><b>QT</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #QT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	QT(3, "QT", "QT");
+
+	/**
+	 * The '<em><b>KMeans</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Small</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>KMeans</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SMALL
-	 * @model name="Small"
+	 * @see #KMEANS
+	 * @model name="kMeans"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SMALL_VALUE = 0;
+	public static final int KMEANS_VALUE = 0;
 
 	/**
-	 * The '<em><b>Medium</b></em>' literal value.
+	 * The '<em><b>KMedoids</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Medium</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>KMedoids</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #MEDIUM
-	 * @model name="Medium"
+	 * @see #KMEDOIDS
+	 * @model name="kMedoids"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEDIUM_VALUE = 1;
+	public static final int KMEDOIDS_VALUE = 1;
 
 	/**
-	 * The '<em><b>Large</b></em>' literal value.
+	 * The '<em><b>Fuzzy CMeans</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Large</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Fuzzy CMeans</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #LARGE
-	 * @model name="Large"
+	 * @see #FUZZY_CMEANS
+	 * @model name="fuzzyCMeans"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LARGE_VALUE = 2;
+	public static final int FUZZY_CMEANS_VALUE = 2;
 
 	/**
-	 * An array of all the '<em><b>Size</b></em>' enumerators.
+	 * The '<em><b>QT</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>QT</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #QT
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int QT_VALUE = 3;
+
+	/**
+	 * An array of all the '<em><b>Clustering Operation</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final Size[] VALUES_ARRAY =
-		new Size[] {
-			SMALL,
-			MEDIUM,
-			LARGE,
+	private static final ClusteringOperation[] VALUES_ARRAY =
+		new ClusteringOperation[] {
+			KMEANS,
+			KMEDOIDS,
+			FUZZY_CMEANS,
+			QT,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Size</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Clustering Operation</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<Size> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ClusteringOperation> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Size</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Clustering Operation</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Size get(String literal) {
+	public static ClusteringOperation get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Size result = VALUES_ARRAY[i];
+			ClusteringOperation result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -133,16 +159,16 @@ public enum Size implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Size</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Clustering Operation</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Size getByName(String name) {
+	public static ClusteringOperation getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Size result = VALUES_ARRAY[i];
+			ClusteringOperation result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -151,18 +177,19 @@ public enum Size implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Size</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Clustering Operation</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Size get(int value) {
+	public static ClusteringOperation get(int value) {
 		switch (value) {
-			case SMALL_VALUE: return SMALL;
-			case MEDIUM_VALUE: return MEDIUM;
-			case LARGE_VALUE: return LARGE;
+			case KMEANS_VALUE: return KMEANS;
+			case KMEDOIDS_VALUE: return KMEDOIDS;
+			case FUZZY_CMEANS_VALUE: return FUZZY_CMEANS;
+			case QT_VALUE: return QT;
 		}
 		return null;
 	}
@@ -194,7 +221,7 @@ public enum Size implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private Size(int value, String name, String literal) {
+	private ClusteringOperation(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -238,4 +265,4 @@ public enum Size implements Enumerator {
 		return literal;
 	}
 	
-} //Size
+} //ClusteringOperation

@@ -30,15 +30,13 @@ import pipeline.PipelinePackage;
  * </p>
  * <ul>
  *   <li>{@link pipeline.impl.AttributeImpl#getName <em>Name</em>}</li>
- *   <li>{@link pipeline.impl.AttributeImpl#getType <em>Type</em>}</li>
  *   <li>{@link pipeline.impl.AttributeImpl#getNext <em>Next</em>}</li>
- *   <li>{@link pipeline.impl.AttributeImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link pipeline.impl.AttributeImpl#getPrevious <em>Previous</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AttributeImpl extends EObjectImpl implements Attribute {
+public abstract class AttributeImpl extends EObjectImpl implements Attribute {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -60,26 +58,6 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String type = TYPE_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getNext() <em>Next</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -88,16 +66,6 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
 	 * @ordered
 	 */
 	protected Attribute next;
-
-	/**
-	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttributes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Attribute> attributes;
 
 	/**
 	 * The cached value of the '{@link #getPrevious() <em>Previous</em>}' reference.
@@ -147,27 +115,6 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.ATTRIBUTE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setType(String newType) {
-		String oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.ATTRIBUTE__TYPE, oldType, type));
 	}
 
 	/**
@@ -228,18 +175,6 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.ATTRIBUTE__NEXT, newNext, newNext));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Attribute> getAttributes() {
-		if (attributes == null) {
-			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, PipelinePackage.ATTRIBUTE__ATTRIBUTES);
-		}
-		return attributes;
 	}
 
 	/**
@@ -332,8 +267,6 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
 		switch (featureID) {
 			case PipelinePackage.ATTRIBUTE__NEXT:
 				return basicSetNext(null, msgs);
-			case PipelinePackage.ATTRIBUTE__ATTRIBUTES:
-				return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
 			case PipelinePackage.ATTRIBUTE__PREVIOUS:
 				return basicSetPrevious(null, msgs);
 		}
@@ -350,13 +283,9 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
 		switch (featureID) {
 			case PipelinePackage.ATTRIBUTE__NAME:
 				return getName();
-			case PipelinePackage.ATTRIBUTE__TYPE:
-				return getType();
 			case PipelinePackage.ATTRIBUTE__NEXT:
 				if (resolve) return getNext();
 				return basicGetNext();
-			case PipelinePackage.ATTRIBUTE__ATTRIBUTES:
-				return getAttributes();
 			case PipelinePackage.ATTRIBUTE__PREVIOUS:
 				if (resolve) return getPrevious();
 				return basicGetPrevious();
@@ -376,15 +305,8 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
 			case PipelinePackage.ATTRIBUTE__NAME:
 				setName((String)newValue);
 				return;
-			case PipelinePackage.ATTRIBUTE__TYPE:
-				setType((String)newValue);
-				return;
 			case PipelinePackage.ATTRIBUTE__NEXT:
 				setNext((Attribute)newValue);
-				return;
-			case PipelinePackage.ATTRIBUTE__ATTRIBUTES:
-				getAttributes().clear();
-				getAttributes().addAll((Collection<? extends Attribute>)newValue);
 				return;
 			case PipelinePackage.ATTRIBUTE__PREVIOUS:
 				setPrevious((Attribute)newValue);
@@ -404,14 +326,8 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
 			case PipelinePackage.ATTRIBUTE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case PipelinePackage.ATTRIBUTE__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
 			case PipelinePackage.ATTRIBUTE__NEXT:
 				setNext((Attribute)null);
-				return;
-			case PipelinePackage.ATTRIBUTE__ATTRIBUTES:
-				getAttributes().clear();
 				return;
 			case PipelinePackage.ATTRIBUTE__PREVIOUS:
 				setPrevious((Attribute)null);
@@ -430,12 +346,8 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
 		switch (featureID) {
 			case PipelinePackage.ATTRIBUTE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case PipelinePackage.ATTRIBUTE__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case PipelinePackage.ATTRIBUTE__NEXT:
 				return next != null;
-			case PipelinePackage.ATTRIBUTE__ATTRIBUTES:
-				return attributes != null && !attributes.isEmpty();
 			case PipelinePackage.ATTRIBUTE__PREVIOUS:
 				return previous != null;
 		}
@@ -454,8 +366,6 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", type: ");
-		result.append(type);
 		result.append(')');
 		return result.toString();
 	}

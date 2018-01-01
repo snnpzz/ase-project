@@ -10,121 +10,121 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Size</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Descriptive Operation</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see pipeline.PipelinePackage#getSize()
+ * @see pipeline.PipelinePackage#getDescriptiveOperation()
  * @model
  * @generated
  */
-public enum Size implements Enumerator {
+public enum DescriptiveOperation implements Enumerator {
 	/**
-	 * The '<em><b>Small</b></em>' literal object.
+	 * The '<em><b>Histogram</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SMALL_VALUE
+	 * @see #HISTOGRAM_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SMALL(0, "Small", "Small"),
+	HISTOGRAM(0, "Histogram", "Histogram"),
 
 	/**
-	 * The '<em><b>Medium</b></em>' literal object.
+	 * The '<em><b>Boxplot</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MEDIUM_VALUE
+	 * @see #BOXPLOT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	MEDIUM(1, "Medium", "Medium"),
+	BOXPLOT(1, "Boxplot", "Boxplot"),
 
 	/**
-	 * The '<em><b>Large</b></em>' literal object.
+	 * The '<em><b>Pie Chart</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #LARGE_VALUE
+	 * @see #PIE_CHART_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	LARGE(2, "Large", "Large");
+	PIE_CHART(2, "PieChart", "PieChart");
 
 	/**
-	 * The '<em><b>Small</b></em>' literal value.
+	 * The '<em><b>Histogram</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Small</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Histogram</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SMALL
-	 * @model name="Small"
+	 * @see #HISTOGRAM
+	 * @model name="Histogram"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SMALL_VALUE = 0;
+	public static final int HISTOGRAM_VALUE = 0;
 
 	/**
-	 * The '<em><b>Medium</b></em>' literal value.
+	 * The '<em><b>Boxplot</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Medium</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Boxplot</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #MEDIUM
-	 * @model name="Medium"
+	 * @see #BOXPLOT
+	 * @model name="Boxplot"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEDIUM_VALUE = 1;
+	public static final int BOXPLOT_VALUE = 1;
 
 	/**
-	 * The '<em><b>Large</b></em>' literal value.
+	 * The '<em><b>Pie Chart</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Large</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Pie Chart</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #LARGE
-	 * @model name="Large"
+	 * @see #PIE_CHART
+	 * @model name="PieChart"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LARGE_VALUE = 2;
+	public static final int PIE_CHART_VALUE = 2;
 
 	/**
-	 * An array of all the '<em><b>Size</b></em>' enumerators.
+	 * An array of all the '<em><b>Descriptive Operation</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final Size[] VALUES_ARRAY =
-		new Size[] {
-			SMALL,
-			MEDIUM,
-			LARGE,
+	private static final DescriptiveOperation[] VALUES_ARRAY =
+		new DescriptiveOperation[] {
+			HISTOGRAM,
+			BOXPLOT,
+			PIE_CHART,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Size</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Descriptive Operation</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<Size> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<DescriptiveOperation> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Size</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Descriptive Operation</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Size get(String literal) {
+	public static DescriptiveOperation get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Size result = VALUES_ARRAY[i];
+			DescriptiveOperation result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -133,16 +133,16 @@ public enum Size implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Size</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Descriptive Operation</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Size getByName(String name) {
+	public static DescriptiveOperation getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Size result = VALUES_ARRAY[i];
+			DescriptiveOperation result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -151,18 +151,18 @@ public enum Size implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Size</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Descriptive Operation</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Size get(int value) {
+	public static DescriptiveOperation get(int value) {
 		switch (value) {
-			case SMALL_VALUE: return SMALL;
-			case MEDIUM_VALUE: return MEDIUM;
-			case LARGE_VALUE: return LARGE;
+			case HISTOGRAM_VALUE: return HISTOGRAM;
+			case BOXPLOT_VALUE: return BOXPLOT;
+			case PIE_CHART_VALUE: return PIE_CHART;
 		}
 		return null;
 	}
@@ -194,7 +194,7 @@ public enum Size implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private Size(int value, String name, String literal) {
+	private DescriptiveOperation(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -238,4 +238,4 @@ public enum Size implements Enumerator {
 		return literal;
 	}
 	
-} //Size
+} //DescriptiveOperation

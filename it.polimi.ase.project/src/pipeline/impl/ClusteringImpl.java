@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import pipeline.Clustering;
+import pipeline.ClusteringOperation;
 import pipeline.PipelinePackage;
 
 /**
@@ -18,6 +19,7 @@ import pipeline.PipelinePackage;
  * </p>
  * <ul>
  *   <li>{@link pipeline.impl.ClusteringImpl#getK <em>K</em>}</li>
+ *   <li>{@link pipeline.impl.ClusteringImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,6 +43,25 @@ public class ClusteringImpl extends AnalysisOperationImpl implements Clustering 
 	 * @ordered
 	 */
 	protected int k = K_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ClusteringOperation NAME_EDEFAULT = ClusteringOperation.KMEANS;
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected ClusteringOperation name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,11 +108,34 @@ public class ClusteringImpl extends AnalysisOperationImpl implements Clustering 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ClusteringOperation getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(ClusteringOperation newName) {
+		ClusteringOperation oldName = name;
+		name = newName == null ? NAME_EDEFAULT : newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.CLUSTERING__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PipelinePackage.CLUSTERING__K:
 				return getK();
+			case PipelinePackage.CLUSTERING__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,6 +150,9 @@ public class ClusteringImpl extends AnalysisOperationImpl implements Clustering 
 		switch (featureID) {
 			case PipelinePackage.CLUSTERING__K:
 				setK((Integer)newValue);
+				return;
+			case PipelinePackage.CLUSTERING__NAME:
+				setName((ClusteringOperation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,6 +169,9 @@ public class ClusteringImpl extends AnalysisOperationImpl implements Clustering 
 			case PipelinePackage.CLUSTERING__K:
 				setK(K_EDEFAULT);
 				return;
+			case PipelinePackage.CLUSTERING__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -136,6 +186,8 @@ public class ClusteringImpl extends AnalysisOperationImpl implements Clustering 
 		switch (featureID) {
 			case PipelinePackage.CLUSTERING__K:
 				return k != K_EDEFAULT;
+			case PipelinePackage.CLUSTERING__NAME:
+				return name != NAME_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -152,6 +204,8 @@ public class ClusteringImpl extends AnalysisOperationImpl implements Clustering 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (k: ");
 		result.append(k);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

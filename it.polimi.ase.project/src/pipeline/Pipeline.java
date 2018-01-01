@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pipeline.Pipeline#getInternalDataFlows <em>Internal Data Flows</em>}</li>
  *   <li>{@link pipeline.Pipeline#getSources <em>Sources</em>}</li>
  *   <li>{@link pipeline.Pipeline#getFiles <em>Files</em>}</li>
- *   <li>{@link pipeline.Pipeline#getOperations <em>Operations</em>}</li>
  *   <li>{@link pipeline.Pipeline#getSchemas <em>Schemas</em>}</li>
  * </ul>
  *
@@ -135,22 +134,6 @@ public interface Pipeline extends EObject {
 	 * @generated
 	 */
 	EList<File> getFiles();
-
-	/**
-	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
-	 * The list contents are of type {@link pipeline.Operation}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Operations</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Operations</em>' containment reference list.
-	 * @see pipeline.PipelinePackage#getPipeline_Operations()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<Operation> getOperations();
 
 	/**
 	 * Returns the value of the '<em><b>Schemas</b></em>' containment reference list.

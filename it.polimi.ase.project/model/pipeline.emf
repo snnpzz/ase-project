@@ -9,7 +9,6 @@ class Pipeline {
   val InternalDataFlow[*] internalDataFlows;
   val Source[+] sources;
   val File[*] files;
-  val Operation[+] operations;
   val Schema[+] schemas;
 }
 
@@ -32,7 +31,6 @@ class DataFlow {
 
 @gmf.node(label="name", figure="ellipse")
 abstract class Operation {
-  attr String name;
   ref InternalDataFlow#target incoming;
   ref InternalDataFlow#source outgoing;
 }
@@ -44,7 +42,7 @@ class InternalDataFlow {
   ref Operation#incoming target;
 
   @gmf.link(width="1", target.decoration="arrow", style="dash")
-  ref Schema[1] intDFschema;
+  ref Schema[1] schema;
 }
 
 @gmf.node(label="name", label.placement="none", figure="rounded")
@@ -56,13 +54,9 @@ class Schema {
 }
 
 @gmf.node(label="name")
-class Attribute {
+abstract class Attribute {
   attr String name;
-  attr String type;
   ref Attribute#previous next;
-
-  @gmf.compartment(layout="list")
-  val Attribute[*] attributes;
   ref Attribute#next previous;
 }
 
@@ -121,6 +115,7 @@ class Export {
 }
 
 class UserDefined extends CleaningOperation {
+  attr String name;
 }
 
 @gmf.node(label="name")
@@ -144,31 +139,87 @@ abstract class AnalysisOperation extends Operation {
 }
 
 class Descriptive extends AnalysisOperation {
+  attr DescriptiveOperation name;
 }
 
 class Classification extends AnalysisOperation {
+  attr ClassificationOperation name;
 }
 
 class Predictive extends AnalysisOperation {
+  attr PredictiveOperation name;
 }
 
 class Clustering extends AnalysisOperation {
   attr int k;
+  attr ClusteringOperation name;
 }
 
 class Predefined extends CleaningOperation {
+  attr PredefinedOperation name = "";
 }
 
 enum Format {
   txt = 0;
-  csv = 0;
-  json = 0;
-  XML = 0;
+  csv = 1;
+  json = 2;
+  xml = 3;
 }
 
 enum Size {
   Small = 0;
-  Medium = 0;
-  Large = 0;
+  Medium = 1;
+  Large = 2;
+}
+
+class SimpleAttribute extends Attribute {
+  attr Type type;
+}
+
+class ComplexAttribute extends Attribute {
+
+  @gmf.compartment(layout="list")
+  val Attribute[+] attributes;
+}
+
+enum PredefinedOperation {
+  removeNulls = 0;
+  removeNegative = 1;
+  round = 2;
+}
+
+enum ClusteringOperation {
+  kMeans = 0;
+  kMedoids = 1;
+  fuzzyCMeans = 2;
+  QT = 3;
+}
+
+enum ClassificationOperation {
+  LogisticRegression = 0;
+  LDA = 1;
+  QDA = 2;
+  KNN = 3;
+  SVM = 4;
+}
+
+enum PredictiveOperation {
+  SimpleRegression = 0;
+  MultipleLinRegr = 1;
+  RandomForests = 2;
+}
+
+enum DescriptiveOperation {
+  Histogram = 0;
+  Boxplot = 1;
+  PieChart = 2;
+}
+
+enum Type {
+  mString = 0;
+  mInteger = 1;
+  mDouble = 2;
+  mBoolean = 3;
+  mDate = 4;
 }
 

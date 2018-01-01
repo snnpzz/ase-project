@@ -21,15 +21,6 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Attribute"
-          description="Create new Attribute">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="Classification"
           description="Create new Classification">
         <smallIcon
@@ -59,6 +50,15 @@
           xsi:type="gmftool:CreationTool"
           title="CollectionTask"
           description="Create new CollectionTask">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ComplexAttribute"
+          description="Create new ComplexAttribute">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -147,6 +147,15 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="SimpleAttribute"
+          description="Create new SimpleAttribute">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Source"
           description="Create new Source">
         <smallIcon
@@ -215,15 +224,6 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="IntDFschema"
-          description="Create new IntDFschema">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="InternalDataFlow"
           description="Create new InternalDataFlow">
         <smallIcon
@@ -235,6 +235,15 @@
           xsi:type="gmftool:CreationTool"
           title="ReadsFrom"
           description="Create new ReadsFrom">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Schema"
+          description="Create new Schema">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

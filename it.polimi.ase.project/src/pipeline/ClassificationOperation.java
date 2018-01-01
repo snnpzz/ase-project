@@ -10,147 +10,173 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Format</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Classification Operation</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see pipeline.PipelinePackage#getFormat()
+ * @see pipeline.PipelinePackage#getClassificationOperation()
  * @model
  * @generated
  */
-public enum Format implements Enumerator {
+public enum ClassificationOperation implements Enumerator {
 	/**
-	 * The '<em><b>Txt</b></em>' literal object.
+	 * The '<em><b>Logistic Regression</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #TXT_VALUE
+	 * @see #LOGISTIC_REGRESSION_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TXT(0, "txt", "txt"),
+	LOGISTIC_REGRESSION(0, "LogisticRegression", "LogisticRegression"),
 
 	/**
-	 * The '<em><b>Csv</b></em>' literal object.
+	 * The '<em><b>LDA</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CSV_VALUE
+	 * @see #LDA_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CSV(1, "csv", "csv"),
+	LDA(1, "LDA", "LDA"),
 
 	/**
-	 * The '<em><b>Json</b></em>' literal object.
+	 * The '<em><b>QDA</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #JSON_VALUE
+	 * @see #QDA_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	JSON(2, "json", "json"),
+	QDA(2, "QDA", "QDA"),
 
 	/**
-	 * The '<em><b>Xml</b></em>' literal object.
+	 * The '<em><b>KNN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #XML_VALUE
+	 * @see #KNN_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	XML(3, "xml", "xml");
+	KNN(3, "KNN", "KNN"),
 
 	/**
-	 * The '<em><b>Txt</b></em>' literal value.
+	 * The '<em><b>SVM</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SVM_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SVM(4, "SVM", "SVM");
+
+	/**
+	 * The '<em><b>Logistic Regression</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Txt</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Logistic Regression</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #TXT
-	 * @model name="txt"
+	 * @see #LOGISTIC_REGRESSION
+	 * @model name="LogisticRegression"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TXT_VALUE = 0;
+	public static final int LOGISTIC_REGRESSION_VALUE = 0;
 
 	/**
-	 * The '<em><b>Csv</b></em>' literal value.
+	 * The '<em><b>LDA</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Csv</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>LDA</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #CSV
-	 * @model name="csv"
+	 * @see #LDA
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CSV_VALUE = 1;
+	public static final int LDA_VALUE = 1;
 
 	/**
-	 * The '<em><b>Json</b></em>' literal value.
+	 * The '<em><b>QDA</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Json</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>QDA</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #JSON
-	 * @model name="json"
+	 * @see #QDA
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int JSON_VALUE = 2;
+	public static final int QDA_VALUE = 2;
 
 	/**
-	 * The '<em><b>Xml</b></em>' literal value.
+	 * The '<em><b>KNN</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Xml</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>KNN</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #XML
-	 * @model name="xml"
+	 * @see #KNN
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int XML_VALUE = 3;
+	public static final int KNN_VALUE = 3;
 
 	/**
-	 * An array of all the '<em><b>Format</b></em>' enumerators.
+	 * The '<em><b>SVM</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>SVM</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #SVM
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SVM_VALUE = 4;
+
+	/**
+	 * An array of all the '<em><b>Classification Operation</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final Format[] VALUES_ARRAY =
-		new Format[] {
-			TXT,
-			CSV,
-			JSON,
-			XML,
+	private static final ClassificationOperation[] VALUES_ARRAY =
+		new ClassificationOperation[] {
+			LOGISTIC_REGRESSION,
+			LDA,
+			QDA,
+			KNN,
+			SVM,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Format</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Classification Operation</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<Format> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ClassificationOperation> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Format</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Classification Operation</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Format get(String literal) {
+	public static ClassificationOperation get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Format result = VALUES_ARRAY[i];
+			ClassificationOperation result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -159,16 +185,16 @@ public enum Format implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Format</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Classification Operation</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Format getByName(String name) {
+	public static ClassificationOperation getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Format result = VALUES_ARRAY[i];
+			ClassificationOperation result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -177,19 +203,20 @@ public enum Format implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Format</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Classification Operation</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Format get(int value) {
+	public static ClassificationOperation get(int value) {
 		switch (value) {
-			case TXT_VALUE: return TXT;
-			case CSV_VALUE: return CSV;
-			case JSON_VALUE: return JSON;
-			case XML_VALUE: return XML;
+			case LOGISTIC_REGRESSION_VALUE: return LOGISTIC_REGRESSION;
+			case LDA_VALUE: return LDA;
+			case QDA_VALUE: return QDA;
+			case KNN_VALUE: return KNN;
+			case SVM_VALUE: return SVM;
 		}
 		return null;
 	}
@@ -221,7 +248,7 @@ public enum Format implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private Format(int value, String name, String literal) {
+	private ClassificationOperation(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -265,4 +292,4 @@ public enum Format implements Enumerator {
 		return literal;
 	}
 	
-} //Format
+} //ClassificationOperation

@@ -16,14 +16,13 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pipeline.Attribute#getName <em>Name</em>}</li>
- *   <li>{@link pipeline.Attribute#getType <em>Type</em>}</li>
  *   <li>{@link pipeline.Attribute#getNext <em>Next</em>}</li>
- *   <li>{@link pipeline.Attribute#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link pipeline.Attribute#getPrevious <em>Previous</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getAttribute()
- * @model annotation="gmf.node label='name'"
+ * @model abstract="true"
+ *        annotation="gmf.node label='name'"
  * @generated
  */
 public interface Attribute extends EObject {
@@ -54,32 +53,6 @@ public interface Attribute extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(String)
-	 * @see pipeline.PipelinePackage#getAttribute_Type()
-	 * @model
-	 * @generated
-	 */
-	String getType();
-
-	/**
-	 * Sets the value of the '{@link pipeline.Attribute#getType <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see #getType()
-	 * @generated
-	 */
-	void setType(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Next</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link pipeline.Attribute#getPrevious <em>Previous</em>}'.
 	 * <!-- begin-user-doc -->
@@ -106,23 +79,6 @@ public interface Attribute extends EObject {
 	 * @generated
 	 */
 	void setNext(Attribute value);
-
-	/**
-	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
-	 * The list contents are of type {@link pipeline.Attribute}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Attributes</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attributes</em>' containment reference list.
-	 * @see pipeline.PipelinePackage#getAttribute_Attributes()
-	 * @model containment="true"
-	 *        annotation="gmf.compartment layout='list'"
-	 * @generated
-	 */
-	EList<Attribute> getAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Previous</b></em>' reference.

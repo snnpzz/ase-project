@@ -236,6 +236,20 @@ public class PipelineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PipelinePackage.SIMPLE_ATTRIBUTE: {
+				SimpleAttribute simpleAttribute = (SimpleAttribute)theEObject;
+				T result = caseSimpleAttribute(simpleAttribute);
+				if (result == null) result = caseAttribute(simpleAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PipelinePackage.COMPLEX_ATTRIBUTE: {
+				ComplexAttribute complexAttribute = (ComplexAttribute)theEObject;
+				T result = caseComplexAttribute(complexAttribute);
+				if (result == null) result = caseAttribute(complexAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -612,6 +626,36 @@ public class PipelineSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePredefined(Predefined object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Simple Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Simple Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSimpleAttribute(SimpleAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Complex Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Complex Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComplexAttribute(ComplexAttribute object) {
 		return null;
 	}
 

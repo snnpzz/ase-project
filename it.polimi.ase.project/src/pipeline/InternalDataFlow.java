@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pipeline.InternalDataFlow#getFormat <em>Format</em>}</li>
  *   <li>{@link pipeline.InternalDataFlow#getSource <em>Source</em>}</li>
  *   <li>{@link pipeline.InternalDataFlow#getTarget <em>Target</em>}</li>
- *   <li>{@link pipeline.InternalDataFlow#getIntDFschema <em>Int DFschema</em>}</li>
+ *   <li>{@link pipeline.InternalDataFlow#getSchema <em>Schema</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getInternalDataFlow()
@@ -110,30 +110,30 @@ public interface InternalDataFlow extends EObject {
 	void setTarget(Operation value);
 
 	/**
-	 * Returns the value of the '<em><b>Int DFschema</b></em>' reference.
+	 * Returns the value of the '<em><b>Schema</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Int DFschema</em>' reference isn't clear,
+	 * If the meaning of the '<em>Schema</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Int DFschema</em>' reference.
-	 * @see #setIntDFschema(Schema)
-	 * @see pipeline.PipelinePackage#getInternalDataFlow_IntDFschema()
+	 * @return the value of the '<em>Schema</em>' reference.
+	 * @see #setSchema(Schema)
+	 * @see pipeline.PipelinePackage#getInternalDataFlow_Schema()
 	 * @model required="true"
 	 *        annotation="gmf.link width='1' target.decoration='arrow' style='dash'"
 	 * @generated
 	 */
-	Schema getIntDFschema();
+	Schema getSchema();
 
 	/**
-	 * Sets the value of the '{@link pipeline.InternalDataFlow#getIntDFschema <em>Int DFschema</em>}' reference.
+	 * Sets the value of the '{@link pipeline.InternalDataFlow#getSchema <em>Schema</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Int DFschema</em>' reference.
-	 * @see #getIntDFschema()
+	 * @param value the new value of the '<em>Schema</em>' reference.
+	 * @see #getSchema()
 	 * @generated
 	 */
-	void setIntDFschema(Schema value);
+	void setSchema(Schema value);
 
 } // InternalDataFlow

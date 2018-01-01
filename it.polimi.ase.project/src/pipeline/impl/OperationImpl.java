@@ -23,7 +23,6 @@ import pipeline.PipelinePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.OperationImpl#getName <em>Name</em>}</li>
  *   <li>{@link pipeline.impl.OperationImpl#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link pipeline.impl.OperationImpl#getOutgoing <em>Outgoing</em>}</li>
  * </ul>
@@ -31,26 +30,6 @@ import pipeline.PipelinePackage;
  * @generated
  */
 public abstract class OperationImpl extends EObjectImpl implements Operation {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getIncoming() <em>Incoming</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -88,27 +67,6 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	@Override
 	protected EClass eStaticClass() {
 		return PipelinePackage.Literals.OPERATION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.OPERATION__NAME, oldName, name));
 	}
 
 	/**
@@ -275,8 +233,6 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.OPERATION__NAME:
-				return getName();
 			case PipelinePackage.OPERATION__INCOMING:
 				if (resolve) return getIncoming();
 				return basicGetIncoming();
@@ -295,9 +251,6 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.OPERATION__NAME:
-				setName((String)newValue);
-				return;
 			case PipelinePackage.OPERATION__INCOMING:
 				setIncoming((InternalDataFlow)newValue);
 				return;
@@ -316,9 +269,6 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.OPERATION__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case PipelinePackage.OPERATION__INCOMING:
 				setIncoming((InternalDataFlow)null);
 				return;
@@ -337,30 +287,12 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.OPERATION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case PipelinePackage.OPERATION__INCOMING:
 				return incoming != null;
 			case PipelinePackage.OPERATION__OUTGOING:
 				return outgoing != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //OperationImpl

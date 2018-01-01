@@ -42,7 +42,6 @@ import pipeline.Task;
  *   <li>{@link pipeline.impl.PipelineImpl#getInternalDataFlows <em>Internal Data Flows</em>}</li>
  *   <li>{@link pipeline.impl.PipelineImpl#getSources <em>Sources</em>}</li>
  *   <li>{@link pipeline.impl.PipelineImpl#getFiles <em>Files</em>}</li>
- *   <li>{@link pipeline.impl.PipelineImpl#getOperations <em>Operations</em>}</li>
  *   <li>{@link pipeline.impl.PipelineImpl#getSchemas <em>Schemas</em>}</li>
  * </ul>
  *
@@ -118,16 +117,6 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	 * @ordered
 	 */
 	protected EList<File> files;
-
-	/**
-	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOperations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Operation> operations;
 
 	/**
 	 * The cached value of the '{@link #getSchemas() <em>Schemas</em>}' containment reference list.
@@ -244,18 +233,6 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Operation> getOperations() {
-		if (operations == null) {
-			operations = new EObjectContainmentEList<Operation>(Operation.class, this, PipelinePackage.PIPELINE__OPERATIONS);
-		}
-		return operations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Schema> getSchemas() {
 		if (schemas == null) {
 			schemas = new EObjectContainmentEList<Schema>(Schema.class, this, PipelinePackage.PIPELINE__SCHEMAS);
@@ -281,8 +258,6 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 				return ((InternalEList<?>)getSources()).basicRemove(otherEnd, msgs);
 			case PipelinePackage.PIPELINE__FILES:
 				return ((InternalEList<?>)getFiles()).basicRemove(otherEnd, msgs);
-			case PipelinePackage.PIPELINE__OPERATIONS:
-				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
 			case PipelinePackage.PIPELINE__SCHEMAS:
 				return ((InternalEList<?>)getSchemas()).basicRemove(otherEnd, msgs);
 		}
@@ -309,8 +284,6 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 				return getSources();
 			case PipelinePackage.PIPELINE__FILES:
 				return getFiles();
-			case PipelinePackage.PIPELINE__OPERATIONS:
-				return getOperations();
 			case PipelinePackage.PIPELINE__SCHEMAS:
 				return getSchemas();
 		}
@@ -349,10 +322,6 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 				getFiles().clear();
 				getFiles().addAll((Collection<? extends File>)newValue);
 				return;
-			case PipelinePackage.PIPELINE__OPERATIONS:
-				getOperations().clear();
-				getOperations().addAll((Collection<? extends Operation>)newValue);
-				return;
 			case PipelinePackage.PIPELINE__SCHEMAS:
 				getSchemas().clear();
 				getSchemas().addAll((Collection<? extends Schema>)newValue);
@@ -387,9 +356,6 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 			case PipelinePackage.PIPELINE__FILES:
 				getFiles().clear();
 				return;
-			case PipelinePackage.PIPELINE__OPERATIONS:
-				getOperations().clear();
-				return;
 			case PipelinePackage.PIPELINE__SCHEMAS:
 				getSchemas().clear();
 				return;
@@ -417,8 +383,6 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 				return sources != null && !sources.isEmpty();
 			case PipelinePackage.PIPELINE__FILES:
 				return files != null && !files.isEmpty();
-			case PipelinePackage.PIPELINE__OPERATIONS:
-				return operations != null && !operations.isEmpty();
 			case PipelinePackage.PIPELINE__SCHEMAS:
 				return schemas != null && !schemas.isEmpty();
 		}

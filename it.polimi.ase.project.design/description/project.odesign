@@ -59,8 +59,16 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="internalDataFlowEdge" label="Internal Data Flow" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='userDefinedCleaningOperationNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='userDefinedCleaningOperationNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="InternalDataFlow" useDomainElement="true">
+        <edgeMappings name="internalDataFlowEdge" label="Internal Data Flow" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='userDefinedCleaningOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='classificationAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='clusteringAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='descriptiveAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='predictiveAnalysisOperationSubNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='userDefinedCleaningOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='classificationAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='clusteringAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='descriptiveAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='predictiveAnalysisOperationSubNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="InternalDataFlow" useDomainElement="true">
           <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="internalSchemaEdge" label="Internal Schema" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='internalDataFlowEdge']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']" targetFinderExpression="feature:internalSchema">
+          <style lineStyle="dash" targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -84,7 +92,30 @@
           </style>
         </edgeMappings>
         <containerMappings name="Analysis Task" label="Analysis Task" domainClass="AnalysisTask">
-          <subNodeMappings name="AnalysisOperationNode" label="Analysis Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="AnalysisOperation"/>
+          <subNodeMappings name="classificationAnalysisOperationSubNode" label="Classification Analysis Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="ClassificationAnalysisOperation">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="clusteringAnalysisOperationSubNode" label="Clustering Analysis Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="ClusteringAnalysisOperation">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="descriptiveAnalysisOperationSubNode" label="Descriptive Analysis Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="DescriptiveAnalysisOperation">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="predictiveAnalysisOperationSubNode" label="Predictive Analysis Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="PredictiveAnalysisOperation">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Analysis Task">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
@@ -94,13 +125,13 @@
           </style>
         </containerMappings>
         <containerMappings name="Cleaning Task" label="Cleaning Task" domainClass="CleaningTask">
-          <subNodeMappings name="predefinedCleaningOperationNode" label="Predefined Cleaning Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="PredefinedCleaningOperation">
+          <subNodeMappings name="predefinedCleaningOperationSubNode" label="Predefined Cleaning Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="PredefinedCleaningOperation">
             <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
-          <subNodeMappings name="userDefinedCleaningOperationNode" label="User-Defined Cleaning Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="UserDefinedCleaningOperation">
+          <subNodeMappings name="userDefinedCleaningOperationSubNode" label="User-Defined Cleaning Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="UserDefinedCleaningOperation">
             <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -197,7 +228,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="createPredefinedCleaningOperation" label="Predefined Cleaning Operation" nodeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationNode']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createPredefinedCleaningOperation" label="Predefined Cleaning Operation" nodeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationSubNode']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -215,7 +246,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="createUserDefinedCleaningOperation" label="User-Defined Cleaning Operation" nodeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='userDefinedCleaningOperationNode']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createUserDefinedCleaningOperation" label="User-Defined Cleaning Operation" nodeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='userDefinedCleaningOperationSubNode']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -341,6 +372,26 @@
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="write" valueExpression="var:target"/>
               </firstModelOperations>
             </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createClassificationAnalysisOperation" label="Classification Analysis Operation" nodeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='classificationAnalysisOperationSubNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createCluteringAnalysisOperation" label="Clutering Analysis Operation" nodeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='clusteringAnalysisOperationSubNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createDescriptiveAnalysisOperation" label="Descriptive Analysis Operation" nodeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='descriptiveAnalysisOperationSubNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createPredictiveAnalysisOperation" label="Predictive Analysis Operation" nodeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='predictiveAnalysisOperationSubNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation/>
           </ownedTools>
         </toolSections>
       </defaultLayer>

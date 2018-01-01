@@ -281,7 +281,7 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_96uSkuGWEeeU3dy_CQ-Szg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_96uSk-GWEeeU3dy_CQ-Szg" type="7001">
       <children xmi:type="notation:Node" xmi:id="_LoqbAO8FEeeKqPfWoCQbzQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//UserDefined/name"/>
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//UserDefinedCleaningOperation/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_LoqbAe8FEeeKqPfWoCQbzQ"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_96uSlOGWEeeU3dy_CQ-Szg"/>
@@ -295,7 +295,7 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_96uSmuGWEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_96uSm-GWEeeU3dy_CQ-Szg"/>
     </children>
-    <element xmi:type="ecore:EClass" href="pipeline.ecore#//UserDefined"/>
+    <element xmi:type="ecore:EClass" href="pipeline.ecore#//UserDefinedCleaningOperation"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_96uSkeGWEeeU3dy_CQ-Szg" x="588" y="301"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="__xvekOGWEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
@@ -480,7 +480,7 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_yKP4seGXEeeU3dy_CQ-Szg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_yKP4suGXEeeU3dy_CQ-Szg" type="7001">
       <children xmi:type="notation:Node" xmi:id="_Q9MPsO8FEeeKqPfWoCQbzQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Predefined/name"/>
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//PredefinedCleaningOperation/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Q9MPse8FEeeKqPfWoCQbzQ"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_yKP4s-GXEeeU3dy_CQ-Szg"/>
@@ -494,7 +494,7 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_yKP4ueGXEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_yKP4uuGXEeeU3dy_CQ-Szg"/>
     </children>
-    <element xmi:type="ecore:EClass" href="pipeline.ecore#//Predefined"/>
+    <element xmi:type="ecore:EClass" href="pipeline.ecore#//PredefinedCleaningOperation"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yKP4sOGXEeeU3dy_CQ-Szg" x="672" y="385"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_0waF0OGbEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">

@@ -49,12 +49,12 @@ public class PipelinePaletteFactory {
 		paletteContainer.add(createFile10CreationTool());
 		paletteContainer.add(createImport11CreationTool());
 		paletteContainer.add(createIntegrationTask12CreationTool());
-		paletteContainer.add(createPredefined13CreationTool());
+		paletteContainer.add(createPredefinedCleaningOperation13CreationTool());
 		paletteContainer.add(createPredictive14CreationTool());
 		paletteContainer.add(createSchema15CreationTool());
 		paletteContainer.add(createSimpleAttribute16CreationTool());
 		paletteContainer.add(createSource17CreationTool());
-		paletteContainer.add(createUserDefined18CreationTool());
+		paletteContainer.add(createUserDefinedCleaningOperation18CreationTool());
 		paletteContainer.add(createVisualizationTask19CreationTool());
 		return paletteContainer;
 	}
@@ -233,12 +233,13 @@ public class PipelinePaletteFactory {
 	/**
 	* @generated
 	*/
-	private ToolEntry createPredefined13CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Predefined13CreationTool_title,
-				Messages.Predefined13CreationTool_desc,
-				Collections.singletonList(PipelineElementTypes.Predefined_3041));
-		entry.setId("createPredefined13CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(PipelineElementTypes.getImageDescriptor(PipelineElementTypes.Predefined_3041));
+	private ToolEntry createPredefinedCleaningOperation13CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.PredefinedCleaningOperation13CreationTool_title,
+				Messages.PredefinedCleaningOperation13CreationTool_desc,
+				Collections.singletonList(PipelineElementTypes.PredefinedCleaningOperation_3051));
+		entry.setId("createPredefinedCleaningOperation13CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(
+				PipelineElementTypes.getImageDescriptor(PipelineElementTypes.PredefinedCleaningOperation_3051));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -298,12 +299,13 @@ public class PipelinePaletteFactory {
 	/**
 	* @generated
 	*/
-	private ToolEntry createUserDefined18CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.UserDefined18CreationTool_title,
-				Messages.UserDefined18CreationTool_desc,
-				Collections.singletonList(PipelineElementTypes.UserDefined_3040));
-		entry.setId("createUserDefined18CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(PipelineElementTypes.getImageDescriptor(PipelineElementTypes.UserDefined_3040));
+	private ToolEntry createUserDefinedCleaningOperation18CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.UserDefinedCleaningOperation18CreationTool_title,
+				Messages.UserDefinedCleaningOperation18CreationTool_desc,
+				Collections.singletonList(PipelineElementTypes.UserDefinedCleaningOperation_3050));
+		entry.setId("createUserDefinedCleaningOperation18CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(
+				PipelineElementTypes.getImageDescriptor(PipelineElementTypes.UserDefinedCleaningOperation_3050));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

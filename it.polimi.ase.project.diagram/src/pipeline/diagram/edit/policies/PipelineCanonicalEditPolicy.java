@@ -51,13 +51,13 @@ import pipeline.diagram.edit.parts.ImportEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
-import pipeline.diagram.edit.parts.PredefinedEditPart;
+import pipeline.diagram.edit.parts.PredefinedCleaningOperationEditPart;
 import pipeline.diagram.edit.parts.PredictiveEditPart;
 import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.edit.parts.SimpleAttribute2EditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeEditPart;
 import pipeline.diagram.edit.parts.SourceEditPart;
-import pipeline.diagram.edit.parts.UserDefinedEditPart;
+import pipeline.diagram.edit.parts.UserDefinedCleaningOperationEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.part.PipelineDiagramUpdater;
 import pipeline.diagram.part.PipelineLinkDescriptor;
@@ -370,16 +370,16 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case UserDefinedEditPart.VISUAL_ID: {
+		case UserDefinedCleaningOperationEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getUserDefined_3040ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getUserDefinedCleaningOperation_3050ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case PredefinedEditPart.VISUAL_ID: {
+		case PredefinedCleaningOperationEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getPredefined_3041ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getPredefinedCleaningOperation_3051ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

@@ -348,26 +348,26 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pipeline.UserDefined} instances.
+	 * This keeps track of the one adapter used for all {@link pipeline.UserDefinedCleaningOperation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UserDefinedItemProvider userDefinedItemProvider;
+	protected UserDefinedCleaningOperationItemProvider userDefinedCleaningOperationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pipeline.UserDefined}.
+	 * This creates an adapter for a {@link pipeline.UserDefinedCleaningOperation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createUserDefinedAdapter() {
-		if (userDefinedItemProvider == null) {
-			userDefinedItemProvider = new UserDefinedItemProvider(this);
+	public Adapter createUserDefinedCleaningOperationAdapter() {
+		if (userDefinedCleaningOperationItemProvider == null) {
+			userDefinedCleaningOperationItemProvider = new UserDefinedCleaningOperationItemProvider(this);
 		}
 
-		return userDefinedItemProvider;
+		return userDefinedCleaningOperationItemProvider;
 	}
 
 	/**
@@ -509,26 +509,26 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pipeline.Predefined} instances.
+	 * This keeps track of the one adapter used for all {@link pipeline.PredefinedCleaningOperation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PredefinedItemProvider predefinedItemProvider;
+	protected PredefinedCleaningOperationItemProvider predefinedCleaningOperationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pipeline.Predefined}.
+	 * This creates an adapter for a {@link pipeline.PredefinedCleaningOperation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPredefinedAdapter() {
-		if (predefinedItemProvider == null) {
-			predefinedItemProvider = new PredefinedItemProvider(this);
+	public Adapter createPredefinedCleaningOperationAdapter() {
+		if (predefinedCleaningOperationItemProvider == null) {
+			predefinedCleaningOperationItemProvider = new PredefinedCleaningOperationItemProvider(this);
 		}
 
-		return predefinedItemProvider;
+		return predefinedCleaningOperationItemProvider;
 	}
 
 	/**
@@ -688,14 +688,14 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 		if (exportTaskItemProvider != null) exportTaskItemProvider.dispose();
 		if (importItemProvider != null) importItemProvider.dispose();
 		if (exportItemProvider != null) exportItemProvider.dispose();
-		if (userDefinedItemProvider != null) userDefinedItemProvider.dispose();
+		if (userDefinedCleaningOperationItemProvider != null) userDefinedCleaningOperationItemProvider.dispose();
 		if (sourceItemProvider != null) sourceItemProvider.dispose();
 		if (fileItemProvider != null) fileItemProvider.dispose();
 		if (descriptiveItemProvider != null) descriptiveItemProvider.dispose();
 		if (classificationItemProvider != null) classificationItemProvider.dispose();
 		if (predictiveItemProvider != null) predictiveItemProvider.dispose();
 		if (clusteringItemProvider != null) clusteringItemProvider.dispose();
-		if (predefinedItemProvider != null) predefinedItemProvider.dispose();
+		if (predefinedCleaningOperationItemProvider != null) predefinedCleaningOperationItemProvider.dispose();
 		if (simpleAttributeItemProvider != null) simpleAttributeItemProvider.dispose();
 		if (complexAttributeItemProvider != null) complexAttributeItemProvider.dispose();
 	}

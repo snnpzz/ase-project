@@ -140,8 +140,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Export/expUses"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Export/name"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//UserDefined">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//UserDefined/name"/>
+    <genClasses ecoreClass="pipeline.ecore#//UserDefinedCleaningOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//UserDefinedCleaningOperation/name"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Source">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Source/linkedTo"/>
@@ -168,8 +168,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Clustering/k"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Clustering/name"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//Predefined">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Predefined/name"/>
+    <genClasses ecoreClass="pipeline.ecore#//PredefinedCleaningOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//PredefinedCleaningOperation/name"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//SimpleAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//SimpleAttribute/type"/>

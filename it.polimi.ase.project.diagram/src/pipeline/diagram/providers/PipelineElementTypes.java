@@ -40,13 +40,13 @@ import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
-import pipeline.diagram.edit.parts.PredefinedEditPart;
+import pipeline.diagram.edit.parts.PredefinedCleaningOperationEditPart;
 import pipeline.diagram.edit.parts.PredictiveEditPart;
 import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.edit.parts.SimpleAttribute2EditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeEditPart;
 import pipeline.diagram.edit.parts.SourceEditPart;
-import pipeline.diagram.edit.parts.UserDefinedEditPart;
+import pipeline.diagram.edit.parts.UserDefinedCleaningOperationEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.part.PipelineDiagramEditorPlugin;
 
@@ -129,12 +129,13 @@ public class PipelineElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType UserDefined_3040 = getElementType(
-			"it.polimi.ase.project.diagram.UserDefined_3040"); //$NON-NLS-1$
+	public static final IElementType UserDefinedCleaningOperation_3050 = getElementType(
+			"it.polimi.ase.project.diagram.UserDefinedCleaningOperation_3050"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Predefined_3041 = getElementType("it.polimi.ase.project.diagram.Predefined_3041"); //$NON-NLS-1$
+	public static final IElementType PredefinedCleaningOperation_3051 = getElementType(
+			"it.polimi.ase.project.diagram.PredefinedCleaningOperation_3051"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -276,9 +277,10 @@ public class PipelineElementTypes {
 
 			elements.put(Import_3025, PipelinePackage.eINSTANCE.getImport());
 
-			elements.put(UserDefined_3040, PipelinePackage.eINSTANCE.getUserDefined());
+			elements.put(UserDefinedCleaningOperation_3050,
+					PipelinePackage.eINSTANCE.getUserDefinedCleaningOperation());
 
-			elements.put(Predefined_3041, PipelinePackage.eINSTANCE.getPredefined());
+			elements.put(PredefinedCleaningOperation_3051, PipelinePackage.eINSTANCE.getPredefinedCleaningOperation());
 
 			elements.put(Descriptive_3042, PipelinePackage.eINSTANCE.getDescriptive());
 
@@ -341,8 +343,8 @@ public class PipelineElementTypes {
 			KNOWN_ELEMENT_TYPES.add(File_2045);
 			KNOWN_ELEMENT_TYPES.add(Schema_2043);
 			KNOWN_ELEMENT_TYPES.add(Import_3025);
-			KNOWN_ELEMENT_TYPES.add(UserDefined_3040);
-			KNOWN_ELEMENT_TYPES.add(Predefined_3041);
+			KNOWN_ELEMENT_TYPES.add(UserDefinedCleaningOperation_3050);
+			KNOWN_ELEMENT_TYPES.add(PredefinedCleaningOperation_3051);
 			KNOWN_ELEMENT_TYPES.add(Descriptive_3042);
 			KNOWN_ELEMENT_TYPES.add(Classification_3043);
 			KNOWN_ELEMENT_TYPES.add(Predictive_3044);
@@ -391,10 +393,10 @@ public class PipelineElementTypes {
 			return Schema_2043;
 		case ImportEditPart.VISUAL_ID:
 			return Import_3025;
-		case UserDefinedEditPart.VISUAL_ID:
-			return UserDefined_3040;
-		case PredefinedEditPart.VISUAL_ID:
-			return Predefined_3041;
+		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
+			return UserDefinedCleaningOperation_3050;
+		case PredefinedCleaningOperationEditPart.VISUAL_ID:
+			return PredefinedCleaningOperation_3051;
 		case DescriptiveEditPart.VISUAL_ID:
 			return Descriptive_3042;
 		case ClassificationEditPart.VISUAL_ID:

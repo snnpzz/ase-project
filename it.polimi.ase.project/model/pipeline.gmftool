@@ -120,8 +120,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Predefined"
-          description="Create new Predefined">
+          title="PredefinedCleaningOperation"
+          description="Create new PredefinedCleaningOperation">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -165,8 +165,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="UserDefined"
-          description="Create new UserDefined">
+          title="UserDefinedCleaningOperation"
+          description="Create new UserDefinedCleaningOperation">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

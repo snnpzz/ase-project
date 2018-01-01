@@ -85,17 +85,17 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case ImportNameEditPart.VISUAL_ID:
 				return new ImportNameEditPart(view);
 
-			case UserDefinedEditPart.VISUAL_ID:
-				return new UserDefinedEditPart(view);
+			case UserDefinedCleaningOperationEditPart.VISUAL_ID:
+				return new UserDefinedCleaningOperationEditPart(view);
 
-			case UserDefinedNameEditPart.VISUAL_ID:
-				return new UserDefinedNameEditPart(view);
+			case UserDefinedCleaningOperationNameEditPart.VISUAL_ID:
+				return new UserDefinedCleaningOperationNameEditPart(view);
 
-			case PredefinedEditPart.VISUAL_ID:
-				return new PredefinedEditPart(view);
+			case PredefinedCleaningOperationEditPart.VISUAL_ID:
+				return new PredefinedCleaningOperationEditPart(view);
 
-			case PredefinedNameEditPart.VISUAL_ID:
-				return new PredefinedNameEditPart(view);
+			case PredefinedCleaningOperationNameEditPart.VISUAL_ID:
+				return new PredefinedCleaningOperationNameEditPart(view);
 
 			case DescriptiveEditPart.VISUAL_ID:
 				return new DescriptiveEditPart(view);

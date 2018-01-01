@@ -376,12 +376,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Predefined13CreationTool_title;
+	public static String PredefinedCleaningOperation13CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Predefined13CreationTool_desc;
+	public static String PredefinedCleaningOperation13CreationTool_desc;
 
 	/**
 	* @generated
@@ -426,12 +426,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String UserDefined18CreationTool_title;
+	public static String UserDefinedCleaningOperation18CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String UserDefined18CreationTool_desc;
+	public static String UserDefinedCleaningOperation18CreationTool_desc;
 
 	/**
 	* @generated
@@ -656,26 +656,6 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_UserDefined_3040_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_UserDefined_3040_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Predefined_3041_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Predefined_3041_outgoinglinks;
-
-	/**
-	* @generated
-	*/
 	public static String NavigatorGroupName_Descriptive_3042_incominglinks;
 
 	/**
@@ -712,6 +692,26 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String NavigatorGroupName_Clustering_3045_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_UserDefinedCleaningOperation_3050_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_UserDefinedCleaningOperation_3050_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_PredefinedCleaningOperation_3051_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_PredefinedCleaningOperation_3051_outgoinglinks;
 
 	/**
 	* @generated

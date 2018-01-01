@@ -87,8 +87,8 @@ import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
-import pipeline.diagram.edit.parts.PredefinedEditPart;
-import pipeline.diagram.edit.parts.PredefinedNameEditPart;
+import pipeline.diagram.edit.parts.PredefinedCleaningOperationEditPart;
+import pipeline.diagram.edit.parts.PredefinedCleaningOperationNameEditPart;
 import pipeline.diagram.edit.parts.PredictiveEditPart;
 import pipeline.diagram.edit.parts.PredictiveNameEditPart;
 import pipeline.diagram.edit.parts.SchemaEditPart;
@@ -99,8 +99,8 @@ import pipeline.diagram.edit.parts.SimpleAttributeName2EditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeNameEditPart;
 import pipeline.diagram.edit.parts.SourceEditPart;
 import pipeline.diagram.edit.parts.SourceNameEditPart;
-import pipeline.diagram.edit.parts.UserDefinedEditPart;
-import pipeline.diagram.edit.parts.UserDefinedNameEditPart;
+import pipeline.diagram.edit.parts.UserDefinedCleaningOperationEditPart;
+import pipeline.diagram.edit.parts.UserDefinedCleaningOperationNameEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskIDEditPart;
 import pipeline.diagram.edit.parts.WrappingLabel2EditPart;
@@ -202,8 +202,8 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				case FileEditPart.VISUAL_ID:
 				case SchemaEditPart.VISUAL_ID:
 				case ImportEditPart.VISUAL_ID:
-				case UserDefinedEditPart.VISUAL_ID:
-				case PredefinedEditPart.VISUAL_ID:
+				case UserDefinedCleaningOperationEditPart.VISUAL_ID:
+				case PredefinedCleaningOperationEditPart.VISUAL_ID:
 				case DescriptiveEditPart.VISUAL_ID:
 				case ClassificationEditPart.VISUAL_ID:
 				case PredictiveEditPart.VISUAL_ID:
@@ -228,7 +228,8 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				|| VisualizationTaskEditPart.VISUAL_ID == visualID || ExportTaskEditPart.VISUAL_ID == visualID
 				|| SourceEditPart.VISUAL_ID == visualID || FileEditPart.VISUAL_ID == visualID
 				|| SchemaEditPart.VISUAL_ID == visualID || ImportEditPart.VISUAL_ID == visualID
-				|| UserDefinedEditPart.VISUAL_ID == visualID || PredefinedEditPart.VISUAL_ID == visualID
+				|| UserDefinedCleaningOperationEditPart.VISUAL_ID == visualID
+				|| PredefinedCleaningOperationEditPart.VISUAL_ID == visualID
 				|| DescriptiveEditPart.VISUAL_ID == visualID || ClassificationEditPart.VISUAL_ID == visualID
 				|| PredictiveEditPart.VISUAL_ID == visualID || ClusteringEditPart.VISUAL_ID == visualID
 				|| ExportEditPart.VISUAL_ID == visualID || SimpleAttributeEditPart.VISUAL_ID == visualID
@@ -302,10 +303,12 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 			return createSchema_2043(domainElement, containerView, index, persisted, preferencesHint);
 		case ImportEditPart.VISUAL_ID:
 			return createImport_3025(domainElement, containerView, index, persisted, preferencesHint);
-		case UserDefinedEditPart.VISUAL_ID:
-			return createUserDefined_3040(domainElement, containerView, index, persisted, preferencesHint);
-		case PredefinedEditPart.VISUAL_ID:
-			return createPredefined_3041(domainElement, containerView, index, persisted, preferencesHint);
+		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
+			return createUserDefinedCleaningOperation_3050(domainElement, containerView, index, persisted,
+					preferencesHint);
+		case PredefinedCleaningOperationEditPart.VISUAL_ID:
+			return createPredefinedCleaningOperation_3051(domainElement, containerView, index, persisted,
+					preferencesHint);
 		case DescriptiveEditPart.VISUAL_ID:
 			return createDescriptive_3042(domainElement, containerView, index, persisted, preferencesHint);
 		case ClassificationEditPart.VISUAL_ID:
@@ -752,11 +755,11 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 	/**
 	* @generated
 	*/
-	public Node createUserDefined_3040(EObject domainElement, View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
+	public Node createUserDefinedCleaningOperation_3050(EObject domainElement, View containerView, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(PipelineVisualIDRegistry.getType(UserDefinedEditPart.VISUAL_ID));
+		node.setType(PipelineVisualIDRegistry.getType(UserDefinedCleaningOperationEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -781,18 +784,19 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5090 = createLabel(node, PipelineVisualIDRegistry.getType(UserDefinedNameEditPart.VISUAL_ID));
+		Node label5102 = createLabel(node,
+				PipelineVisualIDRegistry.getType(UserDefinedCleaningOperationNameEditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Node createPredefined_3041(EObject domainElement, View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
+	public Node createPredefinedCleaningOperation_3051(EObject domainElement, View containerView, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(PipelineVisualIDRegistry.getType(PredefinedEditPart.VISUAL_ID));
+		node.setType(PipelineVisualIDRegistry.getType(PredefinedCleaningOperationEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -817,7 +821,8 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5091 = createLabel(node, PipelineVisualIDRegistry.getType(PredefinedNameEditPart.VISUAL_ID));
+		Node label5103 = createLabel(node,
+				PipelineVisualIDRegistry.getType(PredefinedCleaningOperationNameEditPart.VISUAL_ID));
 		return node;
 	}
 

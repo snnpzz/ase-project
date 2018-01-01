@@ -36,12 +36,12 @@ import pipeline.InternalDataFlow;
 import pipeline.Operation;
 import pipeline.Pipeline;
 import pipeline.PipelinePackage;
-import pipeline.Predefined;
+import pipeline.PredefinedCleaningOperation;
 import pipeline.Predictive;
 import pipeline.Schema;
 import pipeline.Source;
 import pipeline.Task;
-import pipeline.UserDefined;
+import pipeline.UserDefinedCleaningOperation;
 import pipeline.VisualizationTask;
 import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
@@ -71,14 +71,14 @@ import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
-import pipeline.diagram.edit.parts.PredefinedEditPart;
+import pipeline.diagram.edit.parts.PredefinedCleaningOperationEditPart;
 import pipeline.diagram.edit.parts.PredictiveEditPart;
 import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.edit.parts.SchemaSchemaAttributesCompartmentEditPart;
 import pipeline.diagram.edit.parts.SimpleAttribute2EditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeEditPart;
 import pipeline.diagram.edit.parts.SourceEditPart;
-import pipeline.diagram.edit.parts.UserDefinedEditPart;
+import pipeline.diagram.edit.parts.UserDefinedCleaningOperationEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.providers.PipelineElementTypes;
 
@@ -225,11 +225,11 @@ public class PipelineDiagramUpdater {
 		for (Iterator<?> it = modelElement.getCleaningOperations().iterator(); it.hasNext();) {
 			CleaningOperation childElement = (CleaningOperation) it.next();
 			int visualID = PipelineVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == UserDefinedEditPart.VISUAL_ID) {
+			if (visualID == UserDefinedCleaningOperationEditPart.VISUAL_ID) {
 				result.add(new PipelineNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == PredefinedEditPart.VISUAL_ID) {
+			if (visualID == PredefinedCleaningOperationEditPart.VISUAL_ID) {
 				result.add(new PipelineNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -412,10 +412,10 @@ public class PipelineDiagramUpdater {
 			return getSchema_2043ContainedLinks(view);
 		case ImportEditPart.VISUAL_ID:
 			return getImport_3025ContainedLinks(view);
-		case UserDefinedEditPart.VISUAL_ID:
-			return getUserDefined_3040ContainedLinks(view);
-		case PredefinedEditPart.VISUAL_ID:
-			return getPredefined_3041ContainedLinks(view);
+		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
+			return getUserDefinedCleaningOperation_3050ContainedLinks(view);
+		case PredefinedCleaningOperationEditPart.VISUAL_ID:
+			return getPredefinedCleaningOperation_3051ContainedLinks(view);
 		case DescriptiveEditPart.VISUAL_ID:
 			return getDescriptive_3042ContainedLinks(view);
 		case ClassificationEditPart.VISUAL_ID:
@@ -467,10 +467,10 @@ public class PipelineDiagramUpdater {
 			return getSchema_2043IncomingLinks(view);
 		case ImportEditPart.VISUAL_ID:
 			return getImport_3025IncomingLinks(view);
-		case UserDefinedEditPart.VISUAL_ID:
-			return getUserDefined_3040IncomingLinks(view);
-		case PredefinedEditPart.VISUAL_ID:
-			return getPredefined_3041IncomingLinks(view);
+		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
+			return getUserDefinedCleaningOperation_3050IncomingLinks(view);
+		case PredefinedCleaningOperationEditPart.VISUAL_ID:
+			return getPredefinedCleaningOperation_3051IncomingLinks(view);
 		case DescriptiveEditPart.VISUAL_ID:
 			return getDescriptive_3042IncomingLinks(view);
 		case ClassificationEditPart.VISUAL_ID:
@@ -522,10 +522,10 @@ public class PipelineDiagramUpdater {
 			return getSchema_2043OutgoingLinks(view);
 		case ImportEditPart.VISUAL_ID:
 			return getImport_3025OutgoingLinks(view);
-		case UserDefinedEditPart.VISUAL_ID:
-			return getUserDefined_3040OutgoingLinks(view);
-		case PredefinedEditPart.VISUAL_ID:
-			return getPredefined_3041OutgoingLinks(view);
+		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
+			return getUserDefinedCleaningOperation_3050OutgoingLinks(view);
+		case PredefinedCleaningOperationEditPart.VISUAL_ID:
+			return getPredefinedCleaningOperation_3051OutgoingLinks(view);
 		case DescriptiveEditPart.VISUAL_ID:
 			return getDescriptive_3042OutgoingLinks(view);
 		case ClassificationEditPart.VISUAL_ID:
@@ -640,14 +640,14 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getUserDefined_3040ContainedLinks(View view) {
+	public static List<PipelineLinkDescriptor> getUserDefinedCleaningOperation_3050ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getPredefined_3041ContainedLinks(View view) {
+	public static List<PipelineLinkDescriptor> getPredefinedCleaningOperation_3051ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -859,8 +859,8 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getUserDefined_3040IncomingLinks(View view) {
-		UserDefined modelElement = (UserDefined) view.getElement();
+	public static List<PipelineLinkDescriptor> getUserDefinedCleaningOperation_3050IncomingLinks(View view) {
+		UserDefinedCleaningOperation modelElement = (UserDefinedCleaningOperation) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
@@ -871,8 +871,8 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getPredefined_3041IncomingLinks(View view) {
-		Predefined modelElement = (Predefined) view.getElement();
+	public static List<PipelineLinkDescriptor> getPredefinedCleaningOperation_3051IncomingLinks(View view) {
+		PredefinedCleaningOperation modelElement = (PredefinedCleaningOperation) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
@@ -1072,8 +1072,8 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getUserDefined_3040OutgoingLinks(View view) {
-		UserDefined modelElement = (UserDefined) view.getElement();
+	public static List<PipelineLinkDescriptor> getUserDefinedCleaningOperation_3050OutgoingLinks(View view) {
+		UserDefinedCleaningOperation modelElement = (UserDefinedCleaningOperation) view.getElement();
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_InternalDataFlow_4006(modelElement));
 		return result;
@@ -1082,8 +1082,8 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getPredefined_3041OutgoingLinks(View view) {
-		Predefined modelElement = (Predefined) view.getElement();
+	public static List<PipelineLinkDescriptor> getPredefinedCleaningOperation_3051OutgoingLinks(View view) {
+		PredefinedCleaningOperation modelElement = (PredefinedCleaningOperation) view.getElement();
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_InternalDataFlow_4006(modelElement));
 		return result;

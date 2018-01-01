@@ -24,37 +24,37 @@
         </modelFacet>
       </labels>
     </childNodes>
-    <childNodes visualID="3040" editPartClassName="UserDefinedEditPart" itemSemanticEditPolicyClassName="UserDefinedItemSemanticEditPolicy" canonicalEditPolicyClassName="UserDefinedCanonicalEditPolicy" graphicalNodeEditPolicyClassName="UserDefinedGraphicalNodeEditPolicy" createCommandClassName="UserDefinedCreateCommand" containers="//@diagram/@compartments.1">
+    <childNodes visualID="3050" editPartClassName="UserDefinedCleaningOperationEditPart" itemSemanticEditPolicyClassName="UserDefinedCleaningOperationItemSemanticEditPolicy" canonicalEditPolicyClassName="UserDefinedCleaningOperationCanonicalEditPolicy" graphicalNodeEditPolicyClassName="UserDefinedCleaningOperationGraphicalNodeEditPolicy" createCommandClassName="UserDefinedCleaningOperationCreateCommand" containers="//@diagram/@compartments.1">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="UserDefinedEditHelper"/>
-      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="UserDefinedFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UserDefinedFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureUserDefinedLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UserDefinedFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureUserDefinedLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureUserDefinedLabelFigure.setText(&quot;UserDefined&quot;);&#xA;&#xA;this.add(fFigureUserDefinedLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureUserDefinedLabelFigure() {&#xA;&#x9;&#x9;return fFigureUserDefinedLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="UserDefinedCleaningOperationEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="UserDefinedCleaningOperationFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UserDefinedCleaningOperationFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureUserDefinedCleaningOperationLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UserDefinedCleaningOperationFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureUserDefinedCleaningOperationLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureUserDefinedCleaningOperationLabelFigure.setText(&quot;UserDefinedCleaningOperation&quot;);&#xA;&#xA;this.add(fFigureUserDefinedCleaningOperationLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureUserDefinedCleaningOperationLabelFigure() {&#xA;&#x9;&#x9;return fFigureUserDefinedCleaningOperationLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
-        <metaClass href="pipeline.genmodel#//pipeline/UserDefined"/>
+        <metaClass href="pipeline.genmodel#//pipeline/UserDefinedCleaningOperation"/>
         <containmentMetaFeature href="pipeline.genmodel#//pipeline/CleaningTask/cleaningOperations"/>
         <childMetaFeature href="pipeline.genmodel#//pipeline/CleaningTask/cleaningOperations"/>
       </modelFacet>
-      <labels visualID="5090" editPartClassName="UserDefinedNameEditPart" itemSemanticEditPolicyClassName="UserDefinedNameItemSemanticEditPolicy" elementIcon="true">
+      <labels visualID="5102" editPartClassName="UserDefinedCleaningOperationNameEditPart" itemSemanticEditPolicyClassName="UserDefinedCleaningOperationNameItemSemanticEditPolicy" elementIcon="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureUserDefinedLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureUserDefinedCleaningOperationLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="pipeline.genmodel#//pipeline/UserDefined/name"/>
+          <metaFeatures href="pipeline.genmodel#//pipeline/UserDefinedCleaningOperation/name"/>
         </modelFacet>
       </labels>
     </childNodes>
-    <childNodes visualID="3041" editPartClassName="PredefinedEditPart" itemSemanticEditPolicyClassName="PredefinedItemSemanticEditPolicy" canonicalEditPolicyClassName="PredefinedCanonicalEditPolicy" graphicalNodeEditPolicyClassName="PredefinedGraphicalNodeEditPolicy" createCommandClassName="PredefinedCreateCommand" containers="//@diagram/@compartments.1">
+    <childNodes visualID="3051" editPartClassName="PredefinedCleaningOperationEditPart" itemSemanticEditPolicyClassName="PredefinedCleaningOperationItemSemanticEditPolicy" canonicalEditPolicyClassName="PredefinedCleaningOperationCanonicalEditPolicy" graphicalNodeEditPolicyClassName="PredefinedCleaningOperationGraphicalNodeEditPolicy" createCommandClassName="PredefinedCleaningOperationCreateCommand" containers="//@diagram/@compartments.1">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="PredefinedEditHelper"/>
-      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="PredefinedFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PredefinedFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePredefinedLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PredefinedFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePredefinedLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePredefinedLabelFigure.setText(&quot;Predefined&quot;);&#xA;&#xA;this.add(fFigurePredefinedLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePredefinedLabelFigure() {&#xA;&#x9;&#x9;return fFigurePredefinedLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="PredefinedCleaningOperationEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="PredefinedCleaningOperationFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PredefinedCleaningOperationFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePredefinedCleaningOperationLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PredefinedCleaningOperationFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePredefinedCleaningOperationLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePredefinedCleaningOperationLabelFigure.setText(&quot;PredefinedCleaningOperation&quot;);&#xA;&#xA;this.add(fFigurePredefinedCleaningOperationLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePredefinedCleaningOperationLabelFigure() {&#xA;&#x9;&#x9;return fFigurePredefinedCleaningOperationLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
-        <metaClass href="pipeline.genmodel#//pipeline/Predefined"/>
+        <metaClass href="pipeline.genmodel#//pipeline/PredefinedCleaningOperation"/>
         <containmentMetaFeature href="pipeline.genmodel#//pipeline/CleaningTask/cleaningOperations"/>
         <childMetaFeature href="pipeline.genmodel#//pipeline/CleaningTask/cleaningOperations"/>
       </modelFacet>
-      <labels visualID="5091" editPartClassName="PredefinedNameEditPart" itemSemanticEditPolicyClassName="PredefinedNameItemSemanticEditPolicy" elementIcon="true">
+      <labels visualID="5103" editPartClassName="PredefinedCleaningOperationNameEditPart" itemSemanticEditPolicyClassName="PredefinedCleaningOperationNameItemSemanticEditPolicy" elementIcon="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigurePredefinedLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigurePredefinedCleaningOperationLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.1">
-          <metaFeatures href="pipeline.genmodel#//pipeline/Predefined/name"/>
+          <metaFeatures href="pipeline.genmodel#//pipeline/PredefinedCleaningOperation/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -520,12 +520,12 @@
         <entries xsi:type="gmfgen:ToolEntry" title="File" description="Create new File" genNodes="//@diagram/@topLevelNodes.7"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Import" description="Create new Import" genNodes="//@diagram/@childNodes.0"/>
         <entries xsi:type="gmfgen:ToolEntry" title="IntegrationTask" description="Create new IntegrationTask" genNodes="//@diagram/@topLevelNodes.1"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="Predefined" description="Create new Predefined" genNodes="//@diagram/@childNodes.2"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="PredefinedCleaningOperation" description="Create new PredefinedCleaningOperation" genNodes="//@diagram/@childNodes.2"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Predictive" description="Create new Predictive" genNodes="//@diagram/@childNodes.5"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Schema" description="Create new Schema" genNodes="//@diagram/@topLevelNodes.8"/>
         <entries xsi:type="gmfgen:ToolEntry" title="SimpleAttribute" description="Create new SimpleAttribute" genNodes="//@diagram/@childNodes.8 //@diagram/@childNodes.10"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Source" description="Create new Source" genNodes="//@diagram/@topLevelNodes.6"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="UserDefined" description="Create new UserDefined" genNodes="//@diagram/@childNodes.1"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="UserDefinedCleaningOperation" description="Create new UserDefinedCleaningOperation" genNodes="//@diagram/@childNodes.1"/>
         <entries xsi:type="gmfgen:ToolEntry" title="VisualizationTask" description="Create new VisualizationTask" genNodes="//@diagram/@topLevelNodes.4"/>
       </groups>
       <groups title="Connections" collapse="true">

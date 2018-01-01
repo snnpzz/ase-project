@@ -31,12 +31,12 @@ import pipeline.diagram.edit.parts.ExportTaskIDEditPart;
 import pipeline.diagram.edit.parts.FileNameEditPart;
 import pipeline.diagram.edit.parts.ImportNameEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
-import pipeline.diagram.edit.parts.PredefinedNameEditPart;
+import pipeline.diagram.edit.parts.PredefinedCleaningOperationNameEditPart;
 import pipeline.diagram.edit.parts.PredictiveNameEditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeName2EditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeNameEditPart;
 import pipeline.diagram.edit.parts.SourceNameEditPart;
-import pipeline.diagram.edit.parts.UserDefinedNameEditPart;
+import pipeline.diagram.edit.parts.UserDefinedCleaningOperationNameEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskIDEditPart;
 import pipeline.diagram.parsers.MessageFormatParser;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
@@ -202,35 +202,36 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 	/**
 	* @generated
 	*/
-	private IParser userDefinedName_5090Parser;
+	private IParser userDefinedCleaningOperationName_5102Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getUserDefinedName_5090Parser() {
-		if (userDefinedName_5090Parser == null) {
-			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getUserDefined_Name() };
+	private IParser getUserDefinedCleaningOperationName_5102Parser() {
+		if (userDefinedCleaningOperationName_5102Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					PipelinePackage.eINSTANCE.getUserDefinedCleaningOperation_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			userDefinedName_5090Parser = parser;
+			userDefinedCleaningOperationName_5102Parser = parser;
 		}
-		return userDefinedName_5090Parser;
+		return userDefinedCleaningOperationName_5102Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser predefinedName_5091Parser;
+	private IParser predefinedCleaningOperationName_5103Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getPredefinedName_5091Parser() {
-		if (predefinedName_5091Parser == null) {
-			EAttribute editableFeature = PipelinePackage.eINSTANCE.getPredefined_Name();
+	private IParser getPredefinedCleaningOperationName_5103Parser() {
+		if (predefinedCleaningOperationName_5103Parser == null) {
+			EAttribute editableFeature = PipelinePackage.eINSTANCE.getPredefinedCleaningOperation_Name();
 			EnumParser parser = new EnumParser(editableFeature);
-			predefinedName_5091Parser = parser;
+			predefinedCleaningOperationName_5103Parser = parser;
 		}
-		return predefinedName_5091Parser;
+		return predefinedCleaningOperationName_5103Parser;
 	}
 
 	/**
@@ -409,11 +410,11 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 			return getFileName_5097Parser();
 		case ImportNameEditPart.VISUAL_ID:
 			return getImportName_5057Parser();
-		case UserDefinedNameEditPart.VISUAL_ID:
-			return getUserDefinedName_5090Parser();
+		case UserDefinedCleaningOperationNameEditPart.VISUAL_ID:
+			return getUserDefinedCleaningOperationName_5102Parser();
 
-		case PredefinedNameEditPart.VISUAL_ID:
-			return getPredefinedName_5091Parser();
+		case PredefinedCleaningOperationNameEditPart.VISUAL_ID:
+			return getPredefinedCleaningOperationName_5103Parser();
 
 		case DescriptiveNameEditPart.VISUAL_ID:
 			return getDescriptiveName_5092Parser();

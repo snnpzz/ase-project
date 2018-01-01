@@ -98,19 +98,19 @@
             href="pipeline.ecore#//CleaningTask/cleaningOperations"/>
         <ownedChild>
           <domainMetaElement
-              href="pipeline.ecore#//UserDefined"/>
+              href="pipeline.ecore#//UserDefinedCleaningOperation"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="pipeline.gmfgraph#UserDefinedLabel"/>
+                href="pipeline.gmfgraph#UserDefinedCleaningOperationLabel"/>
             <features
-                href="pipeline.ecore#//UserDefined/name"/>
+                href="pipeline.ecore#//UserDefinedCleaningOperation/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="pipeline.gmftool#//@palette/@tools.0/@tools.17"/>
           <diagramNode
-              href="pipeline.gmfgraph#UserDefined"/>
+              href="pipeline.gmfgraph#UserDefinedCleaningOperation"/>
         </ownedChild>
       </children>
       <children
@@ -119,19 +119,19 @@
             href="pipeline.ecore#//CleaningTask/cleaningOperations"/>
         <ownedChild>
           <domainMetaElement
-              href="pipeline.ecore#//Predefined"/>
+              href="pipeline.ecore#//PredefinedCleaningOperation"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="pipeline.gmfgraph#PredefinedLabel"/>
+                href="pipeline.gmfgraph#PredefinedCleaningOperationLabel"/>
             <features
-                href="pipeline.ecore#//Predefined/name"/>
+                href="pipeline.ecore#//PredefinedCleaningOperation/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="pipeline.gmftool#//@palette/@tools.0/@tools.12"/>
           <diagramNode
-              href="pipeline.gmfgraph#Predefined"/>
+              href="pipeline.gmfgraph#PredefinedCleaningOperation"/>
         </ownedChild>
       </children>
       <compartments

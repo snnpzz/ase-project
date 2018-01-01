@@ -69,14 +69,14 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 			case PipelinePackage.EXPORT_TASK: return createExportTask();
 			case PipelinePackage.IMPORT: return createImport();
 			case PipelinePackage.EXPORT: return createExport();
-			case PipelinePackage.USER_DEFINED: return createUserDefined();
+			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION: return createUserDefinedCleaningOperation();
 			case PipelinePackage.SOURCE: return createSource();
 			case PipelinePackage.FILE: return createFile();
 			case PipelinePackage.DESCRIPTIVE: return createDescriptive();
 			case PipelinePackage.CLASSIFICATION: return createClassification();
 			case PipelinePackage.PREDICTIVE: return createPredictive();
 			case PipelinePackage.CLUSTERING: return createClustering();
-			case PipelinePackage.PREDEFINED: return createPredefined();
+			case PipelinePackage.PREDEFINED_CLEANING_OPERATION: return createPredefinedCleaningOperation();
 			case PipelinePackage.SIMPLE_ATTRIBUTE: return createSimpleAttribute();
 			case PipelinePackage.COMPLEX_ATTRIBUTE: return createComplexAttribute();
 			default:
@@ -271,9 +271,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UserDefined createUserDefined() {
-		UserDefinedImpl userDefined = new UserDefinedImpl();
-		return userDefined;
+	public UserDefinedCleaningOperation createUserDefinedCleaningOperation() {
+		UserDefinedCleaningOperationImpl userDefinedCleaningOperation = new UserDefinedCleaningOperationImpl();
+		return userDefinedCleaningOperation;
 	}
 
 	/**
@@ -341,9 +341,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Predefined createPredefined() {
-		PredefinedImpl predefined = new PredefinedImpl();
-		return predefined;
+	public PredefinedCleaningOperation createPredefinedCleaningOperation() {
+		PredefinedCleaningOperationImpl predefinedCleaningOperation = new PredefinedCleaningOperationImpl();
+		return predefinedCleaningOperation;
 	}
 
 	/**

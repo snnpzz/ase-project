@@ -258,7 +258,7 @@
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Pipeline"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2025,2026,2027,2031,2029,2032,2044,2045,2043,3025,3040,3041,3042,3043,3044,3045,3037,3046,3047,3048,3049"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2025,2026,2027,2031,2029,2032,2044,2045,2043,3025,3050,3051,3042,3043,3044,3045,3037,3046,3047,3048,3049"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4005,4006,4019,4020,4021,4013,4022,4014"/>
       </viewProvider>
    </extension>
@@ -271,13 +271,13 @@
             <method name="getType()" value="Pipeline"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2025,2026,2027,2031,2029,2032,2044,2045,2043,3025,3040,3041,3042,3043,3044,3045,3037,3046,3047,3048,3049"/>
+            <method name="getType()" value="2025,2026,2027,2031,2029,2032,2044,2045,2043,3025,3050,3051,3042,3043,3044,3045,3037,3046,3047,3048,3049"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4005,4006,4019,4020,4021,4013,4022,4014"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5058,5059,5062,5075,5068,5077,5096,5097,5057,5090,5091,5092,5093,5094,5095,5076,5098,5101,5099,5100"/>
+            <method name="getType()" value="5058,5059,5062,5075,5068,5077,5096,5097,5057,5102,5103,5092,5093,5094,5095,5076,5098,5101,5099,5100"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7017,7018,7021,7022,7023,7026,7027"/>
@@ -344,15 +344,15 @@
          <object class="pipeline.diagram.edit.parts.ImportEditPart" id="Import_3025"/>
          <context elements="Import_3025"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfUserDefinedEditPart">
+            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfUserDefinedCleaningOperationEditPart">
          <Priority name="Lowest"/>
-         <object class="pipeline.diagram.edit.parts.UserDefinedEditPart" id="UserDefined_3040"/>
-         <context elements="UserDefined_3040"/>
+         <object class="pipeline.diagram.edit.parts.UserDefinedCleaningOperationEditPart" id="UserDefinedCleaningOperation_3050"/>
+         <context elements="UserDefinedCleaningOperation_3050"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfPredefinedEditPart">
+            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfPredefinedCleaningOperationEditPart">
          <Priority name="Lowest"/>
-         <object class="pipeline.diagram.edit.parts.PredefinedEditPart" id="Predefined_3041"/>
-         <context elements="Predefined_3041"/>
+         <object class="pipeline.diagram.edit.parts.PredefinedCleaningOperationEditPart" id="PredefinedCleaningOperation_3051"/>
+         <context elements="PredefinedCleaningOperation_3051"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfDescriptiveEditPart">
          <Priority name="Lowest"/>
@@ -542,22 +542,22 @@
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <metamodelType
-               id="it.polimi.ase.project.diagram.UserDefined_3040"
-               name="%metatype.name.UserDefined_3040"
+               id="it.polimi.ase.project.diagram.UserDefinedCleaningOperation_3050"
+               name="%metatype.name.UserDefinedCleaningOperation_3050"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="UserDefined"
-               edithelper="pipeline.diagram.edit.helpers.UserDefinedEditHelper">
-            <param name="semanticHint" value="3040"/>
+               eclass="UserDefinedCleaningOperation"
+               edithelper="pipeline.diagram.edit.helpers.UserDefinedCleaningOperationEditHelper">
+            <param name="semanticHint" value="3050"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <metamodelType
-               id="it.polimi.ase.project.diagram.Predefined_3041"
-               name="%metatype.name.Predefined_3041"
+               id="it.polimi.ase.project.diagram.PredefinedCleaningOperation_3051"
+               name="%metatype.name.PredefinedCleaningOperation_3051"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Predefined"
-               edithelper="pipeline.diagram.edit.helpers.PredefinedEditHelper">
-            <param name="semanticHint" value="3041"/>
+               eclass="PredefinedCleaningOperation"
+               edithelper="pipeline.diagram.edit.helpers.PredefinedCleaningOperationEditHelper">
+            <param name="semanticHint" value="3051"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
@@ -745,8 +745,8 @@
          <elementType ref="it.polimi.ase.project.diagram.File_2045"/>
          <elementType ref="it.polimi.ase.project.diagram.Schema_2043"/>
          <elementType ref="it.polimi.ase.project.diagram.Import_3025"/>
-         <elementType ref="it.polimi.ase.project.diagram.UserDefined_3040"/>
-         <elementType ref="it.polimi.ase.project.diagram.Predefined_3041"/>
+         <elementType ref="it.polimi.ase.project.diagram.UserDefinedCleaningOperation_3050"/>
+         <elementType ref="it.polimi.ase.project.diagram.PredefinedCleaningOperation_3051"/>
          <elementType ref="it.polimi.ase.project.diagram.Descriptive_3042"/>
          <elementType ref="it.polimi.ase.project.diagram.Classification_3043"/>
          <elementType ref="it.polimi.ase.project.diagram.Predictive_3044"/>

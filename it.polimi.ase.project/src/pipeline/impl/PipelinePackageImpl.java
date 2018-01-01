@@ -38,6 +38,7 @@ import pipeline.Pipeline;
 import pipeline.PipelineFactory;
 import pipeline.PipelinePackage;
 import pipeline.Predefined;
+import pipeline.PredefinedCleaningOperation;
 import pipeline.PredefinedOperation;
 import pipeline.Predictive;
 import pipeline.PredictiveOperation;
@@ -48,6 +49,7 @@ import pipeline.Source;
 import pipeline.Task;
 import pipeline.Type;
 import pipeline.UserDefined;
+import pipeline.UserDefinedCleaningOperation;
 import pipeline.VisualizationTask;
 
 /**
@@ -167,7 +169,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass userDefinedEClass = null;
+	private EClass userDefinedCleaningOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +232,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass predefinedEClass = null;
+	private EClass predefinedCleaningOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -852,8 +854,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getUserDefined() {
-		return userDefinedEClass;
+	public EClass getUserDefinedCleaningOperation() {
+		return userDefinedCleaningOperationEClass;
 	}
 
 	/**
@@ -861,8 +863,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUserDefined_Name() {
-		return (EAttribute)userDefinedEClass.getEStructuralFeatures().get(0);
+	public EAttribute getUserDefinedCleaningOperation_Name() {
+		return (EAttribute)userDefinedCleaningOperationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1041,8 +1043,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPredefined() {
-		return predefinedEClass;
+	public EClass getPredefinedCleaningOperation() {
+		return predefinedCleaningOperationEClass;
 	}
 
 	/**
@@ -1050,8 +1052,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPredefined_Name() {
-		return (EAttribute)predefinedEClass.getEStructuralFeatures().get(0);
+	public EAttribute getPredefinedCleaningOperation_Name() {
+		return (EAttribute)predefinedCleaningOperationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1267,8 +1269,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEReference(exportEClass, EXPORT__EXP_USES);
 		createEAttribute(exportEClass, EXPORT__NAME);
 
-		userDefinedEClass = createEClass(USER_DEFINED);
-		createEAttribute(userDefinedEClass, USER_DEFINED__NAME);
+		userDefinedCleaningOperationEClass = createEClass(USER_DEFINED_CLEANING_OPERATION);
+		createEAttribute(userDefinedCleaningOperationEClass, USER_DEFINED_CLEANING_OPERATION__NAME);
 
 		sourceEClass = createEClass(SOURCE);
 		createEReference(sourceEClass, SOURCE__LINKED_TO);
@@ -1297,8 +1299,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEAttribute(clusteringEClass, CLUSTERING__K);
 		createEAttribute(clusteringEClass, CLUSTERING__NAME);
 
-		predefinedEClass = createEClass(PREDEFINED);
-		createEAttribute(predefinedEClass, PREDEFINED__NAME);
+		predefinedCleaningOperationEClass = createEClass(PREDEFINED_CLEANING_OPERATION);
+		createEAttribute(predefinedCleaningOperationEClass, PREDEFINED_CLEANING_OPERATION__NAME);
 
 		simpleAttributeEClass = createEClass(SIMPLE_ATTRIBUTE);
 		createEAttribute(simpleAttributeEClass, SIMPLE_ATTRIBUTE__TYPE);
@@ -1352,14 +1354,14 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		analysisTaskEClass.getESuperTypes().add(this.getTask());
 		visualizationTaskEClass.getESuperTypes().add(this.getTask());
 		exportTaskEClass.getESuperTypes().add(this.getTask());
-		userDefinedEClass.getESuperTypes().add(this.getCleaningOperation());
+		userDefinedCleaningOperationEClass.getESuperTypes().add(this.getCleaningOperation());
 		cleaningOperationEClass.getESuperTypes().add(this.getOperation());
 		analysisOperationEClass.getESuperTypes().add(this.getOperation());
 		descriptiveEClass.getESuperTypes().add(this.getAnalysisOperation());
 		classificationEClass.getESuperTypes().add(this.getAnalysisOperation());
 		predictiveEClass.getESuperTypes().add(this.getAnalysisOperation());
 		clusteringEClass.getESuperTypes().add(this.getAnalysisOperation());
-		predefinedEClass.getESuperTypes().add(this.getCleaningOperation());
+		predefinedCleaningOperationEClass.getESuperTypes().add(this.getCleaningOperation());
 		simpleAttributeEClass.getESuperTypes().add(this.getAttribute());
 		complexAttributeEClass.getESuperTypes().add(this.getAttribute());
 
@@ -1432,8 +1434,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEReference(getExport_ExpUses(), this.getSchema(), null, "expUses", null, 1, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExport_Name(), ecorePackage.getEString(), "name", null, 0, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(userDefinedEClass, UserDefined.class, "UserDefined", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUserDefined_Name(), ecorePackage.getEString(), "name", null, 0, 1, UserDefined.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(userDefinedCleaningOperationEClass, UserDefinedCleaningOperation.class, "UserDefinedCleaningOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUserDefinedCleaningOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, UserDefinedCleaningOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sourceEClass, Source.class, "Source", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSource_LinkedTo(), this.getImport(), this.getImport_Read(), "linkedTo", null, 1, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1462,8 +1464,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEAttribute(getClustering_K(), ecorePackage.getEInt(), "k", null, 0, 1, Clustering.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClustering_Name(), this.getClusteringOperation(), "name", null, 0, 1, Clustering.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(predefinedEClass, Predefined.class, "Predefined", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPredefined_Name(), this.getPredefinedOperation(), "name", "", 0, 1, Predefined.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(predefinedCleaningOperationEClass, PredefinedCleaningOperation.class, "PredefinedCleaningOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPredefinedCleaningOperation_Name(), this.getPredefinedOperation(), "name", "", 0, 1, PredefinedCleaningOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(simpleAttributeEClass, SimpleAttribute.class, "SimpleAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSimpleAttribute_Type(), this.getType(), "type", null, 0, 1, SimpleAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

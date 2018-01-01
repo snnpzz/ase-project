@@ -11,18 +11,12 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
-import pipeline.diagram.edit.parts.Classification2EditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
-import pipeline.diagram.edit.parts.Clustering2EditPart;
 import pipeline.diagram.edit.parts.ClusteringEditPart;
-import pipeline.diagram.edit.parts.Descriptive2EditPart;
 import pipeline.diagram.edit.parts.DescriptiveEditPart;
-import pipeline.diagram.edit.parts.Predefined2EditPart;
-import pipeline.diagram.edit.parts.PredefinedEditPart;
-import pipeline.diagram.edit.parts.Predictive2EditPart;
+import pipeline.diagram.edit.parts.PredefinedCleaningOperationEditPart;
 import pipeline.diagram.edit.parts.PredictiveEditPart;
-import pipeline.diagram.edit.parts.UserDefined2EditPart;
-import pipeline.diagram.edit.parts.UserDefinedEditPart;
+import pipeline.diagram.edit.parts.UserDefinedCleaningOperationEditPart;
 import pipeline.diagram.providers.PipelineElementTypes;
 import pipeline.diagram.providers.PipelineModelingAssistantProvider;
 
@@ -67,10 +61,10 @@ public class PipelineModelingAssistantProviderOfClusteringEditPart extends Pipel
 	public List<IElementType> doGetRelTypesOnSourceAndTarget(ClusteringEditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof UserDefinedEditPart) {
+		if (targetEditPart instanceof UserDefinedCleaningOperationEditPart) {
 			types.add(PipelineElementTypes.InternalDataFlow_4006);
 		}
-		if (targetEditPart instanceof PredefinedEditPart) {
+		if (targetEditPart instanceof PredefinedCleaningOperationEditPart) {
 			types.add(PipelineElementTypes.InternalDataFlow_4006);
 		}
 		if (targetEditPart instanceof DescriptiveEditPart) {
@@ -104,8 +98,8 @@ public class PipelineModelingAssistantProviderOfClusteringEditPart extends Pipel
 	public List<IElementType> doGetTypesForTarget(ClusteringEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == PipelineElementTypes.InternalDataFlow_4006) {
-			types.add(PipelineElementTypes.UserDefined_3040);
-			types.add(PipelineElementTypes.Predefined_3041);
+			types.add(PipelineElementTypes.UserDefinedCleaningOperation_3050);
+			types.add(PipelineElementTypes.PredefinedCleaningOperation_3051);
 			types.add(PipelineElementTypes.Descriptive_3042);
 			types.add(PipelineElementTypes.Classification_3043);
 			types.add(PipelineElementTypes.Predictive_3044);
@@ -149,8 +143,8 @@ public class PipelineModelingAssistantProviderOfClusteringEditPart extends Pipel
 	public List<IElementType> doGetTypesForSource(ClusteringEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == PipelineElementTypes.InternalDataFlow_4006) {
-			types.add(PipelineElementTypes.UserDefined_3040);
-			types.add(PipelineElementTypes.Predefined_3041);
+			types.add(PipelineElementTypes.UserDefinedCleaningOperation_3050);
+			types.add(PipelineElementTypes.PredefinedCleaningOperation_3051);
 			types.add(PipelineElementTypes.Descriptive_3042);
 			types.add(PipelineElementTypes.Classification_3043);
 			types.add(PipelineElementTypes.Predictive_3044);

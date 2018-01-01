@@ -184,7 +184,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UserDefined" eSuperTypes="#//CleaningOperation">
+  <eClassifiers xsi:type="ecore:EClass" name="UserDefinedCleaningOperation" eSuperTypes="#//CleaningOperation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Source">
@@ -220,7 +220,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="k" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//ClusteringOperation"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Predefined" eSuperTypes="#//CleaningOperation">
+  <eClassifiers xsi:type="ecore:EClass" name="PredefinedCleaningOperation" eSuperTypes="#//CleaningOperation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//PredefinedOperation"
         defaultValueLiteral=""/>
   </eClassifiers>

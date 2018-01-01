@@ -128,8 +128,8 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 				return createExportAdapter();
 			}
 			@Override
-			public Adapter caseUserDefined(UserDefined object) {
-				return createUserDefinedAdapter();
+			public Adapter caseUserDefinedCleaningOperation(UserDefinedCleaningOperation object) {
+				return createUserDefinedCleaningOperationAdapter();
 			}
 			@Override
 			public Adapter caseSource(Source object) {
@@ -164,8 +164,8 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 				return createClusteringAdapter();
 			}
 			@Override
-			public Adapter casePredefined(Predefined object) {
-				return createPredefinedAdapter();
+			public Adapter casePredefinedCleaningOperation(PredefinedCleaningOperation object) {
+				return createPredefinedCleaningOperationAdapter();
 			}
 			@Override
 			public Adapter caseSimpleAttribute(SimpleAttribute object) {
@@ -406,16 +406,16 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.UserDefined <em>User Defined</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.UserDefinedCleaningOperation <em>User Defined Cleaning Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.UserDefined
+	 * @see pipeline.UserDefinedCleaningOperation
 	 * @generated
 	 */
-	public Adapter createUserDefinedAdapter() {
+	public Adapter createUserDefinedCleaningOperationAdapter() {
 		return null;
 	}
 
@@ -532,16 +532,16 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.Predefined <em>Predefined</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.PredefinedCleaningOperation <em>Predefined Cleaning Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.Predefined
+	 * @see pipeline.PredefinedCleaningOperation
 	 * @generated
 	 */
-	public Adapter createPredefinedAdapter() {
+	public Adapter createPredefinedCleaningOperationAdapter() {
 		return null;
 	}
 

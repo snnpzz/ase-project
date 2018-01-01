@@ -162,11 +162,11 @@ public class PipelineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.USER_DEFINED: {
-				UserDefined userDefined = (UserDefined)theEObject;
-				T result = caseUserDefined(userDefined);
-				if (result == null) result = caseCleaningOperation(userDefined);
-				if (result == null) result = caseOperation(userDefined);
+			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION: {
+				UserDefinedCleaningOperation userDefinedCleaningOperation = (UserDefinedCleaningOperation)theEObject;
+				T result = caseUserDefinedCleaningOperation(userDefinedCleaningOperation);
+				if (result == null) result = caseCleaningOperation(userDefinedCleaningOperation);
+				if (result == null) result = caseOperation(userDefinedCleaningOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -228,11 +228,11 @@ public class PipelineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.PREDEFINED: {
-				Predefined predefined = (Predefined)theEObject;
-				T result = casePredefined(predefined);
-				if (result == null) result = caseCleaningOperation(predefined);
-				if (result == null) result = caseOperation(predefined);
+			case PipelinePackage.PREDEFINED_CLEANING_OPERATION: {
+				PredefinedCleaningOperation predefinedCleaningOperation = (PredefinedCleaningOperation)theEObject;
+				T result = casePredefinedCleaningOperation(predefinedCleaningOperation);
+				if (result == null) result = caseCleaningOperation(predefinedCleaningOperation);
+				if (result == null) result = caseOperation(predefinedCleaningOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -480,17 +480,17 @@ public class PipelineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>User Defined</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>User Defined Cleaning Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>User Defined</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>User Defined Cleaning Operation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUserDefined(UserDefined object) {
+	public T caseUserDefinedCleaningOperation(UserDefinedCleaningOperation object) {
 		return null;
 	}
 
@@ -615,17 +615,17 @@ public class PipelineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Predefined</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Predefined Cleaning Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Predefined</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Predefined Cleaning Operation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePredefined(Predefined object) {
+	public T casePredefinedCleaningOperation(PredefinedCleaningOperation object) {
 		return null;
 	}
 

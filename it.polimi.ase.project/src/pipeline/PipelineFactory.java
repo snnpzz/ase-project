@@ -130,13 +130,13 @@ public interface PipelineFactory extends EFactory {
 	Export createExport();
 
 	/**
-	 * Returns a new object of class '<em>User Defined</em>'.
+	 * Returns a new object of class '<em>User Defined Cleaning Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>User Defined</em>'.
+	 * @return a new object of class '<em>User Defined Cleaning Operation</em>'.
 	 * @generated
 	 */
-	UserDefined createUserDefined();
+	UserDefinedCleaningOperation createUserDefinedCleaningOperation();
 
 	/**
 	 * Returns a new object of class '<em>Source</em>'.
@@ -193,13 +193,13 @@ public interface PipelineFactory extends EFactory {
 	Clustering createClustering();
 
 	/**
-	 * Returns a new object of class '<em>Predefined</em>'.
+	 * Returns a new object of class '<em>Predefined Cleaning Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Predefined</em>'.
+	 * @return a new object of class '<em>Predefined Cleaning Operation</em>'.
 	 * @generated
 	 */
-	Predefined createPredefined();
+	PredefinedCleaningOperation createPredefinedCleaningOperation();
 
 	/**
 	 * Returns a new object of class '<em>Simple Attribute</em>'.

@@ -115,7 +115,7 @@ class Export {
   attr String name;
 }
 
-class UserDefined extends CleaningOperation {
+class UserDefinedCleaningOperation extends CleaningOperation {
   attr String name;
 }
 
@@ -156,7 +156,7 @@ class Clustering extends AnalysisOperation {
   attr ClusteringOperation name;
 }
 
-class Predefined extends CleaningOperation {
+class PredefinedCleaningOperation extends CleaningOperation {
   attr PredefinedOperation name = "";
 }
 
@@ -226,23 +226,23 @@ enum Type {
 
 enum ChartType {
   Column = 0;
-  Line = 0;
-  Pie = 0;
-  Doughnut = 0;
-  Bar = 0;
-  Area = 0;
-  Scatter = 0;
-  Bubble = 0;
-  Map = 0;
-  Stock = 0;
-  Surface = 0;
-  Radar = 0;
-  Treemap = 0;
-  Sunburst = 0;
-  Histogram = 0;
-  BoxAndWhisker = 0;
-  Waterfall = 0;
-  Funnel = 0;
-  Combo = 0;
+  Line = 1;
+  Pie = 2;
+  Doughnut = 3;
+  Bar = 4;
+  Area = 5;
+  Scatter = 6;
+  Bubble = 7;
+  Map = 8;
+  Stock = 9;
+  Surface = 10;
+  Radar = 11;
+  Treemap = 12;
+  Sunburst = 13;
+  Histogram = 14;
+  BoxAndWhisker = 15;
+  Waterfall = 16;
+  Funnel = 17;
+  Combo = 18;
 }
 

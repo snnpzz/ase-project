@@ -127,14 +127,14 @@
         </actualFigure>
         <accessors accessor="getFigureExportLabelFigure" figure="/0/@figures.0/@descriptors.8/@actualFigure/@children.0"/>
       </descriptors>
-      <descriptors name="UserDefinedFigure">
-        <actualFigure xsi:type="gmfgraph:Ellipse" name="UserDefinedFigure">
+      <descriptors name="UserDefinedCleaningOperationFigure">
+        <actualFigure xsi:type="gmfgraph:Ellipse" name="UserDefinedCleaningOperationFigure">
           <border xsi:type="gmfgraph:MarginBorder">
             <insets top="5" left="5" bottom="5" right="5"/>
           </border>
-          <children xsi:type="gmfgraph:Label" name="UserDefinedLabelFigure" text="UserDefined"/>
+          <children xsi:type="gmfgraph:Label" name="UserDefinedCleaningOperationLabelFigure" text="UserDefinedCleaningOperation"/>
         </actualFigure>
-        <accessors accessor="getFigureUserDefinedLabelFigure" figure="/0/@figures.0/@descriptors.9/@actualFigure/@children.0"/>
+        <accessors accessor="getFigureUserDefinedCleaningOperationLabelFigure" figure="/0/@figures.0/@descriptors.9/@actualFigure/@children.0"/>
       </descriptors>
       <descriptors name="SourceFigure">
         <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="SourceFigure">
@@ -190,14 +190,14 @@
         </actualFigure>
         <accessors accessor="getFigureClusteringLabelFigure" figure="/0/@figures.0/@descriptors.15/@actualFigure/@children.0"/>
       </descriptors>
-      <descriptors name="PredefinedFigure">
-        <actualFigure xsi:type="gmfgraph:Ellipse" name="PredefinedFigure">
+      <descriptors name="PredefinedCleaningOperationFigure">
+        <actualFigure xsi:type="gmfgraph:Ellipse" name="PredefinedCleaningOperationFigure">
           <border xsi:type="gmfgraph:MarginBorder">
             <insets top="5" left="5" bottom="5" right="5"/>
           </border>
-          <children xsi:type="gmfgraph:Label" name="PredefinedLabelFigure" text="Predefined"/>
+          <children xsi:type="gmfgraph:Label" name="PredefinedCleaningOperationLabelFigure" text="PredefinedCleaningOperation"/>
         </actualFigure>
-        <accessors accessor="getFigurePredefinedLabelFigure" figure="/0/@figures.0/@descriptors.16/@actualFigure/@children.0"/>
+        <accessors accessor="getFigurePredefinedCleaningOperationLabelFigure" figure="/0/@figures.0/@descriptors.16/@actualFigure/@children.0"/>
       </descriptors>
       <descriptors name="SimpleAttributeFigure">
         <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="SimpleAttributeFigure">
@@ -273,14 +273,14 @@
     <nodes name="ExportTask" figure="ExportTaskFigure"/>
     <nodes name="Import" figure="ImportFigure"/>
     <nodes name="Export" figure="ExportFigure"/>
-    <nodes name="UserDefined" figure="UserDefinedFigure"/>
+    <nodes name="UserDefinedCleaningOperation" figure="UserDefinedCleaningOperationFigure"/>
     <nodes name="Source" figure="SourceFigure"/>
     <nodes name="File" figure="FileFigure"/>
     <nodes name="Descriptive" figure="DescriptiveFigure"/>
     <nodes name="Classification" figure="ClassificationFigure"/>
     <nodes name="Predictive" figure="PredictiveFigure"/>
     <nodes name="Clustering" figure="ClusteringFigure"/>
-    <nodes name="Predefined" figure="PredefinedFigure"/>
+    <nodes name="PredefinedCleaningOperation" figure="PredefinedCleaningOperationFigure"/>
     <nodes name="SimpleAttribute" figure="SimpleAttributeFigure"/>
     <nodes name="ComplexAttribute" figure="ComplexAttributeFigure"/>
     <connections name="DataFlow" figure="DataFlowFigure"/>
@@ -305,14 +305,14 @@
     <labels name="ExportTaskLabel" figure="ExportTaskFigure" accessor="/0/@figures.0/@descriptors.6/@accessors.0"/>
     <labels name="ImportLabel" figure="ImportFigure" accessor="/0/@figures.0/@descriptors.7/@accessors.0"/>
     <labels name="ExportLabel" figure="ExportFigure" accessor="/0/@figures.0/@descriptors.8/@accessors.0"/>
-    <labels name="UserDefinedLabel" figure="UserDefinedFigure" accessor="/0/@figures.0/@descriptors.9/@accessors.0"/>
+    <labels name="UserDefinedCleaningOperationLabel" figure="UserDefinedCleaningOperationFigure" accessor="/0/@figures.0/@descriptors.9/@accessors.0"/>
     <labels name="SourceLabel" figure="SourceFigure" accessor="/0/@figures.0/@descriptors.10/@accessors.0"/>
     <labels name="FileLabel" figure="FileFigure" accessor="/0/@figures.0/@descriptors.11/@accessors.0"/>
     <labels name="DescriptiveLabel" figure="DescriptiveFigure" accessor="/0/@figures.0/@descriptors.12/@accessors.0"/>
     <labels name="ClassificationLabel" figure="ClassificationFigure" accessor="/0/@figures.0/@descriptors.13/@accessors.0"/>
     <labels name="PredictiveLabel" figure="PredictiveFigure" accessor="/0/@figures.0/@descriptors.14/@accessors.0"/>
     <labels name="ClusteringLabel" figure="ClusteringFigure" accessor="/0/@figures.0/@descriptors.15/@accessors.0"/>
-    <labels name="PredefinedLabel" figure="PredefinedFigure" accessor="/0/@figures.0/@descriptors.16/@accessors.0"/>
+    <labels name="PredefinedCleaningOperationLabel" figure="PredefinedCleaningOperationFigure" accessor="/0/@figures.0/@descriptors.16/@accessors.0"/>
     <labels name="SimpleAttributeLabel" figure="SimpleAttributeFigure" accessor="/0/@figures.0/@descriptors.17/@accessors.0"/>
     <labels name="ComplexAttributeLabel" figure="ComplexAttributeFigure" accessor="/0/@figures.0/@descriptors.18/@accessors.0"/>
     <labels name="DataFlowSchemaExternalLabel" figure="DataFlowSchemaExternalLabelFigure" elementIcon="false"/>

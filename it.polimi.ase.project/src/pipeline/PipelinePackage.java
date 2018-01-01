@@ -883,14 +883,14 @@ public interface PipelinePackage extends EPackage {
 	int CLEANING_OPERATION_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.UserDefinedImpl <em>User Defined</em>}' class.
+	 * The meta object id for the '{@link pipeline.impl.UserDefinedCleaningOperationImpl <em>User Defined Cleaning Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.UserDefinedImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getUserDefined()
+	 * @see pipeline.impl.UserDefinedCleaningOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getUserDefinedCleaningOperation()
 	 * @generated
 	 */
-	int USER_DEFINED = 15;
+	int USER_DEFINED_CLEANING_OPERATION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -899,7 +899,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_DEFINED__INCOMING = CLEANING_OPERATION__INCOMING;
+	int USER_DEFINED_CLEANING_OPERATION__INCOMING = CLEANING_OPERATION__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
@@ -908,7 +908,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_DEFINED__OUTGOING = CLEANING_OPERATION__OUTGOING;
+	int USER_DEFINED_CLEANING_OPERATION__OUTGOING = CLEANING_OPERATION__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -917,16 +917,16 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_DEFINED__NAME = CLEANING_OPERATION_FEATURE_COUNT + 0;
+	int USER_DEFINED_CLEANING_OPERATION__NAME = CLEANING_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>User Defined</em>' class.
+	 * The number of structural features of the '<em>User Defined Cleaning Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_DEFINED_FEATURE_COUNT = CLEANING_OPERATION_FEATURE_COUNT + 1;
+	int USER_DEFINED_CLEANING_OPERATION_FEATURE_COUNT = CLEANING_OPERATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.SourceImpl <em>Source</em>}' class.
@@ -1251,14 +1251,14 @@ public interface PipelinePackage extends EPackage {
 	int CLUSTERING_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.PredefinedImpl <em>Predefined</em>}' class.
+	 * The meta object id for the '{@link pipeline.impl.PredefinedCleaningOperationImpl <em>Predefined Cleaning Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.PredefinedImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getPredefined()
+	 * @see pipeline.impl.PredefinedCleaningOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getPredefinedCleaningOperation()
 	 * @generated
 	 */
-	int PREDEFINED = 24;
+	int PREDEFINED_CLEANING_OPERATION = 24;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1267,7 +1267,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDEFINED__INCOMING = CLEANING_OPERATION__INCOMING;
+	int PREDEFINED_CLEANING_OPERATION__INCOMING = CLEANING_OPERATION__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
@@ -1276,7 +1276,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDEFINED__OUTGOING = CLEANING_OPERATION__OUTGOING;
+	int PREDEFINED_CLEANING_OPERATION__OUTGOING = CLEANING_OPERATION__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1285,16 +1285,16 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDEFINED__NAME = CLEANING_OPERATION_FEATURE_COUNT + 0;
+	int PREDEFINED_CLEANING_OPERATION__NAME = CLEANING_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Predefined</em>' class.
+	 * The number of structural features of the '<em>Predefined Cleaning Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PREDEFINED_FEATURE_COUNT = CLEANING_OPERATION_FEATURE_COUNT + 1;
+	int PREDEFINED_CLEANING_OPERATION_FEATURE_COUNT = CLEANING_OPERATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.SimpleAttributeImpl <em>Simple Attribute</em>}' class.
@@ -2069,25 +2069,25 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getExport_Name();
 
 	/**
-	 * Returns the meta object for class '{@link pipeline.UserDefined <em>User Defined</em>}'.
+	 * Returns the meta object for class '{@link pipeline.UserDefinedCleaningOperation <em>User Defined Cleaning Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>User Defined</em>'.
-	 * @see pipeline.UserDefined
+	 * @return the meta object for class '<em>User Defined Cleaning Operation</em>'.
+	 * @see pipeline.UserDefinedCleaningOperation
 	 * @generated
 	 */
-	EClass getUserDefined();
+	EClass getUserDefinedCleaningOperation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.UserDefined#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.UserDefinedCleaningOperation#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see pipeline.UserDefined#getName()
-	 * @see #getUserDefined()
+	 * @see pipeline.UserDefinedCleaningOperation#getName()
+	 * @see #getUserDefinedCleaningOperation()
 	 * @generated
 	 */
-	EAttribute getUserDefined_Name();
+	EAttribute getUserDefinedCleaningOperation_Name();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Source <em>Source</em>}'.
@@ -2291,25 +2291,25 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getClustering_Name();
 
 	/**
-	 * Returns the meta object for class '{@link pipeline.Predefined <em>Predefined</em>}'.
+	 * Returns the meta object for class '{@link pipeline.PredefinedCleaningOperation <em>Predefined Cleaning Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Predefined</em>'.
-	 * @see pipeline.Predefined
+	 * @return the meta object for class '<em>Predefined Cleaning Operation</em>'.
+	 * @see pipeline.PredefinedCleaningOperation
 	 * @generated
 	 */
-	EClass getPredefined();
+	EClass getPredefinedCleaningOperation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Predefined#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.PredefinedCleaningOperation#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see pipeline.Predefined#getName()
-	 * @see #getPredefined()
+	 * @see pipeline.PredefinedCleaningOperation#getName()
+	 * @see #getPredefinedCleaningOperation()
 	 * @generated
 	 */
-	EAttribute getPredefined_Name();
+	EAttribute getPredefinedCleaningOperation_Name();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.SimpleAttribute <em>Simple Attribute</em>}'.
@@ -2920,14 +2920,14 @@ public interface PipelinePackage extends EPackage {
 		EAttribute EXPORT__NAME = eINSTANCE.getExport_Name();
 
 		/**
-		 * The meta object literal for the '{@link pipeline.impl.UserDefinedImpl <em>User Defined</em>}' class.
+		 * The meta object literal for the '{@link pipeline.impl.UserDefinedCleaningOperationImpl <em>User Defined Cleaning Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.UserDefinedImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getUserDefined()
+		 * @see pipeline.impl.UserDefinedCleaningOperationImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getUserDefinedCleaningOperation()
 		 * @generated
 		 */
-		EClass USER_DEFINED = eINSTANCE.getUserDefined();
+		EClass USER_DEFINED_CLEANING_OPERATION = eINSTANCE.getUserDefinedCleaningOperation();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2935,7 +2935,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_DEFINED__NAME = eINSTANCE.getUserDefined_Name();
+		EAttribute USER_DEFINED_CLEANING_OPERATION__NAME = eINSTANCE.getUserDefinedCleaningOperation_Name();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.SourceImpl <em>Source</em>}' class.
@@ -3106,14 +3106,14 @@ public interface PipelinePackage extends EPackage {
 		EAttribute CLUSTERING__NAME = eINSTANCE.getClustering_Name();
 
 		/**
-		 * The meta object literal for the '{@link pipeline.impl.PredefinedImpl <em>Predefined</em>}' class.
+		 * The meta object literal for the '{@link pipeline.impl.PredefinedCleaningOperationImpl <em>Predefined Cleaning Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.PredefinedImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getPredefined()
+		 * @see pipeline.impl.PredefinedCleaningOperationImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getPredefinedCleaningOperation()
 		 * @generated
 		 */
-		EClass PREDEFINED = eINSTANCE.getPredefined();
+		EClass PREDEFINED_CLEANING_OPERATION = eINSTANCE.getPredefinedCleaningOperation();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3121,7 +3121,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PREDEFINED__NAME = eINSTANCE.getPredefined_Name();
+		EAttribute PREDEFINED_CLEANING_OPERATION__NAME = eINSTANCE.getPredefinedCleaningOperation_Name();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.SimpleAttributeImpl <em>Simple Attribute</em>}' class.

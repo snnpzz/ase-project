@@ -283,23 +283,23 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ChartType">
     <eLiterals name="Column"/>
-    <eLiterals name="Line"/>
-    <eLiterals name="Pie"/>
-    <eLiterals name="Doughnut"/>
-    <eLiterals name="Bar"/>
-    <eLiterals name="Area"/>
-    <eLiterals name="Scatter"/>
-    <eLiterals name="Bubble"/>
-    <eLiterals name="Map"/>
-    <eLiterals name="Stock"/>
-    <eLiterals name="Surface"/>
-    <eLiterals name="Radar"/>
-    <eLiterals name="Treemap"/>
-    <eLiterals name="Sunburst"/>
-    <eLiterals name="Histogram"/>
-    <eLiterals name="BoxAndWhisker"/>
-    <eLiterals name="Waterfall"/>
-    <eLiterals name="Funnel"/>
-    <eLiterals name="Combo"/>
+    <eLiterals name="Line" value="1"/>
+    <eLiterals name="Pie" value="2"/>
+    <eLiterals name="Doughnut" value="3"/>
+    <eLiterals name="Bar" value="4"/>
+    <eLiterals name="Area" value="5"/>
+    <eLiterals name="Scatter" value="6"/>
+    <eLiterals name="Bubble" value="7"/>
+    <eLiterals name="Map" value="8"/>
+    <eLiterals name="Stock" value="9"/>
+    <eLiterals name="Surface" value="10"/>
+    <eLiterals name="Radar" value="11"/>
+    <eLiterals name="Treemap" value="12"/>
+    <eLiterals name="Sunburst" value="13"/>
+    <eLiterals name="Histogram" value="14"/>
+    <eLiterals name="BoxAndWhisker" value="15"/>
+    <eLiterals name="Waterfall" value="16"/>
+    <eLiterals name="Funnel" value="17"/>
+    <eLiterals name="Combo" value="18"/>
   </eClassifiers>
 </ecore:EPackage>

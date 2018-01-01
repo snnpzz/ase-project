@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pipeline.InternalDataFlow#getFormat <em>Format</em>}</li>
  *   <li>{@link pipeline.InternalDataFlow#getSource <em>Source</em>}</li>
  *   <li>{@link pipeline.InternalDataFlow#getTarget <em>Target</em>}</li>
- *   <li>{@link pipeline.InternalDataFlow#getSchema <em>Schema</em>}</li>
+ *   <li>{@link pipeline.InternalDataFlow#getInternalSchema <em>Internal Schema</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getInternalDataFlow()
@@ -110,30 +110,30 @@ public interface InternalDataFlow extends EObject {
 	void setTarget(Operation value);
 
 	/**
-	 * Returns the value of the '<em><b>Schema</b></em>' reference.
+	 * Returns the value of the '<em><b>Internal Schema</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Schema</em>' reference isn't clear,
+	 * If the meaning of the '<em>Internal Schema</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Schema</em>' reference.
-	 * @see #setSchema(Schema)
-	 * @see pipeline.PipelinePackage#getInternalDataFlow_Schema()
+	 * @return the value of the '<em>Internal Schema</em>' reference.
+	 * @see #setInternalSchema(Schema)
+	 * @see pipeline.PipelinePackage#getInternalDataFlow_InternalSchema()
 	 * @model required="true"
 	 *        annotation="gmf.link width='1' target.decoration='arrow' style='dash'"
 	 * @generated
 	 */
-	Schema getSchema();
+	Schema getInternalSchema();
 
 	/**
-	 * Sets the value of the '{@link pipeline.InternalDataFlow#getSchema <em>Schema</em>}' reference.
+	 * Sets the value of the '{@link pipeline.InternalDataFlow#getInternalSchema <em>Internal Schema</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Schema</em>' reference.
-	 * @see #getSchema()
+	 * @param value the new value of the '<em>Internal Schema</em>' reference.
+	 * @see #getInternalSchema()
 	 * @generated
 	 */
-	void setSchema(Schema value);
+	void setInternalSchema(Schema value);
 
 } // InternalDataFlow

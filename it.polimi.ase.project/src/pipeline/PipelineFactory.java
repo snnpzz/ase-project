@@ -157,40 +157,40 @@ public interface PipelineFactory extends EFactory {
 	File createFile();
 
 	/**
-	 * Returns a new object of class '<em>Descriptive</em>'.
+	 * Returns a new object of class '<em>Descriptive Analysis Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Descriptive</em>'.
+	 * @return a new object of class '<em>Descriptive Analysis Operation</em>'.
 	 * @generated
 	 */
-	Descriptive createDescriptive();
+	DescriptiveAnalysisOperation createDescriptiveAnalysisOperation();
 
 	/**
-	 * Returns a new object of class '<em>Classification</em>'.
+	 * Returns a new object of class '<em>Classification Analysis Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Classification</em>'.
+	 * @return a new object of class '<em>Classification Analysis Operation</em>'.
 	 * @generated
 	 */
-	Classification createClassification();
+	ClassificationAnalysisOperation createClassificationAnalysisOperation();
 
 	/**
-	 * Returns a new object of class '<em>Predictive</em>'.
+	 * Returns a new object of class '<em>Predictive Analysis Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Predictive</em>'.
+	 * @return a new object of class '<em>Predictive Analysis Operation</em>'.
 	 * @generated
 	 */
-	Predictive createPredictive();
+	PredictiveAnalysisOperation createPredictiveAnalysisOperation();
 
 	/**
-	 * Returns a new object of class '<em>Clustering</em>'.
+	 * Returns a new object of class '<em>Clustering Analysis Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Clustering</em>'.
+	 * @return a new object of class '<em>Clustering Analysis Operation</em>'.
 	 * @generated
 	 */
-	Clustering createClustering();
+	ClusteringAnalysisOperation createClusteringAnalysisOperation();
 
 	/**
 	 * Returns a new object of class '<em>Predefined Cleaning Operation</em>'.

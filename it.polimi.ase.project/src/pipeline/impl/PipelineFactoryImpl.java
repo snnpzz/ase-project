@@ -72,10 +72,10 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION: return createUserDefinedCleaningOperation();
 			case PipelinePackage.SOURCE: return createSource();
 			case PipelinePackage.FILE: return createFile();
-			case PipelinePackage.DESCRIPTIVE: return createDescriptive();
-			case PipelinePackage.CLASSIFICATION: return createClassification();
-			case PipelinePackage.PREDICTIVE: return createPredictive();
-			case PipelinePackage.CLUSTERING: return createClustering();
+			case PipelinePackage.DESCRIPTIVE_ANALYSIS_OPERATION: return createDescriptiveAnalysisOperation();
+			case PipelinePackage.CLASSIFICATION_ANALYSIS_OPERATION: return createClassificationAnalysisOperation();
+			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION: return createPredictiveAnalysisOperation();
+			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION: return createClusteringAnalysisOperation();
 			case PipelinePackage.PREDEFINED_CLEANING_OPERATION: return createPredefinedCleaningOperation();
 			case PipelinePackage.SIMPLE_ATTRIBUTE: return createSimpleAttribute();
 			case PipelinePackage.COMPLEX_ATTRIBUTE: return createComplexAttribute();
@@ -301,9 +301,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Descriptive createDescriptive() {
-		DescriptiveImpl descriptive = new DescriptiveImpl();
-		return descriptive;
+	public DescriptiveAnalysisOperation createDescriptiveAnalysisOperation() {
+		DescriptiveAnalysisOperationImpl descriptiveAnalysisOperation = new DescriptiveAnalysisOperationImpl();
+		return descriptiveAnalysisOperation;
 	}
 
 	/**
@@ -311,9 +311,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Classification createClassification() {
-		ClassificationImpl classification = new ClassificationImpl();
-		return classification;
+	public ClassificationAnalysisOperation createClassificationAnalysisOperation() {
+		ClassificationAnalysisOperationImpl classificationAnalysisOperation = new ClassificationAnalysisOperationImpl();
+		return classificationAnalysisOperation;
 	}
 
 	/**
@@ -321,9 +321,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Predictive createPredictive() {
-		PredictiveImpl predictive = new PredictiveImpl();
-		return predictive;
+	public PredictiveAnalysisOperation createPredictiveAnalysisOperation() {
+		PredictiveAnalysisOperationImpl predictiveAnalysisOperation = new PredictiveAnalysisOperationImpl();
+		return predictiveAnalysisOperation;
 	}
 
 	/**
@@ -331,9 +331,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Clustering createClustering() {
-		ClusteringImpl clustering = new ClusteringImpl();
-		return clustering;
+	public ClusteringAnalysisOperation createClusteringAnalysisOperation() {
+		ClusteringAnalysisOperationImpl clusteringAnalysisOperation = new ClusteringAnalysisOperationImpl();
+		return clusteringAnalysisOperation;
 	}
 
 	/**

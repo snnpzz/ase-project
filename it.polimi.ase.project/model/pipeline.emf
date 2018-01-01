@@ -42,7 +42,7 @@ class InternalDataFlow {
   ref Operation#incoming target;
 
   @gmf.link(width="1", target.decoration="arrow", style="dash")
-  ref Schema[1] schema;
+  ref Schema[1] internalSchema;
 }
 
 @gmf.node(label="name", label.placement="none", figure="rounded")
@@ -139,19 +139,19 @@ abstract class CleaningOperation extends Operation {
 abstract class AnalysisOperation extends Operation {
 }
 
-class Descriptive extends AnalysisOperation {
+class DescriptiveAnalysisOperation extends AnalysisOperation {
   attr DescriptiveOperation name;
 }
 
-class Classification extends AnalysisOperation {
+class ClassificationAnalysisOperation extends AnalysisOperation {
   attr ClassificationOperation name;
 }
 
-class Predictive extends AnalysisOperation {
+class PredictiveAnalysisOperation extends AnalysisOperation {
   attr PredictiveOperation name;
 }
 
-class Clustering extends AnalysisOperation {
+class ClusteringAnalysisOperation extends AnalysisOperation {
   attr int k;
   attr ClusteringOperation name;
 }

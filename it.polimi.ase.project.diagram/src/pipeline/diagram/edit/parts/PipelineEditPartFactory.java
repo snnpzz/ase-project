@@ -97,29 +97,29 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case PredefinedCleaningOperationNameEditPart.VISUAL_ID:
 				return new PredefinedCleaningOperationNameEditPart(view);
 
-			case DescriptiveEditPart.VISUAL_ID:
-				return new DescriptiveEditPart(view);
+			case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
+				return new DescriptiveAnalysisOperationEditPart(view);
 
-			case DescriptiveNameEditPart.VISUAL_ID:
-				return new DescriptiveNameEditPart(view);
+			case DescriptiveAnalysisOperationNameEditPart.VISUAL_ID:
+				return new DescriptiveAnalysisOperationNameEditPart(view);
 
-			case ClassificationEditPart.VISUAL_ID:
-				return new ClassificationEditPart(view);
+			case ClassificationAnalysisOperationEditPart.VISUAL_ID:
+				return new ClassificationAnalysisOperationEditPart(view);
 
-			case ClassificationNameEditPart.VISUAL_ID:
-				return new ClassificationNameEditPart(view);
+			case ClassificationAnalysisOperationNameEditPart.VISUAL_ID:
+				return new ClassificationAnalysisOperationNameEditPart(view);
 
-			case PredictiveEditPart.VISUAL_ID:
-				return new PredictiveEditPart(view);
+			case PredictiveAnalysisOperationEditPart.VISUAL_ID:
+				return new PredictiveAnalysisOperationEditPart(view);
 
-			case PredictiveNameEditPart.VISUAL_ID:
-				return new PredictiveNameEditPart(view);
+			case PredictiveAnalysisOperationNameEditPart.VISUAL_ID:
+				return new PredictiveAnalysisOperationNameEditPart(view);
 
-			case ClusteringEditPart.VISUAL_ID:
-				return new ClusteringEditPart(view);
+			case ClusteringAnalysisOperationEditPart.VISUAL_ID:
+				return new ClusteringAnalysisOperationEditPart(view);
 
-			case ClusteringNameEditPart.VISUAL_ID:
-				return new ClusteringNameEditPart(view);
+			case ClusteringAnalysisOperationNameEditPart.VISUAL_ID:
+				return new ClusteringAnalysisOperationNameEditPart(view);
 
 			case ExportEditPart.VISUAL_ID:
 				return new ExportEditPart(view);
@@ -184,8 +184,8 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case WrappingLabelEditPart.VISUAL_ID:
 				return new WrappingLabelEditPart(view);
 
-			case InternalDataFlowSchemaEditPart.VISUAL_ID:
-				return new InternalDataFlowSchemaEditPart(view);
+			case InternalDataFlowInternalSchemaEditPart.VISUAL_ID:
+				return new InternalDataFlowInternalSchemaEditPart(view);
 
 			case WrappingLabel2EditPart.VISUAL_ID:
 				return new WrappingLabel2EditPart(view);

@@ -38,19 +38,19 @@ public class PipelinePaletteFactory {
 		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.Objects1Group_title);
 		paletteContainer.setId("createObjects1Group"); //$NON-NLS-1$
 		paletteContainer.add(createAnalysisTask1CreationTool());
-		paletteContainer.add(createClassification2CreationTool());
+		paletteContainer.add(createClassificationAnalysisOperation2CreationTool());
 		paletteContainer.add(createCleaningTask3CreationTool());
-		paletteContainer.add(createClustering4CreationTool());
+		paletteContainer.add(createClusteringAnalysisOperation4CreationTool());
 		paletteContainer.add(createCollectionTask5CreationTool());
 		paletteContainer.add(createComplexAttribute6CreationTool());
-		paletteContainer.add(createDescriptive7CreationTool());
+		paletteContainer.add(createDescriptiveAnalysisOperation7CreationTool());
 		paletteContainer.add(createExport8CreationTool());
 		paletteContainer.add(createExportTask9CreationTool());
 		paletteContainer.add(createFile10CreationTool());
 		paletteContainer.add(createImport11CreationTool());
 		paletteContainer.add(createIntegrationTask12CreationTool());
 		paletteContainer.add(createPredefinedCleaningOperation13CreationTool());
-		paletteContainer.add(createPredictive14CreationTool());
+		paletteContainer.add(createPredictiveAnalysisOperation14CreationTool());
 		paletteContainer.add(createSchema15CreationTool());
 		paletteContainer.add(createSimpleAttribute16CreationTool());
 		paletteContainer.add(createSource17CreationTool());
@@ -70,8 +70,8 @@ public class PipelinePaletteFactory {
 		paletteContainer.add(createExpUses2CreationTool());
 		paletteContainer.add(createImpUses3CreationTool());
 		paletteContainer.add(createInternalDataFlow4CreationTool());
-		paletteContainer.add(createRead5CreationTool());
-		paletteContainer.add(createSchema6CreationTool());
+		paletteContainer.add(createInternalSchema5CreationTool());
+		paletteContainer.add(createRead6CreationTool());
 		paletteContainer.add(createSchema7CreationTool());
 		paletteContainer.add(createWrite8CreationTool());
 		return paletteContainer;
@@ -93,12 +93,14 @@ public class PipelinePaletteFactory {
 	/**
 	* @generated
 	*/
-	private ToolEntry createClassification2CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Classification2CreationTool_title,
-				Messages.Classification2CreationTool_desc,
-				Collections.singletonList(PipelineElementTypes.Classification_3043));
-		entry.setId("createClassification2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(PipelineElementTypes.getImageDescriptor(PipelineElementTypes.Classification_3043));
+	private ToolEntry createClassificationAnalysisOperation2CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.ClassificationAnalysisOperation2CreationTool_title,
+				Messages.ClassificationAnalysisOperation2CreationTool_desc,
+				Collections.singletonList(PipelineElementTypes.ClassificationAnalysisOperation_3053));
+		entry.setId("createClassificationAnalysisOperation2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(
+				PipelineElementTypes.getImageDescriptor(PipelineElementTypes.ClassificationAnalysisOperation_3053));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -119,11 +121,13 @@ public class PipelinePaletteFactory {
 	/**
 	* @generated
 	*/
-	private ToolEntry createClustering4CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Clustering4CreationTool_title,
-				Messages.Clustering4CreationTool_desc, Collections.singletonList(PipelineElementTypes.Clustering_3045));
-		entry.setId("createClustering4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(PipelineElementTypes.getImageDescriptor(PipelineElementTypes.Clustering_3045));
+	private ToolEntry createClusteringAnalysisOperation4CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.ClusteringAnalysisOperation4CreationTool_title,
+				Messages.ClusteringAnalysisOperation4CreationTool_desc,
+				Collections.singletonList(PipelineElementTypes.ClusteringAnalysisOperation_3055));
+		entry.setId("createClusteringAnalysisOperation4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(
+				PipelineElementTypes.getImageDescriptor(PipelineElementTypes.ClusteringAnalysisOperation_3055));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -159,12 +163,13 @@ public class PipelinePaletteFactory {
 	/**
 	* @generated
 	*/
-	private ToolEntry createDescriptive7CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Descriptive7CreationTool_title,
-				Messages.Descriptive7CreationTool_desc,
-				Collections.singletonList(PipelineElementTypes.Descriptive_3042));
-		entry.setId("createDescriptive7CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(PipelineElementTypes.getImageDescriptor(PipelineElementTypes.Descriptive_3042));
+	private ToolEntry createDescriptiveAnalysisOperation7CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.DescriptiveAnalysisOperation7CreationTool_title,
+				Messages.DescriptiveAnalysisOperation7CreationTool_desc,
+				Collections.singletonList(PipelineElementTypes.DescriptiveAnalysisOperation_3052));
+		entry.setId("createDescriptiveAnalysisOperation7CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(
+				PipelineElementTypes.getImageDescriptor(PipelineElementTypes.DescriptiveAnalysisOperation_3052));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -247,12 +252,13 @@ public class PipelinePaletteFactory {
 	/**
 	* @generated
 	*/
-	private ToolEntry createPredictive14CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Predictive14CreationTool_title,
-				Messages.Predictive14CreationTool_desc,
-				Collections.singletonList(PipelineElementTypes.Predictive_3044));
-		entry.setId("createPredictive14CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(PipelineElementTypes.getImageDescriptor(PipelineElementTypes.Predictive_3044));
+	private ToolEntry createPredictiveAnalysisOperation14CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.PredictiveAnalysisOperation14CreationTool_title,
+				Messages.PredictiveAnalysisOperation14CreationTool_desc,
+				Collections.singletonList(PipelineElementTypes.PredictiveAnalysisOperation_3054));
+		entry.setId("createPredictiveAnalysisOperation14CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(
+				PipelineElementTypes.getImageDescriptor(PipelineElementTypes.PredictiveAnalysisOperation_3054));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -375,11 +381,13 @@ public class PipelinePaletteFactory {
 	/**
 	* @generated
 	*/
-	private ToolEntry createRead5CreationTool() {
-		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.Read5CreationTool_title,
-				Messages.Read5CreationTool_desc, Collections.singletonList(PipelineElementTypes.ImportRead_4021));
-		entry.setId("createRead5CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(PipelineElementTypes.getImageDescriptor(PipelineElementTypes.ImportRead_4021));
+	private ToolEntry createInternalSchema5CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.InternalSchema5CreationTool_title,
+				Messages.InternalSchema5CreationTool_desc,
+				Collections.singletonList(PipelineElementTypes.InternalDataFlowInternalSchema_4023));
+		entry.setId("createInternalSchema5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(
+				PipelineElementTypes.getImageDescriptor(PipelineElementTypes.InternalDataFlowInternalSchema_4023));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -387,11 +395,11 @@ public class PipelinePaletteFactory {
 	/**
 	* @generated
 	*/
-	private ToolEntry createSchema6CreationTool() {
-		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.Schema6CreationTool_title,
-				Messages.Schema6CreationTool_desc, Collections.singletonList(PipelineElementTypes.DataFlowSchema_4019));
-		entry.setId("createSchema6CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(PipelineElementTypes.getImageDescriptor(PipelineElementTypes.DataFlowSchema_4019));
+	private ToolEntry createRead6CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.Read6CreationTool_title,
+				Messages.Read6CreationTool_desc, Collections.singletonList(PipelineElementTypes.ImportRead_4021));
+		entry.setId("createRead6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(PipelineElementTypes.getImageDescriptor(PipelineElementTypes.ImportRead_4021));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -401,10 +409,9 @@ public class PipelinePaletteFactory {
 	*/
 	private ToolEntry createSchema7CreationTool() {
 		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.Schema7CreationTool_title,
-				Messages.Schema7CreationTool_desc,
-				Collections.singletonList(PipelineElementTypes.InternalDataFlowSchema_4020));
+				Messages.Schema7CreationTool_desc, Collections.singletonList(PipelineElementTypes.DataFlowSchema_4019));
 		entry.setId("createSchema7CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(PipelineElementTypes.getImageDescriptor(PipelineElementTypes.InternalDataFlowSchema_4020));
+		entry.setSmallIcon(PipelineElementTypes.getImageDescriptor(PipelineElementTypes.DataFlowSchema_4019));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

@@ -19,20 +19,20 @@ import org.eclipse.gmf.tooling.runtime.parsers.EnumParser;
 
 import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
-import pipeline.diagram.edit.parts.ClassificationNameEditPart;
+import pipeline.diagram.edit.parts.ClassificationAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskIDEditPart;
-import pipeline.diagram.edit.parts.ClusteringNameEditPart;
+import pipeline.diagram.edit.parts.ClusteringAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskIDEditPart;
 import pipeline.diagram.edit.parts.ComplexAttributeName2EditPart;
 import pipeline.diagram.edit.parts.ComplexAttributeNameEditPart;
-import pipeline.diagram.edit.parts.DescriptiveNameEditPart;
+import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.ExportNameEditPart;
 import pipeline.diagram.edit.parts.ExportTaskIDEditPart;
 import pipeline.diagram.edit.parts.FileNameEditPart;
 import pipeline.diagram.edit.parts.ImportNameEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
 import pipeline.diagram.edit.parts.PredefinedCleaningOperationNameEditPart;
-import pipeline.diagram.edit.parts.PredictiveNameEditPart;
+import pipeline.diagram.edit.parts.PredictiveAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeName2EditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeNameEditPart;
 import pipeline.diagram.edit.parts.SourceNameEditPart;
@@ -237,69 +237,69 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 	/**
 	* @generated
 	*/
-	private IParser descriptiveName_5092Parser;
+	private IParser descriptiveAnalysisOperationName_5104Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getDescriptiveName_5092Parser() {
-		if (descriptiveName_5092Parser == null) {
-			EAttribute editableFeature = PipelinePackage.eINSTANCE.getDescriptive_Name();
+	private IParser getDescriptiveAnalysisOperationName_5104Parser() {
+		if (descriptiveAnalysisOperationName_5104Parser == null) {
+			EAttribute editableFeature = PipelinePackage.eINSTANCE.getDescriptiveAnalysisOperation_Name();
 			EnumParser parser = new EnumParser(editableFeature);
-			descriptiveName_5092Parser = parser;
+			descriptiveAnalysisOperationName_5104Parser = parser;
 		}
-		return descriptiveName_5092Parser;
+		return descriptiveAnalysisOperationName_5104Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser classificationName_5093Parser;
+	private IParser classificationAnalysisOperationName_5105Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getClassificationName_5093Parser() {
-		if (classificationName_5093Parser == null) {
-			EAttribute editableFeature = PipelinePackage.eINSTANCE.getClassification_Name();
+	private IParser getClassificationAnalysisOperationName_5105Parser() {
+		if (classificationAnalysisOperationName_5105Parser == null) {
+			EAttribute editableFeature = PipelinePackage.eINSTANCE.getClassificationAnalysisOperation_Name();
 			EnumParser parser = new EnumParser(editableFeature);
-			classificationName_5093Parser = parser;
+			classificationAnalysisOperationName_5105Parser = parser;
 		}
-		return classificationName_5093Parser;
+		return classificationAnalysisOperationName_5105Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser predictiveName_5094Parser;
+	private IParser predictiveAnalysisOperationName_5106Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getPredictiveName_5094Parser() {
-		if (predictiveName_5094Parser == null) {
-			EAttribute editableFeature = PipelinePackage.eINSTANCE.getPredictive_Name();
+	private IParser getPredictiveAnalysisOperationName_5106Parser() {
+		if (predictiveAnalysisOperationName_5106Parser == null) {
+			EAttribute editableFeature = PipelinePackage.eINSTANCE.getPredictiveAnalysisOperation_Name();
 			EnumParser parser = new EnumParser(editableFeature);
-			predictiveName_5094Parser = parser;
+			predictiveAnalysisOperationName_5106Parser = parser;
 		}
-		return predictiveName_5094Parser;
+		return predictiveAnalysisOperationName_5106Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser clusteringName_5095Parser;
+	private IParser clusteringAnalysisOperationName_5107Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getClusteringName_5095Parser() {
-		if (clusteringName_5095Parser == null) {
-			EAttribute editableFeature = PipelinePackage.eINSTANCE.getClustering_Name();
+	private IParser getClusteringAnalysisOperationName_5107Parser() {
+		if (clusteringAnalysisOperationName_5107Parser == null) {
+			EAttribute editableFeature = PipelinePackage.eINSTANCE.getClusteringAnalysisOperation_Name();
 			EnumParser parser = new EnumParser(editableFeature);
-			clusteringName_5095Parser = parser;
+			clusteringAnalysisOperationName_5107Parser = parser;
 		}
-		return clusteringName_5095Parser;
+		return clusteringAnalysisOperationName_5107Parser;
 	}
 
 	/**
@@ -416,17 +416,17 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 		case PredefinedCleaningOperationNameEditPart.VISUAL_ID:
 			return getPredefinedCleaningOperationName_5103Parser();
 
-		case DescriptiveNameEditPart.VISUAL_ID:
-			return getDescriptiveName_5092Parser();
+		case DescriptiveAnalysisOperationNameEditPart.VISUAL_ID:
+			return getDescriptiveAnalysisOperationName_5104Parser();
 
-		case ClassificationNameEditPart.VISUAL_ID:
-			return getClassificationName_5093Parser();
+		case ClassificationAnalysisOperationNameEditPart.VISUAL_ID:
+			return getClassificationAnalysisOperationName_5105Parser();
 
-		case PredictiveNameEditPart.VISUAL_ID:
-			return getPredictiveName_5094Parser();
+		case PredictiveAnalysisOperationNameEditPart.VISUAL_ID:
+			return getPredictiveAnalysisOperationName_5106Parser();
 
-		case ClusteringNameEditPart.VISUAL_ID:
-			return getClusteringName_5095Parser();
+		case ClusteringAnalysisOperationNameEditPart.VISUAL_ID:
+			return getClusteringAnalysisOperationName_5107Parser();
 		case ExportNameEditPart.VISUAL_ID:
 			return getExportName_5076Parser();
 		case SimpleAttributeNameEditPart.VISUAL_ID:

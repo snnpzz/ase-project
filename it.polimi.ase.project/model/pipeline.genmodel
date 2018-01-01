@@ -100,7 +100,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//InternalDataFlow/format"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDataFlow/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDataFlow/target"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDataFlow/schema"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDataFlow/internalSchema"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Schema">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Schema/attributes"/>
@@ -155,18 +155,18 @@
     </genClasses>
     <genClasses image="false" ecoreClass="pipeline.ecore#//CleaningOperation"/>
     <genClasses image="false" ecoreClass="pipeline.ecore#//AnalysisOperation"/>
-    <genClasses ecoreClass="pipeline.ecore#//Descriptive">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Descriptive/name"/>
+    <genClasses ecoreClass="pipeline.ecore#//DescriptiveAnalysisOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//DescriptiveAnalysisOperation/name"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//Classification">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Classification/name"/>
+    <genClasses ecoreClass="pipeline.ecore#//ClassificationAnalysisOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//ClassificationAnalysisOperation/name"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//Predictive">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Predictive/name"/>
+    <genClasses ecoreClass="pipeline.ecore#//PredictiveAnalysisOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//PredictiveAnalysisOperation/name"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//Clustering">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Clustering/k"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Clustering/name"/>
+    <genClasses ecoreClass="pipeline.ecore#//ClusteringAnalysisOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//ClusteringAnalysisOperation/k"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//ClusteringAnalysisOperation/name"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//PredefinedCleaningOperation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//PredefinedCleaningOperation/name"/>

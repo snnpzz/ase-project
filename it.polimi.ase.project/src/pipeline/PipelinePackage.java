@@ -314,13 +314,13 @@ public interface PipelinePackage extends EPackage {
 	int INTERNAL_DATA_FLOW__TARGET = 2;
 
 	/**
-	 * The feature id for the '<em><b>Schema</b></em>' reference.
+	 * The feature id for the '<em><b>Internal Schema</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_DATA_FLOW__SCHEMA = 3;
+	int INTERNAL_DATA_FLOW__INTERNAL_SCHEMA = 3;
 
 	/**
 	 * The number of structural features of the '<em>Internal Data Flow</em>' class.
@@ -1058,14 +1058,14 @@ public interface PipelinePackage extends EPackage {
 	int ANALYSIS_OPERATION_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.DescriptiveImpl <em>Descriptive</em>}' class.
+	 * The meta object id for the '{@link pipeline.impl.DescriptiveAnalysisOperationImpl <em>Descriptive Analysis Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.DescriptiveImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getDescriptive()
+	 * @see pipeline.impl.DescriptiveAnalysisOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getDescriptiveAnalysisOperation()
 	 * @generated
 	 */
-	int DESCRIPTIVE = 20;
+	int DESCRIPTIVE_ANALYSIS_OPERATION = 20;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1074,7 +1074,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTIVE__INCOMING = ANALYSIS_OPERATION__INCOMING;
+	int DESCRIPTIVE_ANALYSIS_OPERATION__INCOMING = ANALYSIS_OPERATION__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
@@ -1083,7 +1083,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTIVE__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
+	int DESCRIPTIVE_ANALYSIS_OPERATION__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1092,26 +1092,26 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTIVE__NAME = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
+	int DESCRIPTIVE_ANALYSIS_OPERATION__NAME = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Descriptive</em>' class.
+	 * The number of structural features of the '<em>Descriptive Analysis Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTIVE_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
+	int DESCRIPTIVE_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.ClassificationImpl <em>Classification</em>}' class.
+	 * The meta object id for the '{@link pipeline.impl.ClassificationAnalysisOperationImpl <em>Classification Analysis Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.ClassificationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getClassification()
+	 * @see pipeline.impl.ClassificationAnalysisOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getClassificationAnalysisOperation()
 	 * @generated
 	 */
-	int CLASSIFICATION = 21;
+	int CLASSIFICATION_ANALYSIS_OPERATION = 21;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1120,7 +1120,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFICATION__INCOMING = ANALYSIS_OPERATION__INCOMING;
+	int CLASSIFICATION_ANALYSIS_OPERATION__INCOMING = ANALYSIS_OPERATION__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
@@ -1129,7 +1129,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFICATION__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
+	int CLASSIFICATION_ANALYSIS_OPERATION__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1138,26 +1138,26 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFICATION__NAME = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
+	int CLASSIFICATION_ANALYSIS_OPERATION__NAME = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Classification</em>' class.
+	 * The number of structural features of the '<em>Classification Analysis Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFICATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
+	int CLASSIFICATION_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.PredictiveImpl <em>Predictive</em>}' class.
+	 * The meta object id for the '{@link pipeline.impl.PredictiveAnalysisOperationImpl <em>Predictive Analysis Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.PredictiveImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getPredictive()
+	 * @see pipeline.impl.PredictiveAnalysisOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getPredictiveAnalysisOperation()
 	 * @generated
 	 */
-	int PREDICTIVE = 22;
+	int PREDICTIVE_ANALYSIS_OPERATION = 22;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1166,7 +1166,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDICTIVE__INCOMING = ANALYSIS_OPERATION__INCOMING;
+	int PREDICTIVE_ANALYSIS_OPERATION__INCOMING = ANALYSIS_OPERATION__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
@@ -1175,7 +1175,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDICTIVE__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
+	int PREDICTIVE_ANALYSIS_OPERATION__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1184,26 +1184,26 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDICTIVE__NAME = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
+	int PREDICTIVE_ANALYSIS_OPERATION__NAME = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Predictive</em>' class.
+	 * The number of structural features of the '<em>Predictive Analysis Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PREDICTIVE_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
+	int PREDICTIVE_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.ClusteringImpl <em>Clustering</em>}' class.
+	 * The meta object id for the '{@link pipeline.impl.ClusteringAnalysisOperationImpl <em>Clustering Analysis Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.ClusteringImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getClustering()
+	 * @see pipeline.impl.ClusteringAnalysisOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getClusteringAnalysisOperation()
 	 * @generated
 	 */
-	int CLUSTERING = 23;
+	int CLUSTERING_ANALYSIS_OPERATION = 23;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1212,7 +1212,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTERING__INCOMING = ANALYSIS_OPERATION__INCOMING;
+	int CLUSTERING_ANALYSIS_OPERATION__INCOMING = ANALYSIS_OPERATION__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
@@ -1221,7 +1221,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTERING__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
+	int CLUSTERING_ANALYSIS_OPERATION__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>K</b></em>' attribute.
@@ -1230,7 +1230,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTERING__K = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
+	int CLUSTERING_ANALYSIS_OPERATION__K = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1239,16 +1239,16 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTERING__NAME = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
+	int CLUSTERING_ANALYSIS_OPERATION__NAME = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Clustering</em>' class.
+	 * The number of structural features of the '<em>Clustering Analysis Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTERING_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 2;
+	int CLUSTERING_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.PredefinedCleaningOperationImpl <em>Predefined Cleaning Operation</em>}' class.
@@ -1760,15 +1760,15 @@ public interface PipelinePackage extends EPackage {
 	EReference getInternalDataFlow_Target();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.InternalDataFlow#getSchema <em>Schema</em>}'.
+	 * Returns the meta object for the reference '{@link pipeline.InternalDataFlow#getInternalSchema <em>Internal Schema</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Schema</em>'.
-	 * @see pipeline.InternalDataFlow#getSchema()
+	 * @return the meta object for the reference '<em>Internal Schema</em>'.
+	 * @see pipeline.InternalDataFlow#getInternalSchema()
 	 * @see #getInternalDataFlow()
 	 * @generated
 	 */
-	EReference getInternalDataFlow_Schema();
+	EReference getInternalDataFlow_InternalSchema();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Schema <em>Schema</em>}'.
@@ -2196,99 +2196,99 @@ public interface PipelinePackage extends EPackage {
 	EClass getAnalysisOperation();
 
 	/**
-	 * Returns the meta object for class '{@link pipeline.Descriptive <em>Descriptive</em>}'.
+	 * Returns the meta object for class '{@link pipeline.DescriptiveAnalysisOperation <em>Descriptive Analysis Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Descriptive</em>'.
-	 * @see pipeline.Descriptive
+	 * @return the meta object for class '<em>Descriptive Analysis Operation</em>'.
+	 * @see pipeline.DescriptiveAnalysisOperation
 	 * @generated
 	 */
-	EClass getDescriptive();
+	EClass getDescriptiveAnalysisOperation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Descriptive#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see pipeline.Descriptive#getName()
-	 * @see #getDescriptive()
-	 * @generated
-	 */
-	EAttribute getDescriptive_Name();
-
-	/**
-	 * Returns the meta object for class '{@link pipeline.Classification <em>Classification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Classification</em>'.
-	 * @see pipeline.Classification
-	 * @generated
-	 */
-	EClass getClassification();
-
-	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Classification#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.DescriptiveAnalysisOperation#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see pipeline.Classification#getName()
-	 * @see #getClassification()
+	 * @see pipeline.DescriptiveAnalysisOperation#getName()
+	 * @see #getDescriptiveAnalysisOperation()
 	 * @generated
 	 */
-	EAttribute getClassification_Name();
+	EAttribute getDescriptiveAnalysisOperation_Name();
 
 	/**
-	 * Returns the meta object for class '{@link pipeline.Predictive <em>Predictive</em>}'.
+	 * Returns the meta object for class '{@link pipeline.ClassificationAnalysisOperation <em>Classification Analysis Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Predictive</em>'.
-	 * @see pipeline.Predictive
+	 * @return the meta object for class '<em>Classification Analysis Operation</em>'.
+	 * @see pipeline.ClassificationAnalysisOperation
 	 * @generated
 	 */
-	EClass getPredictive();
+	EClass getClassificationAnalysisOperation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Predictive#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.ClassificationAnalysisOperation#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see pipeline.Predictive#getName()
-	 * @see #getPredictive()
+	 * @see pipeline.ClassificationAnalysisOperation#getName()
+	 * @see #getClassificationAnalysisOperation()
 	 * @generated
 	 */
-	EAttribute getPredictive_Name();
+	EAttribute getClassificationAnalysisOperation_Name();
 
 	/**
-	 * Returns the meta object for class '{@link pipeline.Clustering <em>Clustering</em>}'.
+	 * Returns the meta object for class '{@link pipeline.PredictiveAnalysisOperation <em>Predictive Analysis Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Clustering</em>'.
-	 * @see pipeline.Clustering
+	 * @return the meta object for class '<em>Predictive Analysis Operation</em>'.
+	 * @see pipeline.PredictiveAnalysisOperation
 	 * @generated
 	 */
-	EClass getClustering();
+	EClass getPredictiveAnalysisOperation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Clustering#getK <em>K</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.PredictiveAnalysisOperation#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see pipeline.PredictiveAnalysisOperation#getName()
+	 * @see #getPredictiveAnalysisOperation()
+	 * @generated
+	 */
+	EAttribute getPredictiveAnalysisOperation_Name();
+
+	/**
+	 * Returns the meta object for class '{@link pipeline.ClusteringAnalysisOperation <em>Clustering Analysis Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Clustering Analysis Operation</em>'.
+	 * @see pipeline.ClusteringAnalysisOperation
+	 * @generated
+	 */
+	EClass getClusteringAnalysisOperation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pipeline.ClusteringAnalysisOperation#getK <em>K</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>K</em>'.
-	 * @see pipeline.Clustering#getK()
-	 * @see #getClustering()
+	 * @see pipeline.ClusteringAnalysisOperation#getK()
+	 * @see #getClusteringAnalysisOperation()
 	 * @generated
 	 */
-	EAttribute getClustering_K();
+	EAttribute getClusteringAnalysisOperation_K();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Clustering#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.ClusteringAnalysisOperation#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see pipeline.Clustering#getName()
-	 * @see #getClustering()
+	 * @see pipeline.ClusteringAnalysisOperation#getName()
+	 * @see #getClusteringAnalysisOperation()
 	 * @generated
 	 */
-	EAttribute getClustering_Name();
+	EAttribute getClusteringAnalysisOperation_Name();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.PredefinedCleaningOperation <em>Predefined Cleaning Operation</em>}'.
@@ -2668,12 +2668,12 @@ public interface PipelinePackage extends EPackage {
 		EReference INTERNAL_DATA_FLOW__TARGET = eINSTANCE.getInternalDataFlow_Target();
 
 		/**
-		 * The meta object literal for the '<em><b>Schema</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Internal Schema</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INTERNAL_DATA_FLOW__SCHEMA = eINSTANCE.getInternalDataFlow_Schema();
+		EReference INTERNAL_DATA_FLOW__INTERNAL_SCHEMA = eINSTANCE.getInternalDataFlow_InternalSchema();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.SchemaImpl <em>Schema</em>}' class.
@@ -3026,14 +3026,14 @@ public interface PipelinePackage extends EPackage {
 		EClass ANALYSIS_OPERATION = eINSTANCE.getAnalysisOperation();
 
 		/**
-		 * The meta object literal for the '{@link pipeline.impl.DescriptiveImpl <em>Descriptive</em>}' class.
+		 * The meta object literal for the '{@link pipeline.impl.DescriptiveAnalysisOperationImpl <em>Descriptive Analysis Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.DescriptiveImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getDescriptive()
+		 * @see pipeline.impl.DescriptiveAnalysisOperationImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getDescriptiveAnalysisOperation()
 		 * @generated
 		 */
-		EClass DESCRIPTIVE = eINSTANCE.getDescriptive();
+		EClass DESCRIPTIVE_ANALYSIS_OPERATION = eINSTANCE.getDescriptiveAnalysisOperation();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3041,35 +3041,17 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DESCRIPTIVE__NAME = eINSTANCE.getDescriptive_Name();
+		EAttribute DESCRIPTIVE_ANALYSIS_OPERATION__NAME = eINSTANCE.getDescriptiveAnalysisOperation_Name();
 
 		/**
-		 * The meta object literal for the '{@link pipeline.impl.ClassificationImpl <em>Classification</em>}' class.
+		 * The meta object literal for the '{@link pipeline.impl.ClassificationAnalysisOperationImpl <em>Classification Analysis Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.ClassificationImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getClassification()
+		 * @see pipeline.impl.ClassificationAnalysisOperationImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getClassificationAnalysisOperation()
 		 * @generated
 		 */
-		EClass CLASSIFICATION = eINSTANCE.getClassification();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CLASSIFICATION__NAME = eINSTANCE.getClassification_Name();
-
-		/**
-		 * The meta object literal for the '{@link pipeline.impl.PredictiveImpl <em>Predictive</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.PredictiveImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getPredictive()
-		 * @generated
-		 */
-		EClass PREDICTIVE = eINSTANCE.getPredictive();
+		EClass CLASSIFICATION_ANALYSIS_OPERATION = eINSTANCE.getClassificationAnalysisOperation();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3077,17 +3059,35 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PREDICTIVE__NAME = eINSTANCE.getPredictive_Name();
+		EAttribute CLASSIFICATION_ANALYSIS_OPERATION__NAME = eINSTANCE.getClassificationAnalysisOperation_Name();
 
 		/**
-		 * The meta object literal for the '{@link pipeline.impl.ClusteringImpl <em>Clustering</em>}' class.
+		 * The meta object literal for the '{@link pipeline.impl.PredictiveAnalysisOperationImpl <em>Predictive Analysis Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.ClusteringImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getClustering()
+		 * @see pipeline.impl.PredictiveAnalysisOperationImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getPredictiveAnalysisOperation()
 		 * @generated
 		 */
-		EClass CLUSTERING = eINSTANCE.getClustering();
+		EClass PREDICTIVE_ANALYSIS_OPERATION = eINSTANCE.getPredictiveAnalysisOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PREDICTIVE_ANALYSIS_OPERATION__NAME = eINSTANCE.getPredictiveAnalysisOperation_Name();
+
+		/**
+		 * The meta object literal for the '{@link pipeline.impl.ClusteringAnalysisOperationImpl <em>Clustering Analysis Operation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pipeline.impl.ClusteringAnalysisOperationImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getClusteringAnalysisOperation()
+		 * @generated
+		 */
+		EClass CLUSTERING_ANALYSIS_OPERATION = eINSTANCE.getClusteringAnalysisOperation();
 
 		/**
 		 * The meta object literal for the '<em><b>K</b></em>' attribute feature.
@@ -3095,7 +3095,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CLUSTERING__K = eINSTANCE.getClustering_K();
+		EAttribute CLUSTERING_ANALYSIS_OPERATION__K = eINSTANCE.getClusteringAnalysisOperation_K();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3103,7 +3103,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CLUSTERING__NAME = eINSTANCE.getClustering_Name();
+		EAttribute CLUSTERING_ANALYSIS_OPERATION__NAME = eINSTANCE.getClusteringAnalysisOperation_Name();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.PredefinedCleaningOperationImpl <em>Predefined Cleaning Operation</em>}' class.

@@ -266,12 +266,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Classification2CreationTool_title;
+	public static String ClassificationAnalysisOperation2CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Classification2CreationTool_desc;
+	public static String ClassificationAnalysisOperation2CreationTool_desc;
 
 	/**
 	* @generated
@@ -286,12 +286,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Clustering4CreationTool_title;
+	public static String ClusteringAnalysisOperation4CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Clustering4CreationTool_desc;
+	public static String ClusteringAnalysisOperation4CreationTool_desc;
 
 	/**
 	* @generated
@@ -316,12 +316,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Descriptive7CreationTool_title;
+	public static String DescriptiveAnalysisOperation7CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Descriptive7CreationTool_desc;
+	public static String DescriptiveAnalysisOperation7CreationTool_desc;
 
 	/**
 	* @generated
@@ -386,12 +386,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Predictive14CreationTool_title;
+	public static String PredictiveAnalysisOperation14CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Predictive14CreationTool_desc;
+	public static String PredictiveAnalysisOperation14CreationTool_desc;
 
 	/**
 	* @generated
@@ -486,22 +486,22 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Read5CreationTool_title;
+	public static String InternalSchema5CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Read5CreationTool_desc;
+	public static String InternalSchema5CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Schema6CreationTool_title;
+	public static String Read6CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Schema6CreationTool_desc;
+	public static String Read6CreationTool_desc;
 
 	/**
 	* @generated
@@ -656,46 +656,6 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Descriptive_3042_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Descriptive_3042_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Classification_3043_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Classification_3043_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Predictive_3044_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Predictive_3044_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Clustering_3045_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Clustering_3045_outgoinglinks;
-
-	/**
-	* @generated
-	*/
 	public static String NavigatorGroupName_UserDefinedCleaningOperation_3050_incominglinks;
 
 	/**
@@ -712,6 +672,46 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String NavigatorGroupName_PredefinedCleaningOperation_3051_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_DescriptiveAnalysisOperation_3052_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_DescriptiveAnalysisOperation_3052_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ClassificationAnalysisOperation_3053_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ClassificationAnalysisOperation_3053_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_PredictiveAnalysisOperation_3054_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_PredictiveAnalysisOperation_3054_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ClusteringAnalysisOperation_3055_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ClusteringAnalysisOperation_3055_outgoinglinks;
 
 	/**
 	* @generated
@@ -776,16 +776,6 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_InternalDataFlowSchema_4020_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_InternalDataFlowSchema_4020_source;
-
-	/**
-	* @generated
-	*/
 	public static String NavigatorGroupName_ImportRead_4021_target;
 
 	/**
@@ -802,6 +792,16 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String NavigatorGroupName_ExportWrite_4022_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_InternalDataFlowInternalSchema_4023_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_InternalDataFlowInternalSchema_4023_source;
 
 	/**
 	* @generated

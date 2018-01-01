@@ -345,19 +345,19 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		* @generated
 		*/
-		public boolean canCreateInternalDataFlowSchema_4020(InternalDataFlow source, Schema target) {
+		public boolean canCreateInternalDataFlowInternalSchema_4023(InternalDataFlow source, Schema target) {
 			if (source != null) {
-				if (source.getSchema() != null) {
+				if (source.getInternalSchema() != null) {
 					return false;
 				}
 			}
 
-			return canExistInternalDataFlowSchema_4020(source, target);
+			return canExistInternalDataFlowInternalSchema_4023(source, target);
 		}
 
 		/**
-		* @generated
-		*/
+			* @generated
+			*/
 		public boolean canCreateImportRead_4021(Import source, Source target) {
 			if (source != null) {
 				if (source.getRead() != null) {
@@ -438,13 +438,13 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		* @generated
 		*/
-		public boolean canExistInternalDataFlowSchema_4020(InternalDataFlow source, Schema target) {
+		public boolean canExistInternalDataFlowInternalSchema_4023(InternalDataFlow source, Schema target) {
 			return true;
 		}
 
 		/**
-		* @generated
-		*/
+			* @generated
+			*/
 		public boolean canExistImportRead_4021(Import source, Source target) {
 			return true;
 		}

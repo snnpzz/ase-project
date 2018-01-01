@@ -49,13 +49,13 @@ import org.eclipse.swt.graphics.FontData;
 import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
-import pipeline.diagram.edit.parts.ClassificationEditPart;
-import pipeline.diagram.edit.parts.ClassificationNameEditPart;
+import pipeline.diagram.edit.parts.ClassificationAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.ClassificationAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskIDEditPart;
-import pipeline.diagram.edit.parts.ClusteringEditPart;
-import pipeline.diagram.edit.parts.ClusteringNameEditPart;
+import pipeline.diagram.edit.parts.ClusteringAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.ClusteringAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskCollectionTaskImportsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskIDEditPart;
@@ -67,8 +67,8 @@ import pipeline.diagram.edit.parts.ComplexAttributeName2EditPart;
 import pipeline.diagram.edit.parts.ComplexAttributeNameEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
-import pipeline.diagram.edit.parts.DescriptiveEditPart;
-import pipeline.diagram.edit.parts.DescriptiveNameEditPart;
+import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.ExportEditPart;
 import pipeline.diagram.edit.parts.ExportExpUsesEditPart;
 import pipeline.diagram.edit.parts.ExportNameEditPart;
@@ -85,12 +85,12 @@ import pipeline.diagram.edit.parts.ImportReadEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
-import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
+import pipeline.diagram.edit.parts.InternalDataFlowInternalSchemaEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
 import pipeline.diagram.edit.parts.PredefinedCleaningOperationEditPart;
 import pipeline.diagram.edit.parts.PredefinedCleaningOperationNameEditPart;
-import pipeline.diagram.edit.parts.PredictiveEditPart;
-import pipeline.diagram.edit.parts.PredictiveNameEditPart;
+import pipeline.diagram.edit.parts.PredictiveAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.PredictiveAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.edit.parts.SchemaSchemaAttributesCompartmentEditPart;
 import pipeline.diagram.edit.parts.SimpleAttribute2EditPart;
@@ -204,10 +204,10 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				case ImportEditPart.VISUAL_ID:
 				case UserDefinedCleaningOperationEditPart.VISUAL_ID:
 				case PredefinedCleaningOperationEditPart.VISUAL_ID:
-				case DescriptiveEditPart.VISUAL_ID:
-				case ClassificationEditPart.VISUAL_ID:
-				case PredictiveEditPart.VISUAL_ID:
-				case ClusteringEditPart.VISUAL_ID:
+				case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
+				case ClassificationAnalysisOperationEditPart.VISUAL_ID:
+				case PredictiveAnalysisOperationEditPart.VISUAL_ID:
+				case ClusteringAnalysisOperationEditPart.VISUAL_ID:
 				case ExportEditPart.VISUAL_ID:
 				case SimpleAttributeEditPart.VISUAL_ID:
 				case ComplexAttributeEditPart.VISUAL_ID:
@@ -230,11 +230,12 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				|| SchemaEditPart.VISUAL_ID == visualID || ImportEditPart.VISUAL_ID == visualID
 				|| UserDefinedCleaningOperationEditPart.VISUAL_ID == visualID
 				|| PredefinedCleaningOperationEditPart.VISUAL_ID == visualID
-				|| DescriptiveEditPart.VISUAL_ID == visualID || ClassificationEditPart.VISUAL_ID == visualID
-				|| PredictiveEditPart.VISUAL_ID == visualID || ClusteringEditPart.VISUAL_ID == visualID
-				|| ExportEditPart.VISUAL_ID == visualID || SimpleAttributeEditPart.VISUAL_ID == visualID
-				|| ComplexAttributeEditPart.VISUAL_ID == visualID || SimpleAttribute2EditPart.VISUAL_ID == visualID
-				|| ComplexAttribute2EditPart.VISUAL_ID == visualID;
+				|| DescriptiveAnalysisOperationEditPart.VISUAL_ID == visualID
+				|| ClassificationAnalysisOperationEditPart.VISUAL_ID == visualID
+				|| PredictiveAnalysisOperationEditPart.VISUAL_ID == visualID
+				|| ClusteringAnalysisOperationEditPart.VISUAL_ID == visualID || ExportEditPart.VISUAL_ID == visualID
+				|| SimpleAttributeEditPart.VISUAL_ID == visualID || ComplexAttributeEditPart.VISUAL_ID == visualID
+				|| SimpleAttribute2EditPart.VISUAL_ID == visualID || ComplexAttribute2EditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -309,14 +310,18 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		case PredefinedCleaningOperationEditPart.VISUAL_ID:
 			return createPredefinedCleaningOperation_3051(domainElement, containerView, index, persisted,
 					preferencesHint);
-		case DescriptiveEditPart.VISUAL_ID:
-			return createDescriptive_3042(domainElement, containerView, index, persisted, preferencesHint);
-		case ClassificationEditPart.VISUAL_ID:
-			return createClassification_3043(domainElement, containerView, index, persisted, preferencesHint);
-		case PredictiveEditPart.VISUAL_ID:
-			return createPredictive_3044(domainElement, containerView, index, persisted, preferencesHint);
-		case ClusteringEditPart.VISUAL_ID:
-			return createClustering_3045(domainElement, containerView, index, persisted, preferencesHint);
+		case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
+			return createDescriptiveAnalysisOperation_3052(domainElement, containerView, index, persisted,
+					preferencesHint);
+		case ClassificationAnalysisOperationEditPart.VISUAL_ID:
+			return createClassificationAnalysisOperation_3053(domainElement, containerView, index, persisted,
+					preferencesHint);
+		case PredictiveAnalysisOperationEditPart.VISUAL_ID:
+			return createPredictiveAnalysisOperation_3054(domainElement, containerView, index, persisted,
+					preferencesHint);
+		case ClusteringAnalysisOperationEditPart.VISUAL_ID:
+			return createClusteringAnalysisOperation_3055(domainElement, containerView, index, persisted,
+					preferencesHint);
 		case ExportEditPart.VISUAL_ID:
 			return createExport_3037(domainElement, containerView, index, persisted, preferencesHint);
 		case SimpleAttributeEditPart.VISUAL_ID:
@@ -348,8 +353,8 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 					preferencesHint);
 		case DataFlowSchemaEditPart.VISUAL_ID:
 			return createDataFlowSchema_4019(containerView, index, persisted, preferencesHint);
-		case InternalDataFlowSchemaEditPart.VISUAL_ID:
-			return createInternalDataFlowSchema_4020(containerView, index, persisted, preferencesHint);
+		case InternalDataFlowInternalSchemaEditPart.VISUAL_ID:
+			return createInternalDataFlowInternalSchema_4023(containerView, index, persisted, preferencesHint);
 		case ImportReadEditPart.VISUAL_ID:
 			return createImportRead_4021(containerView, index, persisted, preferencesHint);
 		case ImportImpUsesEditPart.VISUAL_ID:
@@ -829,11 +834,11 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 	/**
 	* @generated
 	*/
-	public Node createDescriptive_3042(EObject domainElement, View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
+	public Node createDescriptiveAnalysisOperation_3052(EObject domainElement, View containerView, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(PipelineVisualIDRegistry.getType(DescriptiveEditPart.VISUAL_ID));
+		node.setType(PipelineVisualIDRegistry.getType(DescriptiveAnalysisOperationEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -858,18 +863,19 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5092 = createLabel(node, PipelineVisualIDRegistry.getType(DescriptiveNameEditPart.VISUAL_ID));
+		Node label5104 = createLabel(node,
+				PipelineVisualIDRegistry.getType(DescriptiveAnalysisOperationNameEditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Node createClassification_3043(EObject domainElement, View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
+	public Node createClassificationAnalysisOperation_3053(EObject domainElement, View containerView, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(PipelineVisualIDRegistry.getType(ClassificationEditPart.VISUAL_ID));
+		node.setType(PipelineVisualIDRegistry.getType(ClassificationAnalysisOperationEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -894,18 +900,19 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5093 = createLabel(node, PipelineVisualIDRegistry.getType(ClassificationNameEditPart.VISUAL_ID));
+		Node label5105 = createLabel(node,
+				PipelineVisualIDRegistry.getType(ClassificationAnalysisOperationNameEditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Node createPredictive_3044(EObject domainElement, View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
+	public Node createPredictiveAnalysisOperation_3054(EObject domainElement, View containerView, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(PipelineVisualIDRegistry.getType(PredictiveEditPart.VISUAL_ID));
+		node.setType(PipelineVisualIDRegistry.getType(PredictiveAnalysisOperationEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -930,18 +937,19 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5094 = createLabel(node, PipelineVisualIDRegistry.getType(PredictiveNameEditPart.VISUAL_ID));
+		Node label5106 = createLabel(node,
+				PipelineVisualIDRegistry.getType(PredictiveAnalysisOperationNameEditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Node createClustering_3045(EObject domainElement, View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
+	public Node createClusteringAnalysisOperation_3055(EObject domainElement, View containerView, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(PipelineVisualIDRegistry.getType(ClusteringEditPart.VISUAL_ID));
+		node.setType(PipelineVisualIDRegistry.getType(ClusteringAnalysisOperationEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -966,7 +974,8 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5095 = createLabel(node, PipelineVisualIDRegistry.getType(ClusteringNameEditPart.VISUAL_ID));
+		Node label5107 = createLabel(node,
+				PipelineVisualIDRegistry.getType(ClusteringAnalysisOperationNameEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -1292,7 +1301,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 	/**
 	* @generated
 	*/
-	public Edge createInternalDataFlowSchema_4020(View containerView, int index, boolean persisted,
+	public Edge createInternalDataFlowInternalSchema_4023(View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
@@ -1303,7 +1312,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		bendpoints.setPoints(points);
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
-		edge.setType(PipelineVisualIDRegistry.getType(InternalDataFlowSchemaEditPart.VISUAL_ID));
+		edge.setType(PipelineVisualIDRegistry.getType(InternalDataFlowInternalSchemaEditPart.VISUAL_ID));
 		edge.setElement(null);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
@@ -1327,12 +1336,12 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		if (routing != null) {
 			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
 		}
-		Node label6014 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
-		label6014.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		label6014.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
-		Location location6014 = (Location) label6014.getLayoutConstraint();
-		location6014.setX(0);
-		location6014.setY(40);
+		Node label6017 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
+		label6017.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6017.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6017 = (Location) label6017.getLayoutConstraint();
+		location6017.setX(0);
+		location6017.setY(40);
 		return edge;
 	}
 

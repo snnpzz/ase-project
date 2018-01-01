@@ -196,35 +196,35 @@ public class PipelineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.DESCRIPTIVE: {
-				Descriptive descriptive = (Descriptive)theEObject;
-				T result = caseDescriptive(descriptive);
-				if (result == null) result = caseAnalysisOperation(descriptive);
-				if (result == null) result = caseOperation(descriptive);
+			case PipelinePackage.DESCRIPTIVE_ANALYSIS_OPERATION: {
+				DescriptiveAnalysisOperation descriptiveAnalysisOperation = (DescriptiveAnalysisOperation)theEObject;
+				T result = caseDescriptiveAnalysisOperation(descriptiveAnalysisOperation);
+				if (result == null) result = caseAnalysisOperation(descriptiveAnalysisOperation);
+				if (result == null) result = caseOperation(descriptiveAnalysisOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.CLASSIFICATION: {
-				Classification classification = (Classification)theEObject;
-				T result = caseClassification(classification);
-				if (result == null) result = caseAnalysisOperation(classification);
-				if (result == null) result = caseOperation(classification);
+			case PipelinePackage.CLASSIFICATION_ANALYSIS_OPERATION: {
+				ClassificationAnalysisOperation classificationAnalysisOperation = (ClassificationAnalysisOperation)theEObject;
+				T result = caseClassificationAnalysisOperation(classificationAnalysisOperation);
+				if (result == null) result = caseAnalysisOperation(classificationAnalysisOperation);
+				if (result == null) result = caseOperation(classificationAnalysisOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.PREDICTIVE: {
-				Predictive predictive = (Predictive)theEObject;
-				T result = casePredictive(predictive);
-				if (result == null) result = caseAnalysisOperation(predictive);
-				if (result == null) result = caseOperation(predictive);
+			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION: {
+				PredictiveAnalysisOperation predictiveAnalysisOperation = (PredictiveAnalysisOperation)theEObject;
+				T result = casePredictiveAnalysisOperation(predictiveAnalysisOperation);
+				if (result == null) result = caseAnalysisOperation(predictiveAnalysisOperation);
+				if (result == null) result = caseOperation(predictiveAnalysisOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.CLUSTERING: {
-				Clustering clustering = (Clustering)theEObject;
-				T result = caseClustering(clustering);
-				if (result == null) result = caseAnalysisOperation(clustering);
-				if (result == null) result = caseOperation(clustering);
+			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION: {
+				ClusteringAnalysisOperation clusteringAnalysisOperation = (ClusteringAnalysisOperation)theEObject;
+				T result = caseClusteringAnalysisOperation(clusteringAnalysisOperation);
+				if (result == null) result = caseAnalysisOperation(clusteringAnalysisOperation);
+				if (result == null) result = caseOperation(clusteringAnalysisOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -555,62 +555,62 @@ public class PipelineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Descriptive</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Descriptive Analysis Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Descriptive</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Descriptive Analysis Operation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDescriptive(Descriptive object) {
+	public T caseDescriptiveAnalysisOperation(DescriptiveAnalysisOperation object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Classification</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Classification Analysis Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Classification</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Classification Analysis Operation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseClassification(Classification object) {
+	public T caseClassificationAnalysisOperation(ClassificationAnalysisOperation object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Predictive</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Predictive Analysis Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Predictive</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Predictive Analysis Operation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePredictive(Predictive object) {
+	public T casePredictiveAnalysisOperation(PredictiveAnalysisOperation object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Clustering</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Clustering Analysis Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Clustering</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Clustering Analysis Operation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseClustering(Clustering object) {
+	public T caseClusteringAnalysisOperation(ClusteringAnalysisOperation object) {
 		return null;
 	}
 

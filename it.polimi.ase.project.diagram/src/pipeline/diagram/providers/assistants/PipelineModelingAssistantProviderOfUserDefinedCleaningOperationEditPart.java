@@ -11,11 +11,11 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
-import pipeline.diagram.edit.parts.ClassificationEditPart;
-import pipeline.diagram.edit.parts.ClusteringEditPart;
-import pipeline.diagram.edit.parts.DescriptiveEditPart;
+import pipeline.diagram.edit.parts.ClassificationAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.ClusteringAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationEditPart;
 import pipeline.diagram.edit.parts.PredefinedCleaningOperationEditPart;
-import pipeline.diagram.edit.parts.PredictiveEditPart;
+import pipeline.diagram.edit.parts.PredictiveAnalysisOperationEditPart;
 import pipeline.diagram.edit.parts.UserDefinedCleaningOperationEditPart;
 import pipeline.diagram.providers.PipelineElementTypes;
 import pipeline.diagram.providers.PipelineModelingAssistantProvider;
@@ -68,16 +68,16 @@ public class PipelineModelingAssistantProviderOfUserDefinedCleaningOperationEdit
 		if (targetEditPart instanceof PredefinedCleaningOperationEditPart) {
 			types.add(PipelineElementTypes.InternalDataFlow_4006);
 		}
-		if (targetEditPart instanceof DescriptiveEditPart) {
+		if (targetEditPart instanceof DescriptiveAnalysisOperationEditPart) {
 			types.add(PipelineElementTypes.InternalDataFlow_4006);
 		}
-		if (targetEditPart instanceof ClassificationEditPart) {
+		if (targetEditPart instanceof ClassificationAnalysisOperationEditPart) {
 			types.add(PipelineElementTypes.InternalDataFlow_4006);
 		}
-		if (targetEditPart instanceof PredictiveEditPart) {
+		if (targetEditPart instanceof PredictiveAnalysisOperationEditPart) {
 			types.add(PipelineElementTypes.InternalDataFlow_4006);
 		}
-		if (targetEditPart instanceof ClusteringEditPart) {
+		if (targetEditPart instanceof ClusteringAnalysisOperationEditPart) {
 			types.add(PipelineElementTypes.InternalDataFlow_4006);
 		}
 		return types;
@@ -102,10 +102,10 @@ public class PipelineModelingAssistantProviderOfUserDefinedCleaningOperationEdit
 		if (relationshipType == PipelineElementTypes.InternalDataFlow_4006) {
 			types.add(PipelineElementTypes.UserDefinedCleaningOperation_3050);
 			types.add(PipelineElementTypes.PredefinedCleaningOperation_3051);
-			types.add(PipelineElementTypes.Descriptive_3042);
-			types.add(PipelineElementTypes.Classification_3043);
-			types.add(PipelineElementTypes.Predictive_3044);
-			types.add(PipelineElementTypes.Clustering_3045);
+			types.add(PipelineElementTypes.DescriptiveAnalysisOperation_3052);
+			types.add(PipelineElementTypes.ClassificationAnalysisOperation_3053);
+			types.add(PipelineElementTypes.PredictiveAnalysisOperation_3054);
+			types.add(PipelineElementTypes.ClusteringAnalysisOperation_3055);
 		}
 		return types;
 	}
@@ -148,10 +148,10 @@ public class PipelineModelingAssistantProviderOfUserDefinedCleaningOperationEdit
 		if (relationshipType == PipelineElementTypes.InternalDataFlow_4006) {
 			types.add(PipelineElementTypes.UserDefinedCleaningOperation_3050);
 			types.add(PipelineElementTypes.PredefinedCleaningOperation_3051);
-			types.add(PipelineElementTypes.Descriptive_3042);
-			types.add(PipelineElementTypes.Classification_3043);
-			types.add(PipelineElementTypes.Predictive_3044);
-			types.add(PipelineElementTypes.Clustering_3045);
+			types.add(PipelineElementTypes.DescriptiveAnalysisOperation_3052);
+			types.add(PipelineElementTypes.ClassificationAnalysisOperation_3053);
+			types.add(PipelineElementTypes.PredictiveAnalysisOperation_3054);
+			types.add(PipelineElementTypes.ClusteringAnalysisOperation_3055);
 		}
 		return types;
 	}

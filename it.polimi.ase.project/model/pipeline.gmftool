@@ -21,8 +21,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Classification"
-          description="Create new Classification">
+          title="ClassificationAnalysisOperation"
+          description="Create new ClassificationAnalysisOperation">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -39,8 +39,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Clustering"
-          description="Create new Clustering">
+          title="ClusteringAnalysisOperation"
+          description="Create new ClusteringAnalysisOperation">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -66,8 +66,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Descriptive"
-          description="Create new Descriptive">
+          title="DescriptiveAnalysisOperation"
+          description="Create new DescriptiveAnalysisOperation">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -129,8 +129,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Predictive"
-          description="Create new Predictive">
+          title="PredictiveAnalysisOperation"
+          description="Create new PredictiveAnalysisOperation">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -224,8 +224,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Read"
-          description="Create new Read">
+          title="InternalSchema"
+          description="Create new InternalSchema">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -233,8 +233,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Schema"
-          description="Create new Schema">
+          title="Read"
+          description="Create new Read">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

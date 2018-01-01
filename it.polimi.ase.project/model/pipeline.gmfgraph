@@ -11,7 +11,7 @@
       </figures>
       <figures xsi:type="gmfgraph:PolylineDecoration" name="InternalDataFlowFigureTargetDecoration"/>
       <figures xsi:type="gmfgraph:PolylineDecoration" name="DataFlowSchemaFigureTargetDecoration"/>
-      <figures xsi:type="gmfgraph:PolylineDecoration" name="InternalDataFlowSchemaFigureTargetDecoration"/>
+      <figures xsi:type="gmfgraph:PolylineDecoration" name="InternalDataFlowInternalSchemaFigureTargetDecoration"/>
       <figures xsi:type="gmfgraph:PolygonDecoration" name="Sqare">
         <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
         <template y="1"/>
@@ -154,41 +154,41 @@
         </actualFigure>
         <accessors accessor="getFigureFileLabelFigure" figure="/0/@figures.0/@descriptors.11/@actualFigure/@children.0"/>
       </descriptors>
-      <descriptors name="DescriptiveFigure">
-        <actualFigure xsi:type="gmfgraph:Ellipse" name="DescriptiveFigure">
+      <descriptors name="DescriptiveAnalysisOperationFigure">
+        <actualFigure xsi:type="gmfgraph:Ellipse" name="DescriptiveAnalysisOperationFigure">
           <border xsi:type="gmfgraph:MarginBorder">
             <insets top="5" left="5" bottom="5" right="5"/>
           </border>
-          <children xsi:type="gmfgraph:Label" name="DescriptiveLabelFigure" text="Descriptive"/>
+          <children xsi:type="gmfgraph:Label" name="DescriptiveAnalysisOperationLabelFigure" text="DescriptiveAnalysisOperation"/>
         </actualFigure>
-        <accessors accessor="getFigureDescriptiveLabelFigure" figure="/0/@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+        <accessors accessor="getFigureDescriptiveAnalysisOperationLabelFigure" figure="/0/@figures.0/@descriptors.12/@actualFigure/@children.0"/>
       </descriptors>
-      <descriptors name="ClassificationFigure">
-        <actualFigure xsi:type="gmfgraph:Ellipse" name="ClassificationFigure">
+      <descriptors name="ClassificationAnalysisOperationFigure">
+        <actualFigure xsi:type="gmfgraph:Ellipse" name="ClassificationAnalysisOperationFigure">
           <border xsi:type="gmfgraph:MarginBorder">
             <insets top="5" left="5" bottom="5" right="5"/>
           </border>
-          <children xsi:type="gmfgraph:Label" name="ClassificationLabelFigure" text="Classification"/>
+          <children xsi:type="gmfgraph:Label" name="ClassificationAnalysisOperationLabelFigure" text="ClassificationAnalysisOperation"/>
         </actualFigure>
-        <accessors accessor="getFigureClassificationLabelFigure" figure="/0/@figures.0/@descriptors.13/@actualFigure/@children.0"/>
+        <accessors accessor="getFigureClassificationAnalysisOperationLabelFigure" figure="/0/@figures.0/@descriptors.13/@actualFigure/@children.0"/>
       </descriptors>
-      <descriptors name="PredictiveFigure">
-        <actualFigure xsi:type="gmfgraph:Ellipse" name="PredictiveFigure">
+      <descriptors name="PredictiveAnalysisOperationFigure">
+        <actualFigure xsi:type="gmfgraph:Ellipse" name="PredictiveAnalysisOperationFigure">
           <border xsi:type="gmfgraph:MarginBorder">
             <insets top="5" left="5" bottom="5" right="5"/>
           </border>
-          <children xsi:type="gmfgraph:Label" name="PredictiveLabelFigure" text="Predictive"/>
+          <children xsi:type="gmfgraph:Label" name="PredictiveAnalysisOperationLabelFigure" text="PredictiveAnalysisOperation"/>
         </actualFigure>
-        <accessors accessor="getFigurePredictiveLabelFigure" figure="/0/@figures.0/@descriptors.14/@actualFigure/@children.0"/>
+        <accessors accessor="getFigurePredictiveAnalysisOperationLabelFigure" figure="/0/@figures.0/@descriptors.14/@actualFigure/@children.0"/>
       </descriptors>
-      <descriptors name="ClusteringFigure">
-        <actualFigure xsi:type="gmfgraph:Ellipse" name="ClusteringFigure">
+      <descriptors name="ClusteringAnalysisOperationFigure">
+        <actualFigure xsi:type="gmfgraph:Ellipse" name="ClusteringAnalysisOperationFigure">
           <border xsi:type="gmfgraph:MarginBorder">
             <insets top="5" left="5" bottom="5" right="5"/>
           </border>
-          <children xsi:type="gmfgraph:Label" name="ClusteringLabelFigure" text="Clustering"/>
+          <children xsi:type="gmfgraph:Label" name="ClusteringAnalysisOperationLabelFigure" text="ClusteringAnalysisOperation"/>
         </actualFigure>
-        <accessors accessor="getFigureClusteringLabelFigure" figure="/0/@figures.0/@descriptors.15/@actualFigure/@children.0"/>
+        <accessors accessor="getFigureClusteringAnalysisOperationLabelFigure" figure="/0/@figures.0/@descriptors.15/@actualFigure/@children.0"/>
       </descriptors>
       <descriptors name="PredefinedCleaningOperationFigure">
         <actualFigure xsi:type="gmfgraph:Ellipse" name="PredefinedCleaningOperationFigure">
@@ -233,11 +233,11 @@
       <descriptors name="DataFlowSchemaExternalLabelFigure">
         <actualFigure xsi:type="gmfgraph:Label" name="DataFlowSchemaExternalLabel"/>
       </descriptors>
-      <descriptors name="InternalDataFlowSchemaFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="InternalDataFlowSchemaFigure" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.3"/>
+      <descriptors name="InternalDataFlowInternalSchemaFigure">
+        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="InternalDataFlowInternalSchemaFigure" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.3"/>
       </descriptors>
-      <descriptors name="InternalDataFlowSchemaExternalLabelFigure">
-        <actualFigure xsi:type="gmfgraph:Label" name="InternalDataFlowSchemaExternalLabel"/>
+      <descriptors name="InternalDataFlowInternalSchemaExternalLabelFigure">
+        <actualFigure xsi:type="gmfgraph:Label" name="InternalDataFlowInternalSchemaExternalLabel"/>
       </descriptors>
       <descriptors name="ImportReadFigure">
         <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ImportReadFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.4"/>
@@ -276,17 +276,17 @@
     <nodes name="UserDefinedCleaningOperation" figure="UserDefinedCleaningOperationFigure"/>
     <nodes name="Source" figure="SourceFigure"/>
     <nodes name="File" figure="FileFigure"/>
-    <nodes name="Descriptive" figure="DescriptiveFigure"/>
-    <nodes name="Classification" figure="ClassificationFigure"/>
-    <nodes name="Predictive" figure="PredictiveFigure"/>
-    <nodes name="Clustering" figure="ClusteringFigure"/>
+    <nodes name="DescriptiveAnalysisOperation" figure="DescriptiveAnalysisOperationFigure"/>
+    <nodes name="ClassificationAnalysisOperation" figure="ClassificationAnalysisOperationFigure"/>
+    <nodes name="PredictiveAnalysisOperation" figure="PredictiveAnalysisOperationFigure"/>
+    <nodes name="ClusteringAnalysisOperation" figure="ClusteringAnalysisOperationFigure"/>
     <nodes name="PredefinedCleaningOperation" figure="PredefinedCleaningOperationFigure"/>
     <nodes name="SimpleAttribute" figure="SimpleAttributeFigure"/>
     <nodes name="ComplexAttribute" figure="ComplexAttributeFigure"/>
     <connections name="DataFlow" figure="DataFlowFigure"/>
     <connections name="InternalDataFlow" figure="InternalDataFlowFigure"/>
     <connections name="DataFlowSchema" figure="DataFlowSchemaFigure"/>
-    <connections name="InternalDataFlowSchema" figure="InternalDataFlowSchemaFigure"/>
+    <connections name="InternalDataFlowInternalSchema" figure="InternalDataFlowInternalSchemaFigure"/>
     <connections name="ImportRead" figure="ImportReadFigure"/>
     <connections name="ImportImpUses" figure="ImportImpUsesFigure"/>
     <connections name="ExportWrite" figure="ExportWriteFigure"/>
@@ -308,15 +308,15 @@
     <labels name="UserDefinedCleaningOperationLabel" figure="UserDefinedCleaningOperationFigure" accessor="/0/@figures.0/@descriptors.9/@accessors.0"/>
     <labels name="SourceLabel" figure="SourceFigure" accessor="/0/@figures.0/@descriptors.10/@accessors.0"/>
     <labels name="FileLabel" figure="FileFigure" accessor="/0/@figures.0/@descriptors.11/@accessors.0"/>
-    <labels name="DescriptiveLabel" figure="DescriptiveFigure" accessor="/0/@figures.0/@descriptors.12/@accessors.0"/>
-    <labels name="ClassificationLabel" figure="ClassificationFigure" accessor="/0/@figures.0/@descriptors.13/@accessors.0"/>
-    <labels name="PredictiveLabel" figure="PredictiveFigure" accessor="/0/@figures.0/@descriptors.14/@accessors.0"/>
-    <labels name="ClusteringLabel" figure="ClusteringFigure" accessor="/0/@figures.0/@descriptors.15/@accessors.0"/>
+    <labels name="DescriptiveAnalysisOperationLabel" figure="DescriptiveAnalysisOperationFigure" accessor="/0/@figures.0/@descriptors.12/@accessors.0"/>
+    <labels name="ClassificationAnalysisOperationLabel" figure="ClassificationAnalysisOperationFigure" accessor="/0/@figures.0/@descriptors.13/@accessors.0"/>
+    <labels name="PredictiveAnalysisOperationLabel" figure="PredictiveAnalysisOperationFigure" accessor="/0/@figures.0/@descriptors.14/@accessors.0"/>
+    <labels name="ClusteringAnalysisOperationLabel" figure="ClusteringAnalysisOperationFigure" accessor="/0/@figures.0/@descriptors.15/@accessors.0"/>
     <labels name="PredefinedCleaningOperationLabel" figure="PredefinedCleaningOperationFigure" accessor="/0/@figures.0/@descriptors.16/@accessors.0"/>
     <labels name="SimpleAttributeLabel" figure="SimpleAttributeFigure" accessor="/0/@figures.0/@descriptors.17/@accessors.0"/>
     <labels name="ComplexAttributeLabel" figure="ComplexAttributeFigure" accessor="/0/@figures.0/@descriptors.18/@accessors.0"/>
     <labels name="DataFlowSchemaExternalLabel" figure="DataFlowSchemaExternalLabelFigure" elementIcon="false"/>
-    <labels name="InternalDataFlowSchemaExternalLabel" figure="InternalDataFlowSchemaExternalLabelFigure" elementIcon="false"/>
+    <labels name="InternalDataFlowInternalSchemaExternalLabel" figure="InternalDataFlowInternalSchemaExternalLabelFigure" elementIcon="false"/>
     <labels name="ImportReadExternalLabel" figure="ImportReadExternalLabelFigure" elementIcon="false"/>
     <labels name="ImportImpUsesExternalLabel" figure="ImportImpUsesExternalLabelFigure" elementIcon="false"/>
     <labels name="ExportWriteExternalLabel" figure="ExportWriteExternalLabelFigure" elementIcon="false"/>

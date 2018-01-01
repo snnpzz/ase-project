@@ -166,19 +166,19 @@
             href="pipeline.ecore#//AnalysisTask/analysisOperations"/>
         <ownedChild>
           <domainMetaElement
-              href="pipeline.ecore#//Descriptive"/>
+              href="pipeline.ecore#//DescriptiveAnalysisOperation"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="pipeline.gmfgraph#DescriptiveLabel"/>
+                href="pipeline.gmfgraph#DescriptiveAnalysisOperationLabel"/>
             <features
-                href="pipeline.ecore#//Descriptive/name"/>
+                href="pipeline.ecore#//DescriptiveAnalysisOperation/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="pipeline.gmftool#//@palette/@tools.0/@tools.6"/>
           <diagramNode
-              href="pipeline.gmfgraph#Descriptive"/>
+              href="pipeline.gmfgraph#DescriptiveAnalysisOperation"/>
         </ownedChild>
       </children>
       <children
@@ -187,19 +187,19 @@
             href="pipeline.ecore#//AnalysisTask/analysisOperations"/>
         <ownedChild>
           <domainMetaElement
-              href="pipeline.ecore#//Classification"/>
+              href="pipeline.ecore#//ClassificationAnalysisOperation"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="pipeline.gmfgraph#ClassificationLabel"/>
+                href="pipeline.gmfgraph#ClassificationAnalysisOperationLabel"/>
             <features
-                href="pipeline.ecore#//Classification/name"/>
+                href="pipeline.ecore#//ClassificationAnalysisOperation/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="pipeline.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
-              href="pipeline.gmfgraph#Classification"/>
+              href="pipeline.gmfgraph#ClassificationAnalysisOperation"/>
         </ownedChild>
       </children>
       <children
@@ -208,19 +208,19 @@
             href="pipeline.ecore#//AnalysisTask/analysisOperations"/>
         <ownedChild>
           <domainMetaElement
-              href="pipeline.ecore#//Predictive"/>
+              href="pipeline.ecore#//PredictiveAnalysisOperation"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="pipeline.gmfgraph#PredictiveLabel"/>
+                href="pipeline.gmfgraph#PredictiveAnalysisOperationLabel"/>
             <features
-                href="pipeline.ecore#//Predictive/name"/>
+                href="pipeline.ecore#//PredictiveAnalysisOperation/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="pipeline.gmftool#//@palette/@tools.0/@tools.13"/>
           <diagramNode
-              href="pipeline.gmfgraph#Predictive"/>
+              href="pipeline.gmfgraph#PredictiveAnalysisOperation"/>
         </ownedChild>
       </children>
       <children
@@ -229,19 +229,19 @@
             href="pipeline.ecore#//AnalysisTask/analysisOperations"/>
         <ownedChild>
           <domainMetaElement
-              href="pipeline.ecore#//Clustering"/>
+              href="pipeline.ecore#//ClusteringAnalysisOperation"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="pipeline.gmfgraph#ClusteringLabel"/>
+                href="pipeline.gmfgraph#ClusteringAnalysisOperationLabel"/>
             <features
-                href="pipeline.ecore#//Clustering/name"/>
+                href="pipeline.ecore#//ClusteringAnalysisOperation/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="pipeline.gmftool#//@palette/@tools.0/@tools.3"/>
           <diagramNode
-              href="pipeline.gmfgraph#Clustering"/>
+              href="pipeline.gmfgraph#ClusteringAnalysisOperation"/>
         </ownedChild>
       </children>
       <compartments
@@ -480,7 +480,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="pipeline.gmftool#//@palette/@tools.1/@tools.5"/>
+        href="pipeline.gmftool#//@palette/@tools.1/@tools.6"/>
     <diagramLink
         href="pipeline.gmfgraph#DataFlowSchema"/>
     <linkMetaFeature
@@ -492,16 +492,16 @@
         xsi:type="gmfmap:DesignLabelMapping"
         readOnly="true">
       <diagramLabel
-          href="pipeline.gmfgraph#InternalDataFlowSchemaExternalLabel"/>
+          href="pipeline.gmfgraph#InternalDataFlowInternalSchemaExternalLabel"/>
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="pipeline.gmftool#//@palette/@tools.1/@tools.6"/>
+        href="pipeline.gmftool#//@palette/@tools.1/@tools.4"/>
     <diagramLink
-        href="pipeline.gmfgraph#InternalDataFlowSchema"/>
+        href="pipeline.gmfgraph#InternalDataFlowInternalSchema"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="pipeline.ecore#//InternalDataFlow/schema"/>
+        href="pipeline.ecore#//InternalDataFlow/internalSchema"/>
   </links>
   <links>
     <labelMappings
@@ -512,7 +512,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="pipeline.gmftool#//@palette/@tools.1/@tools.4"/>
+        href="pipeline.gmftool#//@palette/@tools.1/@tools.5"/>
     <diagramLink
         href="pipeline.gmfgraph#ImportRead"/>
     <linkMetaFeature

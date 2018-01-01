@@ -37,7 +37,7 @@ public class PipelineModelingAssistantProviderOfExportEditPart extends PipelineM
 	*/
 	public List<IElementType> doGetRelTypesOnSource(ExportEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(PipelineElementTypes.ExportGenerates_4008);
+		types.add(PipelineElementTypes.ExportWrite_4022);
 		types.add(PipelineElementTypes.ExportExpUses_4014);
 		return types;
 	}
@@ -59,7 +59,7 @@ public class PipelineModelingAssistantProviderOfExportEditPart extends PipelineM
 	public List<IElementType> doGetRelTypesOnSourceAndTarget(ExportEditPart source, IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof FileEditPart) {
-			types.add(PipelineElementTypes.ExportGenerates_4008);
+			types.add(PipelineElementTypes.ExportWrite_4022);
 		}
 		if (targetEditPart instanceof SchemaEditPart) {
 			types.add(PipelineElementTypes.ExportExpUses_4014);
@@ -82,7 +82,7 @@ public class PipelineModelingAssistantProviderOfExportEditPart extends PipelineM
 	*/
 	public List<IElementType> doGetTypesForTarget(ExportEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == PipelineElementTypes.ExportGenerates_4008) {
+		if (relationshipType == PipelineElementTypes.ExportWrite_4022) {
 			types.add(PipelineElementTypes.File_2045);
 		} else if (relationshipType == PipelineElementTypes.ExportExpUses_4014) {
 			types.add(PipelineElementTypes.Schema_2043);

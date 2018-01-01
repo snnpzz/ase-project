@@ -34,7 +34,7 @@ public class PipelineModelingAssistantProviderOfSourceEditPart extends PipelineM
 	*/
 	public List<IElementType> doGetRelTypesOnTarget(SourceEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(PipelineElementTypes.ImportReadsFrom_4007);
+		types.add(PipelineElementTypes.ImportRead_4021);
 		return types;
 	}
 
@@ -53,7 +53,7 @@ public class PipelineModelingAssistantProviderOfSourceEditPart extends PipelineM
 	*/
 	public List<IElementType> doGetTypesForSource(SourceEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == PipelineElementTypes.ImportReadsFrom_4007) {
+		if (relationshipType == PipelineElementTypes.ImportRead_4021) {
 			types.add(PipelineElementTypes.Import_3025);
 		}
 		return types;

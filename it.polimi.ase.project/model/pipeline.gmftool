@@ -206,15 +206,6 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Generates"
-          description="Create new Generates">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="ImpUses"
           description="Create new ImpUses">
         <smallIcon
@@ -233,8 +224,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="ReadsFrom"
-          description="Create new ReadsFrom">
+          title="Read"
+          description="Create new Read">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -253,6 +244,15 @@
           xsi:type="gmftool:CreationTool"
           title="Schema"
           description="Create new Schema">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Write"
+          description="Create new Write">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

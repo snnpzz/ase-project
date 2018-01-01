@@ -6,7 +6,8 @@ package pipeline.diagram.edit.policies;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
-import pipeline.diagram.edit.commands.AttributeCreateCommand;
+import pipeline.diagram.edit.commands.ComplexAttributeCreateCommand;
+import pipeline.diagram.edit.commands.SimpleAttributeCreateCommand;
 import pipeline.diagram.providers.PipelineElementTypes;
 
 /**
@@ -25,8 +26,11 @@ public class SchemaSchemaAttributesCompartmentItemSemanticEditPolicy extends Pip
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (PipelineElementTypes.Attribute_3038 == req.getElementType()) {
-			return getGEFWrapper(new AttributeCreateCommand(req));
+		if (PipelineElementTypes.SimpleAttribute_3046 == req.getElementType()) {
+			return getGEFWrapper(new SimpleAttributeCreateCommand(req));
+		}
+		if (PipelineElementTypes.ComplexAttribute_3047 == req.getElementType()) {
+			return getGEFWrapper(new ComplexAttributeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

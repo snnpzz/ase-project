@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
+import pipeline.AnalysisTask;
 import pipeline.Classification;
 import pipeline.Pipeline;
 import pipeline.PipelineFactory;
@@ -57,8 +58,8 @@ public class ClassificationCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Classification newElement = PipelineFactory.eINSTANCE.createClassification();
 
-		Pipeline owner = (Pipeline) getElementToEdit();
-		owner.getOperations().add(newElement);
+		AnalysisTask owner = (AnalysisTask) getElementToEdit();
+		owner.getAnalysisOperations().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.Export#getGenerates <em>Generates</em>}</li>
+ *   <li>{@link pipeline.Export#getWrite <em>Write</em>}</li>
  *   <li>{@link pipeline.Export#getExpUses <em>Exp Uses</em>}</li>
  *   <li>{@link pipeline.Export#getName <em>Name</em>}</li>
  * </ul>
@@ -24,33 +24,33 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Export extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Generates</b></em>' reference.
+	 * Returns the value of the '<em><b>Write</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link pipeline.File#getComesFrom <em>Comes From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Generates</em>' reference isn't clear,
+	 * If the meaning of the '<em>Write</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Generates</em>' reference.
-	 * @see #setGenerates(File)
-	 * @see pipeline.PipelinePackage#getExport_Generates()
+	 * @return the value of the '<em>Write</em>' reference.
+	 * @see #setWrite(File)
+	 * @see pipeline.PipelinePackage#getExport_Write()
 	 * @see pipeline.File#getComesFrom
 	 * @model opposite="comesFrom" required="true"
 	 *        annotation="gmf.link width='2' target.decoration='square' style='dash'"
 	 * @generated
 	 */
-	File getGenerates();
+	File getWrite();
 
 	/**
-	 * Sets the value of the '{@link pipeline.Export#getGenerates <em>Generates</em>}' reference.
+	 * Sets the value of the '{@link pipeline.Export#getWrite <em>Write</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Generates</em>' reference.
-	 * @see #getGenerates()
+	 * @param value the new value of the '<em>Write</em>' reference.
+	 * @see #getWrite()
 	 * @generated
 	 */
-	void setGenerates(File value);
+	void setWrite(File value);
 
 	/**
 	 * Returns the value of the '<em><b>Exp Uses</b></em>' reference.

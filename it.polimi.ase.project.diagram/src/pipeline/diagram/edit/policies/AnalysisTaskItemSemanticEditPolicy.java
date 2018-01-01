@@ -22,11 +22,15 @@ import pipeline.diagram.edit.commands.DataFlowCreateCommand;
 import pipeline.diagram.edit.commands.DataFlowReorientCommand;
 import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.Classification2EditPart;
+import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.Clustering2EditPart;
+import pipeline.diagram.edit.parts.ClusteringEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.Descriptive2EditPart;
+import pipeline.diagram.edit.parts.DescriptiveEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.Predictive2EditPart;
+import pipeline.diagram.edit.parts.PredictiveEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 import pipeline.diagram.providers.PipelineElementTypes;
 
@@ -92,7 +96,7 @@ public class AnalysisTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (PipelineVisualIDRegistry.getVisualID(cnode)) {
-					case Descriptive2EditPart.VISUAL_ID:
+					case DescriptiveEditPart.VISUAL_ID:
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							if (PipelineVisualIDRegistry
@@ -118,7 +122,7 @@ public class AnalysisTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
-					case Classification2EditPart.VISUAL_ID:
+					case ClassificationEditPart.VISUAL_ID:
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							if (PipelineVisualIDRegistry
@@ -144,7 +148,7 @@ public class AnalysisTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
-					case Predictive2EditPart.VISUAL_ID:
+					case PredictiveEditPart.VISUAL_ID:
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							if (PipelineVisualIDRegistry
@@ -170,7 +174,7 @@ public class AnalysisTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
-					case Clustering2EditPart.VISUAL_ID:
+					case ClusteringEditPart.VISUAL_ID:
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							if (PipelineVisualIDRegistry

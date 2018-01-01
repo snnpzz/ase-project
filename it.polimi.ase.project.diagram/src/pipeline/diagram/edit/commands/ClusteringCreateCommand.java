@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
+import pipeline.AnalysisTask;
 import pipeline.Clustering;
 import pipeline.Pipeline;
 import pipeline.PipelineFactory;
@@ -57,8 +58,8 @@ public class ClusteringCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Clustering newElement = PipelineFactory.eINSTANCE.createClustering();
 
-		Pipeline owner = (Pipeline) getElementToEdit();
-		owner.getOperations().add(newElement);
+		AnalysisTask owner = (AnalysisTask) getElementToEdit();
+		owner.getAnalysisOperations().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -175,20 +175,6 @@
       visualID="4006"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'InternalDataFlow')"/>
   <linkTraces
-      visualID="4007"
-      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Import') and _feature_.name = 'readsFrom')">
-    <linkLabelTraces
-        visualID="6001"
-        queryText="true"/>
-  </linkTraces>
-  <linkTraces
-      visualID="4008"
-      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Export') and _feature_.name = 'generates')">
-    <linkLabelTraces
-        visualID="6002"
-        queryText="true"/>
-  </linkTraces>
-  <linkTraces
       visualID="4013"
       queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Import') and _feature_.name = 'impUses')">
     <linkLabelTraces
@@ -214,6 +200,20 @@
       queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'InternalDataFlow') and _feature_.name = 'schema')">
     <linkLabelTraces
         visualID="6014"
+        queryText="true"/>
+  </linkTraces>
+  <linkTraces
+      visualID="4021"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Import') and _feature_.name = 'read')">
+    <linkLabelTraces
+        visualID="6015"
+        queryText="true"/>
+  </linkTraces>
+  <linkTraces
+      visualID="4022"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Export') and _feature_.name = 'write')">
+    <linkLabelTraces
+        visualID="6016"
         queryText="true"/>
   </linkTraces>
 </trace:TraceModel>

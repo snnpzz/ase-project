@@ -150,9 +150,9 @@ public class SourceImpl extends EObjectImpl implements Source {
 		if (newLinkedTo != linkedTo) {
 			NotificationChain msgs = null;
 			if (linkedTo != null)
-				msgs = ((InternalEObject)linkedTo).eInverseRemove(this, PipelinePackage.IMPORT__READS_FROM, Import.class, msgs);
+				msgs = ((InternalEObject)linkedTo).eInverseRemove(this, PipelinePackage.IMPORT__READ, Import.class, msgs);
 			if (newLinkedTo != null)
-				msgs = ((InternalEObject)newLinkedTo).eInverseAdd(this, PipelinePackage.IMPORT__READS_FROM, Import.class, msgs);
+				msgs = ((InternalEObject)newLinkedTo).eInverseAdd(this, PipelinePackage.IMPORT__READ, Import.class, msgs);
 			msgs = basicSetLinkedTo(newLinkedTo, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -212,7 +212,7 @@ public class SourceImpl extends EObjectImpl implements Source {
 		switch (featureID) {
 			case PipelinePackage.SOURCE__LINKED_TO:
 				if (linkedTo != null)
-					msgs = ((InternalEObject)linkedTo).eInverseRemove(this, PipelinePackage.IMPORT__READS_FROM, Import.class, msgs);
+					msgs = ((InternalEObject)linkedTo).eInverseRemove(this, PipelinePackage.IMPORT__READ, Import.class, msgs);
 				return basicSetLinkedTo((Import)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);

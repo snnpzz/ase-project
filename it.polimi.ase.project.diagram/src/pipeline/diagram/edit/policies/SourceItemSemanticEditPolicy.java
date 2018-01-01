@@ -18,9 +18,9 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 
-import pipeline.diagram.edit.commands.ImportReadsFromCreateCommand;
-import pipeline.diagram.edit.commands.ImportReadsFromReorientCommand;
-import pipeline.diagram.edit.parts.ImportReadsFromEditPart;
+import pipeline.diagram.edit.commands.ImportReadCreateCommand;
+import pipeline.diagram.edit.commands.ImportReadReorientCommand;
+import pipeline.diagram.edit.parts.ImportReadEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 import pipeline.diagram.providers.PipelineElementTypes;
 
@@ -45,7 +45,7 @@ public class SourceItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == ImportReadsFromEditPart.VISUAL_ID) {
+			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == ImportReadEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
@@ -78,7 +78,7 @@ public class SourceItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.ImportReadsFrom_4007 == req.getElementType()) {
+		if (PipelineElementTypes.ImportRead_4021 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -88,8 +88,8 @@ public class SourceItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.ImportReadsFrom_4007 == req.getElementType()) {
-			return getGEFWrapper(new ImportReadsFromCreateCommand(req, req.getSource(), req.getTarget()));
+		if (PipelineElementTypes.ImportRead_4021 == req.getElementType()) {
+			return getGEFWrapper(new ImportReadCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -102,8 +102,8 @@ public class SourceItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case ImportReadsFromEditPart.VISUAL_ID:
-			return getGEFWrapper(new ImportReadsFromReorientCommand(req));
+		case ImportReadEditPart.VISUAL_ID:
+			return getGEFWrapper(new ImportReadReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

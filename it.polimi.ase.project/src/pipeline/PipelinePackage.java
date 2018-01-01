@@ -681,13 +681,22 @@ public interface PipelinePackage extends EPackage {
 	int VISUALIZATION_TASK__SIZE = TASK_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Chart Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_TASK__CHART_TYPE = TASK_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Visualization Task</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VISUALIZATION_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
+	int VISUALIZATION_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.ExportTaskImpl <em>Export Task</em>}' class.
@@ -755,13 +764,13 @@ public interface PipelinePackage extends EPackage {
 	int IMPORT = 13;
 
 	/**
-	 * The feature id for the '<em><b>Reads From</b></em>' reference.
+	 * The feature id for the '<em><b>Read</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPORT__READS_FROM = 0;
+	int IMPORT__READ = 0;
 
 	/**
 	 * The feature id for the '<em><b>Imp Uses</b></em>' reference.
@@ -801,13 +810,13 @@ public interface PipelinePackage extends EPackage {
 	int EXPORT = 14;
 
 	/**
-	 * The feature id for the '<em><b>Generates</b></em>' reference.
+	 * The feature id for the '<em><b>Write</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORT__GENERATES = 0;
+	int EXPORT__WRITE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Exp Uses</b></em>' reference.
@@ -1482,6 +1491,16 @@ public interface PipelinePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link pipeline.ChartType <em>Chart Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.ChartType
+	 * @see pipeline.impl.PipelinePackageImpl#getChartType()
+	 * @generated
+	 */
+	int CHART_TYPE = 35;
+
+	/**
 	 * Returns the meta object for class '{@link pipeline.Pipeline <em>Pipeline</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1932,6 +1951,17 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getVisualizationTask_Size();
 
 	/**
+	 * Returns the meta object for the attribute '{@link pipeline.VisualizationTask#getChartType <em>Chart Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Chart Type</em>'.
+	 * @see pipeline.VisualizationTask#getChartType()
+	 * @see #getVisualizationTask()
+	 * @generated
+	 */
+	EAttribute getVisualizationTask_ChartType();
+
+	/**
 	 * Returns the meta object for class '{@link pipeline.ExportTask <em>Export Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1963,15 +1993,15 @@ public interface PipelinePackage extends EPackage {
 	EClass getImport();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.Import#getReadsFrom <em>Reads From</em>}'.
+	 * Returns the meta object for the reference '{@link pipeline.Import#getRead <em>Read</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Reads From</em>'.
-	 * @see pipeline.Import#getReadsFrom()
+	 * @return the meta object for the reference '<em>Read</em>'.
+	 * @see pipeline.Import#getRead()
 	 * @see #getImport()
 	 * @generated
 	 */
-	EReference getImport_ReadsFrom();
+	EReference getImport_Read();
 
 	/**
 	 * Returns the meta object for the reference '{@link pipeline.Import#getImpUses <em>Imp Uses</em>}'.
@@ -2006,15 +2036,15 @@ public interface PipelinePackage extends EPackage {
 	EClass getExport();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.Export#getGenerates <em>Generates</em>}'.
+	 * Returns the meta object for the reference '{@link pipeline.Export#getWrite <em>Write</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Generates</em>'.
-	 * @see pipeline.Export#getGenerates()
+	 * @return the meta object for the reference '<em>Write</em>'.
+	 * @see pipeline.Export#getWrite()
 	 * @see #getExport()
 	 * @generated
 	 */
-	EReference getExport_Generates();
+	EReference getExport_Write();
 
 	/**
 	 * Returns the meta object for the reference '{@link pipeline.Export#getExpUses <em>Exp Uses</em>}'.
@@ -2404,6 +2434,16 @@ public interface PipelinePackage extends EPackage {
 	EEnum getType();
 
 	/**
+	 * Returns the meta object for enum '{@link pipeline.ChartType <em>Chart Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Chart Type</em>'.
+	 * @see pipeline.ChartType
+	 * @generated
+	 */
+	EEnum getChartType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2786,6 +2826,14 @@ public interface PipelinePackage extends EPackage {
 		EAttribute VISUALIZATION_TASK__SIZE = eINSTANCE.getVisualizationTask_Size();
 
 		/**
+		 * The meta object literal for the '<em><b>Chart Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VISUALIZATION_TASK__CHART_TYPE = eINSTANCE.getVisualizationTask_ChartType();
+
+		/**
 		 * The meta object literal for the '{@link pipeline.impl.ExportTaskImpl <em>Export Task</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2814,12 +2862,12 @@ public interface PipelinePackage extends EPackage {
 		EClass IMPORT = eINSTANCE.getImport();
 
 		/**
-		 * The meta object literal for the '<em><b>Reads From</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Read</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IMPORT__READS_FROM = eINSTANCE.getImport_ReadsFrom();
+		EReference IMPORT__READ = eINSTANCE.getImport_Read();
 
 		/**
 		 * The meta object literal for the '<em><b>Imp Uses</b></em>' reference feature.
@@ -2848,12 +2896,12 @@ public interface PipelinePackage extends EPackage {
 		EClass EXPORT = eINSTANCE.getExport();
 
 		/**
-		 * The meta object literal for the '<em><b>Generates</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Write</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXPORT__GENERATES = eINSTANCE.getExport_Generates();
+		EReference EXPORT__WRITE = eINSTANCE.getExport_Write();
 
 		/**
 		 * The meta object literal for the '<em><b>Exp Uses</b></em>' reference feature.
@@ -3190,6 +3238,16 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum TYPE = eINSTANCE.getType();
+
+		/**
+		 * The meta object literal for the '{@link pipeline.ChartType <em>Chart Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pipeline.ChartType
+		 * @see pipeline.impl.PipelinePackageImpl#getChartType()
+		 * @generated
+		 */
+		EEnum CHART_TYPE = eINSTANCE.getChartType();
 
 	}
 

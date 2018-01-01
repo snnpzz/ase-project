@@ -41,7 +41,7 @@ class InternalDataFlow {
   ref Operation#outgoing source;
   ref Operation#incoming target;
 
-  @gmf.link(width="1", target.decoration="arrow")
+  @gmf.link(width="1", target.decoration="arrow", style="dash")
   ref Schema[1] schema;
 }
 
@@ -67,7 +67,6 @@ class CollectionTask extends Task {
 }
 
 class IntegrationTask extends Task {
-  @gmf.link(width="1", target.decoration="arrow", style="dash")
   ref Attribute[+] attributes;
 }
 
@@ -85,6 +84,7 @@ class AnalysisTask extends Task {
 
 class VisualizationTask extends Task {
   attr Size size;
+  attr ChartType chartType;
 }
 
 class ExportTask extends Task {
@@ -97,7 +97,7 @@ class ExportTask extends Task {
 class Import {
 
   @gmf.link(width="2", target.decoration="square", style="dash")
-  ref Source[1]#linkedTo readsFrom;
+  ref Source[1]#linkedTo read;
 
   @gmf.link(width="1", target.decoration="arrow")
   ref Schema[1] impUses;
@@ -107,8 +107,8 @@ class Import {
 @gmf.node(label="name", label.text="Export", figure="ellipse")
 class Export {
 
-  @gmf.link(width="2", target.decoration="filledsquare", style="dash")
-  ref File[1]#comesFrom generates;
+  @gmf.link(width="2", target.decoration="square", style="dash")
+  ref File[1]#comesFrom write;
 
   @gmf.link(width="1", target.decoration="arrow")
   ref Schema[1] expUses;
@@ -121,7 +121,7 @@ class UserDefined extends CleaningOperation {
 
 @gmf.node(label="name")
 class Source {
-  ref Import[1]#readsFrom linkedTo;
+  ref Import[1]#read linkedTo;
   attr String name;
   attr String path;
 }
@@ -130,7 +130,7 @@ class Source {
 class File {
   attr String name;
   attr String path;
-  ref Export[1]#generates comesFrom;
+  ref Export[1]#write comesFrom;
 }
 
 abstract class CleaningOperation extends Operation {
@@ -222,5 +222,27 @@ enum Type {
   mDouble = 2;
   mBoolean = 3;
   mDate = 4;
+}
+
+enum ChartType {
+  Column = 0;
+  Line = 0;
+  Pie = 0;
+  Doughnut = 0;
+  Bar = 0;
+  Area = 0;
+  Scatter = 0;
+  Bubble = 0;
+  Map = 0;
+  Stock = 0;
+  Surface = 0;
+  Radar = 0;
+  Treemap = 0;
+  Sunburst = 0;
+  Histogram = 0;
+  BoxAndWhisker = 0;
+  Waterfall = 0;
+  Funnel = 0;
+  Combo = 0;
 }
 

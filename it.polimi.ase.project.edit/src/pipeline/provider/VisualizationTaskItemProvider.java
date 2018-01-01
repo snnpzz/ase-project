@@ -46,6 +46,7 @@ public class VisualizationTaskItemProvider extends TaskItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addSizePropertyDescriptor(object);
+			addChartTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -64,6 +65,28 @@ public class VisualizationTaskItemProvider extends TaskItemProvider {
 				 getString("_UI_VisualizationTask_size_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_VisualizationTask_size_feature", "_UI_VisualizationTask_type"),
 				 PipelinePackage.Literals.VISUALIZATION_TASK__SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Chart Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addChartTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_VisualizationTask_chartType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_VisualizationTask_chartType_feature", "_UI_VisualizationTask_type"),
+				 PipelinePackage.Literals.VISUALIZATION_TASK__CHART_TYPE,
 				 true,
 				 false,
 				 false,
@@ -111,6 +134,7 @@ public class VisualizationTaskItemProvider extends TaskItemProvider {
 
 		switch (notification.getFeatureID(VisualizationTask.class)) {
 			case PipelinePackage.VISUALIZATION_TASK__SIZE:
+			case PipelinePackage.VISUALIZATION_TASK__CHART_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -107,7 +107,6 @@ public class PipelineItemProvider
 			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__INTERNAL_DATA_FLOWS);
 			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__SOURCES);
 			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__FILES);
-			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__OPERATIONS);
 			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__SCHEMAS);
 		}
 		return childrenFeatures;
@@ -172,7 +171,6 @@ public class PipelineItemProvider
 			case PipelinePackage.PIPELINE__INTERNAL_DATA_FLOWS:
 			case PipelinePackage.PIPELINE__SOURCES:
 			case PipelinePackage.PIPELINE__FILES:
-			case PipelinePackage.PIPELINE__OPERATIONS:
 			case PipelinePackage.PIPELINE__SCHEMAS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -240,36 +238,6 @@ public class PipelineItemProvider
 			(createChildParameter
 				(PipelinePackage.Literals.PIPELINE__FILES,
 				 PipelineFactory.eINSTANCE.createFile()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PipelinePackage.Literals.PIPELINE__OPERATIONS,
-				 PipelineFactory.eINSTANCE.createUserDefined()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PipelinePackage.Literals.PIPELINE__OPERATIONS,
-				 PipelineFactory.eINSTANCE.createDescriptive()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PipelinePackage.Literals.PIPELINE__OPERATIONS,
-				 PipelineFactory.eINSTANCE.createClassification()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PipelinePackage.Literals.PIPELINE__OPERATIONS,
-				 PipelineFactory.eINSTANCE.createPredictive()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PipelinePackage.Literals.PIPELINE__OPERATIONS,
-				 PipelineFactory.eINSTANCE.createClustering()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PipelinePackage.Literals.PIPELINE__OPERATIONS,
-				 PipelineFactory.eINSTANCE.createPredefined()));
 
 		newChildDescriptors.add
 			(createChildParameter

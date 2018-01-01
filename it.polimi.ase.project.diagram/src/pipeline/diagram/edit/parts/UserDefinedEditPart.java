@@ -38,7 +38,7 @@ public class UserDefinedEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 2033;
+	public static final int VISUAL_ID = 3040;
 
 	/**
 	* @generated
@@ -246,18 +246,6 @@ public class UserDefinedEditPart extends ShapeNodeEditPart {
 	*/
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(PipelineVisualIDRegistry.getType(UserDefinedNameEditPart.VISUAL_ID));
-	}
-
-	/**
-	* @generated
-	*/
-	protected void handleNotificationEvent(Notification event) {
-		if (event.getNotifier() == getModel()
-				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
-			handleMajorSemanticChange();
-		} else {
-			super.handleNotificationEvent(event);
-		}
 	}
 
 	/**

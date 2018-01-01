@@ -164,29 +164,6 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pipeline.Attribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AttributeItemProvider attributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link pipeline.Attribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAttributeAdapter() {
-		if (attributeItemProvider == null) {
-			attributeItemProvider = new AttributeItemProvider(this);
-		}
-
-		return attributeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link pipeline.CollectionTask} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -555,6 +532,52 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link pipeline.SimpleAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SimpleAttributeItemProvider simpleAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pipeline.SimpleAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSimpleAttributeAdapter() {
+		if (simpleAttributeItemProvider == null) {
+			simpleAttributeItemProvider = new SimpleAttributeItemProvider(this);
+		}
+
+		return simpleAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pipeline.ComplexAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComplexAttributeItemProvider complexAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pipeline.ComplexAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComplexAttributeAdapter() {
+		if (complexAttributeItemProvider == null) {
+			complexAttributeItemProvider = new ComplexAttributeItemProvider(this);
+		}
+
+		return complexAttributeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -657,7 +680,6 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 		if (dataFlowItemProvider != null) dataFlowItemProvider.dispose();
 		if (internalDataFlowItemProvider != null) internalDataFlowItemProvider.dispose();
 		if (schemaItemProvider != null) schemaItemProvider.dispose();
-		if (attributeItemProvider != null) attributeItemProvider.dispose();
 		if (collectionTaskItemProvider != null) collectionTaskItemProvider.dispose();
 		if (integrationTaskItemProvider != null) integrationTaskItemProvider.dispose();
 		if (cleaningTaskItemProvider != null) cleaningTaskItemProvider.dispose();
@@ -674,6 +696,8 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 		if (predictiveItemProvider != null) predictiveItemProvider.dispose();
 		if (clusteringItemProvider != null) clusteringItemProvider.dispose();
 		if (predefinedItemProvider != null) predefinedItemProvider.dispose();
+		if (simpleAttributeItemProvider != null) simpleAttributeItemProvider.dispose();
+		if (complexAttributeItemProvider != null) complexAttributeItemProvider.dispose();
 	}
 
 }

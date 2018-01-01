@@ -64,7 +64,7 @@ public class InternalDataFlowItemProvider
 			addFormatPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
-			addIntDFschemaPropertyDescriptor(object);
+			addSchemaPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -136,19 +136,19 @@ public class InternalDataFlowItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Int DFschema feature.
+	 * This adds a property descriptor for the Schema feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIntDFschemaPropertyDescriptor(Object object) {
+	protected void addSchemaPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_InternalDataFlow_intDFschema_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_InternalDataFlow_intDFschema_feature", "_UI_InternalDataFlow_type"),
-				 PipelinePackage.Literals.INTERNAL_DATA_FLOW__INT_DFSCHEMA,
+				 getString("_UI_InternalDataFlow_schema_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InternalDataFlow_schema_feature", "_UI_InternalDataFlow_type"),
+				 PipelinePackage.Literals.INTERNAL_DATA_FLOW__SCHEMA,
 				 true,
 				 false,
 				 true,

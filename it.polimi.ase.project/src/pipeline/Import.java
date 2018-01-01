@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.Import#getReadsFrom <em>Reads From</em>}</li>
+ *   <li>{@link pipeline.Import#getRead <em>Read</em>}</li>
  *   <li>{@link pipeline.Import#getImpUses <em>Imp Uses</em>}</li>
  *   <li>{@link pipeline.Import#getName <em>Name</em>}</li>
  * </ul>
@@ -24,33 +24,33 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Import extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Reads From</b></em>' reference.
+	 * Returns the value of the '<em><b>Read</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link pipeline.Source#getLinkedTo <em>Linked To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Reads From</em>' reference isn't clear,
+	 * If the meaning of the '<em>Read</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reads From</em>' reference.
-	 * @see #setReadsFrom(Source)
-	 * @see pipeline.PipelinePackage#getImport_ReadsFrom()
+	 * @return the value of the '<em>Read</em>' reference.
+	 * @see #setRead(Source)
+	 * @see pipeline.PipelinePackage#getImport_Read()
 	 * @see pipeline.Source#getLinkedTo
 	 * @model opposite="linkedTo" required="true"
 	 *        annotation="gmf.link width='2' target.decoration='square' style='dash'"
 	 * @generated
 	 */
-	Source getReadsFrom();
+	Source getRead();
 
 	/**
-	 * Sets the value of the '{@link pipeline.Import#getReadsFrom <em>Reads From</em>}' reference.
+	 * Sets the value of the '{@link pipeline.Import#getRead <em>Read</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reads From</em>' reference.
-	 * @see #getReadsFrom()
+	 * @param value the new value of the '<em>Read</em>' reference.
+	 * @see #getRead()
 	 * @generated
 	 */
-	void setReadsFrom(Source value);
+	void setRead(Source value);
 
 	/**
 	 * Returns the value of the '<em><b>Imp Uses</b></em>' reference.

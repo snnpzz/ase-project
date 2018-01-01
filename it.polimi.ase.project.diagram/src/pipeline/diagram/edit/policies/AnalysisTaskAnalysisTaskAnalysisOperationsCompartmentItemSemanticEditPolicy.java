@@ -7,9 +7,13 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
 import pipeline.diagram.edit.commands.Classification2CreateCommand;
+import pipeline.diagram.edit.commands.ClassificationCreateCommand;
 import pipeline.diagram.edit.commands.Clustering2CreateCommand;
+import pipeline.diagram.edit.commands.ClusteringCreateCommand;
 import pipeline.diagram.edit.commands.Descriptive2CreateCommand;
+import pipeline.diagram.edit.commands.DescriptiveCreateCommand;
 import pipeline.diagram.edit.commands.Predictive2CreateCommand;
+import pipeline.diagram.edit.commands.PredictiveCreateCommand;
 import pipeline.diagram.providers.PipelineElementTypes;
 
 /**
@@ -30,16 +34,16 @@ public class AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentItemSemanticEd
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (PipelineElementTypes.Descriptive_3042 == req.getElementType()) {
-			return getGEFWrapper(new Descriptive2CreateCommand(req));
+			return getGEFWrapper(new DescriptiveCreateCommand(req));
 		}
 		if (PipelineElementTypes.Classification_3043 == req.getElementType()) {
-			return getGEFWrapper(new Classification2CreateCommand(req));
+			return getGEFWrapper(new ClassificationCreateCommand(req));
 		}
 		if (PipelineElementTypes.Predictive_3044 == req.getElementType()) {
-			return getGEFWrapper(new Predictive2CreateCommand(req));
+			return getGEFWrapper(new PredictiveCreateCommand(req));
 		}
 		if (PipelineElementTypes.Clustering_3045 == req.getElementType()) {
-			return getGEFWrapper(new Clustering2CreateCommand(req));
+			return getGEFWrapper(new ClusteringCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

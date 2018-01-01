@@ -24,7 +24,9 @@ import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCom
 import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.Predefined2EditPart;
+import pipeline.diagram.edit.parts.PredefinedEditPart;
 import pipeline.diagram.edit.parts.UserDefined2EditPart;
+import pipeline.diagram.edit.parts.UserDefinedEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 import pipeline.diagram.providers.PipelineElementTypes;
 
@@ -90,7 +92,7 @@ public class CleaningTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (PipelineVisualIDRegistry.getVisualID(cnode)) {
-					case UserDefined2EditPart.VISUAL_ID:
+					case UserDefinedEditPart.VISUAL_ID:
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							if (PipelineVisualIDRegistry
@@ -116,7 +118,7 @@ public class CleaningTaskItemSemanticEditPolicy extends PipelineBaseItemSemantic
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
-					case Predefined2EditPart.VISUAL_ID:
+					case PredefinedEditPart.VISUAL_ID:
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							if (PipelineVisualIDRegistry

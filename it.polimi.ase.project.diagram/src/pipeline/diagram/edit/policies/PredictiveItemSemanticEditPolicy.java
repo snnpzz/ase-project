@@ -31,7 +31,7 @@ public class PredictiveItemSemanticEditPolicy extends PipelineBaseItemSemanticEd
 	* @generated
 	*/
 	public PredictiveItemSemanticEditPolicy() {
-		super(PipelineElementTypes.Predictive_2036);
+		super(PipelineElementTypes.Predictive_3044);
 	}
 
 	/**

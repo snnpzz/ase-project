@@ -15,12 +15,12 @@ public class PipelineNavigatorSorter extends ViewerSorter {
 	/**
 	* @generated
 	*/
-	private static final int GROUP_CATEGORY = 7027;
+	private static final int GROUP_CATEGORY = 7029;
 
 	/**
 	* @generated
 	*/
-	private static final int SHORTCUTS_CATEGORY = 7026;
+	private static final int SHORTCUTS_CATEGORY = 7028;
 
 	/**
 	* @generated

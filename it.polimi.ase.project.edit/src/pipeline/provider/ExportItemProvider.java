@@ -60,7 +60,7 @@ public class ExportItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addGeneratesPropertyDescriptor(object);
+			addWritePropertyDescriptor(object);
 			addExpUsesPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
@@ -68,19 +68,19 @@ public class ExportItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Generates feature.
+	 * This adds a property descriptor for the Write feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGeneratesPropertyDescriptor(Object object) {
+	protected void addWritePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Export_generates_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Export_generates_feature", "_UI_Export_type"),
-				 PipelinePackage.Literals.EXPORT__GENERATES,
+				 getString("_UI_Export_write_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Export_write_feature", "_UI_Export_type"),
+				 PipelinePackage.Literals.EXPORT__WRITE,
 				 true,
 				 false,
 				 true,

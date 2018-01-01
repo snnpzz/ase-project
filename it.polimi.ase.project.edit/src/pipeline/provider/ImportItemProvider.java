@@ -60,7 +60,7 @@ public class ImportItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addReadsFromPropertyDescriptor(object);
+			addReadPropertyDescriptor(object);
 			addImpUsesPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
@@ -68,19 +68,19 @@ public class ImportItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Reads From feature.
+	 * This adds a property descriptor for the Read feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addReadsFromPropertyDescriptor(Object object) {
+	protected void addReadPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Import_readsFrom_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Import_readsFrom_feature", "_UI_Import_type"),
-				 PipelinePackage.Literals.IMPORT__READS_FROM,
+				 getString("_UI_Import_read_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Import_read_feature", "_UI_Import_type"),
+				 PipelinePackage.Literals.IMPORT__READ,
 				 true,
 				 false,
 				 true,

@@ -31,7 +31,7 @@ public class UserDefinedItemSemanticEditPolicy extends PipelineBaseItemSemanticE
 	* @generated
 	*/
 	public UserDefinedItemSemanticEditPolicy() {
-		super(PipelineElementTypes.UserDefined_2033);
+		super(PipelineElementTypes.UserDefined_3040);
 	}
 
 	/**

@@ -60,7 +60,7 @@ public class UserDefinedNameEditPart extends CompartmentEditPart implements ITex
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5078;
+	public static final int VISUAL_ID = 5090;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class UserDefinedNameEditPart extends CompartmentEditPart implements ITex
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = PipelineParserProvider.getParser(PipelineElementTypes.UserDefined_2033, getParserElement(),
+			parser = PipelineParserProvider.getParser(PipelineElementTypes.UserDefined_3040, getParserElement(),
 					PipelineVisualIDRegistry.getType(pipeline.diagram.edit.parts.UserDefinedNameEditPart.VISUAL_ID));
 		}
 		return parser;

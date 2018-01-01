@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
+import pipeline.CleaningTask;
 import pipeline.Pipeline;
 import pipeline.PipelineFactory;
 import pipeline.Predefined;
@@ -57,8 +58,8 @@ public class PredefinedCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Predefined newElement = PipelineFactory.eINSTANCE.createPredefined();
 
-		Pipeline owner = (Pipeline) getElementToEdit();
-		owner.getOperations().add(newElement);
+		CleaningTask owner = (CleaningTask) getElementToEdit();
+		owner.getCleaningOperations().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

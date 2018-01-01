@@ -53,10 +53,7 @@ public class CleaningOperationItemProvider extends OperationItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CleaningOperation)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_CleaningOperation_type") :
-			getString("_UI_CleaningOperation_type") + " " + label;
+		return getString("_UI_CleaningOperation_type");
 	}
 	
 

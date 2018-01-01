@@ -70,6 +70,9 @@ public class PipelineModelingAssistantProviderOfUserDefinedEditPart extends Pipe
 		if (targetEditPart instanceof UserDefinedEditPart) {
 			types.add(PipelineElementTypes.InternalDataFlow_4006);
 		}
+		if (targetEditPart instanceof PredefinedEditPart) {
+			types.add(PipelineElementTypes.InternalDataFlow_4006);
+		}
 		if (targetEditPart instanceof DescriptiveEditPart) {
 			types.add(PipelineElementTypes.InternalDataFlow_4006);
 		}
@@ -80,27 +83,6 @@ public class PipelineModelingAssistantProviderOfUserDefinedEditPart extends Pipe
 			types.add(PipelineElementTypes.InternalDataFlow_4006);
 		}
 		if (targetEditPart instanceof ClusteringEditPart) {
-			types.add(PipelineElementTypes.InternalDataFlow_4006);
-		}
-		if (targetEditPart instanceof PredefinedEditPart) {
-			types.add(PipelineElementTypes.InternalDataFlow_4006);
-		}
-		if (targetEditPart instanceof UserDefined2EditPart) {
-			types.add(PipelineElementTypes.InternalDataFlow_4006);
-		}
-		if (targetEditPart instanceof Predefined2EditPart) {
-			types.add(PipelineElementTypes.InternalDataFlow_4006);
-		}
-		if (targetEditPart instanceof Descriptive2EditPart) {
-			types.add(PipelineElementTypes.InternalDataFlow_4006);
-		}
-		if (targetEditPart instanceof Classification2EditPart) {
-			types.add(PipelineElementTypes.InternalDataFlow_4006);
-		}
-		if (targetEditPart instanceof Predictive2EditPart) {
-			types.add(PipelineElementTypes.InternalDataFlow_4006);
-		}
-		if (targetEditPart instanceof Clustering2EditPart) {
 			types.add(PipelineElementTypes.InternalDataFlow_4006);
 		}
 		return types;
@@ -122,12 +104,6 @@ public class PipelineModelingAssistantProviderOfUserDefinedEditPart extends Pipe
 	public List<IElementType> doGetTypesForTarget(UserDefinedEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == PipelineElementTypes.InternalDataFlow_4006) {
-			types.add(PipelineElementTypes.UserDefined_2033);
-			types.add(PipelineElementTypes.Descriptive_2034);
-			types.add(PipelineElementTypes.Classification_2035);
-			types.add(PipelineElementTypes.Predictive_2036);
-			types.add(PipelineElementTypes.Clustering_2037);
-			types.add(PipelineElementTypes.Predefined_2038);
 			types.add(PipelineElementTypes.UserDefined_3040);
 			types.add(PipelineElementTypes.Predefined_3041);
 			types.add(PipelineElementTypes.Descriptive_3042);
@@ -173,12 +149,6 @@ public class PipelineModelingAssistantProviderOfUserDefinedEditPart extends Pipe
 	public List<IElementType> doGetTypesForSource(UserDefinedEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == PipelineElementTypes.InternalDataFlow_4006) {
-			types.add(PipelineElementTypes.UserDefined_2033);
-			types.add(PipelineElementTypes.Descriptive_2034);
-			types.add(PipelineElementTypes.Classification_2035);
-			types.add(PipelineElementTypes.Predictive_2036);
-			types.add(PipelineElementTypes.Clustering_2037);
-			types.add(PipelineElementTypes.Predefined_2038);
 			types.add(PipelineElementTypes.UserDefined_3040);
 			types.add(PipelineElementTypes.Predefined_3041);
 			types.add(PipelineElementTypes.Descriptive_3042);

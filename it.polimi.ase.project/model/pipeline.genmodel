@@ -51,6 +51,27 @@
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mBoolean"/>
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mDate"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//ChartType">
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Column"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Line"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Pie"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Doughnut"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Bar"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Area"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Scatter"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Bubble"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Map"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Stock"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Surface"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Radar"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Treemap"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Sunburst"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Histogram"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/BoxAndWhisker"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Waterfall"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Funnel"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Combo"/>
+    </genEnums>
     <genClasses ecoreClass="pipeline.ecore#//Pipeline">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/dataFlows"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/tasks"/>
@@ -104,17 +125,18 @@
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//VisualizationTask">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//VisualizationTask/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//VisualizationTask/chartType"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//ExportTask">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//ExportTask/exports"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Import">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Import/readsFrom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Import/read"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Import/impUses"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Import/name"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Export">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Export/generates"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Export/write"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Export/expUses"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Export/name"/>
     </genClasses>

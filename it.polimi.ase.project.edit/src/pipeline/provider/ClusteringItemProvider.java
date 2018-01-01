@@ -15,6 +15,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import pipeline.Clustering;
+import pipeline.ClusteringOperation;
 import pipeline.PipelinePackage;
 
 /**
@@ -46,6 +47,7 @@ public class ClusteringItemProvider extends AnalysisOperationItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addKPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -73,6 +75,28 @@ public class ClusteringItemProvider extends AnalysisOperationItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Clustering_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Clustering_name_feature", "_UI_Clustering_type"),
+				 PipelinePackage.Literals.CLUSTERING__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Clustering.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -91,7 +115,8 @@ public class ClusteringItemProvider extends AnalysisOperationItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Clustering)object).getName();
+		ClusteringOperation labelValue = ((Clustering)object).getName();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Clustering_type") :
 			getString("_UI_Clustering_type") + " " + label;
@@ -111,6 +136,7 @@ public class ClusteringItemProvider extends AnalysisOperationItemProvider {
 
 		switch (notification.getFeatureID(Clustering.class)) {
 			case PipelinePackage.CLUSTERING__K:
+			case PipelinePackage.CLUSTERING__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

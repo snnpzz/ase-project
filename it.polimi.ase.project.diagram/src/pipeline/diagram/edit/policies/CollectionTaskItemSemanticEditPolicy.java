@@ -26,7 +26,7 @@ import pipeline.diagram.edit.parts.CollectionTaskCollectionTaskImportsCompartmen
 import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.ImportEditPart;
 import pipeline.diagram.edit.parts.ImportImpUsesEditPart;
-import pipeline.diagram.edit.parts.ImportReadsFromEditPart;
+import pipeline.diagram.edit.parts.ImportReadEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 import pipeline.diagram.providers.PipelineElementTypes;
 
@@ -95,8 +95,7 @@ public class CollectionTaskItemSemanticEditPolicy extends PipelineBaseItemSemant
 					case ImportEditPart.VISUAL_ID:
 						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
-							if (PipelineVisualIDRegistry
-									.getVisualID(outgoingLink) == ImportReadsFromEditPart.VISUAL_ID) {
+							if (PipelineVisualIDRegistry.getVisualID(outgoingLink) == ImportReadEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
 										outgoingLink.getSource().getElement(), null,
 										outgoingLink.getTarget().getElement(), false);

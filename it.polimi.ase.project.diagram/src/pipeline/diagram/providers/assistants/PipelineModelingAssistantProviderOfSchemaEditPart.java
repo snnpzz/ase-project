@@ -25,8 +25,9 @@ public class PipelineModelingAssistantProviderOfSchemaEditPart extends PipelineM
 	@Override
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
-		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(PipelineElementTypes.Attribute_3038);
+		List<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(PipelineElementTypes.SimpleAttribute_3046);
+		types.add(PipelineElementTypes.ComplexAttribute_3047);
 		return types;
 	}
 

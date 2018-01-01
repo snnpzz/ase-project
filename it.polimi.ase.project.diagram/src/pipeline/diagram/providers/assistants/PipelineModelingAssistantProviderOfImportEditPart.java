@@ -37,7 +37,7 @@ public class PipelineModelingAssistantProviderOfImportEditPart extends PipelineM
 	*/
 	public List<IElementType> doGetRelTypesOnSource(ImportEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(PipelineElementTypes.ImportReadsFrom_4007);
+		types.add(PipelineElementTypes.ImportRead_4021);
 		types.add(PipelineElementTypes.ImportImpUses_4013);
 		return types;
 	}
@@ -59,7 +59,7 @@ public class PipelineModelingAssistantProviderOfImportEditPart extends PipelineM
 	public List<IElementType> doGetRelTypesOnSourceAndTarget(ImportEditPart source, IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof SourceEditPart) {
-			types.add(PipelineElementTypes.ImportReadsFrom_4007);
+			types.add(PipelineElementTypes.ImportRead_4021);
 		}
 		if (targetEditPart instanceof SchemaEditPart) {
 			types.add(PipelineElementTypes.ImportImpUses_4013);
@@ -82,7 +82,7 @@ public class PipelineModelingAssistantProviderOfImportEditPart extends PipelineM
 	*/
 	public List<IElementType> doGetTypesForTarget(ImportEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == PipelineElementTypes.ImportReadsFrom_4007) {
+		if (relationshipType == PipelineElementTypes.ImportRead_4021) {
 			types.add(PipelineElementTypes.Source_2044);
 		} else if (relationshipType == PipelineElementTypes.ImportImpUses_4013) {
 			types.add(PipelineElementTypes.Schema_2043);

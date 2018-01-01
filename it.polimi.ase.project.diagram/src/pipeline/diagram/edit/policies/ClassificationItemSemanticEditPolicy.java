@@ -31,7 +31,7 @@ public class ClassificationItemSemanticEditPolicy extends PipelineBaseItemSemant
 	* @generated
 	*/
 	public ClassificationItemSemanticEditPolicy() {
-		super(PipelineElementTypes.Classification_2035);
+		super(PipelineElementTypes.Classification_3043);
 	}
 
 	/**

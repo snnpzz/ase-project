@@ -53,10 +53,7 @@ public class AnalysisOperationItemProvider extends OperationItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AnalysisOperation)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_AnalysisOperation_type") :
-			getString("_UI_AnalysisOperation_type") + " " + label;
+		return getString("_UI_AnalysisOperation_type");
 	}
 	
 

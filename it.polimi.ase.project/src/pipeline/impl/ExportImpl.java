@@ -24,7 +24,7 @@ import pipeline.Schema;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.ExportImpl#getGenerates <em>Generates</em>}</li>
+ *   <li>{@link pipeline.impl.ExportImpl#getWrite <em>Write</em>}</li>
  *   <li>{@link pipeline.impl.ExportImpl#getExpUses <em>Exp Uses</em>}</li>
  *   <li>{@link pipeline.impl.ExportImpl#getName <em>Name</em>}</li>
  * </ul>
@@ -33,14 +33,14 @@ import pipeline.Schema;
  */
 public class ExportImpl extends EObjectImpl implements Export {
 	/**
-	 * The cached value of the '{@link #getGenerates() <em>Generates</em>}' reference.
+	 * The cached value of the '{@link #getWrite() <em>Write</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGenerates()
+	 * @see #getWrite()
 	 * @generated
 	 * @ordered
 	 */
-	protected File generates;
+	protected File write;
 
 	/**
 	 * The cached value of the '{@link #getExpUses() <em>Exp Uses</em>}' reference.
@@ -96,16 +96,16 @@ public class ExportImpl extends EObjectImpl implements Export {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public File getGenerates() {
-		if (generates != null && generates.eIsProxy()) {
-			InternalEObject oldGenerates = (InternalEObject)generates;
-			generates = (File)eResolveProxy(oldGenerates);
-			if (generates != oldGenerates) {
+	public File getWrite() {
+		if (write != null && write.eIsProxy()) {
+			InternalEObject oldWrite = (InternalEObject)write;
+			write = (File)eResolveProxy(oldWrite);
+			if (write != oldWrite) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.EXPORT__GENERATES, oldGenerates, generates));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.EXPORT__WRITE, oldWrite, write));
 			}
 		}
-		return generates;
+		return write;
 	}
 
 	/**
@@ -113,8 +113,8 @@ public class ExportImpl extends EObjectImpl implements Export {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public File basicGetGenerates() {
-		return generates;
+	public File basicGetWrite() {
+		return write;
 	}
 
 	/**
@@ -122,11 +122,11 @@ public class ExportImpl extends EObjectImpl implements Export {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetGenerates(File newGenerates, NotificationChain msgs) {
-		File oldGenerates = generates;
-		generates = newGenerates;
+	public NotificationChain basicSetWrite(File newWrite, NotificationChain msgs) {
+		File oldWrite = write;
+		write = newWrite;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT__GENERATES, oldGenerates, newGenerates);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT__WRITE, oldWrite, newWrite);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -137,18 +137,18 @@ public class ExportImpl extends EObjectImpl implements Export {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGenerates(File newGenerates) {
-		if (newGenerates != generates) {
+	public void setWrite(File newWrite) {
+		if (newWrite != write) {
 			NotificationChain msgs = null;
-			if (generates != null)
-				msgs = ((InternalEObject)generates).eInverseRemove(this, PipelinePackage.FILE__COMES_FROM, File.class, msgs);
-			if (newGenerates != null)
-				msgs = ((InternalEObject)newGenerates).eInverseAdd(this, PipelinePackage.FILE__COMES_FROM, File.class, msgs);
-			msgs = basicSetGenerates(newGenerates, msgs);
+			if (write != null)
+				msgs = ((InternalEObject)write).eInverseRemove(this, PipelinePackage.FILE__COMES_FROM, File.class, msgs);
+			if (newWrite != null)
+				msgs = ((InternalEObject)newWrite).eInverseAdd(this, PipelinePackage.FILE__COMES_FROM, File.class, msgs);
+			msgs = basicSetWrite(newWrite, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT__GENERATES, newGenerates, newGenerates));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT__WRITE, newWrite, newWrite));
 	}
 
 	/**
@@ -218,10 +218,10 @@ public class ExportImpl extends EObjectImpl implements Export {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PipelinePackage.EXPORT__GENERATES:
-				if (generates != null)
-					msgs = ((InternalEObject)generates).eInverseRemove(this, PipelinePackage.FILE__COMES_FROM, File.class, msgs);
-				return basicSetGenerates((File)otherEnd, msgs);
+			case PipelinePackage.EXPORT__WRITE:
+				if (write != null)
+					msgs = ((InternalEObject)write).eInverseRemove(this, PipelinePackage.FILE__COMES_FROM, File.class, msgs);
+				return basicSetWrite((File)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -234,8 +234,8 @@ public class ExportImpl extends EObjectImpl implements Export {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PipelinePackage.EXPORT__GENERATES:
-				return basicSetGenerates(null, msgs);
+			case PipelinePackage.EXPORT__WRITE:
+				return basicSetWrite(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -248,9 +248,9 @@ public class ExportImpl extends EObjectImpl implements Export {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.EXPORT__GENERATES:
-				if (resolve) return getGenerates();
-				return basicGetGenerates();
+			case PipelinePackage.EXPORT__WRITE:
+				if (resolve) return getWrite();
+				return basicGetWrite();
 			case PipelinePackage.EXPORT__EXP_USES:
 				if (resolve) return getExpUses();
 				return basicGetExpUses();
@@ -268,8 +268,8 @@ public class ExportImpl extends EObjectImpl implements Export {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.EXPORT__GENERATES:
-				setGenerates((File)newValue);
+			case PipelinePackage.EXPORT__WRITE:
+				setWrite((File)newValue);
 				return;
 			case PipelinePackage.EXPORT__EXP_USES:
 				setExpUses((Schema)newValue);
@@ -289,8 +289,8 @@ public class ExportImpl extends EObjectImpl implements Export {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.EXPORT__GENERATES:
-				setGenerates((File)null);
+			case PipelinePackage.EXPORT__WRITE:
+				setWrite((File)null);
 				return;
 			case PipelinePackage.EXPORT__EXP_USES:
 				setExpUses((Schema)null);
@@ -310,8 +310,8 @@ public class ExportImpl extends EObjectImpl implements Export {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.EXPORT__GENERATES:
-				return generates != null;
+			case PipelinePackage.EXPORT__WRITE:
+				return write != null;
 			case PipelinePackage.EXPORT__EXP_USES:
 				return expUses != null;
 			case PipelinePackage.EXPORT__NAME:

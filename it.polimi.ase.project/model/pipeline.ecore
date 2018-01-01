@@ -130,6 +130,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VisualizationTask" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="#//Size"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="chartType" eType="#//ChartType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExportTask" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EReference" name="exports" lowerBound="1"
@@ -143,8 +144,8 @@
       <details key="label.text" value="Import"/>
       <details key="figure" value="ellipse"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="readsFrom" lowerBound="1"
-        eType="#//Source" eOpposite="#//Source/linkedTo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="read" lowerBound="1" eType="#//Source"
+        eOpposite="#//Source/linkedTo">
       <eAnnotations source="gmf.link">
         <details key="width" value="2"/>
         <details key="target.decoration" value="square"/>
@@ -166,8 +167,8 @@
       <details key="label.text" value="Export"/>
       <details key="figure" value="ellipse"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="generates" lowerBound="1"
-        eType="#//File" eOpposite="#//File/comesFrom">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="write" lowerBound="1" eType="#//File"
+        eOpposite="#//File/comesFrom">
       <eAnnotations source="gmf.link">
         <details key="width" value="2"/>
         <details key="target.decoration" value="square"/>
@@ -191,7 +192,7 @@
       <details key="label" value="name"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkedTo" lowerBound="1"
-        eType="#//Import" eOpposite="#//Import/readsFrom"/>
+        eType="#//Import" eOpposite="#//Import/read"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -202,7 +203,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="comesFrom" lowerBound="1"
-        eType="#//Export" eOpposite="#//Export/generates"/>
+        eType="#//Export" eOpposite="#//Export/write"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CleaningOperation" abstract="true" eSuperTypes="#//Operation"/>
   <eClassifiers xsi:type="ecore:EClass" name="AnalysisOperation" abstract="true" eSuperTypes="#//Operation"/>
@@ -279,5 +280,26 @@
     <eLiterals name="mDouble" value="2"/>
     <eLiterals name="mBoolean" value="3"/>
     <eLiterals name="mDate" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ChartType">
+    <eLiterals name="Column"/>
+    <eLiterals name="Line"/>
+    <eLiterals name="Pie"/>
+    <eLiterals name="Doughnut"/>
+    <eLiterals name="Bar"/>
+    <eLiterals name="Area"/>
+    <eLiterals name="Scatter"/>
+    <eLiterals name="Bubble"/>
+    <eLiterals name="Map"/>
+    <eLiterals name="Stock"/>
+    <eLiterals name="Surface"/>
+    <eLiterals name="Radar"/>
+    <eLiterals name="Treemap"/>
+    <eLiterals name="Sunburst"/>
+    <eLiterals name="Histogram"/>
+    <eLiterals name="BoxAndWhisker"/>
+    <eLiterals name="Waterfall"/>
+    <eLiterals name="Funnel"/>
+    <eLiterals name="Combo"/>
   </eClassifiers>
 </ecore:EPackage>

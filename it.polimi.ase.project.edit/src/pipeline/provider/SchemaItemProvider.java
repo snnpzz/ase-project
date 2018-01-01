@@ -182,7 +182,12 @@ public class SchemaItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PipelinePackage.Literals.SCHEMA__ATTRIBUTES,
-				 PipelineFactory.eINSTANCE.createAttribute()));
+				 PipelineFactory.eINSTANCE.createSimpleAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PipelinePackage.Literals.SCHEMA__ATTRIBUTES,
+				 PipelineFactory.eINSTANCE.createComplexAttribute()));
 	}
 
 	/**

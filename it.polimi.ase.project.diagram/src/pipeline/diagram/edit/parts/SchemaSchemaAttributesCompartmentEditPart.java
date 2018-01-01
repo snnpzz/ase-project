@@ -97,7 +97,10 @@ public class SchemaSchemaAttributesCompartmentEditPart extends ListCompartmentEd
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == PipelineElementTypes.Attribute_3038) {
+			if (type == PipelineElementTypes.SimpleAttribute_3046) {
+				return this;
+			}
+			if (type == PipelineElementTypes.ComplexAttribute_3047) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

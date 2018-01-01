@@ -192,9 +192,9 @@ public class FileImpl extends EObjectImpl implements File {
 		if (newComesFrom != comesFrom) {
 			NotificationChain msgs = null;
 			if (comesFrom != null)
-				msgs = ((InternalEObject)comesFrom).eInverseRemove(this, PipelinePackage.EXPORT__GENERATES, Export.class, msgs);
+				msgs = ((InternalEObject)comesFrom).eInverseRemove(this, PipelinePackage.EXPORT__WRITE, Export.class, msgs);
 			if (newComesFrom != null)
-				msgs = ((InternalEObject)newComesFrom).eInverseAdd(this, PipelinePackage.EXPORT__GENERATES, Export.class, msgs);
+				msgs = ((InternalEObject)newComesFrom).eInverseAdd(this, PipelinePackage.EXPORT__WRITE, Export.class, msgs);
 			msgs = basicSetComesFrom(newComesFrom, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -212,7 +212,7 @@ public class FileImpl extends EObjectImpl implements File {
 		switch (featureID) {
 			case PipelinePackage.FILE__COMES_FROM:
 				if (comesFrom != null)
-					msgs = ((InternalEObject)comesFrom).eInverseRemove(this, PipelinePackage.EXPORT__GENERATES, Export.class, msgs);
+					msgs = ((InternalEObject)comesFrom).eInverseRemove(this, PipelinePackage.EXPORT__WRITE, Export.class, msgs);
 				return basicSetComesFrom((Export)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);

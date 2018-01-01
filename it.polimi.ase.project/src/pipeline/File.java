@@ -77,7 +77,7 @@ public interface File extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Comes From</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link pipeline.Export#getGenerates <em>Generates</em>}'.
+	 * It is bidirectional and its opposite is '{@link pipeline.Export#getWrite <em>Write</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Comes From</em>' reference isn't clear,
@@ -87,8 +87,8 @@ public interface File extends EObject {
 	 * @return the value of the '<em>Comes From</em>' reference.
 	 * @see #setComesFrom(Export)
 	 * @see pipeline.PipelinePackage#getFile_ComesFrom()
-	 * @see pipeline.Export#getGenerates
-	 * @model opposite="generates" required="true"
+	 * @see pipeline.Export#getWrite
+	 * @model opposite="write" required="true"
 	 * @generated
 	 */
 	Export getComesFrom();

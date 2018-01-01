@@ -31,7 +31,7 @@ public class ClusteringItemSemanticEditPolicy extends PipelineBaseItemSemanticEd
 	* @generated
 	*/
 	public ClusteringItemSemanticEditPolicy() {
-		super(PipelineElementTypes.Clustering_2037);
+		super(PipelineElementTypes.Clustering_3045);
 	}
 
 	/**

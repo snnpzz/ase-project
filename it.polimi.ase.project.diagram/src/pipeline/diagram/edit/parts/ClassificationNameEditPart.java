@@ -36,6 +36,7 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.directedit.ComboDirectEditManager;
 import org.eclipse.gmf.tooling.runtime.draw2d.labels.SimpleLabelDelegate;
 import org.eclipse.gmf.tooling.runtime.edit.policies.DefaultNodeLabelDragPolicy;
 import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy;
@@ -60,7 +61,7 @@ public class ClassificationNameEditPart extends CompartmentEditPart implements I
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5080;
+	public static final int VISUAL_ID = 5093;
 
 	/**
 	* @generated
@@ -295,7 +296,7 @@ public class ClassificationNameEditPart extends CompartmentEditPart implements I
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = PipelineParserProvider.getParser(PipelineElementTypes.Classification_2035, getParserElement(),
+			parser = PipelineParserProvider.getParser(PipelineElementTypes.Classification_3043, getParserElement(),
 					PipelineVisualIDRegistry.getType(pipeline.diagram.edit.parts.ClassificationNameEditPart.VISUAL_ID));
 		}
 		return parser;
@@ -306,7 +307,7 @@ public class ClassificationNameEditPart extends CompartmentEditPart implements I
 	*/
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager(this, null, PipelineEditPartFactory.getTextCellEditorLocator(this)));
+			setManager(new ComboDirectEditManager(this, null, PipelineEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
 	}
@@ -329,20 +330,8 @@ public class ClassificationNameEditPart extends CompartmentEditPart implements I
 	* @generated
 	*/
 	protected void performDirectEdit(Point eventLocation) {
-		if (getManager().getClass() == TextDirectEditManager.class) {
-			((TextDirectEditManager) getManager()).show(eventLocation.getSWTPoint());
-		}
-	}
-
-	/**
-	* @generated
-	*/
-	private void performDirectEdit(char initialCharacter) {
-		if (getManager() instanceof TextDirectEditManager) {
-			((TextDirectEditManager) getManager()).show(initialCharacter);
-		} else //
-		{
-			performDirectEdit();
+		if (getManager().getClass() == ComboDirectEditManager.class) {
+			((ComboDirectEditManager) getManager()).show(eventLocation.getSWTPoint());
 		}
 	}
 
@@ -356,13 +345,7 @@ public class ClassificationNameEditPart extends CompartmentEditPart implements I
 
 				public void run() {
 					if (isActive() && isEditable()) {
-						if (theRequest.getExtendedData()
-								.get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
-							Character initialChar = (Character) theRequest.getExtendedData()
-									.get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
-							performDirectEdit(initialChar.charValue());
-						} else if ((theRequest instanceof DirectEditRequest)
-								&& (getEditText().equals(getLabelText()))) {
+						if ((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
 							DirectEditRequest editRequest = (DirectEditRequest) theRequest;
 							performDirectEdit(editRequest.getLocation());
 						} else {

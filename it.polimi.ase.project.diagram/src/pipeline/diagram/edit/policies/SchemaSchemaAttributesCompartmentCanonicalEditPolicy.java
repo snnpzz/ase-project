@@ -25,7 +25,8 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.PipelinePackage;
-import pipeline.diagram.edit.parts.AttributeEditPart;
+import pipeline.diagram.edit.parts.ComplexAttributeEditPart;
+import pipeline.diagram.edit.parts.SimpleAttributeEditPart;
 import pipeline.diagram.part.PipelineDiagramUpdater;
 import pipeline.diagram.part.PipelineNodeDescriptor;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
@@ -81,7 +82,8 @@ public class SchemaSchemaAttributesCompartmentCanonicalEditPolicy extends Canoni
 	* @generated
 	*/
 	private boolean isMyDiagramElement(View view) {
-		return AttributeEditPart.VISUAL_ID == PipelineVisualIDRegistry.getVisualID(view);
+		int visualID = PipelineVisualIDRegistry.getVisualID(view);
+		return visualID == SimpleAttributeEditPart.VISUAL_ID || visualID == ComplexAttributeEditPart.VISUAL_ID;
 	}
 
 	/**

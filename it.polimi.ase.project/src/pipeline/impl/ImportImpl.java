@@ -24,7 +24,7 @@ import pipeline.Source;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.ImportImpl#getReadsFrom <em>Reads From</em>}</li>
+ *   <li>{@link pipeline.impl.ImportImpl#getRead <em>Read</em>}</li>
  *   <li>{@link pipeline.impl.ImportImpl#getImpUses <em>Imp Uses</em>}</li>
  *   <li>{@link pipeline.impl.ImportImpl#getName <em>Name</em>}</li>
  * </ul>
@@ -33,14 +33,14 @@ import pipeline.Source;
  */
 public class ImportImpl extends EObjectImpl implements Import {
 	/**
-	 * The cached value of the '{@link #getReadsFrom() <em>Reads From</em>}' reference.
+	 * The cached value of the '{@link #getRead() <em>Read</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReadsFrom()
+	 * @see #getRead()
 	 * @generated
 	 * @ordered
 	 */
-	protected Source readsFrom;
+	protected Source read;
 
 	/**
 	 * The cached value of the '{@link #getImpUses() <em>Imp Uses</em>}' reference.
@@ -96,16 +96,16 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Source getReadsFrom() {
-		if (readsFrom != null && readsFrom.eIsProxy()) {
-			InternalEObject oldReadsFrom = (InternalEObject)readsFrom;
-			readsFrom = (Source)eResolveProxy(oldReadsFrom);
-			if (readsFrom != oldReadsFrom) {
+	public Source getRead() {
+		if (read != null && read.eIsProxy()) {
+			InternalEObject oldRead = (InternalEObject)read;
+			read = (Source)eResolveProxy(oldRead);
+			if (read != oldRead) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.IMPORT__READS_FROM, oldReadsFrom, readsFrom));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.IMPORT__READ, oldRead, read));
 			}
 		}
-		return readsFrom;
+		return read;
 	}
 
 	/**
@@ -113,8 +113,8 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Source basicGetReadsFrom() {
-		return readsFrom;
+	public Source basicGetRead() {
+		return read;
 	}
 
 	/**
@@ -122,11 +122,11 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetReadsFrom(Source newReadsFrom, NotificationChain msgs) {
-		Source oldReadsFrom = readsFrom;
-		readsFrom = newReadsFrom;
+	public NotificationChain basicSetRead(Source newRead, NotificationChain msgs) {
+		Source oldRead = read;
+		read = newRead;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PipelinePackage.IMPORT__READS_FROM, oldReadsFrom, newReadsFrom);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PipelinePackage.IMPORT__READ, oldRead, newRead);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -137,18 +137,18 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setReadsFrom(Source newReadsFrom) {
-		if (newReadsFrom != readsFrom) {
+	public void setRead(Source newRead) {
+		if (newRead != read) {
 			NotificationChain msgs = null;
-			if (readsFrom != null)
-				msgs = ((InternalEObject)readsFrom).eInverseRemove(this, PipelinePackage.SOURCE__LINKED_TO, Source.class, msgs);
-			if (newReadsFrom != null)
-				msgs = ((InternalEObject)newReadsFrom).eInverseAdd(this, PipelinePackage.SOURCE__LINKED_TO, Source.class, msgs);
-			msgs = basicSetReadsFrom(newReadsFrom, msgs);
+			if (read != null)
+				msgs = ((InternalEObject)read).eInverseRemove(this, PipelinePackage.SOURCE__LINKED_TO, Source.class, msgs);
+			if (newRead != null)
+				msgs = ((InternalEObject)newRead).eInverseAdd(this, PipelinePackage.SOURCE__LINKED_TO, Source.class, msgs);
+			msgs = basicSetRead(newRead, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.IMPORT__READS_FROM, newReadsFrom, newReadsFrom));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.IMPORT__READ, newRead, newRead));
 	}
 
 	/**
@@ -218,10 +218,10 @@ public class ImportImpl extends EObjectImpl implements Import {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PipelinePackage.IMPORT__READS_FROM:
-				if (readsFrom != null)
-					msgs = ((InternalEObject)readsFrom).eInverseRemove(this, PipelinePackage.SOURCE__LINKED_TO, Source.class, msgs);
-				return basicSetReadsFrom((Source)otherEnd, msgs);
+			case PipelinePackage.IMPORT__READ:
+				if (read != null)
+					msgs = ((InternalEObject)read).eInverseRemove(this, PipelinePackage.SOURCE__LINKED_TO, Source.class, msgs);
+				return basicSetRead((Source)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -234,8 +234,8 @@ public class ImportImpl extends EObjectImpl implements Import {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PipelinePackage.IMPORT__READS_FROM:
-				return basicSetReadsFrom(null, msgs);
+			case PipelinePackage.IMPORT__READ:
+				return basicSetRead(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -248,9 +248,9 @@ public class ImportImpl extends EObjectImpl implements Import {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.IMPORT__READS_FROM:
-				if (resolve) return getReadsFrom();
-				return basicGetReadsFrom();
+			case PipelinePackage.IMPORT__READ:
+				if (resolve) return getRead();
+				return basicGetRead();
 			case PipelinePackage.IMPORT__IMP_USES:
 				if (resolve) return getImpUses();
 				return basicGetImpUses();
@@ -268,8 +268,8 @@ public class ImportImpl extends EObjectImpl implements Import {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.IMPORT__READS_FROM:
-				setReadsFrom((Source)newValue);
+			case PipelinePackage.IMPORT__READ:
+				setRead((Source)newValue);
 				return;
 			case PipelinePackage.IMPORT__IMP_USES:
 				setImpUses((Schema)newValue);
@@ -289,8 +289,8 @@ public class ImportImpl extends EObjectImpl implements Import {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.IMPORT__READS_FROM:
-				setReadsFrom((Source)null);
+			case PipelinePackage.IMPORT__READ:
+				setRead((Source)null);
 				return;
 			case PipelinePackage.IMPORT__IMP_USES:
 				setImpUses((Schema)null);
@@ -310,8 +310,8 @@ public class ImportImpl extends EObjectImpl implements Import {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.IMPORT__READS_FROM:
-				return readsFrom != null;
+			case PipelinePackage.IMPORT__READ:
+				return read != null;
 			case PipelinePackage.IMPORT__IMP_USES:
 				return impUses != null;
 			case PipelinePackage.IMPORT__NAME:

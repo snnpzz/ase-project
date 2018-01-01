@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import pipeline.AnalysisOperation;
 import pipeline.AnalysisTask;
 import pipeline.Attribute;
+import pipeline.ChartType;
 import pipeline.Classification;
 import pipeline.ClassificationOperation;
 import pipeline.CleaningOperation;
@@ -28,6 +29,7 @@ import pipeline.Export;
 import pipeline.ExportTask;
 import pipeline.File;
 import pipeline.Format;
+import pipeline.GraphType;
 import pipeline.Import;
 import pipeline.IntegrationTask;
 import pipeline.InternalDataFlow;
@@ -299,6 +301,13 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * @generated
 	 */
 	private EEnum typeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum chartTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -744,6 +753,15 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getVisualizationTask_ChartType() {
+		return (EAttribute)visualizationTaskEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getExportTask() {
 		return exportTaskEClass;
 	}
@@ -771,7 +789,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getImport_ReadsFrom() {
+	public EReference getImport_Read() {
 		return (EReference)importEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -807,7 +825,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExport_Generates() {
+	public EReference getExport_Write() {
 		return (EReference)exportEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1149,6 +1167,15 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getChartType() {
+		return chartTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PipelineFactory getPipelineFactory() {
 		return (PipelineFactory)getEFactoryInstance();
 	}
@@ -1225,17 +1252,18 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		visualizationTaskEClass = createEClass(VISUALIZATION_TASK);
 		createEAttribute(visualizationTaskEClass, VISUALIZATION_TASK__SIZE);
+		createEAttribute(visualizationTaskEClass, VISUALIZATION_TASK__CHART_TYPE);
 
 		exportTaskEClass = createEClass(EXPORT_TASK);
 		createEReference(exportTaskEClass, EXPORT_TASK__EXPORTS);
 
 		importEClass = createEClass(IMPORT);
-		createEReference(importEClass, IMPORT__READS_FROM);
+		createEReference(importEClass, IMPORT__READ);
 		createEReference(importEClass, IMPORT__IMP_USES);
 		createEAttribute(importEClass, IMPORT__NAME);
 
 		exportEClass = createEClass(EXPORT);
-		createEReference(exportEClass, EXPORT__GENERATES);
+		createEReference(exportEClass, EXPORT__WRITE);
 		createEReference(exportEClass, EXPORT__EXP_USES);
 		createEAttribute(exportEClass, EXPORT__NAME);
 
@@ -1287,6 +1315,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		predictiveOperationEEnum = createEEnum(PREDICTIVE_OPERATION);
 		descriptiveOperationEEnum = createEEnum(DESCRIPTIVE_OPERATION);
 		typeEEnum = createEEnum(TYPE);
+		chartTypeEEnum = createEEnum(CHART_TYPE);
 	}
 
 	/**
@@ -1388,17 +1417,18 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		initEClass(visualizationTaskEClass, VisualizationTask.class, "VisualizationTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVisualizationTask_Size(), this.getSize(), "size", null, 0, 1, VisualizationTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVisualizationTask_ChartType(), this.getChartType(), "chartType", null, 0, 1, VisualizationTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exportTaskEClass, ExportTask.class, "ExportTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExportTask_Exports(), this.getExport(), null, "exports", null, 1, -1, ExportTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getImport_ReadsFrom(), this.getSource(), this.getSource_LinkedTo(), "readsFrom", null, 1, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImport_Read(), this.getSource(), this.getSource_LinkedTo(), "read", null, 1, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getImport_ImpUses(), this.getSchema(), null, "impUses", null, 1, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImport_Name(), ecorePackage.getEString(), "name", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exportEClass, Export.class, "Export", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExport_Generates(), this.getFile(), this.getFile_ComesFrom(), "generates", null, 1, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExport_Write(), this.getFile(), this.getFile_ComesFrom(), "write", null, 1, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExport_ExpUses(), this.getSchema(), null, "expUses", null, 1, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExport_Name(), ecorePackage.getEString(), "name", null, 0, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1406,14 +1436,14 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEAttribute(getUserDefined_Name(), ecorePackage.getEString(), "name", null, 0, 1, UserDefined.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sourceEClass, Source.class, "Source", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSource_LinkedTo(), this.getImport(), this.getImport_ReadsFrom(), "linkedTo", null, 1, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_LinkedTo(), this.getImport(), this.getImport_Read(), "linkedTo", null, 1, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSource_Name(), ecorePackage.getEString(), "name", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSource_Path(), ecorePackage.getEString(), "path", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fileEClass, File.class, "File", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFile_Name(), ecorePackage.getEString(), "name", null, 0, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFile_Path(), ecorePackage.getEString(), "path", null, 0, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFile_ComesFrom(), this.getExport(), this.getExport_Generates(), "comesFrom", null, 1, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFile_ComesFrom(), this.getExport(), this.getExport_Write(), "comesFrom", null, 1, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(cleaningOperationEClass, CleaningOperation.class, "CleaningOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1487,6 +1517,27 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		addEEnumLiteral(typeEEnum, Type.MDOUBLE);
 		addEEnumLiteral(typeEEnum, Type.MBOOLEAN);
 		addEEnumLiteral(typeEEnum, Type.MDATE);
+
+		initEEnum(chartTypeEEnum, ChartType.class, "ChartType");
+		addEEnumLiteral(chartTypeEEnum, ChartType.COLUMN);
+		addEEnumLiteral(chartTypeEEnum, ChartType.LINE);
+		addEEnumLiteral(chartTypeEEnum, ChartType.PIE);
+		addEEnumLiteral(chartTypeEEnum, ChartType.DOUGHNUT);
+		addEEnumLiteral(chartTypeEEnum, ChartType.BAR);
+		addEEnumLiteral(chartTypeEEnum, ChartType.AREA);
+		addEEnumLiteral(chartTypeEEnum, ChartType.SCATTER);
+		addEEnumLiteral(chartTypeEEnum, ChartType.BUBBLE);
+		addEEnumLiteral(chartTypeEEnum, ChartType.MAP);
+		addEEnumLiteral(chartTypeEEnum, ChartType.STOCK);
+		addEEnumLiteral(chartTypeEEnum, ChartType.SURFACE);
+		addEEnumLiteral(chartTypeEEnum, ChartType.RADAR);
+		addEEnumLiteral(chartTypeEEnum, ChartType.TREEMAP);
+		addEEnumLiteral(chartTypeEEnum, ChartType.SUNBURST);
+		addEEnumLiteral(chartTypeEEnum, ChartType.HISTOGRAM);
+		addEEnumLiteral(chartTypeEEnum, ChartType.BOX_AND_WHISKER);
+		addEEnumLiteral(chartTypeEEnum, ChartType.WATERFALL);
+		addEEnumLiteral(chartTypeEEnum, ChartType.FUNNEL);
+		addEEnumLiteral(chartTypeEEnum, ChartType.COMBO);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -1627,7 +1678,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 			 "style", "dash"
 		   });	
 		addAnnotation
-		  (getImport_ReadsFrom(), 
+		  (getImport_Read(), 
 		   source, 
 		   new String[] {
 			 "width", "2",
@@ -1642,7 +1693,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 			 "target.decoration", "arrow"
 		   });	
 		addAnnotation
-		  (getExport_Generates(), 
+		  (getExport_Write(), 
 		   source, 
 		   new String[] {
 			 "width", "2",

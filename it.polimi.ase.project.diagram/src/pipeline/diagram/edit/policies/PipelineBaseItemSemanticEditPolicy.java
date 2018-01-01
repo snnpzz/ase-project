@@ -343,24 +343,24 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-			 * @generated
-			 */
-		public boolean canCreateInternalDataFlowIntDFschema_4018(InternalDataFlow source, Schema target) {
+		* @generated
+		*/
+		public boolean canCreateInternalDataFlowSchema_4020(InternalDataFlow source, Schema target) {
 			if (source != null) {
-				if (source.getIntDFschema() != null) {
+				if (source.getSchema() != null) {
 					return false;
 				}
 			}
 
-			return canExistInternalDataFlowIntDFschema_4018(source, target);
+			return canExistInternalDataFlowSchema_4020(source, target);
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateImportReadsFrom_4007(Import source, Source target) {
+		* @generated
+		*/
+		public boolean canCreateImportRead_4021(Import source, Source target) {
 			if (source != null) {
-				if (source.getReadsFrom() != null) {
+				if (source.getRead() != null) {
 					return false;
 				}
 			}
@@ -368,12 +368,12 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return false;
 			}
 
-			return canExistImportReadsFrom_4007(source, target);
+			return canExistImportRead_4021(source, target);
 		}
 
 		/**
-		 * @generated
-		 */
+			 * @generated
+			 */
 		public boolean canCreateImportImpUses_4013(Import source, Schema target) {
 			if (source != null) {
 				if (source.getImpUses() != null) {
@@ -385,11 +385,11 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateExportGenerates_4008(Export source, File target) {
+		* @generated
+		*/
+		public boolean canCreateExportWrite_4022(Export source, File target) {
 			if (source != null) {
-				if (source.getGenerates() != null) {
+				if (source.getWrite() != null) {
 					return false;
 				}
 			}
@@ -397,12 +397,12 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return false;
 			}
 
-			return canExistExportGenerates_4008(source, target);
+			return canExistExportWrite_4022(source, target);
 		}
 
 		/**
-		 * @generated
-		 */
+			 * @generated
+			 */
 		public boolean canCreateExportExpUses_4014(Export source, Schema target) {
 			if (source != null) {
 				if (source.getExpUses() != null) {
@@ -436,22 +436,22 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
+		* @generated
+		*/
+		public boolean canExistInternalDataFlowSchema_4020(InternalDataFlow source, Schema target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistImportRead_4021(Import source, Source target) {
+			return true;
+		}
+
+		/**
 			* @generated
 			*/
-		public boolean canExistInternalDataFlowIntDFschema_4018(InternalDataFlow source, Schema target) {
-			return true;
-		}
-
-		/**
-		* @generated
-		*/
-		public boolean canExistImportReadsFrom_4007(Import source, Source target) {
-			return true;
-		}
-
-		/**
-		* @generated
-		*/
 		public boolean canExistImportImpUses_4013(Import source, Schema target) {
 			return true;
 		}
@@ -459,13 +459,13 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		* @generated
 		*/
-		public boolean canExistExportGenerates_4008(Export source, File target) {
+		public boolean canExistExportWrite_4022(Export source, File target) {
 			return true;
 		}
 
 		/**
-		* @generated
-		*/
+			* @generated
+			*/
 		public boolean canExistExportExpUses_4014(Export source, Schema target) {
 			return true;
 		}

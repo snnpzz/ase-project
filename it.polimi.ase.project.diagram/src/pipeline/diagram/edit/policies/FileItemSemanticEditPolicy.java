@@ -18,9 +18,9 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 
-import pipeline.diagram.edit.commands.ExportGeneratesCreateCommand;
-import pipeline.diagram.edit.commands.ExportGeneratesReorientCommand;
-import pipeline.diagram.edit.parts.ExportGeneratesEditPart;
+import pipeline.diagram.edit.commands.ExportWriteCreateCommand;
+import pipeline.diagram.edit.commands.ExportWriteReorientCommand;
+import pipeline.diagram.edit.parts.ExportWriteEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 import pipeline.diagram.providers.PipelineElementTypes;
 
@@ -45,7 +45,7 @@ public class FileItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPoli
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == ExportGeneratesEditPart.VISUAL_ID) {
+			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == ExportWriteEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
@@ -78,7 +78,7 @@ public class FileItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPoli
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.ExportGenerates_4008 == req.getElementType()) {
+		if (PipelineElementTypes.ExportWrite_4022 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -88,8 +88,8 @@ public class FileItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPoli
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.ExportGenerates_4008 == req.getElementType()) {
-			return getGEFWrapper(new ExportGeneratesCreateCommand(req, req.getSource(), req.getTarget()));
+		if (PipelineElementTypes.ExportWrite_4022 == req.getElementType()) {
+			return getGEFWrapper(new ExportWriteCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -102,8 +102,8 @@ public class FileItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPoli
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case ExportGeneratesEditPart.VISUAL_ID:
-			return getGEFWrapper(new ExportGeneratesReorientCommand(req));
+		case ExportWriteEditPart.VISUAL_ID:
+			return getGEFWrapper(new ExportWriteReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

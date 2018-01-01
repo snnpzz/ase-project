@@ -43,24 +43,6 @@ public class PipelineItemSemanticEditPolicy extends PipelineBaseItemSemanticEdit
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (PipelineElementTypes.UserDefined_2033 == req.getElementType()) {
-			return getGEFWrapper(new UserDefinedCreateCommand(req));
-		}
-		if (PipelineElementTypes.Descriptive_2034 == req.getElementType()) {
-			return getGEFWrapper(new DescriptiveCreateCommand(req));
-		}
-		if (PipelineElementTypes.Classification_2035 == req.getElementType()) {
-			return getGEFWrapper(new ClassificationCreateCommand(req));
-		}
-		if (PipelineElementTypes.Predictive_2036 == req.getElementType()) {
-			return getGEFWrapper(new PredictiveCreateCommand(req));
-		}
-		if (PipelineElementTypes.Clustering_2037 == req.getElementType()) {
-			return getGEFWrapper(new ClusteringCreateCommand(req));
-		}
-		if (PipelineElementTypes.Predefined_2038 == req.getElementType()) {
-			return getGEFWrapper(new PredefinedCreateCommand(req));
-		}
 		if (PipelineElementTypes.CollectionTask_2025 == req.getElementType()) {
 			return getGEFWrapper(new CollectionTaskCreateCommand(req));
 		}

@@ -239,11 +239,11 @@
       <descriptors name="InternalDataFlowSchemaExternalLabelFigure">
         <actualFigure xsi:type="gmfgraph:Label" name="InternalDataFlowSchemaExternalLabel"/>
       </descriptors>
-      <descriptors name="ImportReadsFromFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ImportReadsFromFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.4"/>
+      <descriptors name="ImportReadFigure">
+        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ImportReadFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.4"/>
       </descriptors>
-      <descriptors name="ImportReadsFromExternalLabelFigure">
-        <actualFigure xsi:type="gmfgraph:Label" name="ImportReadsFromExternalLabel"/>
+      <descriptors name="ImportReadExternalLabelFigure">
+        <actualFigure xsi:type="gmfgraph:Label" name="ImportReadExternalLabel"/>
       </descriptors>
       <descriptors name="ImportImpUsesFigure">
         <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ImportImpUsesFigure" targetDecoration="/0/@figures.0/@figures.5"/>
@@ -251,11 +251,11 @@
       <descriptors name="ImportImpUsesExternalLabelFigure">
         <actualFigure xsi:type="gmfgraph:Label" name="ImportImpUsesExternalLabel"/>
       </descriptors>
-      <descriptors name="ExportGeneratesFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ExportGeneratesFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.6"/>
+      <descriptors name="ExportWriteFigure">
+        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ExportWriteFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.6"/>
       </descriptors>
-      <descriptors name="ExportGeneratesExternalLabelFigure">
-        <actualFigure xsi:type="gmfgraph:Label" name="ExportGeneratesExternalLabel"/>
+      <descriptors name="ExportWriteExternalLabelFigure">
+        <actualFigure xsi:type="gmfgraph:Label" name="ExportWriteExternalLabel"/>
       </descriptors>
       <descriptors name="ExportExpUsesFigure">
         <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ExportExpUsesFigure" targetDecoration="/0/@figures.0/@figures.7"/>
@@ -287,9 +287,9 @@
     <connections name="InternalDataFlow" figure="InternalDataFlowFigure"/>
     <connections name="DataFlowSchema" figure="DataFlowSchemaFigure"/>
     <connections name="InternalDataFlowSchema" figure="InternalDataFlowSchemaFigure"/>
-    <connections name="ImportReadsFrom" figure="ImportReadsFromFigure"/>
+    <connections name="ImportRead" figure="ImportReadFigure"/>
     <connections name="ImportImpUses" figure="ImportImpUsesFigure"/>
-    <connections name="ExportGenerates" figure="ExportGeneratesFigure"/>
+    <connections name="ExportWrite" figure="ExportWriteFigure"/>
     <connections name="ExportExpUses" figure="ExportExpUsesFigure"/>
     <compartments name="SchemaAttributesCompartment" figure="SchemaFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.0/@accessors.0"/>
     <compartments name="CollectionTaskImportsCompartment" figure="CollectionTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.1/@accessors.1"/>
@@ -317,9 +317,9 @@
     <labels name="ComplexAttributeLabel" figure="ComplexAttributeFigure" accessor="/0/@figures.0/@descriptors.18/@accessors.0"/>
     <labels name="DataFlowSchemaExternalLabel" figure="DataFlowSchemaExternalLabelFigure" elementIcon="false"/>
     <labels name="InternalDataFlowSchemaExternalLabel" figure="InternalDataFlowSchemaExternalLabelFigure" elementIcon="false"/>
-    <labels name="ImportReadsFromExternalLabel" figure="ImportReadsFromExternalLabelFigure" elementIcon="false"/>
+    <labels name="ImportReadExternalLabel" figure="ImportReadExternalLabelFigure" elementIcon="false"/>
     <labels name="ImportImpUsesExternalLabel" figure="ImportImpUsesExternalLabelFigure" elementIcon="false"/>
-    <labels name="ExportGeneratesExternalLabel" figure="ExportGeneratesExternalLabelFigure" elementIcon="false"/>
+    <labels name="ExportWriteExternalLabel" figure="ExportWriteExternalLabelFigure" elementIcon="false"/>
     <labels name="ExportExpUsesExternalLabel" figure="ExportExpUsesExternalLabelFigure" elementIcon="false"/>
   </gmfgraph:Canvas>
   <gmfgraph:Label name="SchemaLabelFigure" text="Schema">

@@ -34,7 +34,7 @@ public class PipelineModelingAssistantProviderOfFileEditPart extends PipelineMod
 	*/
 	public List<IElementType> doGetRelTypesOnTarget(FileEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(PipelineElementTypes.ExportGenerates_4008);
+		types.add(PipelineElementTypes.ExportWrite_4022);
 		return types;
 	}
 
@@ -53,7 +53,7 @@ public class PipelineModelingAssistantProviderOfFileEditPart extends PipelineMod
 	*/
 	public List<IElementType> doGetTypesForSource(FileEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == PipelineElementTypes.ExportGenerates_4008) {
+		if (relationshipType == PipelineElementTypes.ExportWrite_4022) {
 			types.add(PipelineElementTypes.Export_3037);
 		}
 		return types;

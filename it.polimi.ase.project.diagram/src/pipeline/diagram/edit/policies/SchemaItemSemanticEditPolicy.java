@@ -26,13 +26,14 @@ import pipeline.diagram.edit.commands.ExportExpUsesCreateCommand;
 import pipeline.diagram.edit.commands.ExportExpUsesReorientCommand;
 import pipeline.diagram.edit.commands.ImportImpUsesCreateCommand;
 import pipeline.diagram.edit.commands.ImportImpUsesReorientCommand;
-import pipeline.diagram.edit.commands.InternalDataFlowInternalSchemaCreateCommand;
-import pipeline.diagram.edit.commands.InternalDataFlowInternalSchemaReorientCommand;
+import pipeline.diagram.edit.commands.InternalDataFlowSchemaCreateCommand;
+import pipeline.diagram.edit.commands.InternalDataFlowSchemaReorientCommand;
 import pipeline.diagram.edit.parts.ComplexAttributeEditPart;
 import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.ExportExpUsesEditPart;
 import pipeline.diagram.edit.parts.ImportImpUsesEditPart;
-import pipeline.diagram.edit.parts.InternalDataFlowInternalSchemaEditPart;
+import pipeline.diagram.edit.parts.IntegrationTaskAttributesEditPart;
+import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.SchemaSchemaAttributesCompartmentEditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
@@ -66,8 +67,7 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (PipelineVisualIDRegistry
-					.getVisualID(incomingLink) == InternalDataFlowInternalSchemaEditPart.VISUAL_ID) {
+			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == InternalDataFlowSchemaEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
@@ -115,12 +115,36 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 					Node cnode = (Node) cit.next();
 					switch (PipelineVisualIDRegistry.getVisualID(cnode)) {
 					case SimpleAttributeEditPart.VISUAL_ID:
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
+							Edge incomingLink = (Edge) it.next();
+							if (PipelineVisualIDRegistry
+									.getVisualID(incomingLink) == IntegrationTaskAttributesEditPart.VISUAL_ID) {
+								DestroyReferenceRequest r = new DestroyReferenceRequest(
+										incomingLink.getSource().getElement(), null,
+										incomingLink.getTarget().getElement(), false);
+								cmd.add(new DestroyReferenceCommand(r));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								continue;
+							}
+						}
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case ComplexAttributeEditPart.VISUAL_ID:
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
+							Edge incomingLink = (Edge) it.next();
+							if (PipelineVisualIDRegistry
+									.getVisualID(incomingLink) == IntegrationTaskAttributesEditPart.VISUAL_ID) {
+								DestroyReferenceRequest r = new DestroyReferenceRequest(
+										incomingLink.getSource().getElement(), null,
+										incomingLink.getTarget().getElement(), false);
+								cmd.add(new DestroyReferenceCommand(r));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								continue;
+							}
+						}
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
@@ -149,7 +173,7 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 		if (PipelineElementTypes.DataFlowSchema_4019 == req.getElementType()) {
 			return null;
 		}
-		if (PipelineElementTypes.InternalDataFlowInternalSchema_4023 == req.getElementType()) {
+		if (PipelineElementTypes.InternalDataFlowSchema_4024 == req.getElementType()) {
 			return null;
 		}
 		if (PipelineElementTypes.ImportImpUses_4013 == req.getElementType()) {
@@ -168,9 +192,8 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 		if (PipelineElementTypes.DataFlowSchema_4019 == req.getElementType()) {
 			return getGEFWrapper(new DataFlowSchemaCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (PipelineElementTypes.InternalDataFlowInternalSchema_4023 == req.getElementType()) {
-			return getGEFWrapper(
-					new InternalDataFlowInternalSchemaCreateCommand(req, req.getSource(), req.getTarget()));
+		if (PipelineElementTypes.InternalDataFlowSchema_4024 == req.getElementType()) {
+			return getGEFWrapper(new InternalDataFlowSchemaCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		if (PipelineElementTypes.ImportImpUses_4013 == req.getElementType()) {
 			return getGEFWrapper(new ImportImpUsesCreateCommand(req, req.getSource(), req.getTarget()));
@@ -191,8 +214,8 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 		switch (getVisualID(req)) {
 		case DataFlowSchemaEditPart.VISUAL_ID:
 			return getGEFWrapper(new DataFlowSchemaReorientCommand(req));
-		case InternalDataFlowInternalSchemaEditPart.VISUAL_ID:
-			return getGEFWrapper(new InternalDataFlowInternalSchemaReorientCommand(req));
+		case InternalDataFlowSchemaEditPart.VISUAL_ID:
+			return getGEFWrapper(new InternalDataFlowSchemaReorientCommand(req));
 		case ImportImpUsesEditPart.VISUAL_ID:
 			return getGEFWrapper(new ImportImpUsesReorientCommand(req));
 		case ExportExpUsesEditPart.VISUAL_ID:

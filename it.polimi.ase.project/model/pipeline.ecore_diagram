@@ -281,7 +281,7 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_96uSkuGWEeeU3dy_CQ-Szg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_96uSk-GWEeeU3dy_CQ-Szg" type="7001">
       <children xmi:type="notation:Node" xmi:id="_LoqbAO8FEeeKqPfWoCQbzQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//UserDefinedCleaningOperation/name"/>
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//UserDefined/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_LoqbAe8FEeeKqPfWoCQbzQ"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_96uSlOGWEeeU3dy_CQ-Szg"/>
@@ -295,7 +295,7 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_96uSmuGWEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_96uSm-GWEeeU3dy_CQ-Szg"/>
     </children>
-    <element xmi:type="ecore:EClass" href="pipeline.ecore#//UserDefinedCleaningOperation"/>
+    <element xmi:type="ecore:EClass" href="pipeline.ecore#//UserDefined"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_96uSkeGWEeeU3dy_CQ-Szg" x="588" y="301"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="__xvekOGWEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
@@ -389,7 +389,7 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_w2-S8OGXEeeU3dy_CQ-Szg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_w2-S8eGXEeeU3dy_CQ-Szg" type="7001">
       <children xmi:type="notation:Node" xmi:id="_cC1ucO8FEeeKqPfWoCQbzQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//DescriptiveAnalysisOperation/name"/>
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Descriptive/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_cC1uce8FEeeKqPfWoCQbzQ"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_w2-S8uGXEeeU3dy_CQ-Szg"/>
@@ -403,14 +403,14 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_w2-S-OGXEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_w2-S-eGXEeeU3dy_CQ-Szg"/>
     </children>
-    <element xmi:type="ecore:EClass" href="pipeline.ecore#//DescriptiveAnalysisOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w29r4eGXEeeU3dy_CQ-Szg" x="763" y="686"/>
+    <element xmi:type="ecore:EClass" href="pipeline.ecore#//Descriptive"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w29r4eGXEeeU3dy_CQ-Szg" x="996" y="647"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_xNQsAOGXEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_xNQsAuGXEeeU3dy_CQ-Szg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_xNQsA-GXEeeU3dy_CQ-Szg" type="7001">
       <children xmi:type="notation:Node" xmi:id="_eGwuAO8FEeeKqPfWoCQbzQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//ClassificationAnalysisOperation/name"/>
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Classification/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_eGwuAe8FEeeKqPfWoCQbzQ"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_xNQsBOGXEeeU3dy_CQ-Szg"/>
@@ -424,14 +424,14 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_xNQsCuGXEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_xNQsC-GXEeeU3dy_CQ-Szg"/>
     </children>
-    <element xmi:type="ecore:EClass" href="pipeline.ecore#//ClassificationAnalysisOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xNQsAeGXEeeU3dy_CQ-Szg" x="917" y="763"/>
+    <element xmi:type="ecore:EClass" href="pipeline.ecore#//Classification"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xNQsAeGXEeeU3dy_CQ-Szg" x="1024" y="719"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_xhlWMOGXEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_xhlWMuGXEeeU3dy_CQ-Szg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_xhlWM-GXEeeU3dy_CQ-Szg" type="7001">
       <children xmi:type="notation:Node" xmi:id="_hrD7MO8FEeeKqPfWoCQbzQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//PredictiveAnalysisOperation/name"/>
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Predictive/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_hrD7Me8FEeeKqPfWoCQbzQ"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_xhlWNOGXEeeU3dy_CQ-Szg"/>
@@ -448,18 +448,18 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_xhl9ReGXEeeU3dy_CQ-Szg"/>
       <layoutConstraint xmi:type="notation:Ratio" xmi:id="_xeb0MuGaEeeU3dy_CQ-Szg" value="0.23076923076923078"/>
     </children>
-    <element xmi:type="ecore:EClass" href="pipeline.ecore#//PredictiveAnalysisOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xhlWMeGXEeeU3dy_CQ-Szg" x="1071" y="854"/>
+    <element xmi:type="ecore:EClass" href="pipeline.ecore#//Predictive"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xhlWMeGXEeeU3dy_CQ-Szg" x="1108" y="719"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_x2QlsOGXEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_x2QlsuGXEeeU3dy_CQ-Szg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_x2Qls-GXEeeU3dy_CQ-Szg" type="7001">
       <children xmi:type="notation:Node" xmi:id="_OMr4MOvqEeeFk6gmUtNFpw" type="3001">
-        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//ClusteringAnalysisOperation/k"/>
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Clustering/k"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_OMr4MevqEeeFk6gmUtNFpw"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_gLEIEO8FEeeKqPfWoCQbzQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//ClusteringAnalysisOperation/name"/>
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Clustering/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_gLEIEe8FEeeKqPfWoCQbzQ"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_x2QltOGXEeeU3dy_CQ-Szg"/>
@@ -473,14 +473,14 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_x2RMweGXEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_x2RMwuGXEeeU3dy_CQ-Szg"/>
     </children>
-    <element xmi:type="ecore:EClass" href="pipeline.ecore#//ClusteringAnalysisOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x2QlseGXEeeU3dy_CQ-Szg" x="1071" y="665"/>
+    <element xmi:type="ecore:EClass" href="pipeline.ecore#//Clustering"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x2QlseGXEeeU3dy_CQ-Szg" x="1160" y="652"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_yKPRoOGXEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_yKP4seGXEeeU3dy_CQ-Szg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_yKP4suGXEeeU3dy_CQ-Szg" type="7001">
       <children xmi:type="notation:Node" xmi:id="_Q9MPsO8FEeeKqPfWoCQbzQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//PredefinedCleaningOperation/name"/>
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Predefined/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Q9MPse8FEeeKqPfWoCQbzQ"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_yKP4s-GXEeeU3dy_CQ-Szg"/>
@@ -494,7 +494,7 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_yKP4ueGXEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_yKP4uuGXEeeU3dy_CQ-Szg"/>
     </children>
-    <element xmi:type="ecore:EClass" href="pipeline.ecore#//PredefinedCleaningOperation"/>
+    <element xmi:type="ecore:EClass" href="pipeline.ecore#//Predefined"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yKP4sOGXEeeU3dy_CQ-Szg" x="672" y="385"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_0waF0OGbEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
@@ -633,7 +633,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_OrVh2O8FEeeKqPfWoCQbzQ"/>
     </children>
     <element xmi:type="ecore:EEnum" href="pipeline.ecore#//PredefinedOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OrVh0e8FEeeKqPfWoCQbzQ" x="440" y="833"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OrVh0e8FEeeKqPfWoCQbzQ" x="584" y="692"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_UoyXsO8FEeeKqPfWoCQbzQ" type="2005" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_UoyXsu8FEeeKqPfWoCQbzQ" type="5005"/>
@@ -662,7 +662,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Uoy-wu8FEeeKqPfWoCQbzQ"/>
     </children>
     <element xmi:type="ecore:EEnum" href="pipeline.ecore#//ClusteringOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UoyXse8FEeeKqPfWoCQbzQ" x="560" y="833"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UoyXse8FEeeKqPfWoCQbzQ" x="704" y="692"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_W2m6IO8FEeeKqPfWoCQbzQ" type="2005" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_W2m6Iu8FEeeKqPfWoCQbzQ" type="5005"/>
@@ -695,7 +695,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_W2m6KO8FEeeKqPfWoCQbzQ"/>
     </children>
     <element xmi:type="ecore:EEnum" href="pipeline.ecore#//ClassificationOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W2m6Ie8FEeeKqPfWoCQbzQ" x="672" y="833"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W2m6Ie8FEeeKqPfWoCQbzQ" x="816" y="692"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_Yv9BYO8FEeeKqPfWoCQbzQ" type="2005" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_Yv9BYu8FEeeKqPfWoCQbzQ" type="5005"/>
@@ -720,7 +720,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Yv9BaO8FEeeKqPfWoCQbzQ"/>
     </children>
     <element xmi:type="ecore:EEnum" href="pipeline.ecore#//PredictiveOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yv9BYe8FEeeKqPfWoCQbzQ" x="560" y="918"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yv9BYe8FEeeKqPfWoCQbzQ" x="704" y="777"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_aZ6BwO8FEeeKqPfWoCQbzQ" type="2005" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_aZ6o0O8FEeeKqPfWoCQbzQ" type="5005"/>
@@ -745,7 +745,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_aZ6o1u8FEeeKqPfWoCQbzQ"/>
     </children>
     <element xmi:type="ecore:EEnum" href="pipeline.ecore#//DescriptiveOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aZ6Bwe8FEeeKqPfWoCQbzQ" x="672" y="957"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aZ6Bwe8FEeeKqPfWoCQbzQ" x="816" y="816"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_sjcSoO8IEeeKqPfWoCQbzQ" type="2005" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_sjcSou8IEeeKqPfWoCQbzQ" type="5005"/>
@@ -1268,7 +1268,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_4SjHhuu6Eee4hrsBN4wSAg" x="-130" y="-13"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_4SjHgeu6Eee4hrsBN4wSAg" fontName=".SF NS Text"/>
-    <element xmi:type="ecore:EReference" href="pipeline.ecore#//InternalDataFlow/internalSchema"/>
+    <element xmi:type="ecore:EReference" href="pipeline.ecore#//InternalDataFlow/schema"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4SjHguu6Eee4hrsBN4wSAg" points="[13, -8, -780, 323]$[793, -8, 0, 323]$[793, -330, 0, 1]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4SkVoOu6Eee4hrsBN4wSAg" id="(0.8617021276595744,0.6666666666666666)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4SkVoeu6Eee4hrsBN4wSAg" id="(0.7333333333333333,0.9848484848484849)"/>

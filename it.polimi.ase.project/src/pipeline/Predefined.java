@@ -20,7 +20,6 @@ package pipeline;
  * @generated
  */
 public interface Predefined extends CleaningOperation {
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * The default value is <code>""</code>.
@@ -50,4 +49,5 @@ public interface Predefined extends CleaningOperation {
 	 * @generated
 	 */
 	void setName(PredefinedOperation value);
+
 } // Predefined

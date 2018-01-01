@@ -266,12 +266,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String ClassificationAnalysisOperation2CreationTool_title;
+	public static String Classification2CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ClassificationAnalysisOperation2CreationTool_desc;
+	public static String Classification2CreationTool_desc;
 
 	/**
 	* @generated
@@ -286,12 +286,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String ClusteringAnalysisOperation4CreationTool_title;
+	public static String Clustering4CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ClusteringAnalysisOperation4CreationTool_desc;
+	public static String Clustering4CreationTool_desc;
 
 	/**
 	* @generated
@@ -316,12 +316,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String DescriptiveAnalysisOperation7CreationTool_title;
+	public static String Descriptive7CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String DescriptiveAnalysisOperation7CreationTool_desc;
+	public static String Descriptive7CreationTool_desc;
 
 	/**
 	* @generated
@@ -376,22 +376,22 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String PredefinedCleaningOperation13CreationTool_title;
+	public static String Predefined13CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String PredefinedCleaningOperation13CreationTool_desc;
+	public static String Predefined13CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String PredictiveAnalysisOperation14CreationTool_title;
+	public static String Predictive14CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String PredictiveAnalysisOperation14CreationTool_desc;
+	public static String Predictive14CreationTool_desc;
 
 	/**
 	* @generated
@@ -426,12 +426,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String UserDefinedCleaningOperation18CreationTool_title;
+	public static String UserDefined18CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String UserDefinedCleaningOperation18CreationTool_desc;
+	public static String UserDefined18CreationTool_desc;
 
 	/**
 	* @generated
@@ -446,82 +446,92 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String DataFlow1CreationTool_title;
+	public static String DFSchema1CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String DataFlow1CreationTool_desc;
+	public static String DFSchema1CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ExpUses2CreationTool_title;
+	public static String DataFlow2CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ExpUses2CreationTool_desc;
+	public static String DataFlow2CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ImpUses3CreationTool_title;
+	public static String ExpUses3CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ImpUses3CreationTool_desc;
+	public static String ExpUses3CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String InternalDataFlow4CreationTool_title;
+	public static String ImpUses4CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String InternalDataFlow4CreationTool_desc;
+	public static String ImpUses4CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String InternalSchema5CreationTool_title;
+	public static String IntegrationAttributes5CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String InternalSchema5CreationTool_desc;
+	public static String IntegrationAttributes5CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Read6CreationTool_title;
+	public static String InternalDFSchema6CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Read6CreationTool_desc;
+	public static String InternalDFSchema6CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Schema7CreationTool_title;
+	public static String InternalDataFlow7CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Schema7CreationTool_desc;
+	public static String InternalDataFlow7CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Write8CreationTool_title;
+	public static String Read8CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Write8CreationTool_desc;
+	public static String Read8CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String Write9CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Write9CreationTool_desc;
 
 	/**
 	* @generated
@@ -656,62 +666,82 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_UserDefinedCleaningOperation_3050_incominglinks;
+	public static String NavigatorGroupName_SimpleAttribute_3046_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_UserDefinedCleaningOperation_3050_outgoinglinks;
+	public static String NavigatorGroupName_ComplexAttribute_3047_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_PredefinedCleaningOperation_3051_incominglinks;
+	public static String NavigatorGroupName_SimpleAttribute_3048_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_PredefinedCleaningOperation_3051_outgoinglinks;
+	public static String NavigatorGroupName_ComplexAttribute_3049_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_DescriptiveAnalysisOperation_3052_incominglinks;
+	public static String NavigatorGroupName_UserDefined_3056_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_DescriptiveAnalysisOperation_3052_outgoinglinks;
+	public static String NavigatorGroupName_UserDefined_3056_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_ClassificationAnalysisOperation_3053_incominglinks;
+	public static String NavigatorGroupName_Predefined_3057_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_ClassificationAnalysisOperation_3053_outgoinglinks;
+	public static String NavigatorGroupName_Predefined_3057_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_PredictiveAnalysisOperation_3054_incominglinks;
+	public static String NavigatorGroupName_Descriptive_3058_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_PredictiveAnalysisOperation_3054_outgoinglinks;
+	public static String NavigatorGroupName_Descriptive_3058_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_ClusteringAnalysisOperation_3055_incominglinks;
+	public static String NavigatorGroupName_Classification_3059_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_ClusteringAnalysisOperation_3055_outgoinglinks;
+	public static String NavigatorGroupName_Classification_3059_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Predictive_3060_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Predictive_3060_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Clustering_3061_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Clustering_3061_outgoinglinks;
 
 	/**
 	* @generated
@@ -796,12 +826,22 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_InternalDataFlowInternalSchema_4023_target;
+	public static String NavigatorGroupName_InternalDataFlowSchema_4024_target;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_InternalDataFlowInternalSchema_4023_source;
+	public static String NavigatorGroupName_InternalDataFlowSchema_4024_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_IntegrationTaskAttributes_4025_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_IntegrationTaskAttributes_4025_source;
 
 	/**
 	* @generated

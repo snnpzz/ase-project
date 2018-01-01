@@ -348,26 +348,26 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pipeline.UserDefinedCleaningOperation} instances.
+	 * This keeps track of the one adapter used for all {@link pipeline.UserDefined} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UserDefinedCleaningOperationItemProvider userDefinedCleaningOperationItemProvider;
+	protected UserDefinedItemProvider userDefinedItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pipeline.UserDefinedCleaningOperation}.
+	 * This creates an adapter for a {@link pipeline.UserDefined}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createUserDefinedCleaningOperationAdapter() {
-		if (userDefinedCleaningOperationItemProvider == null) {
-			userDefinedCleaningOperationItemProvider = new UserDefinedCleaningOperationItemProvider(this);
+	public Adapter createUserDefinedAdapter() {
+		if (userDefinedItemProvider == null) {
+			userDefinedItemProvider = new UserDefinedItemProvider(this);
 		}
 
-		return userDefinedCleaningOperationItemProvider;
+		return userDefinedItemProvider;
 	}
 
 	/**
@@ -417,118 +417,118 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pipeline.DescriptiveAnalysisOperation} instances.
+	 * This keeps track of the one adapter used for all {@link pipeline.Descriptive} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DescriptiveAnalysisOperationItemProvider descriptiveAnalysisOperationItemProvider;
+	protected DescriptiveItemProvider descriptiveItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pipeline.DescriptiveAnalysisOperation}.
+	 * This creates an adapter for a {@link pipeline.Descriptive}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDescriptiveAnalysisOperationAdapter() {
-		if (descriptiveAnalysisOperationItemProvider == null) {
-			descriptiveAnalysisOperationItemProvider = new DescriptiveAnalysisOperationItemProvider(this);
+	public Adapter createDescriptiveAdapter() {
+		if (descriptiveItemProvider == null) {
+			descriptiveItemProvider = new DescriptiveItemProvider(this);
 		}
 
-		return descriptiveAnalysisOperationItemProvider;
+		return descriptiveItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pipeline.ClassificationAnalysisOperation} instances.
+	 * This keeps track of the one adapter used for all {@link pipeline.Classification} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ClassificationAnalysisOperationItemProvider classificationAnalysisOperationItemProvider;
+	protected ClassificationItemProvider classificationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pipeline.ClassificationAnalysisOperation}.
+	 * This creates an adapter for a {@link pipeline.Classification}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createClassificationAnalysisOperationAdapter() {
-		if (classificationAnalysisOperationItemProvider == null) {
-			classificationAnalysisOperationItemProvider = new ClassificationAnalysisOperationItemProvider(this);
+	public Adapter createClassificationAdapter() {
+		if (classificationItemProvider == null) {
+			classificationItemProvider = new ClassificationItemProvider(this);
 		}
 
-		return classificationAnalysisOperationItemProvider;
+		return classificationItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pipeline.PredictiveAnalysisOperation} instances.
+	 * This keeps track of the one adapter used for all {@link pipeline.Predictive} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PredictiveAnalysisOperationItemProvider predictiveAnalysisOperationItemProvider;
+	protected PredictiveItemProvider predictiveItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pipeline.PredictiveAnalysisOperation}.
+	 * This creates an adapter for a {@link pipeline.Predictive}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPredictiveAnalysisOperationAdapter() {
-		if (predictiveAnalysisOperationItemProvider == null) {
-			predictiveAnalysisOperationItemProvider = new PredictiveAnalysisOperationItemProvider(this);
+	public Adapter createPredictiveAdapter() {
+		if (predictiveItemProvider == null) {
+			predictiveItemProvider = new PredictiveItemProvider(this);
 		}
 
-		return predictiveAnalysisOperationItemProvider;
+		return predictiveItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pipeline.ClusteringAnalysisOperation} instances.
+	 * This keeps track of the one adapter used for all {@link pipeline.Clustering} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ClusteringAnalysisOperationItemProvider clusteringAnalysisOperationItemProvider;
+	protected ClusteringItemProvider clusteringItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pipeline.ClusteringAnalysisOperation}.
+	 * This creates an adapter for a {@link pipeline.Clustering}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createClusteringAnalysisOperationAdapter() {
-		if (clusteringAnalysisOperationItemProvider == null) {
-			clusteringAnalysisOperationItemProvider = new ClusteringAnalysisOperationItemProvider(this);
+	public Adapter createClusteringAdapter() {
+		if (clusteringItemProvider == null) {
+			clusteringItemProvider = new ClusteringItemProvider(this);
 		}
 
-		return clusteringAnalysisOperationItemProvider;
+		return clusteringItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pipeline.PredefinedCleaningOperation} instances.
+	 * This keeps track of the one adapter used for all {@link pipeline.Predefined} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PredefinedCleaningOperationItemProvider predefinedCleaningOperationItemProvider;
+	protected PredefinedItemProvider predefinedItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pipeline.PredefinedCleaningOperation}.
+	 * This creates an adapter for a {@link pipeline.Predefined}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPredefinedCleaningOperationAdapter() {
-		if (predefinedCleaningOperationItemProvider == null) {
-			predefinedCleaningOperationItemProvider = new PredefinedCleaningOperationItemProvider(this);
+	public Adapter createPredefinedAdapter() {
+		if (predefinedItemProvider == null) {
+			predefinedItemProvider = new PredefinedItemProvider(this);
 		}
 
-		return predefinedCleaningOperationItemProvider;
+		return predefinedItemProvider;
 	}
 
 	/**
@@ -688,14 +688,14 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 		if (exportTaskItemProvider != null) exportTaskItemProvider.dispose();
 		if (importItemProvider != null) importItemProvider.dispose();
 		if (exportItemProvider != null) exportItemProvider.dispose();
-		if (userDefinedCleaningOperationItemProvider != null) userDefinedCleaningOperationItemProvider.dispose();
+		if (userDefinedItemProvider != null) userDefinedItemProvider.dispose();
 		if (sourceItemProvider != null) sourceItemProvider.dispose();
 		if (fileItemProvider != null) fileItemProvider.dispose();
-		if (descriptiveAnalysisOperationItemProvider != null) descriptiveAnalysisOperationItemProvider.dispose();
-		if (classificationAnalysisOperationItemProvider != null) classificationAnalysisOperationItemProvider.dispose();
-		if (predictiveAnalysisOperationItemProvider != null) predictiveAnalysisOperationItemProvider.dispose();
-		if (clusteringAnalysisOperationItemProvider != null) clusteringAnalysisOperationItemProvider.dispose();
-		if (predefinedCleaningOperationItemProvider != null) predefinedCleaningOperationItemProvider.dispose();
+		if (descriptiveItemProvider != null) descriptiveItemProvider.dispose();
+		if (classificationItemProvider != null) classificationItemProvider.dispose();
+		if (predictiveItemProvider != null) predictiveItemProvider.dispose();
+		if (clusteringItemProvider != null) clusteringItemProvider.dispose();
+		if (predefinedItemProvider != null) predefinedItemProvider.dispose();
 		if (simpleAttributeItemProvider != null) simpleAttributeItemProvider.dispose();
 		if (complexAttributeItemProvider != null) complexAttributeItemProvider.dispose();
 	}

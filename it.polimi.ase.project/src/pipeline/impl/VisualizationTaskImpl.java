@@ -3,11 +3,12 @@
 package pipeline.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import pipeline.ChartType;
-import pipeline.GraphType;
 import pipeline.PipelinePackage;
 import pipeline.Size;
 import pipeline.VisualizationTask;
@@ -36,6 +37,7 @@ public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask
 	 * @ordered
 	 */
 	protected static final Size SIZE_EDEFAULT = Size.SMALL;
+
 	/**
 	 * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -55,6 +57,7 @@ public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask
 	 * @ordered
 	 */
 	protected static final ChartType CHART_TYPE_EDEFAULT = ChartType.COLUMN;
+
 	/**
 	 * The cached value of the '{@link #getChartType() <em>Chart Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,6 +67,7 @@ public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask
 	 * @ordered
 	 */
 	protected ChartType chartType = CHART_TYPE_EDEFAULT;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

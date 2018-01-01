@@ -19,13 +19,13 @@ abstract class Task {
   ref DataFlow[*]#source outgoing;
 }
 
-@gmf.link(source="source", target="target", width="2", target.decoration="closedarrow")
+@gmf.link(source="source", target="target", width="2", target.decoration="filledclosedarrow")
 class DataFlow {
   attr Format format;
   ref Task#incoming target;
   ref Task#outgoing source;
 
-  @gmf.link(width="1", target.decoration="arrow", style="dash")
+  @gmf.link(width="1", target.decoration="arrow", tool.name="DFSchema", style="dot")
   ref Schema[1] schema;
 }
 
@@ -35,14 +35,14 @@ abstract class Operation {
   ref InternalDataFlow#source outgoing;
 }
 
-@gmf.link(source="source", target="target", width="2", target.decoration="arrow", style="dash")
+@gmf.link(source="source", target="target", width="2", target.decoration="filledclosedarrow", style="dash")
 class InternalDataFlow {
   attr Format format;
   ref Operation#outgoing source;
   ref Operation#incoming target;
 
-  @gmf.link(width="1", target.decoration="arrow", style="dash")
-  ref Schema[1] internalSchema;
+  @gmf.link(width="1", target.decoration="arrow", style="dot", tool.name="InternalDFSchema")
+  ref Schema[1] schema;
 }
 
 @gmf.node(label="name", label.placement="none", figure="rounded")
@@ -67,6 +67,7 @@ class CollectionTask extends Task {
 }
 
 class IntegrationTask extends Task {
+  @gmf.link(width="2", target.decoration="closedarrow", tool.name="IntegrationAttributes")
   ref Attribute[+] attributes;
 }
 
@@ -107,7 +108,7 @@ class Import {
 @gmf.node(label="name", label.text="Export", figure="ellipse")
 class Export {
 
-  @gmf.link(width="2", target.decoration="square", style="dash")
+  @gmf.link(width="2", target.decoration="filledsquare", style="dash")
   ref File[1]#comesFrom write;
 
   @gmf.link(width="1", target.decoration="arrow")
@@ -115,7 +116,7 @@ class Export {
   attr String name;
 }
 
-class UserDefinedCleaningOperation extends CleaningOperation {
+class UserDefined extends CleaningOperation {
   attr String name;
 }
 
@@ -139,24 +140,24 @@ abstract class CleaningOperation extends Operation {
 abstract class AnalysisOperation extends Operation {
 }
 
-class DescriptiveAnalysisOperation extends AnalysisOperation {
+class Descriptive extends AnalysisOperation {
   attr DescriptiveOperation name;
 }
 
-class ClassificationAnalysisOperation extends AnalysisOperation {
+class Classification extends AnalysisOperation {
   attr ClassificationOperation name;
 }
 
-class PredictiveAnalysisOperation extends AnalysisOperation {
+class Predictive extends AnalysisOperation {
   attr PredictiveOperation name;
 }
 
-class ClusteringAnalysisOperation extends AnalysisOperation {
+class Clustering extends AnalysisOperation {
   attr int k;
   attr ClusteringOperation name;
 }
 
-class PredefinedCleaningOperation extends CleaningOperation {
+class Predefined extends CleaningOperation {
   attr PredefinedOperation name = "";
 }
 
@@ -226,23 +227,23 @@ enum Type {
 
 enum ChartType {
   Column = 0;
-  Line = 1;
-  Pie = 2;
-  Doughnut = 3;
-  Bar = 4;
-  Area = 5;
-  Scatter = 6;
-  Bubble = 7;
-  Map = 8;
-  Stock = 9;
-  Surface = 10;
-  Radar = 11;
-  Treemap = 12;
-  Sunburst = 13;
-  Histogram = 14;
-  BoxAndWhisker = 15;
-  Waterfall = 16;
-  Funnel = 17;
-  Combo = 18;
+  Line = 0;
+  Pie = 0;
+  Doughnut = 0;
+  Bar = 0;
+  Area = 0;
+  Scatter = 0;
+  Bubble = 0;
+  Map = 0;
+  Stock = 0;
+  Surface = 0;
+  Radar = 0;
+  Treemap = 0;
+  Sunburst = 0;
+  Histogram = 0;
+  BoxAndWhisker = 0;
+  Waterfall = 0;
+  Funnel = 0;
+  Combo = 0;
 }
 

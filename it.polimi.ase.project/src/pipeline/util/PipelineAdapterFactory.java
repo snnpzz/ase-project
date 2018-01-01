@@ -128,8 +128,8 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 				return createExportAdapter();
 			}
 			@Override
-			public Adapter caseUserDefinedCleaningOperation(UserDefinedCleaningOperation object) {
-				return createUserDefinedCleaningOperationAdapter();
+			public Adapter caseUserDefined(UserDefined object) {
+				return createUserDefinedAdapter();
 			}
 			@Override
 			public Adapter caseSource(Source object) {
@@ -148,24 +148,24 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 				return createAnalysisOperationAdapter();
 			}
 			@Override
-			public Adapter caseDescriptiveAnalysisOperation(DescriptiveAnalysisOperation object) {
-				return createDescriptiveAnalysisOperationAdapter();
+			public Adapter caseDescriptive(Descriptive object) {
+				return createDescriptiveAdapter();
 			}
 			@Override
-			public Adapter caseClassificationAnalysisOperation(ClassificationAnalysisOperation object) {
-				return createClassificationAnalysisOperationAdapter();
+			public Adapter caseClassification(Classification object) {
+				return createClassificationAdapter();
 			}
 			@Override
-			public Adapter casePredictiveAnalysisOperation(PredictiveAnalysisOperation object) {
-				return createPredictiveAnalysisOperationAdapter();
+			public Adapter casePredictive(Predictive object) {
+				return createPredictiveAdapter();
 			}
 			@Override
-			public Adapter caseClusteringAnalysisOperation(ClusteringAnalysisOperation object) {
-				return createClusteringAnalysisOperationAdapter();
+			public Adapter caseClustering(Clustering object) {
+				return createClusteringAdapter();
 			}
 			@Override
-			public Adapter casePredefinedCleaningOperation(PredefinedCleaningOperation object) {
-				return createPredefinedCleaningOperationAdapter();
+			public Adapter casePredefined(Predefined object) {
+				return createPredefinedAdapter();
 			}
 			@Override
 			public Adapter caseSimpleAttribute(SimpleAttribute object) {
@@ -406,16 +406,16 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.UserDefinedCleaningOperation <em>User Defined Cleaning Operation</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.UserDefined <em>User Defined</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.UserDefinedCleaningOperation
+	 * @see pipeline.UserDefined
 	 * @generated
 	 */
-	public Adapter createUserDefinedCleaningOperationAdapter() {
+	public Adapter createUserDefinedAdapter() {
 		return null;
 	}
 
@@ -476,72 +476,72 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.DescriptiveAnalysisOperation <em>Descriptive Analysis Operation</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.Descriptive <em>Descriptive</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.DescriptiveAnalysisOperation
+	 * @see pipeline.Descriptive
 	 * @generated
 	 */
-	public Adapter createDescriptiveAnalysisOperationAdapter() {
+	public Adapter createDescriptiveAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.ClassificationAnalysisOperation <em>Classification Analysis Operation</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.Classification <em>Classification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.ClassificationAnalysisOperation
+	 * @see pipeline.Classification
 	 * @generated
 	 */
-	public Adapter createClassificationAnalysisOperationAdapter() {
+	public Adapter createClassificationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.PredictiveAnalysisOperation <em>Predictive Analysis Operation</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.Predictive <em>Predictive</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.PredictiveAnalysisOperation
+	 * @see pipeline.Predictive
 	 * @generated
 	 */
-	public Adapter createPredictiveAnalysisOperationAdapter() {
+	public Adapter createPredictiveAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.ClusteringAnalysisOperation <em>Clustering Analysis Operation</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.Clustering <em>Clustering</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.ClusteringAnalysisOperation
+	 * @see pipeline.Clustering
 	 * @generated
 	 */
-	public Adapter createClusteringAnalysisOperationAdapter() {
+	public Adapter createClusteringAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.PredefinedCleaningOperation <em>Predefined Cleaning Operation</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.Predefined <em>Predefined</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.PredefinedCleaningOperation
+	 * @see pipeline.Predefined
 	 * @generated
 	 */
-	public Adapter createPredefinedCleaningOperationAdapter() {
+	public Adapter createPredefinedAdapter() {
 		return null;
 	}
 

@@ -28,7 +28,7 @@ import pipeline.Schema;
  *   <li>{@link pipeline.impl.InternalDataFlowImpl#getFormat <em>Format</em>}</li>
  *   <li>{@link pipeline.impl.InternalDataFlowImpl#getSource <em>Source</em>}</li>
  *   <li>{@link pipeline.impl.InternalDataFlowImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link pipeline.impl.InternalDataFlowImpl#getInternalSchema <em>Internal Schema</em>}</li>
+ *   <li>{@link pipeline.impl.InternalDataFlowImpl#getSchema <em>Schema</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,14 +75,14 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 	protected Operation target;
 
 	/**
-	 * The cached value of the '{@link #getInternalSchema() <em>Internal Schema</em>}' reference.
+	 * The cached value of the '{@link #getSchema() <em>Schema</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInternalSchema()
+	 * @see #getSchema()
 	 * @generated
 	 * @ordered
 	 */
-	protected Schema internalSchema;
+	protected Schema schema;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,16 +249,16 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Schema getInternalSchema() {
-		if (internalSchema != null && internalSchema.eIsProxy()) {
-			InternalEObject oldInternalSchema = (InternalEObject)internalSchema;
-			internalSchema = (Schema)eResolveProxy(oldInternalSchema);
-			if (internalSchema != oldInternalSchema) {
+	public Schema getSchema() {
+		if (schema != null && schema.eIsProxy()) {
+			InternalEObject oldSchema = (InternalEObject)schema;
+			schema = (Schema)eResolveProxy(oldSchema);
+			if (schema != oldSchema) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.INTERNAL_DATA_FLOW__INTERNAL_SCHEMA, oldInternalSchema, internalSchema));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.INTERNAL_DATA_FLOW__SCHEMA, oldSchema, schema));
 			}
 		}
-		return internalSchema;
+		return schema;
 	}
 
 	/**
@@ -266,8 +266,8 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Schema basicGetInternalSchema() {
-		return internalSchema;
+	public Schema basicGetSchema() {
+		return schema;
 	}
 
 	/**
@@ -275,11 +275,11 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInternalSchema(Schema newInternalSchema) {
-		Schema oldInternalSchema = internalSchema;
-		internalSchema = newInternalSchema;
+	public void setSchema(Schema newSchema) {
+		Schema oldSchema = schema;
+		schema = newSchema;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.INTERNAL_DATA_FLOW__INTERNAL_SCHEMA, oldInternalSchema, internalSchema));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.INTERNAL_DATA_FLOW__SCHEMA, oldSchema, schema));
 	}
 
 	/**
@@ -334,9 +334,9 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 			case PipelinePackage.INTERNAL_DATA_FLOW__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
-			case PipelinePackage.INTERNAL_DATA_FLOW__INTERNAL_SCHEMA:
-				if (resolve) return getInternalSchema();
-				return basicGetInternalSchema();
+			case PipelinePackage.INTERNAL_DATA_FLOW__SCHEMA:
+				if (resolve) return getSchema();
+				return basicGetSchema();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -358,8 +358,8 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 			case PipelinePackage.INTERNAL_DATA_FLOW__TARGET:
 				setTarget((Operation)newValue);
 				return;
-			case PipelinePackage.INTERNAL_DATA_FLOW__INTERNAL_SCHEMA:
-				setInternalSchema((Schema)newValue);
+			case PipelinePackage.INTERNAL_DATA_FLOW__SCHEMA:
+				setSchema((Schema)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -382,8 +382,8 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 			case PipelinePackage.INTERNAL_DATA_FLOW__TARGET:
 				setTarget((Operation)null);
 				return;
-			case PipelinePackage.INTERNAL_DATA_FLOW__INTERNAL_SCHEMA:
-				setInternalSchema((Schema)null);
+			case PipelinePackage.INTERNAL_DATA_FLOW__SCHEMA:
+				setSchema((Schema)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -403,8 +403,8 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 				return source != null;
 			case PipelinePackage.INTERNAL_DATA_FLOW__TARGET:
 				return target != null;
-			case PipelinePackage.INTERNAL_DATA_FLOW__INTERNAL_SCHEMA:
-				return internalSchema != null;
+			case PipelinePackage.INTERNAL_DATA_FLOW__SCHEMA:
+				return schema != null;
 		}
 		return super.eIsSet(featureID);
 	}

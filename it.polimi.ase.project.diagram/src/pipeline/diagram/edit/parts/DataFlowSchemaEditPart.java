@@ -69,7 +69,7 @@ public class DataFlowSchemaEditPart extends ConnectionNodeEditPart implements IT
 		 * @generated
 		 */
 		public DataFlowSchemaFigure() {
-			this.setLineStyle(Graphics.LINE_DASH);
+			this.setLineStyle(Graphics.LINE_DOT);
 
 			setTargetDecoration(createTargetDecoration());
 		}

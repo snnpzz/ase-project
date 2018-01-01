@@ -21,8 +21,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="ClassificationAnalysisOperation"
-          description="Create new ClassificationAnalysisOperation">
+          title="Classification"
+          description="Create new Classification">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -39,8 +39,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="ClusteringAnalysisOperation"
-          description="Create new ClusteringAnalysisOperation">
+          title="Clustering"
+          description="Create new Clustering">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -66,8 +66,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="DescriptiveAnalysisOperation"
-          description="Create new DescriptiveAnalysisOperation">
+          title="Descriptive"
+          description="Create new Descriptive">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -120,8 +120,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="PredefinedCleaningOperation"
-          description="Create new PredefinedCleaningOperation">
+          title="Predefined"
+          description="Create new Predefined">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -129,8 +129,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="PredictiveAnalysisOperation"
-          description="Create new PredictiveAnalysisOperation">
+          title="Predictive"
+          description="Create new Predictive">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -165,8 +165,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="UserDefinedCleaningOperation"
-          description="Create new UserDefinedCleaningOperation">
+          title="UserDefined"
+          description="Create new UserDefined">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -186,6 +186,15 @@
         xsi:type="gmftool:ToolGroup"
         title="Connections"
         collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="DFSchema"
+          description="Create new DFSchema">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="DataFlow"
@@ -215,6 +224,24 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="IntegrationAttributes"
+          description="Create new IntegrationAttributes">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="InternalDFSchema"
+          description="Create new InternalDFSchema">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="InternalDataFlow"
           description="Create new InternalDataFlow">
         <smallIcon
@@ -224,26 +251,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="InternalSchema"
-          description="Create new InternalSchema">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="Read"
           description="Create new Read">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Schema"
-          description="Create new Schema">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

@@ -3,7 +3,6 @@
  */
 package pipeline.diagram.edit.parts;
 
-import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.PolygonDecoration;
 import org.eclipse.draw2d.RotatableDecoration;
@@ -81,7 +80,6 @@ public class DataFlowEditPart extends ConnectionNodeEditPart implements ITreeBra
 		private RotatableDecoration createTargetDecoration() {
 			PolygonDecoration df = new PolygonDecoration();
 			df.setFill(true);
-			df.setBackgroundColor(ColorConstants.white);
 			PointList pl = new PointList();
 			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));
 			pl.addPoint(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(2));

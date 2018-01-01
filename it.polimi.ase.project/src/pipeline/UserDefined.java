@@ -20,7 +20,6 @@ package pipeline;
  * @generated
  */
 public interface UserDefined extends CleaningOperation {
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -46,4 +45,5 @@ public interface UserDefined extends CleaningOperation {
 	 * @generated
 	 */
 	void setName(String value);
+
 } // UserDefined

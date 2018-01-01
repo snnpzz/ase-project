@@ -9,9 +9,9 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 
-import pipeline.diagram.edit.commands.InternalDataFlowInternalSchemaCreateCommand;
-import pipeline.diagram.edit.commands.InternalDataFlowInternalSchemaReorientCommand;
-import pipeline.diagram.edit.parts.InternalDataFlowInternalSchemaEditPart;
+import pipeline.diagram.edit.commands.InternalDataFlowSchemaCreateCommand;
+import pipeline.diagram.edit.commands.InternalDataFlowSchemaReorientCommand;
+import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
 import pipeline.diagram.providers.PipelineElementTypes;
 
 /**
@@ -46,9 +46,8 @@ public class InternalDataFlowItemSemanticEditPolicy extends PipelineBaseItemSema
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.InternalDataFlowInternalSchema_4023 == req.getElementType()) {
-			return getGEFWrapper(
-					new InternalDataFlowInternalSchemaCreateCommand(req, req.getSource(), req.getTarget()));
+		if (PipelineElementTypes.InternalDataFlowSchema_4024 == req.getElementType()) {
+			return getGEFWrapper(new InternalDataFlowSchemaCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -57,7 +56,7 @@ public class InternalDataFlowItemSemanticEditPolicy extends PipelineBaseItemSema
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.InternalDataFlowInternalSchema_4023 == req.getElementType()) {
+		if (PipelineElementTypes.InternalDataFlowSchema_4024 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -71,8 +70,8 @@ public class InternalDataFlowItemSemanticEditPolicy extends PipelineBaseItemSema
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case InternalDataFlowInternalSchemaEditPart.VISUAL_ID:
-			return getGEFWrapper(new InternalDataFlowInternalSchemaReorientCommand(req));
+		case InternalDataFlowSchemaEditPart.VISUAL_ID:
+			return getGEFWrapper(new InternalDataFlowSchemaReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

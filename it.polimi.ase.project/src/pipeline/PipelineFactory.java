@@ -130,13 +130,13 @@ public interface PipelineFactory extends EFactory {
 	Export createExport();
 
 	/**
-	 * Returns a new object of class '<em>User Defined Cleaning Operation</em>'.
+	 * Returns a new object of class '<em>User Defined</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>User Defined Cleaning Operation</em>'.
+	 * @return a new object of class '<em>User Defined</em>'.
 	 * @generated
 	 */
-	UserDefinedCleaningOperation createUserDefinedCleaningOperation();
+	UserDefined createUserDefined();
 
 	/**
 	 * Returns a new object of class '<em>Source</em>'.
@@ -157,49 +157,49 @@ public interface PipelineFactory extends EFactory {
 	File createFile();
 
 	/**
-	 * Returns a new object of class '<em>Descriptive Analysis Operation</em>'.
+	 * Returns a new object of class '<em>Descriptive</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Descriptive Analysis Operation</em>'.
+	 * @return a new object of class '<em>Descriptive</em>'.
 	 * @generated
 	 */
-	DescriptiveAnalysisOperation createDescriptiveAnalysisOperation();
+	Descriptive createDescriptive();
 
 	/**
-	 * Returns a new object of class '<em>Classification Analysis Operation</em>'.
+	 * Returns a new object of class '<em>Classification</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Classification Analysis Operation</em>'.
+	 * @return a new object of class '<em>Classification</em>'.
 	 * @generated
 	 */
-	ClassificationAnalysisOperation createClassificationAnalysisOperation();
+	Classification createClassification();
 
 	/**
-	 * Returns a new object of class '<em>Predictive Analysis Operation</em>'.
+	 * Returns a new object of class '<em>Predictive</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Predictive Analysis Operation</em>'.
+	 * @return a new object of class '<em>Predictive</em>'.
 	 * @generated
 	 */
-	PredictiveAnalysisOperation createPredictiveAnalysisOperation();
+	Predictive createPredictive();
 
 	/**
-	 * Returns a new object of class '<em>Clustering Analysis Operation</em>'.
+	 * Returns a new object of class '<em>Clustering</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Clustering Analysis Operation</em>'.
+	 * @return a new object of class '<em>Clustering</em>'.
 	 * @generated
 	 */
-	ClusteringAnalysisOperation createClusteringAnalysisOperation();
+	Clustering createClustering();
 
 	/**
-	 * Returns a new object of class '<em>Predefined Cleaning Operation</em>'.
+	 * Returns a new object of class '<em>Predefined</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Predefined Cleaning Operation</em>'.
+	 * @return a new object of class '<em>Predefined</em>'.
 	 * @generated
 	 */
-	PredefinedCleaningOperation createPredefinedCleaningOperation();
+	Predefined createPredefined();
 
 	/**
 	 * Returns a new object of class '<em>Simple Attribute</em>'.

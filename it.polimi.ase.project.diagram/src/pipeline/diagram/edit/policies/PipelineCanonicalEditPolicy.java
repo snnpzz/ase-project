@@ -36,14 +36,14 @@ import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 
 import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
-import pipeline.diagram.edit.parts.ClassificationAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
-import pipeline.diagram.edit.parts.ClusteringAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.ClusteringEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
 import pipeline.diagram.edit.parts.ComplexAttribute2EditPart;
 import pipeline.diagram.edit.parts.ComplexAttributeEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
-import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.DescriptiveEditPart;
 import pipeline.diagram.edit.parts.ExportEditPart;
 import pipeline.diagram.edit.parts.ExportTaskEditPart;
 import pipeline.diagram.edit.parts.FileEditPart;
@@ -51,13 +51,13 @@ import pipeline.diagram.edit.parts.ImportEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
-import pipeline.diagram.edit.parts.PredefinedCleaningOperationEditPart;
-import pipeline.diagram.edit.parts.PredictiveAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.PredefinedEditPart;
+import pipeline.diagram.edit.parts.PredictiveEditPart;
 import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.edit.parts.SimpleAttribute2EditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeEditPart;
 import pipeline.diagram.edit.parts.SourceEditPart;
-import pipeline.diagram.edit.parts.UserDefinedCleaningOperationEditPart;
+import pipeline.diagram.edit.parts.UserDefinedEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.part.PipelineDiagramUpdater;
 import pipeline.diagram.part.PipelineLinkDescriptor;
@@ -370,44 +370,44 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case UserDefinedCleaningOperationEditPart.VISUAL_ID: {
+		case UserDefinedEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getUserDefinedCleaningOperation_3050ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getUserDefined_3056ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case PredefinedCleaningOperationEditPart.VISUAL_ID: {
+		case PredefinedEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getPredefinedCleaningOperation_3051ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getPredefined_3057ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case DescriptiveAnalysisOperationEditPart.VISUAL_ID: {
+		case DescriptiveEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getDescriptiveAnalysisOperation_3052ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getDescriptive_3058ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ClassificationAnalysisOperationEditPart.VISUAL_ID: {
+		case ClassificationEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getClassificationAnalysisOperation_3053ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getClassification_3059ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case PredictiveAnalysisOperationEditPart.VISUAL_ID: {
+		case PredictiveEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getPredictiveAnalysisOperation_3054ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getPredictive_3060ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ClusteringAnalysisOperationEditPart.VISUAL_ID: {
+		case ClusteringEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getClusteringAnalysisOperation_3055ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getClustering_3061ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

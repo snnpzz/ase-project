@@ -15,24 +15,20 @@ import pipeline.AnalysisTask;
 import pipeline.Attribute;
 import pipeline.ChartType;
 import pipeline.Classification;
-import pipeline.ClassificationAnalysisOperation;
 import pipeline.ClassificationOperation;
 import pipeline.CleaningOperation;
 import pipeline.CleaningTask;
 import pipeline.Clustering;
-import pipeline.ClusteringAnalysisOperation;
 import pipeline.ClusteringOperation;
 import pipeline.CollectionTask;
 import pipeline.ComplexAttribute;
 import pipeline.DataFlow;
 import pipeline.Descriptive;
-import pipeline.DescriptiveAnalysisOperation;
 import pipeline.DescriptiveOperation;
 import pipeline.Export;
 import pipeline.ExportTask;
 import pipeline.File;
 import pipeline.Format;
-import pipeline.GraphType;
 import pipeline.Import;
 import pipeline.IntegrationTask;
 import pipeline.InternalDataFlow;
@@ -41,10 +37,8 @@ import pipeline.Pipeline;
 import pipeline.PipelineFactory;
 import pipeline.PipelinePackage;
 import pipeline.Predefined;
-import pipeline.PredefinedCleaningOperation;
 import pipeline.PredefinedOperation;
 import pipeline.Predictive;
-import pipeline.PredictiveAnalysisOperation;
 import pipeline.PredictiveOperation;
 import pipeline.Schema;
 import pipeline.SimpleAttribute;
@@ -53,7 +47,6 @@ import pipeline.Source;
 import pipeline.Task;
 import pipeline.Type;
 import pipeline.UserDefined;
-import pipeline.UserDefinedCleaningOperation;
 import pipeline.VisualizationTask;
 
 /**
@@ -173,7 +166,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass userDefinedCleaningOperationEClass = null;
+	private EClass userDefinedEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,35 +201,35 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass descriptiveAnalysisOperationEClass = null;
+	private EClass descriptiveEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass classificationAnalysisOperationEClass = null;
+	private EClass classificationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass predictiveAnalysisOperationEClass = null;
+	private EClass predictiveEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass clusteringAnalysisOperationEClass = null;
+	private EClass clusteringEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass predefinedCleaningOperationEClass = null;
+	private EClass predefinedEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -597,7 +590,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInternalDataFlow_InternalSchema() {
+	public EReference getInternalDataFlow_Schema() {
 		return (EReference)internalDataFlowEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -858,8 +851,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getUserDefinedCleaningOperation() {
-		return userDefinedCleaningOperationEClass;
+	public EClass getUserDefined() {
+		return userDefinedEClass;
 	}
 
 	/**
@@ -867,8 +860,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUserDefinedCleaningOperation_Name() {
-		return (EAttribute)userDefinedCleaningOperationEClass.getEStructuralFeatures().get(0);
+	public EAttribute getUserDefined_Name() {
+		return (EAttribute)userDefinedEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -966,8 +959,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDescriptiveAnalysisOperation() {
-		return descriptiveAnalysisOperationEClass;
+	public EClass getDescriptive() {
+		return descriptiveEClass;
 	}
 
 	/**
@@ -975,8 +968,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDescriptiveAnalysisOperation_Name() {
-		return (EAttribute)descriptiveAnalysisOperationEClass.getEStructuralFeatures().get(0);
+	public EAttribute getDescriptive_Name() {
+		return (EAttribute)descriptiveEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -984,8 +977,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getClassificationAnalysisOperation() {
-		return classificationAnalysisOperationEClass;
+	public EClass getClassification() {
+		return classificationEClass;
 	}
 
 	/**
@@ -993,8 +986,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getClassificationAnalysisOperation_Name() {
-		return (EAttribute)classificationAnalysisOperationEClass.getEStructuralFeatures().get(0);
+	public EAttribute getClassification_Name() {
+		return (EAttribute)classificationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1002,8 +995,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPredictiveAnalysisOperation() {
-		return predictiveAnalysisOperationEClass;
+	public EClass getPredictive() {
+		return predictiveEClass;
 	}
 
 	/**
@@ -1011,8 +1004,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPredictiveAnalysisOperation_Name() {
-		return (EAttribute)predictiveAnalysisOperationEClass.getEStructuralFeatures().get(0);
+	public EAttribute getPredictive_Name() {
+		return (EAttribute)predictiveEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1020,8 +1013,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getClusteringAnalysisOperation() {
-		return clusteringAnalysisOperationEClass;
+	public EClass getClustering() {
+		return clusteringEClass;
 	}
 
 	/**
@@ -1029,8 +1022,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getClusteringAnalysisOperation_K() {
-		return (EAttribute)clusteringAnalysisOperationEClass.getEStructuralFeatures().get(0);
+	public EAttribute getClustering_K() {
+		return (EAttribute)clusteringEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1038,8 +1031,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getClusteringAnalysisOperation_Name() {
-		return (EAttribute)clusteringAnalysisOperationEClass.getEStructuralFeatures().get(1);
+	public EAttribute getClustering_Name() {
+		return (EAttribute)clusteringEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1047,8 +1040,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPredefinedCleaningOperation() {
-		return predefinedCleaningOperationEClass;
+	public EClass getPredefined() {
+		return predefinedEClass;
 	}
 
 	/**
@@ -1056,8 +1049,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPredefinedCleaningOperation_Name() {
-		return (EAttribute)predefinedCleaningOperationEClass.getEStructuralFeatures().get(0);
+	public EAttribute getPredefined_Name() {
+		return (EAttribute)predefinedEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1233,7 +1226,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEAttribute(internalDataFlowEClass, INTERNAL_DATA_FLOW__FORMAT);
 		createEReference(internalDataFlowEClass, INTERNAL_DATA_FLOW__SOURCE);
 		createEReference(internalDataFlowEClass, INTERNAL_DATA_FLOW__TARGET);
-		createEReference(internalDataFlowEClass, INTERNAL_DATA_FLOW__INTERNAL_SCHEMA);
+		createEReference(internalDataFlowEClass, INTERNAL_DATA_FLOW__SCHEMA);
 
 		schemaEClass = createEClass(SCHEMA);
 		createEReference(schemaEClass, SCHEMA__ATTRIBUTES);
@@ -1273,8 +1266,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEReference(exportEClass, EXPORT__EXP_USES);
 		createEAttribute(exportEClass, EXPORT__NAME);
 
-		userDefinedCleaningOperationEClass = createEClass(USER_DEFINED_CLEANING_OPERATION);
-		createEAttribute(userDefinedCleaningOperationEClass, USER_DEFINED_CLEANING_OPERATION__NAME);
+		userDefinedEClass = createEClass(USER_DEFINED);
+		createEAttribute(userDefinedEClass, USER_DEFINED__NAME);
 
 		sourceEClass = createEClass(SOURCE);
 		createEReference(sourceEClass, SOURCE__LINKED_TO);
@@ -1290,21 +1283,21 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		analysisOperationEClass = createEClass(ANALYSIS_OPERATION);
 
-		descriptiveAnalysisOperationEClass = createEClass(DESCRIPTIVE_ANALYSIS_OPERATION);
-		createEAttribute(descriptiveAnalysisOperationEClass, DESCRIPTIVE_ANALYSIS_OPERATION__NAME);
+		descriptiveEClass = createEClass(DESCRIPTIVE);
+		createEAttribute(descriptiveEClass, DESCRIPTIVE__NAME);
 
-		classificationAnalysisOperationEClass = createEClass(CLASSIFICATION_ANALYSIS_OPERATION);
-		createEAttribute(classificationAnalysisOperationEClass, CLASSIFICATION_ANALYSIS_OPERATION__NAME);
+		classificationEClass = createEClass(CLASSIFICATION);
+		createEAttribute(classificationEClass, CLASSIFICATION__NAME);
 
-		predictiveAnalysisOperationEClass = createEClass(PREDICTIVE_ANALYSIS_OPERATION);
-		createEAttribute(predictiveAnalysisOperationEClass, PREDICTIVE_ANALYSIS_OPERATION__NAME);
+		predictiveEClass = createEClass(PREDICTIVE);
+		createEAttribute(predictiveEClass, PREDICTIVE__NAME);
 
-		clusteringAnalysisOperationEClass = createEClass(CLUSTERING_ANALYSIS_OPERATION);
-		createEAttribute(clusteringAnalysisOperationEClass, CLUSTERING_ANALYSIS_OPERATION__K);
-		createEAttribute(clusteringAnalysisOperationEClass, CLUSTERING_ANALYSIS_OPERATION__NAME);
+		clusteringEClass = createEClass(CLUSTERING);
+		createEAttribute(clusteringEClass, CLUSTERING__K);
+		createEAttribute(clusteringEClass, CLUSTERING__NAME);
 
-		predefinedCleaningOperationEClass = createEClass(PREDEFINED_CLEANING_OPERATION);
-		createEAttribute(predefinedCleaningOperationEClass, PREDEFINED_CLEANING_OPERATION__NAME);
+		predefinedEClass = createEClass(PREDEFINED);
+		createEAttribute(predefinedEClass, PREDEFINED__NAME);
 
 		simpleAttributeEClass = createEClass(SIMPLE_ATTRIBUTE);
 		createEAttribute(simpleAttributeEClass, SIMPLE_ATTRIBUTE__TYPE);
@@ -1358,14 +1351,14 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		analysisTaskEClass.getESuperTypes().add(this.getTask());
 		visualizationTaskEClass.getESuperTypes().add(this.getTask());
 		exportTaskEClass.getESuperTypes().add(this.getTask());
-		userDefinedCleaningOperationEClass.getESuperTypes().add(this.getCleaningOperation());
+		userDefinedEClass.getESuperTypes().add(this.getCleaningOperation());
 		cleaningOperationEClass.getESuperTypes().add(this.getOperation());
 		analysisOperationEClass.getESuperTypes().add(this.getOperation());
-		descriptiveAnalysisOperationEClass.getESuperTypes().add(this.getAnalysisOperation());
-		classificationAnalysisOperationEClass.getESuperTypes().add(this.getAnalysisOperation());
-		predictiveAnalysisOperationEClass.getESuperTypes().add(this.getAnalysisOperation());
-		clusteringAnalysisOperationEClass.getESuperTypes().add(this.getAnalysisOperation());
-		predefinedCleaningOperationEClass.getESuperTypes().add(this.getCleaningOperation());
+		descriptiveEClass.getESuperTypes().add(this.getAnalysisOperation());
+		classificationEClass.getESuperTypes().add(this.getAnalysisOperation());
+		predictiveEClass.getESuperTypes().add(this.getAnalysisOperation());
+		clusteringEClass.getESuperTypes().add(this.getAnalysisOperation());
+		predefinedEClass.getESuperTypes().add(this.getCleaningOperation());
 		simpleAttributeEClass.getESuperTypes().add(this.getAttribute());
 		complexAttributeEClass.getESuperTypes().add(this.getAttribute());
 
@@ -1398,7 +1391,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEAttribute(getInternalDataFlow_Format(), this.getFormat(), "format", null, 0, 1, InternalDataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInternalDataFlow_Source(), this.getOperation(), this.getOperation_Outgoing(), "source", null, 0, 1, InternalDataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInternalDataFlow_Target(), this.getOperation(), this.getOperation_Incoming(), "target", null, 0, 1, InternalDataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInternalDataFlow_InternalSchema(), this.getSchema(), null, "internalSchema", null, 1, 1, InternalDataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInternalDataFlow_Schema(), this.getSchema(), null, "schema", null, 1, 1, InternalDataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(schemaEClass, Schema.class, "Schema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSchema_Attributes(), this.getAttribute(), null, "attributes", null, 1, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1438,8 +1431,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEReference(getExport_ExpUses(), this.getSchema(), null, "expUses", null, 1, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExport_Name(), ecorePackage.getEString(), "name", null, 0, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(userDefinedCleaningOperationEClass, UserDefinedCleaningOperation.class, "UserDefinedCleaningOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUserDefinedCleaningOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, UserDefinedCleaningOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(userDefinedEClass, UserDefined.class, "UserDefined", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUserDefined_Name(), ecorePackage.getEString(), "name", null, 0, 1, UserDefined.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sourceEClass, Source.class, "Source", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSource_LinkedTo(), this.getImport(), this.getImport_Read(), "linkedTo", null, 1, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1455,21 +1448,21 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		initEClass(analysisOperationEClass, AnalysisOperation.class, "AnalysisOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(descriptiveAnalysisOperationEClass, DescriptiveAnalysisOperation.class, "DescriptiveAnalysisOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDescriptiveAnalysisOperation_Name(), this.getDescriptiveOperation(), "name", null, 0, 1, DescriptiveAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(descriptiveEClass, Descriptive.class, "Descriptive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDescriptive_Name(), this.getDescriptiveOperation(), "name", null, 0, 1, Descriptive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(classificationAnalysisOperationEClass, ClassificationAnalysisOperation.class, "ClassificationAnalysisOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getClassificationAnalysisOperation_Name(), this.getClassificationOperation(), "name", null, 0, 1, ClassificationAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(classificationEClass, Classification.class, "Classification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getClassification_Name(), this.getClassificationOperation(), "name", null, 0, 1, Classification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(predictiveAnalysisOperationEClass, PredictiveAnalysisOperation.class, "PredictiveAnalysisOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPredictiveAnalysisOperation_Name(), this.getPredictiveOperation(), "name", null, 0, 1, PredictiveAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(predictiveEClass, Predictive.class, "Predictive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPredictive_Name(), this.getPredictiveOperation(), "name", null, 0, 1, Predictive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(clusteringAnalysisOperationEClass, ClusteringAnalysisOperation.class, "ClusteringAnalysisOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getClusteringAnalysisOperation_K(), ecorePackage.getEInt(), "k", null, 0, 1, ClusteringAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getClusteringAnalysisOperation_Name(), this.getClusteringOperation(), "name", null, 0, 1, ClusteringAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(clusteringEClass, Clustering.class, "Clustering", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getClustering_K(), ecorePackage.getEInt(), "k", null, 0, 1, Clustering.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClustering_Name(), this.getClusteringOperation(), "name", null, 0, 1, Clustering.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(predefinedCleaningOperationEClass, PredefinedCleaningOperation.class, "PredefinedCleaningOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPredefinedCleaningOperation_Name(), this.getPredefinedOperation(), "name", "", 0, 1, PredefinedCleaningOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(predefinedEClass, Predefined.class, "Predefined", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPredefined_Name(), this.getPredefinedOperation(), "name", "", 0, 1, Predefined.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(simpleAttributeEClass, SimpleAttribute.class, "SimpleAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSimpleAttribute_Type(), this.getType(), "type", null, 0, 1, SimpleAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1655,7 +1648,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 			 "source", "source",
 			 "target", "target",
 			 "width", "2",
-			 "target.decoration", "closedarrow"
+			 "target.decoration", "filledclosedarrow"
 		   });	
 		addAnnotation
 		  (getDataFlow_Schema(), 
@@ -1663,7 +1656,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		   new String[] {
 			 "width", "1",
 			 "target.decoration", "arrow",
-			 "style", "dash"
+			 "tool.name", "DFSchema",
+			 "style", "dot"
 		   });	
 		addAnnotation
 		  (internalDataFlowEClass, 
@@ -1672,16 +1666,25 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 			 "source", "source",
 			 "target", "target",
 			 "width", "2",
-			 "target.decoration", "arrow",
+			 "target.decoration", "filledclosedarrow",
 			 "style", "dash"
 		   });	
 		addAnnotation
-		  (getInternalDataFlow_InternalSchema(), 
+		  (getInternalDataFlow_Schema(), 
 		   source, 
 		   new String[] {
 			 "width", "1",
 			 "target.decoration", "arrow",
-			 "style", "dash"
+			 "style", "dot",
+			 "tool.name", "InternalDFSchema"
+		   });	
+		addAnnotation
+		  (getIntegrationTask_Attributes(), 
+		   source, 
+		   new String[] {
+			 "width", "2",
+			 "target.decoration", "closedarrow",
+			 "tool.name", "IntegrationAttributes"
 		   });	
 		addAnnotation
 		  (getImport_Read(), 
@@ -1703,7 +1706,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		   source, 
 		   new String[] {
 			 "width", "2",
-			 "target.decoration", "square",
+			 "target.decoration", "filledsquare",
 			 "style", "dash"
 		   });	
 		addAnnotation

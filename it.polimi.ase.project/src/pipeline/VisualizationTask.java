@@ -21,7 +21,6 @@ package pipeline;
  * @generated
  */
 public interface VisualizationTask extends Task {
-
 	/**
 	 * Returns the value of the '<em><b>Size</b></em>' attribute.
 	 * The literals are from the enumeration {@link pipeline.Size}.
@@ -79,4 +78,5 @@ public interface VisualizationTask extends Task {
 	 * @generated
 	 */
 	void setChartType(ChartType value);
+
 } // VisualizationTask

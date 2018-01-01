@@ -36,7 +36,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LINE(1, "Line", "Line"),
+	LINE(0, "Line", "Line"),
 
 	/**
 	 * The '<em><b>Pie</b></em>' literal object.
@@ -46,7 +46,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PIE(2, "Pie", "Pie"),
+	PIE(0, "Pie", "Pie"),
 
 	/**
 	 * The '<em><b>Doughnut</b></em>' literal object.
@@ -56,7 +56,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DOUGHNUT(3, "Doughnut", "Doughnut"),
+	DOUGHNUT(0, "Doughnut", "Doughnut"),
 
 	/**
 	 * The '<em><b>Bar</b></em>' literal object.
@@ -66,7 +66,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BAR(4, "Bar", "Bar"),
+	BAR(0, "Bar", "Bar"),
 
 	/**
 	 * The '<em><b>Area</b></em>' literal object.
@@ -76,7 +76,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	AREA(5, "Area", "Area"),
+	AREA(0, "Area", "Area"),
 
 	/**
 	 * The '<em><b>Scatter</b></em>' literal object.
@@ -86,7 +86,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SCATTER(6, "Scatter", "Scatter"),
+	SCATTER(0, "Scatter", "Scatter"),
 
 	/**
 	 * The '<em><b>Bubble</b></em>' literal object.
@@ -96,7 +96,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BUBBLE(7, "Bubble", "Bubble"),
+	BUBBLE(0, "Bubble", "Bubble"),
 
 	/**
 	 * The '<em><b>Map</b></em>' literal object.
@@ -106,7 +106,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MAP(8, "Map", "Map"),
+	MAP(0, "Map", "Map"),
 
 	/**
 	 * The '<em><b>Stock</b></em>' literal object.
@@ -116,7 +116,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STOCK(9, "Stock", "Stock"),
+	STOCK(0, "Stock", "Stock"),
 
 	/**
 	 * The '<em><b>Surface</b></em>' literal object.
@@ -126,7 +126,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SURFACE(10, "Surface", "Surface"),
+	SURFACE(0, "Surface", "Surface"),
 
 	/**
 	 * The '<em><b>Radar</b></em>' literal object.
@@ -136,7 +136,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RADAR(11, "Radar", "Radar"),
+	RADAR(0, "Radar", "Radar"),
 
 	/**
 	 * The '<em><b>Treemap</b></em>' literal object.
@@ -146,7 +146,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TREEMAP(12, "Treemap", "Treemap"),
+	TREEMAP(0, "Treemap", "Treemap"),
 
 	/**
 	 * The '<em><b>Sunburst</b></em>' literal object.
@@ -156,7 +156,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SUNBURST(13, "Sunburst", "Sunburst"),
+	SUNBURST(0, "Sunburst", "Sunburst"),
 
 	/**
 	 * The '<em><b>Histogram</b></em>' literal object.
@@ -166,7 +166,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HISTOGRAM(14, "Histogram", "Histogram"),
+	HISTOGRAM(0, "Histogram", "Histogram"),
 
 	/**
 	 * The '<em><b>Box And Whisker</b></em>' literal object.
@@ -176,7 +176,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BOX_AND_WHISKER(15, "BoxAndWhisker", "BoxAndWhisker"),
+	BOX_AND_WHISKER(0, "BoxAndWhisker", "BoxAndWhisker"),
 
 	/**
 	 * The '<em><b>Waterfall</b></em>' literal object.
@@ -186,7 +186,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	WATERFALL(16, "Waterfall", "Waterfall"),
+	WATERFALL(0, "Waterfall", "Waterfall"),
 
 	/**
 	 * The '<em><b>Funnel</b></em>' literal object.
@@ -196,7 +196,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FUNNEL(17, "Funnel", "Funnel"),
+	FUNNEL(0, "Funnel", "Funnel"),
 
 	/**
 	 * The '<em><b>Combo</b></em>' literal object.
@@ -206,7 +206,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COMBO(18, "Combo", "Combo");
+	COMBO(0, "Combo", "Combo");
 
 	/**
 	 * The '<em><b>Column</b></em>' literal value.
@@ -236,7 +236,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LINE_VALUE = 1;
+	public static final int LINE_VALUE = 0;
 
 	/**
 	 * The '<em><b>Pie</b></em>' literal value.
@@ -251,7 +251,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PIE_VALUE = 2;
+	public static final int PIE_VALUE = 0;
 
 	/**
 	 * The '<em><b>Doughnut</b></em>' literal value.
@@ -266,7 +266,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DOUGHNUT_VALUE = 3;
+	public static final int DOUGHNUT_VALUE = 0;
 
 	/**
 	 * The '<em><b>Bar</b></em>' literal value.
@@ -281,7 +281,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BAR_VALUE = 4;
+	public static final int BAR_VALUE = 0;
 
 	/**
 	 * The '<em><b>Area</b></em>' literal value.
@@ -296,7 +296,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int AREA_VALUE = 5;
+	public static final int AREA_VALUE = 0;
 
 	/**
 	 * The '<em><b>Scatter</b></em>' literal value.
@@ -311,7 +311,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SCATTER_VALUE = 6;
+	public static final int SCATTER_VALUE = 0;
 
 	/**
 	 * The '<em><b>Bubble</b></em>' literal value.
@@ -326,7 +326,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BUBBLE_VALUE = 7;
+	public static final int BUBBLE_VALUE = 0;
 
 	/**
 	 * The '<em><b>Map</b></em>' literal value.
@@ -341,7 +341,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MAP_VALUE = 8;
+	public static final int MAP_VALUE = 0;
 
 	/**
 	 * The '<em><b>Stock</b></em>' literal value.
@@ -356,7 +356,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int STOCK_VALUE = 9;
+	public static final int STOCK_VALUE = 0;
 
 	/**
 	 * The '<em><b>Surface</b></em>' literal value.
@@ -371,7 +371,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SURFACE_VALUE = 10;
+	public static final int SURFACE_VALUE = 0;
 
 	/**
 	 * The '<em><b>Radar</b></em>' literal value.
@@ -386,7 +386,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RADAR_VALUE = 11;
+	public static final int RADAR_VALUE = 0;
 
 	/**
 	 * The '<em><b>Treemap</b></em>' literal value.
@@ -401,7 +401,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TREEMAP_VALUE = 12;
+	public static final int TREEMAP_VALUE = 0;
 
 	/**
 	 * The '<em><b>Sunburst</b></em>' literal value.
@@ -416,7 +416,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SUNBURST_VALUE = 13;
+	public static final int SUNBURST_VALUE = 0;
 
 	/**
 	 * The '<em><b>Histogram</b></em>' literal value.
@@ -431,7 +431,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HISTOGRAM_VALUE = 14;
+	public static final int HISTOGRAM_VALUE = 0;
 
 	/**
 	 * The '<em><b>Box And Whisker</b></em>' literal value.
@@ -446,7 +446,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BOX_AND_WHISKER_VALUE = 15;
+	public static final int BOX_AND_WHISKER_VALUE = 0;
 
 	/**
 	 * The '<em><b>Waterfall</b></em>' literal value.
@@ -461,7 +461,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int WATERFALL_VALUE = 16;
+	public static final int WATERFALL_VALUE = 0;
 
 	/**
 	 * The '<em><b>Funnel</b></em>' literal value.
@@ -476,7 +476,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int FUNNEL_VALUE = 17;
+	public static final int FUNNEL_VALUE = 0;
 
 	/**
 	 * The '<em><b>Combo</b></em>' literal value.
@@ -491,7 +491,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COMBO_VALUE = 18;
+	public static final int COMBO_VALUE = 0;
 
 	/**
 	 * An array of all the '<em><b>Chart Type</b></em>' enumerators.
@@ -577,24 +577,6 @@ public enum ChartType implements Enumerator {
 	public static ChartType get(int value) {
 		switch (value) {
 			case COLUMN_VALUE: return COLUMN;
-			case LINE_VALUE: return LINE;
-			case PIE_VALUE: return PIE;
-			case DOUGHNUT_VALUE: return DOUGHNUT;
-			case BAR_VALUE: return BAR;
-			case AREA_VALUE: return AREA;
-			case SCATTER_VALUE: return SCATTER;
-			case BUBBLE_VALUE: return BUBBLE;
-			case MAP_VALUE: return MAP;
-			case STOCK_VALUE: return STOCK;
-			case SURFACE_VALUE: return SURFACE;
-			case RADAR_VALUE: return RADAR;
-			case TREEMAP_VALUE: return TREEMAP;
-			case SUNBURST_VALUE: return SUNBURST;
-			case HISTOGRAM_VALUE: return HISTOGRAM;
-			case BOX_AND_WHISKER_VALUE: return BOX_AND_WHISKER;
-			case WATERFALL_VALUE: return WATERFALL;
-			case FUNNEL_VALUE: return FUNNEL;
-			case COMBO_VALUE: return COMBO;
 		}
 		return null;
 	}

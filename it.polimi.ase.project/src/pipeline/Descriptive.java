@@ -20,7 +20,6 @@ package pipeline;
  * @generated
  */
 public interface Descriptive extends AnalysisOperation {
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * The literals are from the enumeration {@link pipeline.DescriptiveOperation}.
@@ -49,4 +48,5 @@ public interface Descriptive extends AnalysisOperation {
 	 * @generated
 	 */
 	void setName(DescriptiveOperation value);
+
 } // Descriptive

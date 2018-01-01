@@ -14,8 +14,12 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
+import pipeline.diagram.edit.parts.ComplexAttribute2EditPart;
+import pipeline.diagram.edit.parts.ComplexAttributeEditPart;
 import pipeline.diagram.edit.parts.ExportTaskEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
+import pipeline.diagram.edit.parts.SimpleAttribute2EditPart;
+import pipeline.diagram.edit.parts.SimpleAttributeEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.providers.PipelineElementTypes;
 import pipeline.diagram.providers.PipelineModelingAssistantProvider;
@@ -39,8 +43,9 @@ public class PipelineModelingAssistantProviderOfIntegrationTaskEditPart extends 
 	* @generated
 	*/
 	public List<IElementType> doGetRelTypesOnSource(IntegrationTaskEditPart source) {
-		List<IElementType> types = new ArrayList<IElementType>(1);
+		List<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(PipelineElementTypes.DataFlow_4005);
+		types.add(PipelineElementTypes.IntegrationTaskAttributes_4025);
 		return types;
 	}
 
@@ -79,6 +84,18 @@ public class PipelineModelingAssistantProviderOfIntegrationTaskEditPart extends 
 		if (targetEditPart instanceof ExportTaskEditPart) {
 			types.add(PipelineElementTypes.DataFlow_4005);
 		}
+		if (targetEditPart instanceof SimpleAttributeEditPart) {
+			types.add(PipelineElementTypes.IntegrationTaskAttributes_4025);
+		}
+		if (targetEditPart instanceof ComplexAttributeEditPart) {
+			types.add(PipelineElementTypes.IntegrationTaskAttributes_4025);
+		}
+		if (targetEditPart instanceof SimpleAttribute2EditPart) {
+			types.add(PipelineElementTypes.IntegrationTaskAttributes_4025);
+		}
+		if (targetEditPart instanceof ComplexAttribute2EditPart) {
+			types.add(PipelineElementTypes.IntegrationTaskAttributes_4025);
+		}
 		return types;
 	}
 
@@ -104,6 +121,11 @@ public class PipelineModelingAssistantProviderOfIntegrationTaskEditPart extends 
 			types.add(PipelineElementTypes.AnalysisTask_2031);
 			types.add(PipelineElementTypes.VisualizationTask_2029);
 			types.add(PipelineElementTypes.ExportTask_2032);
+		} else if (relationshipType == PipelineElementTypes.IntegrationTaskAttributes_4025) {
+			types.add(PipelineElementTypes.SimpleAttribute_3046);
+			types.add(PipelineElementTypes.ComplexAttribute_3047);
+			types.add(PipelineElementTypes.SimpleAttribute_3048);
+			types.add(PipelineElementTypes.ComplexAttribute_3049);
 		}
 		return types;
 	}

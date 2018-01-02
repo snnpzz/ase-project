@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pipeline.Pipeline#getSources <em>Sources</em>}</li>
  *   <li>{@link pipeline.Pipeline#getFiles <em>Files</em>}</li>
  *   <li>{@link pipeline.Pipeline#getSchemas <em>Schemas</em>}</li>
+ *   <li>{@link pipeline.Pipeline#getCharts <em>Charts</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getPipeline()
@@ -150,5 +151,21 @@ public interface Pipeline extends EObject {
 	 * @generated
 	 */
 	EList<Schema> getSchemas();
+
+	/**
+	 * Returns the value of the '<em><b>Charts</b></em>' containment reference list.
+	 * The list contents are of type {@link pipeline.Chart}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Charts</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Charts</em>' containment reference list.
+	 * @see pipeline.PipelinePackage#getPipeline_Charts()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Chart> getCharts();
 
 } // Pipeline

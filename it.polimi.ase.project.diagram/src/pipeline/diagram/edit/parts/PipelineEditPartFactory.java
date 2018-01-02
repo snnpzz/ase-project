@@ -79,53 +79,53 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case SchemaEditPart.VISUAL_ID:
 				return new SchemaEditPart(view);
 
+			case ChartEditPart.VISUAL_ID:
+				return new ChartEditPart(view);
+
+			case ChartNameEditPart.VISUAL_ID:
+				return new ChartNameEditPart(view);
+
 			case ImportEditPart.VISUAL_ID:
 				return new ImportEditPart(view);
 
 			case ImportNameEditPart.VISUAL_ID:
 				return new ImportNameEditPart(view);
 
-			case UserDefinedEditPart.VISUAL_ID:
-				return new UserDefinedEditPart(view);
+			case UserDefinedCleaningOperationEditPart.VISUAL_ID:
+				return new UserDefinedCleaningOperationEditPart(view);
 
-			case UserDefinedNameEditPart.VISUAL_ID:
-				return new UserDefinedNameEditPart(view);
+			case UserDefinedCleaningOperationNameEditPart.VISUAL_ID:
+				return new UserDefinedCleaningOperationNameEditPart(view);
 
-			case PredefinedEditPart.VISUAL_ID:
-				return new PredefinedEditPart(view);
+			case PredefinedCleaningOperationEditPart.VISUAL_ID:
+				return new PredefinedCleaningOperationEditPart(view);
 
-			case PredefinedNameEditPart.VISUAL_ID:
-				return new PredefinedNameEditPart(view);
+			case PredefinedCleaningOperationNameEditPart.VISUAL_ID:
+				return new PredefinedCleaningOperationNameEditPart(view);
 
-			case DescriptiveEditPart.VISUAL_ID:
-				return new DescriptiveEditPart(view);
+			case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
+				return new DescriptiveAnalysisOperationEditPart(view);
 
-			case DescriptiveNameEditPart.VISUAL_ID:
-				return new DescriptiveNameEditPart(view);
+			case DescriptiveAnalysisOperationNameEditPart.VISUAL_ID:
+				return new DescriptiveAnalysisOperationNameEditPart(view);
 
-			case ClassificationEditPart.VISUAL_ID:
-				return new ClassificationEditPart(view);
+			case ClassificationAnalysisOperationEditPart.VISUAL_ID:
+				return new ClassificationAnalysisOperationEditPart(view);
 
-			case ClassificationNameEditPart.VISUAL_ID:
-				return new ClassificationNameEditPart(view);
+			case ClassificationAnalysisOperationNameEditPart.VISUAL_ID:
+				return new ClassificationAnalysisOperationNameEditPart(view);
 
-			case PredictiveEditPart.VISUAL_ID:
-				return new PredictiveEditPart(view);
+			case PredictiveAnalysisOperationEditPart.VISUAL_ID:
+				return new PredictiveAnalysisOperationEditPart(view);
 
-			case PredictiveNameEditPart.VISUAL_ID:
-				return new PredictiveNameEditPart(view);
+			case PredictiveAnalysisOperationNameEditPart.VISUAL_ID:
+				return new PredictiveAnalysisOperationNameEditPart(view);
 
-			case ClusteringEditPart.VISUAL_ID:
-				return new ClusteringEditPart(view);
+			case ClusteringAnalysisOperationEditPart.VISUAL_ID:
+				return new ClusteringAnalysisOperationEditPart(view);
 
-			case ClusteringNameEditPart.VISUAL_ID:
-				return new ClusteringNameEditPart(view);
-
-			case ChartEditPart.VISUAL_ID:
-				return new ChartEditPart(view);
-
-			case ChartNameEditPart.VISUAL_ID:
-				return new ChartNameEditPart(view);
+			case ClusteringAnalysisOperationNameEditPart.VISUAL_ID:
+				return new ClusteringAnalysisOperationNameEditPart(view);
 
 			case ExportEditPart.VISUAL_ID:
 				return new ExportEditPart(view);
@@ -165,9 +165,6 @@ public class PipelineEditPartFactory implements EditPartFactory {
 
 			case AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID:
 				return new AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart(view);
-
-			case VisualizationTaskVisualizationTaskChartsCompartmentEditPart.VISUAL_ID:
-				return new VisualizationTaskVisualizationTaskChartsCompartmentEditPart(view);
 
 			case ExportTaskExportTaskExportsCompartmentEditPart.VISUAL_ID:
 				return new ExportTaskExportTaskExportsCompartmentEditPart(view);

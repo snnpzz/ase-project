@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import pipeline.Chart;
 import pipeline.ChartType;
@@ -35,7 +36,7 @@ import pipeline.VisualizationTask;
  */
 public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask {
 	/**
-	 * The cached value of the '{@link #getCharts() <em>Charts</em>}' containment reference list.
+	 * The cached value of the '{@link #getCharts() <em>Charts</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCharts()
@@ -70,23 +71,9 @@ public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask
 	 */
 	public EList<Chart> getCharts() {
 		if (charts == null) {
-			charts = new EObjectContainmentEList<Chart>(Chart.class, this, PipelinePackage.VISUALIZATION_TASK__CHARTS);
+			charts = new EObjectResolvingEList<Chart>(Chart.class, this, PipelinePackage.VISUALIZATION_TASK__CHARTS);
 		}
 		return charts;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case PipelinePackage.VISUALIZATION_TASK__CHARTS:
-				return ((InternalEList<?>)getCharts()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

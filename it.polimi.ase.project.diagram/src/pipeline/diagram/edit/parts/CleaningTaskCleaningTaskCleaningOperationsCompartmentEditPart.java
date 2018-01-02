@@ -92,10 +92,10 @@ public class CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart exten
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == PipelineElementTypes.UserDefined_3056) {
+			if (type == PipelineElementTypes.UserDefinedCleaningOperation_3063) {
 				return this;
 			}
-			if (type == PipelineElementTypes.Predefined_3057) {
+			if (type == PipelineElementTypes.PredefinedCleaningOperation_3064) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

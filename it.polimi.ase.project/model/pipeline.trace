@@ -36,9 +36,6 @@
     <nodeLabelTraces
         visualID="5068"
         queryText="true"/>
-    <compartmentTraces
-        visualID="7028"
-        queryText="true"/>
   </nodeTraces>
   <nodeTraces
       visualID="2031"
@@ -79,6 +76,13 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'File') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Pipeline') and _containmentMF_.name = 'files')">
     <nodeLabelTraces
         visualID="5097"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2046"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Chart') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Pipeline') and _containmentMF_.name = 'charts')">
+    <nodeLabelTraces
+        visualID="5121"
         queryText="true"/>
   </nodeTraces>
   <childNodeTraces
@@ -130,52 +134,45 @@
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3056"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'UserDefined') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'CleaningTask') and _containmentMF_.name = 'cleaningOperations')">
+      visualID="3063"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'UserDefinedCleaningOperation') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'CleaningTask') and _containmentMF_.name = 'cleaningOperations')">
     <nodeLabelTraces
-        visualID="5108"
+        visualID="5115"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3057"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Predefined') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'CleaningTask') and _containmentMF_.name = 'cleaningOperations')">
+      visualID="3064"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'PredefinedCleaningOperation') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'CleaningTask') and _containmentMF_.name = 'cleaningOperations')">
     <nodeLabelTraces
-        visualID="5109"
+        visualID="5116"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3058"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Descriptive') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'AnalysisTask') and _containmentMF_.name = 'analysisOperations')">
+      visualID="3065"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'DescriptiveAnalysisOperation') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'AnalysisTask') and _containmentMF_.name = 'analysisOperations')">
     <nodeLabelTraces
-        visualID="5110"
+        visualID="5117"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3059"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Classification') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'AnalysisTask') and _containmentMF_.name = 'analysisOperations')">
+      visualID="3066"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'ClassificationAnalysisOperation') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'AnalysisTask') and _containmentMF_.name = 'analysisOperations')">
     <nodeLabelTraces
-        visualID="5111"
+        visualID="5118"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3060"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Predictive') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'AnalysisTask') and _containmentMF_.name = 'analysisOperations')">
+      visualID="3067"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'PredictiveAnalysisOperation') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'AnalysisTask') and _containmentMF_.name = 'analysisOperations')">
     <nodeLabelTraces
-        visualID="5112"
+        visualID="5119"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3061"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Clustering') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'AnalysisTask') and _containmentMF_.name = 'analysisOperations')">
+      visualID="3068"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'ClusteringAnalysisOperation') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'AnalysisTask') and _containmentMF_.name = 'analysisOperations')">
     <nodeLabelTraces
-        visualID="5113"
-        queryText="true"/>
-  </childNodeTraces>
-  <childNodeTraces
-      visualID="3062"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'Chart') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.project.ase.polimi.it/pipeline' and _eClass_.name = 'VisualizationTask') and _containmentMF_.name = 'charts')">
-    <nodeLabelTraces
-        visualID="5114"
+        visualID="5120"
         queryText="true"/>
   </childNodeTraces>
   <linkTraces

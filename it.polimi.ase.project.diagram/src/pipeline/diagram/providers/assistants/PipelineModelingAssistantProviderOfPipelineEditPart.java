@@ -23,7 +23,7 @@ public class PipelineModelingAssistantProviderOfPipelineEditPart extends Pipelin
 	@Override
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
-		List<IElementType> types = new ArrayList<IElementType>(9);
+		List<IElementType> types = new ArrayList<IElementType>(10);
 		types.add(PipelineElementTypes.CollectionTask_2025);
 		types.add(PipelineElementTypes.IntegrationTask_2026);
 		types.add(PipelineElementTypes.CleaningTask_2027);
@@ -33,6 +33,7 @@ public class PipelineModelingAssistantProviderOfPipelineEditPart extends Pipelin
 		types.add(PipelineElementTypes.Source_2044);
 		types.add(PipelineElementTypes.File_2045);
 		types.add(PipelineElementTypes.Schema_2043);
+		types.add(PipelineElementTypes.Chart_2046);
 		return types;
 	}
 

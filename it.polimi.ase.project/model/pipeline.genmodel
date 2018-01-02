@@ -80,6 +80,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/sources"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/files"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/schemas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/charts"/>
     </genClasses>
     <genClasses image="false" ecoreClass="pipeline.ecore#//Task">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Task/ID"/>
@@ -125,7 +126,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//AnalysisTask/analysisOperations"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//VisualizationTask">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//VisualizationTask/charts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//VisualizationTask/charts"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//ExportTask">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//ExportTask/exports"/>
@@ -140,8 +141,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Export/expUses"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Export/name"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//UserDefined">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//UserDefined/name"/>
+    <genClasses ecoreClass="pipeline.ecore#//UserDefinedCleaningOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//UserDefinedCleaningOperation/name"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Source">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Source/linkedTo"/>
@@ -153,35 +154,35 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//File/path"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//File/comesFrom"/>
     </genClasses>
+    <genClasses ecoreClass="pipeline.ecore#//Chart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/size"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Chart/axes"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="pipeline.ecore#//CleaningOperation"/>
     <genClasses image="false" ecoreClass="pipeline.ecore#//AnalysisOperation"/>
-    <genClasses ecoreClass="pipeline.ecore#//Descriptive">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Descriptive/name"/>
+    <genClasses ecoreClass="pipeline.ecore#//DescriptiveAnalysisOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//DescriptiveAnalysisOperation/name"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//Classification">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Classification/name"/>
+    <genClasses ecoreClass="pipeline.ecore#//ClassificationAnalysisOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//ClassificationAnalysisOperation/name"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//Predictive">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Predictive/name"/>
+    <genClasses ecoreClass="pipeline.ecore#//PredictiveAnalysisOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//PredictiveAnalysisOperation/name"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//Clustering">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Clustering/k"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Clustering/name"/>
+    <genClasses ecoreClass="pipeline.ecore#//ClusteringAnalysisOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//ClusteringAnalysisOperation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//ClusteringAnalysisOperation/k"/>
     </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//Predefined">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Predefined/name"/>
+    <genClasses ecoreClass="pipeline.ecore#//PredefinedCleaningOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//PredefinedCleaningOperation/name"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//SimpleAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//SimpleAttribute/type"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//ComplexAttribute">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//ComplexAttribute/attributes"/>
-    </genClasses>
-    <genClasses ecoreClass="pipeline.ecore#//Chart">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/size"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Chart/axes"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

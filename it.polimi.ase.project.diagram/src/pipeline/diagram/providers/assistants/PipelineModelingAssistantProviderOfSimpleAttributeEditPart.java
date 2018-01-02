@@ -57,7 +57,7 @@ public class PipelineModelingAssistantProviderOfSimpleAttributeEditPart extends 
 		if (relationshipType == PipelineElementTypes.IntegrationTaskAttributes_4025) {
 			types.add(PipelineElementTypes.IntegrationTask_2026);
 		} else if (relationshipType == PipelineElementTypes.ChartAxes_4026) {
-			types.add(PipelineElementTypes.Chart_3062);
+			types.add(PipelineElementTypes.Chart_2046);
 		}
 		return types;
 	}

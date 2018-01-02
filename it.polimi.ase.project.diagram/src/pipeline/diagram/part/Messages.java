@@ -276,12 +276,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Classification3CreationTool_title;
+	public static String ClassificationAnalysisOperation3CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Classification3CreationTool_desc;
+	public static String ClassificationAnalysisOperation3CreationTool_desc;
 
 	/**
 	* @generated
@@ -296,12 +296,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Clustering5CreationTool_title;
+	public static String ClusteringAnalysisOperation5CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Clustering5CreationTool_desc;
+	public static String ClusteringAnalysisOperation5CreationTool_desc;
 
 	/**
 	* @generated
@@ -326,12 +326,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Descriptive8CreationTool_title;
+	public static String DescriptiveAnalysisOperation8CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Descriptive8CreationTool_desc;
+	public static String DescriptiveAnalysisOperation8CreationTool_desc;
 
 	/**
 	* @generated
@@ -386,22 +386,22 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Predefined14CreationTool_title;
+	public static String PredefinedCleaningOperation14CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Predefined14CreationTool_desc;
+	public static String PredefinedCleaningOperation14CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Predictive15CreationTool_title;
+	public static String PredictiveAnalysisOperation15CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Predictive15CreationTool_desc;
+	public static String PredictiveAnalysisOperation15CreationTool_desc;
 
 	/**
 	* @generated
@@ -436,12 +436,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String UserDefined19CreationTool_title;
+	public static String UserDefinedCleaningOperation19CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String UserDefined19CreationTool_desc;
+	public static String UserDefinedCleaningOperation19CreationTool_desc;
 
 	/**
 	* @generated
@@ -571,11 +571,6 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String VisualizationTaskVisualizationTaskChartsCompartmentEditPart_title;
-
-	/**
-	* @generated
-	*/
 	public static String ExportTaskExportTaskExportsCompartmentEditPart_title;
 
 	/**
@@ -681,6 +676,11 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
+	public static String NavigatorGroupName_Chart_2046_outgoinglinks;
+
+	/**
+	* @generated
+	*/
 	public static String NavigatorGroupName_Import_3025_outgoinglinks;
 
 	/**
@@ -711,67 +711,62 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_UserDefined_3056_incominglinks;
+	public static String NavigatorGroupName_UserDefinedCleaningOperation_3063_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_UserDefined_3056_outgoinglinks;
+	public static String NavigatorGroupName_UserDefinedCleaningOperation_3063_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Predefined_3057_incominglinks;
+	public static String NavigatorGroupName_PredefinedCleaningOperation_3064_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Predefined_3057_outgoinglinks;
+	public static String NavigatorGroupName_PredefinedCleaningOperation_3064_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Descriptive_3058_incominglinks;
+	public static String NavigatorGroupName_DescriptiveAnalysisOperation_3065_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Descriptive_3058_outgoinglinks;
+	public static String NavigatorGroupName_DescriptiveAnalysisOperation_3065_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Classification_3059_incominglinks;
+	public static String NavigatorGroupName_ClassificationAnalysisOperation_3066_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Classification_3059_outgoinglinks;
+	public static String NavigatorGroupName_ClassificationAnalysisOperation_3066_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Predictive_3060_incominglinks;
+	public static String NavigatorGroupName_PredictiveAnalysisOperation_3067_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Predictive_3060_outgoinglinks;
+	public static String NavigatorGroupName_PredictiveAnalysisOperation_3067_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Clustering_3061_incominglinks;
+	public static String NavigatorGroupName_ClusteringAnalysisOperation_3068_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Clustering_3061_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Chart_3062_outgoinglinks;
+	public static String NavigatorGroupName_ClusteringAnalysisOperation_3068_outgoinglinks;
 
 	/**
 	* @generated

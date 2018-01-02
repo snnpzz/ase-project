@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 
 import pipeline.diagram.edit.commands.AnalysisTaskCreateCommand;
+import pipeline.diagram.edit.commands.ChartCreateCommand;
 import pipeline.diagram.edit.commands.CleaningTaskCreateCommand;
 import pipeline.diagram.edit.commands.CollectionTaskCreateCommand;
 import pipeline.diagram.edit.commands.ExportTaskCreateCommand;
@@ -63,6 +64,9 @@ public class PipelineItemSemanticEditPolicy extends PipelineBaseItemSemanticEdit
 		}
 		if (PipelineElementTypes.Schema_2043 == req.getElementType()) {
 			return getGEFWrapper(new SchemaCreateCommand(req));
+		}
+		if (PipelineElementTypes.Chart_2046 == req.getElementType()) {
+			return getGEFWrapper(new ChartCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

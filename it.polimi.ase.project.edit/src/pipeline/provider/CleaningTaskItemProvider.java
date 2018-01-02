@@ -139,12 +139,12 @@ public class CleaningTaskItemProvider extends TaskItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(PipelinePackage.Literals.CLEANING_TASK__CLEANING_OPERATIONS,
-				 PipelineFactory.eINSTANCE.createUserDefined()));
+				 PipelineFactory.eINSTANCE.createUserDefinedCleaningOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PipelinePackage.Literals.CLEANING_TASK__CLEANING_OPERATIONS,
-				 PipelineFactory.eINSTANCE.createPredefined()));
+				 PipelineFactory.eINSTANCE.createPredefinedCleaningOperation()));
 	}
 
 }

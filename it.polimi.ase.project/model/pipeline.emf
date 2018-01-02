@@ -10,6 +10,7 @@ class Pipeline {
   val Source[+] sources;
   val File[*] files;
   val Schema[+] schemas;
+  val Chart[*] charts;
 }
 
 @gmf.node(label="ID", figure="rounded")
@@ -86,9 +87,7 @@ class AnalysisTask extends Task {
 }
 
 class VisualizationTask extends Task {
-
-  @gmf.compartment(layout="list")
-  val Chart[+] charts;
+  ref Chart[+] charts;
 }
 
 class ExportTask extends Task {
@@ -119,7 +118,7 @@ class Export {
   attr String name;
 }
 
-class UserDefined extends CleaningOperation {
+class UserDefinedCleaningOperation extends CleaningOperation {
   attr String name;
 }
 
@@ -137,30 +136,40 @@ class File {
   ref Export[1]#write comesFrom;
 }
 
+@gmf.node(label="name", figure="rounded")
+class Chart {
+  attr String name;
+  attr ChartType type;
+  attr Size size;
+
+  @gmf.link(width="1", target.decoration="closedarrow")
+  ref SimpleAttribute[+] axes;
+}
+
 abstract class CleaningOperation extends Operation {
 }
 
 abstract class AnalysisOperation extends Operation {
 }
 
-class Descriptive extends AnalysisOperation {
+class DescriptiveAnalysisOperation extends AnalysisOperation {
   attr DescriptiveOperation name;
 }
 
-class Classification extends AnalysisOperation {
+class ClassificationAnalysisOperation extends AnalysisOperation {
   attr ClassificationOperation name;
 }
 
-class Predictive extends AnalysisOperation {
+class PredictiveAnalysisOperation extends AnalysisOperation {
   attr PredictiveOperation name;
 }
 
-class Clustering extends AnalysisOperation {
-  attr int k;
+class ClusteringAnalysisOperation extends AnalysisOperation {
   attr ClusteringOperation name;
+  attr int k;
 }
 
-class Predefined extends CleaningOperation {
+class PredefinedCleaningOperation extends CleaningOperation {
   attr PredefinedOperation name = "";
 }
 
@@ -227,16 +236,6 @@ enum ChartType {
   Waterfall = 0;
   Funnel = 0;
   Combo = 0;
-}
-
-@gmf.node(label="name", figure="rounded")
-class Chart {
-  attr String name;
-  attr ChartType type;
-  attr Size size;
-
-  @gmf.link(width="1", target.decoration="closedarrow")
-  ref SimpleAttribute[+] axes;
 }
 
 enum Format {

@@ -9,6 +9,8 @@ import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -37,7 +39,7 @@ public class ChartEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 3062;
+	public static final int VISUAL_ID = 2046;
 
 	/**
 	* @generated
@@ -245,6 +247,18 @@ public class ChartEditPart extends ShapeNodeEditPart {
 	*/
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(PipelineVisualIDRegistry.getType(ChartNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	* @generated
+	*/
+	protected void handleNotificationEvent(Notification event) {
+		if (event.getNotifier() == getModel()
+				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
+			handleMajorSemanticChange();
+		} else {
+			super.handleNotificationEvent(event);
+		}
 	}
 
 	/**

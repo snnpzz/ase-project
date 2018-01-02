@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import pipeline.Chart;
 import pipeline.DataFlow;
 import pipeline.File;
 import pipeline.InternalDataFlow;
@@ -42,6 +43,7 @@ import pipeline.Task;
  *   <li>{@link pipeline.impl.PipelineImpl#getSources <em>Sources</em>}</li>
  *   <li>{@link pipeline.impl.PipelineImpl#getFiles <em>Files</em>}</li>
  *   <li>{@link pipeline.impl.PipelineImpl#getSchemas <em>Schemas</em>}</li>
+ *   <li>{@link pipeline.impl.PipelineImpl#getCharts <em>Charts</em>}</li>
  * </ul>
  *
  * @generated
@@ -126,6 +128,16 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	 * @ordered
 	 */
 	protected EList<Schema> schemas;
+
+	/**
+	 * The cached value of the '{@link #getCharts() <em>Charts</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCharts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Chart> charts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -244,6 +256,18 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Chart> getCharts() {
+		if (charts == null) {
+			charts = new EObjectContainmentEList<Chart>(Chart.class, this, PipelinePackage.PIPELINE__CHARTS);
+		}
+		return charts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -259,6 +283,8 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 				return ((InternalEList<?>)getFiles()).basicRemove(otherEnd, msgs);
 			case PipelinePackage.PIPELINE__SCHEMAS:
 				return ((InternalEList<?>)getSchemas()).basicRemove(otherEnd, msgs);
+			case PipelinePackage.PIPELINE__CHARTS:
+				return ((InternalEList<?>)getCharts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -285,6 +311,8 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 				return getFiles();
 			case PipelinePackage.PIPELINE__SCHEMAS:
 				return getSchemas();
+			case PipelinePackage.PIPELINE__CHARTS:
+				return getCharts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -325,6 +353,10 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 				getSchemas().clear();
 				getSchemas().addAll((Collection<? extends Schema>)newValue);
 				return;
+			case PipelinePackage.PIPELINE__CHARTS:
+				getCharts().clear();
+				getCharts().addAll((Collection<? extends Chart>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -358,6 +390,9 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 			case PipelinePackage.PIPELINE__SCHEMAS:
 				getSchemas().clear();
 				return;
+			case PipelinePackage.PIPELINE__CHARTS:
+				getCharts().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -384,6 +419,8 @@ public class PipelineImpl extends EObjectImpl implements Pipeline {
 				return files != null && !files.isEmpty();
 			case PipelinePackage.PIPELINE__SCHEMAS:
 				return schemas != null && !schemas.isEmpty();
+			case PipelinePackage.PIPELINE__CHARTS:
+				return charts != null && !charts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

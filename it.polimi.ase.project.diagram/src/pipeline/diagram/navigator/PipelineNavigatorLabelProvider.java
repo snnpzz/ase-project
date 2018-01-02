@@ -30,12 +30,12 @@ import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
 import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ChartEditPart;
 import pipeline.diagram.edit.parts.ChartNameEditPart;
-import pipeline.diagram.edit.parts.ClassificationEditPart;
-import pipeline.diagram.edit.parts.ClassificationNameEditPart;
+import pipeline.diagram.edit.parts.ClassificationAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.ClassificationAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskIDEditPart;
-import pipeline.diagram.edit.parts.ClusteringEditPart;
-import pipeline.diagram.edit.parts.ClusteringNameEditPart;
+import pipeline.diagram.edit.parts.ClusteringAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.ClusteringAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskIDEditPart;
 import pipeline.diagram.edit.parts.ComplexAttribute2EditPart;
@@ -44,8 +44,8 @@ import pipeline.diagram.edit.parts.ComplexAttributeName2EditPart;
 import pipeline.diagram.edit.parts.ComplexAttributeNameEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
-import pipeline.diagram.edit.parts.DescriptiveEditPart;
-import pipeline.diagram.edit.parts.DescriptiveNameEditPart;
+import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.ExportEditPart;
 import pipeline.diagram.edit.parts.ExportExpUsesEditPart;
 import pipeline.diagram.edit.parts.ExportNameEditPart;
@@ -64,10 +64,10 @@ import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
-import pipeline.diagram.edit.parts.PredefinedEditPart;
-import pipeline.diagram.edit.parts.PredefinedNameEditPart;
-import pipeline.diagram.edit.parts.PredictiveEditPart;
-import pipeline.diagram.edit.parts.PredictiveNameEditPart;
+import pipeline.diagram.edit.parts.PredefinedCleaningOperationEditPart;
+import pipeline.diagram.edit.parts.PredefinedCleaningOperationNameEditPart;
+import pipeline.diagram.edit.parts.PredictiveAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.PredictiveAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.edit.parts.SimpleAttribute2EditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeEditPart;
@@ -75,8 +75,8 @@ import pipeline.diagram.edit.parts.SimpleAttributeName2EditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeNameEditPart;
 import pipeline.diagram.edit.parts.SourceEditPart;
 import pipeline.diagram.edit.parts.SourceNameEditPart;
-import pipeline.diagram.edit.parts.UserDefinedEditPart;
-import pipeline.diagram.edit.parts.UserDefinedNameEditPart;
+import pipeline.diagram.edit.parts.UserDefinedCleaningOperationEditPart;
+import pipeline.diagram.edit.parts.UserDefinedCleaningOperationNameEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskIDEditPart;
 import pipeline.diagram.part.PipelineDiagramEditorPlugin;
@@ -175,6 +175,9 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 		case FileEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.project.ase.polimi.it/pipeline?File", //$NON-NLS-1$
 					PipelineElementTypes.File_2045);
+		case ChartEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.project.ase.polimi.it/pipeline?Chart", //$NON-NLS-1$
+					PipelineElementTypes.Chart_2046);
 		case ImportEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?Import", //$NON-NLS-1$
 					PipelineElementTypes.Import_3025);
@@ -193,27 +196,24 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 		case ComplexAttribute2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?ComplexAttribute", //$NON-NLS-1$
 					PipelineElementTypes.ComplexAttribute_3049);
-		case UserDefinedEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?UserDefined", //$NON-NLS-1$
-					PipelineElementTypes.UserDefined_3056);
-		case PredefinedEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?Predefined", //$NON-NLS-1$
-					PipelineElementTypes.Predefined_3057);
-		case DescriptiveEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?Descriptive", //$NON-NLS-1$
-					PipelineElementTypes.Descriptive_3058);
-		case ClassificationEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?Classification", //$NON-NLS-1$
-					PipelineElementTypes.Classification_3059);
-		case PredictiveEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?Predictive", //$NON-NLS-1$
-					PipelineElementTypes.Predictive_3060);
-		case ClusteringEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?Clustering", //$NON-NLS-1$
-					PipelineElementTypes.Clustering_3061);
-		case ChartEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?Chart", //$NON-NLS-1$
-					PipelineElementTypes.Chart_3062);
+		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?UserDefinedCleaningOperation", //$NON-NLS-1$
+					PipelineElementTypes.UserDefinedCleaningOperation_3063);
+		case PredefinedCleaningOperationEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?PredefinedCleaningOperation", //$NON-NLS-1$
+					PipelineElementTypes.PredefinedCleaningOperation_3064);
+		case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?DescriptiveAnalysisOperation", //$NON-NLS-1$
+					PipelineElementTypes.DescriptiveAnalysisOperation_3065);
+		case ClassificationAnalysisOperationEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?ClassificationAnalysisOperation", //$NON-NLS-1$
+					PipelineElementTypes.ClassificationAnalysisOperation_3066);
+		case PredictiveAnalysisOperationEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?PredictiveAnalysisOperation", //$NON-NLS-1$
+					PipelineElementTypes.PredictiveAnalysisOperation_3067);
+		case ClusteringAnalysisOperationEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.project.ase.polimi.it/pipeline?ClusteringAnalysisOperation", //$NON-NLS-1$
+					PipelineElementTypes.ClusteringAnalysisOperation_3068);
 		case DataFlowEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.project.ase.polimi.it/pipeline?DataFlow", //$NON-NLS-1$
 					PipelineElementTypes.DataFlow_4005);
@@ -322,6 +322,8 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 			return getSource_2044Text(view);
 		case FileEditPart.VISUAL_ID:
 			return getFile_2045Text(view);
+		case ChartEditPart.VISUAL_ID:
+			return getChart_2046Text(view);
 		case ImportEditPart.VISUAL_ID:
 			return getImport_3025Text(view);
 		case ExportEditPart.VISUAL_ID:
@@ -334,20 +336,18 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 			return getSimpleAttribute_3048Text(view);
 		case ComplexAttribute2EditPart.VISUAL_ID:
 			return getComplexAttribute_3049Text(view);
-		case UserDefinedEditPart.VISUAL_ID:
-			return getUserDefined_3056Text(view);
-		case PredefinedEditPart.VISUAL_ID:
-			return getPredefined_3057Text(view);
-		case DescriptiveEditPart.VISUAL_ID:
-			return getDescriptive_3058Text(view);
-		case ClassificationEditPart.VISUAL_ID:
-			return getClassification_3059Text(view);
-		case PredictiveEditPart.VISUAL_ID:
-			return getPredictive_3060Text(view);
-		case ClusteringEditPart.VISUAL_ID:
-			return getClustering_3061Text(view);
-		case ChartEditPart.VISUAL_ID:
-			return getChart_3062Text(view);
+		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
+			return getUserDefinedCleaningOperation_3063Text(view);
+		case PredefinedCleaningOperationEditPart.VISUAL_ID:
+			return getPredefinedCleaningOperation_3064Text(view);
+		case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
+			return getDescriptiveAnalysisOperation_3065Text(view);
+		case ClassificationAnalysisOperationEditPart.VISUAL_ID:
+			return getClassificationAnalysisOperation_3066Text(view);
+		case PredictiveAnalysisOperationEditPart.VISUAL_ID:
+			return getPredictiveAnalysisOperation_3067Text(view);
+		case ClusteringAnalysisOperationEditPart.VISUAL_ID:
+			return getClusteringAnalysisOperation_3068Text(view);
 		case DataFlowEditPart.VISUAL_ID:
 			return getDataFlow_4005Text(view);
 		case InternalDataFlowEditPart.VISUAL_ID:
@@ -529,6 +529,22 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	/**
 	* @generated
 	*/
+	private String getChart_2046Text(View view) {
+		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.Chart_2046,
+				view.getElement() != null ? view.getElement() : view,
+				PipelineVisualIDRegistry.getType(ChartNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5121); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
 	private String getImport_3025Text(View view) {
 		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.Import_3025,
 				view.getElement() != null ? view.getElement() : view,
@@ -625,15 +641,15 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	/**
 	* @generated
 	*/
-	private String getUserDefined_3056Text(View view) {
-		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.UserDefined_3056,
+	private String getUserDefinedCleaningOperation_3063Text(View view) {
+		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.UserDefinedCleaningOperation_3063,
 				view.getElement() != null ? view.getElement() : view,
-				PipelineVisualIDRegistry.getType(UserDefinedNameEditPart.VISUAL_ID));
+				PipelineVisualIDRegistry.getType(UserDefinedCleaningOperationNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5108); //$NON-NLS-1$
+			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5115); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -641,15 +657,15 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	/**
 	* @generated
 	*/
-	private String getPredefined_3057Text(View view) {
-		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.Predefined_3057,
+	private String getPredefinedCleaningOperation_3064Text(View view) {
+		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.PredefinedCleaningOperation_3064,
 				view.getElement() != null ? view.getElement() : view,
-				PipelineVisualIDRegistry.getType(PredefinedNameEditPart.VISUAL_ID));
+				PipelineVisualIDRegistry.getType(PredefinedCleaningOperationNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5109); //$NON-NLS-1$
+			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5116); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -657,15 +673,15 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	/**
 	* @generated
 	*/
-	private String getDescriptive_3058Text(View view) {
-		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.Descriptive_3058,
+	private String getDescriptiveAnalysisOperation_3065Text(View view) {
+		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.DescriptiveAnalysisOperation_3065,
 				view.getElement() != null ? view.getElement() : view,
-				PipelineVisualIDRegistry.getType(DescriptiveNameEditPart.VISUAL_ID));
+				PipelineVisualIDRegistry.getType(DescriptiveAnalysisOperationNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5110); //$NON-NLS-1$
+			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5117); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -673,15 +689,15 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	/**
 	* @generated
 	*/
-	private String getClassification_3059Text(View view) {
-		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.Classification_3059,
+	private String getClassificationAnalysisOperation_3066Text(View view) {
+		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.ClassificationAnalysisOperation_3066,
 				view.getElement() != null ? view.getElement() : view,
-				PipelineVisualIDRegistry.getType(ClassificationNameEditPart.VISUAL_ID));
+				PipelineVisualIDRegistry.getType(ClassificationAnalysisOperationNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5111); //$NON-NLS-1$
+			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5118); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -689,15 +705,15 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	/**
 	* @generated
 	*/
-	private String getPredictive_3060Text(View view) {
-		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.Predictive_3060,
+	private String getPredictiveAnalysisOperation_3067Text(View view) {
+		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.PredictiveAnalysisOperation_3067,
 				view.getElement() != null ? view.getElement() : view,
-				PipelineVisualIDRegistry.getType(PredictiveNameEditPart.VISUAL_ID));
+				PipelineVisualIDRegistry.getType(PredictiveAnalysisOperationNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5112); //$NON-NLS-1$
+			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5119); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -705,31 +721,15 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	/**
 	* @generated
 	*/
-	private String getClustering_3061Text(View view) {
-		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.Clustering_3061,
+	private String getClusteringAnalysisOperation_3068Text(View view) {
+		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.ClusteringAnalysisOperation_3068,
 				view.getElement() != null ? view.getElement() : view,
-				PipelineVisualIDRegistry.getType(ClusteringNameEditPart.VISUAL_ID));
+				PipelineVisualIDRegistry.getType(ClusteringAnalysisOperationNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5113); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	* @generated
-	*/
-	private String getChart_3062Text(View view) {
-		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.Chart_3062,
-				view.getElement() != null ? view.getElement() : view,
-				PipelineVisualIDRegistry.getType(ChartNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5114); //$NON-NLS-1$
+			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5120); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

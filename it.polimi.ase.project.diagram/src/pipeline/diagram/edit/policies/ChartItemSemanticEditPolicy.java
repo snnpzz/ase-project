@@ -32,7 +32,7 @@ public class ChartItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPol
 	* @generated
 	*/
 	public ChartItemSemanticEditPolicy() {
-		super(PipelineElementTypes.Chart_3062);
+		super(PipelineElementTypes.Chart_2046);
 	}
 
 	/**

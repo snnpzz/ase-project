@@ -60,7 +60,7 @@ public class ChartNameEditPart extends CompartmentEditPart implements ITextAware
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5114;
+	public static final int VISUAL_ID = 5121;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class ChartNameEditPart extends CompartmentEditPart implements ITextAware
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = PipelineParserProvider.getParser(PipelineElementTypes.Chart_3062, getParserElement(),
+			parser = PipelineParserProvider.getParser(PipelineElementTypes.Chart_2046, getParserElement(),
 					PipelineVisualIDRegistry.getType(pipeline.diagram.edit.parts.ChartNameEditPart.VISUAL_ID));
 		}
 		return parser;

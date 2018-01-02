@@ -130,13 +130,13 @@ public interface PipelineFactory extends EFactory {
 	Export createExport();
 
 	/**
-	 * Returns a new object of class '<em>User Defined</em>'.
+	 * Returns a new object of class '<em>User Defined Cleaning Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>User Defined</em>'.
+	 * @return a new object of class '<em>User Defined Cleaning Operation</em>'.
 	 * @generated
 	 */
-	UserDefined createUserDefined();
+	UserDefinedCleaningOperation createUserDefinedCleaningOperation();
 
 	/**
 	 * Returns a new object of class '<em>Source</em>'.
@@ -155,51 +155,6 @@ public interface PipelineFactory extends EFactory {
 	 * @generated
 	 */
 	File createFile();
-
-	/**
-	 * Returns a new object of class '<em>Descriptive</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Descriptive</em>'.
-	 * @generated
-	 */
-	Descriptive createDescriptive();
-
-	/**
-	 * Returns a new object of class '<em>Classification</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Classification</em>'.
-	 * @generated
-	 */
-	Classification createClassification();
-
-	/**
-	 * Returns a new object of class '<em>Predictive</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Predictive</em>'.
-	 * @generated
-	 */
-	Predictive createPredictive();
-
-	/**
-	 * Returns a new object of class '<em>Clustering</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Clustering</em>'.
-	 * @generated
-	 */
-	Clustering createClustering();
-
-	/**
-	 * Returns a new object of class '<em>Predefined</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Predefined</em>'.
-	 * @generated
-	 */
-	Predefined createPredefined();
 
 	/**
 	 * Returns a new object of class '<em>Simple Attribute</em>'.
@@ -227,6 +182,51 @@ public interface PipelineFactory extends EFactory {
 	 * @generated
 	 */
 	Chart createChart();
+
+	/**
+	 * Returns a new object of class '<em>Descriptive Analysis Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Descriptive Analysis Operation</em>'.
+	 * @generated
+	 */
+	DescriptiveAnalysisOperation createDescriptiveAnalysisOperation();
+
+	/**
+	 * Returns a new object of class '<em>Classification Analysis Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Classification Analysis Operation</em>'.
+	 * @generated
+	 */
+	ClassificationAnalysisOperation createClassificationAnalysisOperation();
+
+	/**
+	 * Returns a new object of class '<em>Predictive Analysis Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Predictive Analysis Operation</em>'.
+	 * @generated
+	 */
+	PredictiveAnalysisOperation createPredictiveAnalysisOperation();
+
+	/**
+	 * Returns a new object of class '<em>Clustering Analysis Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Clustering Analysis Operation</em>'.
+	 * @generated
+	 */
+	ClusteringAnalysisOperation createClusteringAnalysisOperation();
+
+	/**
+	 * Returns a new object of class '<em>Predefined Cleaning Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Predefined Cleaning Operation</em>'.
+	 * @generated
+	 */
+	PredefinedCleaningOperation createPredefinedCleaningOperation();
 
 	/**
 	 * Returns the package supported by this factory.

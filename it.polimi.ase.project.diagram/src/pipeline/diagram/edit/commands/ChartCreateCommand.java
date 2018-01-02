@@ -16,6 +16,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.Chart;
+import pipeline.Pipeline;
 import pipeline.PipelineFactory;
 import pipeline.VisualizationTask;
 
@@ -57,7 +58,7 @@ public class ChartCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Chart newElement = PipelineFactory.eINSTANCE.createChart();
 
-		VisualizationTask owner = (VisualizationTask) getElementToEdit();
+		Pipeline owner = (Pipeline) getElementToEdit();
 		owner.getCharts().add(newElement);
 
 		doConfigure(newElement, monitor, info);

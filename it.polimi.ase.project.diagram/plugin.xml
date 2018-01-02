@@ -258,7 +258,7 @@
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Pipeline"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2025,2026,2027,2031,2029,2032,2044,2045,2043,3025,3056,3057,3058,3059,3060,3061,3062,3037,3046,3047,3048,3049"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2025,2026,2027,2031,2029,2032,2044,2045,2043,2046,3025,3063,3064,3065,3066,3067,3068,3037,3046,3047,3048,3049"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4005,4006,4019,4024,4025,4021,4013,4022,4014,4026"/>
       </viewProvider>
    </extension>
@@ -271,16 +271,16 @@
             <method name="getType()" value="Pipeline"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2025,2026,2027,2031,2029,2032,2044,2045,2043,3025,3056,3057,3058,3059,3060,3061,3062,3037,3046,3047,3048,3049"/>
+            <method name="getType()" value="2025,2026,2027,2031,2029,2032,2044,2045,2043,2046,3025,3063,3064,3065,3066,3067,3068,3037,3046,3047,3048,3049"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4005,4006,4019,4024,4025,4021,4013,4022,4014,4026"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5058,5059,5062,5075,5068,5077,5096,5097,5057,5108,5109,5110,5111,5112,5113,5114,5076,5098,5101,5099,5100"/>
+            <method name="getType()" value="5058,5059,5062,5075,5068,5077,5096,5097,5121,5057,5115,5116,5117,5118,5119,5120,5076,5098,5101,5099,5100"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7017,7018,7021,7028,7022,7023,7026,7027"/>
+            <method name="getType()" value="7017,7018,7021,7022,7023,7026,7027"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -339,45 +339,45 @@
          <object class="pipeline.diagram.edit.parts.SchemaEditPart" id="Schema_2043"/>
          <context elements="Schema_2043"/>
       </modelingAssistantProvider>
+            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfChartEditPart">
+         <Priority name="Lowest"/>
+         <object class="pipeline.diagram.edit.parts.ChartEditPart" id="Chart_2046"/>
+         <context elements="Chart_2046"/>
+      </modelingAssistantProvider>
             <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfImportEditPart">
          <Priority name="Lowest"/>
          <object class="pipeline.diagram.edit.parts.ImportEditPart" id="Import_3025"/>
          <context elements="Import_3025"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfUserDefinedEditPart">
+            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfUserDefinedCleaningOperationEditPart">
          <Priority name="Lowest"/>
-         <object class="pipeline.diagram.edit.parts.UserDefinedEditPart" id="UserDefined_3056"/>
-         <context elements="UserDefined_3056"/>
+         <object class="pipeline.diagram.edit.parts.UserDefinedCleaningOperationEditPart" id="UserDefinedCleaningOperation_3063"/>
+         <context elements="UserDefinedCleaningOperation_3063"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfPredefinedEditPart">
+            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfPredefinedCleaningOperationEditPart">
          <Priority name="Lowest"/>
-         <object class="pipeline.diagram.edit.parts.PredefinedEditPart" id="Predefined_3057"/>
-         <context elements="Predefined_3057"/>
+         <object class="pipeline.diagram.edit.parts.PredefinedCleaningOperationEditPart" id="PredefinedCleaningOperation_3064"/>
+         <context elements="PredefinedCleaningOperation_3064"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfDescriptiveEditPart">
+            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfDescriptiveAnalysisOperationEditPart">
          <Priority name="Lowest"/>
-         <object class="pipeline.diagram.edit.parts.DescriptiveEditPart" id="Descriptive_3058"/>
-         <context elements="Descriptive_3058"/>
+         <object class="pipeline.diagram.edit.parts.DescriptiveAnalysisOperationEditPart" id="DescriptiveAnalysisOperation_3065"/>
+         <context elements="DescriptiveAnalysisOperation_3065"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfClassificationEditPart">
+            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfClassificationAnalysisOperationEditPart">
          <Priority name="Lowest"/>
-         <object class="pipeline.diagram.edit.parts.ClassificationEditPart" id="Classification_3059"/>
-         <context elements="Classification_3059"/>
+         <object class="pipeline.diagram.edit.parts.ClassificationAnalysisOperationEditPart" id="ClassificationAnalysisOperation_3066"/>
+         <context elements="ClassificationAnalysisOperation_3066"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfPredictiveEditPart">
+            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfPredictiveAnalysisOperationEditPart">
          <Priority name="Lowest"/>
-         <object class="pipeline.diagram.edit.parts.PredictiveEditPart" id="Predictive_3060"/>
-         <context elements="Predictive_3060"/>
+         <object class="pipeline.diagram.edit.parts.PredictiveAnalysisOperationEditPart" id="PredictiveAnalysisOperation_3067"/>
+         <context elements="PredictiveAnalysisOperation_3067"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfClusteringEditPart">
+            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfClusteringAnalysisOperationEditPart">
          <Priority name="Lowest"/>
-         <object class="pipeline.diagram.edit.parts.ClusteringEditPart" id="Clustering_3061"/>
-         <context elements="Clustering_3061"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfChartEditPart">
-         <Priority name="Lowest"/>
-         <object class="pipeline.diagram.edit.parts.ChartEditPart" id="Chart_3062"/>
-         <context elements="Chart_3062"/>
+         <object class="pipeline.diagram.edit.parts.ClusteringAnalysisOperationEditPart" id="ClusteringAnalysisOperation_3068"/>
+         <context elements="ClusteringAnalysisOperation_3068"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="pipeline.diagram.providers.assistants.PipelineModelingAssistantProviderOfExportEditPart">
          <Priority name="Lowest"/>
@@ -427,7 +427,7 @@
       <decoratorProvider class="pipeline.diagram.providers.PipelineShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
-            <method name="getType()" value="2025,2026,2027,2031,2029,2032,2044,2045,2043"/>
+            <method name="getType()" value="2025,2026,2027,2031,2029,2032,2044,2045,2043,2046"/>
          </object>
          <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
@@ -537,6 +537,16 @@
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <metamodelType
+               id="it.polimi.ase.project.diagram.Chart_2046"
+               name="%metatype.name.Chart_2046"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Chart"
+               edithelper="pipeline.diagram.edit.helpers.ChartEditHelper">
+            <param name="semanticHint" value="2046"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
+         <metamodelType
                id="it.polimi.ase.project.diagram.Import_3025"
                name="%metatype.name.Import_3025"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -547,72 +557,62 @@
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <metamodelType
-               id="it.polimi.ase.project.diagram.UserDefined_3056"
-               name="%metatype.name.UserDefined_3056"
+               id="it.polimi.ase.project.diagram.UserDefinedCleaningOperation_3063"
+               name="%metatype.name.UserDefinedCleaningOperation_3063"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="UserDefined"
-               edithelper="pipeline.diagram.edit.helpers.UserDefinedEditHelper">
-            <param name="semanticHint" value="3056"/>
+               eclass="UserDefinedCleaningOperation"
+               edithelper="pipeline.diagram.edit.helpers.UserDefinedCleaningOperationEditHelper">
+            <param name="semanticHint" value="3063"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <metamodelType
-               id="it.polimi.ase.project.diagram.Predefined_3057"
-               name="%metatype.name.Predefined_3057"
+               id="it.polimi.ase.project.diagram.PredefinedCleaningOperation_3064"
+               name="%metatype.name.PredefinedCleaningOperation_3064"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Predefined"
-               edithelper="pipeline.diagram.edit.helpers.PredefinedEditHelper">
-            <param name="semanticHint" value="3057"/>
+               eclass="PredefinedCleaningOperation"
+               edithelper="pipeline.diagram.edit.helpers.PredefinedCleaningOperationEditHelper">
+            <param name="semanticHint" value="3064"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <metamodelType
-               id="it.polimi.ase.project.diagram.Descriptive_3058"
-               name="%metatype.name.Descriptive_3058"
+               id="it.polimi.ase.project.diagram.DescriptiveAnalysisOperation_3065"
+               name="%metatype.name.DescriptiveAnalysisOperation_3065"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Descriptive"
-               edithelper="pipeline.diagram.edit.helpers.DescriptiveEditHelper">
-            <param name="semanticHint" value="3058"/>
+               eclass="DescriptiveAnalysisOperation"
+               edithelper="pipeline.diagram.edit.helpers.DescriptiveAnalysisOperationEditHelper">
+            <param name="semanticHint" value="3065"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <metamodelType
-               id="it.polimi.ase.project.diagram.Classification_3059"
-               name="%metatype.name.Classification_3059"
+               id="it.polimi.ase.project.diagram.ClassificationAnalysisOperation_3066"
+               name="%metatype.name.ClassificationAnalysisOperation_3066"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Classification"
-               edithelper="pipeline.diagram.edit.helpers.ClassificationEditHelper">
-            <param name="semanticHint" value="3059"/>
+               eclass="ClassificationAnalysisOperation"
+               edithelper="pipeline.diagram.edit.helpers.ClassificationAnalysisOperationEditHelper">
+            <param name="semanticHint" value="3066"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <metamodelType
-               id="it.polimi.ase.project.diagram.Predictive_3060"
-               name="%metatype.name.Predictive_3060"
+               id="it.polimi.ase.project.diagram.PredictiveAnalysisOperation_3067"
+               name="%metatype.name.PredictiveAnalysisOperation_3067"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Predictive"
-               edithelper="pipeline.diagram.edit.helpers.PredictiveEditHelper">
-            <param name="semanticHint" value="3060"/>
+               eclass="PredictiveAnalysisOperation"
+               edithelper="pipeline.diagram.edit.helpers.PredictiveAnalysisOperationEditHelper">
+            <param name="semanticHint" value="3067"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <metamodelType
-               id="it.polimi.ase.project.diagram.Clustering_3061"
-               name="%metatype.name.Clustering_3061"
+               id="it.polimi.ase.project.diagram.ClusteringAnalysisOperation_3068"
+               name="%metatype.name.ClusteringAnalysisOperation_3068"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Clustering"
-               edithelper="pipeline.diagram.edit.helpers.ClusteringEditHelper">
-            <param name="semanticHint" value="3061"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
-         <metamodelType
-               id="it.polimi.ase.project.diagram.Chart_3062"
-               name="%metatype.name.Chart_3062"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Chart"
-               edithelper="pipeline.diagram.edit.helpers.ChartEditHelper">
-            <param name="semanticHint" value="3062"/>
+               eclass="ClusteringAnalysisOperation"
+               edithelper="pipeline.diagram.edit.helpers.ClusteringAnalysisOperationEditHelper">
+            <param name="semanticHint" value="3068"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
@@ -777,14 +777,14 @@
          <elementType ref="it.polimi.ase.project.diagram.Source_2044"/>
          <elementType ref="it.polimi.ase.project.diagram.File_2045"/>
          <elementType ref="it.polimi.ase.project.diagram.Schema_2043"/>
+         <elementType ref="it.polimi.ase.project.diagram.Chart_2046"/>
          <elementType ref="it.polimi.ase.project.diagram.Import_3025"/>
-         <elementType ref="it.polimi.ase.project.diagram.UserDefined_3056"/>
-         <elementType ref="it.polimi.ase.project.diagram.Predefined_3057"/>
-         <elementType ref="it.polimi.ase.project.diagram.Descriptive_3058"/>
-         <elementType ref="it.polimi.ase.project.diagram.Classification_3059"/>
-         <elementType ref="it.polimi.ase.project.diagram.Predictive_3060"/>
-         <elementType ref="it.polimi.ase.project.diagram.Clustering_3061"/>
-         <elementType ref="it.polimi.ase.project.diagram.Chart_3062"/>
+         <elementType ref="it.polimi.ase.project.diagram.UserDefinedCleaningOperation_3063"/>
+         <elementType ref="it.polimi.ase.project.diagram.PredefinedCleaningOperation_3064"/>
+         <elementType ref="it.polimi.ase.project.diagram.DescriptiveAnalysisOperation_3065"/>
+         <elementType ref="it.polimi.ase.project.diagram.ClassificationAnalysisOperation_3066"/>
+         <elementType ref="it.polimi.ase.project.diagram.PredictiveAnalysisOperation_3067"/>
+         <elementType ref="it.polimi.ase.project.diagram.ClusteringAnalysisOperation_3068"/>
          <elementType ref="it.polimi.ase.project.diagram.Export_3037"/>
          <elementType ref="it.polimi.ase.project.diagram.SimpleAttribute_3046"/>
          <elementType ref="it.polimi.ase.project.diagram.ComplexAttribute_3047"/>

@@ -92,16 +92,16 @@ public class AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart exten
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == PipelineElementTypes.Descriptive_3058) {
+			if (type == PipelineElementTypes.DescriptiveAnalysisOperation_3065) {
 				return this;
 			}
-			if (type == PipelineElementTypes.Classification_3059) {
+			if (type == PipelineElementTypes.ClassificationAnalysisOperation_3066) {
 				return this;
 			}
-			if (type == PipelineElementTypes.Predictive_3060) {
+			if (type == PipelineElementTypes.PredictiveAnalysisOperation_3067) {
 				return this;
 			}
-			if (type == PipelineElementTypes.Clustering_3061) {
+			if (type == PipelineElementTypes.ClusteringAnalysisOperation_3068) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

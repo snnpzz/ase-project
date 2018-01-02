@@ -25,10 +25,10 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.PipelinePackage;
-import pipeline.diagram.edit.parts.ClassificationEditPart;
-import pipeline.diagram.edit.parts.ClusteringEditPart;
-import pipeline.diagram.edit.parts.DescriptiveEditPart;
-import pipeline.diagram.edit.parts.PredictiveEditPart;
+import pipeline.diagram.edit.parts.ClassificationAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.ClusteringAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationEditPart;
+import pipeline.diagram.edit.parts.PredictiveAnalysisOperationEditPart;
 import pipeline.diagram.part.PipelineDiagramUpdater;
 import pipeline.diagram.part.PipelineNodeDescriptor;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
@@ -86,10 +86,10 @@ public class AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentCanonicalEditP
 	private boolean isMyDiagramElement(View view) {
 		int visualID = PipelineVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
-		case DescriptiveEditPart.VISUAL_ID:
-		case ClassificationEditPart.VISUAL_ID:
-		case PredictiveEditPart.VISUAL_ID:
-		case ClusteringEditPart.VISUAL_ID:
+		case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
+		case ClassificationAnalysisOperationEditPart.VISUAL_ID:
+		case PredictiveAnalysisOperationEditPart.VISUAL_ID:
+		case ClusteringAnalysisOperationEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;

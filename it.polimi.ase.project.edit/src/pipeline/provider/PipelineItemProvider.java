@@ -108,6 +108,7 @@ public class PipelineItemProvider
 			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__SOURCES);
 			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__FILES);
 			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__SCHEMAS);
+			childrenFeatures.add(PipelinePackage.Literals.PIPELINE__CHARTS);
 		}
 		return childrenFeatures;
 	}
@@ -172,6 +173,7 @@ public class PipelineItemProvider
 			case PipelinePackage.PIPELINE__SOURCES:
 			case PipelinePackage.PIPELINE__FILES:
 			case PipelinePackage.PIPELINE__SCHEMAS:
+			case PipelinePackage.PIPELINE__CHARTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -243,6 +245,11 @@ public class PipelineItemProvider
 			(createChildParameter
 				(PipelinePackage.Literals.PIPELINE__SCHEMAS,
 				 PipelineFactory.eINSTANCE.createSchema()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PipelinePackage.Literals.PIPELINE__CHARTS,
+				 PipelineFactory.eINSTANCE.createChart()));
 	}
 
 	/**

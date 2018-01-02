@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface VisualizationTask extends Task {
 	/**
-	 * Returns the value of the '<em><b>Charts</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Charts</b></em>' reference list.
 	 * The list contents are of type {@link pipeline.Chart}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -31,10 +31,9 @@ public interface VisualizationTask extends Task {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Charts</em>' containment reference list.
+	 * @return the value of the '<em>Charts</em>' reference list.
 	 * @see pipeline.PipelinePackage#getVisualizationTask_Charts()
-	 * @model containment="true" required="true"
-	 *        annotation="gmf.compartment layout='list'"
+	 * @model required="true"
 	 * @generated
 	 */
 	EList<Chart> getCharts();

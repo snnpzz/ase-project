@@ -124,7 +124,7 @@
 	<br>
 	<b>Schema:</b>
 	<br>
-	[generateTable(anAnalysisOperation.incoming.internalSchema)/]
+	[generateTable(anAnalysisOperation.incoming.schema)/]
 	[/if]
 	[if (anAnalysisOperation.outgoing -> size() > 0)]
 	<span style="color:#007bff;font-size:1rem;">Output Internal Data Flow</span>
@@ -132,7 +132,7 @@
 	<br>
 	<b>Schema:</b>
 	<br>
-	[generateTable(anAnalysisOperation.outgoing.internalSchema)/]
+	[generateTable(anAnalysisOperation.outgoing.schema)/]
 	[/if]
 </div>
 [/template]
@@ -162,7 +162,7 @@
 	<br>
 	<b>Schema:</b>
 	<br>
-	[generateTable(aCleaningOperation.incoming.internalSchema)/]
+	[generateTable(aCleaningOperation.incoming.schema)/]
 	[/if]
 	[if (aCleaningOperation.outgoing -> size() > 0)]
 	<span style="color:#007bff;font-size:1rem;">Output Internal Data Flow</span>
@@ -170,7 +170,7 @@
 	<br>
 	<b>Schema:</b>
 	<br>
-	[generateTable(aCleaningOperation.outgoing.internalSchema)/]
+	[generateTable(aCleaningOperation.outgoing.schema)/]
 	[/if]
 </div>
 [/template]
@@ -289,7 +289,7 @@
 		<span style="color:#007bff;font-size:1rem;">Input Data Flow</span>
 		
 		<span style="color:#007bff;font-size:1rem;">Operations</span>
-		[for (| aTask.oclAsType(ExportTask))]
+		[for (anExport : Export | aTask.oclAsType(ExportTask).exports)]
 
 		[/for]
 		<span style="color:#007bff;font-size:1rem;">Output File(s)</span>

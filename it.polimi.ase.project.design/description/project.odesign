@@ -6,13 +6,13 @@
       <validationSet name="PipelineValidation"/>
       <defaultLayer name="Default">
         <nodeMappings name="chartNode" label="Chart" domainClass="Chart">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/chart.svg">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" workspacePath="/it.polimi.ase.project.design/icons/chart.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="FileNode" label="File" domainClass="File">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/file.svg">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/it.polimi.ase.project.design/icons/file.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -26,7 +26,7 @@
           </style>
         </nodeMappings>
         <nodeMappings name="SourceNode" label="Source" domainClass="Source">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/source.svg">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/it.polimi.ase.project.design/icons/source.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -39,7 +39,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="attributesEdge" label="Attributes" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='IntegrationTaskNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='AttributeBorderedNode']" targetFinderExpression="feature:attributes">
+        <edgeMappings name="attributesEdge" label="Attributes" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='IntegrationTaskNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:attributes">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -95,27 +95,35 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
+        <edgeMappings name="nextAttributeEdge" label="Next Attribute" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:next">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
         <containerMappings name="Analysis Task" label="Analysis Task" domainClass="AnalysisTask">
           <subNodeMappings name="classificationAnalysisOperationSubNode" label="Classification Analysis Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="ClassificationAnalysisOperation">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
           <subNodeMappings name="clusteringAnalysisOperationSubNode" label="Clustering Analysis Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="ClusteringAnalysisOperation">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
           <subNodeMappings name="descriptiveAnalysisOperationSubNode" label="Descriptive Analysis Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="DescriptiveAnalysisOperation">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
           <subNodeMappings name="predictiveAnalysisOperationSubNode" label="Predictive Analysis Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="PredictiveAnalysisOperation">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -130,13 +138,13 @@
         </containerMappings>
         <containerMappings name="Cleaning Task" label="Cleaning Task" domainClass="CleaningTask">
           <subNodeMappings name="predefinedCleaningOperationSubNode" label="Predefined Cleaning Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="PredefinedCleaningOperation">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
           <subNodeMappings name="userDefinedCleaningOperationSubNode" label="User-Defined Cleaning Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="UserDefinedCleaningOperation">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -151,7 +159,7 @@
         </containerMappings>
         <containerMappings name="CollectionTaskContainer" label="Collection Task" domainClass="CollectionTask">
           <subNodeMappings name="Import Operation" label="Import Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="Import">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -166,7 +174,7 @@
         </containerMappings>
         <containerMappings name="Export Task" label="Export Task" domainClass="ExportTask">
           <subNodeMappings name="Export Operation" label="Export Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="Export">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -180,12 +188,19 @@
           </style>
         </containerMappings>
         <containerMappings name="SchemaContainer" label="Schema" domainClass="Schema">
-          <borderedNodeMappings name="AttributeBorderedNode" label="Attribute" semanticCandidatesExpression="feature:eAllContents" domainClass="Attribute">
+          <borderedNodeMappings name="SimpleAttributeBorderedNode" label="Simple Attribute" semanticCandidatesExpression="feature:eAllContents" domainClass="SimpleAttribute">
             <style xsi:type="style:SquareDescription" showIcon="false" labelPosition="node" resizeKind="EAST_WEST">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>NORTH</forbiddenSides>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="ComplexAttributeBorderedNode" label="Complex Attribute" semanticCandidatesExpression="feature:eAllContents" domainClass="ComplexAttribute">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelPosition="node" resizeKind="EAST_WEST">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </borderedNodeMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Schema">
@@ -279,7 +294,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="CleaningOperation" referenceName="cleaningOperations"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="PredefinedCleaningOperation" referenceName="cleaningOperations"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -306,7 +321,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="CleaningOperation" referenceName="cleaningOperations"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="UserDefinedCleaningOperation" referenceName="cleaningOperations"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -382,7 +397,7 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.eContainer()">
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.eContainer().eContainer()">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="InternalDataFlow" referenceName="internalDataFlows">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>

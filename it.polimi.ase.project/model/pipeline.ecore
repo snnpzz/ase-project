@@ -59,6 +59,7 @@
         eOpposite="#//InternalDataFlow/target"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" eType="#//InternalDataFlow"
         eOpposite="#//InternalDataFlow/source"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InternalDataFlow">
     <eAnnotations source="gmf.link">
@@ -224,17 +225,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//PredefinedOperation"
         defaultValueLiteral=""/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Format">
-    <eLiterals name="txt"/>
-    <eLiterals name="csv" value="1"/>
-    <eLiterals name="json" value="2"/>
-    <eLiterals name="xml" value="3"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Size">
-    <eLiterals name="Small"/>
-    <eLiterals name="Medium" value="1"/>
-    <eLiterals name="Large" value="2"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SimpleAttribute" eSuperTypes="#//Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type"/>
   </eClassifiers>
@@ -274,13 +264,6 @@
     <eLiterals name="Boxplot" value="1"/>
     <eLiterals name="PieChart" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Type">
-    <eLiterals name="mString"/>
-    <eLiterals name="mInteger" value="1"/>
-    <eLiterals name="mDouble" value="2"/>
-    <eLiterals name="mBoolean" value="3"/>
-    <eLiterals name="mDate" value="4"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ChartType">
     <eLiterals name="Column"/>
     <eLiterals name="Line" value="1"/>
@@ -301,5 +284,23 @@
     <eLiterals name="Waterfall" value="16"/>
     <eLiterals name="Funnel" value="17"/>
     <eLiterals name="Combo" value="18"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Format">
+    <eLiterals name="CSV"/>
+    <eLiterals name="JSON" value="1"/>
+    <eLiterals name="TXT" value="2"/>
+    <eLiterals name="XML" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Size">
+    <eLiterals name="Small"/>
+    <eLiterals name="Medium" value="1"/>
+    <eLiterals name="Large" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Type">
+    <eLiterals name="mString"/>
+    <eLiterals name="mInteger" value="1"/>
+    <eLiterals name="mDouble" value="2"/>
+    <eLiterals name="mBoolean" value="3"/>
+    <eLiterals name="mDate" value="4"/>
   </eClassifiers>
 </ecore:EPackage>

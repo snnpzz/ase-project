@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="pipeline" version="11.0.0.201601261200">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="pipeline" version="11.0.0.201601261200">
   <ownedViewpoints name="pipeline" modelFileExtension="pipeline">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Pipeline Diagram" domainClass="Pipeline">
       <metamodel href="http://www.project.ase.polimi.it/pipeline#/"/>
-      <validationSet name="PipelineValidation">
-        <ownedRules xsi:type="validation:SemanticValidationRule" name="AtMost1TaskPerType" level="ERROR" targetClass="Pipeline">
-          <audits auditExpression="aql:self.tasks -> select(t | t.oclAsType(CollectionTask)) -> size() = 1"/>
-        </ownedRules>
-      </validationSet>
+      <validationSet name="PipelineValidation"/>
       <defaultLayer name="Default">
         <nodeMappings name="IntegrationTaskNode" label="Integration Task" domainClass="IntegrationTask">
           <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Integration Task" labelPosition="node" resizeKind="NSEW">

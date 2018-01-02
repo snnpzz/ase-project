@@ -25,6 +25,7 @@ import pipeline.PipelinePackage;
  * <ul>
  *   <li>{@link pipeline.impl.OperationImpl#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link pipeline.impl.OperationImpl#getOutgoing <em>Outgoing</em>}</li>
+ *   <li>{@link pipeline.impl.OperationImpl#getID <em>ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -49,6 +50,26 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * @ordered
 	 */
 	protected InternalDataFlow outgoing;
+
+	/**
+	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,6 +215,27 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getID() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setID(String newID) {
+		String oldID = id;
+		id = newID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.OPERATION__ID, oldID, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -239,6 +281,8 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 			case PipelinePackage.OPERATION__OUTGOING:
 				if (resolve) return getOutgoing();
 				return basicGetOutgoing();
+			case PipelinePackage.OPERATION__ID:
+				return getID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -256,6 +300,9 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 				return;
 			case PipelinePackage.OPERATION__OUTGOING:
 				setOutgoing((InternalDataFlow)newValue);
+				return;
+			case PipelinePackage.OPERATION__ID:
+				setID((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -275,6 +322,9 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 			case PipelinePackage.OPERATION__OUTGOING:
 				setOutgoing((InternalDataFlow)null);
 				return;
+			case PipelinePackage.OPERATION__ID:
+				setID(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -291,8 +341,26 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 				return incoming != null;
 			case PipelinePackage.OPERATION__OUTGOING:
 				return outgoing != null;
+			case PipelinePackage.OPERATION__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (ID: ");
+		result.append(id);
+		result.append(')');
+		return result.toString();
 	}
 
 } //OperationImpl

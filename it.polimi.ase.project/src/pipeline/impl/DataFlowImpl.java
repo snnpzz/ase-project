@@ -42,7 +42,7 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Format FORMAT_EDEFAULT = Format.TXT;
+	protected static final Format FORMAT_EDEFAULT = Format.CSV;
 
 	/**
 	 * The cached value of the '{@link #getFormat() <em>Format</em>}' attribute.

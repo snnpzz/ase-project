@@ -13,10 +13,10 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	</head>
-	<body style="padding-top:3.5rem">
+	<body style="padding-top:3.5rem;">
 		<header>
 			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-				<h1 class="navbar-brand mb-0">Project</h1>
+				<h1 class="navbar-brand mb-0">Report</h1>
 				<button class="navbar-toggler d-lg-none" aria-expanded="false" aria-controls="navbar" aria-label="Toogle navigation" type="button" data-target="#navbar" data-toggle="collapse">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -31,10 +31,16 @@
 		</header>
 		<div class="container-fluid">
 			<div class="row">
-				<nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
-					<ul class="nav nav-pills flex_column">
-						<li class="nav-item">
-							<a class="nav-link" href="#">Report</a>
+				<nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light" style="position:fixed;top:51px;bottom:0px;left:0px;z-index:1000;padding:20px 0;overflow-x:hidden;overflow-y:auto;border-right:1px solid #eee;">
+					<ul class="nav nav-pills flex-column">
+						<li class="nav-item" style="border-radius:0;">
+							<a class="nav-link active" href="#">Pipeline<span class="s-only">(current)</span></a>
+						</li>
+						<li class="nav-item" style="border-radius:0;">
+							<a class="nav-link" href="#tasks">Tasks</a>
+						</li>
+						<li class="nav-item" style="border-radius:0;">
+							<a class="nav-link" href="#operations">Operations</a>
 						</li>
 					</ul>
 				</nav>
@@ -43,27 +49,36 @@
 					<section>
 
 					</section>
-					<h2>Tasks</h2>
-					<div class="table-responsive">
-						<table class="table table-striped">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>ID</th>
-									<th>Type</th>
-									<th>Details</th>
-								</tr>
-							</thead>
-							<tbody>
-								[for (aTask : Task | aPipeline.tasks)]
-									[aTask.generateTask(0)/]
-								[/for]
-							</tbody>
-						</table>
-					</div>
-					[for (aTask : Task | aPipeline.tasks)]
-						[aTask.generateTask()/]
-					[/for]			
+					<section id="tasks">
+						<h2>Tasks</h2>
+						<div class="table-responsive">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>ID</th>
+										<th>Task Type</th>
+										<th>Details</th>
+									</tr>
+								</thead>
+								<tbody>
+									[generateTableRow(0, aPipeline.tasks -> select(aTask | aTask.oclIsTypeOf(CollectionTask)) -> first())/]
+								</tbody>
+							</table>
+						</div>
+						[for (aTask : Task | aPipeline.tasks)]
+							[generateDiv(aTask)/]
+						[/for]
+					</section>
+					<section id="operations">
+						<h2>Operations</h2>
+						[for (aCleaningOperation : CleaningOperation | aPipeline.tasks -> select(aTask : Task | aTask.oclIsTypeOf(CleaningTask)) -> first().oclAsType(CleaningTask).cleaningOperations)]
+							[generateDiv(aCleaningOperation)/]
+						[/for]
+						[for (anAnalysisOperation : AnalysisOperation | aPipeline.tasks -> select(aTask : Task | aTask.oclIsTypeOf(AnalysisTask)) -> first().oclAsType(AnalysisTask).analysisOperations)]
+							[generateDiv(anAnalysisOperation)/]
+						[/for]
+					</section>			
 				</main>
 			</div>
 		</div>
@@ -76,48 +91,342 @@
 [/file]
 [/template]
 
-[template private generateTask(aTask : Task, aInteger : Integer)]
+[template private generateDiv(anAnalysisOperation : AnalysisOperation)]
+<div id="operation-[anAnalysisOperation.ID/]">
+	<h3>Operation [anAnalysisOperation.ID/]</h3>
+	<b>ID:</b> [anAnalysisOperation.ID/]
+	<br>
+	<b>Type:</b> 
+	[if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))]
+	Classification Analysis Operation
+	[elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))]
+	Clustering Analysis Operation
+	[elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))]
+	Descriptive Analysis Operation
+	[elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))]
+	Predictive Analysis Operation
+	[/if]
+	<br>
+	<b>Name:</b> 
+	[if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))]
+	[anAnalysisOperation.oclAsType(ClassificationAnalysisOperation).name/]
+	[elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))]
+	[anAnalysisOperation.oclAsType(ClusteringAnalysisOperation).name/]
+	[elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))]
+	[anAnalysisOperation.oclAsType(DescriptiveAnalysisOperation).name/]
+	[elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))]
+	[anAnalysisOperation.oclAsType(PredictiveAnalysisOperation).name/]
+	[/if]
+	<br>
+	[if (anAnalysisOperation.incoming -> size() > 0)]
+	<span style="color:#007bff;font-size:1rem;">Input Internal Data Flow</span>
+	<b>Format:</b> [anAnalysisOperation.incoming.format/]
+	<br>
+	<b>Schema:</b>
+	<br>
+	[generateTable(anAnalysisOperation.incoming.internalSchema)/]
+	[/if]
+	[if (anAnalysisOperation.outgoing -> size() > 0)]
+	<span style="color:#007bff;font-size:1rem;">Output Internal Data Flow</span>
+	<b>Format:</b> [anAnalysisOperation.outgoing.format/]
+	<br>
+	<b>Schema:</b>
+	<br>
+	[generateTable(anAnalysisOperation.outgoing.internalSchema)/]
+	[/if]
+</div>
+[/template]
+
+[template private generateDiv(aCleaningOperation : CleaningOperation)]
+<div id="operation-[aCleaningOperation.ID/]">
+	<h3>Operation [aCleaningOperation.ID/]</h3>
+	<b>ID:</b> [aCleaningOperation.ID/]
+	<br>
+	<b>Type:</b> 
+	[if (aCleaningOperation.oclIsTypeOf(PredefinedCleaningOperation))]
+	Predefined Cleaning Operation
+	[elseif (aCleaningOperation.oclIsTypeOf(UserDefinedCleaningOperation))]
+	User-Defined Cleaning Operation
+	[/if]
+	<br>
+	<b>Name:</b> 
+	[if (aCleaningOperation.oclIsTypeOf(PredefinedCleaningOperation))]
+	[aCleaningOperation.oclAsType(PredefinedCleaningOperation).name/]
+	[elseif (aCleaningOperation.oclIsTypeOf(UserDefinedCleaningOperation))]
+	[aCleaningOperation.oclAsType(UserDefinedCleaningOperation).name/]
+	[/if]
+	<br>
+	[if (aCleaningOperation.incoming -> size() > 0)]
+	<span style="color:#007bff;font-size:1rem;">Input Internal Data Flow</span>
+	<b>Format:</b> [aCleaningOperation.incoming.format/]
+	<br>
+	<b>Schema:</b>
+	<br>
+	[generateTable(aCleaningOperation.incoming.internalSchema)/]
+	[/if]
+	[if (aCleaningOperation.outgoing -> size() > 0)]
+	<span style="color:#007bff;font-size:1rem;">Output Internal Data Flow</span>
+	<b>Format:</b> [aCleaningOperation.outgoing.format/]
+	<br>
+	<b>Schema:</b>
+	<br>
+	[generateTable(aCleaningOperation.outgoing.internalSchema)/]
+	[/if]
+</div>
+[/template]
+
+[template private generateDiv(aDataFlow : DataFlow)]
+<div>
+	<b>Format:</b> [aDataFlow.format/]
+	<br>
+	<b>Schema:</b> 
+	<br>
+	[generateTable(aDataFlow.schema)/]
+</div>
+[/template]
+
+[template private generateDiv(aTask : Task)]
+<div id="task-[aTask.ID/]">
+	<h3>Task [aTask.ID/]</h3>
+	<div>
+		<b>ID:</b> [aTask.ID/]
+		<br>
+		<b>Task Type:</b> 
+		[if (aTask.oclIsTypeOf(CollectionTask))]
+		Data Collection
+		[elseif (aTask.oclIsTypeOf(IntegrationTask))]
+		Data Integration
+		[elseif (aTask.oclIsTypeOf(CleaningTask))]
+		Data Cleaning
+		[elseif (aTask.oclIsTypeOf(AnalysisTask))]
+		Data Analysis
+		[elseif (aTask.oclIsTypeOf(VisualizationTask))]
+		Data Visualization
+		[elseif (aTask.oclIsTypeOf(ExportTask))]
+		Data Export
+		[/if]
+		<br>
+		[if (aTask.oclIsTypeOf(CollectionTask))]
+		<span style="color:#007bff;font-size:1rem;">Input Source(s)</span>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<td></td>
+					</tr>
+				</thead>
+				<tbody>
+					[for (aSource : Source | aTask.oclAsType(CollectionTask).imports.read)]
+						[aSource.generateTableRow()/]
+					[/for]
+				</tbody>
+			</table>
+		</div>
+		<span style="color:#007bff;font-size:1rem;">Operations</span>
+		[for ()]
+		[/for]
+		<span style="color:#007bff;font-size:1rem;">Output Data Flow</span>
+		[generateDiv(aTask.outgoing -> first())/]
+		[elseif (aTask.oclIsTypeOf(IntegrationTask))]
+		<span style="color:#007bff;">Input Data Flow</span>
+		[generateDiv(aTask.incoming -> first())/]
+		<span style="color:#007bff;">Operations</span>
+		Data Integration
+		<h4>Output Data Flow</h4>
+		[generateDiv(aTask.outgoing -> first())/]
+		[elseif (aTask.oclIsTypeOf(CleaningTask))]
+		<span style="color:#007bff;font-size:1rem;">Input Data Flow</span>
+		[generateDiv(aTask.incoming -> first())/]
+		<span style="color:#007bff;font-size:1rem;">Operation(s)</span>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<td>#</td>
+						<td>ID</td>
+						<td>Cleaning Operation Type</td>
+						<td>Name</td>
+						<td>Details</td>
+					</tr>
+				</thead>
+				<tbody>
+					[generateTableRow(0, aTask.oclAsType(CleaningTask).cleaningOperations -> select(aCleaningOperation | aCleaningOperation.oclAsType(Operation).incoming -> size() = 0) -> first())/]
+				</tbody>
+			</table>
+		</div>
+		<span style="color:#007bff;font-size:1rem;">Output Data Flow</span>
+		[generateDiv(aTask.outgoing -> first())/]
+		[elseif (aTask.oclIsTypeOf(AnalysisTask))]
+		<span style="color:#007bff;font-size:1rem;">Input Data Flow</span>
+		[generateDiv(aTask.incoming -> first())/]
+		<span style="color:#007bff;font-size:1rem;">Operation(s)</span>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<td>#</td>
+						<td>ID</td>
+						<td>Analysis Operation Type</td>
+						<td>Name</td>
+						<td>Details</td>
+					</tr>
+				</thead>
+				<tbody>
+					[generateTableRow(0, aTask.oclAsType(AnalysisTask).analysisOperations -> select(anAnalysisOperation | anAnalysisOperation.oclAsType(Operation).incoming -> size() = 0) -> first())/]
+				</tbody>
+			</table>
+		</div>
+		<span style="color:#007bff;font-size:1rem;">Output Data Flow</span>
+		[generateDiv(aTask.outgoing -> first())/]
+		[elseif (aTask.oclIsTypeOf(VisualizationTask))]
+		<span style="color:#007bff;font-size:1rem;">Input Data Flow</span>
+		[generateDiv(aTask.incoming -> first())/]
+		<span style="color:#007bff;font-size:1rem;">Operation(s)</span>
+		
+		<span style="color:#007bff;font-size:1rem;">Output Data Flow</span>
+		[generateDiv(aTask.outgoing -> first())/]
+		[elseif (aTask.oclIsTypeOf(ExportTask))]
+		<span style="color:#007bff;font-size:1rem;">Input Data Flow</span>
+		
+		<span style="color:#007bff;font-size:1rem;">Operations</span>
+		[for (| aTask.oclAsType(ExportTask))]
+
+		[/for]
+		<span style="color:#007bff;font-size:1rem;">Output File(s)</span>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<td>Name</td>
+						<td>Path</td>
+					</tr>
+				</thead>
+				<tbody>
+					[for (aFile : File | aTask.oclAsType(ExportTask).exports.write)]
+					<tr>
+						<td>[aFile.name/]</td>
+						<td>[aFile.path/]</td>
+					</tr>
+					[/for]
+				</tbody>
+			</table>
+		</div>
+		[/if]
+	</div>
+</div>
+[/template]
+
+[template private generateTable(aSchema: Schema)]
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Attribute</th>
+				<th>Type</th>
+			</tr>
+		</thead>
+		<tbody>
+			[generateTableRow(0, aSchema.attributes -> select(anAttribute : Attribute | anAttribute.previous -> size() = 0) -> first())/]
+		</tbody>
+	</table>
+</div>
+[/template]
+
+[template private generateTableCell(anAnalysisOperation : AnalysisOperation)]
+<td>
+ID: 
+<br>
+Type:
+</td>
+[/template]
+
+[template private generateTableRow(aInteger : Integer, anAttribute : Attribute)]
+<tr>
+	<td>[aInteger/]</td>
+	<td>[anAttribute.name/]</td>
+	<td></td>
+</tr>
+[generateTableRow(aInteger + 1, anAttribute.next)/]
+[/template]
+
+[template private generateTableRow(aInteger : Integer, anAnalysisOperation : AnalysisOperation)]
+<tr>
+	<td>[aInteger/]</td>
+	<td>[anAnalysisOperation.ID/]</td>
+	<td>
+		[if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))]
+		Classification Analysis Operation
+		[elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))]
+		Clustering Analysis Operation
+		[elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))]
+		Descriptive Analysis Operation
+		[elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))]
+		Predictive Analysis Operation
+		[/if]
+	</td>
+	<td>
+		[if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))]
+		[anAnalysisOperation.oclAsType(ClassificationAnalysisOperation).name/]
+		[elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))]
+		[anAnalysisOperation.oclAsType(ClusteringAnalysisOperation).name/]
+		[elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))]
+		[anAnalysisOperation.oclAsType(DescriptiveAnalysisOperation).name/]
+		[elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))]
+		[anAnalysisOperation.oclAsType(PredictiveAnalysisOperation).name/]
+		[/if]
+	</td>
+	<td><a href="#operation-[anAnalysisOperation.ID/]">+</a></td>
+</tr>
+[generateTableRow(aInteger + 1, anAnalysisOperation.outgoing.target.oclAsType(AnalysisOperation))/]
+[/template]
+
+[template private generateTableRow(aInteger : Integer, aCleaningOperation : CleaningOperation)]
+<tr>
+	<td>[aInteger/]</td>
+	<td>[aCleaningOperation.ID/]</td>
+	<td>
+		[if (aCleaningOperation.oclIsTypeOf(PredefinedCleaningOperation))]
+		Predefined Cleaning Operation
+		[elseif (aCleaningOperation.oclIsTypeOf(UserDefinedCleaningOperation))]
+		User-Defined Cleaning Operation
+		[/if]
+	</td>
+	<td>[aCleaningOperation/]</td>
+	<td><a href="#operation-[aCleaningOperation.ID/]">+</a></td>
+</tr>
+[generateTableRow(aInteger + 1, aCleaningOperation.outgoing.target.oclAsType(CleaningOperation))/]
+[/template]
+
+[template private generateTableRow(aInteger : Integer, aTask : Task)]
 <tr>
 	<td>[aInteger/]</td>
 	<td>[aTask.ID/]</td>
 	<td>
 		[if (aTask.oclIsTypeOf(CollectionTask))]
-			Data Collection
+		Collection Task
 		[elseif (aTask.oclIsTypeOf(IntegrationTask))]
-			Data Integration
+		Integration Task
 		[elseif (aTask.oclIsTypeOf(CleaningTask))]
-			Data Cleaning
+		Cleaning Task
 		[elseif (aTask.oclIsTypeOf(AnalysisTask))]
-			Data Analysis
+		Analysis Task
 		[elseif (aTask.oclIsTypeOf(VisualizationTask))]
-			Data Visualization
+		Visualization Task
 		[elseif (aTask.oclIsTypeOf(ExportTask))]
-			Data Export
+		Export Task
 		[/if]
 	</td>
 	<td>
 		<a href="#task-[aTask.ID/]">+</a>
 	</td>
 </tr>
+[generateTableRow(aInteger + 1, aTask.outgoing -> first().target)/]
 [/template]
 
-[template private generateTask(aTask : Task)]
-<h3>Task [aTask.ID/]</h3>
-<div>
-ID: [aTask.ID/]
-Type: 
-[if (aTask.oclIsTypeOf(CollectionTask))]
-	Data Collection
-[elseif (aTask.oclIsTypeOf(IntegrationTask))]
-	Data Integration
-[elseif (aTask.oclIsTypeOf(CleaningTask))]
-	Data Cleaning
-[elseif (aTask.oclIsTypeOf(AnalysisTask))]
-	Data Analysis
-[elseif (aTask.oclIsTypeOf(VisualizationTask))]
-	Data Visualization
-[elseif (aTask.oclIsTypeOf(ExportTask))]
-	Data Export
-[/if]
-</div>
+[template private generateTableRow(aSource : Source)]
+<tr>
+	<td></td>
+	<td></td>
+</tr>
 [/template]

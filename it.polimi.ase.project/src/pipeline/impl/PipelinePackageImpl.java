@@ -561,6 +561,15 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getOperation_ID() {
+		return (EAttribute)operationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getInternalDataFlow() {
 		return internalDataFlowEClass;
 	}
@@ -1228,6 +1237,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		operationEClass = createEClass(OPERATION);
 		createEReference(operationEClass, OPERATION__INCOMING);
 		createEReference(operationEClass, OPERATION__OUTGOING);
+		createEAttribute(operationEClass, OPERATION__ID);
 
 		internalDataFlowEClass = createEClass(INTERNAL_DATA_FLOW);
 		createEAttribute(internalDataFlowEClass, INTERNAL_DATA_FLOW__FORMAT);
@@ -1313,15 +1323,15 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEReference(complexAttributeEClass, COMPLEX_ATTRIBUTE__ATTRIBUTES);
 
 		// Create enums
-		formatEEnum = createEEnum(FORMAT);
-		sizeEEnum = createEEnum(SIZE);
 		predefinedOperationEEnum = createEEnum(PREDEFINED_OPERATION);
 		clusteringOperationEEnum = createEEnum(CLUSTERING_OPERATION);
 		classificationOperationEEnum = createEEnum(CLASSIFICATION_OPERATION);
 		predictiveOperationEEnum = createEEnum(PREDICTIVE_OPERATION);
 		descriptiveOperationEEnum = createEEnum(DESCRIPTIVE_OPERATION);
-		typeEEnum = createEEnum(TYPE);
 		chartTypeEEnum = createEEnum(CHART_TYPE);
+		formatEEnum = createEEnum(FORMAT);
+		sizeEEnum = createEEnum(SIZE);
+		typeEEnum = createEEnum(TYPE);
 	}
 
 	/**
@@ -1393,6 +1403,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEClass(operationEClass, Operation.class, "Operation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperation_Incoming(), this.getInternalDataFlow(), this.getInternalDataFlow_Target(), "incoming", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperation_Outgoing(), this.getInternalDataFlow(), this.getInternalDataFlow_Source(), "outgoing", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperation_ID(), ecorePackage.getEString(), "ID", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(internalDataFlowEClass, InternalDataFlow.class, "InternalDataFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInternalDataFlow_Format(), this.getFormat(), "format", null, 0, 1, InternalDataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1478,17 +1489,6 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEReference(getComplexAttribute_Attributes(), this.getAttribute(), null, "attributes", null, 1, -1, ComplexAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(formatEEnum, Format.class, "Format");
-		addEEnumLiteral(formatEEnum, Format.TXT);
-		addEEnumLiteral(formatEEnum, Format.CSV);
-		addEEnumLiteral(formatEEnum, Format.JSON);
-		addEEnumLiteral(formatEEnum, Format.XML);
-
-		initEEnum(sizeEEnum, Size.class, "Size");
-		addEEnumLiteral(sizeEEnum, Size.SMALL);
-		addEEnumLiteral(sizeEEnum, Size.MEDIUM);
-		addEEnumLiteral(sizeEEnum, Size.LARGE);
-
 		initEEnum(predefinedOperationEEnum, PredefinedOperation.class, "PredefinedOperation");
 		addEEnumLiteral(predefinedOperationEEnum, PredefinedOperation.REMOVE_NULLS);
 		addEEnumLiteral(predefinedOperationEEnum, PredefinedOperation.REMOVE_NEGATIVE);
@@ -1517,13 +1517,6 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		addEEnumLiteral(descriptiveOperationEEnum, DescriptiveOperation.BOXPLOT);
 		addEEnumLiteral(descriptiveOperationEEnum, DescriptiveOperation.PIE_CHART);
 
-		initEEnum(typeEEnum, Type.class, "Type");
-		addEEnumLiteral(typeEEnum, Type.MSTRING);
-		addEEnumLiteral(typeEEnum, Type.MINTEGER);
-		addEEnumLiteral(typeEEnum, Type.MDOUBLE);
-		addEEnumLiteral(typeEEnum, Type.MBOOLEAN);
-		addEEnumLiteral(typeEEnum, Type.MDATE);
-
 		initEEnum(chartTypeEEnum, ChartType.class, "ChartType");
 		addEEnumLiteral(chartTypeEEnum, ChartType.COLUMN);
 		addEEnumLiteral(chartTypeEEnum, ChartType.LINE);
@@ -1544,6 +1537,24 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		addEEnumLiteral(chartTypeEEnum, ChartType.WATERFALL);
 		addEEnumLiteral(chartTypeEEnum, ChartType.FUNNEL);
 		addEEnumLiteral(chartTypeEEnum, ChartType.COMBO);
+
+		initEEnum(formatEEnum, Format.class, "Format");
+		addEEnumLiteral(formatEEnum, Format.CSV);
+		addEEnumLiteral(formatEEnum, Format.JSON);
+		addEEnumLiteral(formatEEnum, Format.TXT);
+		addEEnumLiteral(formatEEnum, Format.XML);
+
+		initEEnum(sizeEEnum, Size.class, "Size");
+		addEEnumLiteral(sizeEEnum, Size.SMALL);
+		addEEnumLiteral(sizeEEnum, Size.MEDIUM);
+		addEEnumLiteral(sizeEEnum, Size.LARGE);
+
+		initEEnum(typeEEnum, Type.class, "Type");
+		addEEnumLiteral(typeEEnum, Type.MSTRING);
+		addEEnumLiteral(typeEEnum, Type.MINTEGER);
+		addEEnumLiteral(typeEEnum, Type.MDOUBLE);
+		addEEnumLiteral(typeEEnum, Type.MBOOLEAN);
+		addEEnumLiteral(typeEEnum, Type.MDATE);
 
 		// Create resource
 		createResource(eNS_URI);

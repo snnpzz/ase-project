@@ -19,62 +19,45 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum Format implements Enumerator {
 	/**
-	 * The '<em><b>Txt</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #TXT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	TXT(0, "txt", "txt"),
-
-	/**
-	 * The '<em><b>Csv</b></em>' literal object.
+	 * The '<em><b>CSV</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #CSV_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CSV(1, "csv", "csv"),
+	CSV(0, "CSV", "CSV"),
 
 	/**
-	 * The '<em><b>Json</b></em>' literal object.
+	 * The '<em><b>JSON</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #JSON_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	JSON(2, "json", "json"),
+	JSON(1, "JSON", "JSON"), /**
+	 * The '<em><b>TXT</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #TXT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	TXT(2, "TXT", "TXT"),
 
 	/**
-	 * The '<em><b>Xml</b></em>' literal object.
+	 * The '<em><b>XML</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #XML_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	XML(3, "xml", "xml");
+	XML(3, "XML", "XML");
 
 	/**
-	 * The '<em><b>Txt</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Txt</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #TXT
-	 * @model name="txt"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int TXT_VALUE = 0;
-
-	/**
-	 * The '<em><b>Csv</b></em>' literal value.
+	 * The '<em><b>CSV</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Csv</b></em>' literal object isn't clear,
@@ -82,14 +65,14 @@ public enum Format implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CSV
-	 * @model name="csv"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CSV_VALUE = 1;
+	public static final int CSV_VALUE = 0;
 
 	/**
-	 * The '<em><b>Json</b></em>' literal value.
+	 * The '<em><b>JSON</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Json</b></em>' literal object isn't clear,
@@ -97,14 +80,29 @@ public enum Format implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #JSON
-	 * @model name="json"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int JSON_VALUE = 2;
+	public static final int JSON_VALUE = 1;
 
 	/**
-	 * The '<em><b>Xml</b></em>' literal value.
+	 * The '<em><b>TXT</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Txt</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #TXT
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int TXT_VALUE = 2;
+
+	/**
+	 * The '<em><b>XML</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Xml</b></em>' literal object isn't clear,
@@ -112,7 +110,7 @@ public enum Format implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #XML
-	 * @model name="xml"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -126,9 +124,9 @@ public enum Format implements Enumerator {
 	 */
 	private static final Format[] VALUES_ARRAY =
 		new Format[] {
-			TXT,
 			CSV,
 			JSON,
+			TXT,
 			XML,
 		};
 
@@ -186,9 +184,9 @@ public enum Format implements Enumerator {
 	 */
 	public static Format get(int value) {
 		switch (value) {
-			case TXT_VALUE: return TXT;
 			case CSV_VALUE: return CSV;
 			case JSON_VALUE: return JSON;
+			case TXT_VALUE: return TXT;
 			case XML_VALUE: return XML;
 		}
 		return null;

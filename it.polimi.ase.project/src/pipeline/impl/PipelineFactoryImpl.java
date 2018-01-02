@@ -92,10 +92,6 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case PipelinePackage.FORMAT:
-				return createFormatFromString(eDataType, initialValue);
-			case PipelinePackage.SIZE:
-				return createSizeFromString(eDataType, initialValue);
 			case PipelinePackage.PREDEFINED_OPERATION:
 				return createPredefinedOperationFromString(eDataType, initialValue);
 			case PipelinePackage.CLUSTERING_OPERATION:
@@ -106,10 +102,14 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 				return createPredictiveOperationFromString(eDataType, initialValue);
 			case PipelinePackage.DESCRIPTIVE_OPERATION:
 				return createDescriptiveOperationFromString(eDataType, initialValue);
-			case PipelinePackage.TYPE:
-				return createTypeFromString(eDataType, initialValue);
 			case PipelinePackage.CHART_TYPE:
 				return createChartTypeFromString(eDataType, initialValue);
+			case PipelinePackage.FORMAT:
+				return createFormatFromString(eDataType, initialValue);
+			case PipelinePackage.SIZE:
+				return createSizeFromString(eDataType, initialValue);
+			case PipelinePackage.TYPE:
+				return createTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -123,10 +123,6 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case PipelinePackage.FORMAT:
-				return convertFormatToString(eDataType, instanceValue);
-			case PipelinePackage.SIZE:
-				return convertSizeToString(eDataType, instanceValue);
 			case PipelinePackage.PREDEFINED_OPERATION:
 				return convertPredefinedOperationToString(eDataType, instanceValue);
 			case PipelinePackage.CLUSTERING_OPERATION:
@@ -137,10 +133,14 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 				return convertPredictiveOperationToString(eDataType, instanceValue);
 			case PipelinePackage.DESCRIPTIVE_OPERATION:
 				return convertDescriptiveOperationToString(eDataType, instanceValue);
-			case PipelinePackage.TYPE:
-				return convertTypeToString(eDataType, instanceValue);
 			case PipelinePackage.CHART_TYPE:
 				return convertChartTypeToString(eDataType, instanceValue);
+			case PipelinePackage.FORMAT:
+				return convertFormatToString(eDataType, instanceValue);
+			case PipelinePackage.SIZE:
+				return convertSizeToString(eDataType, instanceValue);
+			case PipelinePackage.TYPE:
+				return convertTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}

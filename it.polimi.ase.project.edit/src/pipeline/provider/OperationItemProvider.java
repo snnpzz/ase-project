@@ -62,6 +62,7 @@ public class OperationItemProvider
 
 			addIncomingPropertyDescriptor(object);
 			addOutgoingPropertyDescriptor(object);
+			addIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,6 +112,28 @@ public class OperationItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the ID feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIDPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Operation_ID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Operation_ID_feature", "_UI_Operation_type"),
+				 PipelinePackage.Literals.OPERATION__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,7 +141,10 @@ public class OperationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Operation_type");
+		String label = ((Operation)object).getID();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Operation_type") :
+			getString("_UI_Operation_type") + " " + label;
 	}
 	
 
@@ -132,6 +158,12 @@ public class OperationItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Operation.class)) {
+			case PipelinePackage.OPERATION__ID:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

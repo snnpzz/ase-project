@@ -33,6 +33,7 @@ class DataFlow {
 abstract class Operation {
   ref InternalDataFlow#target incoming;
   ref InternalDataFlow#source outgoing;
+  attr String ID;
 }
 
 @gmf.link(source="source", target="target", width="2", target.decoration="arrow", style="dash")
@@ -160,19 +161,6 @@ class PredefinedCleaningOperation extends CleaningOperation {
   attr PredefinedOperation name = "";
 }
 
-enum Format {
-  txt = 0;
-  csv = 1;
-  json = 2;
-  xml = 3;
-}
-
-enum Size {
-  Small = 0;
-  Medium = 1;
-  Large = 2;
-}
-
 class SimpleAttribute extends Attribute {
   attr Type type;
 }
@@ -216,14 +204,6 @@ enum DescriptiveOperation {
   PieChart = 2;
 }
 
-enum Type {
-  mString = 0;
-  mInteger = 1;
-  mDouble = 2;
-  mBoolean = 3;
-  mDate = 4;
-}
-
 enum ChartType {
   Column = 0;
   Line = 1;
@@ -244,5 +224,26 @@ enum ChartType {
   Waterfall = 16;
   Funnel = 17;
   Combo = 18;
+}
+
+enum Format {
+  CSV = 0;
+  JSON = 1;
+  TXT = 2;
+  XML = 3;
+}
+
+enum Size {
+  Small = 0;
+  Medium = 1;
+  Large = 2;
+}
+
+enum Type {
+  mString = 0;
+  mInteger = 1;
+  mDouble = 2;
+  mBoolean = 3;
+  mDate = 4;
 }
 

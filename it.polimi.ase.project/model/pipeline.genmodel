@@ -5,17 +5,6 @@
     copyrightFields="false">
   <foreignModel>pipeline.emf</foreignModel>
   <genPackages prefix="Pipeline" disposableProviderFactory="true" ecorePackage="pipeline.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//Format">
-      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/txt"/>
-      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/csv"/>
-      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/json"/>
-      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/xml"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//Size">
-      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Size/Small"/>
-      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Size/Medium"/>
-      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Size/Large"/>
-    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//PredefinedOperation">
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//PredefinedOperation/removeNulls"/>
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//PredefinedOperation/removeNegative"/>
@@ -44,13 +33,6 @@
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//DescriptiveOperation/Boxplot"/>
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//DescriptiveOperation/PieChart"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//Type">
-      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mString"/>
-      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mInteger"/>
-      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mDouble"/>
-      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mBoolean"/>
-      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mDate"/>
-    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//ChartType">
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Column"/>
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Line"/>
@@ -71,6 +53,24 @@
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Waterfall"/>
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Funnel"/>
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//ChartType/Combo"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//Format">
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/CSV"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/JSON"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/TXT"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Format/XML"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//Size">
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Size/Small"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Size/Medium"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Size/Large"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//Type">
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mString"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mInteger"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mDouble"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mBoolean"/>
+      <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//Type/mDate"/>
     </genEnums>
     <genClasses ecoreClass="pipeline.ecore#//Pipeline">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Pipeline/dataFlows"/>
@@ -95,6 +95,7 @@
     <genClasses image="false" ecoreClass="pipeline.ecore#//Operation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Operation/incoming"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Operation/outgoing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Operation/ID"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//InternalDataFlow">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//InternalDataFlow/format"/>

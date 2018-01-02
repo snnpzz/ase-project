@@ -20,8 +20,11 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
+import pipeline.diagram.edit.commands.ChartAxesCreateCommand;
+import pipeline.diagram.edit.commands.ChartAxesReorientCommand;
 import pipeline.diagram.edit.commands.IntegrationTaskAttributesCreateCommand;
 import pipeline.diagram.edit.commands.IntegrationTaskAttributesReorientCommand;
+import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ComplexAttribute2EditPart;
 import pipeline.diagram.edit.parts.ComplexAttributeComplexAttributeAttributesCompartmentEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskAttributesEditPart;
@@ -88,6 +91,14 @@ public class ComplexAttributeItemSemanticEditPolicy extends PipelineBaseItemSema
 							Edge incomingLink = (Edge) it.next();
 							if (PipelineVisualIDRegistry
 									.getVisualID(incomingLink) == IntegrationTaskAttributesEditPart.VISUAL_ID) {
+								DestroyReferenceRequest r = new DestroyReferenceRequest(
+										incomingLink.getSource().getElement(), null,
+										incomingLink.getTarget().getElement(), false);
+								cmd.add(new DestroyReferenceCommand(r));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								continue;
+							}
+							if (PipelineVisualIDRegistry.getVisualID(incomingLink) == ChartAxesEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
 										incomingLink.getSource().getElement(), null,
 										incomingLink.getTarget().getElement(), false);

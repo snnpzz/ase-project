@@ -15,6 +15,7 @@ import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
+import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ChartEditPart;
 import pipeline.diagram.edit.parts.ChartNameEditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
@@ -79,6 +80,7 @@ import pipeline.diagram.edit.parts.WrappingLabel4EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel5EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel6EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel7EditPart;
+import pipeline.diagram.edit.parts.WrappingLabel8EditPart;
 import pipeline.diagram.edit.parts.WrappingLabelEditPart;
 
 /**
@@ -548,6 +550,11 @@ public class PipelineVisualIDRegistry {
 			break;
 		case ExportExpUsesEditPart.VISUAL_ID:
 			if (WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ChartAxesEditPart.VISUAL_ID:
+			if (WrappingLabel8EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

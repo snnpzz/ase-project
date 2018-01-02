@@ -85,6 +85,7 @@ class AnalysisTask extends Task {
 }
 
 class VisualizationTask extends Task {
+
   @gmf.compartment(layout="list")
   val Chart[+] charts;
 }
@@ -253,5 +254,8 @@ class Chart {
   attr String name;
   attr ChartType type;
   attr Size size;
+
+  @gmf.link(width="1", target.decoration="closedarrow")
+  ref SimpleAttribute[+] axes;
 }
 

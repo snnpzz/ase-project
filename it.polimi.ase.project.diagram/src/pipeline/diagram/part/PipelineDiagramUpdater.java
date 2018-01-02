@@ -47,6 +47,7 @@ import pipeline.UserDefined;
 import pipeline.VisualizationTask;
 import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
+import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ChartEditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart;
@@ -724,7 +725,10 @@ public class PipelineDiagramUpdater {
 	* @generated
 	*/
 	public static List<PipelineLinkDescriptor> getChart_3062ContainedLinks(View view) {
-		return Collections.emptyList();
+		Chart modelElement = (Chart) view.getElement();
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_Chart_Axes_4026(modelElement));
+		return result;
 	}
 
 	/**
@@ -999,6 +1003,7 @@ public class PipelineDiagramUpdater {
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_IntegrationTask_Attributes_4025(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Chart_Axes_4026(modelElement, crossReferences));
 		return result;
 	}
 
@@ -1023,6 +1028,7 @@ public class PipelineDiagramUpdater {
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_IntegrationTask_Attributes_4025(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Chart_Axes_4026(modelElement, crossReferences));
 		return result;
 	}
 
@@ -1209,7 +1215,10 @@ public class PipelineDiagramUpdater {
 	* @generated
 	*/
 	public static List<PipelineLinkDescriptor> getChart_3062OutgoingLinks(View view) {
-		return Collections.emptyList();
+		Chart modelElement = (Chart) view.getElement();
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_Chart_Axes_4026(modelElement));
+		return result;
 	}
 
 	/**
@@ -1479,6 +1488,22 @@ public class PipelineDiagramUpdater {
 	/**
 	* @generated
 	*/
+	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_Chart_Axes_4026(
+			SimpleAttribute target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == PipelinePackage.eINSTANCE.getChart_Axes()) {
+				result.add(new PipelineLinkDescriptor(setting.getEObject(), target, PipelineElementTypes.ChartAxes_4026,
+						ChartAxesEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
 	private static Collection<PipelineLinkDescriptor> getOutgoingTypeModelFacetLinks_DataFlow_4005(Task source) {
 		Pipeline container = null;
 		// Find container element for the link.
@@ -1652,6 +1677,19 @@ public class PipelineDiagramUpdater {
 		}
 		result.add(new PipelineLinkDescriptor(source, destination, PipelineElementTypes.ExportExpUses_4014,
 				ExportExpUsesEditPart.VISUAL_ID));
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_Chart_Axes_4026(Chart source) {
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		for (Iterator<?> destinations = source.getAxes().iterator(); destinations.hasNext();) {
+			SimpleAttribute destination = (SimpleAttribute) destinations.next();
+			result.add(new PipelineLinkDescriptor(source, destination, PipelineElementTypes.ChartAxes_4026,
+					ChartAxesEditPart.VISUAL_ID));
+		}
 		return result;
 	}
 

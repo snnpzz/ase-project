@@ -40,6 +40,13 @@
         <template y="1"/>
       </figures>
       <figures xsi:type="gmfgraph:PolylineDecoration" name="ExportExpUsesFigureTargetDecoration"/>
+      <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
+        <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+        <template/>
+        <template x="-2" y="2"/>
+        <template x="-2" y="-2"/>
+        <template/>
+      </figures>
       <descriptors name="SchemaFigure">
         <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="SchemaFigure">
           <border xsi:type="gmfgraph:MarginBorder">
@@ -292,6 +299,12 @@
       <descriptors name="ExportExpUsesExternalLabelFigure">
         <actualFigure xsi:type="gmfgraph:Label" name="ExportExpUsesExternalLabel"/>
       </descriptors>
+      <descriptors name="ChartAxesFigure">
+        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ChartAxesFigure" targetDecoration="/0/@figures.0/@figures.9"/>
+      </descriptors>
+      <descriptors name="ChartAxesExternalLabelFigure">
+        <actualFigure xsi:type="gmfgraph:Label" name="ChartAxesExternalLabel"/>
+      </descriptors>
     </figures>
     <nodes name="Schema" figure="SchemaFigure"/>
     <nodes name="CollectionTask" figure="CollectionTaskFigure"/>
@@ -322,6 +335,7 @@
     <connections name="ImportImpUses" figure="ImportImpUsesFigure"/>
     <connections name="ExportWrite" figure="ExportWriteFigure"/>
     <connections name="ExportExpUses" figure="ExportExpUsesFigure"/>
+    <connections name="ChartAxes" figure="ChartAxesFigure"/>
     <compartments name="SchemaAttributesCompartment" figure="SchemaFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.0/@accessors.0"/>
     <compartments name="CollectionTaskImportsCompartment" figure="CollectionTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.1/@accessors.1"/>
     <compartments name="CleaningTaskCleaningOperationsCompartment" figure="CleaningTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.3/@accessors.1"/>
@@ -355,6 +369,7 @@
     <labels name="ImportImpUsesExternalLabel" figure="ImportImpUsesExternalLabelFigure" elementIcon="false"/>
     <labels name="ExportWriteExternalLabel" figure="ExportWriteExternalLabelFigure" elementIcon="false"/>
     <labels name="ExportExpUsesExternalLabel" figure="ExportExpUsesExternalLabelFigure" elementIcon="false"/>
+    <labels name="ChartAxesExternalLabel" figure="ChartAxesExternalLabelFigure" elementIcon="false"/>
   </gmfgraph:Canvas>
   <gmfgraph:Label name="SchemaLabelFigure" text="Schema">
     <maximumSize dx="10000" dy="50"/>

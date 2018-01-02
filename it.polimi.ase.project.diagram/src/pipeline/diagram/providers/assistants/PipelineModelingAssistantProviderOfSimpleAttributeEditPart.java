@@ -33,8 +33,9 @@ public class PipelineModelingAssistantProviderOfSimpleAttributeEditPart extends 
 	* @generated
 	*/
 	public List<IElementType> doGetRelTypesOnTarget(SimpleAttributeEditPart target) {
-		List<IElementType> types = new ArrayList<IElementType>(1);
+		List<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(PipelineElementTypes.IntegrationTaskAttributes_4025);
+		types.add(PipelineElementTypes.ChartAxes_4026);
 		return types;
 	}
 
@@ -55,6 +56,8 @@ public class PipelineModelingAssistantProviderOfSimpleAttributeEditPart extends 
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == PipelineElementTypes.IntegrationTaskAttributes_4025) {
 			types.add(PipelineElementTypes.IntegrationTask_2026);
+		} else if (relationshipType == PipelineElementTypes.ChartAxes_4026) {
+			types.add(PipelineElementTypes.Chart_3062);
 		}
 		return types;
 	}

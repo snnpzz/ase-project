@@ -259,7 +259,7 @@
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Pipeline"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2025,2026,2027,2031,2029,2032,2044,2045,2043,3025,3056,3057,3058,3059,3060,3061,3062,3037,3046,3047,3048,3049"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4005,4006,4019,4024,4025,4021,4013,4022,4014"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4005,4006,4019,4024,4025,4021,4013,4022,4014,4026"/>
       </viewProvider>
    </extension>
 
@@ -274,7 +274,7 @@
             <method name="getType()" value="2025,2026,2027,2031,2029,2032,2044,2045,2043,3025,3056,3057,3058,3059,3060,3061,3062,3037,3046,3047,3048,3049"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4005,4006,4019,4024,4025,4021,4013,4022,4014"/>
+            <method name="getType()" value="4005,4006,4019,4024,4025,4021,4013,4022,4014,4026"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5058,5059,5062,5075,5068,5077,5096,5097,5057,5108,5109,5110,5111,5112,5113,5114,5076,5098,5101,5099,5100"/>
@@ -746,6 +746,15 @@
             <param name="semanticHint" value="4014"/>
          </specializationType>
       </metamodel>
+      <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
+         <specializationType
+               id="it.polimi.ase.project.diagram.ChartAxes_4026"
+               name="%metatype.name.ChartAxes_4026"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4026"/>
+         </specializationType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -790,6 +799,7 @@
          <elementType ref="it.polimi.ase.project.diagram.ImportImpUses_4013"/>
          <elementType ref="it.polimi.ase.project.diagram.ExportWrite_4022"/>
          <elementType ref="it.polimi.ase.project.diagram.ExportExpUses_4014"/>
+         <elementType ref="it.polimi.ase.project.diagram.ChartAxes_4026"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

@@ -49,6 +49,7 @@ import org.eclipse.swt.graphics.FontData;
 import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
+import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ChartEditPart;
 import pipeline.diagram.edit.parts.ChartNameEditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
@@ -113,6 +114,7 @@ import pipeline.diagram.edit.parts.WrappingLabel4EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel5EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel6EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel7EditPart;
+import pipeline.diagram.edit.parts.WrappingLabel8EditPart;
 import pipeline.diagram.edit.parts.WrappingLabelEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 
@@ -365,6 +367,8 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 			return createExportWrite_4022(containerView, index, persisted, preferencesHint);
 		case ExportExpUsesEditPart.VISUAL_ID:
 			return createExportExpUses_4014(containerView, index, persisted, preferencesHint);
+		case ChartAxesEditPart.VISUAL_ID:
+			return createChartAxes_4026(containerView, index, persisted, preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
 		return null;
@@ -1613,6 +1617,53 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		Location location6008 = (Location) label6008.getLayoutConstraint();
 		location6008.setX(0);
 		location6008.setY(40);
+		return edge;
+	}
+
+	/**
+	* @generated
+	*/
+	public Edge createChartAxes_4026(View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(PipelineVisualIDRegistry.getType(ChartAxesEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle edgeFontStyle = (FontStyle) edge.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		Routing routing = Routing.get(prefStore.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
+		}
+		Node label6020 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabel8EditPart.VISUAL_ID));
+		label6020.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6020.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6020 = (Location) label6020.getLayoutConstraint();
+		location6020.setX(0);
+		location6020.setY(40);
 		return edge;
 	}
 

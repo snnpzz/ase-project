@@ -2,16 +2,21 @@
  */
 package pipeline.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import pipeline.Attribute;
 import pipeline.Chart;
 import pipeline.ChartType;
 import pipeline.PipelinePackage;
+import pipeline.SimpleAttribute;
 import pipeline.Size;
 
 /**
@@ -25,6 +30,7 @@ import pipeline.Size;
  *   <li>{@link pipeline.impl.ChartImpl#getName <em>Name</em>}</li>
  *   <li>{@link pipeline.impl.ChartImpl#getType <em>Type</em>}</li>
  *   <li>{@link pipeline.impl.ChartImpl#getSize <em>Size</em>}</li>
+ *   <li>{@link pipeline.impl.ChartImpl#getAxes <em>Axes</em>}</li>
  * </ul>
  *
  * @generated
@@ -89,6 +95,16 @@ public class ChartImpl extends EObjectImpl implements Chart {
 	 * @ordered
 	 */
 	protected Size size = SIZE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getAxes() <em>Axes</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAxes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SimpleAttribute> axes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,6 +193,18 @@ public class ChartImpl extends EObjectImpl implements Chart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SimpleAttribute> getAxes() {
+		if (axes == null) {
+			axes = new EObjectResolvingEList<SimpleAttribute>(SimpleAttribute.class, this, PipelinePackage.CHART__AXES);
+		}
+		return axes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -186,6 +214,8 @@ public class ChartImpl extends EObjectImpl implements Chart {
 				return getType();
 			case PipelinePackage.CHART__SIZE:
 				return getSize();
+			case PipelinePackage.CHART__AXES:
+				return getAxes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -195,6 +225,7 @@ public class ChartImpl extends EObjectImpl implements Chart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -206,6 +237,10 @@ public class ChartImpl extends EObjectImpl implements Chart {
 				return;
 			case PipelinePackage.CHART__SIZE:
 				setSize((Size)newValue);
+				return;
+			case PipelinePackage.CHART__AXES:
+				getAxes().clear();
+				getAxes().addAll((Collection<? extends SimpleAttribute>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -228,6 +263,9 @@ public class ChartImpl extends EObjectImpl implements Chart {
 			case PipelinePackage.CHART__SIZE:
 				setSize(SIZE_EDEFAULT);
 				return;
+			case PipelinePackage.CHART__AXES:
+				getAxes().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -246,6 +284,8 @@ public class ChartImpl extends EObjectImpl implements Chart {
 				return type != TYPE_EDEFAULT;
 			case PipelinePackage.CHART__SIZE:
 				return size != SIZE_EDEFAULT;
+			case PipelinePackage.CHART__AXES:
+				return axes != null && !axes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -28,6 +28,7 @@ import pipeline.diagram.edit.commands.ImportImpUsesCreateCommand;
 import pipeline.diagram.edit.commands.ImportImpUsesReorientCommand;
 import pipeline.diagram.edit.commands.InternalDataFlowSchemaCreateCommand;
 import pipeline.diagram.edit.commands.InternalDataFlowSchemaReorientCommand;
+import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ComplexAttributeEditPart;
 import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.ExportExpUsesEditPart;
@@ -119,6 +120,14 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 							Edge incomingLink = (Edge) it.next();
 							if (PipelineVisualIDRegistry
 									.getVisualID(incomingLink) == IntegrationTaskAttributesEditPart.VISUAL_ID) {
+								DestroyReferenceRequest r = new DestroyReferenceRequest(
+										incomingLink.getSource().getElement(), null,
+										incomingLink.getTarget().getElement(), false);
+								cmd.add(new DestroyReferenceCommand(r));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								continue;
+							}
+							if (PipelineVisualIDRegistry.getVisualID(incomingLink) == ChartAxesEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
 										incomingLink.getSource().getElement(), null,
 										incomingLink.getTarget().getElement(), false);

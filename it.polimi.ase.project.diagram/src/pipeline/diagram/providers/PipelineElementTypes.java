@@ -19,6 +19,7 @@ import org.eclipse.swt.graphics.Image;
 
 import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
+import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ChartEditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
@@ -231,6 +232,11 @@ public class PipelineElementTypes {
 	/**
 	* @generated
 	*/
+	public static final IElementType ChartAxes_4026 = getElementType("it.polimi.ase.project.diagram.ChartAxes_4026"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
 	}
@@ -329,6 +335,8 @@ public class PipelineElementTypes {
 			elements.put(ExportWrite_4022, PipelinePackage.eINSTANCE.getExport_Write());
 
 			elements.put(ExportExpUses_4014, PipelinePackage.eINSTANCE.getExport_ExpUses());
+
+			elements.put(ChartAxes_4026, PipelinePackage.eINSTANCE.getChart_Axes());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -378,6 +386,7 @@ public class PipelineElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ImportImpUses_4013);
 			KNOWN_ELEMENT_TYPES.add(ExportWrite_4022);
 			KNOWN_ELEMENT_TYPES.add(ExportExpUses_4014);
+			KNOWN_ELEMENT_TYPES.add(ChartAxes_4026);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -451,6 +460,8 @@ public class PipelineElementTypes {
 			return ExportWrite_4022;
 		case ExportExpUsesEditPart.VISUAL_ID:
 			return ExportExpUses_4014;
+		case ChartAxesEditPart.VISUAL_ID:
+			return ChartAxes_4026;
 		}
 		return null;
 	}

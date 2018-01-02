@@ -1435,13 +1435,22 @@ public interface PipelinePackage extends EPackage {
 	int CHART__SIZE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Axes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHART__AXES = 3;
+
+	/**
 	 * The number of structural features of the '<em>Chart</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHART_FEATURE_COUNT = 3;
+	int CHART_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link pipeline.Format <em>Format</em>}' enum.
@@ -2420,6 +2429,17 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getChart_Size();
 
 	/**
+	 * Returns the meta object for the reference list '{@link pipeline.Chart#getAxes <em>Axes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Axes</em>'.
+	 * @see pipeline.Chart#getAxes()
+	 * @see #getChart()
+	 * @generated
+	 */
+	EReference getChart_Axes();
+
+	/**
 	 * Returns the meta object for enum '{@link pipeline.Format <em>Format</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3250,6 +3270,14 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CHART__SIZE = eINSTANCE.getChart_Size();
+
+		/**
+		 * The meta object literal for the '<em><b>Axes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHART__AXES = eINSTANCE.getChart_Axes();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.Format <em>Format</em>}' enum.

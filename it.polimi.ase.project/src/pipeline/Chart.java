@@ -2,6 +2,7 @@
  */
 package pipeline;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pipeline.Chart#getName <em>Name</em>}</li>
  *   <li>{@link pipeline.Chart#getType <em>Type</em>}</li>
  *   <li>{@link pipeline.Chart#getSize <em>Size</em>}</li>
+ *   <li>{@link pipeline.Chart#getAxes <em>Axes</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getChart()
@@ -106,5 +108,22 @@ public interface Chart extends EObject {
 	 * @generated
 	 */
 	void setSize(Size value);
+
+	/**
+	 * Returns the value of the '<em><b>Axes</b></em>' reference list.
+	 * The list contents are of type {@link pipeline.SimpleAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Axes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Axes</em>' reference list.
+	 * @see pipeline.PipelinePackage#getChart_Axes()
+	 * @model required="true"
+	 *        annotation="gmf.link width='1' target.decoration='closedarrow'"
+	 * @generated
+	 */
+	EList<SimpleAttribute> getAxes();
 
 } // Chart

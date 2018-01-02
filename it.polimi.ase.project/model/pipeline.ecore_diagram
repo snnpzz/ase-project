@@ -1331,4 +1331,17 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_uZxkgO88EeeAL8U_fnq8iw" id="(0.11724137931034483,0.30666666666666664)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_uZxkge88EeeAL8U_fnq8iw" id="(0.8034188034188035,0.5866666666666667)"/>
   </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_q3KXwO-cEee6HPbQ_JErXQ" type="4002" source="_nrr74O88EeeAL8U_fnq8iw" target="_svNakO8EEeeKqPfWoCQbzQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_q3K-0O-cEee6HPbQ_JErXQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_q3K-0e-cEee6HPbQ_JErXQ" x="75" y="-18"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_q3K-0u-cEee6HPbQ_JErXQ" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_q3K-0--cEee6HPbQ_JErXQ" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_q3KXwe-cEee6HPbQ_JErXQ" fontName="Segoe UI"/>
+    <element xmi:type="ecore:EReference" href="pipeline.ecore#//Chart/axes"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_q3KXwu-cEee6HPbQ_JErXQ" points="[23, 5, -957, -245]$[987, 237, 7, -13]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q3OCIO-cEee6HPbQ_JErXQ" id="(0.8034188034188035,0.37755102040816324)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q3OCIe-cEee6HPbQ_JErXQ" id="(0.19607843137254902,0.13559322033898305)"/>
+  </edges>
 </notation:Diagram>

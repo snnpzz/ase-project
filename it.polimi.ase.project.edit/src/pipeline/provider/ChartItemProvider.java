@@ -63,6 +63,7 @@ public class ChartItemProvider
 			addNamePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addSizePropertyDescriptor(object);
+			addAxesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -129,6 +130,28 @@ public class ChartItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Axes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAxesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Chart_axes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Chart_axes_feature", "_UI_Chart_type"),
+				 PipelinePackage.Literals.CHART__AXES,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

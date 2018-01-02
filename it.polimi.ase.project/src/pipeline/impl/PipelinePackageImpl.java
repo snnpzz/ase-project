@@ -1129,6 +1129,15 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getChart_Axes() {
+		return (EReference)chartEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getFormat() {
 		return formatEEnum;
 	}
@@ -1343,6 +1352,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEAttribute(chartEClass, CHART__NAME);
 		createEAttribute(chartEClass, CHART__TYPE);
 		createEAttribute(chartEClass, CHART__SIZE);
+		createEReference(chartEClass, CHART__AXES);
 
 		// Create enums
 		formatEEnum = createEEnum(FORMAT);
@@ -1512,6 +1522,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEAttribute(getChart_Name(), ecorePackage.getEString(), "name", null, 0, 1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getChart_Type(), this.getChartType(), "type", null, 0, 1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getChart_Size(), this.getSize(), "size", null, 0, 1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getChart_Axes(), this.getSimpleAttribute(), null, "axes", null, 1, -1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(formatEEnum, Format.class, "Format");
@@ -1765,6 +1776,13 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		   new String[] {
 			 "width", "1",
 			 "target.decoration", "arrow"
+		   });	
+		addAnnotation
+		  (getChart_Axes(), 
+		   source, 
+		   new String[] {
+			 "width", "1",
+			 "target.decoration", "closedarrow"
 		   });
 	}
 

@@ -113,7 +113,8 @@ public class ComplexAttributeComplexAttributeAttributesCompartmentEditPart exten
 				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request).getElementTypes()) {
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
-						if (elementType.equals(PipelineElementTypes.IntegrationTaskAttributes_4025))
+						if (elementType.equals(PipelineElementTypes.IntegrationTaskAttributes_4025)
+								|| elementType.equals(PipelineElementTypes.ChartAxes_4026))
 							return super.getTargetEditPart(request);
 					}
 				}

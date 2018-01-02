@@ -36,6 +36,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 
 import pipeline.Attribute;
+import pipeline.Chart;
 import pipeline.DataFlow;
 import pipeline.Export;
 import pipeline.File;
@@ -45,6 +46,7 @@ import pipeline.InternalDataFlow;
 import pipeline.Operation;
 import pipeline.Pipeline;
 import pipeline.Schema;
+import pipeline.SimpleAttribute;
 import pipeline.Source;
 import pipeline.Task;
 import pipeline.diagram.part.PipelineDiagramEditorPlugin;
@@ -431,6 +433,19 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		* @generated
 		*/
+		public boolean canCreateChartAxes_4026(Chart source, SimpleAttribute target) {
+			if (source != null) {
+				if (source.getAxes().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistChartAxes_4026(source, target);
+		}
+
+		/**
+				* @generated
+				*/
 		public boolean canExistDataFlow_4005(Pipeline container, DataFlow linkInstance, Task source, Task target) {
 			return true;
 		}
@@ -489,6 +504,13 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		* @generated
 		*/
 		public boolean canExistExportExpUses_4014(Export source, Schema target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistChartAxes_4026(Chart source, SimpleAttribute target) {
 			return true;
 		}
 	}

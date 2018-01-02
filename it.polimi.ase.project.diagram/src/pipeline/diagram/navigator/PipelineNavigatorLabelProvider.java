@@ -27,6 +27,7 @@ import pipeline.Pipeline;
 import pipeline.Schema;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
+import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ChartEditPart;
 import pipeline.diagram.edit.parts.ChartNameEditPart;
 import pipeline.diagram.edit.parts.ClassificationEditPart;
@@ -240,6 +241,9 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 		case IntegrationTaskAttributesEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.project.ase.polimi.it/pipeline?IntegrationTask?attributes", //$NON-NLS-1$
 					PipelineElementTypes.IntegrationTaskAttributes_4025);
+		case ChartAxesEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.project.ase.polimi.it/pipeline?Chart?axes", //$NON-NLS-1$
+					PipelineElementTypes.ChartAxes_4026);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -362,6 +366,8 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 			return getInternalDataFlowSchema_4024Text(view);
 		case IntegrationTaskAttributesEditPart.VISUAL_ID:
 			return getIntegrationTaskAttributes_4025Text(view);
+		case ChartAxesEditPart.VISUAL_ID:
+			return getChartAxes_4026Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -855,6 +861,21 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 					ParserOptions.NONE.intValue());
 		} else {
 			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6019); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getChartAxes_4026Text(View view) {
+		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.ChartAxes_4026,
+				view.getElement() != null ? view.getElement() : view, CommonParserHint.DESCRIPTION);
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6020); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

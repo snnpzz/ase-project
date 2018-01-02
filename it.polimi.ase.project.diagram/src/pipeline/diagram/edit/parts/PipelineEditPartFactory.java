@@ -229,6 +229,12 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case WrappingLabel7EditPart.VISUAL_ID:
 				return new WrappingLabel7EditPart(view);
 
+			case ChartAxesEditPart.VISUAL_ID:
+				return new ChartAxesEditPart(view);
+
+			case WrappingLabel8EditPart.VISUAL_ID:
+				return new WrappingLabel8EditPart(view);
+
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

@@ -456,92 +456,102 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String DFSchema1CreationTool_title;
+	public static String Axes1CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String DFSchema1CreationTool_desc;
+	public static String Axes1CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String DataFlow2CreationTool_title;
+	public static String DFSchema2CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String DataFlow2CreationTool_desc;
+	public static String DFSchema2CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ExpUses3CreationTool_title;
+	public static String DataFlow3CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ExpUses3CreationTool_desc;
+	public static String DataFlow3CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ImpUses4CreationTool_title;
+	public static String ExpUses4CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ImpUses4CreationTool_desc;
+	public static String ExpUses4CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String IntegrationAttributes5CreationTool_title;
+	public static String ImpUses5CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String IntegrationAttributes5CreationTool_desc;
+	public static String ImpUses5CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String InternalDFSchema6CreationTool_title;
+	public static String IntegrationAttributes6CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String InternalDFSchema6CreationTool_desc;
+	public static String IntegrationAttributes6CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String InternalDataFlow7CreationTool_title;
+	public static String InternalDFSchema7CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String InternalDataFlow7CreationTool_desc;
+	public static String InternalDFSchema7CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Read8CreationTool_title;
+	public static String InternalDataFlow8CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Read8CreationTool_desc;
+	public static String InternalDataFlow8CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Write9CreationTool_title;
+	public static String Read9CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Write9CreationTool_desc;
+	public static String Read9CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String Write10CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Write10CreationTool_desc;
 
 	/**
 	* @generated
@@ -761,6 +771,11 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
+	public static String NavigatorGroupName_Chart_3062_outgoinglinks;
+
+	/**
+	* @generated
+	*/
 	public static String NavigatorGroupName_DataFlow_4005_target;
 
 	/**
@@ -857,6 +872,16 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String NavigatorGroupName_IntegrationTaskAttributes_4025_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ChartAxes_4026_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ChartAxes_4026_source;
 
 	/**
 	* @generated

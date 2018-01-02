@@ -6,10 +6,10 @@ package pipeline.diagram.edit.policies;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
-import pipeline.diagram.edit.commands.ClassificationAnalysisOperationCreateCommand;
-import pipeline.diagram.edit.commands.ClusteringAnalysisOperationCreateCommand;
-import pipeline.diagram.edit.commands.DescriptiveAnalysisOperationCreateCommand;
-import pipeline.diagram.edit.commands.PredictiveAnalysisOperationCreateCommand;
+import pipeline.diagram.edit.commands.ClassificationCreateCommand;
+import pipeline.diagram.edit.commands.ClusteringCreateCommand;
+import pipeline.diagram.edit.commands.DescriptiveCreateCommand;
+import pipeline.diagram.edit.commands.PredictiveCreateCommand;
 import pipeline.diagram.providers.PipelineElementTypes;
 
 /**
@@ -29,17 +29,17 @@ public class AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentItemSemanticEd
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (PipelineElementTypes.DescriptiveAnalysisOperation_3052 == req.getElementType()) {
-			return getGEFWrapper(new DescriptiveAnalysisOperationCreateCommand(req));
+		if (PipelineElementTypes.Descriptive_3058 == req.getElementType()) {
+			return getGEFWrapper(new DescriptiveCreateCommand(req));
 		}
-		if (PipelineElementTypes.ClassificationAnalysisOperation_3053 == req.getElementType()) {
-			return getGEFWrapper(new ClassificationAnalysisOperationCreateCommand(req));
+		if (PipelineElementTypes.Classification_3059 == req.getElementType()) {
+			return getGEFWrapper(new ClassificationCreateCommand(req));
 		}
-		if (PipelineElementTypes.PredictiveAnalysisOperation_3054 == req.getElementType()) {
-			return getGEFWrapper(new PredictiveAnalysisOperationCreateCommand(req));
+		if (PipelineElementTypes.Predictive_3060 == req.getElementType()) {
+			return getGEFWrapper(new PredictiveCreateCommand(req));
 		}
-		if (PipelineElementTypes.ClusteringAnalysisOperation_3055 == req.getElementType()) {
-			return getGEFWrapper(new ClusteringAnalysisOperationCreateCommand(req));
+		if (PipelineElementTypes.Clustering_3061 == req.getElementType()) {
+			return getGEFWrapper(new ClusteringCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import pipeline.DataFlow;
 import pipeline.File;
 import pipeline.InternalDataFlow;
-import pipeline.Operation;
 import pipeline.Pipeline;
 import pipeline.PipelinePackage;
 import pipeline.Schema;

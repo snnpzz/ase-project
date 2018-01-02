@@ -37,7 +37,7 @@ public interface Export extends EObject {
 	 * @see pipeline.PipelinePackage#getExport_Write()
 	 * @see pipeline.File#getComesFrom
 	 * @model opposite="comesFrom" required="true"
-	 *        annotation="gmf.link width='2' target.decoration='square' style='dash'"
+	 *        annotation="gmf.link width='2' target.decoration='filledsquare' style='dash'"
 	 * @generated
 	 */
 	File getWrite();

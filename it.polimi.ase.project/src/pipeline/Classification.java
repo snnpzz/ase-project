@@ -20,7 +20,6 @@ package pipeline;
  * @generated
  */
 public interface Classification extends AnalysisOperation {
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * The literals are from the enumeration {@link pipeline.ClassificationOperation}.
@@ -49,4 +48,5 @@ public interface Classification extends AnalysisOperation {
 	 * @generated
 	 */
 	void setName(ClassificationOperation value);
+
 } // Classification

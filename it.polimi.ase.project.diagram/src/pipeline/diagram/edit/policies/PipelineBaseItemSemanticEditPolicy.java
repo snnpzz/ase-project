@@ -35,14 +35,18 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 
+import pipeline.Attribute;
+import pipeline.Chart;
 import pipeline.DataFlow;
 import pipeline.Export;
 import pipeline.File;
 import pipeline.Import;
+import pipeline.IntegrationTask;
 import pipeline.InternalDataFlow;
 import pipeline.Operation;
 import pipeline.Pipeline;
 import pipeline.Schema;
+import pipeline.SimpleAttribute;
 import pipeline.Source;
 import pipeline.Task;
 import pipeline.diagram.part.PipelineDiagramEditorPlugin;
@@ -330,8 +334,8 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public boolean canCreateDataFlowSchema_4019(DataFlow source, Schema target) {
 			if (source != null) {
 				if (source.getSchema() != null) {
@@ -343,21 +347,34 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		* @generated
-		*/
-		public boolean canCreateInternalDataFlowInternalSchema_4023(InternalDataFlow source, Schema target) {
+		 * @generated
+		 */
+		public boolean canCreateInternalDataFlowSchema_4024(InternalDataFlow source, Schema target) {
 			if (source != null) {
-				if (source.getInternalSchema() != null) {
+				if (source.getSchema() != null) {
 					return false;
 				}
 			}
 
-			return canExistInternalDataFlowInternalSchema_4023(source, target);
+			return canExistInternalDataFlowSchema_4024(source, target);
 		}
 
 		/**
-			* @generated
-			*/
+		 * @generated
+		 */
+		public boolean canCreateIntegrationTaskAttributes_4025(IntegrationTask source, Attribute target) {
+			if (source != null) {
+				if (source.getAttributes().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistIntegrationTaskAttributes_4025(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canCreateImportRead_4021(Import source, Source target) {
 			if (source != null) {
 				if (source.getRead() != null) {
@@ -372,8 +389,8 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-			 * @generated
-			 */
+		 * @generated
+		 */
 		public boolean canCreateImportImpUses_4013(Import source, Schema target) {
 			if (source != null) {
 				if (source.getImpUses() != null) {
@@ -385,8 +402,8 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public boolean canCreateExportWrite_4022(Export source, File target) {
 			if (source != null) {
 				if (source.getWrite() != null) {
@@ -401,8 +418,8 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-			 * @generated
-			 */
+		 * @generated
+		 */
 		public boolean canCreateExportExpUses_4014(Export source, Schema target) {
 			if (source != null) {
 				if (source.getExpUses() != null) {
@@ -416,6 +433,19 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		* @generated
 		*/
+		public boolean canCreateChartAxes_4026(Chart source, SimpleAttribute target) {
+			if (source != null) {
+				if (source.getAxes().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistChartAxes_4026(source, target);
+		}
+
+		/**
+				* @generated
+				*/
 		public boolean canExistDataFlow_4005(Pipeline container, DataFlow linkInstance, Task source, Task target) {
 			return true;
 		}
@@ -438,20 +468,27 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		* @generated
 		*/
-		public boolean canExistInternalDataFlowInternalSchema_4023(InternalDataFlow source, Schema target) {
+		public boolean canExistInternalDataFlowSchema_4024(InternalDataFlow source, Schema target) {
 			return true;
 		}
 
 		/**
-			* @generated
-			*/
+		* @generated
+		*/
+		public boolean canExistIntegrationTaskAttributes_4025(IntegrationTask source, Attribute target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
 		public boolean canExistImportRead_4021(Import source, Source target) {
 			return true;
 		}
 
 		/**
-			* @generated
-			*/
+		* @generated
+		*/
 		public boolean canExistImportImpUses_4013(Import source, Schema target) {
 			return true;
 		}
@@ -464,9 +501,16 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-			* @generated
-			*/
+		* @generated
+		*/
 		public boolean canExistExportExpUses_4014(Export source, Schema target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistChartAxes_4026(Chart source, SimpleAttribute target) {
 			return true;
 		}
 	}

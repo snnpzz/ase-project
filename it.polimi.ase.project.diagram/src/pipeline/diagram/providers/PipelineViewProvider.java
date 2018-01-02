@@ -49,13 +49,16 @@ import org.eclipse.swt.graphics.FontData;
 import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
-import pipeline.diagram.edit.parts.ClassificationAnalysisOperationEditPart;
-import pipeline.diagram.edit.parts.ClassificationAnalysisOperationNameEditPart;
+import pipeline.diagram.edit.parts.ChartAxesEditPart;
+import pipeline.diagram.edit.parts.ChartEditPart;
+import pipeline.diagram.edit.parts.ChartNameEditPart;
+import pipeline.diagram.edit.parts.ClassificationEditPart;
+import pipeline.diagram.edit.parts.ClassificationNameEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskIDEditPart;
-import pipeline.diagram.edit.parts.ClusteringAnalysisOperationEditPart;
-import pipeline.diagram.edit.parts.ClusteringAnalysisOperationNameEditPart;
+import pipeline.diagram.edit.parts.ClusteringEditPart;
+import pipeline.diagram.edit.parts.ClusteringNameEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskCollectionTaskImportsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskIDEditPart;
@@ -67,8 +70,8 @@ import pipeline.diagram.edit.parts.ComplexAttributeName2EditPart;
 import pipeline.diagram.edit.parts.ComplexAttributeNameEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
-import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationEditPart;
-import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationNameEditPart;
+import pipeline.diagram.edit.parts.DescriptiveEditPart;
+import pipeline.diagram.edit.parts.DescriptiveNameEditPart;
 import pipeline.diagram.edit.parts.ExportEditPart;
 import pipeline.diagram.edit.parts.ExportExpUsesEditPart;
 import pipeline.diagram.edit.parts.ExportNameEditPart;
@@ -82,15 +85,16 @@ import pipeline.diagram.edit.parts.ImportEditPart;
 import pipeline.diagram.edit.parts.ImportImpUsesEditPart;
 import pipeline.diagram.edit.parts.ImportNameEditPart;
 import pipeline.diagram.edit.parts.ImportReadEditPart;
+import pipeline.diagram.edit.parts.IntegrationTaskAttributesEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
-import pipeline.diagram.edit.parts.InternalDataFlowInternalSchemaEditPart;
+import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
-import pipeline.diagram.edit.parts.PredefinedCleaningOperationEditPart;
-import pipeline.diagram.edit.parts.PredefinedCleaningOperationNameEditPart;
-import pipeline.diagram.edit.parts.PredictiveAnalysisOperationEditPart;
-import pipeline.diagram.edit.parts.PredictiveAnalysisOperationNameEditPart;
+import pipeline.diagram.edit.parts.PredefinedEditPart;
+import pipeline.diagram.edit.parts.PredefinedNameEditPart;
+import pipeline.diagram.edit.parts.PredictiveEditPart;
+import pipeline.diagram.edit.parts.PredictiveNameEditPart;
 import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.edit.parts.SchemaSchemaAttributesCompartmentEditPart;
 import pipeline.diagram.edit.parts.SimpleAttribute2EditPart;
@@ -99,15 +103,18 @@ import pipeline.diagram.edit.parts.SimpleAttributeName2EditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeNameEditPart;
 import pipeline.diagram.edit.parts.SourceEditPart;
 import pipeline.diagram.edit.parts.SourceNameEditPart;
-import pipeline.diagram.edit.parts.UserDefinedCleaningOperationEditPart;
-import pipeline.diagram.edit.parts.UserDefinedCleaningOperationNameEditPart;
+import pipeline.diagram.edit.parts.UserDefinedEditPart;
+import pipeline.diagram.edit.parts.UserDefinedNameEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskIDEditPart;
+import pipeline.diagram.edit.parts.VisualizationTaskVisualizationTaskChartsCompartmentEditPart;
 import pipeline.diagram.edit.parts.WrappingLabel2EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel3EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel4EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel5EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel6EditPart;
+import pipeline.diagram.edit.parts.WrappingLabel7EditPart;
+import pipeline.diagram.edit.parts.WrappingLabel8EditPart;
 import pipeline.diagram.edit.parts.WrappingLabelEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 
@@ -202,12 +209,13 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				case FileEditPart.VISUAL_ID:
 				case SchemaEditPart.VISUAL_ID:
 				case ImportEditPart.VISUAL_ID:
-				case UserDefinedCleaningOperationEditPart.VISUAL_ID:
-				case PredefinedCleaningOperationEditPart.VISUAL_ID:
-				case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
-				case ClassificationAnalysisOperationEditPart.VISUAL_ID:
-				case PredictiveAnalysisOperationEditPart.VISUAL_ID:
-				case ClusteringAnalysisOperationEditPart.VISUAL_ID:
+				case UserDefinedEditPart.VISUAL_ID:
+				case PredefinedEditPart.VISUAL_ID:
+				case DescriptiveEditPart.VISUAL_ID:
+				case ClassificationEditPart.VISUAL_ID:
+				case PredictiveEditPart.VISUAL_ID:
+				case ClusteringEditPart.VISUAL_ID:
+				case ChartEditPart.VISUAL_ID:
 				case ExportEditPart.VISUAL_ID:
 				case SimpleAttributeEditPart.VISUAL_ID:
 				case ComplexAttributeEditPart.VISUAL_ID:
@@ -228,12 +236,10 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				|| VisualizationTaskEditPart.VISUAL_ID == visualID || ExportTaskEditPart.VISUAL_ID == visualID
 				|| SourceEditPart.VISUAL_ID == visualID || FileEditPart.VISUAL_ID == visualID
 				|| SchemaEditPart.VISUAL_ID == visualID || ImportEditPart.VISUAL_ID == visualID
-				|| UserDefinedCleaningOperationEditPart.VISUAL_ID == visualID
-				|| PredefinedCleaningOperationEditPart.VISUAL_ID == visualID
-				|| DescriptiveAnalysisOperationEditPart.VISUAL_ID == visualID
-				|| ClassificationAnalysisOperationEditPart.VISUAL_ID == visualID
-				|| PredictiveAnalysisOperationEditPart.VISUAL_ID == visualID
-				|| ClusteringAnalysisOperationEditPart.VISUAL_ID == visualID || ExportEditPart.VISUAL_ID == visualID
+				|| UserDefinedEditPart.VISUAL_ID == visualID || PredefinedEditPart.VISUAL_ID == visualID
+				|| DescriptiveEditPart.VISUAL_ID == visualID || ClassificationEditPart.VISUAL_ID == visualID
+				|| PredictiveEditPart.VISUAL_ID == visualID || ClusteringEditPart.VISUAL_ID == visualID
+				|| ChartEditPart.VISUAL_ID == visualID || ExportEditPart.VISUAL_ID == visualID
 				|| SimpleAttributeEditPart.VISUAL_ID == visualID || ComplexAttributeEditPart.VISUAL_ID == visualID
 				|| SimpleAttribute2EditPart.VISUAL_ID == visualID || ComplexAttribute2EditPart.VISUAL_ID == visualID;
 	}
@@ -304,24 +310,20 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 			return createSchema_2043(domainElement, containerView, index, persisted, preferencesHint);
 		case ImportEditPart.VISUAL_ID:
 			return createImport_3025(domainElement, containerView, index, persisted, preferencesHint);
-		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
-			return createUserDefinedCleaningOperation_3050(domainElement, containerView, index, persisted,
-					preferencesHint);
-		case PredefinedCleaningOperationEditPart.VISUAL_ID:
-			return createPredefinedCleaningOperation_3051(domainElement, containerView, index, persisted,
-					preferencesHint);
-		case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
-			return createDescriptiveAnalysisOperation_3052(domainElement, containerView, index, persisted,
-					preferencesHint);
-		case ClassificationAnalysisOperationEditPart.VISUAL_ID:
-			return createClassificationAnalysisOperation_3053(domainElement, containerView, index, persisted,
-					preferencesHint);
-		case PredictiveAnalysisOperationEditPart.VISUAL_ID:
-			return createPredictiveAnalysisOperation_3054(domainElement, containerView, index, persisted,
-					preferencesHint);
-		case ClusteringAnalysisOperationEditPart.VISUAL_ID:
-			return createClusteringAnalysisOperation_3055(domainElement, containerView, index, persisted,
-					preferencesHint);
+		case UserDefinedEditPart.VISUAL_ID:
+			return createUserDefined_3056(domainElement, containerView, index, persisted, preferencesHint);
+		case PredefinedEditPart.VISUAL_ID:
+			return createPredefined_3057(domainElement, containerView, index, persisted, preferencesHint);
+		case DescriptiveEditPart.VISUAL_ID:
+			return createDescriptive_3058(domainElement, containerView, index, persisted, preferencesHint);
+		case ClassificationEditPart.VISUAL_ID:
+			return createClassification_3059(domainElement, containerView, index, persisted, preferencesHint);
+		case PredictiveEditPart.VISUAL_ID:
+			return createPredictive_3060(domainElement, containerView, index, persisted, preferencesHint);
+		case ClusteringEditPart.VISUAL_ID:
+			return createClustering_3061(domainElement, containerView, index, persisted, preferencesHint);
+		case ChartEditPart.VISUAL_ID:
+			return createChart_3062(domainElement, containerView, index, persisted, preferencesHint);
 		case ExportEditPart.VISUAL_ID:
 			return createExport_3037(domainElement, containerView, index, persisted, preferencesHint);
 		case SimpleAttributeEditPart.VISUAL_ID:
@@ -353,8 +355,10 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 					preferencesHint);
 		case DataFlowSchemaEditPart.VISUAL_ID:
 			return createDataFlowSchema_4019(containerView, index, persisted, preferencesHint);
-		case InternalDataFlowInternalSchemaEditPart.VISUAL_ID:
-			return createInternalDataFlowInternalSchema_4023(containerView, index, persisted, preferencesHint);
+		case InternalDataFlowSchemaEditPart.VISUAL_ID:
+			return createInternalDataFlowSchema_4024(containerView, index, persisted, preferencesHint);
+		case IntegrationTaskAttributesEditPart.VISUAL_ID:
+			return createIntegrationTaskAttributes_4025(containerView, index, persisted, preferencesHint);
 		case ImportReadEditPart.VISUAL_ID:
 			return createImportRead_4021(containerView, index, persisted, preferencesHint);
 		case ImportImpUsesEditPart.VISUAL_ID:
@@ -363,6 +367,8 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 			return createExportWrite_4022(containerView, index, persisted, preferencesHint);
 		case ExportExpUsesEditPart.VISUAL_ID:
 			return createExportExpUses_4014(containerView, index, persisted, preferencesHint);
+		case ChartAxesEditPart.VISUAL_ID:
+			return createChartAxes_4026(containerView, index, persisted, preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
 		return null;
@@ -536,6 +542,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 	public Node createVisualizationTask_2029(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(PipelineVisualIDRegistry.getType(VisualizationTaskEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -564,6 +571,9 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5068 = createLabel(node, PipelineVisualIDRegistry.getType(VisualizationTaskIDEditPart.VISUAL_ID));
+		createCompartment(node,
+				PipelineVisualIDRegistry.getType(VisualizationTaskVisualizationTaskChartsCompartmentEditPart.VISUAL_ID),
+				true, false, true, true);
 		return node;
 	}
 
@@ -760,11 +770,11 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 	/**
 	* @generated
 	*/
-	public Node createUserDefinedCleaningOperation_3050(EObject domainElement, View containerView, int index,
-			boolean persisted, PreferencesHint preferencesHint) {
+	public Node createUserDefined_3056(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(PipelineVisualIDRegistry.getType(UserDefinedCleaningOperationEditPart.VISUAL_ID));
+		node.setType(PipelineVisualIDRegistry.getType(UserDefinedEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -789,19 +799,18 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5102 = createLabel(node,
-				PipelineVisualIDRegistry.getType(UserDefinedCleaningOperationNameEditPart.VISUAL_ID));
+		Node label5108 = createLabel(node, PipelineVisualIDRegistry.getType(UserDefinedNameEditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Node createPredefinedCleaningOperation_3051(EObject domainElement, View containerView, int index,
-			boolean persisted, PreferencesHint preferencesHint) {
+	public Node createPredefined_3057(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(PipelineVisualIDRegistry.getType(PredefinedCleaningOperationEditPart.VISUAL_ID));
+		node.setType(PipelineVisualIDRegistry.getType(PredefinedEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -826,19 +835,18 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5103 = createLabel(node,
-				PipelineVisualIDRegistry.getType(PredefinedCleaningOperationNameEditPart.VISUAL_ID));
+		Node label5109 = createLabel(node, PipelineVisualIDRegistry.getType(PredefinedNameEditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Node createDescriptiveAnalysisOperation_3052(EObject domainElement, View containerView, int index,
-			boolean persisted, PreferencesHint preferencesHint) {
+	public Node createDescriptive_3058(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(PipelineVisualIDRegistry.getType(DescriptiveAnalysisOperationEditPart.VISUAL_ID));
+		node.setType(PipelineVisualIDRegistry.getType(DescriptiveEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -863,19 +871,18 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5104 = createLabel(node,
-				PipelineVisualIDRegistry.getType(DescriptiveAnalysisOperationNameEditPart.VISUAL_ID));
+		Node label5110 = createLabel(node, PipelineVisualIDRegistry.getType(DescriptiveNameEditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Node createClassificationAnalysisOperation_3053(EObject domainElement, View containerView, int index,
-			boolean persisted, PreferencesHint preferencesHint) {
+	public Node createClassification_3059(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(PipelineVisualIDRegistry.getType(ClassificationAnalysisOperationEditPart.VISUAL_ID));
+		node.setType(PipelineVisualIDRegistry.getType(ClassificationEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -900,19 +907,18 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5105 = createLabel(node,
-				PipelineVisualIDRegistry.getType(ClassificationAnalysisOperationNameEditPart.VISUAL_ID));
+		Node label5111 = createLabel(node, PipelineVisualIDRegistry.getType(ClassificationNameEditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Node createPredictiveAnalysisOperation_3054(EObject domainElement, View containerView, int index,
-			boolean persisted, PreferencesHint preferencesHint) {
+	public Node createPredictive_3060(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(PipelineVisualIDRegistry.getType(PredictiveAnalysisOperationEditPart.VISUAL_ID));
+		node.setType(PipelineVisualIDRegistry.getType(PredictiveEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -937,19 +943,18 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5106 = createLabel(node,
-				PipelineVisualIDRegistry.getType(PredictiveAnalysisOperationNameEditPart.VISUAL_ID));
+		Node label5112 = createLabel(node, PipelineVisualIDRegistry.getType(PredictiveNameEditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Node createClusteringAnalysisOperation_3055(EObject domainElement, View containerView, int index,
-			boolean persisted, PreferencesHint preferencesHint) {
+	public Node createClustering_3061(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(PipelineVisualIDRegistry.getType(ClusteringAnalysisOperationEditPart.VISUAL_ID));
+		node.setType(PipelineVisualIDRegistry.getType(ClusteringEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -974,8 +979,43 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5107 = createLabel(node,
-				PipelineVisualIDRegistry.getType(ClusteringAnalysisOperationNameEditPart.VISUAL_ID));
+		Node label5113 = createLabel(node, PipelineVisualIDRegistry.getType(ClusteringNameEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createChart_3062(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(PipelineVisualIDRegistry.getType(ChartEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5114 = createLabel(node, PipelineVisualIDRegistry.getType(ChartNameEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -1301,7 +1341,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 	/**
 	* @generated
 	*/
-	public Edge createInternalDataFlowInternalSchema_4023(View containerView, int index, boolean persisted,
+	public Edge createInternalDataFlowSchema_4024(View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
@@ -1312,7 +1352,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		bendpoints.setPoints(points);
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
-		edge.setType(PipelineVisualIDRegistry.getType(InternalDataFlowInternalSchemaEditPart.VISUAL_ID));
+		edge.setType(PipelineVisualIDRegistry.getType(InternalDataFlowSchemaEditPart.VISUAL_ID));
 		edge.setElement(null);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
@@ -1336,12 +1376,59 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		if (routing != null) {
 			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
 		}
-		Node label6017 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
-		label6017.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		label6017.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
-		Location location6017 = (Location) label6017.getLayoutConstraint();
-		location6017.setX(0);
-		location6017.setY(40);
+		Node label6018 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
+		label6018.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6018.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6018 = (Location) label6018.getLayoutConstraint();
+		location6018.setX(0);
+		location6018.setY(40);
+		return edge;
+	}
+
+	/**
+	* @generated
+	*/
+	public Edge createIntegrationTaskAttributes_4025(View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(PipelineVisualIDRegistry.getType(IntegrationTaskAttributesEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle edgeFontStyle = (FontStyle) edge.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		Routing routing = Routing.get(prefStore.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
+		}
+		Node label6019 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabel3EditPart.VISUAL_ID));
+		label6019.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6019.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6019 = (Location) label6019.getLayoutConstraint();
+		location6019.setX(0);
+		location6019.setY(40);
 		return edge;
 	}
 
@@ -1383,7 +1470,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		if (routing != null) {
 			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
 		}
-		Node label6015 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabel3EditPart.VISUAL_ID));
+		Node label6015 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabel4EditPart.VISUAL_ID));
 		label6015.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
 		label6015.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location6015 = (Location) label6015.getLayoutConstraint();
@@ -1430,7 +1517,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		if (routing != null) {
 			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
 		}
-		Node label6007 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabel4EditPart.VISUAL_ID));
+		Node label6007 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabel5EditPart.VISUAL_ID));
 		label6007.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
 		label6007.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location6007 = (Location) label6007.getLayoutConstraint();
@@ -1477,7 +1564,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		if (routing != null) {
 			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
 		}
-		Node label6016 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabel5EditPart.VISUAL_ID));
+		Node label6016 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabel6EditPart.VISUAL_ID));
 		label6016.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
 		label6016.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location6016 = (Location) label6016.getLayoutConstraint();
@@ -1524,12 +1611,59 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 		if (routing != null) {
 			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
 		}
-		Node label6008 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabel6EditPart.VISUAL_ID));
+		Node label6008 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabel7EditPart.VISUAL_ID));
 		label6008.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
 		label6008.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location6008 = (Location) label6008.getLayoutConstraint();
 		location6008.setX(0);
 		location6008.setY(40);
+		return edge;
+	}
+
+	/**
+	* @generated
+	*/
+	public Edge createChartAxes_4026(View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(PipelineVisualIDRegistry.getType(ChartAxesEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle edgeFontStyle = (FontStyle) edge.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		Routing routing = Routing.get(prefStore.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
+		}
+		Node label6020 = createLabel(edge, PipelineVisualIDRegistry.getType(WrappingLabel8EditPart.VISUAL_ID));
+		label6020.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6020.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6020 = (Location) label6020.getLayoutConstraint();
+		location6020.setX(0);
+		location6020.setY(40);
 		return edge;
 	}
 

@@ -16,11 +16,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pipeline.InternalDataFlow#getFormat <em>Format</em>}</li>
  *   <li>{@link pipeline.InternalDataFlow#getSource <em>Source</em>}</li>
  *   <li>{@link pipeline.InternalDataFlow#getTarget <em>Target</em>}</li>
- *   <li>{@link pipeline.InternalDataFlow#getInternalSchema <em>Internal Schema</em>}</li>
+ *   <li>{@link pipeline.InternalDataFlow#getSchema <em>Schema</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getInternalDataFlow()
- * @model annotation="gmf.link source='source' target='target' width='2' target.decoration='arrow' style='dash'"
+ * @model annotation="gmf.link source='source' target='target' width='2' target.decoration='filledclosedarrow' style='dash'"
  * @generated
  */
 public interface InternalDataFlow extends EObject {
@@ -110,30 +110,30 @@ public interface InternalDataFlow extends EObject {
 	void setTarget(Operation value);
 
 	/**
-	 * Returns the value of the '<em><b>Internal Schema</b></em>' reference.
+	 * Returns the value of the '<em><b>Schema</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Internal Schema</em>' reference isn't clear,
+	 * If the meaning of the '<em>Schema</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Internal Schema</em>' reference.
-	 * @see #setInternalSchema(Schema)
-	 * @see pipeline.PipelinePackage#getInternalDataFlow_InternalSchema()
+	 * @return the value of the '<em>Schema</em>' reference.
+	 * @see #setSchema(Schema)
+	 * @see pipeline.PipelinePackage#getInternalDataFlow_Schema()
 	 * @model required="true"
-	 *        annotation="gmf.link width='1' target.decoration='arrow' style='dash'"
+	 *        annotation="gmf.link width='1' target.decoration='arrow' style='dot' tool.name='InternalDFSchema'"
 	 * @generated
 	 */
-	Schema getInternalSchema();
+	Schema getSchema();
 
 	/**
-	 * Sets the value of the '{@link pipeline.InternalDataFlow#getInternalSchema <em>Internal Schema</em>}' reference.
+	 * Sets the value of the '{@link pipeline.InternalDataFlow#getSchema <em>Schema</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Internal Schema</em>' reference.
-	 * @see #getInternalSchema()
+	 * @param value the new value of the '<em>Schema</em>' reference.
+	 * @see #getSchema()
 	 * @generated
 	 */
-	void setInternalSchema(Schema value);
+	void setSchema(Schema value);
 
 } // InternalDataFlow

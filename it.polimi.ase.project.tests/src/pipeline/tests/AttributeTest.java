@@ -4,10 +4,7 @@ package pipeline.tests;
 
 import junit.framework.TestCase;
 
-import junit.textui.TestRunner;
-
 import pipeline.Attribute;
-import pipeline.PipelineFactory;
 
 /**
  * <!-- begin-user-doc -->

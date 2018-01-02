@@ -41,6 +41,7 @@ public class AnalysisTaskImpl extends TaskImpl implements AnalysisTask {
 	 * @ordered
 	 */
 	protected EList<AnalysisOperation> analysisOperations;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

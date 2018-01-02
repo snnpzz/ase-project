@@ -41,6 +41,7 @@ public class CleaningTaskImpl extends TaskImpl implements CleaningTask {
 	 * @ordered
 	 */
 	protected EList<CleaningOperation> cleaningOperations;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

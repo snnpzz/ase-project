@@ -5,8 +5,9 @@ package pipeline.diagram.edit.parts;
 
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.Graphics;
-import org.eclipse.draw2d.PolylineDecoration;
+import org.eclipse.draw2d.PolygonDecoration;
 import org.eclipse.draw2d.RotatableDecoration;
+import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -79,7 +80,15 @@ public class InternalDataFlowEditPart extends ConnectionNodeEditPart implements 
 		 * @generated
 		 */
 		private RotatableDecoration createTargetDecoration() {
-			PolylineDecoration df = new PolylineDecoration();
+			PolygonDecoration df = new PolygonDecoration();
+			df.setFill(true);
+			PointList pl = new PointList();
+			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));
+			pl.addPoint(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(2));
+			pl.addPoint(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(-2));
+			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));
+			df.setTemplate(pl);
+			df.setScale(getMapMode().DPtoLP(7), getMapMode().DPtoLP(3));
 			return df;
 		}
 

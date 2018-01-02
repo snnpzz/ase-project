@@ -4,7 +4,6 @@ package pipeline;
 
 import org.eclipse.emf.common.util.EList;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Integration Task</b></em>'.
@@ -22,7 +21,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface IntegrationTask extends Task {
-
 	/**
 	 * Returns the value of the '<em><b>Attributes</b></em>' reference list.
 	 * The list contents are of type {@link pipeline.Attribute}.
@@ -35,7 +33,9 @@ public interface IntegrationTask extends Task {
 	 * @return the value of the '<em>Attributes</em>' reference list.
 	 * @see pipeline.PipelinePackage#getIntegrationTask_Attributes()
 	 * @model required="true"
+	 *        annotation="gmf.link width='2' target.decoration='closedarrow' tool.name='IntegrationAttributes'"
 	 * @generated
 	 */
 	EList<Attribute> getAttributes();
+
 } // IntegrationTask

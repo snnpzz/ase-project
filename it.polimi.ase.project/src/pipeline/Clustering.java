@@ -21,7 +21,6 @@ package pipeline;
  * @generated
  */
 public interface Clustering extends AnalysisOperation {
-
 	/**
 	 * Returns the value of the '<em><b>K</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -76,4 +75,5 @@ public interface Clustering extends AnalysisOperation {
 	 * @generated
 	 */
 	void setName(ClusteringOperation value);
+
 } // Clustering

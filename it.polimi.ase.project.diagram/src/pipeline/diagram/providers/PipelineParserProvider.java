@@ -19,24 +19,25 @@ import org.eclipse.gmf.tooling.runtime.parsers.EnumParser;
 
 import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
-import pipeline.diagram.edit.parts.ClassificationAnalysisOperationNameEditPart;
+import pipeline.diagram.edit.parts.ChartNameEditPart;
+import pipeline.diagram.edit.parts.ClassificationNameEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskIDEditPart;
-import pipeline.diagram.edit.parts.ClusteringAnalysisOperationNameEditPart;
+import pipeline.diagram.edit.parts.ClusteringNameEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskIDEditPart;
 import pipeline.diagram.edit.parts.ComplexAttributeName2EditPart;
 import pipeline.diagram.edit.parts.ComplexAttributeNameEditPart;
-import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationNameEditPart;
+import pipeline.diagram.edit.parts.DescriptiveNameEditPart;
 import pipeline.diagram.edit.parts.ExportNameEditPart;
 import pipeline.diagram.edit.parts.ExportTaskIDEditPart;
 import pipeline.diagram.edit.parts.FileNameEditPart;
 import pipeline.diagram.edit.parts.ImportNameEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
-import pipeline.diagram.edit.parts.PredefinedCleaningOperationNameEditPart;
-import pipeline.diagram.edit.parts.PredictiveAnalysisOperationNameEditPart;
+import pipeline.diagram.edit.parts.PredefinedNameEditPart;
+import pipeline.diagram.edit.parts.PredictiveNameEditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeName2EditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeNameEditPart;
 import pipeline.diagram.edit.parts.SourceNameEditPart;
-import pipeline.diagram.edit.parts.UserDefinedCleaningOperationNameEditPart;
+import pipeline.diagram.edit.parts.UserDefinedNameEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskIDEditPart;
 import pipeline.diagram.parsers.MessageFormatParser;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
@@ -202,104 +203,120 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 	/**
 	* @generated
 	*/
-	private IParser userDefinedCleaningOperationName_5102Parser;
+	private IParser userDefinedName_5108Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getUserDefinedCleaningOperationName_5102Parser() {
-		if (userDefinedCleaningOperationName_5102Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					PipelinePackage.eINSTANCE.getUserDefinedCleaningOperation_Name() };
+	private IParser getUserDefinedName_5108Parser() {
+		if (userDefinedName_5108Parser == null) {
+			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getUserDefined_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			userDefinedCleaningOperationName_5102Parser = parser;
+			userDefinedName_5108Parser = parser;
 		}
-		return userDefinedCleaningOperationName_5102Parser;
+		return userDefinedName_5108Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser predefinedCleaningOperationName_5103Parser;
+	private IParser predefinedName_5109Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getPredefinedCleaningOperationName_5103Parser() {
-		if (predefinedCleaningOperationName_5103Parser == null) {
-			EAttribute editableFeature = PipelinePackage.eINSTANCE.getPredefinedCleaningOperation_Name();
+	private IParser getPredefinedName_5109Parser() {
+		if (predefinedName_5109Parser == null) {
+			EAttribute editableFeature = PipelinePackage.eINSTANCE.getPredefined_Name();
 			EnumParser parser = new EnumParser(editableFeature);
-			predefinedCleaningOperationName_5103Parser = parser;
+			predefinedName_5109Parser = parser;
 		}
-		return predefinedCleaningOperationName_5103Parser;
+		return predefinedName_5109Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser descriptiveAnalysisOperationName_5104Parser;
+	private IParser descriptiveName_5110Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getDescriptiveAnalysisOperationName_5104Parser() {
-		if (descriptiveAnalysisOperationName_5104Parser == null) {
-			EAttribute editableFeature = PipelinePackage.eINSTANCE.getDescriptiveAnalysisOperation_Name();
+	private IParser getDescriptiveName_5110Parser() {
+		if (descriptiveName_5110Parser == null) {
+			EAttribute editableFeature = PipelinePackage.eINSTANCE.getDescriptive_Name();
 			EnumParser parser = new EnumParser(editableFeature);
-			descriptiveAnalysisOperationName_5104Parser = parser;
+			descriptiveName_5110Parser = parser;
 		}
-		return descriptiveAnalysisOperationName_5104Parser;
+		return descriptiveName_5110Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser classificationAnalysisOperationName_5105Parser;
+	private IParser classificationName_5111Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getClassificationAnalysisOperationName_5105Parser() {
-		if (classificationAnalysisOperationName_5105Parser == null) {
-			EAttribute editableFeature = PipelinePackage.eINSTANCE.getClassificationAnalysisOperation_Name();
+	private IParser getClassificationName_5111Parser() {
+		if (classificationName_5111Parser == null) {
+			EAttribute editableFeature = PipelinePackage.eINSTANCE.getClassification_Name();
 			EnumParser parser = new EnumParser(editableFeature);
-			classificationAnalysisOperationName_5105Parser = parser;
+			classificationName_5111Parser = parser;
 		}
-		return classificationAnalysisOperationName_5105Parser;
+		return classificationName_5111Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser predictiveAnalysisOperationName_5106Parser;
+	private IParser predictiveName_5112Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getPredictiveAnalysisOperationName_5106Parser() {
-		if (predictiveAnalysisOperationName_5106Parser == null) {
-			EAttribute editableFeature = PipelinePackage.eINSTANCE.getPredictiveAnalysisOperation_Name();
+	private IParser getPredictiveName_5112Parser() {
+		if (predictiveName_5112Parser == null) {
+			EAttribute editableFeature = PipelinePackage.eINSTANCE.getPredictive_Name();
 			EnumParser parser = new EnumParser(editableFeature);
-			predictiveAnalysisOperationName_5106Parser = parser;
+			predictiveName_5112Parser = parser;
 		}
-		return predictiveAnalysisOperationName_5106Parser;
+		return predictiveName_5112Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser clusteringAnalysisOperationName_5107Parser;
+	private IParser clusteringName_5113Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getClusteringAnalysisOperationName_5107Parser() {
-		if (clusteringAnalysisOperationName_5107Parser == null) {
-			EAttribute editableFeature = PipelinePackage.eINSTANCE.getClusteringAnalysisOperation_Name();
+	private IParser getClusteringName_5113Parser() {
+		if (clusteringName_5113Parser == null) {
+			EAttribute editableFeature = PipelinePackage.eINSTANCE.getClustering_Name();
 			EnumParser parser = new EnumParser(editableFeature);
-			clusteringAnalysisOperationName_5107Parser = parser;
+			clusteringName_5113Parser = parser;
 		}
-		return clusteringAnalysisOperationName_5107Parser;
+		return clusteringName_5113Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser chartName_5114Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getChartName_5114Parser() {
+		if (chartName_5114Parser == null) {
+			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getChart_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			chartName_5114Parser = parser;
+		}
+		return chartName_5114Parser;
 	}
 
 	/**
@@ -410,23 +427,25 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 			return getFileName_5097Parser();
 		case ImportNameEditPart.VISUAL_ID:
 			return getImportName_5057Parser();
-		case UserDefinedCleaningOperationNameEditPart.VISUAL_ID:
-			return getUserDefinedCleaningOperationName_5102Parser();
+		case UserDefinedNameEditPart.VISUAL_ID:
+			return getUserDefinedName_5108Parser();
 
-		case PredefinedCleaningOperationNameEditPart.VISUAL_ID:
-			return getPredefinedCleaningOperationName_5103Parser();
+		case PredefinedNameEditPart.VISUAL_ID:
+			return getPredefinedName_5109Parser();
 
-		case DescriptiveAnalysisOperationNameEditPart.VISUAL_ID:
-			return getDescriptiveAnalysisOperationName_5104Parser();
+		case DescriptiveNameEditPart.VISUAL_ID:
+			return getDescriptiveName_5110Parser();
 
-		case ClassificationAnalysisOperationNameEditPart.VISUAL_ID:
-			return getClassificationAnalysisOperationName_5105Parser();
+		case ClassificationNameEditPart.VISUAL_ID:
+			return getClassificationName_5111Parser();
 
-		case PredictiveAnalysisOperationNameEditPart.VISUAL_ID:
-			return getPredictiveAnalysisOperationName_5106Parser();
+		case PredictiveNameEditPart.VISUAL_ID:
+			return getPredictiveName_5112Parser();
 
-		case ClusteringAnalysisOperationNameEditPart.VISUAL_ID:
-			return getClusteringAnalysisOperationName_5107Parser();
+		case ClusteringNameEditPart.VISUAL_ID:
+			return getClusteringName_5113Parser();
+		case ChartNameEditPart.VISUAL_ID:
+			return getChartName_5114Parser();
 		case ExportNameEditPart.VISUAL_ID:
 			return getExportName_5076Parser();
 		case SimpleAttributeNameEditPart.VISUAL_ID:

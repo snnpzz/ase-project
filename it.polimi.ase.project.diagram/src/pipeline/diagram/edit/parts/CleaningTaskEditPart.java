@@ -287,13 +287,13 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 		 */
 		private WrappingLabel fFigureCleaningTaskLabelFigure;
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		private RectangleFigure fCleaningTaskCleaningOperationsCompartmentFigure;
 
 		/**
-			 * @generated
-			 */
+		 * @generated
+		 */
 		public CleaningTaskFigure() {
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
@@ -330,8 +330,8 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public RectangleFigure getCleaningTaskCleaningOperationsCompartmentFigure() {
 			return fCleaningTaskCleaningOperationsCompartmentFigure;
 		}

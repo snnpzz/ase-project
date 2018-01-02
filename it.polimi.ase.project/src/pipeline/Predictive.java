@@ -20,7 +20,6 @@ package pipeline;
  * @generated
  */
 public interface Predictive extends AnalysisOperation {
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * The literals are from the enumeration {@link pipeline.PredictiveOperation}.
@@ -49,4 +48,5 @@ public interface Predictive extends AnalysisOperation {
 	 * @generated
 	 */
 	void setName(PredictiveOperation value);
+
 } // Predictive

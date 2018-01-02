@@ -69,16 +69,17 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 			case PipelinePackage.EXPORT_TASK: return createExportTask();
 			case PipelinePackage.IMPORT: return createImport();
 			case PipelinePackage.EXPORT: return createExport();
-			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION: return createUserDefinedCleaningOperation();
+			case PipelinePackage.USER_DEFINED: return createUserDefined();
 			case PipelinePackage.SOURCE: return createSource();
 			case PipelinePackage.FILE: return createFile();
-			case PipelinePackage.DESCRIPTIVE_ANALYSIS_OPERATION: return createDescriptiveAnalysisOperation();
-			case PipelinePackage.CLASSIFICATION_ANALYSIS_OPERATION: return createClassificationAnalysisOperation();
-			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION: return createPredictiveAnalysisOperation();
-			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION: return createClusteringAnalysisOperation();
-			case PipelinePackage.PREDEFINED_CLEANING_OPERATION: return createPredefinedCleaningOperation();
+			case PipelinePackage.DESCRIPTIVE: return createDescriptive();
+			case PipelinePackage.CLASSIFICATION: return createClassification();
+			case PipelinePackage.PREDICTIVE: return createPredictive();
+			case PipelinePackage.CLUSTERING: return createClustering();
+			case PipelinePackage.PREDEFINED: return createPredefined();
 			case PipelinePackage.SIMPLE_ATTRIBUTE: return createSimpleAttribute();
 			case PipelinePackage.COMPLEX_ATTRIBUTE: return createComplexAttribute();
+			case PipelinePackage.CHART: return createChart();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -271,9 +272,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UserDefinedCleaningOperation createUserDefinedCleaningOperation() {
-		UserDefinedCleaningOperationImpl userDefinedCleaningOperation = new UserDefinedCleaningOperationImpl();
-		return userDefinedCleaningOperation;
+	public UserDefined createUserDefined() {
+		UserDefinedImpl userDefined = new UserDefinedImpl();
+		return userDefined;
 	}
 
 	/**
@@ -301,9 +302,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DescriptiveAnalysisOperation createDescriptiveAnalysisOperation() {
-		DescriptiveAnalysisOperationImpl descriptiveAnalysisOperation = new DescriptiveAnalysisOperationImpl();
-		return descriptiveAnalysisOperation;
+	public Descriptive createDescriptive() {
+		DescriptiveImpl descriptive = new DescriptiveImpl();
+		return descriptive;
 	}
 
 	/**
@@ -311,9 +312,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClassificationAnalysisOperation createClassificationAnalysisOperation() {
-		ClassificationAnalysisOperationImpl classificationAnalysisOperation = new ClassificationAnalysisOperationImpl();
-		return classificationAnalysisOperation;
+	public Classification createClassification() {
+		ClassificationImpl classification = new ClassificationImpl();
+		return classification;
 	}
 
 	/**
@@ -321,9 +322,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PredictiveAnalysisOperation createPredictiveAnalysisOperation() {
-		PredictiveAnalysisOperationImpl predictiveAnalysisOperation = new PredictiveAnalysisOperationImpl();
-		return predictiveAnalysisOperation;
+	public Predictive createPredictive() {
+		PredictiveImpl predictive = new PredictiveImpl();
+		return predictive;
 	}
 
 	/**
@@ -331,9 +332,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClusteringAnalysisOperation createClusteringAnalysisOperation() {
-		ClusteringAnalysisOperationImpl clusteringAnalysisOperation = new ClusteringAnalysisOperationImpl();
-		return clusteringAnalysisOperation;
+	public Clustering createClustering() {
+		ClusteringImpl clustering = new ClusteringImpl();
+		return clustering;
 	}
 
 	/**
@@ -341,9 +342,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PredefinedCleaningOperation createPredefinedCleaningOperation() {
-		PredefinedCleaningOperationImpl predefinedCleaningOperation = new PredefinedCleaningOperationImpl();
-		return predefinedCleaningOperation;
+	public Predefined createPredefined() {
+		PredefinedImpl predefined = new PredefinedImpl();
+		return predefined;
 	}
 
 	/**
@@ -364,6 +365,16 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	public ComplexAttribute createComplexAttribute() {
 		ComplexAttributeImpl complexAttribute = new ComplexAttributeImpl();
 		return complexAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Chart createChart() {
+		ChartImpl chart = new ChartImpl();
+		return chart;
 	}
 
 	/**

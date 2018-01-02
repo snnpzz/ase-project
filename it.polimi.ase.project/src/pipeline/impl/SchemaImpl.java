@@ -16,15 +16,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import pipeline.Attribute;
-import pipeline.DataFlow;
-import pipeline.Export;
-import pipeline.Import;
-import pipeline.InternalDataFlow;
 import pipeline.PipelinePackage;
 import pipeline.Schema;
 
@@ -62,6 +56,7 @@ public class SchemaImpl extends EObjectImpl implements Schema {
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

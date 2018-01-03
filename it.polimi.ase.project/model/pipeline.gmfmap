@@ -37,7 +37,7 @@
             <diagramLabel
                 href="pipeline.gmfgraph#ImportOperationLabel"/>
             <features
-                href="pipeline.ecore#//ImportOperation/name"/>
+                href="pipeline.ecore#//ImportOperation/ID"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -302,7 +302,7 @@
             <diagramLabel
                 href="pipeline.gmfgraph#ExportOperationLabel"/>
             <features
-                href="pipeline.ecore#//ExportOperation/name"/>
+                href="pipeline.ecore#//ExportOperation/ID"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

@@ -48,6 +48,7 @@ import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationEditPart;
 import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.ExportOperationEditPart;
 import pipeline.diagram.edit.parts.ExportOperationExpUsesEditPart;
+import pipeline.diagram.edit.parts.ExportOperationIDEditPart;
 import pipeline.diagram.edit.parts.ExportOperationNameEditPart;
 import pipeline.diagram.edit.parts.ExportOperationWriteEditPart;
 import pipeline.diagram.edit.parts.ExportTaskEditPart;
@@ -55,6 +56,7 @@ import pipeline.diagram.edit.parts.ExportTaskIDEditPart;
 import pipeline.diagram.edit.parts.FileEditPart;
 import pipeline.diagram.edit.parts.FileNameEditPart;
 import pipeline.diagram.edit.parts.ImportOperationEditPart;
+import pipeline.diagram.edit.parts.ImportOperationIDEditPart;
 import pipeline.diagram.edit.parts.ImportOperationImpUsesEditPart;
 import pipeline.diagram.edit.parts.ImportOperationNameEditPart;
 import pipeline.diagram.edit.parts.ImportOperationReadEditPart;
@@ -708,7 +710,7 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	private String getImportOperation_3013Text(View view) {
 		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.ImportOperation_3013,
 				view.getElement() != null ? view.getElement() : view,
-				PipelineVisualIDRegistry.getType(ImportOperationNameEditPart.VISUAL_ID));
+				PipelineVisualIDRegistry.getType(ImportOperationIDEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
@@ -724,7 +726,7 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	private String getExportOperation_3014Text(View view) {
 		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.ExportOperation_3014,
 				view.getElement() != null ? view.getElement() : view,
-				PipelineVisualIDRegistry.getType(ExportOperationNameEditPart.VISUAL_ID));
+				PipelineVisualIDRegistry.getType(ExportOperationIDEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());

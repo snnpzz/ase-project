@@ -27,9 +27,11 @@ import pipeline.diagram.edit.parts.CollectionTaskIDEditPart;
 import pipeline.diagram.edit.parts.ComplexAttributeName2EditPart;
 import pipeline.diagram.edit.parts.ComplexAttributeNameEditPart;
 import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationNameEditPart;
+import pipeline.diagram.edit.parts.ExportOperationIDEditPart;
 import pipeline.diagram.edit.parts.ExportOperationNameEditPart;
 import pipeline.diagram.edit.parts.ExportTaskIDEditPart;
 import pipeline.diagram.edit.parts.FileNameEditPart;
+import pipeline.diagram.edit.parts.ImportOperationIDEditPart;
 import pipeline.diagram.edit.parts.ImportOperationNameEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
 import pipeline.diagram.edit.parts.PredefinedCleaningOperationNameEditPart;
@@ -203,18 +205,18 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 	/**
 	* @generated
 	*/
-	private IParser importOperationName_5022Parser;
+	private IParser importOperationID_5022Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getImportOperationName_5022Parser() {
-		if (importOperationName_5022Parser == null) {
-			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getImportOperation_Name() };
+	private IParser getImportOperationID_5022Parser() {
+		if (importOperationID_5022Parser == null) {
+			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getImportOperation_ID() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			importOperationName_5022Parser = parser;
+			importOperationID_5022Parser = parser;
 		}
-		return importOperationName_5022Parser;
+		return importOperationID_5022Parser;
 	}
 
 	/**
@@ -323,18 +325,18 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 	/**
 	* @generated
 	*/
-	private IParser exportOperationName_5023Parser;
+	private IParser exportOperationID_5023Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getExportOperationName_5023Parser() {
-		if (exportOperationName_5023Parser == null) {
-			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getExportOperation_Name() };
+	private IParser getExportOperationID_5023Parser() {
+		if (exportOperationID_5023Parser == null) {
+			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getExportOperation_ID() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			exportOperationName_5023Parser = parser;
+			exportOperationID_5023Parser = parser;
 		}
-		return exportOperationName_5023Parser;
+		return exportOperationID_5023Parser;
 	}
 
 	/**
@@ -428,8 +430,8 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 			return getFileName_5016Parser();
 		case ChartNameEditPart.VISUAL_ID:
 			return getChartName_5021Parser();
-		case ImportOperationNameEditPart.VISUAL_ID:
-			return getImportOperationName_5022Parser();
+		case ImportOperationIDEditPart.VISUAL_ID:
+			return getImportOperationID_5022Parser();
 		case UserDefinedCleaningOperationNameEditPart.VISUAL_ID:
 			return getUserDefinedCleaningOperationName_5004Parser();
 
@@ -447,8 +449,8 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 
 		case ClusteringAnalysisOperationNameEditPart.VISUAL_ID:
 			return getClusteringAnalysisOperationName_5010Parser();
-		case ExportOperationNameEditPart.VISUAL_ID:
-			return getExportOperationName_5023Parser();
+		case ExportOperationIDEditPart.VISUAL_ID:
+			return getExportOperationID_5023Parser();
 		case SimpleAttributeNameEditPart.VISUAL_ID:
 			return getSimpleAttributeName_5017Parser();
 		case ComplexAttributeNameEditPart.VISUAL_ID:

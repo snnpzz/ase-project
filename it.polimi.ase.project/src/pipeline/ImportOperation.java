@@ -15,11 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link pipeline.ImportOperation#getRead <em>Read</em>}</li>
  *   <li>{@link pipeline.ImportOperation#getImpUses <em>Imp Uses</em>}</li>
- *   <li>{@link pipeline.ImportOperation#getName <em>Name</em>}</li>
+ *   <li>{@link pipeline.ImportOperation#getID <em>ID</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getImportOperation()
- * @model annotation="gmf.node label='name' label.text='Import' figure='ellipse'"
+ * @model annotation="gmf.node label='ID' label.text='Import' figure='ellipse'"
  * @generated
  */
 public interface ImportOperation extends EObject {
@@ -80,29 +80,29 @@ public interface ImportOperation extends EObject {
 	void setImpUses(Schema value);
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>ID</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see pipeline.PipelinePackage#getImportOperation_Name()
-	 * @model
+	 * @return the value of the '<em>ID</em>' attribute.
+	 * @see #setID(String)
+	 * @see pipeline.PipelinePackage#getImportOperation_ID()
+	 * @model id="true"
 	 * @generated
 	 */
-	String getName();
+	String getID();
 
 	/**
-	 * Sets the value of the '{@link pipeline.ImportOperation#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link pipeline.ImportOperation#getID <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>ID</em>' attribute.
+	 * @see #getID()
 	 * @generated
 	 */
-	void setName(String value);
+	void setID(String value);
 
 } // ImportOperation

@@ -88,8 +88,8 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case ImportOperationEditPart.VISUAL_ID:
 				return new ImportOperationEditPart(view);
 
-			case ImportOperationNameEditPart.VISUAL_ID:
-				return new ImportOperationNameEditPart(view);
+			case ImportOperationIDEditPart.VISUAL_ID:
+				return new ImportOperationIDEditPart(view);
 
 			case UserDefinedCleaningOperationEditPart.VISUAL_ID:
 				return new UserDefinedCleaningOperationEditPart(view);
@@ -130,8 +130,8 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case ExportOperationEditPart.VISUAL_ID:
 				return new ExportOperationEditPart(view);
 
-			case ExportOperationNameEditPart.VISUAL_ID:
-				return new ExportOperationNameEditPart(view);
+			case ExportOperationIDEditPart.VISUAL_ID:
+				return new ExportOperationIDEditPart(view);
 
 			case SimpleAttributeEditPart.VISUAL_ID:
 				return new SimpleAttributeEditPart(view);

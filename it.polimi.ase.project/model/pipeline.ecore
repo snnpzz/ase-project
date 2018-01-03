@@ -151,7 +151,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImportOperation">
     <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
+      <details key="label" value="ID"/>
       <details key="label.text" value="Import"/>
       <details key="figure" value="ellipse"/>
     </eAnnotations>
@@ -170,11 +170,12 @@
         <details key="target.decoration" value="arrow"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExportOperation">
     <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
+      <details key="label" value="ID"/>
       <details key="label.text" value="Export"/>
       <details key="figure" value="ellipse"/>
     </eAnnotations>
@@ -193,7 +194,8 @@
         <details key="target.decoration" value="arrow"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UserDefinedCleaningOperation" eSuperTypes="#//CleaningOperation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -833,7 +833,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImportOperation_Name() {
+	public EAttribute getImportOperation_ID() {
 		return (EAttribute)importOperationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -869,7 +869,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getExportOperation_Name() {
+	public EAttribute getExportOperation_ID() {
 		return (EAttribute)exportOperationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1386,12 +1386,12 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		importOperationEClass = createEClass(IMPORT_OPERATION);
 		createEReference(importOperationEClass, IMPORT_OPERATION__READ);
 		createEReference(importOperationEClass, IMPORT_OPERATION__IMP_USES);
-		createEAttribute(importOperationEClass, IMPORT_OPERATION__NAME);
+		createEAttribute(importOperationEClass, IMPORT_OPERATION__ID);
 
 		exportOperationEClass = createEClass(EXPORT_OPERATION);
 		createEReference(exportOperationEClass, EXPORT_OPERATION__WRITE);
 		createEReference(exportOperationEClass, EXPORT_OPERATION__EXP_USES);
-		createEAttribute(exportOperationEClass, EXPORT_OPERATION__NAME);
+		createEAttribute(exportOperationEClass, EXPORT_OPERATION__ID);
 
 		userDefinedCleaningOperationEClass = createEClass(USER_DEFINED_CLEANING_OPERATION);
 		createEAttribute(userDefinedCleaningOperationEClass, USER_DEFINED_CLEANING_OPERATION__NAME);
@@ -1565,12 +1565,12 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEClass(importOperationEClass, ImportOperation.class, "ImportOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getImportOperation_Read(), this.getSource(), this.getSource_LinkedTo(), "read", null, 1, 1, ImportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getImportOperation_ImpUses(), this.getSchema(), null, "impUses", null, 1, 1, ImportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImportOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, ImportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImportOperation_ID(), ecorePackage.getEString(), "ID", null, 0, 1, ImportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exportOperationEClass, ExportOperation.class, "ExportOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExportOperation_Write(), this.getFile(), this.getFile_ComesFrom(), "write", null, 1, 1, ExportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExportOperation_ExpUses(), this.getSchema(), null, "expUses", null, 1, 1, ExportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getExportOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, ExportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExportOperation_ID(), ecorePackage.getEString(), "ID", null, 0, 1, ExportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(userDefinedCleaningOperationEClass, UserDefinedCleaningOperation.class, "UserDefinedCleaningOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserDefinedCleaningOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, UserDefinedCleaningOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1761,7 +1761,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		  (importOperationEClass, 
 		   source, 
 		   new String[] {
-			 "label", "name",
+			 "label", "ID",
 			 "label.text", "Import",
 			 "figure", "ellipse"
 		   });	
@@ -1769,7 +1769,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		  (exportOperationEClass, 
 		   source, 
 		   new String[] {
-			 "label", "name",
+			 "label", "ID",
 			 "label.text", "Export",
 			 "figure", "ellipse"
 		   });	

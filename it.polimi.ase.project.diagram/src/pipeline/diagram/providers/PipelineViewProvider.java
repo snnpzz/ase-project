@@ -74,6 +74,7 @@ import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationEditPart;
 import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.ExportOperationEditPart;
 import pipeline.diagram.edit.parts.ExportOperationExpUsesEditPart;
+import pipeline.diagram.edit.parts.ExportOperationIDEditPart;
 import pipeline.diagram.edit.parts.ExportOperationNameEditPart;
 import pipeline.diagram.edit.parts.ExportOperationWriteEditPart;
 import pipeline.diagram.edit.parts.ExportTaskEditPart;
@@ -82,6 +83,7 @@ import pipeline.diagram.edit.parts.ExportTaskIDEditPart;
 import pipeline.diagram.edit.parts.FileEditPart;
 import pipeline.diagram.edit.parts.FileNameEditPart;
 import pipeline.diagram.edit.parts.ImportOperationEditPart;
+import pipeline.diagram.edit.parts.ImportOperationIDEditPart;
 import pipeline.diagram.edit.parts.ImportOperationImpUsesEditPart;
 import pipeline.diagram.edit.parts.ImportOperationNameEditPart;
 import pipeline.diagram.edit.parts.ImportOperationReadEditPart;
@@ -806,7 +808,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5022 = createLabel(node, PipelineVisualIDRegistry.getType(ImportOperationNameEditPart.VISUAL_ID));
+		Node label5022 = createLabel(node, PipelineVisualIDRegistry.getType(ImportOperationIDEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -1064,7 +1066,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5023 = createLabel(node, PipelineVisualIDRegistry.getType(ExportOperationNameEditPart.VISUAL_ID));
+		Node label5023 = createLabel(node, PipelineVisualIDRegistry.getType(ExportOperationIDEditPart.VISUAL_ID));
 		return node;
 	}
 

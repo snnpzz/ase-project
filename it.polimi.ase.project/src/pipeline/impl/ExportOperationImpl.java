@@ -26,7 +26,7 @@ import pipeline.Schema;
  * <ul>
  *   <li>{@link pipeline.impl.ExportOperationImpl#getWrite <em>Write</em>}</li>
  *   <li>{@link pipeline.impl.ExportOperationImpl#getExpUses <em>Exp Uses</em>}</li>
- *   <li>{@link pipeline.impl.ExportOperationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link pipeline.impl.ExportOperationImpl#getID <em>ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,24 +53,24 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 	protected Schema expUses;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getID()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getID()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,8 +194,8 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getID() {
+		return id;
 	}
 
 	/**
@@ -203,11 +203,11 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setID(String newID) {
+		String oldID = id;
+		id = newID;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT_OPERATION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT_OPERATION__ID, oldID, id));
 	}
 
 	/**
@@ -254,8 +254,8 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 			case PipelinePackage.EXPORT_OPERATION__EXP_USES:
 				if (resolve) return getExpUses();
 				return basicGetExpUses();
-			case PipelinePackage.EXPORT_OPERATION__NAME:
-				return getName();
+			case PipelinePackage.EXPORT_OPERATION__ID:
+				return getID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -274,8 +274,8 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 			case PipelinePackage.EXPORT_OPERATION__EXP_USES:
 				setExpUses((Schema)newValue);
 				return;
-			case PipelinePackage.EXPORT_OPERATION__NAME:
-				setName((String)newValue);
+			case PipelinePackage.EXPORT_OPERATION__ID:
+				setID((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -295,8 +295,8 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 			case PipelinePackage.EXPORT_OPERATION__EXP_USES:
 				setExpUses((Schema)null);
 				return;
-			case PipelinePackage.EXPORT_OPERATION__NAME:
-				setName(NAME_EDEFAULT);
+			case PipelinePackage.EXPORT_OPERATION__ID:
+				setID(ID_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -314,8 +314,8 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 				return write != null;
 			case PipelinePackage.EXPORT_OPERATION__EXP_USES:
 				return expUses != null;
-			case PipelinePackage.EXPORT_OPERATION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case PipelinePackage.EXPORT_OPERATION__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -330,8 +330,8 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (ID: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}

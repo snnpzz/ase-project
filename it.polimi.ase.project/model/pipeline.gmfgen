@@ -16,11 +16,11 @@
         <containmentMetaFeature href="pipeline.genmodel#//pipeline/CollectionTask/importOperations"/>
         <childMetaFeature href="pipeline.genmodel#//pipeline/CollectionTask/importOperations"/>
       </modelFacet>
-      <labels visualID="5022" editPartClassName="ImportOperationNameEditPart" itemSemanticEditPolicyClassName="ImportOperationNameItemSemanticEditPolicy" elementIcon="true">
+      <labels visualID="5022" editPartClassName="ImportOperationIDEditPart" itemSemanticEditPolicyClassName="ImportOperationIDItemSemanticEditPolicy" elementIcon="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureImportOperationLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="pipeline.genmodel#//pipeline/ImportOperation/name"/>
+          <metaFeatures href="pipeline.genmodel#//pipeline/ImportOperation/ID"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -135,11 +135,11 @@
         <containmentMetaFeature href="pipeline.genmodel#//pipeline/ExportTask/exportOperations"/>
         <childMetaFeature href="pipeline.genmodel#//pipeline/ExportTask/exportOperations"/>
       </modelFacet>
-      <labels visualID="5023" editPartClassName="ExportOperationNameEditPart" itemSemanticEditPolicyClassName="ExportOperationNameItemSemanticEditPolicy" elementIcon="true">
+      <labels visualID="5023" editPartClassName="ExportOperationIDEditPart" itemSemanticEditPolicyClassName="ExportOperationIDItemSemanticEditPolicy" elementIcon="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureExportOperationLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="pipeline.genmodel#//pipeline/ExportOperation/name"/>
+          <metaFeatures href="pipeline.genmodel#//pipeline/ExportOperation/ID"/>
         </modelFacet>
       </labels>
     </childNodes>

@@ -62,7 +62,7 @@ public class ExportOperationItemProvider
 
 			addWritePropertyDescriptor(object);
 			addExpUsesPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
+			addIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -112,19 +112,19 @@ public class ExportOperationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the ID feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addIDPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ExportOperation_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExportOperation_name_feature", "_UI_ExportOperation_type"),
-				 PipelinePackage.Literals.EXPORT_OPERATION__NAME,
+				 getString("_UI_ExportOperation_ID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ExportOperation_ID_feature", "_UI_ExportOperation_type"),
+				 PipelinePackage.Literals.EXPORT_OPERATION__ID,
 				 true,
 				 false,
 				 false,
@@ -152,7 +152,7 @@ public class ExportOperationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ExportOperation)object).getName();
+		String label = ((ExportOperation)object).getID();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ExportOperation_type") :
 			getString("_UI_ExportOperation_type") + " " + label;
@@ -171,7 +171,7 @@ public class ExportOperationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ExportOperation.class)) {
-			case PipelinePackage.EXPORT_OPERATION__NAME:
+			case PipelinePackage.EXPORT_OPERATION__ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

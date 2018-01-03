@@ -791,13 +791,13 @@ public interface PipelinePackage extends EPackage {
 	int IMPORT_OPERATION__IMP_USES = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPORT_OPERATION__NAME = 2;
+	int IMPORT_OPERATION__ID = 2;
 
 	/**
 	 * The number of structural features of the '<em>Import Operation</em>' class.
@@ -837,13 +837,13 @@ public interface PipelinePackage extends EPackage {
 	int EXPORT_OPERATION__EXP_USES = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORT_OPERATION__NAME = 2;
+	int EXPORT_OPERATION__ID = 2;
 
 	/**
 	 * The number of structural features of the '<em>Export Operation</em>' class.
@@ -2223,15 +2223,15 @@ public interface PipelinePackage extends EPackage {
 	EReference getImportOperation_ImpUses();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.ImportOperation#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.ImportOperation#getID <em>ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see pipeline.ImportOperation#getName()
+	 * @return the meta object for the attribute '<em>ID</em>'.
+	 * @see pipeline.ImportOperation#getID()
 	 * @see #getImportOperation()
 	 * @generated
 	 */
-	EAttribute getImportOperation_Name();
+	EAttribute getImportOperation_ID();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.ExportOperation <em>Export Operation</em>}'.
@@ -2266,15 +2266,15 @@ public interface PipelinePackage extends EPackage {
 	EReference getExportOperation_ExpUses();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.ExportOperation#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.ExportOperation#getID <em>ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see pipeline.ExportOperation#getName()
+	 * @return the meta object for the attribute '<em>ID</em>'.
+	 * @see pipeline.ExportOperation#getID()
 	 * @see #getExportOperation()
 	 * @generated
 	 */
-	EAttribute getExportOperation_Name();
+	EAttribute getExportOperation_ID();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.UserDefinedCleaningOperation <em>User Defined Cleaning Operation</em>}'.
@@ -3213,12 +3213,12 @@ public interface PipelinePackage extends EPackage {
 		EReference IMPORT_OPERATION__IMP_USES = eINSTANCE.getImportOperation_ImpUses();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute IMPORT_OPERATION__NAME = eINSTANCE.getImportOperation_Name();
+		EAttribute IMPORT_OPERATION__ID = eINSTANCE.getImportOperation_ID();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.ExportOperationImpl <em>Export Operation</em>}' class.
@@ -3247,12 +3247,12 @@ public interface PipelinePackage extends EPackage {
 		EReference EXPORT_OPERATION__EXP_USES = eINSTANCE.getExportOperation_ExpUses();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EXPORT_OPERATION__NAME = eINSTANCE.getExportOperation_Name();
+		EAttribute EXPORT_OPERATION__ID = eINSTANCE.getExportOperation_ID();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.UserDefinedCleaningOperationImpl <em>User Defined Cleaning Operation</em>}' class.

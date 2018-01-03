@@ -40,7 +40,7 @@ context Pipeline{
 		check: self.tasks -> reject(T1 | T1.isTypeOf(CollectionTask) or T1.isTypeOf(ExportTask)) ->
 			forAll(t1 | self.tasks -> reject(T2 | T2.isTypeOf(CollectionTask) or T2.isTypeOf(ExportTask)) ->
 			forAll(t2 | t1.outgoing.schema == t2.outgoing.schema))
-		message: "Dataflow between tasks must be linked to the same schema"
+		message: "Data Flow between tasks must be linked to the same schema"
 	}
 	
 	constraint operationNextIsCleaning {
@@ -102,45 +102,45 @@ context Pipeline{
 		message: "Dataflow between analysis operations must be linked to the same schema as the external dataflow"
 	}
 	
-	constraint DataFlowBetweenCleaningOperation {
+	constraint dataFlowBetweenCleaningOperation {
 		check: self.tasks -> collect(t:CleaningTask | t.cleaningOperations -> size()) -> sum() <= 
 			(self.internalDataFlows -> select(d | d.source.isKindOf(CleaningOperation) and 
 			d.target.isKindOf(CleaningOperation)) -> size() + 1) or 
 			collect(t:CleaningTask | t.cleaningOperations -> size()) -> sum() == 0
-		message: "Missing one or more dataflows between cleaning operations"
+		message: "Missing one or more data flows between cleaning operations"
 	}
 	
-	constraint DataFlowBetweenAnalysisOperation {
+	constraint dataFlowBetweenAnalysisOperation {
 		check: self.tasks -> collect(t:AnalysisTask | t.analysisOperations -> size()) -> sum() <= 
 			(self.internalDataFlows -> select(d | d.source.isKindOf(AnalysisOperation) and 
 			d.target.isKindOf(AnalysisOperation)) -> size() + 1) or 
 			self.tasks -> collect(t:AnalysisTask | t.analysisOperations -> size()) -> sum() == 0
-		message: "Missing one or more dataflows between analysis operations"
+		message: "Missing one or more data flows between analysis operations"
 	}
 	
-	constraint manySourcesAsManyImports {
-		check: self.sources -> size() == self.tasks -> select(t | t.isTypeOf(CollectionTask)).importOperations -> size()
+	constraint asManySourcesAsManyImportOperations {
+		check: self.sources -> size() == (self.tasks -> select(t | t.isTypeOf(CollectionTask)).importOperations) -> size()
 		message: "There must be as many input sources as many import operations."
 	}
 	
-	constraint manyFilesAsManyExports {
-		check: self.files -> size() == self.tasks -> select(t | t.isTypeOf(ExportTask)).exportOperations -> size()
+	constraint asManyFilesAsManyExportOperations {
+		check: self.files -> size() == (self.tasks -> select(t | t.isTypeOf(ExportTask)).exportOperations) -> size()
 		message: "There must be as many output files as many export operations."
 	}
 	
 	constraint ifManySourcesIntegration {
-		check: (self.sources -> size() == 1) or (self.sources -> size() > 1 and self.tasks -> select(t | t.isTypeOf(IntegrationTask)) -> size() > 1)
+		check: (self.sources -> size() = 1) or (self.sources -> size() > 1 and self.tasks -> select(t | t.isTypeOf(IntegrationTask)) -> size() = 1)
 		message: "If there are many input sources there must be a integration task"
 	}
 	
-	constraint sourceImportedOnce {
-		check: self.sources -> forAll(s | (self.tasks -> select(t | t.isTypeOf(CollectionTask)).importOperations.read == s) -> size() == 1)
-		message: "Imports must be linked to different input sources"
+	constraint eachSourceImportedOnce {
+		check: select(s | self.sources.linkedTo <> 1) -> size() <> 0
+		message: "Import operations must be linked to different input sources"
 	}
 	
 	constraint fileExportedOnce {
-		check: self.files -> forAll(f | (self.tasks -> select(t | t.isTypeOf(ExportTask)).exportOperations.write == f) -> size() == 1)
-		message: "Exports must be linked to different output files"
+		check: self.files.comesFrom -> size() = 1
+		message: "Export operations must be linked to different output files"
 	}
 }
 
@@ -173,8 +173,8 @@ context CollectionTask{
 	}
 	
 	constraint pairsOfSchema {
-		check: self.importOperations.schema -> forAll(s1 | self.outgoing -> select(df | df.schema == s1) -> size() > 0) and
-			self.outgoing.schema -> forAll(s2 | self.importOperations -> select(i | i.schema == s2) -> size() > 0)
+		check: self.importOperations.impUses -> forAll(s1 | self.outgoing -> select(df | df.schema == s1) -> size() > 0) and
+			self.outgoing.schema -> forAll(s2 | self.importOperations -> select(i | i.impUses == s2) -> size() > 0)
 		message: "Links to schema must be paired wrt import and outgoing dataflow"
 	}
 }
@@ -197,22 +197,22 @@ context CleaningTask{
 	
 	constraint uniqueInternalDataFlowIn {
 		check: self.CleaningOperations -> forAll(o | o.outgoing -> size() <= 1)
-		message: "Cleaning operations can have at maximum one outgoing internal dataflow"
+		message: "Cleaning operations can have at maximum one outgoing internal data flow"
 	}
 	
 	constraint uniqueInternalDataFlowOut {
 		check: self.cleaningOperations -> forAll(o | o.incoming -> size() <= 1)
-		message: "Cleaning operations can have at maximum one incoming internal dataflow"
+		message: "Cleaning operations can have at maximum one incoming internal data flow"
 	}
 	
 	constraint initialCleaningOperation {
 		check: self.cleaningOperations -> select(op | op.incoming == null) -> size() == 1
-		message: "There can be just one initial cleaning operation. Some internal dataflows are wrong"
+		message: "There can be just one initial cleaning operation. Some internal data flows are wrong"
 	}
 	
 	constraint finalCleaningOperation {
 		check: self.cleaningOperations -> select(op | op.outgoing == null) -> size() == 1
-		message: "There can be just one final cleaning operation. Some internal dataflows are wrong"
+		message: "There can be just one final cleaning operation. Some internal data flows are wrong"
 	}
 	
 }
@@ -232,17 +232,17 @@ context AnalysisTask{
 	
 	constraint uniqueInternalDataFlowOut {
 		check: self.analysisOperations -> forAll(o | o.incoming -> size() <= 1)
-		message: "Analyzes operations can have at maximum one incoming internal dataflow"
+		message: "Analyzes operations can have at maximum one incoming internal data flow"
 	}
 	
 	constraint initialAnalysisOperation {
 		check: self.analysisOperations -> select(op | op.incoming == null) -> size() == 1
-		message: "There can be just one initial analysis operation. Some internal dataflows are wrong"
+		message: "There can be just one initial analysis operation. Some internal data flows are wrong"
 	}
 	
 	constraint finalAnalysisOperation {
 		check: self.analysisOperations -> select(op | op.outgoing == null) -> size() == 1
-		message: "There can be just one final analysis operation. Some internal dataflows are wrong"
+		message: "There can be just one final analysis operation. Some internal data flows are wrong"
 	}
 }
 
@@ -264,7 +264,7 @@ context ExportTask{
 }
 
 
-context Schema{
+context Schema {
 	constraint uniqueAttribute {
 		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
 		message: "There can't be more attributes with the same name in the same schema"
@@ -272,7 +272,7 @@ context Schema{
 }
 
 
-context ComplexAttribute{
+context ComplexAttribute {
 	constraint uniqueAttribute {
 		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
 		message: "There can't be more attributes with the same name in the same attribute"

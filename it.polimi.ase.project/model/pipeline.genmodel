@@ -134,12 +134,12 @@
     <genClasses ecoreClass="pipeline.ecore#//ImportOperation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//ImportOperation/read"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//ImportOperation/impUses"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//ImportOperation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//ImportOperation/ID"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//ExportOperation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//ExportOperation/write"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//ExportOperation/expUses"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//ExportOperation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//ExportOperation/ID"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//UserDefinedCleaningOperation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//UserDefinedCleaningOperation/name"/>

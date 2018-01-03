@@ -96,7 +96,7 @@ class ExportTask extends Task {
   val ExportOperation[+] exportOperations;
 }
 
-@gmf.node(label="name", label.text="Import", figure="ellipse")
+@gmf.node(label="ID", label.text="Import", figure="ellipse")
 class ImportOperation {
 
   @gmf.link(width="2", target.decoration="square", style="dash")
@@ -104,10 +104,10 @@ class ImportOperation {
 
   @gmf.link(width="1", target.decoration="arrow")
   ref Schema[1] impUses;
-  attr String name;
+  id attr String ID;
 }
 
-@gmf.node(label="name", label.text="Export", figure="ellipse")
+@gmf.node(label="ID", label.text="Export", figure="ellipse")
 class ExportOperation {
 
   @gmf.link(width="2", target.decoration="filledsquare", style="dash")
@@ -115,7 +115,7 @@ class ExportOperation {
 
   @gmf.link(width="1", target.decoration="arrow")
   ref Schema[1] expUses;
-  attr String name;
+  id attr String ID;
 }
 
 class UserDefinedCleaningOperation extends CleaningOperation {

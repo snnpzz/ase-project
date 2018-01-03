@@ -109,8 +109,8 @@ public class ImportOperationEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ImportOperationNameEditPart) {
-			((ImportOperationNameEditPart) childEditPart)
+		if (childEditPart instanceof ImportOperationIDEditPart) {
+			((ImportOperationIDEditPart) childEditPart)
 					.setLabel(getPrimaryShape().getFigureImportOperationLabelFigure());
 			return true;
 		}
@@ -121,7 +121,7 @@ public class ImportOperationEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ImportOperationNameEditPart) {
+		if (childEditPart instanceof ImportOperationIDEditPart) {
 			return true;
 		}
 		return false;
@@ -244,7 +244,7 @@ public class ImportOperationEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(PipelineVisualIDRegistry.getType(ImportOperationNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(PipelineVisualIDRegistry.getType(ImportOperationIDEditPart.VISUAL_ID));
 	}
 
 	/**

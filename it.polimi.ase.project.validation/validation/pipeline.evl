@@ -127,6 +127,12 @@ context Pipeline{
 		check: self.files -> size() == self.tasks -> select(t | t.isTypeOf(ExportTask)).exports -> size()
 		message: "There must be as many output files as many exports"
 	}
+	
+	constraint ifManySourcesIntegration {
+		check: (self.sources -> size() == 1) or (self.sources -> size() > 1 and self.tasks -> select(t | t.isTypeOf(IntegrationTask)) -> size() > 1)
+		message: "If there are many input sources there must be a integration task"
+	}
+	
 }
 
 
@@ -137,14 +143,24 @@ context CollectionTask{
 	}
 	
 	constraint nextTypeCollection {
-		check: self.outgoing.target -> select(t |t.isTypeOf(CollectionTask) or t.isTypeOf(VisualizationTask) or
-			t.isTypeOf(ExportTask)) -> size() == 0
+		check: (self.outgoing -> size() == 1) and (self.outgoing.target -> select(t |t.isTypeOf(CollectionTask) or t.isTypeOf(VisualizationTask) or
+			t.isTypeOf(ExportTask)) -> size() == 0) or (self.outgoing -> size() > 1)
 		message: "Collection task must be linked to integration, cleaning or analysis task"
 	}
 	
 	constraint outgoingDataFlow {
 		check: self.outgoing -> size() > 0
 		message: "Missing outgoing dataflow for collection task"
+	}
+	
+	constraint manyDataFlowsFromCollectionAsManyImports {
+		check: self.imports -> size() == self.outgoing -> size()
+		message: "In collection task there must be as many outgoing dataflows as many input sources"
+	}
+	
+	constraint manyDataFlowsAllToIntegration {
+		check: (self.outgoing -> size() == 1) or ((self.outgoing -> size() > 1) and (self.outgoing -> forAll(df | df.target.isTypeOf(IntegrationTask))))
+		message: "If there are many outgoing dataflows from collection task, all of them must be linked to integration task"
 	}
 }
 

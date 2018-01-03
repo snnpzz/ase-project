@@ -60,26 +60,26 @@ public class VisualizationOperationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addChartsPropertyDescriptor(object);
+			addChartPropertyDescriptor(object);
 			addIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Charts feature.
+	 * This adds a property descriptor for the Chart feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addChartsPropertyDescriptor(Object object) {
+	protected void addChartPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_VisualizationOperation_charts_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VisualizationOperation_charts_feature", "_UI_VisualizationOperation_type"),
-				 PipelinePackage.Literals.VISUALIZATION_OPERATION__CHARTS,
+				 getString("_UI_VisualizationOperation_chart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_VisualizationOperation_chart_feature", "_UI_VisualizationOperation_type"),
+				 PipelinePackage.Literals.VISUALIZATION_OPERATION__CHART,
 				 true,
 				 false,
 				 true,

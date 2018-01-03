@@ -158,9 +158,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//File/comesFrom"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Chart">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/type"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Chart/axes"/>
     </genClasses>
     <genClasses image="false" ecoreClass="pipeline.ecore#//CleaningOperation"/>
@@ -188,7 +188,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//ComplexAttribute/attributes"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//VisualizationOperation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//VisualizationOperation/charts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//VisualizationOperation/chart"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//VisualizationOperation/ID"/>
     </genClasses>
   </genPackages>

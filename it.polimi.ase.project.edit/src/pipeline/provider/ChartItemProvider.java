@@ -24,6 +24,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import pipeline.Chart;
 import pipeline.PipelinePackage;
+import pipeline.Size;
 
 /**
  * This is the item provider adapter for a {@link pipeline.Chart} object.
@@ -60,28 +61,28 @@ public class ChartItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
 			addSizePropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 			addAxesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addTitlePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Chart_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Chart_name_feature", "_UI_Chart_type"),
-				 PipelinePackage.Literals.CHART__NAME,
+				 getString("_UI_Chart_title_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Chart_title_feature", "_UI_Chart_type"),
+				 PipelinePackage.Literals.CHART__TITLE,
 				 true,
 				 false,
 				 false,
@@ -175,7 +176,8 @@ public class ChartItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Chart)object).getName();
+		Size labelValue = ((Chart)object).getSize();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Chart_type") :
 			getString("_UI_Chart_type") + " " + label;
@@ -194,9 +196,9 @@ public class ChartItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Chart.class)) {
-			case PipelinePackage.CHART__NAME:
-			case PipelinePackage.CHART__TYPE:
 			case PipelinePackage.CHART__SIZE:
+			case PipelinePackage.CHART__TITLE:
+			case PipelinePackage.CHART__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

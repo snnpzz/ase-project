@@ -112,8 +112,8 @@ public class ChartEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ChartNameEditPart) {
-			((ChartNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureChartLabelFigure());
+		if (childEditPart instanceof ChartTitleEditPart) {
+			((ChartTitleEditPart) childEditPart).setLabel(getPrimaryShape().getFigureChartLabelFigure());
 			return true;
 		}
 		return false;
@@ -123,7 +123,7 @@ public class ChartEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ChartNameEditPart) {
+		if (childEditPart instanceof ChartTitleEditPart) {
 			return true;
 		}
 		return false;
@@ -246,7 +246,7 @@ public class ChartEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(PipelineVisualIDRegistry.getType(ChartNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(PipelineVisualIDRegistry.getType(ChartTitleEditPart.VISUAL_ID));
 	}
 
 	/**

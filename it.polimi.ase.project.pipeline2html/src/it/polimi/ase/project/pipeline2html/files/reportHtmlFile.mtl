@@ -3,7 +3,7 @@
 
 
 [template public generate(aPipeline : Pipeline)]
-[file ('pipeline_'.concat(aPipeline.ID).concat('.html'), false, 'UTF-8')]
+[file ('pipeline-'.concat(aPipeline.ID).concat('.html'), false, 'UTF-8')]
 <!doctype html>
 <html lang="en">
 	<head>
@@ -77,6 +77,9 @@
 						[/for]
 						[for (anAnalysisOperation : AnalysisOperation | aPipeline.tasks -> select(aTask : Task | aTask.oclIsTypeOf(AnalysisTask)) -> first().oclAsType(AnalysisTask).analysisOperations)]
 							[generateDiv(anAnalysisOperation)/]
+						[/for]
+						[for (aVisualizationOperation : VisualizationOperation | aPipeline.tasks -> select(aTask : Task | aTask.oclIsTypeOf(VisualizationTask)) -> first().oclAsType(VisualizationTask).visualizationOperations)]
+							[generateDiv(aVisualizationOperation)/]
 						[/for]
 					</section>			
 				</main>
@@ -175,6 +178,64 @@
 </div>
 [/template]
 
+[template private generateDiv(aVisualizationOperation : VisualizationOperation)]
+<div id="operation-[aVisualizationOperation.ID/]">
+	<h3>Operation [aVisualizationOperation.ID/]</h3>
+	<b>ID:</b> [aVisualizationOperation.ID/]
+	<br>
+	[if (aVisualizationOperation.eContainer(VisualizationTask).incoming -> size() > 0)]
+	<span style="color:#007bff;font-size:1rem;">Input Internal Data Flow</span>
+	<b>Format:</b> [aVisualizationOperation.eContainer(VisualizationTask).incoming.format/]
+	<br>
+	<b>Schema:</b>
+	<br>
+	[generateTable(aVisualizationOperation.eContainer(VisualizationTask).incoming -> first().schema)/]
+	[/if]
+	<span style="color:#007bff;font-size:1rem;">Chart</span>
+	<b>Title:</b> [aVisualizationOperation.chart.title/]
+	<br>
+	<b>Type:</b> [aVisualizationOperation.chart.type/]
+	<br>
+	<b>Size:</b> [aVisualizationOperation.chart.size/]
+	<br>
+	<b>Attributes:</b>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<td>#</td>
+					<td>Name</td>
+					<td>Type</td>
+				</tr>
+			</thead>
+			<tbody>
+				[for (anAttribute : Attribute | aVisualizationOperation.chart.axes)]
+				<tr>
+					<td></td>
+					<td>[anAttribute.name/]</td>
+					<td>
+						[if (anAttribute.oclIsTypeOf(SimpleAttribute))]
+						Simple
+						[elseif (anAttribute.oclIsTypeOf(ComplexAttribute))]
+						Complex
+						[/if]
+					</td>
+				</tr>
+				[/for]
+			</tbody>
+		</table>
+	</div>
+	[if (aVisualizationOperation.eContainer(VisualizationTask).outgoing -> size() > 0)]
+	<span style="color:#007bff;font-size:1rem;">Output Internal Data Flow</span>
+	<b>Format:</b> [aVisualizationOperation.eContainer(VisualizationTask).outgoing.format/]
+	<br>
+	<b>Schema:</b>
+	<br>
+	[generateTable(aVisualizationOperation.eContainer(VisualizationTask).outgoing -> first().schema)/]
+	[/if]
+</div>
+[/template]
+
 [template private generateDiv(aDataFlow : DataFlow)]
 <div>
 	<b>Format:</b> [aDataFlow.format/]
@@ -193,17 +254,17 @@
 		<br>
 		<b>Task Type:</b> 
 		[if (aTask.oclIsTypeOf(CollectionTask))]
-		Data Collection
+		Collection
 		[elseif (aTask.oclIsTypeOf(IntegrationTask))]
-		Data Integration
+		Integration
 		[elseif (aTask.oclIsTypeOf(CleaningTask))]
-		Data Cleaning
+		Cleaning
 		[elseif (aTask.oclIsTypeOf(AnalysisTask))]
-		Data Analysis
+		Analysis
 		[elseif (aTask.oclIsTypeOf(VisualizationTask))]
-		Data Visualization
+		Visualization
 		[elseif (aTask.oclIsTypeOf(ExportTask))]
-		Data Export
+		Export
 		[/if]
 		<br>
 		[if (aTask.oclIsTypeOf(CollectionTask))]
@@ -216,7 +277,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					[for (aSource : Source | aTask.oclAsType(CollectionTask).imports.read)]
+					[for (aSource : Source | aTask.oclAsType(CollectionTask).importOperations.read)]
 						[aSource.generateTableRow()/]
 					[/for]
 				</tbody>
@@ -289,7 +350,7 @@
 		<span style="color:#007bff;font-size:1rem;">Input Data Flow</span>
 		
 		<span style="color:#007bff;font-size:1rem;">Operations</span>
-		[for (anExport : Export | aTask.oclAsType(ExportTask).exports)]
+		[for (anExportOperation : ExportOperation | aTask.oclAsType(ExportTask).exportOperations)]
 
 		[/for]
 		<span style="color:#007bff;font-size:1rem;">Output File(s)</span>
@@ -302,7 +363,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					[for (aFile : File | aTask.oclAsType(ExportTask).exports.write)]
+					[for (aFile : File | aTask.oclAsType(ExportTask).exportOperations.write)]
 					<tr>
 						<td>[aFile.name/]</td>
 						<td>[aFile.path/]</td>

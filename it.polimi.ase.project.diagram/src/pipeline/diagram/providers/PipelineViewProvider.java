@@ -52,6 +52,7 @@ import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
 import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ChartEditPart;
 import pipeline.diagram.edit.parts.ChartNameEditPart;
+import pipeline.diagram.edit.parts.ChartTitleEditPart;
 import pipeline.diagram.edit.parts.ClassificationAnalysisOperationEditPart;
 import pipeline.diagram.edit.parts.ClassificationAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart;
@@ -772,7 +773,7 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5021 = createLabel(node, PipelineVisualIDRegistry.getType(ChartNameEditPart.VISUAL_ID));
+		Node label5021 = createLabel(node, PipelineVisualIDRegistry.getType(ChartTitleEditPart.VISUAL_ID));
 		return node;
 	}
 

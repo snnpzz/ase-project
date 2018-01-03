@@ -448,7 +448,7 @@
         <diagramLabel
             href="pipeline.gmfgraph#ChartLabel"/>
         <features
-            href="pipeline.ecore#//Chart/name"/>
+            href="pipeline.ecore#//Chart/title"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"

@@ -30,6 +30,7 @@ import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
 import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ChartEditPart;
 import pipeline.diagram.edit.parts.ChartNameEditPart;
+import pipeline.diagram.edit.parts.ChartTitleEditPart;
 import pipeline.diagram.edit.parts.ClassificationAnalysisOperationEditPart;
 import pipeline.diagram.edit.parts.ClassificationAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
@@ -534,7 +535,7 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	private String getChart_2010Text(View view) {
 		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.Chart_2010,
 				view.getElement() != null ? view.getElement() : view,
-				PipelineVisualIDRegistry.getType(ChartNameEditPart.VISUAL_ID));
+				PipelineVisualIDRegistry.getType(ChartTitleEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());

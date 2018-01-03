@@ -772,10 +772,6 @@
   <children xmi:type="notation:Shape" xmi:id="_nrr74O88EeeAL8U_fnq8iw" type="2001" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_nrtKAO88EeeAL8U_fnq8iw" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_nrtKAe88EeeAL8U_fnq8iw" type="7001">
-      <children xmi:type="notation:Node" xmi:id="_o7bFcO88EeeAL8U_fnq8iw" type="3001">
-        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Chart/name"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_o7bFce88EeeAL8U_fnq8iw"/>
-      </children>
       <children xmi:type="notation:Node" xmi:id="_seHJEO88EeeAL8U_fnq8iw" type="3001">
         <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Chart/type"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_seHJEe88EeeAL8U_fnq8iw"/>
@@ -1369,7 +1365,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_sDjvM_CpEeeOqLCQ3Vozog" y="60"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_sDihEfCpEeeOqLCQ3Vozog" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="pipeline.ecore#//VisualizationOperation/charts"/>
+    <element xmi:type="ecore:EReference" href="pipeline.ecore#//VisualizationOperation/chart"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sDihEvCpEeeOqLCQ3Vozog" points="[-99, -25, 166, 25]$[-186, -102, 79, -52]"/>
   </edges>
 </notation:Diagram>

@@ -373,11 +373,11 @@
         <containmentMetaFeature href="pipeline.genmodel#//pipeline/Pipeline/charts"/>
         <childMetaFeature href="pipeline.genmodel#//pipeline/Pipeline/charts"/>
       </modelFacet>
-      <labels visualID="5021" editPartClassName="ChartNameEditPart" itemSemanticEditPolicyClassName="ChartNameItemSemanticEditPolicy" elementIcon="true">
+      <labels visualID="5021" editPartClassName="ChartTitleEditPart" itemSemanticEditPolicyClassName="ChartTitleItemSemanticEditPolicy" elementIcon="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureChartLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="pipeline.genmodel#//pipeline/Chart/name"/>
+          <metaFeatures href="pipeline.genmodel#//pipeline/Chart/title"/>
         </modelFacet>
       </labels>
     </topLevelNodes>

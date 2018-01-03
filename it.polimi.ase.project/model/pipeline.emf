@@ -139,11 +139,11 @@ class File {
   ref ExportOperation[1]#write comesFrom;
 }
 
-@gmf.node(label="name", figure="rounded")
+@gmf.node(label="title", figure="rounded")
 class Chart {
-  attr String name;
-  attr ChartType type;
   attr Size size;
+  attr String title;
+  attr ChartType type;
 
   @gmf.link(width="1", target.decoration="closedarrow")
   ref SimpleAttribute[+] axes;
@@ -263,7 +263,7 @@ enum Type {
 }
 
 class VisualizationOperation {
-  ref Chart[1] charts;
+  ref Chart[1] chart;
   id attr String ID;
 }
 

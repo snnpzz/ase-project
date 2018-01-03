@@ -223,12 +223,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Chart">
     <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
+      <details key="label" value="title"/>
       <details key="figure" value="rounded"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ChartType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="#//Size"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ChartType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="axes" lowerBound="1" upperBound="-1"
         eType="#//SimpleAttribute">
       <eAnnotations source="gmf.link">
@@ -335,8 +335,7 @@
     <eLiterals name="mDate" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VisualizationOperation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="charts" lowerBound="1"
-        eType="#//Chart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="chart" lowerBound="1" eType="#//Chart"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
   </eClassifiers>

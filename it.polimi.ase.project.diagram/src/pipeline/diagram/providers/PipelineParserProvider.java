@@ -20,6 +20,7 @@ import org.eclipse.gmf.tooling.runtime.parsers.EnumParser;
 import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
 import pipeline.diagram.edit.parts.ChartNameEditPart;
+import pipeline.diagram.edit.parts.ChartTitleEditPart;
 import pipeline.diagram.edit.parts.ClassificationAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskIDEditPart;
 import pipeline.diagram.edit.parts.ClusteringAnalysisOperationNameEditPart;
@@ -188,18 +189,18 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 	/**
 	* @generated
 	*/
-	private IParser chartName_5021Parser;
+	private IParser chartTitle_5021Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getChartName_5021Parser() {
-		if (chartName_5021Parser == null) {
-			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getChart_Name() };
+	private IParser getChartTitle_5021Parser() {
+		if (chartTitle_5021Parser == null) {
+			EAttribute[] features = new EAttribute[] { PipelinePackage.eINSTANCE.getChart_Title() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			chartName_5021Parser = parser;
+			chartTitle_5021Parser = parser;
 		}
-		return chartName_5021Parser;
+		return chartTitle_5021Parser;
 	}
 
 	/**
@@ -428,8 +429,8 @@ public class PipelineParserProvider extends AbstractProvider implements IParserP
 			return getSourceName_5015Parser();
 		case FileNameEditPart.VISUAL_ID:
 			return getFileName_5016Parser();
-		case ChartNameEditPart.VISUAL_ID:
-			return getChartName_5021Parser();
+		case ChartTitleEditPart.VISUAL_ID:
+			return getChartTitle_5021Parser();
 		case ImportOperationIDEditPart.VISUAL_ID:
 			return getImportOperationID_5022Parser();
 		case UserDefinedCleaningOperationNameEditPart.VISUAL_ID:

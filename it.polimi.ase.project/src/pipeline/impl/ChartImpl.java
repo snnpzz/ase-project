@@ -27,9 +27,9 @@ import pipeline.Size;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.ChartImpl#getName <em>Name</em>}</li>
- *   <li>{@link pipeline.impl.ChartImpl#getType <em>Type</em>}</li>
  *   <li>{@link pipeline.impl.ChartImpl#getSize <em>Size</em>}</li>
+ *   <li>{@link pipeline.impl.ChartImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link pipeline.impl.ChartImpl#getType <em>Type</em>}</li>
  *   <li>{@link pipeline.impl.ChartImpl#getAxes <em>Axes</em>}</li>
  * </ul>
  *
@@ -37,24 +37,44 @@ import pipeline.Size;
  */
 public class ChartImpl extends EObjectImpl implements Chart {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getSize()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final Size SIZE_EDEFAULT = Size.SMALL;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getSize()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected Size size = SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String title = TITLE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -75,26 +95,6 @@ public class ChartImpl extends EObjectImpl implements Chart {
 	 * @ordered
 	 */
 	protected ChartType type = TYPE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Size SIZE_EDEFAULT = Size.SMALL;
-
-	/**
-	 * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected Size size = SIZE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getAxes() <em>Axes</em>}' reference list.
@@ -130,8 +130,8 @@ public class ChartImpl extends EObjectImpl implements Chart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
 
 	/**
@@ -139,11 +139,11 @@ public class ChartImpl extends EObjectImpl implements Chart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setTitle(String newTitle) {
+		String oldTitle = title;
+		title = newTitle;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.CHART__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.CHART__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -208,12 +208,12 @@ public class ChartImpl extends EObjectImpl implements Chart {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.CHART__NAME:
-				return getName();
-			case PipelinePackage.CHART__TYPE:
-				return getType();
 			case PipelinePackage.CHART__SIZE:
 				return getSize();
+			case PipelinePackage.CHART__TITLE:
+				return getTitle();
+			case PipelinePackage.CHART__TYPE:
+				return getType();
 			case PipelinePackage.CHART__AXES:
 				return getAxes();
 		}
@@ -229,14 +229,14 @@ public class ChartImpl extends EObjectImpl implements Chart {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.CHART__NAME:
-				setName((String)newValue);
+			case PipelinePackage.CHART__SIZE:
+				setSize((Size)newValue);
+				return;
+			case PipelinePackage.CHART__TITLE:
+				setTitle((String)newValue);
 				return;
 			case PipelinePackage.CHART__TYPE:
 				setType((ChartType)newValue);
-				return;
-			case PipelinePackage.CHART__SIZE:
-				setSize((Size)newValue);
 				return;
 			case PipelinePackage.CHART__AXES:
 				getAxes().clear();
@@ -254,14 +254,14 @@ public class ChartImpl extends EObjectImpl implements Chart {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.CHART__NAME:
-				setName(NAME_EDEFAULT);
+			case PipelinePackage.CHART__SIZE:
+				setSize(SIZE_EDEFAULT);
+				return;
+			case PipelinePackage.CHART__TITLE:
+				setTitle(TITLE_EDEFAULT);
 				return;
 			case PipelinePackage.CHART__TYPE:
 				setType(TYPE_EDEFAULT);
-				return;
-			case PipelinePackage.CHART__SIZE:
-				setSize(SIZE_EDEFAULT);
 				return;
 			case PipelinePackage.CHART__AXES:
 				getAxes().clear();
@@ -278,12 +278,12 @@ public class ChartImpl extends EObjectImpl implements Chart {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.CHART__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case PipelinePackage.CHART__TYPE:
-				return type != TYPE_EDEFAULT;
 			case PipelinePackage.CHART__SIZE:
 				return size != SIZE_EDEFAULT;
+			case PipelinePackage.CHART__TITLE:
+				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+			case PipelinePackage.CHART__TYPE:
+				return type != TYPE_EDEFAULT;
 			case PipelinePackage.CHART__AXES:
 				return axes != null && !axes.isEmpty();
 		}
@@ -300,12 +300,12 @@ public class ChartImpl extends EObjectImpl implements Chart {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (size: ");
+		result.append(size);
+		result.append(", title: ");
+		result.append(title);
 		result.append(", type: ");
 		result.append(type);
-		result.append(", size: ");
-		result.append(size);
 		result.append(')');
 		return result.toString();
 	}

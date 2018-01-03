@@ -22,7 +22,7 @@ import pipeline.VisualizationOperation;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.VisualizationOperationImpl#getCharts <em>Charts</em>}</li>
+ *   <li>{@link pipeline.impl.VisualizationOperationImpl#getChart <em>Chart</em>}</li>
  *   <li>{@link pipeline.impl.VisualizationOperationImpl#getID <em>ID</em>}</li>
  * </ul>
  *
@@ -30,14 +30,14 @@ import pipeline.VisualizationOperation;
  */
 public class VisualizationOperationImpl extends EObjectImpl implements VisualizationOperation {
 	/**
-	 * The cached value of the '{@link #getCharts() <em>Charts</em>}' reference.
+	 * The cached value of the '{@link #getChart() <em>Chart</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCharts()
+	 * @see #getChart()
 	 * @generated
 	 * @ordered
 	 */
-	protected Chart charts;
+	protected Chart chart;
 
 	/**
 	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
@@ -82,16 +82,16 @@ public class VisualizationOperationImpl extends EObjectImpl implements Visualiza
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Chart getCharts() {
-		if (charts != null && charts.eIsProxy()) {
-			InternalEObject oldCharts = (InternalEObject)charts;
-			charts = (Chart)eResolveProxy(oldCharts);
-			if (charts != oldCharts) {
+	public Chart getChart() {
+		if (chart != null && chart.eIsProxy()) {
+			InternalEObject oldChart = (InternalEObject)chart;
+			chart = (Chart)eResolveProxy(oldChart);
+			if (chart != oldChart) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.VISUALIZATION_OPERATION__CHARTS, oldCharts, charts));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.VISUALIZATION_OPERATION__CHART, oldChart, chart));
 			}
 		}
-		return charts;
+		return chart;
 	}
 
 	/**
@@ -99,8 +99,8 @@ public class VisualizationOperationImpl extends EObjectImpl implements Visualiza
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Chart basicGetCharts() {
-		return charts;
+	public Chart basicGetChart() {
+		return chart;
 	}
 
 	/**
@@ -108,11 +108,11 @@ public class VisualizationOperationImpl extends EObjectImpl implements Visualiza
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCharts(Chart newCharts) {
-		Chart oldCharts = charts;
-		charts = newCharts;
+	public void setChart(Chart newChart) {
+		Chart oldChart = chart;
+		chart = newChart;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.VISUALIZATION_OPERATION__CHARTS, oldCharts, charts));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.VISUALIZATION_OPERATION__CHART, oldChart, chart));
 	}
 
 	/**
@@ -144,9 +144,9 @@ public class VisualizationOperationImpl extends EObjectImpl implements Visualiza
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.VISUALIZATION_OPERATION__CHARTS:
-				if (resolve) return getCharts();
-				return basicGetCharts();
+			case PipelinePackage.VISUALIZATION_OPERATION__CHART:
+				if (resolve) return getChart();
+				return basicGetChart();
 			case PipelinePackage.VISUALIZATION_OPERATION__ID:
 				return getID();
 		}
@@ -161,8 +161,8 @@ public class VisualizationOperationImpl extends EObjectImpl implements Visualiza
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.VISUALIZATION_OPERATION__CHARTS:
-				setCharts((Chart)newValue);
+			case PipelinePackage.VISUALIZATION_OPERATION__CHART:
+				setChart((Chart)newValue);
 				return;
 			case PipelinePackage.VISUALIZATION_OPERATION__ID:
 				setID((String)newValue);
@@ -179,8 +179,8 @@ public class VisualizationOperationImpl extends EObjectImpl implements Visualiza
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.VISUALIZATION_OPERATION__CHARTS:
-				setCharts((Chart)null);
+			case PipelinePackage.VISUALIZATION_OPERATION__CHART:
+				setChart((Chart)null);
 				return;
 			case PipelinePackage.VISUALIZATION_OPERATION__ID:
 				setID(ID_EDEFAULT);
@@ -197,8 +197,8 @@ public class VisualizationOperationImpl extends EObjectImpl implements Visualiza
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.VISUALIZATION_OPERATION__CHARTS:
-				return charts != null;
+			case PipelinePackage.VISUALIZATION_OPERATION__CHART:
+				return chart != null;
 			case PipelinePackage.VISUALIZATION_OPERATION__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}

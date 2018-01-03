@@ -14,42 +14,42 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.Chart#getName <em>Name</em>}</li>
- *   <li>{@link pipeline.Chart#getType <em>Type</em>}</li>
  *   <li>{@link pipeline.Chart#getSize <em>Size</em>}</li>
+ *   <li>{@link pipeline.Chart#getTitle <em>Title</em>}</li>
+ *   <li>{@link pipeline.Chart#getType <em>Type</em>}</li>
  *   <li>{@link pipeline.Chart#getAxes <em>Axes</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getChart()
- * @model annotation="gmf.node label='name' figure='rounded'"
+ * @model annotation="gmf.node label='title' figure='rounded'"
  * @generated
  */
 public interface Chart extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Title</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see pipeline.PipelinePackage#getChart_Name()
+	 * @return the value of the '<em>Title</em>' attribute.
+	 * @see #setTitle(String)
+	 * @see pipeline.PipelinePackage#getChart_Title()
 	 * @model
 	 * @generated
 	 */
-	String getName();
+	String getTitle();
 
 	/**
-	 * Sets the value of the '{@link pipeline.Chart#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link pipeline.Chart#getTitle <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Title</em>' attribute.
+	 * @see #getTitle()
 	 * @generated
 	 */
-	void setName(String value);
+	void setTitle(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.

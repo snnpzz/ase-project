@@ -82,8 +82,8 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case ChartEditPart.VISUAL_ID:
 				return new ChartEditPart(view);
 
-			case ChartNameEditPart.VISUAL_ID:
-				return new ChartNameEditPart(view);
+			case ChartTitleEditPart.VISUAL_ID:
+				return new ChartTitleEditPart(view);
 
 			case ImportOperationEditPart.VISUAL_ID:
 				return new ImportOperationEditPart(view);

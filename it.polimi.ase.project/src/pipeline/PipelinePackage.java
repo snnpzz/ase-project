@@ -1165,13 +1165,22 @@ public interface PipelinePackage extends EPackage {
 	int CHART = 18;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHART__NAME = 0;
+	int CHART__SIZE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHART__TITLE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1180,16 +1189,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHART__TYPE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHART__SIZE = 2;
+	int CHART__TYPE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Axes</b></em>' reference list.
@@ -1580,13 +1580,13 @@ public interface PipelinePackage extends EPackage {
 	int VISUALIZATION_OPERATION = 28;
 
 	/**
-	 * The feature id for the '<em><b>Charts</b></em>' reference.
+	 * The feature id for the '<em><b>Chart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VISUALIZATION_OPERATION__CHARTS = 0;
+	int VISUALIZATION_OPERATION__CHART = 0;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -2605,15 +2605,15 @@ public interface PipelinePackage extends EPackage {
 	EClass getVisualizationOperation();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.VisualizationOperation#getCharts <em>Charts</em>}'.
+	 * Returns the meta object for the reference '{@link pipeline.VisualizationOperation#getChart <em>Chart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Charts</em>'.
-	 * @see pipeline.VisualizationOperation#getCharts()
+	 * @return the meta object for the reference '<em>Chart</em>'.
+	 * @see pipeline.VisualizationOperation#getChart()
 	 * @see #getVisualizationOperation()
 	 * @generated
 	 */
-	EReference getVisualizationOperation_Charts();
+	EReference getVisualizationOperation_Chart();
 
 	/**
 	 * Returns the meta object for the attribute '{@link pipeline.VisualizationOperation#getID <em>ID</em>}'.
@@ -2637,15 +2637,15 @@ public interface PipelinePackage extends EPackage {
 	EClass getChart();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Chart#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.Chart#getTitle <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see pipeline.Chart#getName()
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see pipeline.Chart#getTitle()
 	 * @see #getChart()
 	 * @generated
 	 */
-	EAttribute getChart_Name();
+	EAttribute getChart_Title();
 
 	/**
 	 * Returns the meta object for the attribute '{@link pipeline.Chart#getType <em>Type</em>}'.
@@ -3529,12 +3529,12 @@ public interface PipelinePackage extends EPackage {
 		EClass VISUALIZATION_OPERATION = eINSTANCE.getVisualizationOperation();
 
 		/**
-		 * The meta object literal for the '<em><b>Charts</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Chart</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VISUALIZATION_OPERATION__CHARTS = eINSTANCE.getVisualizationOperation_Charts();
+		EReference VISUALIZATION_OPERATION__CHART = eINSTANCE.getVisualizationOperation_Chart();
 
 		/**
 		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
@@ -3555,12 +3555,12 @@ public interface PipelinePackage extends EPackage {
 		EClass CHART = eINSTANCE.getChart();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CHART__NAME = eINSTANCE.getChart_Name();
+		EAttribute CHART__TITLE = eINSTANCE.getChart_Title();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.

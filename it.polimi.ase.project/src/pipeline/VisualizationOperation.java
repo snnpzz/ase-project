@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.VisualizationOperation#getCharts <em>Charts</em>}</li>
+ *   <li>{@link pipeline.VisualizationOperation#getChart <em>Chart</em>}</li>
  *   <li>{@link pipeline.VisualizationOperation#getID <em>ID</em>}</li>
  * </ul>
  *
@@ -23,30 +23,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface VisualizationOperation extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Charts</b></em>' reference.
+	 * Returns the value of the '<em><b>Chart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Charts</em>' reference isn't clear,
+	 * If the meaning of the '<em>Chart</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Charts</em>' reference.
-	 * @see #setCharts(Chart)
-	 * @see pipeline.PipelinePackage#getVisualizationOperation_Charts()
+	 * @return the value of the '<em>Chart</em>' reference.
+	 * @see #setChart(Chart)
+	 * @see pipeline.PipelinePackage#getVisualizationOperation_Chart()
 	 * @model required="true"
 	 * @generated
 	 */
-	Chart getCharts();
+	Chart getChart();
 
 	/**
-	 * Sets the value of the '{@link pipeline.VisualizationOperation#getCharts <em>Charts</em>}' reference.
+	 * Sets the value of the '{@link pipeline.VisualizationOperation#getChart <em>Chart</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Charts</em>' reference.
-	 * @see #getCharts()
+	 * @param value the new value of the '<em>Chart</em>' reference.
+	 * @see #getChart()
 	 * @generated
 	 */
-	void setCharts(Chart value);
+	void setChart(Chart value);
 
 	/**
 	 * Returns the value of the '<em><b>ID</b></em>' attribute.

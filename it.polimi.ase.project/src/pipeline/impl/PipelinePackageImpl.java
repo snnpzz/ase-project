@@ -1004,16 +1004,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getChart_Name() {
-		return (EAttribute)chartEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getChart_Type() {
+	public EAttribute getChart_Title() {
 		return (EAttribute)chartEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1022,8 +1013,17 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getChart_Size() {
+	public EAttribute getChart_Type() {
 		return (EAttribute)chartEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getChart_Size() {
+		return (EAttribute)chartEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1202,7 +1202,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVisualizationOperation_Charts() {
+	public EReference getVisualizationOperation_Chart() {
 		return (EReference)visualizationOperationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1410,9 +1410,9 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEReference(fileEClass, FILE__COMES_FROM);
 
 		chartEClass = createEClass(CHART);
-		createEAttribute(chartEClass, CHART__NAME);
-		createEAttribute(chartEClass, CHART__TYPE);
 		createEAttribute(chartEClass, CHART__SIZE);
+		createEAttribute(chartEClass, CHART__TITLE);
+		createEAttribute(chartEClass, CHART__TYPE);
 		createEReference(chartEClass, CHART__AXES);
 
 		cleaningOperationEClass = createEClass(CLEANING_OPERATION);
@@ -1442,7 +1442,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEReference(complexAttributeEClass, COMPLEX_ATTRIBUTE__ATTRIBUTES);
 
 		visualizationOperationEClass = createEClass(VISUALIZATION_OPERATION);
-		createEReference(visualizationOperationEClass, VISUALIZATION_OPERATION__CHARTS);
+		createEReference(visualizationOperationEClass, VISUALIZATION_OPERATION__CHART);
 		createEAttribute(visualizationOperationEClass, VISUALIZATION_OPERATION__ID);
 
 		// Create enums
@@ -1589,9 +1589,9 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEReference(getFile_ComesFrom(), this.getExportOperation(), this.getExportOperation_Write(), "comesFrom", null, 1, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(chartEClass, Chart.class, "Chart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getChart_Name(), ecorePackage.getEString(), "name", null, 0, 1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getChart_Type(), this.getChartType(), "type", null, 0, 1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getChart_Size(), this.getSize(), "size", null, 0, 1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChart_Title(), ecorePackage.getEString(), "title", null, 0, 1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChart_Type(), this.getChartType(), "type", null, 0, 1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getChart_Axes(), this.getSimpleAttribute(), null, "axes", null, 1, -1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(cleaningOperationEClass, CleaningOperation.class, "CleaningOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1621,7 +1621,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEReference(getComplexAttribute_Attributes(), this.getAttribute(), null, "attributes", null, 1, -1, ComplexAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(visualizationOperationEClass, VisualizationOperation.class, "VisualizationOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVisualizationOperation_Charts(), this.getChart(), null, "charts", null, 1, 1, VisualizationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVisualizationOperation_Chart(), this.getChart(), null, "chart", null, 1, 1, VisualizationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisualizationOperation_ID(), ecorePackage.getEString(), "ID", null, 0, 1, VisualizationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
@@ -1789,7 +1789,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		  (chartEClass, 
 		   source, 
 		   new String[] {
-			 "label", "name",
+			 "label", "title",
 			 "figure", "rounded"
 		   });
 	}

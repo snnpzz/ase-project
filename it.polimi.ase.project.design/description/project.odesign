@@ -6,7 +6,7 @@
       <validationSet name="PipelineValidation"/>
       <defaultLayer name="Default">
         <nodeMappings name="chartNode" label="Chart" domainClass="Chart">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" workspacePath="/it.polimi.ase.project.design/icons/chart.svg">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:title" sizeComputationExpression="-1" workspacePath="/it.polimi.ase.project.design/icons/chart.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -18,11 +18,11 @@
           </style>
         </nodeMappings>
         <nodeMappings name="IntegrationTaskNode" label="Integration Task" domainClass="IntegrationTask">
-          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Integration Task" labelPosition="node" resizeKind="NSEW">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="Integration Task" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="SourceNode" label="Source" domainClass="Source">
@@ -47,7 +47,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="schemaEdge" label="Schema" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='internalDataFlowEdge']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']" targetFinderExpression="feature:schema">
+        <edgeMappings name="schemaEdge" label="Schema" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='internalDataFlowEdge']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']" targetFinderExpression="feature:schema" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='reconnectSchema']">
           <style lineStyle="dash" targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -63,7 +63,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="readEdge" label="Read" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer']/@subNodeMappings[name='Import%20Operation']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='SourceNode']" targetFinderExpression="feature:read">
+        <edgeMappings name="readEdge" label="Read" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer']/@subNodeMappings[name='Import%20Operation']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='SourceNode']" targetFinderExpression="feature:read" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='reconnectRead']">
           <style lineStyle="dot" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -71,7 +71,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="writeEdge" label="Write" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Export%20Task']/@subNodeMappings[name='Export%20Operation']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='FileNode']" targetFinderExpression="feature:write">
+        <edgeMappings name="writeEdge" label="Write" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Export%20Task']/@subNodeMappings[name='Export%20Operation']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='FileNode']" targetFinderExpression="feature:write" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='reconnectWrite']">
           <style lineStyle="dot" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -79,7 +79,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="chartsEdge" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='visualizationTaskContainer']/@subNodeMappings[name='visualizationOperationNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='chartNode']" targetFinderExpression="feature:charts">
+        <edgeMappings name="chartsEdge" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='visualizationTaskContainer']/@subNodeMappings[name='visualizationOperationNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='chartNode']" targetFinderExpression="feature:chart" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='reconnectCharts']">
           <style lineStyle="dot" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -473,7 +473,7 @@
             <targetViewVariable name="targetView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="charts" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="chart" valueExpression="var:target"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -524,6 +524,58 @@
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="axes" valueExpression="var:target"/>
               </firstModelOperations>
             </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="reconnectSchema">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="schema" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="reconnectRead">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="read" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="reconnectWrite">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="write" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="reconnectCharts">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="charts" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
           </ownedTools>
         </toolSections>
       </defaultLayer>

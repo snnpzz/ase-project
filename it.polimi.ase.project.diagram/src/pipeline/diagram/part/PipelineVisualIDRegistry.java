@@ -18,6 +18,7 @@ import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
 import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ChartEditPart;
 import pipeline.diagram.edit.parts.ChartNameEditPart;
+import pipeline.diagram.edit.parts.ChartTitleEditPart;
 import pipeline.diagram.edit.parts.ClassificationAnalysisOperationEditPart;
 import pipeline.diagram.edit.parts.ClassificationAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart;
@@ -386,7 +387,7 @@ public class PipelineVisualIDRegistry {
 			}
 			break;
 		case ChartEditPart.VISUAL_ID:
-			if (ChartNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (ChartTitleEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

@@ -159,7 +159,7 @@
         </containerMappings>
         <containerMappings name="CollectionTaskContainer" label="Collection Task" domainClass="CollectionTask">
           <subNodeMappings name="Import Operation" label="Import Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="ImportOperation">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:ID" sizeComputationExpression="-1" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -174,7 +174,7 @@
         </containerMappings>
         <containerMappings name="Export Task" label="Export Task" domainClass="ExportTask">
           <subNodeMappings name="Export Operation" label="Export Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="ExportOperation">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:ID" sizeComputationExpression="-1" labelPosition="node" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -189,7 +189,7 @@
         </containerMappings>
         <containerMappings name="visualizationTaskContainer" label="Visualization Task" domainClass="VisualizationTask">
           <subNodeMappings name="visualizationOperationNode" label="Visualization Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="VisualizationOperation">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:ID" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>

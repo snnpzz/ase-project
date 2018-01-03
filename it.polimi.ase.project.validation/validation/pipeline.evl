@@ -239,10 +239,4 @@ context ComplexAttribute{
 	}	
 }
 
-context Chart{
-	constraint atLeast2Axes {
-		check: self.axes -> size() > 1
-		message: "Need at least 2 attributes as axes for a chart"
-	}
-}
 

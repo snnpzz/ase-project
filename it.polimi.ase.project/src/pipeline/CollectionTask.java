@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.CollectionTask#getImports <em>Imports</em>}</li>
+ *   <li>{@link pipeline.CollectionTask#getImportOperations <em>Import Operations</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getCollectionTask()
@@ -22,19 +22,19 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface CollectionTask extends Task {
 	/**
-	 * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
-	 * The list contents are of type {@link pipeline.Import}.
+	 * Returns the value of the '<em><b>Import Operations</b></em>' containment reference list.
+	 * The list contents are of type {@link pipeline.ImportOperation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Imports</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Import Operations</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Imports</em>' containment reference list.
-	 * @see pipeline.PipelinePackage#getCollectionTask_Imports()
+	 * @return the value of the '<em>Import Operations</em>' containment reference list.
+	 * @see pipeline.PipelinePackage#getCollectionTask_ImportOperations()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Import> getImports();
+	EList<ImportOperation> getImportOperations();
 
 } // CollectionTask

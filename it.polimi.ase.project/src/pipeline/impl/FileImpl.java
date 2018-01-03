@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import pipeline.Export;
+import pipeline.ExportOperation;
 import pipeline.File;
 import pipeline.PipelinePackage;
 
@@ -79,7 +80,7 @@ public class FileImpl extends EObjectImpl implements File {
 	 * @generated
 	 * @ordered
 	 */
-	protected Export comesFrom;
+	protected ExportOperation comesFrom;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,10 +148,10 @@ public class FileImpl extends EObjectImpl implements File {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Export getComesFrom() {
+	public ExportOperation getComesFrom() {
 		if (comesFrom != null && comesFrom.eIsProxy()) {
 			InternalEObject oldComesFrom = (InternalEObject)comesFrom;
-			comesFrom = (Export)eResolveProxy(oldComesFrom);
+			comesFrom = (ExportOperation)eResolveProxy(oldComesFrom);
 			if (comesFrom != oldComesFrom) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.FILE__COMES_FROM, oldComesFrom, comesFrom));
@@ -164,7 +165,7 @@ public class FileImpl extends EObjectImpl implements File {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Export basicGetComesFrom() {
+	public ExportOperation basicGetComesFrom() {
 		return comesFrom;
 	}
 
@@ -173,8 +174,8 @@ public class FileImpl extends EObjectImpl implements File {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetComesFrom(Export newComesFrom, NotificationChain msgs) {
-		Export oldComesFrom = comesFrom;
+	public NotificationChain basicSetComesFrom(ExportOperation newComesFrom, NotificationChain msgs) {
+		ExportOperation oldComesFrom = comesFrom;
 		comesFrom = newComesFrom;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PipelinePackage.FILE__COMES_FROM, oldComesFrom, newComesFrom);
@@ -188,13 +189,13 @@ public class FileImpl extends EObjectImpl implements File {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setComesFrom(Export newComesFrom) {
+	public void setComesFrom(ExportOperation newComesFrom) {
 		if (newComesFrom != comesFrom) {
 			NotificationChain msgs = null;
 			if (comesFrom != null)
-				msgs = ((InternalEObject)comesFrom).eInverseRemove(this, PipelinePackage.EXPORT__WRITE, Export.class, msgs);
+				msgs = ((InternalEObject)comesFrom).eInverseRemove(this, PipelinePackage.EXPORT_OPERATION__WRITE, ExportOperation.class, msgs);
 			if (newComesFrom != null)
-				msgs = ((InternalEObject)newComesFrom).eInverseAdd(this, PipelinePackage.EXPORT__WRITE, Export.class, msgs);
+				msgs = ((InternalEObject)newComesFrom).eInverseAdd(this, PipelinePackage.EXPORT_OPERATION__WRITE, ExportOperation.class, msgs);
 			msgs = basicSetComesFrom(newComesFrom, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -212,8 +213,8 @@ public class FileImpl extends EObjectImpl implements File {
 		switch (featureID) {
 			case PipelinePackage.FILE__COMES_FROM:
 				if (comesFrom != null)
-					msgs = ((InternalEObject)comesFrom).eInverseRemove(this, PipelinePackage.EXPORT__WRITE, Export.class, msgs);
-				return basicSetComesFrom((Export)otherEnd, msgs);
+					msgs = ((InternalEObject)comesFrom).eInverseRemove(this, PipelinePackage.EXPORT_OPERATION__WRITE, ExportOperation.class, msgs);
+				return basicSetComesFrom((ExportOperation)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -266,7 +267,7 @@ public class FileImpl extends EObjectImpl implements File {
 				setPath((String)newValue);
 				return;
 			case PipelinePackage.FILE__COMES_FROM:
-				setComesFrom((Export)newValue);
+				setComesFrom((ExportOperation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -287,7 +288,7 @@ public class FileImpl extends EObjectImpl implements File {
 				setPath(PATH_EDEFAULT);
 				return;
 			case PipelinePackage.FILE__COMES_FROM:
-				setComesFrom((Export)null);
+				setComesFrom((ExportOperation)null);
 				return;
 		}
 		super.eUnset(featureID);

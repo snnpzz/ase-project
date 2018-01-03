@@ -19,6 +19,7 @@ import pipeline.Chart;
 import pipeline.ChartType;
 import pipeline.PipelinePackage;
 import pipeline.Size;
+import pipeline.VisualizationOperation;
 import pipeline.VisualizationTask;
 
 /**
@@ -29,22 +30,21 @@ import pipeline.VisualizationTask;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.VisualizationTaskImpl#getCharts <em>Charts</em>}</li>
+ *   <li>{@link pipeline.impl.VisualizationTaskImpl#getVisualizationOperations <em>Visualization Operations</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask {
 	/**
-	 * The cached value of the '{@link #getCharts() <em>Charts</em>}' reference list.
+	 * The cached value of the '{@link #getVisualizationOperations() <em>Visualization Operations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCharts()
+	 * @see #getVisualizationOperations()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Chart> charts;
-
+	protected EList<VisualizationOperation> visualizationOperations;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -69,11 +69,25 @@ public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Chart> getCharts() {
-		if (charts == null) {
-			charts = new EObjectResolvingEList<Chart>(Chart.class, this, PipelinePackage.VISUALIZATION_TASK__CHARTS);
+	public EList<VisualizationOperation> getVisualizationOperations() {
+		if (visualizationOperations == null) {
+			visualizationOperations = new EObjectContainmentEList<VisualizationOperation>(VisualizationOperation.class, this, PipelinePackage.VISUALIZATION_TASK__VISUALIZATION_OPERATIONS);
 		}
-		return charts;
+		return visualizationOperations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PipelinePackage.VISUALIZATION_TASK__VISUALIZATION_OPERATIONS:
+				return ((InternalEList<?>)getVisualizationOperations()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -84,8 +98,8 @@ public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.VISUALIZATION_TASK__CHARTS:
-				return getCharts();
+			case PipelinePackage.VISUALIZATION_TASK__VISUALIZATION_OPERATIONS:
+				return getVisualizationOperations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -99,9 +113,9 @@ public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.VISUALIZATION_TASK__CHARTS:
-				getCharts().clear();
-				getCharts().addAll((Collection<? extends Chart>)newValue);
+			case PipelinePackage.VISUALIZATION_TASK__VISUALIZATION_OPERATIONS:
+				getVisualizationOperations().clear();
+				getVisualizationOperations().addAll((Collection<? extends VisualizationOperation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -115,8 +129,8 @@ public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.VISUALIZATION_TASK__CHARTS:
-				getCharts().clear();
+			case PipelinePackage.VISUALIZATION_TASK__VISUALIZATION_OPERATIONS:
+				getVisualizationOperations().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -130,8 +144,8 @@ public class VisualizationTaskImpl extends TaskImpl implements VisualizationTask
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.VISUALIZATION_TASK__CHARTS:
-				return charts != null && !charts.isEmpty();
+			case PipelinePackage.VISUALIZATION_TASK__VISUALIZATION_OPERATIONS:
+				return visualizationOperations != null && !visualizationOperations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

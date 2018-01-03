@@ -112,8 +112,8 @@
         eOpposite="#//Attribute/next"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CollectionTask" eSuperTypes="#//Task">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" lowerBound="1"
-        upperBound="-1" eType="#//Import" containment="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importOperations" lowerBound="1"
+        upperBound="-1" eType="#//ImportOperation" containment="true">
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -140,16 +140,16 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VisualizationTask" eSuperTypes="#//Task">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="charts" lowerBound="1"
-        upperBound="-1" eType="#//Chart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visualizationOperations"
+        lowerBound="1" upperBound="-1" eType="#//VisualizationOperation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExportTask" eSuperTypes="#//Task">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="exports" lowerBound="1"
-        upperBound="-1" eType="#//Export" containment="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exportOperations" lowerBound="1"
+        upperBound="-1" eType="#//ExportOperation" containment="true">
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Import">
+  <eClassifiers xsi:type="ecore:EClass" name="ImportOperation">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
       <details key="label.text" value="Import"/>
@@ -172,7 +172,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Export">
+  <eClassifiers xsi:type="ecore:EClass" name="ExportOperation">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
       <details key="label.text" value="Export"/>
@@ -203,7 +203,7 @@
       <details key="label" value="name"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkedTo" lowerBound="1"
-        eType="#//Import" eOpposite="#//Import/read"/>
+        eType="#//ImportOperation" eOpposite="#//ImportOperation/read"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -214,7 +214,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="comesFrom" lowerBound="1"
-        eType="#//Export" eOpposite="#//Export/write"/>
+        eType="#//ExportOperation" eOpposite="#//ExportOperation/write"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Chart">
     <eAnnotations source="gmf.node">
@@ -328,5 +328,11 @@
     <eLiterals name="mDouble" value="2"/>
     <eLiterals name="mBoolean" value="3"/>
     <eLiterals name="mDate" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VisualizationOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="charts" lowerBound="1"
+        eType="#//Chart"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
   </eClassifiers>
 </ecore:EPackage>

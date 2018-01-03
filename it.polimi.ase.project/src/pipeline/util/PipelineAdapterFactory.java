@@ -120,12 +120,12 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 				return createExportTaskAdapter();
 			}
 			@Override
-			public Adapter caseImport(Import object) {
-				return createImportAdapter();
+			public Adapter caseImportOperation(ImportOperation object) {
+				return createImportOperationAdapter();
 			}
 			@Override
-			public Adapter caseExport(Export object) {
-				return createExportAdapter();
+			public Adapter caseExportOperation(ExportOperation object) {
+				return createExportOperationAdapter();
 			}
 			@Override
 			public Adapter caseUserDefinedCleaningOperation(UserDefinedCleaningOperation object) {
@@ -178,6 +178,10 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseComplexAttribute(ComplexAttribute object) {
 				return createComplexAttributeAdapter();
+			}
+			@Override
+			public Adapter caseVisualizationOperation(VisualizationOperation object) {
+				return createVisualizationOperationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -382,30 +386,30 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.Import <em>Import</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.ImportOperation <em>Import Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.Import
+	 * @see pipeline.ImportOperation
 	 * @generated
 	 */
-	public Adapter createImportAdapter() {
+	public Adapter createImportOperationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pipeline.Export <em>Export</em>}'.
+	 * Creates a new adapter for an object of class '{@link pipeline.ExportOperation <em>Export Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pipeline.Export
+	 * @see pipeline.ExportOperation
 	 * @generated
 	 */
-	public Adapter createExportAdapter() {
+	public Adapter createExportOperationAdapter() {
 		return null;
 	}
 
@@ -574,6 +578,20 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComplexAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pipeline.VisualizationOperation <em>Visualization Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pipeline.VisualizationOperation
+	 * @generated
+	 */
+	public Adapter createVisualizationOperationAdapter() {
 		return null;
 	}
 

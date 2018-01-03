@@ -27,10 +27,12 @@ import pipeline.DataFlow;
 import pipeline.DescriptiveAnalysisOperation;
 import pipeline.DescriptiveOperation;
 import pipeline.Export;
+import pipeline.ExportOperation;
 import pipeline.ExportTask;
 import pipeline.File;
 import pipeline.Format;
 import pipeline.Import;
+import pipeline.ImportOperation;
 import pipeline.IntegrationTask;
 import pipeline.InternalDataFlow;
 import pipeline.Operation;
@@ -48,6 +50,7 @@ import pipeline.Source;
 import pipeline.Task;
 import pipeline.Type;
 import pipeline.UserDefinedCleaningOperation;
+import pipeline.VisualizationOperation;
 import pipeline.VisualizationTask;
 
 /**
@@ -153,14 +156,14 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass importEClass = null;
+	private EClass importOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass exportEClass = null;
+	private EClass exportOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,6 +255,13 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * @generated
 	 */
 	private EClass complexAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass visualizationOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -697,7 +707,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCollectionTask_Imports() {
+	public EReference getCollectionTask_ImportOperations() {
 		return (EReference)collectionTaskEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -769,7 +779,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVisualizationTask_Charts() {
+	public EReference getVisualizationTask_VisualizationOperations() {
 		return (EReference)visualizationTaskEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -787,7 +797,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExportTask_Exports() {
+	public EReference getExportTask_ExportOperations() {
 		return (EReference)exportTaskEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -796,8 +806,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getImport() {
-		return importEClass;
+	public EClass getImportOperation() {
+		return importOperationEClass;
 	}
 
 	/**
@@ -805,8 +815,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getImport_Read() {
-		return (EReference)importEClass.getEStructuralFeatures().get(0);
+	public EReference getImportOperation_Read() {
+		return (EReference)importOperationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -814,8 +824,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getImport_ImpUses() {
-		return (EReference)importEClass.getEStructuralFeatures().get(1);
+	public EReference getImportOperation_ImpUses() {
+		return (EReference)importOperationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -823,8 +833,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImport_Name() {
-		return (EAttribute)importEClass.getEStructuralFeatures().get(2);
+	public EAttribute getImportOperation_Name() {
+		return (EAttribute)importOperationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -832,8 +842,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getExport() {
-		return exportEClass;
+	public EClass getExportOperation() {
+		return exportOperationEClass;
 	}
 
 	/**
@@ -841,8 +851,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExport_Write() {
-		return (EReference)exportEClass.getEStructuralFeatures().get(0);
+	public EReference getExportOperation_Write() {
+		return (EReference)exportOperationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -850,8 +860,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExport_ExpUses() {
-		return (EReference)exportEClass.getEStructuralFeatures().get(1);
+	public EReference getExportOperation_ExpUses() {
+		return (EReference)exportOperationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -859,8 +869,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getExport_Name() {
-		return (EAttribute)exportEClass.getEStructuralFeatures().get(2);
+	public EAttribute getExportOperation_Name() {
+		return (EAttribute)exportOperationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1156,6 +1166,24 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getVisualizationOperation() {
+		return visualizationOperationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getVisualizationOperation_Charts() {
+		return (EReference)visualizationOperationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPredefinedOperation() {
 		return predefinedOperationEEnum;
 	}
@@ -1302,7 +1330,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEReference(attributeEClass, ATTRIBUTE__PREVIOUS);
 
 		collectionTaskEClass = createEClass(COLLECTION_TASK);
-		createEReference(collectionTaskEClass, COLLECTION_TASK__IMPORTS);
+		createEReference(collectionTaskEClass, COLLECTION_TASK__IMPORT_OPERATIONS);
 
 		integrationTaskEClass = createEClass(INTEGRATION_TASK);
 		createEReference(integrationTaskEClass, INTEGRATION_TASK__ATTRIBUTES);
@@ -1314,20 +1342,20 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEReference(analysisTaskEClass, ANALYSIS_TASK__ANALYSIS_OPERATIONS);
 
 		visualizationTaskEClass = createEClass(VISUALIZATION_TASK);
-		createEReference(visualizationTaskEClass, VISUALIZATION_TASK__CHARTS);
+		createEReference(visualizationTaskEClass, VISUALIZATION_TASK__VISUALIZATION_OPERATIONS);
 
 		exportTaskEClass = createEClass(EXPORT_TASK);
-		createEReference(exportTaskEClass, EXPORT_TASK__EXPORTS);
+		createEReference(exportTaskEClass, EXPORT_TASK__EXPORT_OPERATIONS);
 
-		importEClass = createEClass(IMPORT);
-		createEReference(importEClass, IMPORT__READ);
-		createEReference(importEClass, IMPORT__IMP_USES);
-		createEAttribute(importEClass, IMPORT__NAME);
+		importOperationEClass = createEClass(IMPORT_OPERATION);
+		createEReference(importOperationEClass, IMPORT_OPERATION__READ);
+		createEReference(importOperationEClass, IMPORT_OPERATION__IMP_USES);
+		createEAttribute(importOperationEClass, IMPORT_OPERATION__NAME);
 
-		exportEClass = createEClass(EXPORT);
-		createEReference(exportEClass, EXPORT__WRITE);
-		createEReference(exportEClass, EXPORT__EXP_USES);
-		createEAttribute(exportEClass, EXPORT__NAME);
+		exportOperationEClass = createEClass(EXPORT_OPERATION);
+		createEReference(exportOperationEClass, EXPORT_OPERATION__WRITE);
+		createEReference(exportOperationEClass, EXPORT_OPERATION__EXP_USES);
+		createEAttribute(exportOperationEClass, EXPORT_OPERATION__NAME);
 
 		userDefinedCleaningOperationEClass = createEClass(USER_DEFINED_CLEANING_OPERATION);
 		createEAttribute(userDefinedCleaningOperationEClass, USER_DEFINED_CLEANING_OPERATION__NAME);
@@ -1373,6 +1401,9 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		complexAttributeEClass = createEClass(COMPLEX_ATTRIBUTE);
 		createEReference(complexAttributeEClass, COMPLEX_ATTRIBUTE__ATTRIBUTES);
+
+		visualizationOperationEClass = createEClass(VISUALIZATION_OPERATION);
+		createEReference(visualizationOperationEClass, VISUALIZATION_OPERATION__CHARTS);
 
 		// Create enums
 		predefinedOperationEEnum = createEEnum(PREDEFINED_OPERATION);
@@ -1474,7 +1505,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEReference(getAttribute_Previous(), this.getAttribute(), this.getAttribute_Next(), "previous", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(collectionTaskEClass, CollectionTask.class, "CollectionTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCollectionTask_Imports(), this.getImport(), null, "imports", null, 1, -1, CollectionTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCollectionTask_ImportOperations(), this.getImportOperation(), null, "importOperations", null, 1, -1, CollectionTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(integrationTaskEClass, IntegrationTask.class, "IntegrationTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIntegrationTask_Attributes(), this.getAttribute(), null, "attributes", null, 1, -1, IntegrationTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1486,33 +1517,33 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEReference(getAnalysisTask_AnalysisOperations(), this.getAnalysisOperation(), null, "analysisOperations", null, 1, -1, AnalysisTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(visualizationTaskEClass, VisualizationTask.class, "VisualizationTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVisualizationTask_Charts(), this.getChart(), null, "charts", null, 1, -1, VisualizationTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVisualizationTask_VisualizationOperations(), this.getVisualizationOperation(), null, "visualizationOperations", null, 1, -1, VisualizationTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exportTaskEClass, ExportTask.class, "ExportTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExportTask_Exports(), this.getExport(), null, "exports", null, 1, -1, ExportTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExportTask_ExportOperations(), this.getExportOperation(), null, "exportOperations", null, 1, -1, ExportTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getImport_Read(), this.getSource(), this.getSource_LinkedTo(), "read", null, 1, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getImport_ImpUses(), this.getSchema(), null, "impUses", null, 1, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImport_Name(), ecorePackage.getEString(), "name", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(importOperationEClass, ImportOperation.class, "ImportOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getImportOperation_Read(), this.getSource(), this.getSource_LinkedTo(), "read", null, 1, 1, ImportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImportOperation_ImpUses(), this.getSchema(), null, "impUses", null, 1, 1, ImportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImportOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, ImportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(exportEClass, Export.class, "Export", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExport_Write(), this.getFile(), this.getFile_ComesFrom(), "write", null, 1, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExport_ExpUses(), this.getSchema(), null, "expUses", null, 1, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getExport_Name(), ecorePackage.getEString(), "name", null, 0, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(exportOperationEClass, ExportOperation.class, "ExportOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExportOperation_Write(), this.getFile(), this.getFile_ComesFrom(), "write", null, 1, 1, ExportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExportOperation_ExpUses(), this.getSchema(), null, "expUses", null, 1, 1, ExportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExportOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, ExportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(userDefinedCleaningOperationEClass, UserDefinedCleaningOperation.class, "UserDefinedCleaningOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserDefinedCleaningOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, UserDefinedCleaningOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sourceEClass, Source.class, "Source", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSource_LinkedTo(), this.getImport(), this.getImport_Read(), "linkedTo", null, 1, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_LinkedTo(), this.getImportOperation(), this.getImportOperation_Read(), "linkedTo", null, 1, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSource_Name(), ecorePackage.getEString(), "name", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSource_Path(), ecorePackage.getEString(), "path", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fileEClass, File.class, "File", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFile_Name(), ecorePackage.getEString(), "name", null, 0, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFile_Path(), ecorePackage.getEString(), "path", null, 0, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFile_ComesFrom(), this.getExport(), this.getExport_Write(), "comesFrom", null, 1, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFile_ComesFrom(), this.getExportOperation(), this.getExportOperation_Write(), "comesFrom", null, 1, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(chartEClass, Chart.class, "Chart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getChart_Name(), ecorePackage.getEString(), "name", null, 0, 1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1545,6 +1576,9 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		initEClass(complexAttributeEClass, ComplexAttribute.class, "ComplexAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComplexAttribute_Attributes(), this.getAttribute(), null, "attributes", null, 1, -1, ComplexAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(visualizationOperationEClass, VisualizationOperation.class, "VisualizationOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVisualizationOperation_Charts(), this.getChart(), null, "charts", null, 1, 1, VisualizationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(predefinedOperationEEnum, PredefinedOperation.class, "PredefinedOperation");
@@ -1680,7 +1714,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 			 "label", "name"
 		   });	
 		addAnnotation
-		  (importEClass, 
+		  (importOperationEClass, 
 		   source, 
 		   new String[] {
 			 "label", "name",
@@ -1688,7 +1722,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 			 "figure", "ellipse"
 		   });	
 		addAnnotation
-		  (exportEClass, 
+		  (exportOperationEClass, 
 		   source, 
 		   new String[] {
 			 "label", "name",
@@ -1770,7 +1804,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 			 "tool.name", "IntegrationAttributes"
 		   });	
 		addAnnotation
-		  (getImport_Read(), 
+		  (getImportOperation_Read(), 
 		   source, 
 		   new String[] {
 			 "width", "2",
@@ -1778,14 +1812,14 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 			 "style", "dash"
 		   });	
 		addAnnotation
-		  (getImport_ImpUses(), 
+		  (getImportOperation_ImpUses(), 
 		   source, 
 		   new String[] {
 			 "width", "1",
 			 "target.decoration", "arrow"
 		   });	
 		addAnnotation
-		  (getExport_Write(), 
+		  (getExportOperation_Write(), 
 		   source, 
 		   new String[] {
 			 "width", "2",
@@ -1793,7 +1827,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 			 "style", "dash"
 		   });	
 		addAnnotation
-		  (getExport_ExpUses(), 
+		  (getExportOperation_ExpUses(), 
 		   source, 
 		   new String[] {
 			 "width", "1",
@@ -1823,7 +1857,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 			 "layout", "list"
 		   });	
 		addAnnotation
-		  (getCollectionTask_Imports(), 
+		  (getCollectionTask_ImportOperations(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -1838,7 +1872,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getExportTask_Exports(), 
+		  (getExportTask_ExportOperations(), 
 		   source, 
 		   new String[] {
 		   });	

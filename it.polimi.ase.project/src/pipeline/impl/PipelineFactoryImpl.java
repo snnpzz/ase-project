@@ -67,8 +67,8 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 			case PipelinePackage.ANALYSIS_TASK: return createAnalysisTask();
 			case PipelinePackage.VISUALIZATION_TASK: return createVisualizationTask();
 			case PipelinePackage.EXPORT_TASK: return createExportTask();
-			case PipelinePackage.IMPORT: return createImport();
-			case PipelinePackage.EXPORT: return createExport();
+			case PipelinePackage.IMPORT_OPERATION: return createImportOperation();
+			case PipelinePackage.EXPORT_OPERATION: return createExportOperation();
 			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION: return createUserDefinedCleaningOperation();
 			case PipelinePackage.SOURCE: return createSource();
 			case PipelinePackage.FILE: return createFile();
@@ -80,6 +80,7 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 			case PipelinePackage.PREDEFINED_CLEANING_OPERATION: return createPredefinedCleaningOperation();
 			case PipelinePackage.SIMPLE_ATTRIBUTE: return createSimpleAttribute();
 			case PipelinePackage.COMPLEX_ATTRIBUTE: return createComplexAttribute();
+			case PipelinePackage.VISUALIZATION_OPERATION: return createVisualizationOperation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -252,9 +253,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Import createImport() {
-		ImportImpl import_ = new ImportImpl();
-		return import_;
+	public ImportOperation createImportOperation() {
+		ImportOperationImpl importOperation = new ImportOperationImpl();
+		return importOperation;
 	}
 
 	/**
@@ -262,9 +263,9 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Export createExport() {
-		ExportImpl export = new ExportImpl();
-		return export;
+	public ExportOperation createExportOperation() {
+		ExportOperationImpl exportOperation = new ExportOperationImpl();
+		return exportOperation;
 	}
 
 	/**
@@ -315,6 +316,16 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	public ComplexAttribute createComplexAttribute() {
 		ComplexAttributeImpl complexAttribute = new ComplexAttributeImpl();
 		return complexAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VisualizationOperation createVisualizationOperation() {
+		VisualizationOperationImpl visualizationOperation = new VisualizationOperationImpl();
+		return visualizationOperation;
 	}
 
 	/**

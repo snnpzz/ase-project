@@ -11,46 +11,46 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import pipeline.Import;
+import pipeline.ExportOperation;
+import pipeline.File;
 import pipeline.PipelinePackage;
 import pipeline.Schema;
-import pipeline.Source;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Import</b></em>'.
+ * An implementation of the model object '<em><b>Export Operation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.ImportImpl#getRead <em>Read</em>}</li>
- *   <li>{@link pipeline.impl.ImportImpl#getImpUses <em>Imp Uses</em>}</li>
- *   <li>{@link pipeline.impl.ImportImpl#getName <em>Name</em>}</li>
+ *   <li>{@link pipeline.impl.ExportOperationImpl#getWrite <em>Write</em>}</li>
+ *   <li>{@link pipeline.impl.ExportOperationImpl#getExpUses <em>Exp Uses</em>}</li>
+ *   <li>{@link pipeline.impl.ExportOperationImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ImportImpl extends EObjectImpl implements Import {
+public class ExportOperationImpl extends EObjectImpl implements ExportOperation {
 	/**
-	 * The cached value of the '{@link #getRead() <em>Read</em>}' reference.
+	 * The cached value of the '{@link #getWrite() <em>Write</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRead()
+	 * @see #getWrite()
 	 * @generated
 	 * @ordered
 	 */
-	protected Source read;
+	protected File write;
 
 	/**
-	 * The cached value of the '{@link #getImpUses() <em>Imp Uses</em>}' reference.
+	 * The cached value of the '{@link #getExpUses() <em>Exp Uses</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getImpUses()
+	 * @see #getExpUses()
 	 * @generated
 	 * @ordered
 	 */
-	protected Schema impUses;
+	protected Schema expUses;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -77,7 +77,7 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ImportImpl() {
+	protected ExportOperationImpl() {
 		super();
 	}
 
@@ -88,7 +88,7 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PipelinePackage.Literals.IMPORT;
+		return PipelinePackage.Literals.EXPORT_OPERATION;
 	}
 
 	/**
@@ -96,16 +96,16 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Source getRead() {
-		if (read != null && read.eIsProxy()) {
-			InternalEObject oldRead = (InternalEObject)read;
-			read = (Source)eResolveProxy(oldRead);
-			if (read != oldRead) {
+	public File getWrite() {
+		if (write != null && write.eIsProxy()) {
+			InternalEObject oldWrite = (InternalEObject)write;
+			write = (File)eResolveProxy(oldWrite);
+			if (write != oldWrite) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.IMPORT__READ, oldRead, read));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.EXPORT_OPERATION__WRITE, oldWrite, write));
 			}
 		}
-		return read;
+		return write;
 	}
 
 	/**
@@ -113,8 +113,8 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Source basicGetRead() {
-		return read;
+	public File basicGetWrite() {
+		return write;
 	}
 
 	/**
@@ -122,11 +122,11 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRead(Source newRead, NotificationChain msgs) {
-		Source oldRead = read;
-		read = newRead;
+	public NotificationChain basicSetWrite(File newWrite, NotificationChain msgs) {
+		File oldWrite = write;
+		write = newWrite;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PipelinePackage.IMPORT__READ, oldRead, newRead);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT_OPERATION__WRITE, oldWrite, newWrite);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -137,18 +137,18 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRead(Source newRead) {
-		if (newRead != read) {
+	public void setWrite(File newWrite) {
+		if (newWrite != write) {
 			NotificationChain msgs = null;
-			if (read != null)
-				msgs = ((InternalEObject)read).eInverseRemove(this, PipelinePackage.SOURCE__LINKED_TO, Source.class, msgs);
-			if (newRead != null)
-				msgs = ((InternalEObject)newRead).eInverseAdd(this, PipelinePackage.SOURCE__LINKED_TO, Source.class, msgs);
-			msgs = basicSetRead(newRead, msgs);
+			if (write != null)
+				msgs = ((InternalEObject)write).eInverseRemove(this, PipelinePackage.FILE__COMES_FROM, File.class, msgs);
+			if (newWrite != null)
+				msgs = ((InternalEObject)newWrite).eInverseAdd(this, PipelinePackage.FILE__COMES_FROM, File.class, msgs);
+			msgs = basicSetWrite(newWrite, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.IMPORT__READ, newRead, newRead));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT_OPERATION__WRITE, newWrite, newWrite));
 	}
 
 	/**
@@ -156,16 +156,16 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Schema getImpUses() {
-		if (impUses != null && impUses.eIsProxy()) {
-			InternalEObject oldImpUses = (InternalEObject)impUses;
-			impUses = (Schema)eResolveProxy(oldImpUses);
-			if (impUses != oldImpUses) {
+	public Schema getExpUses() {
+		if (expUses != null && expUses.eIsProxy()) {
+			InternalEObject oldExpUses = (InternalEObject)expUses;
+			expUses = (Schema)eResolveProxy(oldExpUses);
+			if (expUses != oldExpUses) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.IMPORT__IMP_USES, oldImpUses, impUses));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.EXPORT_OPERATION__EXP_USES, oldExpUses, expUses));
 			}
 		}
-		return impUses;
+		return expUses;
 	}
 
 	/**
@@ -173,8 +173,8 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Schema basicGetImpUses() {
-		return impUses;
+	public Schema basicGetExpUses() {
+		return expUses;
 	}
 
 	/**
@@ -182,11 +182,11 @@ public class ImportImpl extends EObjectImpl implements Import {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setImpUses(Schema newImpUses) {
-		Schema oldImpUses = impUses;
-		impUses = newImpUses;
+	public void setExpUses(Schema newExpUses) {
+		Schema oldExpUses = expUses;
+		expUses = newExpUses;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.IMPORT__IMP_USES, oldImpUses, impUses));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT_OPERATION__EXP_USES, oldExpUses, expUses));
 	}
 
 	/**
@@ -207,7 +207,7 @@ public class ImportImpl extends EObjectImpl implements Import {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.IMPORT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT_OPERATION__NAME, oldName, name));
 	}
 
 	/**
@@ -218,10 +218,10 @@ public class ImportImpl extends EObjectImpl implements Import {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PipelinePackage.IMPORT__READ:
-				if (read != null)
-					msgs = ((InternalEObject)read).eInverseRemove(this, PipelinePackage.SOURCE__LINKED_TO, Source.class, msgs);
-				return basicSetRead((Source)otherEnd, msgs);
+			case PipelinePackage.EXPORT_OPERATION__WRITE:
+				if (write != null)
+					msgs = ((InternalEObject)write).eInverseRemove(this, PipelinePackage.FILE__COMES_FROM, File.class, msgs);
+				return basicSetWrite((File)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -234,8 +234,8 @@ public class ImportImpl extends EObjectImpl implements Import {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PipelinePackage.IMPORT__READ:
-				return basicSetRead(null, msgs);
+			case PipelinePackage.EXPORT_OPERATION__WRITE:
+				return basicSetWrite(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -248,13 +248,13 @@ public class ImportImpl extends EObjectImpl implements Import {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.IMPORT__READ:
-				if (resolve) return getRead();
-				return basicGetRead();
-			case PipelinePackage.IMPORT__IMP_USES:
-				if (resolve) return getImpUses();
-				return basicGetImpUses();
-			case PipelinePackage.IMPORT__NAME:
+			case PipelinePackage.EXPORT_OPERATION__WRITE:
+				if (resolve) return getWrite();
+				return basicGetWrite();
+			case PipelinePackage.EXPORT_OPERATION__EXP_USES:
+				if (resolve) return getExpUses();
+				return basicGetExpUses();
+			case PipelinePackage.EXPORT_OPERATION__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -268,13 +268,13 @@ public class ImportImpl extends EObjectImpl implements Import {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.IMPORT__READ:
-				setRead((Source)newValue);
+			case PipelinePackage.EXPORT_OPERATION__WRITE:
+				setWrite((File)newValue);
 				return;
-			case PipelinePackage.IMPORT__IMP_USES:
-				setImpUses((Schema)newValue);
+			case PipelinePackage.EXPORT_OPERATION__EXP_USES:
+				setExpUses((Schema)newValue);
 				return;
-			case PipelinePackage.IMPORT__NAME:
+			case PipelinePackage.EXPORT_OPERATION__NAME:
 				setName((String)newValue);
 				return;
 		}
@@ -289,13 +289,13 @@ public class ImportImpl extends EObjectImpl implements Import {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.IMPORT__READ:
-				setRead((Source)null);
+			case PipelinePackage.EXPORT_OPERATION__WRITE:
+				setWrite((File)null);
 				return;
-			case PipelinePackage.IMPORT__IMP_USES:
-				setImpUses((Schema)null);
+			case PipelinePackage.EXPORT_OPERATION__EXP_USES:
+				setExpUses((Schema)null);
 				return;
-			case PipelinePackage.IMPORT__NAME:
+			case PipelinePackage.EXPORT_OPERATION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 		}
@@ -310,11 +310,11 @@ public class ImportImpl extends EObjectImpl implements Import {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.IMPORT__READ:
-				return read != null;
-			case PipelinePackage.IMPORT__IMP_USES:
-				return impUses != null;
-			case PipelinePackage.IMPORT__NAME:
+			case PipelinePackage.EXPORT_OPERATION__WRITE:
+				return write != null;
+			case PipelinePackage.EXPORT_OPERATION__EXP_USES:
+				return expUses != null;
+			case PipelinePackage.EXPORT_OPERATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
@@ -336,4 +336,4 @@ public class ImportImpl extends EObjectImpl implements Import {
 		return result.toString();
 	}
 
-} //ImportImpl
+} //ExportOperationImpl

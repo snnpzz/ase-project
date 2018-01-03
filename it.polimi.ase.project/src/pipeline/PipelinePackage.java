@@ -470,13 +470,13 @@ public interface PipelinePackage extends EPackage {
 	int COLLECTION_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
-	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Import Operations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_TASK__IMPORTS = TASK_FEATURE_COUNT + 0;
+	int COLLECTION_TASK__IMPORT_OPERATIONS = TASK_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Collection Task</em>' class.
@@ -690,13 +690,13 @@ public interface PipelinePackage extends EPackage {
 	int VISUALIZATION_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
-	 * The feature id for the '<em><b>Charts</b></em>' reference list.
+	 * The feature id for the '<em><b>Visualization Operations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VISUALIZATION_TASK__CHARTS = TASK_FEATURE_COUNT + 0;
+	int VISUALIZATION_TASK__VISUALIZATION_OPERATIONS = TASK_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Visualization Task</em>' class.
@@ -745,13 +745,13 @@ public interface PipelinePackage extends EPackage {
 	int EXPORT_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
-	 * The feature id for the '<em><b>Exports</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Export Operations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORT_TASK__EXPORTS = TASK_FEATURE_COUNT + 0;
+	int EXPORT_TASK__EXPORT_OPERATIONS = TASK_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Export Task</em>' class.
@@ -763,14 +763,14 @@ public interface PipelinePackage extends EPackage {
 	int EXPORT_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.ImportImpl <em>Import</em>}' class.
+	 * The meta object id for the '{@link pipeline.impl.ImportOperationImpl <em>Import Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.ImportImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getImport()
+	 * @see pipeline.impl.ImportOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getImportOperation()
 	 * @generated
 	 */
-	int IMPORT = 13;
+	int IMPORT_OPERATION = 13;
 
 	/**
 	 * The feature id for the '<em><b>Read</b></em>' reference.
@@ -779,7 +779,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPORT__READ = 0;
+	int IMPORT_OPERATION__READ = 0;
 
 	/**
 	 * The feature id for the '<em><b>Imp Uses</b></em>' reference.
@@ -788,7 +788,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPORT__IMP_USES = 1;
+	int IMPORT_OPERATION__IMP_USES = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -797,26 +797,26 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPORT__NAME = 2;
+	int IMPORT_OPERATION__NAME = 2;
 
 	/**
-	 * The number of structural features of the '<em>Import</em>' class.
+	 * The number of structural features of the '<em>Import Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPORT_FEATURE_COUNT = 3;
+	int IMPORT_OPERATION_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.ExportImpl <em>Export</em>}' class.
+	 * The meta object id for the '{@link pipeline.impl.ExportOperationImpl <em>Export Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.ExportImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getExport()
+	 * @see pipeline.impl.ExportOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getExportOperation()
 	 * @generated
 	 */
-	int EXPORT = 14;
+	int EXPORT_OPERATION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Write</b></em>' reference.
@@ -825,7 +825,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORT__WRITE = 0;
+	int EXPORT_OPERATION__WRITE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Exp Uses</b></em>' reference.
@@ -834,7 +834,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORT__EXP_USES = 1;
+	int EXPORT_OPERATION__EXP_USES = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -843,16 +843,16 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORT__NAME = 2;
+	int EXPORT_OPERATION__NAME = 2;
 
 	/**
-	 * The number of structural features of the '<em>Export</em>' class.
+	 * The number of structural features of the '<em>Export Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORT_FEATURE_COUNT = 3;
+	int EXPORT_OPERATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.CleaningOperationImpl <em>Cleaning Operation</em>}' class.
@@ -1543,6 +1543,34 @@ public interface PipelinePackage extends EPackage {
 	int COMPLEX_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link pipeline.impl.VisualizationOperationImpl <em>Visualization Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.VisualizationOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getVisualizationOperation()
+	 * @generated
+	 */
+	int VISUALIZATION_OPERATION = 28;
+
+	/**
+	 * The feature id for the '<em><b>Charts</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_OPERATION__CHARTS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Visualization Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_OPERATION_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link pipeline.Format <em>Format</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1550,7 +1578,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getFormat()
 	 * @generated
 	 */
-	int FORMAT = 34;
+	int FORMAT = 35;
 
 	/**
 	 * The meta object id for the '{@link pipeline.Size <em>Size</em>}' enum.
@@ -1560,7 +1588,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getSize()
 	 * @generated
 	 */
-	int SIZE = 35;
+	int SIZE = 36;
 
 	/**
 	 * The meta object id for the '{@link pipeline.PredefinedOperation <em>Predefined Operation</em>}' enum.
@@ -1570,7 +1598,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getPredefinedOperation()
 	 * @generated
 	 */
-	int PREDEFINED_OPERATION = 28;
+	int PREDEFINED_OPERATION = 29;
 
 	/**
 	 * The meta object id for the '{@link pipeline.ClusteringOperation <em>Clustering Operation</em>}' enum.
@@ -1580,7 +1608,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getClusteringOperation()
 	 * @generated
 	 */
-	int CLUSTERING_OPERATION = 29;
+	int CLUSTERING_OPERATION = 30;
 
 	/**
 	 * The meta object id for the '{@link pipeline.ClassificationOperation <em>Classification Operation</em>}' enum.
@@ -1590,7 +1618,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getClassificationOperation()
 	 * @generated
 	 */
-	int CLASSIFICATION_OPERATION = 30;
+	int CLASSIFICATION_OPERATION = 31;
 
 	/**
 	 * The meta object id for the '{@link pipeline.PredictiveOperation <em>Predictive Operation</em>}' enum.
@@ -1600,7 +1628,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getPredictiveOperation()
 	 * @generated
 	 */
-	int PREDICTIVE_OPERATION = 31;
+	int PREDICTIVE_OPERATION = 32;
 
 	/**
 	 * The meta object id for the '{@link pipeline.DescriptiveOperation <em>Descriptive Operation</em>}' enum.
@@ -1610,7 +1638,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getDescriptiveOperation()
 	 * @generated
 	 */
-	int DESCRIPTIVE_OPERATION = 32;
+	int DESCRIPTIVE_OPERATION = 33;
 
 	/**
 	 * The meta object id for the '{@link pipeline.Type <em>Type</em>}' enum.
@@ -1620,7 +1648,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 36;
+	int TYPE = 37;
 
 	/**
 	 * The meta object id for the '{@link pipeline.ChartType <em>Chart Type</em>}' enum.
@@ -1630,7 +1658,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getChartType()
 	 * @generated
 	 */
-	int CHART_TYPE = 33;
+	int CHART_TYPE = 34;
 
 
 	/**
@@ -2011,15 +2039,15 @@ public interface PipelinePackage extends EPackage {
 	EClass getCollectionTask();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link pipeline.CollectionTask#getImports <em>Imports</em>}'.
+	 * Returns the meta object for the containment reference list '{@link pipeline.CollectionTask#getImportOperations <em>Import Operations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Imports</em>'.
-	 * @see pipeline.CollectionTask#getImports()
+	 * @return the meta object for the containment reference list '<em>Import Operations</em>'.
+	 * @see pipeline.CollectionTask#getImportOperations()
 	 * @see #getCollectionTask()
 	 * @generated
 	 */
-	EReference getCollectionTask_Imports();
+	EReference getCollectionTask_ImportOperations();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.IntegrationTask <em>Integration Task</em>}'.
@@ -2095,15 +2123,15 @@ public interface PipelinePackage extends EPackage {
 	EClass getVisualizationTask();
 
 	/**
-	 * Returns the meta object for the reference list '{@link pipeline.VisualizationTask#getCharts <em>Charts</em>}'.
+	 * Returns the meta object for the containment reference list '{@link pipeline.VisualizationTask#getVisualizationOperations <em>Visualization Operations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Charts</em>'.
-	 * @see pipeline.VisualizationTask#getCharts()
+	 * @return the meta object for the containment reference list '<em>Visualization Operations</em>'.
+	 * @see pipeline.VisualizationTask#getVisualizationOperations()
 	 * @see #getVisualizationTask()
 	 * @generated
 	 */
-	EReference getVisualizationTask_Charts();
+	EReference getVisualizationTask_VisualizationOperations();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.ExportTask <em>Export Task</em>}'.
@@ -2116,101 +2144,101 @@ public interface PipelinePackage extends EPackage {
 	EClass getExportTask();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link pipeline.ExportTask#getExports <em>Exports</em>}'.
+	 * Returns the meta object for the containment reference list '{@link pipeline.ExportTask#getExportOperations <em>Export Operations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Exports</em>'.
-	 * @see pipeline.ExportTask#getExports()
+	 * @return the meta object for the containment reference list '<em>Export Operations</em>'.
+	 * @see pipeline.ExportTask#getExportOperations()
 	 * @see #getExportTask()
 	 * @generated
 	 */
-	EReference getExportTask_Exports();
+	EReference getExportTask_ExportOperations();
 
 	/**
-	 * Returns the meta object for class '{@link pipeline.Import <em>Import</em>}'.
+	 * Returns the meta object for class '{@link pipeline.ImportOperation <em>Import Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Import</em>'.
-	 * @see pipeline.Import
+	 * @return the meta object for class '<em>Import Operation</em>'.
+	 * @see pipeline.ImportOperation
 	 * @generated
 	 */
-	EClass getImport();
+	EClass getImportOperation();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.Import#getRead <em>Read</em>}'.
+	 * Returns the meta object for the reference '{@link pipeline.ImportOperation#getRead <em>Read</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Read</em>'.
-	 * @see pipeline.Import#getRead()
-	 * @see #getImport()
+	 * @see pipeline.ImportOperation#getRead()
+	 * @see #getImportOperation()
 	 * @generated
 	 */
-	EReference getImport_Read();
+	EReference getImportOperation_Read();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.Import#getImpUses <em>Imp Uses</em>}'.
+	 * Returns the meta object for the reference '{@link pipeline.ImportOperation#getImpUses <em>Imp Uses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Imp Uses</em>'.
-	 * @see pipeline.Import#getImpUses()
-	 * @see #getImport()
+	 * @see pipeline.ImportOperation#getImpUses()
+	 * @see #getImportOperation()
 	 * @generated
 	 */
-	EReference getImport_ImpUses();
+	EReference getImportOperation_ImpUses();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Import#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.ImportOperation#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see pipeline.Import#getName()
-	 * @see #getImport()
+	 * @see pipeline.ImportOperation#getName()
+	 * @see #getImportOperation()
 	 * @generated
 	 */
-	EAttribute getImport_Name();
+	EAttribute getImportOperation_Name();
 
 	/**
-	 * Returns the meta object for class '{@link pipeline.Export <em>Export</em>}'.
+	 * Returns the meta object for class '{@link pipeline.ExportOperation <em>Export Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Export</em>'.
-	 * @see pipeline.Export
+	 * @return the meta object for class '<em>Export Operation</em>'.
+	 * @see pipeline.ExportOperation
 	 * @generated
 	 */
-	EClass getExport();
+	EClass getExportOperation();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.Export#getWrite <em>Write</em>}'.
+	 * Returns the meta object for the reference '{@link pipeline.ExportOperation#getWrite <em>Write</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Write</em>'.
-	 * @see pipeline.Export#getWrite()
-	 * @see #getExport()
+	 * @see pipeline.ExportOperation#getWrite()
+	 * @see #getExportOperation()
 	 * @generated
 	 */
-	EReference getExport_Write();
+	EReference getExportOperation_Write();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.Export#getExpUses <em>Exp Uses</em>}'.
+	 * Returns the meta object for the reference '{@link pipeline.ExportOperation#getExpUses <em>Exp Uses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Exp Uses</em>'.
-	 * @see pipeline.Export#getExpUses()
-	 * @see #getExport()
+	 * @see pipeline.ExportOperation#getExpUses()
+	 * @see #getExportOperation()
 	 * @generated
 	 */
-	EReference getExport_ExpUses();
+	EReference getExportOperation_ExpUses();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Export#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.ExportOperation#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see pipeline.Export#getName()
-	 * @see #getExport()
+	 * @see pipeline.ExportOperation#getName()
+	 * @see #getExportOperation()
 	 * @generated
 	 */
-	EAttribute getExport_Name();
+	EAttribute getExportOperation_Name();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.UserDefinedCleaningOperation <em>User Defined Cleaning Operation</em>}'.
@@ -2496,6 +2524,27 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComplexAttribute_Attributes();
+
+	/**
+	 * Returns the meta object for class '{@link pipeline.VisualizationOperation <em>Visualization Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Visualization Operation</em>'.
+	 * @see pipeline.VisualizationOperation
+	 * @generated
+	 */
+	EClass getVisualizationOperation();
+
+	/**
+	 * Returns the meta object for the reference '{@link pipeline.VisualizationOperation#getCharts <em>Charts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Charts</em>'.
+	 * @see pipeline.VisualizationOperation#getCharts()
+	 * @see #getVisualizationOperation()
+	 * @generated
+	 */
+	EReference getVisualizationOperation_Charts();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Chart <em>Chart</em>}'.
@@ -2960,12 +3009,12 @@ public interface PipelinePackage extends EPackage {
 		EClass COLLECTION_TASK = eINSTANCE.getCollectionTask();
 
 		/**
-		 * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Import Operations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COLLECTION_TASK__IMPORTS = eINSTANCE.getCollectionTask_Imports();
+		EReference COLLECTION_TASK__IMPORT_OPERATIONS = eINSTANCE.getCollectionTask_ImportOperations();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.IntegrationTaskImpl <em>Integration Task</em>}' class.
@@ -3032,12 +3081,12 @@ public interface PipelinePackage extends EPackage {
 		EClass VISUALIZATION_TASK = eINSTANCE.getVisualizationTask();
 
 		/**
-		 * The meta object literal for the '<em><b>Charts</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Visualization Operations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VISUALIZATION_TASK__CHARTS = eINSTANCE.getVisualizationTask_Charts();
+		EReference VISUALIZATION_TASK__VISUALIZATION_OPERATIONS = eINSTANCE.getVisualizationTask_VisualizationOperations();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.ExportTaskImpl <em>Export Task</em>}' class.
@@ -3050,22 +3099,22 @@ public interface PipelinePackage extends EPackage {
 		EClass EXPORT_TASK = eINSTANCE.getExportTask();
 
 		/**
-		 * The meta object literal for the '<em><b>Exports</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Export Operations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXPORT_TASK__EXPORTS = eINSTANCE.getExportTask_Exports();
+		EReference EXPORT_TASK__EXPORT_OPERATIONS = eINSTANCE.getExportTask_ExportOperations();
 
 		/**
-		 * The meta object literal for the '{@link pipeline.impl.ImportImpl <em>Import</em>}' class.
+		 * The meta object literal for the '{@link pipeline.impl.ImportOperationImpl <em>Import Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.ImportImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getImport()
+		 * @see pipeline.impl.ImportOperationImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getImportOperation()
 		 * @generated
 		 */
-		EClass IMPORT = eINSTANCE.getImport();
+		EClass IMPORT_OPERATION = eINSTANCE.getImportOperation();
 
 		/**
 		 * The meta object literal for the '<em><b>Read</b></em>' reference feature.
@@ -3073,7 +3122,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IMPORT__READ = eINSTANCE.getImport_Read();
+		EReference IMPORT_OPERATION__READ = eINSTANCE.getImportOperation_Read();
 
 		/**
 		 * The meta object literal for the '<em><b>Imp Uses</b></em>' reference feature.
@@ -3081,7 +3130,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IMPORT__IMP_USES = eINSTANCE.getImport_ImpUses();
+		EReference IMPORT_OPERATION__IMP_USES = eINSTANCE.getImportOperation_ImpUses();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3089,17 +3138,17 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute IMPORT__NAME = eINSTANCE.getImport_Name();
+		EAttribute IMPORT_OPERATION__NAME = eINSTANCE.getImportOperation_Name();
 
 		/**
-		 * The meta object literal for the '{@link pipeline.impl.ExportImpl <em>Export</em>}' class.
+		 * The meta object literal for the '{@link pipeline.impl.ExportOperationImpl <em>Export Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.ExportImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getExport()
+		 * @see pipeline.impl.ExportOperationImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getExportOperation()
 		 * @generated
 		 */
-		EClass EXPORT = eINSTANCE.getExport();
+		EClass EXPORT_OPERATION = eINSTANCE.getExportOperation();
 
 		/**
 		 * The meta object literal for the '<em><b>Write</b></em>' reference feature.
@@ -3107,7 +3156,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXPORT__WRITE = eINSTANCE.getExport_Write();
+		EReference EXPORT_OPERATION__WRITE = eINSTANCE.getExportOperation_Write();
 
 		/**
 		 * The meta object literal for the '<em><b>Exp Uses</b></em>' reference feature.
@@ -3115,7 +3164,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXPORT__EXP_USES = eINSTANCE.getExport_ExpUses();
+		EReference EXPORT_OPERATION__EXP_USES = eINSTANCE.getExportOperation_ExpUses();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3123,7 +3172,7 @@ public interface PipelinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EXPORT__NAME = eINSTANCE.getExport_Name();
+		EAttribute EXPORT_OPERATION__NAME = eINSTANCE.getExportOperation_Name();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.UserDefinedCleaningOperationImpl <em>User Defined Cleaning Operation</em>}' class.
@@ -3364,6 +3413,24 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPLEX_ATTRIBUTE__ATTRIBUTES = eINSTANCE.getComplexAttribute_Attributes();
+
+		/**
+		 * The meta object literal for the '{@link pipeline.impl.VisualizationOperationImpl <em>Visualization Operation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pipeline.impl.VisualizationOperationImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getVisualizationOperation()
+		 * @generated
+		 */
+		EClass VISUALIZATION_OPERATION = eINSTANCE.getVisualizationOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Charts</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VISUALIZATION_OPERATION__CHARTS = eINSTANCE.getVisualizationOperation_Charts();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.ChartImpl <em>Chart</em>}' class.

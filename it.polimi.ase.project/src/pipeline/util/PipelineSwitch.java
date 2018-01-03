@@ -150,15 +150,15 @@ public class PipelineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.IMPORT: {
-				Import import_ = (Import)theEObject;
-				T result = caseImport(import_);
+			case PipelinePackage.IMPORT_OPERATION: {
+				ImportOperation importOperation = (ImportOperation)theEObject;
+				T result = caseImportOperation(importOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.EXPORT: {
-				Export export = (Export)theEObject;
-				T result = caseExport(export);
+			case PipelinePackage.EXPORT_OPERATION: {
+				ExportOperation exportOperation = (ExportOperation)theEObject;
+				T result = caseExportOperation(exportOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -253,6 +253,12 @@ public class PipelineSwitch<T> extends Switch<T> {
 				ComplexAttribute complexAttribute = (ComplexAttribute)theEObject;
 				T result = caseComplexAttribute(complexAttribute);
 				if (result == null) result = caseAttribute(complexAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PipelinePackage.VISUALIZATION_OPERATION: {
+				VisualizationOperation visualizationOperation = (VisualizationOperation)theEObject;
+				T result = caseVisualizationOperation(visualizationOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -456,32 +462,32 @@ public class PipelineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Import</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Import Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Import</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Import Operation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseImport(Import object) {
+	public T caseImportOperation(ImportOperation object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Export</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Export Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Export</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Export Operation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseExport(Export object) {
+	public T caseExportOperation(ExportOperation object) {
 		return null;
 	}
 
@@ -662,6 +668,21 @@ public class PipelineSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComplexAttribute(ComplexAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Visualization Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Visualization Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVisualizationOperation(VisualizationOperation object) {
 		return null;
 	}
 

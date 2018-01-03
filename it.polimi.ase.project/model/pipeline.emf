@@ -65,7 +65,7 @@ abstract class Attribute {
 class CollectionTask extends Task {
 
   @gmf.compartment
-  val Import[+] imports;
+  val ImportOperation[+] importOperations;
 }
 
 class IntegrationTask extends Task {
@@ -87,17 +87,17 @@ class AnalysisTask extends Task {
 }
 
 class VisualizationTask extends Task {
-  ref Chart[+] charts;
+  val VisualizationOperation[+] visualizationOperations;
 }
 
 class ExportTask extends Task {
 
   @gmf.compartment
-  val Export[+] exports;
+  val ExportOperation[+] exportOperations;
 }
 
 @gmf.node(label="name", label.text="Import", figure="ellipse")
-class Import {
+class ImportOperation {
 
   @gmf.link(width="2", target.decoration="square", style="dash")
   ref Source[1]#linkedTo read;
@@ -108,7 +108,7 @@ class Import {
 }
 
 @gmf.node(label="name", label.text="Export", figure="ellipse")
-class Export {
+class ExportOperation {
 
   @gmf.link(width="2", target.decoration="filledsquare", style="dash")
   ref File[1]#comesFrom write;
@@ -124,7 +124,7 @@ class UserDefinedCleaningOperation extends CleaningOperation {
 
 @gmf.node(label="name")
 class Source {
-  ref Import[1]#read linkedTo;
+  ref ImportOperation[1]#read linkedTo;
   attr String name;
   attr String path;
 }
@@ -133,7 +133,7 @@ class Source {
 class File {
   attr String name;
   attr String path;
-  ref Export[1]#write comesFrom;
+  ref ExportOperation[1]#write comesFrom;
 }
 
 @gmf.node(label="name", figure="rounded")
@@ -257,5 +257,9 @@ enum Type {
   mDouble = 2;
   mBoolean = 3;
   mDate = 4;
+}
+
+class VisualizationOperation {
+  ref Chart[1] charts;
 }
 

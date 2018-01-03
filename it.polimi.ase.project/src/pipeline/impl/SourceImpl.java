@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import pipeline.Import;
+import pipeline.ImportOperation;
 import pipeline.PipelinePackage;
 import pipeline.Source;
 
@@ -39,7 +40,7 @@ public class SourceImpl extends EObjectImpl implements Source {
 	 * @generated
 	 * @ordered
 	 */
-	protected Import linkedTo;
+	protected ImportOperation linkedTo;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -105,10 +106,10 @@ public class SourceImpl extends EObjectImpl implements Source {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Import getLinkedTo() {
+	public ImportOperation getLinkedTo() {
 		if (linkedTo != null && linkedTo.eIsProxy()) {
 			InternalEObject oldLinkedTo = (InternalEObject)linkedTo;
-			linkedTo = (Import)eResolveProxy(oldLinkedTo);
+			linkedTo = (ImportOperation)eResolveProxy(oldLinkedTo);
 			if (linkedTo != oldLinkedTo) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.SOURCE__LINKED_TO, oldLinkedTo, linkedTo));
@@ -122,7 +123,7 @@ public class SourceImpl extends EObjectImpl implements Source {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Import basicGetLinkedTo() {
+	public ImportOperation basicGetLinkedTo() {
 		return linkedTo;
 	}
 
@@ -131,8 +132,8 @@ public class SourceImpl extends EObjectImpl implements Source {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLinkedTo(Import newLinkedTo, NotificationChain msgs) {
-		Import oldLinkedTo = linkedTo;
+	public NotificationChain basicSetLinkedTo(ImportOperation newLinkedTo, NotificationChain msgs) {
+		ImportOperation oldLinkedTo = linkedTo;
 		linkedTo = newLinkedTo;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PipelinePackage.SOURCE__LINKED_TO, oldLinkedTo, newLinkedTo);
@@ -146,13 +147,13 @@ public class SourceImpl extends EObjectImpl implements Source {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLinkedTo(Import newLinkedTo) {
+	public void setLinkedTo(ImportOperation newLinkedTo) {
 		if (newLinkedTo != linkedTo) {
 			NotificationChain msgs = null;
 			if (linkedTo != null)
-				msgs = ((InternalEObject)linkedTo).eInverseRemove(this, PipelinePackage.IMPORT__READ, Import.class, msgs);
+				msgs = ((InternalEObject)linkedTo).eInverseRemove(this, PipelinePackage.IMPORT_OPERATION__READ, ImportOperation.class, msgs);
 			if (newLinkedTo != null)
-				msgs = ((InternalEObject)newLinkedTo).eInverseAdd(this, PipelinePackage.IMPORT__READ, Import.class, msgs);
+				msgs = ((InternalEObject)newLinkedTo).eInverseAdd(this, PipelinePackage.IMPORT_OPERATION__READ, ImportOperation.class, msgs);
 			msgs = basicSetLinkedTo(newLinkedTo, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -212,8 +213,8 @@ public class SourceImpl extends EObjectImpl implements Source {
 		switch (featureID) {
 			case PipelinePackage.SOURCE__LINKED_TO:
 				if (linkedTo != null)
-					msgs = ((InternalEObject)linkedTo).eInverseRemove(this, PipelinePackage.IMPORT__READ, Import.class, msgs);
-				return basicSetLinkedTo((Import)otherEnd, msgs);
+					msgs = ((InternalEObject)linkedTo).eInverseRemove(this, PipelinePackage.IMPORT_OPERATION__READ, ImportOperation.class, msgs);
+				return basicSetLinkedTo((ImportOperation)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -260,7 +261,7 @@ public class SourceImpl extends EObjectImpl implements Source {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PipelinePackage.SOURCE__LINKED_TO:
-				setLinkedTo((Import)newValue);
+				setLinkedTo((ImportOperation)newValue);
 				return;
 			case PipelinePackage.SOURCE__NAME:
 				setName((String)newValue);
@@ -281,7 +282,7 @@ public class SourceImpl extends EObjectImpl implements Source {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PipelinePackage.SOURCE__LINKED_TO:
-				setLinkedTo((Import)null);
+				setLinkedTo((ImportOperation)null);
 				return;
 			case PipelinePackage.SOURCE__NAME:
 				setName(NAME_EDEFAULT);

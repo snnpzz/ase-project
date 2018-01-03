@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.ExportTask#getExports <em>Exports</em>}</li>
+ *   <li>{@link pipeline.ExportTask#getExportOperations <em>Export Operations</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getExportTask()
@@ -22,19 +22,19 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ExportTask extends Task {
 	/**
-	 * Returns the value of the '<em><b>Exports</b></em>' containment reference list.
-	 * The list contents are of type {@link pipeline.Export}.
+	 * Returns the value of the '<em><b>Export Operations</b></em>' containment reference list.
+	 * The list contents are of type {@link pipeline.ExportOperation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Exports</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Export Operations</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Exports</em>' containment reference list.
-	 * @see pipeline.PipelinePackage#getExportTask_Exports()
+	 * @return the value of the '<em>Export Operations</em>' containment reference list.
+	 * @see pipeline.PipelinePackage#getExportTask_ExportOperations()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Export> getExports();
+	EList<ExportOperation> getExportOperations();
 
 } // ExportTask

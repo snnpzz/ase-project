@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.VisualizationTask#getCharts <em>Charts</em>}</li>
+ *   <li>{@link pipeline.VisualizationTask#getVisualizationOperations <em>Visualization Operations</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getVisualizationTask()
@@ -23,19 +23,19 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface VisualizationTask extends Task {
 	/**
-	 * Returns the value of the '<em><b>Charts</b></em>' reference list.
-	 * The list contents are of type {@link pipeline.Chart}.
+	 * Returns the value of the '<em><b>Visualization Operations</b></em>' containment reference list.
+	 * The list contents are of type {@link pipeline.VisualizationOperation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Charts</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Visualization Operations</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Charts</em>' reference list.
-	 * @see pipeline.PipelinePackage#getVisualizationTask_Charts()
-	 * @model required="true"
+	 * @return the value of the '<em>Visualization Operations</em>' containment reference list.
+	 * @see pipeline.PipelinePackage#getVisualizationTask_VisualizationOperations()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Chart> getCharts();
+	EList<VisualizationOperation> getVisualizationOperations();
 
 } // VisualizationTask

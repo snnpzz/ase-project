@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import pipeline.CollectionTask;
 import pipeline.Import;
+import pipeline.ImportOperation;
 import pipeline.PipelinePackage;
 
 /**
@@ -26,22 +27,21 @@ import pipeline.PipelinePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.CollectionTaskImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link pipeline.impl.CollectionTaskImpl#getImportOperations <em>Import Operations</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class CollectionTaskImpl extends TaskImpl implements CollectionTask {
 	/**
-	 * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
+	 * The cached value of the '{@link #getImportOperations() <em>Import Operations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getImports()
+	 * @see #getImportOperations()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Import> imports;
-
+	protected EList<ImportOperation> importOperations;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,11 +66,11 @@ public class CollectionTaskImpl extends TaskImpl implements CollectionTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Import> getImports() {
-		if (imports == null) {
-			imports = new EObjectContainmentEList<Import>(Import.class, this, PipelinePackage.COLLECTION_TASK__IMPORTS);
+	public EList<ImportOperation> getImportOperations() {
+		if (importOperations == null) {
+			importOperations = new EObjectContainmentEList<ImportOperation>(ImportOperation.class, this, PipelinePackage.COLLECTION_TASK__IMPORT_OPERATIONS);
 		}
-		return imports;
+		return importOperations;
 	}
 
 	/**
@@ -81,8 +81,8 @@ public class CollectionTaskImpl extends TaskImpl implements CollectionTask {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PipelinePackage.COLLECTION_TASK__IMPORTS:
-				return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
+			case PipelinePackage.COLLECTION_TASK__IMPORT_OPERATIONS:
+				return ((InternalEList<?>)getImportOperations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -95,8 +95,8 @@ public class CollectionTaskImpl extends TaskImpl implements CollectionTask {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.COLLECTION_TASK__IMPORTS:
-				return getImports();
+			case PipelinePackage.COLLECTION_TASK__IMPORT_OPERATIONS:
+				return getImportOperations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,9 +110,9 @@ public class CollectionTaskImpl extends TaskImpl implements CollectionTask {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.COLLECTION_TASK__IMPORTS:
-				getImports().clear();
-				getImports().addAll((Collection<? extends Import>)newValue);
+			case PipelinePackage.COLLECTION_TASK__IMPORT_OPERATIONS:
+				getImportOperations().clear();
+				getImportOperations().addAll((Collection<? extends ImportOperation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +126,8 @@ public class CollectionTaskImpl extends TaskImpl implements CollectionTask {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.COLLECTION_TASK__IMPORTS:
-				getImports().clear();
+			case PipelinePackage.COLLECTION_TASK__IMPORT_OPERATIONS:
+				getImportOperations().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -141,8 +141,8 @@ public class CollectionTaskImpl extends TaskImpl implements CollectionTask {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.COLLECTION_TASK__IMPORTS:
-				return imports != null && !imports.isEmpty();
+			case PipelinePackage.COLLECTION_TASK__IMPORT_OPERATIONS:
+				return importOperations != null && !importOperations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

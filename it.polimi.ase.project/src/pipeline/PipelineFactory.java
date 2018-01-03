@@ -112,22 +112,22 @@ public interface PipelineFactory extends EFactory {
 	ExportTask createExportTask();
 
 	/**
-	 * Returns a new object of class '<em>Import</em>'.
+	 * Returns a new object of class '<em>Import Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Import</em>'.
+	 * @return a new object of class '<em>Import Operation</em>'.
 	 * @generated
 	 */
-	Import createImport();
+	ImportOperation createImportOperation();
 
 	/**
-	 * Returns a new object of class '<em>Export</em>'.
+	 * Returns a new object of class '<em>Export Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Export</em>'.
+	 * @return a new object of class '<em>Export Operation</em>'.
 	 * @generated
 	 */
-	Export createExport();
+	ExportOperation createExportOperation();
 
 	/**
 	 * Returns a new object of class '<em>User Defined Cleaning Operation</em>'.
@@ -173,6 +173,15 @@ public interface PipelineFactory extends EFactory {
 	 * @generated
 	 */
 	ComplexAttribute createComplexAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Visualization Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Visualization Operation</em>'.
+	 * @generated
+	 */
+	VisualizationOperation createVisualizationOperation();
 
 	/**
 	 * Returns a new object of class '<em>Chart</em>'.

@@ -103,10 +103,10 @@ context Pipeline{
 	}
 	
 	constraint DataFlowBetweenCleaningOperation {
-		check: self.tasks -> collect(t:CleaningTask | t.operations -> size()) -> sum() <= 
+		check: self.tasks -> collect(t:CleaningTask | t.cleaningOperations -> size()) -> sum() <= 
 			(self.internalDataFlows -> select(d | d.source.isKindOf(CleaningOperation) and 
 			d.target.isKindOf(CleaningOperation)) -> size() + 1) or 
-			collect(t:CleaningTask | t.operations -> size()) -> sum() == 0
+			collect(t:CleaningTask | t.cleaningOperations -> size()) -> sum() == 0
 		message: "Missing one or more dataflows between cleaning operations"
 	}
 	
@@ -133,6 +133,15 @@ context Pipeline{
 		message: "If there are many input sources there must be a integration task"
 	}
 	
+	constraint sourceImportedOnce {
+		check: self.sources -> forAll(s | (self.tasks -> select(t | t.isTypeOf(CollectionTask)).imports.read == s) -> size() == 1)
+		message: "Imports must be linked to different input sources"
+	}
+	
+	constraint fileExportedOnce {
+		check: self.files -> forAll(f | (self.tasks -> select(t | t.isTypeOf(ExportTask)).exports.write == f) -> size() == 1)
+		message: "Exports must be linked to different output files"
+	}
 }
 
 
@@ -162,6 +171,12 @@ context CollectionTask{
 		check: (self.outgoing -> size() == 1) or ((self.outgoing -> size() > 1) and (self.outgoing -> forAll(df | df.target.isTypeOf(IntegrationTask))))
 		message: "If there are many outgoing dataflows from collection task, all of them must be linked to integration task"
 	}
+	
+	constraint pairsOfSchema {
+		check: self.imports.schema -> forAll(s1 | self.outgoing -> select(df | df.schema == s1) -> size() > 0) and
+			self.outgoing.schema -> forAll(s2 | self.imports -> select(i | i.schema == s2) -> size() > 0)
+		message: "Links to schema must be paired wrt import and outgoing dataflow"
+	}
 }
 
 
@@ -181,12 +196,12 @@ context CleaningTask{
 	}
 	
 	constraint uniqueInternalDataFlowIn {
-		check: self.operations -> forAll(o | o.outgoing -> size() <= 1)
+		check: self.CleaningOperations -> forAll(o | o.outgoing -> size() <= 1)
 		message: "Cleaning operations can have at maximum one outgoing internal dataflow"
 	}
 	
 	constraint uniqueInternalDataFlowOut {
-		check: self.operations -> forAll(o | o.incoming -> size() <= 1)
+		check: self.cleaningOperations -> forAll(o | o.incoming -> size() <= 1)
 		message: "Cleaning operations can have at maximum one incoming internal dataflow"
 	}
 	

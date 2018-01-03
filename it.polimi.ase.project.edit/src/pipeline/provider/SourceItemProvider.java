@@ -62,7 +62,10 @@ public class SourceItemProvider
 
 			addLinkedToPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addPathPropertyDescriptor(object);
+			addServerNamePropertyDescriptor(object);
+			addPortNumberPropertyDescriptor(object);
+			addUserNamePropertyDescriptor(object);
+			addPasswordPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -112,19 +115,85 @@ public class SourceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Path feature.
+	 * This adds a property descriptor for the Server Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPathPropertyDescriptor(Object object) {
+	protected void addServerNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Source_path_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_path_feature", "_UI_Source_type"),
-				 PipelinePackage.Literals.SOURCE__PATH,
+				 getString("_UI_Source_serverName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_serverName_feature", "_UI_Source_type"),
+				 PipelinePackage.Literals.SOURCE__SERVER_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Port Number feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPortNumberPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_portNumber_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_portNumber_feature", "_UI_Source_type"),
+				 PipelinePackage.Literals.SOURCE__PORT_NUMBER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the User Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUserNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_userName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_userName_feature", "_UI_Source_type"),
+				 PipelinePackage.Literals.SOURCE__USER_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Password feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPasswordPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_password_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_password_feature", "_UI_Source_type"),
+				 PipelinePackage.Literals.SOURCE__PASSWORD,
 				 true,
 				 false,
 				 false,
@@ -172,7 +241,10 @@ public class SourceItemProvider
 
 		switch (notification.getFeatureID(Source.class)) {
 			case PipelinePackage.SOURCE__NAME:
-			case PipelinePackage.SOURCE__PATH:
+			case PipelinePackage.SOURCE__SERVER_NAME:
+			case PipelinePackage.SOURCE__PORT_NUMBER:
+			case PipelinePackage.SOURCE__USER_NAME:
+			case PipelinePackage.SOURCE__PASSWORD:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

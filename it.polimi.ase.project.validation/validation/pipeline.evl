@@ -119,13 +119,13 @@ context Pipeline{
 	}
 	
 	constraint manySourcesAsManyImports {
-		check: self.sources -> size() == self.tasks -> select(t | t.isTypeOf(CollectionTask)).imports -> size()
-		message: "There must be as many input sources as many imports"
+		check: self.sources -> size() == self.tasks -> select(t | t.isTypeOf(CollectionTask)).importOperations -> size()
+		message: "There must be as many input sources as many import operations."
 	}
 	
 	constraint manyFilesAsManyExports {
-		check: self.files -> size() == self.tasks -> select(t | t.isTypeOf(ExportTask)).exports -> size()
-		message: "There must be as many output files as many exports"
+		check: self.files -> size() == self.tasks -> select(t | t.isTypeOf(ExportTask)).exportOperations -> size()
+		message: "There must be as many output files as many export operations."
 	}
 	
 	constraint ifManySourcesIntegration {
@@ -134,12 +134,12 @@ context Pipeline{
 	}
 	
 	constraint sourceImportedOnce {
-		check: self.sources -> forAll(s | (self.tasks -> select(t | t.isTypeOf(CollectionTask)).imports.read == s) -> size() == 1)
+		check: self.sources -> forAll(s | (self.tasks -> select(t | t.isTypeOf(CollectionTask)).importOperations.read == s) -> size() == 1)
 		message: "Imports must be linked to different input sources"
 	}
 	
 	constraint fileExportedOnce {
-		check: self.files -> forAll(f | (self.tasks -> select(t | t.isTypeOf(ExportTask)).exports.write == f) -> size() == 1)
+		check: self.files -> forAll(f | (self.tasks -> select(t | t.isTypeOf(ExportTask)).exportOperations.write == f) -> size() == 1)
 		message: "Exports must be linked to different output files"
 	}
 }
@@ -163,7 +163,7 @@ context CollectionTask{
 	}
 	
 	constraint manyDataFlowsFromCollectionAsManyImports {
-		check: self.imports -> size() == self.outgoing -> size()
+		check: self.importOperations -> size() == self.outgoing -> size()
 		message: "In collection task there must be as many outgoing dataflows as many input sources"
 	}
 	
@@ -173,8 +173,8 @@ context CollectionTask{
 	}
 	
 	constraint pairsOfSchema {
-		check: self.imports.schema -> forAll(s1 | self.outgoing -> select(df | df.schema == s1) -> size() > 0) and
-			self.outgoing.schema -> forAll(s2 | self.imports -> select(i | i.schema == s2) -> size() > 0)
+		check: self.importOperations.schema -> forAll(s1 | self.outgoing -> select(df | df.schema == s1) -> size() > 0) and
+			self.outgoing.schema -> forAll(s2 | self.importOperations -> select(i | i.schema == s2) -> size() > 0)
 		message: "Links to schema must be paired wrt import and outgoing dataflow"
 	}
 }

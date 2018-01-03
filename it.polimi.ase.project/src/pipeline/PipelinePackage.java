@@ -984,13 +984,40 @@ public interface PipelinePackage extends EPackage {
 	int SOURCE__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * The feature id for the '<em><b>Server Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__PATH = 2;
+	int SOURCE__SERVER_NAME = 2;
+
+	/**
+	 * The feature id for the '<em><b>Port Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__PORT_NUMBER = 3;
+
+	/**
+	 * The feature id for the '<em><b>User Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__USER_NAME = 4;
+
+	/**
+	 * The feature id for the '<em><b>Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__PASSWORD = 5;
 
 	/**
 	 * The number of structural features of the '<em>Source</em>' class.
@@ -999,7 +1026,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE_FEATURE_COUNT = 3;
+	int SOURCE_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.FileImpl <em>File</em>}' class.
@@ -1562,13 +1589,22 @@ public interface PipelinePackage extends EPackage {
 	int VISUALIZATION_OPERATION__CHARTS = 0;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_OPERATION__ID = 1;
+
+	/**
 	 * The number of structural features of the '<em>Visualization Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VISUALIZATION_OPERATION_FEATURE_COUNT = 1;
+	int VISUALIZATION_OPERATION_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link pipeline.Format <em>Format</em>}' enum.
@@ -2294,15 +2330,48 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getSource_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Source#getPath <em>Path</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.Source#getServerName <em>Server Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Path</em>'.
-	 * @see pipeline.Source#getPath()
+	 * @return the meta object for the attribute '<em>Server Name</em>'.
+	 * @see pipeline.Source#getServerName()
 	 * @see #getSource()
 	 * @generated
 	 */
-	EAttribute getSource_Path();
+	EAttribute getSource_ServerName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pipeline.Source#getPortNumber <em>Port Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Port Number</em>'.
+	 * @see pipeline.Source#getPortNumber()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_PortNumber();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pipeline.Source#getUserName <em>User Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>User Name</em>'.
+	 * @see pipeline.Source#getUserName()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_UserName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pipeline.Source#getPassword <em>Password</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Password</em>'.
+	 * @see pipeline.Source#getPassword()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_Password();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.File <em>File</em>}'.
@@ -2545,6 +2614,17 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVisualizationOperation_Charts();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pipeline.VisualizationOperation#getID <em>ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>ID</em>'.
+	 * @see pipeline.VisualizationOperation#getID()
+	 * @see #getVisualizationOperation()
+	 * @generated
+	 */
+	EAttribute getVisualizationOperation_ID();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Chart <em>Chart</em>}'.
@@ -3219,12 +3299,36 @@ public interface PipelinePackage extends EPackage {
 		EAttribute SOURCE__NAME = eINSTANCE.getSource_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Server Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SOURCE__PATH = eINSTANCE.getSource_Path();
+		EAttribute SOURCE__SERVER_NAME = eINSTANCE.getSource_ServerName();
+
+		/**
+		 * The meta object literal for the '<em><b>Port Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__PORT_NUMBER = eINSTANCE.getSource_PortNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>User Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__USER_NAME = eINSTANCE.getSource_UserName();
+
+		/**
+		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__PASSWORD = eINSTANCE.getSource_Password();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.FileImpl <em>File</em>}' class.
@@ -3431,6 +3535,14 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EReference VISUALIZATION_OPERATION__CHARTS = eINSTANCE.getVisualizationOperation_Charts();
+
+		/**
+		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VISUALIZATION_OPERATION__ID = eINSTANCE.getVisualizationOperation_ID();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.ChartImpl <em>Chart</em>}' class.

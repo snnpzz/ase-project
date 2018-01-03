@@ -18,9 +18,12 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import pipeline.PipelinePackage;
+import pipeline.VisualizationOperation;
 
 /**
  * This is the item provider adapter for a {@link pipeline.VisualizationOperation} object.
@@ -58,6 +61,7 @@ public class VisualizationOperationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addChartsPropertyDescriptor(object);
+			addIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,6 +89,28 @@ public class VisualizationOperationItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the ID feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIDPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_VisualizationOperation_ID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_VisualizationOperation_ID_feature", "_UI_VisualizationOperation_type"),
+				 PipelinePackage.Literals.VISUALIZATION_OPERATION__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns VisualizationOperation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,7 +129,10 @@ public class VisualizationOperationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_VisualizationOperation_type");
+		String label = ((VisualizationOperation)object).getID();
+		return label == null || label.length() == 0 ?
+			getString("_UI_VisualizationOperation_type") :
+			getString("_UI_VisualizationOperation_type") + " " + label;
 	}
 	
 
@@ -117,6 +146,12 @@ public class VisualizationOperationItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(VisualizationOperation.class)) {
+			case PipelinePackage.VISUALIZATION_OPERATION__ID:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

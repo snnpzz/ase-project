@@ -126,7 +126,10 @@ class UserDefinedCleaningOperation extends CleaningOperation {
 class Source {
   ref ImportOperation[1]#read linkedTo;
   attr String name;
-  attr String path;
+  attr String serverName;
+  attr int portNumber;
+  attr String userName;
+  attr String password;
 }
 
 @gmf.node(label="name")
@@ -261,5 +264,6 @@ enum Type {
 
 class VisualizationOperation {
   ref Chart[1] charts;
+  id attr String ID;
 }
 

@@ -23,6 +23,7 @@ import pipeline.VisualizationOperation;
  * </p>
  * <ul>
  *   <li>{@link pipeline.impl.VisualizationOperationImpl#getCharts <em>Charts</em>}</li>
+ *   <li>{@link pipeline.impl.VisualizationOperationImpl#getID <em>ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,6 +38,25 @@ public class VisualizationOperationImpl extends EObjectImpl implements Visualiza
 	 * @ordered
 	 */
 	protected Chart charts;
+
+	/**
+	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,12 +120,35 @@ public class VisualizationOperationImpl extends EObjectImpl implements Visualiza
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getID() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setID(String newID) {
+		String oldID = id;
+		id = newID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.VISUALIZATION_OPERATION__ID, oldID, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PipelinePackage.VISUALIZATION_OPERATION__CHARTS:
 				if (resolve) return getCharts();
 				return basicGetCharts();
+			case PipelinePackage.VISUALIZATION_OPERATION__ID:
+				return getID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,6 +163,9 @@ public class VisualizationOperationImpl extends EObjectImpl implements Visualiza
 		switch (featureID) {
 			case PipelinePackage.VISUALIZATION_OPERATION__CHARTS:
 				setCharts((Chart)newValue);
+				return;
+			case PipelinePackage.VISUALIZATION_OPERATION__ID:
+				setID((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,6 +182,9 @@ public class VisualizationOperationImpl extends EObjectImpl implements Visualiza
 			case PipelinePackage.VISUALIZATION_OPERATION__CHARTS:
 				setCharts((Chart)null);
 				return;
+			case PipelinePackage.VISUALIZATION_OPERATION__ID:
+				setID(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -150,8 +199,26 @@ public class VisualizationOperationImpl extends EObjectImpl implements Visualiza
 		switch (featureID) {
 			case PipelinePackage.VISUALIZATION_OPERATION__CHARTS:
 				return charts != null;
+			case PipelinePackage.VISUALIZATION_OPERATION__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (ID: ");
+		result.append(id);
+		result.append(')');
+		return result.toString();
 	}
 
 } //VisualizationOperationImpl

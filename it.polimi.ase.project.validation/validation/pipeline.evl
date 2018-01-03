@@ -118,6 +118,15 @@ context Pipeline{
 		message: "Missing one or more dataflows between analysis operations"
 	}
 	
+	constraint manySourcesAsManyImports {
+		check: self.sources -> size() == self.tasks -> select(t | t.isTypeOf(CollectionTask)).imports -> size()
+		message: "There must be as many input sources as many imports"
+	}
+	
+	constraint manyFilesAsManyExports {
+		check: self.files -> size() == self.tasks -> select(t | t.isTypeOf(ExportTask)).exports -> size()
+		message: "There must be as many output files as many exports"
+	}
 }
 
 

@@ -19,31 +19,31 @@ import pipeline.UserDefinedCleaningOperation;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.UserDefinedCleaningOperationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link pipeline.impl.UserDefinedCleaningOperationImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class UserDefinedCleaningOperationImpl extends CleaningOperationImpl implements UserDefinedCleaningOperation {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String TYPE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String type = TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,8 +69,8 @@ public class UserDefinedCleaningOperationImpl extends CleaningOperationImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getType() {
+		return type;
 	}
 
 	/**
@@ -78,11 +78,11 @@ public class UserDefinedCleaningOperationImpl extends CleaningOperationImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setType(String newType) {
+		String oldType = type;
+		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.USER_DEFINED_CLEANING_OPERATION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.USER_DEFINED_CLEANING_OPERATION__TYPE, oldType, type));
 	}
 
 	/**
@@ -93,8 +93,8 @@ public class UserDefinedCleaningOperationImpl extends CleaningOperationImpl impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION__NAME:
-				return getName();
+			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION__TYPE:
+				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -107,8 +107,8 @@ public class UserDefinedCleaningOperationImpl extends CleaningOperationImpl impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION__NAME:
-				setName((String)newValue);
+			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION__TYPE:
+				setType((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,8 +122,8 @@ public class UserDefinedCleaningOperationImpl extends CleaningOperationImpl impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION__NAME:
-				setName(NAME_EDEFAULT);
+			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION__TYPE:
+				setType(TYPE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -137,8 +137,8 @@ public class UserDefinedCleaningOperationImpl extends CleaningOperationImpl impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION__TYPE:
+				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -153,8 +153,8 @@ public class UserDefinedCleaningOperationImpl extends CleaningOperationImpl impl
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}

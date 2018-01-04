@@ -29,34 +29,14 @@ public enum ClusteringOperation implements Enumerator {
 	KMEANS(0, "kMeans", "kMeans"),
 
 	/**
-	 * The '<em><b>KMedoids</b></em>' literal object.
+	 * The '<em><b>Hierarchical</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #KMEDOIDS_VALUE
+	 * @see #HIERARCHICAL_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	KMEDOIDS(1, "kMedoids", "kMedoids"),
-
-	/**
-	 * The '<em><b>Fuzzy CMeans</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #FUZZY_CMEANS_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	FUZZY_CMEANS(2, "fuzzyCMeans", "fuzzyCMeans"),
-
-	/**
-	 * The '<em><b>QT</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #QT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	QT(3, "QT", "QT");
+	HIERARCHICAL(1, "Hierarchical", "Hierarchical");
 
 	/**
 	 * The '<em><b>KMeans</b></em>' literal value.
@@ -74,49 +54,19 @@ public enum ClusteringOperation implements Enumerator {
 	public static final int KMEANS_VALUE = 0;
 
 	/**
-	 * The '<em><b>KMedoids</b></em>' literal value.
+	 * The '<em><b>Hierarchical</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>KMedoids</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Hierarchical</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #KMEDOIDS
-	 * @model name="kMedoids"
+	 * @see #HIERARCHICAL
+	 * @model name="Hierarchical"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int KMEDOIDS_VALUE = 1;
-
-	/**
-	 * The '<em><b>Fuzzy CMeans</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Fuzzy CMeans</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #FUZZY_CMEANS
-	 * @model name="fuzzyCMeans"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int FUZZY_CMEANS_VALUE = 2;
-
-	/**
-	 * The '<em><b>QT</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>QT</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #QT
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int QT_VALUE = 3;
+	public static final int HIERARCHICAL_VALUE = 1;
 
 	/**
 	 * An array of all the '<em><b>Clustering Operation</b></em>' enumerators.
@@ -127,9 +77,7 @@ public enum ClusteringOperation implements Enumerator {
 	private static final ClusteringOperation[] VALUES_ARRAY =
 		new ClusteringOperation[] {
 			KMEANS,
-			KMEDOIDS,
-			FUZZY_CMEANS,
-			QT,
+			HIERARCHICAL,
 		};
 
 	/**
@@ -187,9 +135,7 @@ public enum ClusteringOperation implements Enumerator {
 	public static ClusteringOperation get(int value) {
 		switch (value) {
 			case KMEANS_VALUE: return KMEANS;
-			case KMEDOIDS_VALUE: return KMEDOIDS;
-			case FUZZY_CMEANS_VALUE: return FUZZY_CMEANS;
-			case QT_VALUE: return QT;
+			case HIERARCHICAL_VALUE: return HIERARCHICAL;
 		}
 		return null;
 	}

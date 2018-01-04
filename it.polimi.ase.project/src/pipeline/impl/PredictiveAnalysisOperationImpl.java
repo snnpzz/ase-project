@@ -20,31 +20,31 @@ import pipeline.PredictiveOperation;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.PredictiveAnalysisOperationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link pipeline.impl.PredictiveAnalysisOperationImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class PredictiveAnalysisOperationImpl extends AnalysisOperationImpl implements PredictiveAnalysisOperation {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final PredictiveOperation NAME_EDEFAULT = PredictiveOperation.SIMPLE_REGRESSION;
+	protected static final PredictiveOperation TYPE_EDEFAULT = PredictiveOperation.SIMPLE_REGRESSION;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected PredictiveOperation name = NAME_EDEFAULT;
+	protected PredictiveOperation type = TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,8 +70,8 @@ public class PredictiveAnalysisOperationImpl extends AnalysisOperationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PredictiveOperation getName() {
-		return name;
+	public PredictiveOperation getType() {
+		return type;
 	}
 
 	/**
@@ -79,11 +79,11 @@ public class PredictiveAnalysisOperationImpl extends AnalysisOperationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(PredictiveOperation newName) {
-		PredictiveOperation oldName = name;
-		name = newName == null ? NAME_EDEFAULT : newName;
+	public void setType(PredictiveOperation newType) {
+		PredictiveOperation oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION__TYPE, oldType, type));
 	}
 
 	/**
@@ -94,8 +94,8 @@ public class PredictiveAnalysisOperationImpl extends AnalysisOperationImpl imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION__NAME:
-				return getName();
+			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION__TYPE:
+				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,8 +108,8 @@ public class PredictiveAnalysisOperationImpl extends AnalysisOperationImpl imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION__NAME:
-				setName((PredictiveOperation)newValue);
+			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION__TYPE:
+				setType((PredictiveOperation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,8 +123,8 @@ public class PredictiveAnalysisOperationImpl extends AnalysisOperationImpl imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION__NAME:
-				setName(NAME_EDEFAULT);
+			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION__TYPE:
+				setType(TYPE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -138,8 +138,8 @@ public class PredictiveAnalysisOperationImpl extends AnalysisOperationImpl imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION__NAME:
-				return name != NAME_EDEFAULT;
+			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION__TYPE:
+				return type != TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,8 +154,8 @@ public class PredictiveAnalysisOperationImpl extends AnalysisOperationImpl imple
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}

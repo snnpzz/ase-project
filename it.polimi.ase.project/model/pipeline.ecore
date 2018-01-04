@@ -63,6 +63,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" eType="#//InternalDataFlow"
         eOpposite="#//InternalDataFlow/source"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
+        upperBound="-1" eType="#//SimpleAttribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InternalDataFlow">
     <eAnnotations source="gmf.link">
@@ -198,7 +200,7 @@
         iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UserDefinedCleaningOperation" eSuperTypes="#//CleaningOperation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Source">
     <eAnnotations source="gmf.node">
@@ -240,20 +242,20 @@
   <eClassifiers xsi:type="ecore:EClass" name="CleaningOperation" abstract="true" eSuperTypes="#//Operation"/>
   <eClassifiers xsi:type="ecore:EClass" name="AnalysisOperation" abstract="true" eSuperTypes="#//Operation"/>
   <eClassifiers xsi:type="ecore:EClass" name="DescriptiveAnalysisOperation" eSuperTypes="#//AnalysisOperation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//DescriptiveOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DescriptiveOperation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassificationAnalysisOperation" eSuperTypes="#//AnalysisOperation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//ClassificationOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ClassificationOperation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PredictiveAnalysisOperation" eSuperTypes="#//AnalysisOperation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//PredictiveOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PredictiveOperation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClusteringAnalysisOperation" eSuperTypes="#//AnalysisOperation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//ClusteringOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ClusteringOperation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="k" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PredefinedCleaningOperation" eSuperTypes="#//CleaningOperation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//PredefinedOperation"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PredefinedOperation"
         defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SimpleAttribute" eSuperTypes="#//Attribute">
@@ -271,12 +273,11 @@
     <eLiterals name="removeNulls"/>
     <eLiterals name="removeNegative" value="1"/>
     <eLiterals name="round" value="2"/>
+    <eLiterals name="removeColumn" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ClusteringOperation">
     <eLiterals name="kMeans"/>
-    <eLiterals name="kMedoids" value="1"/>
-    <eLiterals name="fuzzyCMeans" value="2"/>
-    <eLiterals name="QT" value="3"/>
+    <eLiterals name="Hierarchical" value="1" literal="Hierarchical"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ClassificationOperation">
     <eLiterals name="LogisticRegression"/>
@@ -294,27 +295,20 @@
     <eLiterals name="Histogram"/>
     <eLiterals name="Boxplot" value="1"/>
     <eLiterals name="PieChart" value="2"/>
+    <eLiterals name="ScatterPlot" value="4"/>
+    <eLiterals name="ViewData" value="5"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ChartType">
     <eLiterals name="Column"/>
     <eLiterals name="Line"/>
     <eLiterals name="Pie"/>
-    <eLiterals name="Doughnut"/>
     <eLiterals name="Bar"/>
     <eLiterals name="Area"/>
     <eLiterals name="Scatter"/>
-    <eLiterals name="Bubble"/>
-    <eLiterals name="Map"/>
-    <eLiterals name="Stock"/>
     <eLiterals name="Surface"/>
     <eLiterals name="Radar"/>
-    <eLiterals name="Treemap"/>
-    <eLiterals name="Sunburst"/>
     <eLiterals name="Histogram"/>
-    <eLiterals name="BoxAndWhisker"/>
-    <eLiterals name="Waterfall"/>
-    <eLiterals name="Funnel"/>
-    <eLiterals name="Combo"/>
+    <eLiterals name="BoxPlot"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Format">
     <eLiterals name="CSV"/>

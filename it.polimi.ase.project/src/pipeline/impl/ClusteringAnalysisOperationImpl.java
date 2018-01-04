@@ -20,7 +20,7 @@ import pipeline.PipelinePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.ClusteringAnalysisOperationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link pipeline.impl.ClusteringAnalysisOperationImpl#getType <em>Type</em>}</li>
  *   <li>{@link pipeline.impl.ClusteringAnalysisOperationImpl#getK <em>K</em>}</li>
  * </ul>
  *
@@ -28,24 +28,24 @@ import pipeline.PipelinePackage;
  */
 public class ClusteringAnalysisOperationImpl extends AnalysisOperationImpl implements ClusteringAnalysisOperation {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ClusteringOperation NAME_EDEFAULT = ClusteringOperation.KMEANS;
+	protected static final ClusteringOperation TYPE_EDEFAULT = ClusteringOperation.KMEANS;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected ClusteringOperation name = NAME_EDEFAULT;
+	protected ClusteringOperation type = TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getK() <em>K</em>}' attribute.
@@ -91,8 +91,8 @@ public class ClusteringAnalysisOperationImpl extends AnalysisOperationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClusteringOperation getName() {
-		return name;
+	public ClusteringOperation getType() {
+		return type;
 	}
 
 	/**
@@ -100,11 +100,11 @@ public class ClusteringAnalysisOperationImpl extends AnalysisOperationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(ClusteringOperation newName) {
-		ClusteringOperation oldName = name;
-		name = newName == null ? NAME_EDEFAULT : newName;
+	public void setType(ClusteringOperation newType) {
+		ClusteringOperation oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__TYPE, oldType, type));
 	}
 
 	/**
@@ -136,8 +136,8 @@ public class ClusteringAnalysisOperationImpl extends AnalysisOperationImpl imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__NAME:
-				return getName();
+			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__TYPE:
+				return getType();
 			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__K:
 				return getK();
 		}
@@ -152,8 +152,8 @@ public class ClusteringAnalysisOperationImpl extends AnalysisOperationImpl imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__NAME:
-				setName((ClusteringOperation)newValue);
+			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__TYPE:
+				setType((ClusteringOperation)newValue);
 				return;
 			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__K:
 				setK((Integer)newValue);
@@ -170,8 +170,8 @@ public class ClusteringAnalysisOperationImpl extends AnalysisOperationImpl imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__NAME:
-				setName(NAME_EDEFAULT);
+			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__TYPE:
+				setType(TYPE_EDEFAULT);
 				return;
 			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__K:
 				setK(K_EDEFAULT);
@@ -188,8 +188,8 @@ public class ClusteringAnalysisOperationImpl extends AnalysisOperationImpl imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__NAME:
-				return name != NAME_EDEFAULT;
+			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__TYPE:
+				return type != TYPE_EDEFAULT;
 			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__K:
 				return k != K_EDEFAULT;
 		}
@@ -206,8 +206,8 @@ public class ClusteringAnalysisOperationImpl extends AnalysisOperationImpl imple
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (type: ");
+		result.append(type);
 		result.append(", k: ");
 		result.append(k);
 		result.append(')');

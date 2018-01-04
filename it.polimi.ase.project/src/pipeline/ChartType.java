@@ -49,16 +49,6 @@ public enum ChartType implements Enumerator {
 	PIE(0, "Pie", "Pie"),
 
 	/**
-	 * The '<em><b>Doughnut</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #DOUGHNUT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	DOUGHNUT(0, "Doughnut", "Doughnut"),
-
-	/**
 	 * The '<em><b>Bar</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -89,36 +79,6 @@ public enum ChartType implements Enumerator {
 	SCATTER(0, "Scatter", "Scatter"),
 
 	/**
-	 * The '<em><b>Bubble</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #BUBBLE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	BUBBLE(0, "Bubble", "Bubble"),
-
-	/**
-	 * The '<em><b>Map</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #MAP_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	MAP(0, "Map", "Map"),
-
-	/**
-	 * The '<em><b>Stock</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #STOCK_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	STOCK(0, "Stock", "Stock"),
-
-	/**
 	 * The '<em><b>Surface</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,26 +99,6 @@ public enum ChartType implements Enumerator {
 	RADAR(0, "Radar", "Radar"),
 
 	/**
-	 * The '<em><b>Treemap</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #TREEMAP_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	TREEMAP(0, "Treemap", "Treemap"),
-
-	/**
-	 * The '<em><b>Sunburst</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SUNBURST_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SUNBURST(0, "Sunburst", "Sunburst"),
-
-	/**
 	 * The '<em><b>Histogram</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -169,44 +109,14 @@ public enum ChartType implements Enumerator {
 	HISTOGRAM(0, "Histogram", "Histogram"),
 
 	/**
-	 * The '<em><b>Box And Whisker</b></em>' literal object.
+	 * The '<em><b>Box Plot</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #BOX_AND_WHISKER_VALUE
+	 * @see #BOX_PLOT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	BOX_AND_WHISKER(0, "BoxAndWhisker", "BoxAndWhisker"),
-
-	/**
-	 * The '<em><b>Waterfall</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #WATERFALL_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	WATERFALL(0, "Waterfall", "Waterfall"),
-
-	/**
-	 * The '<em><b>Funnel</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #FUNNEL_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	FUNNEL(0, "Funnel", "Funnel"),
-
-	/**
-	 * The '<em><b>Combo</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #COMBO_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	COMBO(0, "Combo", "Combo");
+	BOX_PLOT(0, "BoxPlot", "BoxPlot");
 
 	/**
 	 * The '<em><b>Column</b></em>' literal value.
@@ -254,21 +164,6 @@ public enum ChartType implements Enumerator {
 	public static final int PIE_VALUE = 0;
 
 	/**
-	 * The '<em><b>Doughnut</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Doughnut</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #DOUGHNUT
-	 * @model name="Doughnut"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int DOUGHNUT_VALUE = 0;
-
-	/**
 	 * The '<em><b>Bar</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -314,51 +209,6 @@ public enum ChartType implements Enumerator {
 	public static final int SCATTER_VALUE = 0;
 
 	/**
-	 * The '<em><b>Bubble</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Bubble</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #BUBBLE
-	 * @model name="Bubble"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int BUBBLE_VALUE = 0;
-
-	/**
-	 * The '<em><b>Map</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Map</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #MAP
-	 * @model name="Map"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MAP_VALUE = 0;
-
-	/**
-	 * The '<em><b>Stock</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Stock</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #STOCK
-	 * @model name="Stock"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int STOCK_VALUE = 0;
-
-	/**
 	 * The '<em><b>Surface</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -389,36 +239,6 @@ public enum ChartType implements Enumerator {
 	public static final int RADAR_VALUE = 0;
 
 	/**
-	 * The '<em><b>Treemap</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Treemap</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #TREEMAP
-	 * @model name="Treemap"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int TREEMAP_VALUE = 0;
-
-	/**
-	 * The '<em><b>Sunburst</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Sunburst</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #SUNBURST
-	 * @model name="Sunburst"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SUNBURST_VALUE = 0;
-
-	/**
 	 * The '<em><b>Histogram</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -434,64 +254,19 @@ public enum ChartType implements Enumerator {
 	public static final int HISTOGRAM_VALUE = 0;
 
 	/**
-	 * The '<em><b>Box And Whisker</b></em>' literal value.
+	 * The '<em><b>Box Plot</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Box And Whisker</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Box Plot</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #BOX_AND_WHISKER
-	 * @model name="BoxAndWhisker"
+	 * @see #BOX_PLOT
+	 * @model name="BoxPlot"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BOX_AND_WHISKER_VALUE = 0;
-
-	/**
-	 * The '<em><b>Waterfall</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Waterfall</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #WATERFALL
-	 * @model name="Waterfall"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int WATERFALL_VALUE = 0;
-
-	/**
-	 * The '<em><b>Funnel</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Funnel</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #FUNNEL
-	 * @model name="Funnel"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int FUNNEL_VALUE = 0;
-
-	/**
-	 * The '<em><b>Combo</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Combo</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #COMBO
-	 * @model name="Combo"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int COMBO_VALUE = 0;
+	public static final int BOX_PLOT_VALUE = 0;
 
 	/**
 	 * An array of all the '<em><b>Chart Type</b></em>' enumerators.
@@ -504,22 +279,13 @@ public enum ChartType implements Enumerator {
 			COLUMN,
 			LINE,
 			PIE,
-			DOUGHNUT,
 			BAR,
 			AREA,
 			SCATTER,
-			BUBBLE,
-			MAP,
-			STOCK,
 			SURFACE,
 			RADAR,
-			TREEMAP,
-			SUNBURST,
 			HISTOGRAM,
-			BOX_AND_WHISKER,
-			WATERFALL,
-			FUNNEL,
-			COMBO,
+			BOX_PLOT,
 		};
 
 	/**

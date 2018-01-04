@@ -46,25 +46,25 @@ public class PredefinedCleaningOperationItemProvider extends CleaningOperationIt
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PredefinedCleaningOperation_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PredefinedCleaningOperation_name_feature", "_UI_PredefinedCleaningOperation_type"),
-				 PipelinePackage.Literals.PREDEFINED_CLEANING_OPERATION__NAME,
+				 getString("_UI_PredefinedCleaningOperation_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PredefinedCleaningOperation_type_feature", "_UI_PredefinedCleaningOperation_type"),
+				 PipelinePackage.Literals.PREDEFINED_CLEANING_OPERATION__TYPE,
 				 true,
 				 false,
 				 false,
@@ -92,8 +92,7 @@ public class PredefinedCleaningOperationItemProvider extends CleaningOperationIt
 	 */
 	@Override
 	public String getText(Object object) {
-		PredefinedOperation labelValue = ((PredefinedCleaningOperation)object).getName();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((PredefinedCleaningOperation)object).getID();
 		return label == null || label.length() == 0 ?
 			getString("_UI_PredefinedCleaningOperation_type") :
 			getString("_UI_PredefinedCleaningOperation_type") + " " + label;
@@ -112,7 +111,7 @@ public class PredefinedCleaningOperationItemProvider extends CleaningOperationIt
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PredefinedCleaningOperation.class)) {
-			case PipelinePackage.PREDEFINED_CLEANING_OPERATION__NAME:
+			case PipelinePackage.PREDEFINED_CLEANING_OPERATION__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

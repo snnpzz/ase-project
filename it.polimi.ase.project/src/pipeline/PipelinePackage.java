@@ -1011,13 +1011,22 @@ public interface PipelinePackage extends EPackage {
 	int SOURCE__NAME = 1;
 
 	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__PATH = 2;
+
+	/**
 	 * The feature id for the '<em><b>Server Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__SERVER_NAME = 2;
+	int SOURCE__SERVER_NAME = 3;
 
 	/**
 	 * The feature id for the '<em><b>Port Number</b></em>' attribute.
@@ -1026,7 +1035,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__PORT_NUMBER = 3;
+	int SOURCE__PORT_NUMBER = 4;
 
 	/**
 	 * The feature id for the '<em><b>User Name</b></em>' attribute.
@@ -1035,7 +1044,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__USER_NAME = 4;
+	int SOURCE__USER_NAME = 5;
 
 	/**
 	 * The feature id for the '<em><b>Password</b></em>' attribute.
@@ -1044,7 +1053,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__PASSWORD = 5;
+	int SOURCE__PASSWORD = 6;
 
 	/**
 	 * The number of structural features of the '<em>Source</em>' class.
@@ -1053,7 +1062,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE_FEATURE_COUNT = 6;
+	int SOURCE_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.FileImpl <em>File</em>}' class.
@@ -2422,6 +2431,17 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getSource_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link pipeline.Source#getPath <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see pipeline.Source#getPath()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_Path();
+
+	/**
 	 * Returns the meta object for the attribute '{@link pipeline.Source#getServerName <em>Server Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3397,6 +3417,14 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SOURCE__NAME = eINSTANCE.getSource_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__PATH = eINSTANCE.getSource_Path();
 
 		/**
 		 * The meta object literal for the '<em><b>Server Name</b></em>' attribute feature.

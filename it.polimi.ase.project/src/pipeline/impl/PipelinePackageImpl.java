@@ -930,7 +930,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSource_ServerName() {
+	public EAttribute getSource_Path() {
 		return (EAttribute)sourceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -939,7 +939,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSource_PortNumber() {
+	public EAttribute getSource_ServerName() {
 		return (EAttribute)sourceEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -948,7 +948,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSource_UserName() {
+	public EAttribute getSource_PortNumber() {
 		return (EAttribute)sourceEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -957,8 +957,17 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSource_Password() {
+	public EAttribute getSource_UserName() {
 		return (EAttribute)sourceEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSource_Password() {
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1407,6 +1416,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		sourceEClass = createEClass(SOURCE);
 		createEReference(sourceEClass, SOURCE__LINKED_TO);
 		createEAttribute(sourceEClass, SOURCE__NAME);
+		createEAttribute(sourceEClass, SOURCE__PATH);
 		createEAttribute(sourceEClass, SOURCE__SERVER_NAME);
 		createEAttribute(sourceEClass, SOURCE__PORT_NUMBER);
 		createEAttribute(sourceEClass, SOURCE__USER_NAME);
@@ -1587,6 +1597,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEClass(sourceEClass, Source.class, "Source", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSource_LinkedTo(), this.getImportOperation(), this.getImportOperation_Read(), "linkedTo", null, 1, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSource_Name(), ecorePackage.getEString(), "name", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSource_Path(), ecorePackage.getEString(), "path", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSource_ServerName(), ecorePackage.getEString(), "serverName", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSource_PortNumber(), ecorePackage.getEInt(), "portNumber", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSource_UserName(), ecorePackage.getEString(), "userName", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

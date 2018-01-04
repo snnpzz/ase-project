@@ -5,6 +5,7 @@
 [template public generatePipeline(aPipeline : Pipeline)]
 [comment @main/]
 [file ('pipeline_'.concat(aPipeline.ID).concat('.R'), false, 'UTF-8')]
+
 # This will generate an executable version of the pipeline
 # Structure of the program:
 # - if sources are local files, place them in a folder named "sources" at the same level of the R file;
@@ -18,13 +19,13 @@ library(tidyr)
 library(sqldf)
 
 
-# Collection task: import sources
+# Collection task: import sources as dataframes
 [importSource(aPipeline.sources)/]
 
 
 # Integration: join all data in a unique one
 [if (aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)) <> null)]
-	[joinSources(aPipeline.sources, 
+	[joinSources(aPipeline.tasks -> select(t | t.oclIsTypeOf(CollectionTask)).oclAsType(CollectionTask).importOperations.read, 
 		aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask).attributes)/]
 [/if]
 
@@ -37,16 +38,22 @@ library(sqldf)
 				# Predefined operation
 				[if (op.oclAsType(PredefinedCleaningOperation).name = 'removeNulls')]
 					# Remove null values
-
+					source <- na.omit(source)
 				[elseif (op.oclAsType(PredefinedCleaningOperation).name = 'removeNegative')]
 					# Remove negative values
-
+					[for (attr : Attribute | op.attributes)]
+						source$[attr.name/] <- source['['/] source$[attr.name/] >= 0 ,[']'/]
+					[/for]
 				[elseif (op.oclAsType(PredefinedCleaningOperation).name = 'round')]
 					# Round values
-
+					[for (attr : Attribute | op.attributes)]
+						source$[attr.name/] <- round(source$[attr.name/])
+					[/for]
 				[elseif]
 					# Remove column
-
+					[for (attr : Attribute | op.attributes)]
+						source$[attr.name/] <- NULL
+					[/for]
 				[/if]
 			[elseif]
 				# User defined operation
@@ -58,42 +65,84 @@ library(sqldf)
 
 
 # Analysis
+[let analysisTask : AnalysisTask = aPipeline.tasks -> select(t | t.oclIsTypeOf(AnalysisTask)).oclAsType(AnalysisTask)]
+	[for (op : AnalysisOperation | analysisTask.analysisOperations)]
+		[if (op.oclIsTypeOf(DescriptiveAnalysisOperation))]
+			# Descriptive analysis
+			
+		[elseif (op.oclIsTypeOf(ClassificationAnalysisOperation))]
+			# Classification analysis	
+
+		[elseif (op.oclIsTypeOf(ClusteringAnalysisOperation))]
+			# Clustering analysis
+
+		[elseif]
+			# Predictive analysis
+
+		[/if]
+	[/for]
+[/let]
 
 
 # Visualization
 [if (aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)) <> null)]
+	[let visTask : VisualizationTask = aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)).oclAsType(VisualizationTask)]
+		[for (op : VisualizationOperation | visTask.visualizationOperations)]
+			
+
+		[/for]
+	[/let]
 [/if]
 
+
 # Export
-[for (aFile: File | aPipeline.files)]
-	[exportFile(aFile)/]
-[/for]
+[exportFiles(aPipeline.tasks -> select(t | t.oclIsTypeOf(ExportTask)).oclAsType(ExportTask))/]
 
+dev.off()
 
+rm(list = ls())
 [/file]
 [/template]
 
 
 [template private importSource(aSources: OrderedSet(Source))]
-	[let index : Integer = 1]
-		[for (s : Source | aSources)]
-			[if (not(s.serverName.oclIsUndefined() or s.portNumber.oclIsUndefined()))]
-				# Remote file: download it
-				download.file([s.serverName.concat(':').concat(s.portNumber.toString()).concat('/').concat(s.name)/], "sources/[s.name/]", mode = "w")
-			[/if]
-			# Load file
-			['source'.concat(index.toString())/] = read.[s.name.substring(s.name.lastIndex('.'), s.name.size())/]("sources/[s.name/]")
-			[index = index + 1/]
-		[/for]
+[let index : Integer = 1]
+	[for (s : Source | aSources)]
+		[if (not(s.serverName.oclIsUndefined() or s.portNumber.oclIsUndefined()))]
+			# Remote file: download it
+			download.file([s.serverName.concat(':').concat(s.portNumber.toString()).concat('/').concat(s.name)/], "sources/[s.name/]", mode = "w")
+		[/if]
+		# Load file
+		['source'.concat(index.toString())/] = read.[s.name.substring(s.name.lastIndex('.'), s.name.size())/]("sources/[s.name/]")
+		[index = index + 1 /]
+	[/for]
+[/let]
+[/template]
+
+
+[template private joinSources(aSources: Sequence(Source), aAttributes: Sequence(Attribute))]
+[let attrs : String = '']
+	[for (attr : Attribute | aAttributes)]
+		[attrs.concat('"').concat(attr.name).concat('",')/]
+	[/for]
+	
+	[let merge : String = 'merge(source1, source2, by=c('.concat(attrs).concat('), all.x=TRUE)')]
+		[let index : Integer = 1]
+			[for (source : Source | aSources)]	
+				[if (index > 1)]
+					[merge = 'merge('.concat(merge).concat(', source').concat(index.toString()).concat(', by=c(').concat(attrs).concat('),, all.x=TRUE')/]
+				[/if]			
+				[index = index + 1 /]		
+			[/for]
+		[/let]
+		source = [merge/]
 	[/let]
+[/let]		
 [/template]
 
 
-[template private joinSources(aSources: OrderedSet(Source), aAttributes: Sequence(Attribute))]
+[template private exportFiles(aTask: Sequence(ExportTask))]
+[for (exp : ExportOperation | aTask.exportOperations)]
 
-[/template]
-
-
-[template private exportFile(aFile: File)]
-
+[/for]
 [/template]

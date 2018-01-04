@@ -164,9 +164,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Chart/axes"/>
     </genClasses>
     <genClasses image="false" ecoreClass="pipeline.ecore#//CleaningOperation"/>
-    <genClasses image="false" ecoreClass="pipeline.ecore#//AnalysisOperation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//AnalysisOperation/attributes"/>
-    </genClasses>
+    <genClasses image="false" ecoreClass="pipeline.ecore#//AnalysisOperation"/>
     <genClasses ecoreClass="pipeline.ecore#//DescriptiveAnalysisOperation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//DescriptiveAnalysisOperation/name"/>
     </genClasses>

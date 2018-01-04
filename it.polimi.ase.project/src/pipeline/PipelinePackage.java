@@ -1261,7 +1261,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_OPERATION__ATTRIBUTES = OPERATION_FEATURE_COUNT + 0;
+	int ANALYSIS_OPERATION__ATTRIBUTES = OPERATION__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Analysis Operation</em>' class.
@@ -1270,7 +1270,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_OPERATION_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
+	int ANALYSIS_OPERATION_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -2543,17 +2543,6 @@ public interface PipelinePackage extends EPackage {
 	EClass getAnalysisOperation();
 
 	/**
-	 * Returns the meta object for the reference list '{@link pipeline.AnalysisOperation#getAttributes <em>Attributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Attributes</em>'.
-	 * @see pipeline.AnalysisOperation#getAttributes()
-	 * @see #getAnalysisOperation()
-	 * @generated
-	 */
-	EReference getAnalysisOperation_Attributes();
-
-	/**
 	 * Returns the meta object for class '{@link pipeline.DescriptiveAnalysisOperation <em>Descriptive Analysis Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3503,14 +3492,6 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ANALYSIS_OPERATION = eINSTANCE.getAnalysisOperation();
-
-		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ANALYSIS_OPERATION__ATTRIBUTES = eINSTANCE.getAnalysisOperation_Attributes();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.DescriptiveAnalysisOperationImpl <em>Descriptive Analysis Operation</em>}' class.

@@ -25,6 +25,7 @@ import pipeline.Source;
  * <ul>
  *   <li>{@link pipeline.impl.SourceImpl#getLinkedTo <em>Linked To</em>}</li>
  *   <li>{@link pipeline.impl.SourceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link pipeline.impl.SourceImpl#getPath <em>Path</em>}</li>
  *   <li>{@link pipeline.impl.SourceImpl#getServerName <em>Server Name</em>}</li>
  *   <li>{@link pipeline.impl.SourceImpl#getPortNumber <em>Port Number</em>}</li>
  *   <li>{@link pipeline.impl.SourceImpl#getUserName <em>User Name</em>}</li>
@@ -63,6 +64,26 @@ public class SourceImpl extends EObjectImpl implements Source {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String path = PATH_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getServerName() <em>Server Name</em>}' attribute.
@@ -249,6 +270,27 @@ public class SourceImpl extends EObjectImpl implements Source {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPath() {
+		return path;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPath(String newPath) {
+		String oldPath = path;
+		path = newPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.SOURCE__PATH, oldPath, path));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getServerName() {
 		return serverName;
 	}
@@ -371,6 +413,8 @@ public class SourceImpl extends EObjectImpl implements Source {
 				return basicGetLinkedTo();
 			case PipelinePackage.SOURCE__NAME:
 				return getName();
+			case PipelinePackage.SOURCE__PATH:
+				return getPath();
 			case PipelinePackage.SOURCE__SERVER_NAME:
 				return getServerName();
 			case PipelinePackage.SOURCE__PORT_NUMBER:
@@ -396,6 +440,9 @@ public class SourceImpl extends EObjectImpl implements Source {
 				return;
 			case PipelinePackage.SOURCE__NAME:
 				setName((String)newValue);
+				return;
+			case PipelinePackage.SOURCE__PATH:
+				setPath((String)newValue);
 				return;
 			case PipelinePackage.SOURCE__SERVER_NAME:
 				setServerName((String)newValue);
@@ -427,6 +474,9 @@ public class SourceImpl extends EObjectImpl implements Source {
 			case PipelinePackage.SOURCE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case PipelinePackage.SOURCE__PATH:
+				setPath(PATH_EDEFAULT);
+				return;
 			case PipelinePackage.SOURCE__SERVER_NAME:
 				setServerName(SERVER_NAME_EDEFAULT);
 				return;
@@ -455,6 +505,8 @@ public class SourceImpl extends EObjectImpl implements Source {
 				return linkedTo != null;
 			case PipelinePackage.SOURCE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case PipelinePackage.SOURCE__PATH:
+				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case PipelinePackage.SOURCE__SERVER_NAME:
 				return SERVER_NAME_EDEFAULT == null ? serverName != null : !SERVER_NAME_EDEFAULT.equals(serverName);
 			case PipelinePackage.SOURCE__PORT_NUMBER:
@@ -479,6 +531,8 @@ public class SourceImpl extends EObjectImpl implements Source {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", path: ");
+		result.append(path);
 		result.append(", serverName: ");
 		result.append(serverName);
 		result.append(", portNumber: ");

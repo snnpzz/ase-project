@@ -5,5 +5,5 @@
 
 [template public generate(aPipeline : Pipeline)]
 [comment @main /]
-[aPipeline.generate()/]
+[aPipeline.generateHtml()/]
 [/template]

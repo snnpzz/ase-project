@@ -62,6 +62,7 @@ public class SourceItemProvider
 
 			addLinkedToPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addPathPropertyDescriptor(object);
 			addServerNamePropertyDescriptor(object);
 			addPortNumberPropertyDescriptor(object);
 			addUserNamePropertyDescriptor(object);
@@ -106,6 +107,28 @@ public class SourceItemProvider
 				 getString("_UI_Source_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Source_name_feature", "_UI_Source_type"),
 				 PipelinePackage.Literals.SOURCE__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_path_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_path_feature", "_UI_Source_type"),
+				 PipelinePackage.Literals.SOURCE__PATH,
 				 true,
 				 false,
 				 false,
@@ -241,6 +264,7 @@ public class SourceItemProvider
 
 		switch (notification.getFeatureID(Source.class)) {
 			case PipelinePackage.SOURCE__NAME:
+			case PipelinePackage.SOURCE__PATH:
 			case PipelinePackage.SOURCE__SERVER_NAME:
 			case PipelinePackage.SOURCE__PORT_NUMBER:
 			case PipelinePackage.SOURCE__USER_NAME:

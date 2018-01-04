@@ -126,6 +126,7 @@ class UserDefinedCleaningOperation extends CleaningOperation {
 class Source {
   ref ImportOperation[1]#read linkedTo;
   attr String name;
+  attr String path;
   attr String serverName;
   attr int portNumber;
   attr String userName;

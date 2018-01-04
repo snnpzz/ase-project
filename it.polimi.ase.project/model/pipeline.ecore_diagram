@@ -396,7 +396,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_w2-S-eGXEeeU3dy_CQ-Szg"/>
     </children>
     <element xmi:type="ecore:EClass" href="pipeline.ecore#//DescriptiveAnalysisOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w29r4eGXEeeU3dy_CQ-Szg" x="826" y="623"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w29r4eGXEeeU3dy_CQ-Szg" x="790" y="610"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_xNQsAOGXEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_xNQsAuGXEeeU3dy_CQ-Szg" type="5001"/>

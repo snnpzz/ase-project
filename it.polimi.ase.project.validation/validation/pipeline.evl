@@ -1,3 +1,4 @@
+
 context Pipeline{
 	constraint uniqueTasks {
 		check: self.tasks -> select(t|t.isTypeOf(CollectionTask)) -> size() <= 1 and 
@@ -133,15 +134,15 @@ context Pipeline{
 		message: "If there are many input sources there must be a integration task"
 	}
 	
-	constraint eachSourceImportedOnce {
-		check: select(s | self.sources.linkedTo <> 1) -> size() <> 0
-		message: "Import operations must be linked to different input sources"
-	}
-	
-	constraint fileExportedOnce {
-		check: self.files.comesFrom -> size() == 1
-		message: "Export operations must be linked to different output files"
-	}
+	constraint SourceImportedOnce {
+		check: self.sources -> forAll(s | (self.tasks -> select(t | t.isTypeOf(CollectionTask)).importOperations -> forAll(i | i.read == s)) -> size() == 1)
+		message: "Imports must be linked to different input sources"
+ 	}
+  	
+  	constraint FileExportedOnce {
+ 		check: self.files -> forAll(f | (self.tasks -> select(t | t.isTypeOf(ExportTask)).exportOperations -> forAll(e | e.write == f)) -> size() == 1)
+ 		message: "Exports must be linked to different output files"
+  	}
 }
 
 
@@ -296,6 +297,7 @@ context ComplexAttribute{
 	constraint uniqueAttribute {
 		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 == a2) -> size() == 0)
 		message: "There can't be many equal attributes in the same attribute"
+	}
 }
 
 

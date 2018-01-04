@@ -20,17 +20,17 @@ public class ComplexAttributeComplexAttributeAttributesCompartmentItemSemanticEd
 	* @generated
 	*/
 	public ComplexAttributeComplexAttributeAttributesCompartmentItemSemanticEditPolicy() {
-		super(PipelineElementTypes.ComplexAttribute_3010);
+		super(PipelineElementTypes.ComplexAttribute_3004);
 	}
 
 	/**
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (PipelineElementTypes.SimpleAttribute_3011 == req.getElementType()) {
+		if (PipelineElementTypes.SimpleAttribute_3005 == req.getElementType()) {
 			return getGEFWrapper(new SimpleAttribute2CreateCommand(req));
 		}
-		if (PipelineElementTypes.ComplexAttribute_3012 == req.getElementType()) {
+		if (PipelineElementTypes.ComplexAttribute_3006 == req.getElementType()) {
 			return getGEFWrapper(new ComplexAttribute2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

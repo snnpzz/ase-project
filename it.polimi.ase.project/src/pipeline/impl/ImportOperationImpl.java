@@ -24,34 +24,14 @@ import pipeline.Source;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.ImportOperationImpl#getRead <em>Read</em>}</li>
- *   <li>{@link pipeline.impl.ImportOperationImpl#getImpUses <em>Imp Uses</em>}</li>
  *   <li>{@link pipeline.impl.ImportOperationImpl#getID <em>ID</em>}</li>
+ *   <li>{@link pipeline.impl.ImportOperationImpl#getRead <em>Read</em>}</li>
+ *   <li>{@link pipeline.impl.ImportOperationImpl#getUse <em>Use</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ImportOperationImpl extends EObjectImpl implements ImportOperation {
-	/**
-	 * The cached value of the '{@link #getRead() <em>Read</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRead()
-	 * @generated
-	 * @ordered
-	 */
-	protected Source read;
-
-	/**
-	 * The cached value of the '{@link #getImpUses() <em>Imp Uses</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImpUses()
-	 * @generated
-	 * @ordered
-	 */
-	protected Schema impUses;
-
 	/**
 	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -71,6 +51,26 @@ public class ImportOperationImpl extends EObjectImpl implements ImportOperation 
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRead() <em>Read</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRead()
+	 * @generated
+	 * @ordered
+	 */
+	protected Source read;
+
+	/**
+	 * The cached value of the '{@link #getUse() <em>Use</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUse()
+	 * @generated
+	 * @ordered
+	 */
+	protected Schema use;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,16 +156,16 @@ public class ImportOperationImpl extends EObjectImpl implements ImportOperation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Schema getImpUses() {
-		if (impUses != null && impUses.eIsProxy()) {
-			InternalEObject oldImpUses = (InternalEObject)impUses;
-			impUses = (Schema)eResolveProxy(oldImpUses);
-			if (impUses != oldImpUses) {
+	public Schema getUse() {
+		if (use != null && use.eIsProxy()) {
+			InternalEObject oldUse = (InternalEObject)use;
+			use = (Schema)eResolveProxy(oldUse);
+			if (use != oldUse) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.IMPORT_OPERATION__IMP_USES, oldImpUses, impUses));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.IMPORT_OPERATION__USE, oldUse, use));
 			}
 		}
-		return impUses;
+		return use;
 	}
 
 	/**
@@ -173,8 +173,8 @@ public class ImportOperationImpl extends EObjectImpl implements ImportOperation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Schema basicGetImpUses() {
-		return impUses;
+	public Schema basicGetUse() {
+		return use;
 	}
 
 	/**
@@ -182,11 +182,11 @@ public class ImportOperationImpl extends EObjectImpl implements ImportOperation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setImpUses(Schema newImpUses) {
-		Schema oldImpUses = impUses;
-		impUses = newImpUses;
+	public void setUse(Schema newUse) {
+		Schema oldUse = use;
+		use = newUse;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.IMPORT_OPERATION__IMP_USES, oldImpUses, impUses));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.IMPORT_OPERATION__USE, oldUse, use));
 	}
 
 	/**
@@ -248,14 +248,14 @@ public class ImportOperationImpl extends EObjectImpl implements ImportOperation 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case PipelinePackage.IMPORT_OPERATION__ID:
+				return getID();
 			case PipelinePackage.IMPORT_OPERATION__READ:
 				if (resolve) return getRead();
 				return basicGetRead();
-			case PipelinePackage.IMPORT_OPERATION__IMP_USES:
-				if (resolve) return getImpUses();
-				return basicGetImpUses();
-			case PipelinePackage.IMPORT_OPERATION__ID:
-				return getID();
+			case PipelinePackage.IMPORT_OPERATION__USE:
+				if (resolve) return getUse();
+				return basicGetUse();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -268,14 +268,14 @@ public class ImportOperationImpl extends EObjectImpl implements ImportOperation 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case PipelinePackage.IMPORT_OPERATION__ID:
+				setID((String)newValue);
+				return;
 			case PipelinePackage.IMPORT_OPERATION__READ:
 				setRead((Source)newValue);
 				return;
-			case PipelinePackage.IMPORT_OPERATION__IMP_USES:
-				setImpUses((Schema)newValue);
-				return;
-			case PipelinePackage.IMPORT_OPERATION__ID:
-				setID((String)newValue);
+			case PipelinePackage.IMPORT_OPERATION__USE:
+				setUse((Schema)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -289,14 +289,14 @@ public class ImportOperationImpl extends EObjectImpl implements ImportOperation 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case PipelinePackage.IMPORT_OPERATION__ID:
+				setID(ID_EDEFAULT);
+				return;
 			case PipelinePackage.IMPORT_OPERATION__READ:
 				setRead((Source)null);
 				return;
-			case PipelinePackage.IMPORT_OPERATION__IMP_USES:
-				setImpUses((Schema)null);
-				return;
-			case PipelinePackage.IMPORT_OPERATION__ID:
-				setID(ID_EDEFAULT);
+			case PipelinePackage.IMPORT_OPERATION__USE:
+				setUse((Schema)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -310,12 +310,12 @@ public class ImportOperationImpl extends EObjectImpl implements ImportOperation 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.IMPORT_OPERATION__READ:
-				return read != null;
-			case PipelinePackage.IMPORT_OPERATION__IMP_USES:
-				return impUses != null;
 			case PipelinePackage.IMPORT_OPERATION__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case PipelinePackage.IMPORT_OPERATION__READ:
+				return read != null;
+			case PipelinePackage.IMPORT_OPERATION__USE:
+				return use != null;
 		}
 		return super.eIsSet(featureID);
 	}

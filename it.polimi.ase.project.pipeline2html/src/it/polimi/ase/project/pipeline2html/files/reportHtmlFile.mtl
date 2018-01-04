@@ -112,13 +112,13 @@
 	<br>
 	<b>Name:</b> 
 	[if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))]
-	[anAnalysisOperation.oclAsType(ClassificationAnalysisOperation).name/]
+	[anAnalysisOperation.oclAsType(ClassificationAnalysisOperation).type/]
 	[elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))]
-	[anAnalysisOperation.oclAsType(ClusteringAnalysisOperation).name/]
+	[anAnalysisOperation.oclAsType(ClusteringAnalysisOperation).type/]
 	[elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))]
-	[anAnalysisOperation.oclAsType(DescriptiveAnalysisOperation).name/]
+	[anAnalysisOperation.oclAsType(DescriptiveAnalysisOperation).type/]
 	[elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))]
-	[anAnalysisOperation.oclAsType(PredictiveAnalysisOperation).name/]
+	[anAnalysisOperation.oclAsType(PredictiveAnalysisOperation).type/]
 	[/if]
 	<br>
 	[if (anAnalysisOperation.incoming -> size() > 0)]
@@ -154,9 +154,9 @@
 	<br>
 	<b>Name:</b> 
 	[if (aCleaningOperation.oclIsTypeOf(PredefinedCleaningOperation))]
-	[aCleaningOperation.oclAsType(PredefinedCleaningOperation).name/]
+	[aCleaningOperation.oclAsType(PredefinedCleaningOperation).type/]
 	[elseif (aCleaningOperation.oclIsTypeOf(UserDefinedCleaningOperation))]
-	[aCleaningOperation.oclAsType(UserDefinedCleaningOperation).name/]
+	[aCleaningOperation.oclAsType(UserDefinedCleaningOperation).type/]
 	[/if]
 	<br>
 	[if (aCleaningOperation.incoming -> size() > 0)]
@@ -341,35 +341,47 @@
 				</tbody>
 			</table>
 		</div>
-		<span style="color:#007bff;font-size:1rem;">Operations</span>
+		<span style="color:#007bff;font-size:1rem;">Import Operation(s)</span>
 		<div class="table-responsive">
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<td>#</td>
-						<td>ID</td>
-						<td>Details</td>
-					</tr>
-				</thead>
+			<table class="table">
 				<tbody>
-				[let anInteger : Integer = 0]
-				[for (anImportOperation : ImportOperation | aTask.oclAsType(CollectionTask).importOperations)]
-				[generateTableRow(anInteger, anImportOperation)/]
-				[anInteger = anInteger + 1/]
-				[/for]
-				[/let]
+					<tr>
+					[for (anImportOperation : ImportOperation | aTask.oclAsType(CollectionTask).importOperations)]
+					[generateTableCell(anImportOperation)/]
+					[/for]
+					<tr>
 				</tbody>
 			</table>
 		</div>
-		<span style="color:#007bff;font-size:1rem;">Output Data Flow</span>
-		[generateDiv(aTask.outgoing -> first())/]
+		<span style="color:#007bff;font-size:1rem;">Output Data Flow(s)</span>
+		<div class="table-responsive">
+			<table class="table">
+				<tbody>
+					<tr>
+					[for (aDataFlow : DataFlow | aTask.outgoing)]
+					<td>[generateDiv(aDataFlow)/]</td>
+					[/for]
+					</tr>
+				<tbody>
+			</table>
+		</div>
 		[elseif (aTask.oclIsTypeOf(IntegrationTask))]
-		<span style="color:#007bff;">Input Data Flow</span>
-		[generateDiv(aTask.incoming -> first())/]
+		<span style="color:#007bff;">Input Data Flow(s)</span>
+		<div class="table-responsive">
+			<table class="table">
+				<tbody>
+					<tr>
+					[for (aDataFlow : DataFlow | aTask.incoming)]
+					<td>[generateDiv(aDataFlow)/]</td>
+					[/for]
+					</tr>
+				<tbody>
+			</table>
+		</div>
 		<span style="color:#007bff;">TODO</span>
 		<br>
 		<span style="color:#007bff;">Output Data Flow</span>
-		[generateDiv(aTask.outgoing -> first())/]
+		[generateDiv(aTask.outgoing->first())/]
 		[elseif (aTask.oclIsTypeOf(CleaningTask))]
 		<span style="color:#007bff;font-size:1rem;">Input Data Flow</span>
 		[generateDiv(aTask.incoming -> first())/]
@@ -417,8 +429,18 @@
 		[elseif (aTask.oclIsTypeOf(VisualizationTask))]
 		<span style="color:#007bff;font-size:1rem;">Input Data Flow</span>
 		[generateDiv(aTask.incoming -> first())/]
-		<span style="color:#007bff;font-size:1rem;">Operation(s)</span>
-		
+		<span style="color:#007bff;font-size:1rem;">Visualization Operation(s)</span>
+		<div class="table-responsive">
+			<table class="table">
+				<tbody>
+					<tr>
+					[for (aVisualizationOperation : VisualizationOperation | aTask.oclAsType(VisualizationTask).visualizationOperations)]
+					[generateTableCell(aVisualizationOperation)/]
+					[/for]
+					<tr>
+				</tbody>
+			</table>
+		</div>
 		<span style="color:#007bff;font-size:1rem;">Output Data Flow</span>
 		[generateDiv(aTask.outgoing -> first())/]
 		[elseif (aTask.oclIsTypeOf(ExportTask))]
@@ -426,25 +448,18 @@
 		[generateDiv(aTask.incoming -> first())/]
 		<span style="color:#007bff;font-size:1rem;">Export Operation(s)</span>
 		<div class="table-responsive">
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<td>#</td>
-						<td>ID</td>
-						<td>Details</td>
-					</tr>
-				</thead>
+			<table class="table">
 				<tbody>
-				[let anInteger : Integer = 1]
-				[for (aExportOperation : ExportOperation | aTask.oclAsType(ExportTask).exportOperations)]
-				[generateTableRow(anInteger, aExportOperation)/]
-				[anInteger = anInteger + 1/]
-				[/for]
-				[/let]
+					<tr>
+					[for (aExportOperation : ExportOperation | aTask.oclAsType(ExportTask).exportOperations)]
+					[generateTableCell(aExportOperation)/]
+					[/for]
+					<tr>
 				</tbody>
 			</table>
 		</div>
 		<span style="color:#007bff;font-size:1rem;">Output File(s)</span>
+		[aTask.oclAsType(ExportTask).exportOperations.write -> size()/]
 		<div class="table-responsive">
 			<table class="table table-striped">
 				<thead>
@@ -485,11 +500,27 @@
 </div>
 [/template]
 
-[template private generateTableCell(anAnalysisOperation : AnalysisOperation)]
+[template private generateTableCell(aExportOperation : ExportOperation)]
 <td>
-ID: 
-<br>
-Type:
+	<b>ID:</b> [aExportOperation.ID/]
+	<br>
+	<b>Details:</b> <a href="#export-operation-[aExportOperation.ID/]">+</a>
+</td>
+[/template]
+
+[template private generateTableCell(anImportOperation : ImportOperation)]
+<td>
+	<b>ID:</b> [anImportOperation.ID/]
+	<br>
+	<b>Details:</b> <a href="#import-operation-[anImportOperation.ID/]">+</a>
+</td>
+[/template]
+
+[template private generateTableCell(aVisualizationOperation : VisualizationOperation)]
+<td>
+	<b>ID:</b> [aVisualizationOperation.ID/]
+	<br>
+	<b>Details:</b> <a href="#import-operation-[aVisualizationOperation.ID/]">+</a>
 </td>
 [/template]
 
@@ -497,7 +528,7 @@ Type:
 <tr>
 	<td>[aInteger/]</td>
 	<td>[anAttribute.name/]</td>
-	<td></td>
+	<td>[if (anAttribute.oclIsTypeOf(SimpleAttribute))]Simple Attribute[elseif (anAttribute.oclIsTypeOf(ComplexAttribute))]Complex Attribute[/if]</td>
 </tr>
 [generateTableRow(aInteger + 1, anAttribute.next)/]
 [/template]
@@ -506,26 +537,16 @@ Type:
 <tr>
 	<td>[aInteger/]</td>
 	<td>[anAnalysisOperation.ID/]</td>
+	<td>[if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))]Classification Analysis Operation[elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))]Clustering Analysis Operation[elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))]Descriptive Analysis Operation[elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))]Predictive Analysis Operation[/if]</td>
 	<td>
 		[if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))]
-		Classification Analysis Operation
+		[anAnalysisOperation.oclAsType(ClassificationAnalysisOperation).type/]
 		[elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))]
-		Clustering Analysis Operation
+		[anAnalysisOperation.oclAsType(ClusteringAnalysisOperation).type/]
 		[elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))]
-		Descriptive Analysis Operation
+		[anAnalysisOperation.oclAsType(DescriptiveAnalysisOperation).type/]
 		[elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))]
-		Predictive Analysis Operation
-		[/if]
-	</td>
-	<td>
-		[if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))]
-		[anAnalysisOperation.oclAsType(ClassificationAnalysisOperation).name/]
-		[elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))]
-		[anAnalysisOperation.oclAsType(ClusteringAnalysisOperation).name/]
-		[elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))]
-		[anAnalysisOperation.oclAsType(DescriptiveAnalysisOperation).name/]
-		[elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))]
-		[anAnalysisOperation.oclAsType(PredictiveAnalysisOperation).name/]
+		[anAnalysisOperation.oclAsType(PredictiveAnalysisOperation).type/]
 		[/if]
 	</td>
 	<td><a href="#analysis-operation-[anAnalysisOperation.ID/]">+</a></td>
@@ -548,22 +569,6 @@ Type:
 	<td><a href="#cleaning-operation-[aCleaningOperation.ID/]">+</a></td>
 </tr>
 [generateTableRow(aInteger + 1, aCleaningOperation.outgoing.target.oclAsType(CleaningOperation))/]
-[/template]
-
-[template private generateTableRow(aInteger : Integer, aExportOperation : ExportOperation)]
-<tr>
-	<td>[aInteger/]</td>
-	<td>[aExportOperation.ID/]</td>
-	<td><a href="#export-operation-[aExportOperation.ID/]">+</a></td>
-</tr>
-[/template]
-
-[template private generateTableRow(aInteger : Integer, anImportOperation : ImportOperation)]
-<tr>
-	<td>[aInteger/]</td>
-	<td>[anImportOperation.ID/]</td>
-	<td><a href="#import-operation-[anImportOperation.ID/]">+</a></td>
-</tr>
 [/template]
 
 [template private generateTableRow(aInteger : Integer, aTask : Task)]

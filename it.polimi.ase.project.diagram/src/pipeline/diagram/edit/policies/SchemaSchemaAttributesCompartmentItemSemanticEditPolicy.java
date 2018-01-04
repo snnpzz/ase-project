@@ -26,10 +26,10 @@ public class SchemaSchemaAttributesCompartmentItemSemanticEditPolicy extends Pip
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (PipelineElementTypes.SimpleAttribute_3009 == req.getElementType()) {
+		if (PipelineElementTypes.SimpleAttribute_3003 == req.getElementType()) {
 			return getGEFWrapper(new SimpleAttributeCreateCommand(req));
 		}
-		if (PipelineElementTypes.ComplexAttribute_3010 == req.getElementType()) {
+		if (PipelineElementTypes.ComplexAttribute_3004 == req.getElementType()) {
 			return getGEFWrapper(new ComplexAttributeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

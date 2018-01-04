@@ -782,31 +782,31 @@ public interface PipelinePackage extends EPackage {
 	int IMPORT_OPERATION = 13;
 
 	/**
-	 * The feature id for the '<em><b>Read</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPORT_OPERATION__READ = 0;
-
-	/**
-	 * The feature id for the '<em><b>Imp Uses</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPORT_OPERATION__IMP_USES = 1;
-
-	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPORT_OPERATION__ID = 2;
+	int IMPORT_OPERATION__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Read</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_OPERATION__READ = 1;
+
+	/**
+	 * The feature id for the '<em><b>Use</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_OPERATION__USE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Import Operation</em>' class.
@@ -828,31 +828,31 @@ public interface PipelinePackage extends EPackage {
 	int EXPORT_OPERATION = 14;
 
 	/**
-	 * The feature id for the '<em><b>Write</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPORT_OPERATION__WRITE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Exp Uses</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPORT_OPERATION__EXP_USES = 1;
-
-	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORT_OPERATION__ID = 2;
+	int EXPORT_OPERATION__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Use</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPORT_OPERATION__USE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Write</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPORT_OPERATION__WRITE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Export Operation</em>' class.
@@ -2313,15 +2313,15 @@ public interface PipelinePackage extends EPackage {
 	EReference getImportOperation_Read();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.ImportOperation#getImpUses <em>Imp Uses</em>}'.
+	 * Returns the meta object for the reference '{@link pipeline.ImportOperation#getUse <em>Use</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Imp Uses</em>'.
-	 * @see pipeline.ImportOperation#getImpUses()
+	 * @return the meta object for the reference '<em>Use</em>'.
+	 * @see pipeline.ImportOperation#getUse()
 	 * @see #getImportOperation()
 	 * @generated
 	 */
-	EReference getImportOperation_ImpUses();
+	EReference getImportOperation_Use();
 
 	/**
 	 * Returns the meta object for the attribute '{@link pipeline.ImportOperation#getID <em>ID</em>}'.
@@ -2356,17 +2356,6 @@ public interface PipelinePackage extends EPackage {
 	EReference getExportOperation_Write();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.ExportOperation#getExpUses <em>Exp Uses</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Exp Uses</em>'.
-	 * @see pipeline.ExportOperation#getExpUses()
-	 * @see #getExportOperation()
-	 * @generated
-	 */
-	EReference getExportOperation_ExpUses();
-
-	/**
 	 * Returns the meta object for the attribute '{@link pipeline.ExportOperation#getID <em>ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2376,6 +2365,17 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getExportOperation_ID();
+
+	/**
+	 * Returns the meta object for the reference '{@link pipeline.ExportOperation#getUse <em>Use</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Use</em>'.
+	 * @see pipeline.ExportOperation#getUse()
+	 * @see #getExportOperation()
+	 * @generated
+	 */
+	EReference getExportOperation_Use();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.UserDefinedCleaningOperation <em>User Defined Cleaning Operation</em>}'.
@@ -3325,12 +3325,12 @@ public interface PipelinePackage extends EPackage {
 		EReference IMPORT_OPERATION__READ = eINSTANCE.getImportOperation_Read();
 
 		/**
-		 * The meta object literal for the '<em><b>Imp Uses</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Use</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IMPORT_OPERATION__IMP_USES = eINSTANCE.getImportOperation_ImpUses();
+		EReference IMPORT_OPERATION__USE = eINSTANCE.getImportOperation_Use();
 
 		/**
 		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
@@ -3359,20 +3359,20 @@ public interface PipelinePackage extends EPackage {
 		EReference EXPORT_OPERATION__WRITE = eINSTANCE.getExportOperation_Write();
 
 		/**
-		 * The meta object literal for the '<em><b>Exp Uses</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXPORT_OPERATION__EXP_USES = eINSTANCE.getExportOperation_ExpUses();
-
-		/**
 		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute EXPORT_OPERATION__ID = eINSTANCE.getExportOperation_ID();
+
+		/**
+		 * The meta object literal for the '<em><b>Use</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXPORT_OPERATION__USE = eINSTANCE.getExportOperation_Use();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.UserDefinedCleaningOperationImpl <em>User Defined Cleaning Operation</em>}' class.

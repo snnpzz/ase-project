@@ -276,182 +276,122 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String ClassificationAnalysisOperation3CreationTool_title;
+	public static String CleaningTask3CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ClassificationAnalysisOperation3CreationTool_desc;
+	public static String CleaningTask3CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String CleaningTask4CreationTool_title;
+	public static String CollectionTask4CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String CleaningTask4CreationTool_desc;
+	public static String CollectionTask4CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ClusteringAnalysisOperation5CreationTool_title;
+	public static String ComplexAttribute5CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ClusteringAnalysisOperation5CreationTool_desc;
+	public static String ComplexAttribute5CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String CollectionTask6CreationTool_title;
+	public static String ExportOperation6CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String CollectionTask6CreationTool_desc;
+	public static String ExportOperation6CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ComplexAttribute7CreationTool_title;
+	public static String ExportTask7CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ComplexAttribute7CreationTool_desc;
+	public static String ExportTask7CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String DescriptiveAnalysisOperation8CreationTool_title;
+	public static String File8CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String DescriptiveAnalysisOperation8CreationTool_desc;
+	public static String File8CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ExportOperation9CreationTool_title;
+	public static String ImportOperation9CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ExportOperation9CreationTool_desc;
+	public static String ImportOperation9CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ExportTask10CreationTool_title;
+	public static String IntegrationTask10CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ExportTask10CreationTool_desc;
+	public static String IntegrationTask10CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String File11CreationTool_title;
+	public static String Schema11CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String File11CreationTool_desc;
+	public static String Schema11CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ImportOperation12CreationTool_title;
+	public static String SimpleAttribute12CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ImportOperation12CreationTool_desc;
+	public static String SimpleAttribute12CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String IntegrationTask13CreationTool_title;
+	public static String Source13CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String IntegrationTask13CreationTool_desc;
+	public static String Source13CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String PredefinedCleaningOperation14CreationTool_title;
+	public static String VisualizationTask14CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String PredefinedCleaningOperation14CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String PredictiveAnalysisOperation15CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String PredictiveAnalysisOperation15CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String Schema16CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String Schema16CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String SimpleAttribute17CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String SimpleAttribute17CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String Source18CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String Source18CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String UserDefinedCleaningOperation19CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String UserDefinedCleaningOperation19CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String VisualizationTask20CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String VisualizationTask20CreationTool_desc;
+	public static String VisualizationTask14CreationTool_desc;
 
 	/**
 	* @generated
@@ -486,62 +426,62 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String ExpUses4CreationTool_title;
+	public static String IntegrationAttributes4CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ExpUses4CreationTool_desc;
+	public static String IntegrationAttributes4CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ImpUses5CreationTool_title;
+	public static String InternalDFSchema5CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ImpUses5CreationTool_desc;
+	public static String InternalDFSchema5CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String IntegrationAttributes6CreationTool_title;
+	public static String InternalDataFlow6CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String IntegrationAttributes6CreationTool_desc;
+	public static String InternalDataFlow6CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String InternalDFSchema7CreationTool_title;
+	public static String Read7CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String InternalDFSchema7CreationTool_desc;
+	public static String Read7CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String InternalDataFlow8CreationTool_title;
+	public static String Use8CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String InternalDataFlow8CreationTool_desc;
+	public static String Use8CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Read9CreationTool_title;
+	public static String Use9CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Read9CreationTool_desc;
+	public static String Use9CreationTool_desc;
 
 	/**
 	* @generated
@@ -686,87 +626,27 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_UserDefinedCleaningOperation_3002_incominglinks;
+	public static String NavigatorGroupName_ExportOperation_3002_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_UserDefinedCleaningOperation_3002_outgoinglinks;
+	public static String NavigatorGroupName_SimpleAttribute_3003_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_PredefinedCleaningOperation_3003_incominglinks;
+	public static String NavigatorGroupName_ComplexAttribute_3004_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_PredefinedCleaningOperation_3003_outgoinglinks;
+	public static String NavigatorGroupName_SimpleAttribute_3005_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_DescriptiveAnalysisOperation_3004_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_DescriptiveAnalysisOperation_3004_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ClassificationAnalysisOperation_3005_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ClassificationAnalysisOperation_3005_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_PredictiveAnalysisOperation_3006_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_PredictiveAnalysisOperation_3006_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ClusteringAnalysisOperation_3007_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ClusteringAnalysisOperation_3007_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ExportOperation_3008_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_SimpleAttribute_3009_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ComplexAttribute_3010_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_SimpleAttribute_3011_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ComplexAttribute_3012_incominglinks;
+	public static String NavigatorGroupName_ComplexAttribute_3006_incominglinks;
 
 	/**
 	* @generated
@@ -782,16 +662,6 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String NavigatorGroupName_DataFlow_4001_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_InternalDataFlow_4002_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_InternalDataFlow_4002_source;
 
 	/**
 	* @generated
@@ -841,32 +711,32 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_ImportOperationImpUses_4007_target;
+	public static String NavigatorGroupName_ImportOperationUse_4007_target;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_ImportOperationImpUses_4007_source;
+	public static String NavigatorGroupName_ImportOperationUse_4007_source;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_ExportOperationWrite_4008_target;
+	public static String NavigatorGroupName_ExportOperationUse_4008_target;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_ExportOperationWrite_4008_source;
+	public static String NavigatorGroupName_ExportOperationUse_4008_source;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_ExportOperationExpUses_4009_target;
+	public static String NavigatorGroupName_ExportOperationWrite_4009_target;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_ExportOperationExpUses_4009_source;
+	public static String NavigatorGroupName_ExportOperationWrite_4009_source;
 
 	/**
 	* @generated

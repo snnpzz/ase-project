@@ -122,10 +122,10 @@ public class PipelineModelingAssistantProviderOfIntegrationTaskEditPart extends 
 			types.add(PipelineElementTypes.VisualizationTask_2005);
 			types.add(PipelineElementTypes.ExportTask_2006);
 		} else if (relationshipType == PipelineElementTypes.IntegrationTaskAttributes_4005) {
-			types.add(PipelineElementTypes.SimpleAttribute_3009);
-			types.add(PipelineElementTypes.ComplexAttribute_3010);
-			types.add(PipelineElementTypes.SimpleAttribute_3011);
-			types.add(PipelineElementTypes.ComplexAttribute_3012);
+			types.add(PipelineElementTypes.SimpleAttribute_3003);
+			types.add(PipelineElementTypes.ComplexAttribute_3004);
+			types.add(PipelineElementTypes.SimpleAttribute_3005);
+			types.add(PipelineElementTypes.ComplexAttribute_3006);
 		}
 		return types;
 	}

@@ -18,7 +18,7 @@ public class ExportOperationWriteItemSemanticEditPolicy extends PipelineBaseItem
 	* @generated
 	*/
 	public ExportOperationWriteItemSemanticEditPolicy() {
-		super(PipelineElementTypes.ExportOperationWrite_4008);
+		super(PipelineElementTypes.ExportOperationWrite_4009);
 	}
 
 	/**

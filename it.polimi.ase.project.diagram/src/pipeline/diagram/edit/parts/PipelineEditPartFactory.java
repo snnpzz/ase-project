@@ -91,42 +91,6 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case ImportOperationIDEditPart.VISUAL_ID:
 				return new ImportOperationIDEditPart(view);
 
-			case UserDefinedCleaningOperationEditPart.VISUAL_ID:
-				return new UserDefinedCleaningOperationEditPart(view);
-
-			case UserDefinedCleaningOperationNameEditPart.VISUAL_ID:
-				return new UserDefinedCleaningOperationNameEditPart(view);
-
-			case PredefinedCleaningOperationEditPart.VISUAL_ID:
-				return new PredefinedCleaningOperationEditPart(view);
-
-			case PredefinedCleaningOperationNameEditPart.VISUAL_ID:
-				return new PredefinedCleaningOperationNameEditPart(view);
-
-			case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
-				return new DescriptiveAnalysisOperationEditPart(view);
-
-			case DescriptiveAnalysisOperationNameEditPart.VISUAL_ID:
-				return new DescriptiveAnalysisOperationNameEditPart(view);
-
-			case ClassificationAnalysisOperationEditPart.VISUAL_ID:
-				return new ClassificationAnalysisOperationEditPart(view);
-
-			case ClassificationAnalysisOperationNameEditPart.VISUAL_ID:
-				return new ClassificationAnalysisOperationNameEditPart(view);
-
-			case PredictiveAnalysisOperationEditPart.VISUAL_ID:
-				return new PredictiveAnalysisOperationEditPart(view);
-
-			case PredictiveAnalysisOperationNameEditPart.VISUAL_ID:
-				return new PredictiveAnalysisOperationNameEditPart(view);
-
-			case ClusteringAnalysisOperationEditPart.VISUAL_ID:
-				return new ClusteringAnalysisOperationEditPart(view);
-
-			case ClusteringAnalysisOperationNameEditPart.VISUAL_ID:
-				return new ClusteringAnalysisOperationNameEditPart(view);
-
 			case ExportOperationEditPart.VISUAL_ID:
 				return new ExportOperationEditPart(view);
 
@@ -208,20 +172,20 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case WrappingLabel4EditPart.VISUAL_ID:
 				return new WrappingLabel4EditPart(view);
 
-			case ImportOperationImpUsesEditPart.VISUAL_ID:
-				return new ImportOperationImpUsesEditPart(view);
+			case ImportOperationUseEditPart.VISUAL_ID:
+				return new ImportOperationUseEditPart(view);
 
 			case WrappingLabel5EditPart.VISUAL_ID:
 				return new WrappingLabel5EditPart(view);
 
-			case ExportOperationWriteEditPart.VISUAL_ID:
-				return new ExportOperationWriteEditPart(view);
+			case ExportOperationUseEditPart.VISUAL_ID:
+				return new ExportOperationUseEditPart(view);
 
 			case WrappingLabel6EditPart.VISUAL_ID:
 				return new WrappingLabel6EditPart(view);
 
-			case ExportOperationExpUsesEditPart.VISUAL_ID:
-				return new ExportOperationExpUsesEditPart(view);
+			case ExportOperationWriteEditPart.VISUAL_ID:
+				return new ExportOperationWriteEditPart(view);
 
 			case WrappingLabel7EditPart.VISUAL_ID:
 				return new WrappingLabel7EditPart(view);

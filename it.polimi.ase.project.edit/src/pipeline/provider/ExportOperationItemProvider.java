@@ -60,9 +60,9 @@ public class ExportOperationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addWritePropertyDescriptor(object);
-			addExpUsesPropertyDescriptor(object);
 			addIDPropertyDescriptor(object);
+			addUsePropertyDescriptor(object);
+			addWritePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,28 +90,6 @@ public class ExportOperationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Exp Uses feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addExpUsesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ExportOperation_expUses_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExportOperation_expUses_feature", "_UI_ExportOperation_type"),
-				 PipelinePackage.Literals.EXPORT_OPERATION__EXP_USES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the ID feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,6 +107,28 @@ public class ExportOperationItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Use feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUsePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ExportOperation_use_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ExportOperation_use_feature", "_UI_ExportOperation_type"),
+				 PipelinePackage.Literals.EXPORT_OPERATION__USE,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

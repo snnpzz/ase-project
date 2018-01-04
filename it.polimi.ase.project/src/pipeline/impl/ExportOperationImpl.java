@@ -24,34 +24,14 @@ import pipeline.Schema;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.ExportOperationImpl#getWrite <em>Write</em>}</li>
- *   <li>{@link pipeline.impl.ExportOperationImpl#getExpUses <em>Exp Uses</em>}</li>
  *   <li>{@link pipeline.impl.ExportOperationImpl#getID <em>ID</em>}</li>
+ *   <li>{@link pipeline.impl.ExportOperationImpl#getUse <em>Use</em>}</li>
+ *   <li>{@link pipeline.impl.ExportOperationImpl#getWrite <em>Write</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ExportOperationImpl extends EObjectImpl implements ExportOperation {
-	/**
-	 * The cached value of the '{@link #getWrite() <em>Write</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWrite()
-	 * @generated
-	 * @ordered
-	 */
-	protected File write;
-
-	/**
-	 * The cached value of the '{@link #getExpUses() <em>Exp Uses</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExpUses()
-	 * @generated
-	 * @ordered
-	 */
-	protected Schema expUses;
-
 	/**
 	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -71,6 +51,26 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getUse() <em>Use</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUse()
+	 * @generated
+	 * @ordered
+	 */
+	protected Schema use;
+
+	/**
+	 * The cached value of the '{@link #getWrite() <em>Write</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWrite()
+	 * @generated
+	 * @ordered
+	 */
+	protected File write;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,44 +156,6 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Schema getExpUses() {
-		if (expUses != null && expUses.eIsProxy()) {
-			InternalEObject oldExpUses = (InternalEObject)expUses;
-			expUses = (Schema)eResolveProxy(oldExpUses);
-			if (expUses != oldExpUses) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.EXPORT_OPERATION__EXP_USES, oldExpUses, expUses));
-			}
-		}
-		return expUses;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Schema basicGetExpUses() {
-		return expUses;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setExpUses(Schema newExpUses) {
-		Schema oldExpUses = expUses;
-		expUses = newExpUses;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT_OPERATION__EXP_USES, oldExpUses, expUses));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getID() {
 		return id;
 	}
@@ -208,6 +170,44 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 		id = newID;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT_OPERATION__ID, oldID, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Schema getUse() {
+		if (use != null && use.eIsProxy()) {
+			InternalEObject oldUse = (InternalEObject)use;
+			use = (Schema)eResolveProxy(oldUse);
+			if (use != oldUse) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.EXPORT_OPERATION__USE, oldUse, use));
+			}
+		}
+		return use;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Schema basicGetUse() {
+		return use;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUse(Schema newUse) {
+		Schema oldUse = use;
+		use = newUse;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT_OPERATION__USE, oldUse, use));
 	}
 
 	/**
@@ -248,14 +248,14 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case PipelinePackage.EXPORT_OPERATION__ID:
+				return getID();
+			case PipelinePackage.EXPORT_OPERATION__USE:
+				if (resolve) return getUse();
+				return basicGetUse();
 			case PipelinePackage.EXPORT_OPERATION__WRITE:
 				if (resolve) return getWrite();
 				return basicGetWrite();
-			case PipelinePackage.EXPORT_OPERATION__EXP_USES:
-				if (resolve) return getExpUses();
-				return basicGetExpUses();
-			case PipelinePackage.EXPORT_OPERATION__ID:
-				return getID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -268,14 +268,14 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.EXPORT_OPERATION__WRITE:
-				setWrite((File)newValue);
-				return;
-			case PipelinePackage.EXPORT_OPERATION__EXP_USES:
-				setExpUses((Schema)newValue);
-				return;
 			case PipelinePackage.EXPORT_OPERATION__ID:
 				setID((String)newValue);
+				return;
+			case PipelinePackage.EXPORT_OPERATION__USE:
+				setUse((Schema)newValue);
+				return;
+			case PipelinePackage.EXPORT_OPERATION__WRITE:
+				setWrite((File)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -289,14 +289,14 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.EXPORT_OPERATION__WRITE:
-				setWrite((File)null);
-				return;
-			case PipelinePackage.EXPORT_OPERATION__EXP_USES:
-				setExpUses((Schema)null);
-				return;
 			case PipelinePackage.EXPORT_OPERATION__ID:
 				setID(ID_EDEFAULT);
+				return;
+			case PipelinePackage.EXPORT_OPERATION__USE:
+				setUse((Schema)null);
+				return;
+			case PipelinePackage.EXPORT_OPERATION__WRITE:
+				setWrite((File)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -310,12 +310,12 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.EXPORT_OPERATION__WRITE:
-				return write != null;
-			case PipelinePackage.EXPORT_OPERATION__EXP_USES:
-				return expUses != null;
 			case PipelinePackage.EXPORT_OPERATION__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case PipelinePackage.EXPORT_OPERATION__USE:
+				return use != null;
+			case PipelinePackage.EXPORT_OPERATION__WRITE:
+				return write != null;
 		}
 		return super.eIsSet(featureID);
 	}

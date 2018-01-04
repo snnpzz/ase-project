@@ -100,10 +100,10 @@ public class ComplexAttributeComplexAttributeAttributesCompartment2EditPart exte
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == PipelineElementTypes.SimpleAttribute_3011) {
+			if (type == PipelineElementTypes.SimpleAttribute_3005) {
 				return this;
 			}
-			if (type == PipelineElementTypes.ComplexAttribute_3012) {
+			if (type == PipelineElementTypes.ComplexAttribute_3006) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

@@ -82,8 +82,8 @@ public class PipelineModelingAssistantProviderOfChartEditPart extends PipelineMo
 	public List<IElementType> doGetTypesForTarget(ChartEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == PipelineElementTypes.ChartAxes_4010) {
-			types.add(PipelineElementTypes.SimpleAttribute_3009);
-			types.add(PipelineElementTypes.SimpleAttribute_3011);
+			types.add(PipelineElementTypes.SimpleAttribute_3003);
+			types.add(PipelineElementTypes.SimpleAttribute_3005);
 		}
 		return types;
 	}

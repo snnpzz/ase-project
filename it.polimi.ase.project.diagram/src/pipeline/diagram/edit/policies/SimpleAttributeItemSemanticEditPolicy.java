@@ -36,7 +36,7 @@ public class SimpleAttributeItemSemanticEditPolicy extends PipelineBaseItemSeman
 	* @generated
 	*/
 	public SimpleAttributeItemSemanticEditPolicy() {
-		super(PipelineElementTypes.SimpleAttribute_3009);
+		super(PipelineElementTypes.SimpleAttribute_3003);
 	}
 
 	/**

@@ -12,14 +12,14 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 
-import pipeline.ImportOperation;
+import pipeline.ExportOperation;
 import pipeline.Schema;
 import pipeline.diagram.edit.policies.PipelineBaseItemSemanticEditPolicy;
 
 /**
  * @generated
  */
-public class ImportOperationImpUsesReorientCommand extends EditElementCommand {
+public class ExportOperationUseReorientCommand extends EditElementCommand {
 
 	/**
 	* @generated
@@ -44,7 +44,7 @@ public class ImportOperationImpUsesReorientCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	public ImportOperationImpUsesReorientCommand(ReorientReferenceRelationshipRequest request) {
+	public ExportOperationUseReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
@@ -56,7 +56,7 @@ public class ImportOperationImpUsesReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof ImportOperation) {
+		if (false == referenceOwner instanceof ExportOperation) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -72,11 +72,11 @@ public class ImportOperationImpUsesReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof Schema && newEnd instanceof ImportOperation)) {
+		if (!(oldEnd instanceof Schema && newEnd instanceof ExportOperation)) {
 			return false;
 		}
-		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistImportOperationImpUses_4007(getNewSource(), getOldTarget());
+		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistExportOperationUse_4008(getNewSource(),
+				getOldTarget());
 	}
 
 	/**
@@ -86,8 +86,8 @@ public class ImportOperationImpUsesReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Schema && newEnd instanceof Schema)) {
 			return false;
 		}
-		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistImportOperationImpUses_4007(getOldSource(), getNewTarget());
+		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistExportOperationUse_4008(getOldSource(),
+				getNewTarget());
 	}
 
 	/**
@@ -110,8 +110,8 @@ public class ImportOperationImpUsesReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().setImpUses(null);
-		getNewSource().setImpUses(getOldTarget());
+		getOldSource().setUse(null);
+		getNewSource().setUse(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -119,22 +119,22 @@ public class ImportOperationImpUsesReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().setImpUses(getNewTarget());
+		getOldSource().setUse(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
 	/**
 	* @generated
 	*/
-	protected ImportOperation getOldSource() {
-		return (ImportOperation) referenceOwner;
+	protected ExportOperation getOldSource() {
+		return (ExportOperation) referenceOwner;
 	}
 
 	/**
 	* @generated
 	*/
-	protected ImportOperation getNewSource() {
-		return (ImportOperation) newEnd;
+	protected ExportOperation getNewSource() {
+		return (ExportOperation) newEnd;
 	}
 
 	/**

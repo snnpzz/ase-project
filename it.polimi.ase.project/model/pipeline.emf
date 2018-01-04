@@ -30,11 +30,11 @@ class DataFlow {
   ref Schema[1] schema;
 }
 
-@gmf.node(label="name", figure="ellipse")
 abstract class Operation {
   ref InternalDataFlow#target incoming;
   ref InternalDataFlow#source outgoing;
   attr String ID;
+  ref SimpleAttribute[+] attributes;
 }
 
 @gmf.link(source="source", target="target", width="2", target.decoration="filledclosedarrow", style="dash")
@@ -98,28 +98,28 @@ class ExportTask extends Task {
 
 @gmf.node(label="ID", label.text="Import", figure="ellipse")
 class ImportOperation {
+  id attr String ID;
 
   @gmf.link(width="2", target.decoration="square", style="dash")
   ref Source[1]#linkedTo read;
 
   @gmf.link(width="1", target.decoration="arrow")
-  ref Schema[1] impUses;
-  id attr String ID;
+  ref Schema[1] use;
 }
 
 @gmf.node(label="ID", label.text="Export", figure="ellipse")
 class ExportOperation {
+  id attr String ID;
+
+  @gmf.link(width="1", target.decoration="arrow")
+  ref Schema[1] use;
 
   @gmf.link(width="2", target.decoration="filledsquare", style="dash")
   ref File[1]#comesFrom write;
-
-  @gmf.link(width="1", target.decoration="arrow")
-  ref Schema[1] expUses;
-  id attr String ID;
 }
 
 class UserDefinedCleaningOperation extends CleaningOperation {
-  attr String name;
+  attr String type;
 }
 
 @gmf.node(label="name")
@@ -157,24 +157,24 @@ abstract class AnalysisOperation extends Operation {
 }
 
 class DescriptiveAnalysisOperation extends AnalysisOperation {
-  attr DescriptiveOperation name;
+  attr DescriptiveOperation type;
 }
 
 class ClassificationAnalysisOperation extends AnalysisOperation {
-  attr ClassificationOperation name;
+  attr ClassificationOperation type;
 }
 
 class PredictiveAnalysisOperation extends AnalysisOperation {
-  attr PredictiveOperation name;
+  attr PredictiveOperation type;
 }
 
 class ClusteringAnalysisOperation extends AnalysisOperation {
-  attr ClusteringOperation name;
+  attr ClusteringOperation type;
   attr int k;
 }
 
 class PredefinedCleaningOperation extends CleaningOperation {
-  attr PredefinedOperation name = "";
+  attr PredefinedOperation type = "";
 }
 
 class SimpleAttribute extends Attribute {
@@ -191,13 +191,12 @@ enum PredefinedOperation {
   removeNulls = 0;
   removeNegative = 1;
   round = 2;
+  removeColumn = 4;
 }
 
 enum ClusteringOperation {
   kMeans = 0;
-  kMedoids = 1;
-  fuzzyCMeans = 2;
-  QT = 3;
+  Hierarchical = 1;
 }
 
 enum ClassificationOperation {
@@ -218,28 +217,21 @@ enum DescriptiveOperation {
   Histogram = 0;
   Boxplot = 1;
   PieChart = 2;
+  ScatterPlot = 4;
+  ViewData = 5;
 }
 
 enum ChartType {
   Column = 0;
   Line = 0;
   Pie = 0;
-  Doughnut = 0;
   Bar = 0;
   Area = 0;
   Scatter = 0;
-  Bubble = 0;
-  Map = 0;
-  Stock = 0;
   Surface = 0;
   Radar = 0;
-  Treemap = 0;
-  Sunburst = 0;
   Histogram = 0;
-  BoxAndWhisker = 0;
-  Waterfall = 0;
-  Funnel = 0;
-  Combo = 0;
+  BoxPlot = 0;
 }
 
 enum Format {

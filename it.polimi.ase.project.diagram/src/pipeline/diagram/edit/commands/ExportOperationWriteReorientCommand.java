@@ -75,7 +75,7 @@ public class ExportOperationWriteReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof File && newEnd instanceof ExportOperation)) {
 			return false;
 		}
-		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistExportOperationWrite_4008(getNewSource(),
+		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistExportOperationWrite_4009(getNewSource(),
 				getOldTarget());
 	}
 
@@ -86,7 +86,7 @@ public class ExportOperationWriteReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof File && newEnd instanceof File)) {
 			return false;
 		}
-		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistExportOperationWrite_4008(getOldSource(),
+		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistExportOperationWrite_4009(getOldSource(),
 				getNewTarget());
 	}
 

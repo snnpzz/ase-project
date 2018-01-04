@@ -91,7 +91,7 @@ public class ExportTaskExportTaskExportOperationsCompartmentEditPart extends Sha
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == PipelineElementTypes.ExportOperation_3008) {
+			if (type == PipelineElementTypes.ExportOperation_3002) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

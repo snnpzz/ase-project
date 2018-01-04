@@ -39,7 +39,7 @@ public class ComplexAttribute2ItemSemanticEditPolicy extends PipelineBaseItemSem
 	* @generated
 	*/
 	public ComplexAttribute2ItemSemanticEditPolicy() {
-		super(PipelineElementTypes.ComplexAttribute_3012);
+		super(PipelineElementTypes.ComplexAttribute_3006);
 	}
 
 	/**

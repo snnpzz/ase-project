@@ -12,13 +12,13 @@ import pipeline.diagram.providers.PipelineElementTypes;
 /**
  * @generated
  */
-public class ExportOperationExpUsesItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPolicy {
+public class ExportOperationUseItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPolicy {
 
 	/**
 	* @generated
 	*/
-	public ExportOperationExpUsesItemSemanticEditPolicy() {
-		super(PipelineElementTypes.ExportOperationExpUses_4009);
+	public ExportOperationUseItemSemanticEditPolicy() {
+		super(PipelineElementTypes.ExportOperationUse_4008);
 	}
 
 	/**

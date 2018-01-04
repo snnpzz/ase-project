@@ -21,35 +21,29 @@ import pipeline.PipelinePackage;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ChartEditPart;
-import pipeline.diagram.edit.parts.ClassificationAnalysisOperationEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
-import pipeline.diagram.edit.parts.ClusteringAnalysisOperationEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
 import pipeline.diagram.edit.parts.ComplexAttribute2EditPart;
 import pipeline.diagram.edit.parts.ComplexAttributeEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
-import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationEditPart;
 import pipeline.diagram.edit.parts.ExportOperationEditPart;
-import pipeline.diagram.edit.parts.ExportOperationExpUsesEditPart;
+import pipeline.diagram.edit.parts.ExportOperationUseEditPart;
 import pipeline.diagram.edit.parts.ExportOperationWriteEditPart;
 import pipeline.diagram.edit.parts.ExportTaskEditPart;
 import pipeline.diagram.edit.parts.FileEditPart;
 import pipeline.diagram.edit.parts.ImportOperationEditPart;
-import pipeline.diagram.edit.parts.ImportOperationImpUsesEditPart;
 import pipeline.diagram.edit.parts.ImportOperationReadEditPart;
+import pipeline.diagram.edit.parts.ImportOperationUseEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskAttributesEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
-import pipeline.diagram.edit.parts.PredefinedCleaningOperationEditPart;
-import pipeline.diagram.edit.parts.PredictiveAnalysisOperationEditPart;
 import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.edit.parts.SimpleAttribute2EditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeEditPart;
 import pipeline.diagram.edit.parts.SourceEditPart;
-import pipeline.diagram.edit.parts.UserDefinedCleaningOperationEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.part.PipelineDiagramEditorPlugin;
 
@@ -137,58 +131,28 @@ public class PipelineElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType UserDefinedCleaningOperation_3002 = getElementType(
-			"it.polimi.ase.project.diagram.UserDefinedCleaningOperation_3002"); //$NON-NLS-1$
+	public static final IElementType ExportOperation_3002 = getElementType(
+			"it.polimi.ase.project.diagram.ExportOperation_3002"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType PredefinedCleaningOperation_3003 = getElementType(
-			"it.polimi.ase.project.diagram.PredefinedCleaningOperation_3003"); //$NON-NLS-1$
+	public static final IElementType SimpleAttribute_3003 = getElementType(
+			"it.polimi.ase.project.diagram.SimpleAttribute_3003"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType DescriptiveAnalysisOperation_3004 = getElementType(
-			"it.polimi.ase.project.diagram.DescriptiveAnalysisOperation_3004"); //$NON-NLS-1$
+	public static final IElementType ComplexAttribute_3004 = getElementType(
+			"it.polimi.ase.project.diagram.ComplexAttribute_3004"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType ClassificationAnalysisOperation_3005 = getElementType(
-			"it.polimi.ase.project.diagram.ClassificationAnalysisOperation_3005"); //$NON-NLS-1$
+	public static final IElementType SimpleAttribute_3005 = getElementType(
+			"it.polimi.ase.project.diagram.SimpleAttribute_3005"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType PredictiveAnalysisOperation_3006 = getElementType(
-			"it.polimi.ase.project.diagram.PredictiveAnalysisOperation_3006"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
-	public static final IElementType ClusteringAnalysisOperation_3007 = getElementType(
-			"it.polimi.ase.project.diagram.ClusteringAnalysisOperation_3007"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
-	public static final IElementType ExportOperation_3008 = getElementType(
-			"it.polimi.ase.project.diagram.ExportOperation_3008"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
-	public static final IElementType SimpleAttribute_3009 = getElementType(
-			"it.polimi.ase.project.diagram.SimpleAttribute_3009"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
-	public static final IElementType ComplexAttribute_3010 = getElementType(
-			"it.polimi.ase.project.diagram.ComplexAttribute_3010"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
-	public static final IElementType SimpleAttribute_3011 = getElementType(
-			"it.polimi.ase.project.diagram.SimpleAttribute_3011"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
-	public static final IElementType ComplexAttribute_3012 = getElementType(
-			"it.polimi.ase.project.diagram.ComplexAttribute_3012"); //$NON-NLS-1$
+	public static final IElementType ComplexAttribute_3006 = getElementType(
+			"it.polimi.ase.project.diagram.ComplexAttribute_3006"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -221,18 +185,18 @@ public class PipelineElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType ImportOperationImpUses_4007 = getElementType(
-			"it.polimi.ase.project.diagram.ImportOperationImpUses_4007"); //$NON-NLS-1$
+	public static final IElementType ImportOperationUse_4007 = getElementType(
+			"it.polimi.ase.project.diagram.ImportOperationUse_4007"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType ExportOperationWrite_4008 = getElementType(
-			"it.polimi.ase.project.diagram.ExportOperationWrite_4008"); //$NON-NLS-1$
+	public static final IElementType ExportOperationUse_4008 = getElementType(
+			"it.polimi.ase.project.diagram.ExportOperationUse_4008"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType ExportOperationExpUses_4009 = getElementType(
-			"it.polimi.ase.project.diagram.ExportOperationExpUses_4009"); //$NON-NLS-1$
+	public static final IElementType ExportOperationWrite_4009 = getElementType(
+			"it.polimi.ase.project.diagram.ExportOperationWrite_4009"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -300,30 +264,15 @@ public class PipelineElementTypes {
 
 			elements.put(ImportOperation_3001, PipelinePackage.eINSTANCE.getImportOperation());
 
-			elements.put(UserDefinedCleaningOperation_3002,
-					PipelinePackage.eINSTANCE.getUserDefinedCleaningOperation());
+			elements.put(ExportOperation_3002, PipelinePackage.eINSTANCE.getExportOperation());
 
-			elements.put(PredefinedCleaningOperation_3003, PipelinePackage.eINSTANCE.getPredefinedCleaningOperation());
+			elements.put(SimpleAttribute_3003, PipelinePackage.eINSTANCE.getSimpleAttribute());
 
-			elements.put(DescriptiveAnalysisOperation_3004,
-					PipelinePackage.eINSTANCE.getDescriptiveAnalysisOperation());
+			elements.put(ComplexAttribute_3004, PipelinePackage.eINSTANCE.getComplexAttribute());
 
-			elements.put(ClassificationAnalysisOperation_3005,
-					PipelinePackage.eINSTANCE.getClassificationAnalysisOperation());
+			elements.put(SimpleAttribute_3005, PipelinePackage.eINSTANCE.getSimpleAttribute());
 
-			elements.put(PredictiveAnalysisOperation_3006, PipelinePackage.eINSTANCE.getPredictiveAnalysisOperation());
-
-			elements.put(ClusteringAnalysisOperation_3007, PipelinePackage.eINSTANCE.getClusteringAnalysisOperation());
-
-			elements.put(ExportOperation_3008, PipelinePackage.eINSTANCE.getExportOperation());
-
-			elements.put(SimpleAttribute_3009, PipelinePackage.eINSTANCE.getSimpleAttribute());
-
-			elements.put(ComplexAttribute_3010, PipelinePackage.eINSTANCE.getComplexAttribute());
-
-			elements.put(SimpleAttribute_3011, PipelinePackage.eINSTANCE.getSimpleAttribute());
-
-			elements.put(ComplexAttribute_3012, PipelinePackage.eINSTANCE.getComplexAttribute());
+			elements.put(ComplexAttribute_3006, PipelinePackage.eINSTANCE.getComplexAttribute());
 
 			elements.put(DataFlow_4001, PipelinePackage.eINSTANCE.getDataFlow());
 
@@ -337,11 +286,11 @@ public class PipelineElementTypes {
 
 			elements.put(ImportOperationRead_4006, PipelinePackage.eINSTANCE.getImportOperation_Read());
 
-			elements.put(ImportOperationImpUses_4007, PipelinePackage.eINSTANCE.getImportOperation_ImpUses());
+			elements.put(ImportOperationUse_4007, PipelinePackage.eINSTANCE.getImportOperation_Use());
 
-			elements.put(ExportOperationWrite_4008, PipelinePackage.eINSTANCE.getExportOperation_Write());
+			elements.put(ExportOperationUse_4008, PipelinePackage.eINSTANCE.getExportOperation_Use());
 
-			elements.put(ExportOperationExpUses_4009, PipelinePackage.eINSTANCE.getExportOperation_ExpUses());
+			elements.put(ExportOperationWrite_4009, PipelinePackage.eINSTANCE.getExportOperation_Write());
 
 			elements.put(ChartAxes_4010, PipelinePackage.eINSTANCE.getChart_Axes());
 		}
@@ -373,26 +322,20 @@ public class PipelineElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Schema_2009);
 			KNOWN_ELEMENT_TYPES.add(Chart_2010);
 			KNOWN_ELEMENT_TYPES.add(ImportOperation_3001);
-			KNOWN_ELEMENT_TYPES.add(UserDefinedCleaningOperation_3002);
-			KNOWN_ELEMENT_TYPES.add(PredefinedCleaningOperation_3003);
-			KNOWN_ELEMENT_TYPES.add(DescriptiveAnalysisOperation_3004);
-			KNOWN_ELEMENT_TYPES.add(ClassificationAnalysisOperation_3005);
-			KNOWN_ELEMENT_TYPES.add(PredictiveAnalysisOperation_3006);
-			KNOWN_ELEMENT_TYPES.add(ClusteringAnalysisOperation_3007);
-			KNOWN_ELEMENT_TYPES.add(ExportOperation_3008);
-			KNOWN_ELEMENT_TYPES.add(SimpleAttribute_3009);
-			KNOWN_ELEMENT_TYPES.add(ComplexAttribute_3010);
-			KNOWN_ELEMENT_TYPES.add(SimpleAttribute_3011);
-			KNOWN_ELEMENT_TYPES.add(ComplexAttribute_3012);
+			KNOWN_ELEMENT_TYPES.add(ExportOperation_3002);
+			KNOWN_ELEMENT_TYPES.add(SimpleAttribute_3003);
+			KNOWN_ELEMENT_TYPES.add(ComplexAttribute_3004);
+			KNOWN_ELEMENT_TYPES.add(SimpleAttribute_3005);
+			KNOWN_ELEMENT_TYPES.add(ComplexAttribute_3006);
 			KNOWN_ELEMENT_TYPES.add(DataFlow_4001);
 			KNOWN_ELEMENT_TYPES.add(InternalDataFlow_4002);
 			KNOWN_ELEMENT_TYPES.add(DataFlowSchema_4003);
 			KNOWN_ELEMENT_TYPES.add(InternalDataFlowSchema_4004);
 			KNOWN_ELEMENT_TYPES.add(IntegrationTaskAttributes_4005);
 			KNOWN_ELEMENT_TYPES.add(ImportOperationRead_4006);
-			KNOWN_ELEMENT_TYPES.add(ImportOperationImpUses_4007);
-			KNOWN_ELEMENT_TYPES.add(ExportOperationWrite_4008);
-			KNOWN_ELEMENT_TYPES.add(ExportOperationExpUses_4009);
+			KNOWN_ELEMENT_TYPES.add(ImportOperationUse_4007);
+			KNOWN_ELEMENT_TYPES.add(ExportOperationUse_4008);
+			KNOWN_ELEMENT_TYPES.add(ExportOperationWrite_4009);
 			KNOWN_ELEMENT_TYPES.add(ChartAxes_4010);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -427,28 +370,16 @@ public class PipelineElementTypes {
 			return Chart_2010;
 		case ImportOperationEditPart.VISUAL_ID:
 			return ImportOperation_3001;
-		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
-			return UserDefinedCleaningOperation_3002;
-		case PredefinedCleaningOperationEditPart.VISUAL_ID:
-			return PredefinedCleaningOperation_3003;
-		case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
-			return DescriptiveAnalysisOperation_3004;
-		case ClassificationAnalysisOperationEditPart.VISUAL_ID:
-			return ClassificationAnalysisOperation_3005;
-		case PredictiveAnalysisOperationEditPart.VISUAL_ID:
-			return PredictiveAnalysisOperation_3006;
-		case ClusteringAnalysisOperationEditPart.VISUAL_ID:
-			return ClusteringAnalysisOperation_3007;
 		case ExportOperationEditPart.VISUAL_ID:
-			return ExportOperation_3008;
+			return ExportOperation_3002;
 		case SimpleAttributeEditPart.VISUAL_ID:
-			return SimpleAttribute_3009;
+			return SimpleAttribute_3003;
 		case ComplexAttributeEditPart.VISUAL_ID:
-			return ComplexAttribute_3010;
+			return ComplexAttribute_3004;
 		case SimpleAttribute2EditPart.VISUAL_ID:
-			return SimpleAttribute_3011;
+			return SimpleAttribute_3005;
 		case ComplexAttribute2EditPart.VISUAL_ID:
-			return ComplexAttribute_3012;
+			return ComplexAttribute_3006;
 		case DataFlowEditPart.VISUAL_ID:
 			return DataFlow_4001;
 		case InternalDataFlowEditPart.VISUAL_ID:
@@ -461,12 +392,12 @@ public class PipelineElementTypes {
 			return IntegrationTaskAttributes_4005;
 		case ImportOperationReadEditPart.VISUAL_ID:
 			return ImportOperationRead_4006;
-		case ImportOperationImpUsesEditPart.VISUAL_ID:
-			return ImportOperationImpUses_4007;
+		case ImportOperationUseEditPart.VISUAL_ID:
+			return ImportOperationUse_4007;
+		case ExportOperationUseEditPart.VISUAL_ID:
+			return ExportOperationUse_4008;
 		case ExportOperationWriteEditPart.VISUAL_ID:
-			return ExportOperationWrite_4008;
-		case ExportOperationExpUsesEditPart.VISUAL_ID:
-			return ExportOperationExpUses_4009;
+			return ExportOperationWrite_4009;
 		case ChartAxesEditPart.VISUAL_ID:
 			return ChartAxes_4010;
 		}

@@ -265,11 +265,11 @@ public class SchemaEditPart extends ShapeNodeEditPart {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == PipelineElementTypes.SimpleAttribute_3009) {
+			if (type == PipelineElementTypes.SimpleAttribute_3003) {
 				return getChildBySemanticHint(
 						PipelineVisualIDRegistry.getType(SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID));
 			}
-			if (type == PipelineElementTypes.ComplexAttribute_3010) {
+			if (type == PipelineElementTypes.ComplexAttribute_3004) {
 				return getChildBySemanticHint(
 						PipelineVisualIDRegistry.getType(SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID));
 			}

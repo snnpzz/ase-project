@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see pipeline.PipelinePackage#getOperation()
  * @model abstract="true"
- *        annotation="gmf.node label='name' figure='ellipse'"
  * @generated
  */
 public interface Operation extends EObject {

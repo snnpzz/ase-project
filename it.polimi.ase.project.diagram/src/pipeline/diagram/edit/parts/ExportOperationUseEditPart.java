@@ -12,22 +12,22 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
 
-import pipeline.diagram.edit.policies.ImportOperationImpUsesItemSemanticEditPolicy;
+import pipeline.diagram.edit.policies.ExportOperationUseItemSemanticEditPolicy;
 
 /**
  * @generated
  */
-public class ImportOperationImpUsesEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class ExportOperationUseEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 4007;
+	public static final int VISUAL_ID = 4008;
 
 	/**
 	* @generated
 	*/
-	public ImportOperationImpUsesEditPart(View view) {
+	public ExportOperationUseEditPart(View view) {
 		super(view);
 	}
 
@@ -36,7 +36,7 @@ public class ImportOperationImpUsesEditPart extends ConnectionNodeEditPart imple
 	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ImportOperationImpUsesItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ExportOperationUseItemSemanticEditPolicy());
 	}
 
 	/**
@@ -49,25 +49,25 @@ public class ImportOperationImpUsesEditPart extends ConnectionNodeEditPart imple
 	*/
 
 	protected Connection createConnectionFigure() {
-		return new ImportOperationImpUsesFigure();
+		return new ExportOperationUseFigure();
 	}
 
 	/**
 	* @generated
 	*/
-	public ImportOperationImpUsesFigure getPrimaryShape() {
-		return (ImportOperationImpUsesFigure) getFigure();
+	public ExportOperationUseFigure getPrimaryShape() {
+		return (ExportOperationUseFigure) getFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public class ImportOperationImpUsesFigure extends PolylineConnectionEx {
+	public class ExportOperationUseFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated
 		 */
-		public ImportOperationImpUsesFigure() {
+		public ExportOperationUseFigure() {
 
 			setTargetDecoration(createTargetDecoration());
 		}

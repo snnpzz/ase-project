@@ -14,14 +14,13 @@
 # Import libraries
 # (If some libraries are missing, install them: install.packages(<library_name>) )
 library(readr)
-library(dplyr)
-library(tidyr)
-library(sqldf)
-
 library(MASS)
 library(class)
 library(e1071)
 library(randomForest)
+
+# install.packages(ggplot2)
+library(ggplot2)
 
 set.seed(501)
 pdf("output/[aPipeline.ID/].pdf)
@@ -254,22 +253,36 @@ rm(list = ls())
 
 
 [template private prepareChart(chart: Chart)]
-
+[drawChart(chart.type, chart.axes)/]
 [/template]
 
 
 [template private drawChart(type: ChartType, attributes: OrderedSet(Attribute))]
-[if (type = ChartType::Area)]
-[elseif (type = ChartType::Bar)]
-[elseif (type = ChartType::BoxPlot)]
-[elseif (type = ChartType::Column)]
-[elseif (type = ChartType::Histogram)]
-[elseif (type = ChartType::Line)]
-[elseif (type = ChartType::Pie)]
-[elseif (type = ChartType::Radar)]
-[elseif (type = ChartType::Scatter)]
-[elseif (type = ChartType::Surface)]
-[/if]
+[let dataframe : String = '']
+	[for (attr: Attribute | attributes)]
+		[dataframe = dataframe.concat(attr.name).concat(', ')/]
+	[/for]
+	data2plot <- data.frame([dataframe/] row.names = FALSE)
+	
+	[if (type = ChartType::Area)]
+	[elseif (type = ChartType::Bar)]
+		barplot(data2plot, horizontal = TRUE)
+	[elseif (type = ChartType::BoxPlot)]
+		boxplot(data2plot)
+	[elseif (type = ChartType::Column)]
+		barplot(data2plot)
+	[elseif (type = ChartType::Histogram)]
+		hist([attributes.name/]
+	[elseif (type = ChartType::Line)]
+		plot(data2plot)
+		lines(data2plot['['/],2[']'/])
+	[elseif (type = ChartType::Pie)]
+	[elseif (type = ChartType::Radar)]
+	[elseif (type = ChartType::Scatter)]
+		plot(data2Plot)
+	[elseif (type = ChartType::Surface)]
+	[/if]
+[/let]
 [/template]
 
 [template private exportFiles(aTask: Sequence(ExportTask))]

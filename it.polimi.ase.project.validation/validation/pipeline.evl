@@ -143,6 +143,13 @@ context Pipeline{
  		check: self.files -> forAll(f | (self.tasks -> select(t | t.isTypeOf(ExportTask)).exportOperations -> forAll(e | e.write == f)) -> size() == 1)
  		message: "Exports must be linked to different output files"
   	}
+	
+	constraint uniqueOperationName {
+		check: self.tasks -> select(t | t.isTypeOf(AnalysisTask)).analysisOperations -> 
+			forAll (a1 | self.tasks -> select(t | t.isTypeOf(AnalysisTask)).analysisOperations -> 
+			forAll (a2 | a1 <> a2 implies a1.ID <> a2.ID and self.tasks -> select(t | t.isTypeOf(CleaningTask)).cleaningOperations -> forAll(a3 | a1.ID <> a3.ID) ))
+		message: "There can't be more analysis operations with the same name"
+	}
 }
 
 
@@ -255,11 +262,6 @@ context AnalysisTask{
 		check: self.analysisOperations -> select(op | op.outgoing == null) -> size() == 1
 		message: "There can be just one final analysis operation. Some internal data flows are wrong"
 	}
-	
-	constraint uniqueOperationName {
-		check: self.analysisOperations -> forAll (a1 | self.analysisOperations -> forAll (a2 | a1 <> a2 implies a1.ID <> a2.ID))
-		message: "There can't be more analysis operations with the same name"
-	}
 }
 
 
@@ -304,5 +306,4 @@ context ComplexAttribute{
 		message: "There can't be many equal attributes in the same attribute"
 	}
 }
-
 

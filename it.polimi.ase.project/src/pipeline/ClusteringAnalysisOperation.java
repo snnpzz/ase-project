@@ -12,7 +12,7 @@ package pipeline;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.ClusteringAnalysisOperation#getName <em>Name</em>}</li>
+ *   <li>{@link pipeline.ClusteringAnalysisOperation#getType <em>Type</em>}</li>
  *   <li>{@link pipeline.ClusteringAnalysisOperation#getK <em>K</em>}</li>
  * </ul>
  *
@@ -22,33 +22,33 @@ package pipeline;
  */
 public interface ClusteringAnalysisOperation extends AnalysisOperation {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link pipeline.ClusteringOperation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
+	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see pipeline.ClusteringOperation
-	 * @see #setName(ClusteringOperation)
-	 * @see pipeline.PipelinePackage#getClusteringAnalysisOperation_Name()
+	 * @see #setType(ClusteringOperation)
+	 * @see pipeline.PipelinePackage#getClusteringAnalysisOperation_Type()
 	 * @model
 	 * @generated
 	 */
-	ClusteringOperation getName();
+	ClusteringOperation getType();
 
 	/**
-	 * Sets the value of the '{@link pipeline.ClusteringAnalysisOperation#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link pipeline.ClusteringAnalysisOperation#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @param value the new value of the '<em>Type</em>' attribute.
 	 * @see pipeline.ClusteringOperation
-	 * @see #getName()
+	 * @see #getType()
 	 * @generated
 	 */
-	void setName(ClusteringOperation value);
+	void setType(ClusteringOperation value);
 
 	/**
 	 * Returns the value of the '<em><b>K</b></em>' attribute.

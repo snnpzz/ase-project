@@ -12,7 +12,7 @@ package pipeline;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.PredefinedCleaningOperation#getName <em>Name</em>}</li>
+ *   <li>{@link pipeline.PredefinedCleaningOperation#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getPredefinedCleaningOperation()
@@ -21,33 +21,33 @@ package pipeline;
  */
 public interface PredefinedCleaningOperation extends CleaningOperation {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The default value is <code>""</code>.
 	 * The literals are from the enumeration {@link pipeline.PredefinedOperation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
+	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see pipeline.PredefinedOperation
-	 * @see #setName(PredefinedOperation)
-	 * @see pipeline.PipelinePackage#getPredefinedCleaningOperation_Name()
+	 * @see #setType(PredefinedOperation)
+	 * @see pipeline.PipelinePackage#getPredefinedCleaningOperation_Type()
 	 * @model default=""
 	 * @generated
 	 */
-	PredefinedOperation getName();
+	PredefinedOperation getType();
 
 	/**
-	 * Sets the value of the '{@link pipeline.PredefinedCleaningOperation#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link pipeline.PredefinedCleaningOperation#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @param value the new value of the '<em>Type</em>' attribute.
 	 * @see pipeline.PredefinedOperation
-	 * @see #getName()
+	 * @see #getType()
 	 * @generated
 	 */
-	void setName(PredefinedOperation value);
+	void setType(PredefinedOperation value);
 
 } // PredefinedCleaningOperation

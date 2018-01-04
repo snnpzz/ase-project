@@ -46,26 +46,26 @@ public class ClusteringAnalysisOperationItemProvider extends AnalysisOperationIt
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 			addKPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ClusteringAnalysisOperation_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ClusteringAnalysisOperation_name_feature", "_UI_ClusteringAnalysisOperation_type"),
-				 PipelinePackage.Literals.CLUSTERING_ANALYSIS_OPERATION__NAME,
+				 getString("_UI_ClusteringAnalysisOperation_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ClusteringAnalysisOperation_type_feature", "_UI_ClusteringAnalysisOperation_type"),
+				 PipelinePackage.Literals.CLUSTERING_ANALYSIS_OPERATION__TYPE,
 				 true,
 				 false,
 				 false,
@@ -115,8 +115,7 @@ public class ClusteringAnalysisOperationItemProvider extends AnalysisOperationIt
 	 */
 	@Override
 	public String getText(Object object) {
-		ClusteringOperation labelValue = ((ClusteringAnalysisOperation)object).getName();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((ClusteringAnalysisOperation)object).getID();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ClusteringAnalysisOperation_type") :
 			getString("_UI_ClusteringAnalysisOperation_type") + " " + label;
@@ -135,7 +134,7 @@ public class ClusteringAnalysisOperationItemProvider extends AnalysisOperationIt
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ClusteringAnalysisOperation.class)) {
-			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__NAME:
+			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__TYPE:
 			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION__K:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

@@ -12,7 +12,7 @@ package pipeline;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.DescriptiveAnalysisOperation#getName <em>Name</em>}</li>
+ *   <li>{@link pipeline.DescriptiveAnalysisOperation#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getDescriptiveAnalysisOperation()
@@ -21,32 +21,32 @@ package pipeline;
  */
 public interface DescriptiveAnalysisOperation extends AnalysisOperation {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link pipeline.DescriptiveOperation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
+	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see pipeline.DescriptiveOperation
-	 * @see #setName(DescriptiveOperation)
-	 * @see pipeline.PipelinePackage#getDescriptiveAnalysisOperation_Name()
+	 * @see #setType(DescriptiveOperation)
+	 * @see pipeline.PipelinePackage#getDescriptiveAnalysisOperation_Type()
 	 * @model
 	 * @generated
 	 */
-	DescriptiveOperation getName();
+	DescriptiveOperation getType();
 
 	/**
-	 * Sets the value of the '{@link pipeline.DescriptiveAnalysisOperation#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link pipeline.DescriptiveAnalysisOperation#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @param value the new value of the '<em>Type</em>' attribute.
 	 * @see pipeline.DescriptiveOperation
-	 * @see #getName()
+	 * @see #getType()
 	 * @generated
 	 */
-	void setName(DescriptiveOperation value);
+	void setType(DescriptiveOperation value);
 
 } // DescriptiveAnalysisOperation

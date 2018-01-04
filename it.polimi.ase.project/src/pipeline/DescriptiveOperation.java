@@ -46,7 +46,23 @@ public enum DescriptiveOperation implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PIE_CHART(2, "PieChart", "PieChart");
+	PIE_CHART(2, "PieChart", "PieChart"), /**
+	 * The '<em><b>Scatter Plot</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SCATTER_PLOT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SCATTER_PLOT(4, "ScatterPlot", "ScatterPlot"), /**
+	 * The '<em><b>View Data</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #VIEW_DATA_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	VIEW_DATA(5, "ViewData", "ViewData");
 
 	/**
 	 * The '<em><b>Histogram</b></em>' literal value.
@@ -94,6 +110,36 @@ public enum DescriptiveOperation implements Enumerator {
 	public static final int PIE_CHART_VALUE = 2;
 
 	/**
+	 * The '<em><b>Scatter Plot</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Scatter Plot</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #SCATTER_PLOT
+	 * @model name="ScatterPlot"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SCATTER_PLOT_VALUE = 4;
+
+	/**
+	 * The '<em><b>View Data</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>View Data</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #VIEW_DATA
+	 * @model name="ViewData"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int VIEW_DATA_VALUE = 5;
+
+	/**
 	 * An array of all the '<em><b>Descriptive Operation</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,6 +150,8 @@ public enum DescriptiveOperation implements Enumerator {
 			HISTOGRAM,
 			BOXPLOT,
 			PIE_CHART,
+			SCATTER_PLOT,
+			VIEW_DATA,
 		};
 
 	/**
@@ -163,6 +211,8 @@ public enum DescriptiveOperation implements Enumerator {
 			case HISTOGRAM_VALUE: return HISTOGRAM;
 			case BOXPLOT_VALUE: return BOXPLOT;
 			case PIE_CHART_VALUE: return PIE_CHART;
+			case SCATTER_PLOT_VALUE: return SCATTER_PLOT;
+			case VIEW_DATA_VALUE: return VIEW_DATA;
 		}
 		return null;
 	}

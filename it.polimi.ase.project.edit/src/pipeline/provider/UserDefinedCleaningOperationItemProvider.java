@@ -45,25 +45,25 @@ public class UserDefinedCleaningOperationItemProvider extends CleaningOperationI
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UserDefinedCleaningOperation_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UserDefinedCleaningOperation_name_feature", "_UI_UserDefinedCleaningOperation_type"),
-				 PipelinePackage.Literals.USER_DEFINED_CLEANING_OPERATION__NAME,
+				 getString("_UI_UserDefinedCleaningOperation_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UserDefinedCleaningOperation_type_feature", "_UI_UserDefinedCleaningOperation_type"),
+				 PipelinePackage.Literals.USER_DEFINED_CLEANING_OPERATION__TYPE,
 				 true,
 				 false,
 				 false,
@@ -91,7 +91,7 @@ public class UserDefinedCleaningOperationItemProvider extends CleaningOperationI
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((UserDefinedCleaningOperation)object).getName();
+		String label = ((UserDefinedCleaningOperation)object).getID();
 		return label == null || label.length() == 0 ?
 			getString("_UI_UserDefinedCleaningOperation_type") :
 			getString("_UI_UserDefinedCleaningOperation_type") + " " + label;
@@ -110,7 +110,7 @@ public class UserDefinedCleaningOperationItemProvider extends CleaningOperationI
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UserDefinedCleaningOperation.class)) {
-			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION__NAME:
+			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

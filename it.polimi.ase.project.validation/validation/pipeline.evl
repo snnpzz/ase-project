@@ -255,6 +255,11 @@ context AnalysisTask{
 		check: self.analysisOperations -> select(op | op.outgoing == null) -> size() == 1
 		message: "There can be just one final analysis operation. Some internal data flows are wrong"
 	}
+	
+	constraint uniqueOperationName {
+		check: self.analysisOperations -> forAll (a1 | self.analysisOperations -> forAll (a2 | a1 <> a2 implies a1.ID <> a2.ID))
+		message: "There can't be more analysis operations with the same name"
+	}
 }
 
 

@@ -1,0 +1,13 @@
+[comment encoding = UTF-8 /]
+[module mainModule('http://www.project.ase.polimi.it/pipeline')]
+
+[import it::polimi::ase::project::pipeline2R::files::generateRPipeline /]
+
+[template public generatePipeline(aPipeline : Pipeline)]
+[comment @main/]
+
+[aPipeline.generateRPipeline()/]
+
+[/template]
+
+

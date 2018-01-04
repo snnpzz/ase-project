@@ -282,7 +282,7 @@ context Schema{
 	}	
 	
 	constraint uniqueAttribute {
-		check: self.attributes -> forAll (a1 | self.attributes -> select (a2 | a1 == a2) -> size() == 0)
+		check: self.attributes -> forAll (a1 | self.attributes -> select (a2 | a1 == a2) -> size() == 1)
 		message: "There can't be many equal attributes in the same schema"
 	}	
 }
@@ -295,7 +295,7 @@ context ComplexAttribute{
 	}	
 	
 	constraint uniqueAttribute {
-		check: self.attributes -> forAll (a1 | self.attributes -> select (a2 | a1 == a2) -> size() == 0)
+		check: self.attributes -> forAll (a1 | self.attributes -> select (a2 | a1 == a2) -> size() == 1)
 		message: "There can't be many equal attributes in the same attribute"
 	}
 }

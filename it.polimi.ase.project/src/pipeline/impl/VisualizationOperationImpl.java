@@ -48,6 +48,7 @@ public class VisualizationOperationImpl extends EObjectImpl implements Visualiza
 	 * @ordered
 	 */
 	protected static final String ID_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->

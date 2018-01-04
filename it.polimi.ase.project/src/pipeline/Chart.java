@@ -3,6 +3,7 @@
 package pipeline;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -25,6 +26,35 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Chart extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Size</b></em>' attribute.
+	 * The literals are from the enumeration {@link pipeline.Size}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Size</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Size</em>' attribute.
+	 * @see pipeline.Size
+	 * @see #setSize(Size)
+	 * @see pipeline.PipelinePackage#getChart_Size()
+	 * @model
+	 * @generated
+	 */
+	Size getSize();
+
+	/**
+	 * Sets the value of the '{@link pipeline.Chart#getSize <em>Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Size</em>' attribute.
+	 * @see pipeline.Size
+	 * @see #getSize()
+	 * @generated
+	 */
+	void setSize(Size value);
+
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -79,35 +109,6 @@ public interface Chart extends EObject {
 	 * @generated
 	 */
 	void setType(ChartType value);
-
-	/**
-	 * Returns the value of the '<em><b>Size</b></em>' attribute.
-	 * The literals are from the enumeration {@link pipeline.Size}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Size</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Size</em>' attribute.
-	 * @see pipeline.Size
-	 * @see #setSize(Size)
-	 * @see pipeline.PipelinePackage#getChart_Size()
-	 * @model
-	 * @generated
-	 */
-	Size getSize();
-
-	/**
-	 * Sets the value of the '{@link pipeline.Chart#getSize <em>Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Size</em>' attribute.
-	 * @see pipeline.Size
-	 * @see #getSize()
-	 * @generated
-	 */
-	void setSize(Size value);
 
 	/**
 	 * Returns the value of the '<em><b>Axes</b></em>' reference list.

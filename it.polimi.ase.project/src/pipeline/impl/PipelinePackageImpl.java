@@ -26,12 +26,10 @@ import pipeline.ComplexAttribute;
 import pipeline.DataFlow;
 import pipeline.DescriptiveAnalysisOperation;
 import pipeline.DescriptiveOperation;
-import pipeline.Export;
 import pipeline.ExportOperation;
 import pipeline.ExportTask;
 import pipeline.File;
 import pipeline.Format;
-import pipeline.Import;
 import pipeline.ImportOperation;
 import pipeline.IntegrationTask;
 import pipeline.InternalDataFlow;
@@ -995,6 +993,15 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getChart_Size() {
+		return (EAttribute)chartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getChart_Title() {
 		return (EAttribute)chartEClass.getEStructuralFeatures().get(1);
 	}
@@ -1006,15 +1013,6 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 */
 	public EAttribute getChart_Type() {
 		return (EAttribute)chartEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getChart_Size() {
-		return (EAttribute)chartEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**

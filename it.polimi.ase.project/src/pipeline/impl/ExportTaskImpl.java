@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import pipeline.Export;
 import pipeline.ExportOperation;
 import pipeline.ExportTask;
 import pipeline.PipelinePackage;
@@ -42,6 +41,7 @@ public class ExportTaskImpl extends TaskImpl implements ExportTask {
 	 * @ordered
 	 */
 	protected EList<ExportOperation> exportOperations;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

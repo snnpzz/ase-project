@@ -36,7 +36,9 @@ public enum Format implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	JSON(1, "JSON", "JSON"), /**
+	JSON(1, "JSON", "JSON"),
+
+	/**
 	 * The '<em><b>TXT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -60,7 +62,7 @@ public enum Format implements Enumerator {
 	 * The '<em><b>CSV</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Csv</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>CSV</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -75,7 +77,7 @@ public enum Format implements Enumerator {
 	 * The '<em><b>JSON</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Json</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>JSON</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -90,7 +92,7 @@ public enum Format implements Enumerator {
 	 * The '<em><b>TXT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Txt</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>TXT</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -105,7 +107,7 @@ public enum Format implements Enumerator {
 	 * The '<em><b>XML</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Xml</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>XML</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

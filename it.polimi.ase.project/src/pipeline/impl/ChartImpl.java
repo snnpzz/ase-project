@@ -3,16 +3,18 @@
 package pipeline.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import pipeline.Attribute;
+
 import pipeline.Chart;
 import pipeline.ChartType;
 import pipeline.PipelinePackage;
@@ -130,6 +132,27 @@ public class ChartImpl extends EObjectImpl implements Chart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Size getSize() {
+		return size;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSize(Size newSize) {
+		Size oldSize = size;
+		size = newSize == null ? SIZE_EDEFAULT : newSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.CHART__SIZE, oldSize, size));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTitle() {
 		return title;
 	}
@@ -165,27 +188,6 @@ public class ChartImpl extends EObjectImpl implements Chart {
 		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.CHART__TYPE, oldType, type));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Size getSize() {
-		return size;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSize(Size newSize) {
-		Size oldSize = size;
-		size = newSize == null ? SIZE_EDEFAULT : newSize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.CHART__SIZE, oldSize, size));
 	}
 
 	/**

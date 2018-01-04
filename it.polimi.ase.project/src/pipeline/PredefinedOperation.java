@@ -46,7 +46,9 @@ public enum PredefinedOperation implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ROUND(2, "round", "round"), /**
+	ROUND(2, "round", "round"),
+
+	/**
 	 * The '<em><b>Remove Column</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

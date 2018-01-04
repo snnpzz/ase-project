@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import pipeline.CollectionTask;
-import pipeline.Import;
 import pipeline.ImportOperation;
 import pipeline.PipelinePackage;
 
@@ -42,6 +41,7 @@ public class CollectionTaskImpl extends TaskImpl implements CollectionTask {
 	 * @ordered
 	 */
 	protected EList<ImportOperation> importOperations;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

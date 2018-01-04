@@ -157,33 +157,6 @@ public interface PipelineFactory extends EFactory {
 	File createFile();
 
 	/**
-	 * Returns a new object of class '<em>Simple Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Simple Attribute</em>'.
-	 * @generated
-	 */
-	SimpleAttribute createSimpleAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Complex Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Complex Attribute</em>'.
-	 * @generated
-	 */
-	ComplexAttribute createComplexAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Visualization Operation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Visualization Operation</em>'.
-	 * @generated
-	 */
-	VisualizationOperation createVisualizationOperation();
-
-	/**
 	 * Returns a new object of class '<em>Chart</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,6 +209,33 @@ public interface PipelineFactory extends EFactory {
 	 * @generated
 	 */
 	PredefinedCleaningOperation createPredefinedCleaningOperation();
+
+	/**
+	 * Returns a new object of class '<em>Simple Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Simple Attribute</em>'.
+	 * @generated
+	 */
+	SimpleAttribute createSimpleAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Complex Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Complex Attribute</em>'.
+	 * @generated
+	 */
+	ComplexAttribute createComplexAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Visualization Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Visualization Operation</em>'.
+	 * @generated
+	 */
+	VisualizationOperation createVisualizationOperation();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -1084,86 +1084,6 @@ public interface PipelinePackage extends EPackage {
 	int FILE_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.AnalysisOperationImpl <em>Analysis Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.AnalysisOperationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getAnalysisOperation()
-	 * @generated
-	 */
-	int ANALYSIS_OPERATION = 20;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.DescriptiveAnalysisOperationImpl <em>Descriptive Analysis Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.DescriptiveAnalysisOperationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getDescriptiveAnalysisOperation()
-	 * @generated
-	 */
-	int DESCRIPTIVE_ANALYSIS_OPERATION = 21;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.ClassificationAnalysisOperationImpl <em>Classification Analysis Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.ClassificationAnalysisOperationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getClassificationAnalysisOperation()
-	 * @generated
-	 */
-	int CLASSIFICATION_ANALYSIS_OPERATION = 22;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.PredictiveAnalysisOperationImpl <em>Predictive Analysis Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.PredictiveAnalysisOperationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getPredictiveAnalysisOperation()
-	 * @generated
-	 */
-	int PREDICTIVE_ANALYSIS_OPERATION = 23;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.ClusteringAnalysisOperationImpl <em>Clustering Analysis Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.ClusteringAnalysisOperationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getClusteringAnalysisOperation()
-	 * @generated
-	 */
-	int CLUSTERING_ANALYSIS_OPERATION = 24;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.PredefinedCleaningOperationImpl <em>Predefined Cleaning Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.PredefinedCleaningOperationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getPredefinedCleaningOperation()
-	 * @generated
-	 */
-	int PREDEFINED_CLEANING_OPERATION = 25;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.SimpleAttributeImpl <em>Simple Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.SimpleAttributeImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getSimpleAttribute()
-	 * @generated
-	 */
-	int SIMPLE_ATTRIBUTE = 26;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.ComplexAttributeImpl <em>Complex Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.ComplexAttributeImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getComplexAttribute()
-	 * @generated
-	 */
-	int COMPLEX_ATTRIBUTE = 27;
-
-	/**
 	 * The meta object id for the '{@link pipeline.impl.ChartImpl <em>Chart</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1219,6 +1139,16 @@ public interface PipelinePackage extends EPackage {
 	int CHART_FEATURE_COUNT = 4;
 
 	/**
+	 * The meta object id for the '{@link pipeline.impl.AnalysisOperationImpl <em>Analysis Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.AnalysisOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getAnalysisOperation()
+	 * @generated
+	 */
+	int ANALYSIS_OPERATION = 20;
+
+	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1255,15 +1185,6 @@ public interface PipelinePackage extends EPackage {
 	int ANALYSIS_OPERATION__ATTRIBUTES = OPERATION__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS_OPERATION__ATTRIBUTES = OPERATION__ATTRIBUTES;
-
-	/**
 	 * The number of structural features of the '<em>Analysis Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1271,6 +1192,16 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int ANALYSIS_OPERATION_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.DescriptiveAnalysisOperationImpl <em>Descriptive Analysis Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.DescriptiveAnalysisOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getDescriptiveAnalysisOperation()
+	 * @generated
+	 */
+	int DESCRIPTIVE_ANALYSIS_OPERATION = 21;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1309,15 +1240,6 @@ public interface PipelinePackage extends EPackage {
 	int DESCRIPTIVE_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTIVE_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1334,6 +1256,16 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int DESCRIPTIVE_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.ClassificationAnalysisOperationImpl <em>Classification Analysis Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.ClassificationAnalysisOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getClassificationAnalysisOperation()
+	 * @generated
+	 */
+	int CLASSIFICATION_ANALYSIS_OPERATION = 22;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1372,15 +1304,6 @@ public interface PipelinePackage extends EPackage {
 	int CLASSIFICATION_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSIFICATION_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1397,6 +1320,16 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int CLASSIFICATION_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.PredictiveAnalysisOperationImpl <em>Predictive Analysis Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.PredictiveAnalysisOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getPredictiveAnalysisOperation()
+	 * @generated
+	 */
+	int PREDICTIVE_ANALYSIS_OPERATION = 23;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1435,15 +1368,6 @@ public interface PipelinePackage extends EPackage {
 	int PREDICTIVE_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREDICTIVE_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1469,6 +1393,16 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int PREDICTIVE_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.ClusteringAnalysisOperationImpl <em>Clustering Analysis Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.ClusteringAnalysisOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getClusteringAnalysisOperation()
+	 * @generated
+	 */
+	int CLUSTERING_ANALYSIS_OPERATION = 24;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1507,15 +1441,6 @@ public interface PipelinePackage extends EPackage {
 	int CLUSTERING_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLUSTERING_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1541,6 +1466,16 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int CLUSTERING_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.PredefinedCleaningOperationImpl <em>Predefined Cleaning Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.PredefinedCleaningOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getPredefinedCleaningOperation()
+	 * @generated
+	 */
+	int PREDEFINED_CLEANING_OPERATION = 25;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1597,6 +1532,16 @@ public interface PipelinePackage extends EPackage {
 	int PREDEFINED_CLEANING_OPERATION_FEATURE_COUNT = CLEANING_OPERATION_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link pipeline.impl.SimpleAttributeImpl <em>Simple Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.SimpleAttributeImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getSimpleAttribute()
+	 * @generated
+	 */
+	int SIMPLE_ATTRIBUTE = 26;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1640,6 +1585,16 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int SIMPLE_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.ComplexAttributeImpl <em>Complex Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.ComplexAttributeImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getComplexAttribute()
+	 * @generated
+	 */
+	int COMPLEX_ATTRIBUTE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1724,26 +1679,6 @@ public interface PipelinePackage extends EPackage {
 	int VISUALIZATION_OPERATION_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link pipeline.Format <em>Format</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.Format
-	 * @see pipeline.impl.PipelinePackageImpl#getFormat()
-	 * @generated
-	 */
-	int FORMAT = 35;
-
-	/**
-	 * The meta object id for the '{@link pipeline.Size <em>Size</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.Size
-	 * @see pipeline.impl.PipelinePackageImpl#getSize()
-	 * @generated
-	 */
-	int SIZE = 36;
-
-	/**
 	 * The meta object id for the '{@link pipeline.PredefinedOperation <em>Predefined Operation</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1794,16 +1729,6 @@ public interface PipelinePackage extends EPackage {
 	int DESCRIPTIVE_OPERATION = 33;
 
 	/**
-	 * The meta object id for the '{@link pipeline.Type <em>Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.Type
-	 * @see pipeline.impl.PipelinePackageImpl#getType()
-	 * @generated
-	 */
-	int TYPE = 37;
-
-	/**
 	 * The meta object id for the '{@link pipeline.ChartType <em>Chart Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1812,6 +1737,36 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	int CHART_TYPE = 34;
+
+	/**
+	 * The meta object id for the '{@link pipeline.Format <em>Format</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.Format
+	 * @see pipeline.impl.PipelinePackageImpl#getFormat()
+	 * @generated
+	 */
+	int FORMAT = 35;
+
+	/**
+	 * The meta object id for the '{@link pipeline.Size <em>Size</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.Size
+	 * @see pipeline.impl.PipelinePackageImpl#getSize()
+	 * @generated
+	 */
+	int SIZE = 36;
+
+	/**
+	 * The meta object id for the '{@link pipeline.Type <em>Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.Type
+	 * @see pipeline.impl.PipelinePackageImpl#getType()
+	 * @generated
+	 */
+	int TYPE = 37;
 
 
 	/**
@@ -2523,6 +2478,60 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getFile_Path();
 
 	/**
+	 * Returns the meta object for class '{@link pipeline.Chart <em>Chart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Chart</em>'.
+	 * @see pipeline.Chart
+	 * @generated
+	 */
+	EClass getChart();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pipeline.Chart#getSize <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Size</em>'.
+	 * @see pipeline.Chart#getSize()
+	 * @see #getChart()
+	 * @generated
+	 */
+	EAttribute getChart_Size();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pipeline.Chart#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see pipeline.Chart#getTitle()
+	 * @see #getChart()
+	 * @generated
+	 */
+	EAttribute getChart_Title();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pipeline.Chart#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see pipeline.Chart#getType()
+	 * @see #getChart()
+	 * @generated
+	 */
+	EAttribute getChart_Type();
+
+	/**
+	 * Returns the meta object for the reference list '{@link pipeline.Chart#getAxes <em>Axes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Axes</em>'.
+	 * @see pipeline.Chart#getAxes()
+	 * @see #getChart()
+	 * @generated
+	 */
+	EReference getChart_Axes();
+
+	/**
 	 * Returns the meta object for class '{@link pipeline.CleaningOperation <em>Cleaning Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2744,80 +2753,6 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getVisualizationOperation_ID();
 
 	/**
-	 * Returns the meta object for class '{@link pipeline.Chart <em>Chart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Chart</em>'.
-	 * @see pipeline.Chart
-	 * @generated
-	 */
-	EClass getChart();
-
-	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Chart#getTitle <em>Title</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Title</em>'.
-	 * @see pipeline.Chart#getTitle()
-	 * @see #getChart()
-	 * @generated
-	 */
-	EAttribute getChart_Title();
-
-	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Chart#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see pipeline.Chart#getType()
-	 * @see #getChart()
-	 * @generated
-	 */
-	EAttribute getChart_Type();
-
-	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Chart#getSize <em>Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see pipeline.Chart#getSize()
-	 * @see #getChart()
-	 * @generated
-	 */
-	EAttribute getChart_Size();
-
-	/**
-	 * Returns the meta object for the reference list '{@link pipeline.Chart#getAxes <em>Axes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Axes</em>'.
-	 * @see pipeline.Chart#getAxes()
-	 * @see #getChart()
-	 * @generated
-	 */
-	EReference getChart_Axes();
-
-	/**
-	 * Returns the meta object for enum '{@link pipeline.Format <em>Format</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Format</em>'.
-	 * @see pipeline.Format
-	 * @generated
-	 */
-	EEnum getFormat();
-
-	/**
-	 * Returns the meta object for enum '{@link pipeline.Size <em>Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Size</em>'.
-	 * @see pipeline.Size
-	 * @generated
-	 */
-	EEnum getSize();
-
-	/**
 	 * Returns the meta object for enum '{@link pipeline.PredefinedOperation <em>Predefined Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2868,16 +2803,6 @@ public interface PipelinePackage extends EPackage {
 	EEnum getDescriptiveOperation();
 
 	/**
-	 * Returns the meta object for enum '{@link pipeline.Type <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Type</em>'.
-	 * @see pipeline.Type
-	 * @generated
-	 */
-	EEnum getType();
-
-	/**
 	 * Returns the meta object for enum '{@link pipeline.ChartType <em>Chart Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2886,6 +2811,36 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getChartType();
+
+	/**
+	 * Returns the meta object for enum '{@link pipeline.Format <em>Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Format</em>'.
+	 * @see pipeline.Format
+	 * @generated
+	 */
+	EEnum getFormat();
+
+	/**
+	 * Returns the meta object for enum '{@link pipeline.Size <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Size</em>'.
+	 * @see pipeline.Size
+	 * @generated
+	 */
+	EEnum getSize();
+
+	/**
+	 * Returns the meta object for enum '{@link pipeline.Type <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Type</em>'.
+	 * @see pipeline.Type
+	 * @generated
+	 */
+	EEnum getType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3474,6 +3429,48 @@ public interface PipelinePackage extends EPackage {
 		EAttribute FILE__PATH = eINSTANCE.getFile_Path();
 
 		/**
+		 * The meta object literal for the '{@link pipeline.impl.ChartImpl <em>Chart</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pipeline.impl.ChartImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getChart()
+		 * @generated
+		 */
+		EClass CHART = eINSTANCE.getChart();
+
+		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHART__SIZE = eINSTANCE.getChart_Size();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHART__TITLE = eINSTANCE.getChart_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHART__TYPE = eINSTANCE.getChart_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Axes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHART__AXES = eINSTANCE.getChart_Axes();
+
+		/**
 		 * The meta object literal for the '{@link pipeline.impl.CleaningOperationImpl <em>Cleaning Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3662,68 +3659,6 @@ public interface PipelinePackage extends EPackage {
 		EAttribute VISUALIZATION_OPERATION__ID = eINSTANCE.getVisualizationOperation_ID();
 
 		/**
-		 * The meta object literal for the '{@link pipeline.impl.ChartImpl <em>Chart</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see pipeline.impl.ChartImpl
-		 * @see pipeline.impl.PipelinePackageImpl#getChart()
-		 * @generated
-		 */
-		EClass CHART = eINSTANCE.getChart();
-
-		/**
-		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CHART__TITLE = eINSTANCE.getChart_Title();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CHART__TYPE = eINSTANCE.getChart_Type();
-
-		/**
-		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CHART__SIZE = eINSTANCE.getChart_Size();
-
-		/**
-		 * The meta object literal for the '<em><b>Axes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CHART__AXES = eINSTANCE.getChart_Axes();
-
-		/**
-		 * The meta object literal for the '{@link pipeline.Format <em>Format</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see pipeline.Format
-		 * @see pipeline.impl.PipelinePackageImpl#getFormat()
-		 * @generated
-		 */
-		EEnum FORMAT = eINSTANCE.getFormat();
-
-		/**
-		 * The meta object literal for the '{@link pipeline.Size <em>Size</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see pipeline.Size
-		 * @see pipeline.impl.PipelinePackageImpl#getSize()
-		 * @generated
-		 */
-		EEnum SIZE = eINSTANCE.getSize();
-
-		/**
 		 * The meta object literal for the '{@link pipeline.PredefinedOperation <em>Predefined Operation</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3774,16 +3709,6 @@ public interface PipelinePackage extends EPackage {
 		EEnum DESCRIPTIVE_OPERATION = eINSTANCE.getDescriptiveOperation();
 
 		/**
-		 * The meta object literal for the '{@link pipeline.Type <em>Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see pipeline.Type
-		 * @see pipeline.impl.PipelinePackageImpl#getType()
-		 * @generated
-		 */
-		EEnum TYPE = eINSTANCE.getType();
-
-		/**
 		 * The meta object literal for the '{@link pipeline.ChartType <em>Chart Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3792,6 +3717,36 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum CHART_TYPE = eINSTANCE.getChartType();
+
+		/**
+		 * The meta object literal for the '{@link pipeline.Format <em>Format</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pipeline.Format
+		 * @see pipeline.impl.PipelinePackageImpl#getFormat()
+		 * @generated
+		 */
+		EEnum FORMAT = eINSTANCE.getFormat();
+
+		/**
+		 * The meta object literal for the '{@link pipeline.Size <em>Size</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pipeline.Size
+		 * @see pipeline.impl.PipelinePackageImpl#getSize()
+		 * @generated
+		 */
+		EEnum SIZE = eINSTANCE.getSize();
+
+		/**
+		 * The meta object literal for the '{@link pipeline.Type <em>Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pipeline.Type
+		 * @see pipeline.impl.PipelinePackageImpl#getType()
+		 * @generated
+		 */
+		EEnum TYPE = eINSTANCE.getType();
 
 	}
 

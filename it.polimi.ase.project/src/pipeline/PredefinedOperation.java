@@ -46,17 +46,7 @@ public enum PredefinedOperation implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ROUND(2, "round", "round"),
-
-	/**
-	 * The '<em><b>Remove Column</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #REMOVE_COLUMN_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	REMOVE_COLUMN(3, "removeColumn", "removeColumn");
+	ROUND(2, "round", "round");
 
 	/**
 	 * The '<em><b>Remove Nulls</b></em>' literal value.
@@ -104,21 +94,6 @@ public enum PredefinedOperation implements Enumerator {
 	public static final int ROUND_VALUE = 2;
 
 	/**
-	 * The '<em><b>Remove Column</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Remove Column</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #REMOVE_COLUMN
-	 * @model name="removeColumn"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int REMOVE_COLUMN_VALUE = 3;
-
-	/**
 	 * An array of all the '<em><b>Predefined Operation</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,7 +104,6 @@ public enum PredefinedOperation implements Enumerator {
 			REMOVE_NULLS,
 			REMOVE_NEGATIVE,
 			ROUND,
-			REMOVE_COLUMN,
 		};
 
 	/**
@@ -189,7 +163,6 @@ public enum PredefinedOperation implements Enumerator {
 			case REMOVE_NULLS_VALUE: return REMOVE_NULLS;
 			case REMOVE_NEGATIVE_VALUE: return REMOVE_NEGATIVE;
 			case ROUND_VALUE: return ROUND;
-			case REMOVE_COLUMN_VALUE: return REMOVE_COLUMN;
 		}
 		return null;
 	}

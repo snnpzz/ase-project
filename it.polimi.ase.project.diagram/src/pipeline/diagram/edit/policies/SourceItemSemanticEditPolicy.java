@@ -78,7 +78,7 @@ public class SourceItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.ImportOperationRead_4011 == req.getElementType()) {
+		if (PipelineElementTypes.ImportOperationRead_4006 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -88,7 +88,7 @@ public class SourceItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.ImportOperationRead_4011 == req.getElementType()) {
+		if (PipelineElementTypes.ImportOperationRead_4006 == req.getElementType()) {
 			return getGEFWrapper(new ImportOperationReadCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;

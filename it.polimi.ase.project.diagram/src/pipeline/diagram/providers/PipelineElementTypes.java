@@ -132,8 +132,8 @@ public class PipelineElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType ImportOperation_3013 = getElementType(
-			"it.polimi.ase.project.diagram.ImportOperation_3013"); //$NON-NLS-1$
+	public static final IElementType ImportOperation_3001 = getElementType(
+			"it.polimi.ase.project.diagram.ImportOperation_3001"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -167,8 +167,8 @@ public class PipelineElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType ExportOperation_3014 = getElementType(
-			"it.polimi.ase.project.diagram.ExportOperation_3014"); //$NON-NLS-1$
+	public static final IElementType ExportOperation_3008 = getElementType(
+			"it.polimi.ase.project.diagram.ExportOperation_3008"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -216,23 +216,23 @@ public class PipelineElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType ImportOperationRead_4011 = getElementType(
-			"it.polimi.ase.project.diagram.ImportOperationRead_4011"); //$NON-NLS-1$
+	public static final IElementType ImportOperationRead_4006 = getElementType(
+			"it.polimi.ase.project.diagram.ImportOperationRead_4006"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType ImportOperationImpUses_4012 = getElementType(
-			"it.polimi.ase.project.diagram.ImportOperationImpUses_4012"); //$NON-NLS-1$
+	public static final IElementType ImportOperationImpUses_4007 = getElementType(
+			"it.polimi.ase.project.diagram.ImportOperationImpUses_4007"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType ExportOperationWrite_4013 = getElementType(
-			"it.polimi.ase.project.diagram.ExportOperationWrite_4013"); //$NON-NLS-1$
+	public static final IElementType ExportOperationWrite_4008 = getElementType(
+			"it.polimi.ase.project.diagram.ExportOperationWrite_4008"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType ExportOperationExpUses_4014 = getElementType(
-			"it.polimi.ase.project.diagram.ExportOperationExpUses_4014"); //$NON-NLS-1$
+	public static final IElementType ExportOperationExpUses_4009 = getElementType(
+			"it.polimi.ase.project.diagram.ExportOperationExpUses_4009"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -298,7 +298,7 @@ public class PipelineElementTypes {
 
 			elements.put(Chart_2010, PipelinePackage.eINSTANCE.getChart());
 
-			elements.put(ImportOperation_3013, PipelinePackage.eINSTANCE.getImportOperation());
+			elements.put(ImportOperation_3001, PipelinePackage.eINSTANCE.getImportOperation());
 
 			elements.put(UserDefinedCleaningOperation_3002,
 					PipelinePackage.eINSTANCE.getUserDefinedCleaningOperation());
@@ -315,7 +315,7 @@ public class PipelineElementTypes {
 
 			elements.put(ClusteringAnalysisOperation_3007, PipelinePackage.eINSTANCE.getClusteringAnalysisOperation());
 
-			elements.put(ExportOperation_3014, PipelinePackage.eINSTANCE.getExportOperation());
+			elements.put(ExportOperation_3008, PipelinePackage.eINSTANCE.getExportOperation());
 
 			elements.put(SimpleAttribute_3009, PipelinePackage.eINSTANCE.getSimpleAttribute());
 
@@ -335,13 +335,13 @@ public class PipelineElementTypes {
 
 			elements.put(IntegrationTaskAttributes_4005, PipelinePackage.eINSTANCE.getIntegrationTask_Attributes());
 
-			elements.put(ImportOperationRead_4011, PipelinePackage.eINSTANCE.getImportOperation_Read());
+			elements.put(ImportOperationRead_4006, PipelinePackage.eINSTANCE.getImportOperation_Read());
 
-			elements.put(ImportOperationImpUses_4012, PipelinePackage.eINSTANCE.getImportOperation_ImpUses());
+			elements.put(ImportOperationImpUses_4007, PipelinePackage.eINSTANCE.getImportOperation_ImpUses());
 
-			elements.put(ExportOperationWrite_4013, PipelinePackage.eINSTANCE.getExportOperation_Write());
+			elements.put(ExportOperationWrite_4008, PipelinePackage.eINSTANCE.getExportOperation_Write());
 
-			elements.put(ExportOperationExpUses_4014, PipelinePackage.eINSTANCE.getExportOperation_ExpUses());
+			elements.put(ExportOperationExpUses_4009, PipelinePackage.eINSTANCE.getExportOperation_ExpUses());
 
 			elements.put(ChartAxes_4010, PipelinePackage.eINSTANCE.getChart_Axes());
 		}
@@ -372,14 +372,14 @@ public class PipelineElementTypes {
 			KNOWN_ELEMENT_TYPES.add(File_2008);
 			KNOWN_ELEMENT_TYPES.add(Schema_2009);
 			KNOWN_ELEMENT_TYPES.add(Chart_2010);
-			KNOWN_ELEMENT_TYPES.add(ImportOperation_3013);
+			KNOWN_ELEMENT_TYPES.add(ImportOperation_3001);
 			KNOWN_ELEMENT_TYPES.add(UserDefinedCleaningOperation_3002);
 			KNOWN_ELEMENT_TYPES.add(PredefinedCleaningOperation_3003);
 			KNOWN_ELEMENT_TYPES.add(DescriptiveAnalysisOperation_3004);
 			KNOWN_ELEMENT_TYPES.add(ClassificationAnalysisOperation_3005);
 			KNOWN_ELEMENT_TYPES.add(PredictiveAnalysisOperation_3006);
 			KNOWN_ELEMENT_TYPES.add(ClusteringAnalysisOperation_3007);
-			KNOWN_ELEMENT_TYPES.add(ExportOperation_3014);
+			KNOWN_ELEMENT_TYPES.add(ExportOperation_3008);
 			KNOWN_ELEMENT_TYPES.add(SimpleAttribute_3009);
 			KNOWN_ELEMENT_TYPES.add(ComplexAttribute_3010);
 			KNOWN_ELEMENT_TYPES.add(SimpleAttribute_3011);
@@ -389,10 +389,10 @@ public class PipelineElementTypes {
 			KNOWN_ELEMENT_TYPES.add(DataFlowSchema_4003);
 			KNOWN_ELEMENT_TYPES.add(InternalDataFlowSchema_4004);
 			KNOWN_ELEMENT_TYPES.add(IntegrationTaskAttributes_4005);
-			KNOWN_ELEMENT_TYPES.add(ImportOperationRead_4011);
-			KNOWN_ELEMENT_TYPES.add(ImportOperationImpUses_4012);
-			KNOWN_ELEMENT_TYPES.add(ExportOperationWrite_4013);
-			KNOWN_ELEMENT_TYPES.add(ExportOperationExpUses_4014);
+			KNOWN_ELEMENT_TYPES.add(ImportOperationRead_4006);
+			KNOWN_ELEMENT_TYPES.add(ImportOperationImpUses_4007);
+			KNOWN_ELEMENT_TYPES.add(ExportOperationWrite_4008);
+			KNOWN_ELEMENT_TYPES.add(ExportOperationExpUses_4009);
 			KNOWN_ELEMENT_TYPES.add(ChartAxes_4010);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -426,7 +426,7 @@ public class PipelineElementTypes {
 		case ChartEditPart.VISUAL_ID:
 			return Chart_2010;
 		case ImportOperationEditPart.VISUAL_ID:
-			return ImportOperation_3013;
+			return ImportOperation_3001;
 		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
 			return UserDefinedCleaningOperation_3002;
 		case PredefinedCleaningOperationEditPart.VISUAL_ID:
@@ -440,7 +440,7 @@ public class PipelineElementTypes {
 		case ClusteringAnalysisOperationEditPart.VISUAL_ID:
 			return ClusteringAnalysisOperation_3007;
 		case ExportOperationEditPart.VISUAL_ID:
-			return ExportOperation_3014;
+			return ExportOperation_3008;
 		case SimpleAttributeEditPart.VISUAL_ID:
 			return SimpleAttribute_3009;
 		case ComplexAttributeEditPart.VISUAL_ID:
@@ -460,13 +460,13 @@ public class PipelineElementTypes {
 		case IntegrationTaskAttributesEditPart.VISUAL_ID:
 			return IntegrationTaskAttributes_4005;
 		case ImportOperationReadEditPart.VISUAL_ID:
-			return ImportOperationRead_4011;
+			return ImportOperationRead_4006;
 		case ImportOperationImpUsesEditPart.VISUAL_ID:
-			return ImportOperationImpUses_4012;
+			return ImportOperationImpUses_4007;
 		case ExportOperationWriteEditPart.VISUAL_ID:
-			return ExportOperationWrite_4013;
+			return ExportOperationWrite_4008;
 		case ExportOperationExpUsesEditPart.VISUAL_ID:
-			return ExportOperationExpUses_4014;
+			return ExportOperationExpUses_4009;
 		case ChartAxesEditPart.VISUAL_ID:
 			return ChartAxes_4010;
 		}

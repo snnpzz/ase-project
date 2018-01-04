@@ -18,7 +18,7 @@ public class ImportOperationReadItemSemanticEditPolicy extends PipelineBaseItemS
 	* @generated
 	*/
 	public ImportOperationReadItemSemanticEditPolicy() {
-		super(PipelineElementTypes.ImportOperationRead_4011);
+		super(PipelineElementTypes.ImportOperationRead_4006);
 	}
 
 	/**

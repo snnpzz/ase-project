@@ -185,10 +185,10 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 		if (PipelineElementTypes.InternalDataFlowSchema_4004 == req.getElementType()) {
 			return null;
 		}
-		if (PipelineElementTypes.ImportOperationImpUses_4012 == req.getElementType()) {
+		if (PipelineElementTypes.ImportOperationImpUses_4007 == req.getElementType()) {
 			return null;
 		}
-		if (PipelineElementTypes.ExportOperationExpUses_4014 == req.getElementType()) {
+		if (PipelineElementTypes.ExportOperationExpUses_4009 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -204,10 +204,10 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 		if (PipelineElementTypes.InternalDataFlowSchema_4004 == req.getElementType()) {
 			return getGEFWrapper(new InternalDataFlowSchemaCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (PipelineElementTypes.ImportOperationImpUses_4012 == req.getElementType()) {
+		if (PipelineElementTypes.ImportOperationImpUses_4007 == req.getElementType()) {
 			return getGEFWrapper(new ImportOperationImpUsesCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (PipelineElementTypes.ExportOperationExpUses_4014 == req.getElementType()) {
+		if (PipelineElementTypes.ExportOperationExpUses_4009 == req.getElementType()) {
 			return getGEFWrapper(new ExportOperationExpUsesCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;

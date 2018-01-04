@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link pipeline.File#getName <em>Name</em>}</li>
  *   <li>{@link pipeline.File#getPath <em>Path</em>}</li>
+ *   <li>{@link pipeline.File#getComesFrom <em>Comes From</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getFile()
@@ -73,5 +74,33 @@ public interface File extends EObject {
 	 * @generated
 	 */
 	void setPath(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Comes From</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link pipeline.ExportOperation#getWrite <em>Write</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Comes From</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Comes From</em>' reference.
+	 * @see #setComesFrom(ExportOperation)
+	 * @see pipeline.PipelinePackage#getFile_ComesFrom()
+	 * @see pipeline.ExportOperation#getWrite
+	 * @model opposite="write" required="true"
+	 * @generated
+	 */
+	ExportOperation getComesFrom();
+
+	/**
+	 * Sets the value of the '{@link pipeline.File#getComesFrom <em>Comes From</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Comes From</em>' reference.
+	 * @see #getComesFrom()
+	 * @generated
+	 */
+	void setComesFrom(ExportOperation value);
 
 } // File

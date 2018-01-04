@@ -75,7 +75,7 @@ public class ImportOperationReadReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Source && newEnd instanceof ImportOperation)) {
 			return false;
 		}
-		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistImportOperationRead_4011(getNewSource(),
+		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistImportOperationRead_4006(getNewSource(),
 				getOldTarget());
 	}
 
@@ -86,7 +86,7 @@ public class ImportOperationReadReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Source && newEnd instanceof Source)) {
 			return false;
 		}
-		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistImportOperationRead_4011(getOldSource(),
+		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canExistImportOperationRead_4006(getOldSource(),
 				getNewTarget());
 	}
 

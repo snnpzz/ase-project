@@ -47,7 +47,6 @@ public class PredictiveAnalysisOperationItemProvider extends AnalysisOperationIt
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addPredictedValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -66,28 +65,6 @@ public class PredictiveAnalysisOperationItemProvider extends AnalysisOperationIt
 				 getString("_UI_PredictiveAnalysisOperation_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PredictiveAnalysisOperation_name_feature", "_UI_PredictiveAnalysisOperation_type"),
 				 PipelinePackage.Literals.PREDICTIVE_ANALYSIS_OPERATION__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Predicted Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPredictedValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PredictiveAnalysisOperation_predictedValue_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PredictiveAnalysisOperation_predictedValue_feature", "_UI_PredictiveAnalysisOperation_type"),
-				 PipelinePackage.Literals.PREDICTIVE_ANALYSIS_OPERATION__PREDICTED_VALUE,
 				 true,
 				 false,
 				 false,
@@ -136,7 +113,6 @@ public class PredictiveAnalysisOperationItemProvider extends AnalysisOperationIt
 
 		switch (notification.getFeatureID(PredictiveAnalysisOperation.class)) {
 			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION__NAME:
-			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION__PREDICTED_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

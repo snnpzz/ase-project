@@ -18,7 +18,7 @@ public class ExportOperationExpUsesItemSemanticEditPolicy extends PipelineBaseIt
 	* @generated
 	*/
 	public ExportOperationExpUsesItemSemanticEditPolicy() {
-		super(PipelineElementTypes.ExportOperationExpUses_4014);
+		super(PipelineElementTypes.ExportOperationExpUses_4009);
 	}
 
 	/**

@@ -25,7 +25,7 @@ public class ImportOperationReadEditPart extends ConnectionNodeEditPart implemen
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 4011;
+	public static final int VISUAL_ID = 4006;
 
 	/**
 	* @generated

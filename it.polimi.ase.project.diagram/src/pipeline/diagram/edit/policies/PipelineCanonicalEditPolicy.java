@@ -375,7 +375,7 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		case ImportOperationEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getImportOperation_3013ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getImportOperation_3001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -424,7 +424,7 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		case ExportOperationEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getExportOperation_3014ContainedLinks(view));
+				result.addAll(PipelineDiagramUpdater.getExportOperation_3008ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

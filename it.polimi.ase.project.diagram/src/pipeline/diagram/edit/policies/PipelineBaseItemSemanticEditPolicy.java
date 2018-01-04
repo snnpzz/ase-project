@@ -375,7 +375,7 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateImportOperationRead_4011(ImportOperation source, Source target) {
+		public boolean canCreateImportOperationRead_4006(ImportOperation source, Source target) {
 			if (source != null) {
 				if (source.getRead() != null) {
 					return false;
@@ -385,26 +385,26 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return false;
 			}
 
-			return canExistImportOperationRead_4011(source, target);
+			return canExistImportOperationRead_4006(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateImportOperationImpUses_4012(ImportOperation source, Schema target) {
+		public boolean canCreateImportOperationImpUses_4007(ImportOperation source, Schema target) {
 			if (source != null) {
 				if (source.getImpUses() != null) {
 					return false;
 				}
 			}
 
-			return canExistImportOperationImpUses_4012(source, target);
+			return canExistImportOperationImpUses_4007(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateExportOperationWrite_4013(ExportOperation source, File target) {
+		public boolean canCreateExportOperationWrite_4008(ExportOperation source, File target) {
 			if (source != null) {
 				if (source.getWrite() != null) {
 					return false;
@@ -414,20 +414,20 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return false;
 			}
 
-			return canExistExportOperationWrite_4013(source, target);
+			return canExistExportOperationWrite_4008(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateExportOperationExpUses_4014(ExportOperation source, Schema target) {
+		public boolean canCreateExportOperationExpUses_4009(ExportOperation source, Schema target) {
 			if (source != null) {
 				if (source.getExpUses() != null) {
 					return false;
 				}
 			}
 
-			return canExistExportOperationExpUses_4014(source, target);
+			return canExistExportOperationExpUses_4009(source, target);
 		}
 
 		/**
@@ -482,28 +482,28 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		* @generated
 		*/
-		public boolean canExistImportOperationRead_4011(ImportOperation source, Source target) {
+		public boolean canExistImportOperationRead_4006(ImportOperation source, Source target) {
 			return true;
 		}
 
 		/**
 		* @generated
 		*/
-		public boolean canExistImportOperationImpUses_4012(ImportOperation source, Schema target) {
+		public boolean canExistImportOperationImpUses_4007(ImportOperation source, Schema target) {
 			return true;
 		}
 
 		/**
 		* @generated
 		*/
-		public boolean canExistExportOperationWrite_4013(ExportOperation source, File target) {
+		public boolean canExistExportOperationWrite_4008(ExportOperation source, File target) {
 			return true;
 		}
 
 		/**
 		* @generated
 		*/
-		public boolean canExistExportOperationExpUses_4014(ExportOperation source, Schema target) {
+		public boolean canExistExportOperationExpUses_4009(ExportOperation source, Schema target) {
 			return true;
 		}
 

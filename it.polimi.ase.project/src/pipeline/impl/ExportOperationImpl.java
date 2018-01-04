@@ -4,6 +4,7 @@ package pipeline.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -121,11 +122,33 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setWrite(File newWrite) {
+	public NotificationChain basicSetWrite(File newWrite, NotificationChain msgs) {
 		File oldWrite = write;
 		write = newWrite;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT_OPERATION__WRITE, oldWrite, write));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT_OPERATION__WRITE, oldWrite, newWrite);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setWrite(File newWrite) {
+		if (newWrite != write) {
+			NotificationChain msgs = null;
+			if (write != null)
+				msgs = ((InternalEObject)write).eInverseRemove(this, PipelinePackage.FILE__COMES_FROM, File.class, msgs);
+			if (newWrite != null)
+				msgs = ((InternalEObject)newWrite).eInverseAdd(this, PipelinePackage.FILE__COMES_FROM, File.class, msgs);
+			msgs = basicSetWrite(newWrite, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT_OPERATION__WRITE, newWrite, newWrite));
 	}
 
 	/**
@@ -185,6 +208,36 @@ public class ExportOperationImpl extends EObjectImpl implements ExportOperation 
 		id = newID;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.EXPORT_OPERATION__ID, oldID, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PipelinePackage.EXPORT_OPERATION__WRITE:
+				if (write != null)
+					msgs = ((InternalEObject)write).eInverseRemove(this, PipelinePackage.FILE__COMES_FROM, File.class, msgs);
+				return basicSetWrite((File)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PipelinePackage.EXPORT_OPERATION__WRITE:
+				return basicSetWrite(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

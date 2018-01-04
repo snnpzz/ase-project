@@ -36,7 +36,7 @@ public class ExportOperationEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 3014;
+	public static final int VISUAL_ID = 3008;
 
 	/**
 	* @generated

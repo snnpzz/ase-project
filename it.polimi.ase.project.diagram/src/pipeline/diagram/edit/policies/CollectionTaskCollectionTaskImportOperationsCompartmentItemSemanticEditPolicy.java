@@ -26,7 +26,7 @@ public class CollectionTaskCollectionTaskImportOperationsCompartmentItemSemantic
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (PipelineElementTypes.ImportOperation_3013 == req.getElementType()) {
+		if (PipelineElementTypes.ImportOperation_3001 == req.getElementType()) {
 			return getGEFWrapper(new ImportOperationCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

@@ -24,7 +24,7 @@ public class ExportOperationWriteEditPart extends ConnectionNodeEditPart impleme
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 4013;
+	public static final int VISUAL_ID = 4008;
 
 	/**
 	* @generated

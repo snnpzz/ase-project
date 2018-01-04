@@ -681,6 +681,11 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
+	public static String NavigatorGroupName_ImportOperation_3001_outgoinglinks;
+
+	/**
+	* @generated
+	*/
 	public static String NavigatorGroupName_UserDefinedCleaningOperation_3002_incominglinks;
 
 	/**
@@ -741,6 +746,11 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
+	public static String NavigatorGroupName_ExportOperation_3008_outgoinglinks;
+
+	/**
+	* @generated
+	*/
 	public static String NavigatorGroupName_SimpleAttribute_3009_incominglinks;
 
 	/**
@@ -757,16 +767,6 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String NavigatorGroupName_ComplexAttribute_3012_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ImportOperation_3013_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ExportOperation_3014_outgoinglinks;
 
 	/**
 	* @generated
@@ -831,52 +831,52 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
+	public static String NavigatorGroupName_ImportOperationRead_4006_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ImportOperationRead_4006_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ImportOperationImpUses_4007_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ImportOperationImpUses_4007_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ExportOperationWrite_4008_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ExportOperationWrite_4008_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ExportOperationExpUses_4009_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ExportOperationExpUses_4009_source;
+
+	/**
+	* @generated
+	*/
 	public static String NavigatorGroupName_ChartAxes_4010_target;
 
 	/**
 	* @generated
 	*/
 	public static String NavigatorGroupName_ChartAxes_4010_source;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ImportOperationRead_4011_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ImportOperationRead_4011_source;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ImportOperationImpUses_4012_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ImportOperationImpUses_4012_source;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ExportOperationWrite_4013_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ExportOperationWrite_4013_source;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ExportOperationExpUses_4014_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ExportOperationExpUses_4014_source;
 
 	/**
 	* @generated

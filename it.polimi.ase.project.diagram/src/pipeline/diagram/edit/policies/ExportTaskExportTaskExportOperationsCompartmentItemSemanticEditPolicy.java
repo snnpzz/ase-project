@@ -26,7 +26,7 @@ public class ExportTaskExportTaskExportOperationsCompartmentItemSemanticEditPoli
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (PipelineElementTypes.ExportOperation_3014 == req.getElementType()) {
+		if (PipelineElementTypes.ExportOperation_3008 == req.getElementType()) {
 			return getGEFWrapper(new ExportOperationCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

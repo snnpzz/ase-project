@@ -63,8 +63,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" eType="#//InternalDataFlow"
         eOpposite="#//InternalDataFlow/source"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
-        upperBound="-1" eType="#//SimpleAttribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InternalDataFlow">
     <eAnnotations source="gmf.link">
@@ -157,7 +155,8 @@
       <details key="label.text" value="Import"/>
       <details key="figure" value="ellipse"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="read" lowerBound="1" eType="#//Source">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="read" lowerBound="1" eType="#//Source"
+        eOpposite="#//Source/linkedTo">
       <eAnnotations source="gmf.link">
         <details key="width" value="2"/>
         <details key="target.decoration" value="square"/>
@@ -180,7 +179,8 @@
       <details key="label.text" value="Export"/>
       <details key="figure" value="ellipse"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="write" lowerBound="1" eType="#//File">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="write" lowerBound="1" eType="#//File"
+        eOpposite="#//File/comesFrom">
       <eAnnotations source="gmf.link">
         <details key="width" value="2"/>
         <details key="target.decoration" value="filledsquare"/>
@@ -204,6 +204,8 @@
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedTo" lowerBound="1"
+        eType="#//ImportOperation" eOpposite="#//ImportOperation/read"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="portNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -216,6 +218,8 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comesFrom" lowerBound="1"
+        eType="#//ExportOperation" eOpposite="#//ExportOperation/write"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Chart">
     <eAnnotations source="gmf.node">
@@ -243,7 +247,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PredictiveAnalysisOperation" eSuperTypes="#//AnalysisOperation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//PredictiveOperation"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="predictedValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClusteringAnalysisOperation" eSuperTypes="#//AnalysisOperation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//ClusteringOperation"/>
@@ -268,7 +271,6 @@
     <eLiterals name="removeNulls"/>
     <eLiterals name="removeNegative" value="1"/>
     <eLiterals name="round" value="2"/>
-    <eLiterals name="removeColumn" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ClusteringOperation">
     <eLiterals name="kMeans"/>

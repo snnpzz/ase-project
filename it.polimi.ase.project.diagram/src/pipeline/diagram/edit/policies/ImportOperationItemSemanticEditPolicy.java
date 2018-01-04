@@ -36,7 +36,7 @@ public class ImportOperationItemSemanticEditPolicy extends PipelineBaseItemSeman
 	* @generated
 	*/
 	public ImportOperationItemSemanticEditPolicy() {
-		super(PipelineElementTypes.ImportOperation_3013);
+		super(PipelineElementTypes.ImportOperation_3001);
 	}
 
 	/**
@@ -88,10 +88,10 @@ public class ImportOperationItemSemanticEditPolicy extends PipelineBaseItemSeman
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.ImportOperationRead_4011 == req.getElementType()) {
+		if (PipelineElementTypes.ImportOperationRead_4006 == req.getElementType()) {
 			return getGEFWrapper(new ImportOperationReadCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (PipelineElementTypes.ImportOperationImpUses_4012 == req.getElementType()) {
+		if (PipelineElementTypes.ImportOperationImpUses_4007 == req.getElementType()) {
 			return getGEFWrapper(new ImportOperationImpUsesCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -101,10 +101,10 @@ public class ImportOperationItemSemanticEditPolicy extends PipelineBaseItemSeman
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.ImportOperationRead_4011 == req.getElementType()) {
+		if (PipelineElementTypes.ImportOperationRead_4006 == req.getElementType()) {
 			return null;
 		}
-		if (PipelineElementTypes.ImportOperationImpUses_4012 == req.getElementType()) {
+		if (PipelineElementTypes.ImportOperationImpUses_4007 == req.getElementType()) {
 			return null;
 		}
 		return null;

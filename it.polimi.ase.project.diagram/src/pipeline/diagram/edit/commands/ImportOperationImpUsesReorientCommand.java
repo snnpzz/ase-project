@@ -76,7 +76,7 @@ public class ImportOperationImpUsesReorientCommand extends EditElementCommand {
 			return false;
 		}
 		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistImportOperationImpUses_4012(getNewSource(), getOldTarget());
+				.canExistImportOperationImpUses_4007(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -87,7 +87,7 @@ public class ImportOperationImpUsesReorientCommand extends EditElementCommand {
 			return false;
 		}
 		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistImportOperationImpUses_4012(getOldSource(), getNewTarget());
+				.canExistImportOperationImpUses_4007(getOldSource(), getNewTarget());
 	}
 
 	/**

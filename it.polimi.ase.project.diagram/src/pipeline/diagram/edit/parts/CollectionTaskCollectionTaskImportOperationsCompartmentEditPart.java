@@ -91,7 +91,7 @@ public class CollectionTaskCollectionTaskImportOperationsCompartmentEditPart ext
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == PipelineElementTypes.ImportOperation_3013) {
+			if (type == PipelineElementTypes.ImportOperation_3001) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

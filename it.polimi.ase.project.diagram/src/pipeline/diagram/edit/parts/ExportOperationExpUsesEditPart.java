@@ -22,7 +22,7 @@ public class ExportOperationExpUsesEditPart extends ConnectionNodeEditPart imple
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 4014;
+	public static final int VISUAL_ID = 4009;
 
 	/**
 	* @generated

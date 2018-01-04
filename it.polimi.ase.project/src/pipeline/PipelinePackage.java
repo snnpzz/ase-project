@@ -286,22 +286,13 @@ public interface PipelinePackage extends EPackage {
 	int OPERATION__ID = 2;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION__ATTRIBUTES = 3;
-
-	/**
 	 * The number of structural features of the '<em>Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_FEATURE_COUNT = 4;
+	int OPERATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.InternalDataFlowImpl <em>Internal Data Flow</em>}' class.
@@ -901,15 +892,6 @@ public interface PipelinePackage extends EPackage {
 	int CLEANING_OPERATION__ID = OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLEANING_OPERATION__ATTRIBUTES = OPERATION__ATTRIBUTES;
-
-	/**
 	 * The number of structural features of the '<em>Cleaning Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -956,15 +938,6 @@ public interface PipelinePackage extends EPackage {
 	int USER_DEFINED_CLEANING_OPERATION__ID = CLEANING_OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_DEFINED_CLEANING_OPERATION__ATTRIBUTES = CLEANING_OPERATION__ATTRIBUTES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -993,13 +966,22 @@ public interface PipelinePackage extends EPackage {
 	int SOURCE = 16;
 
 	/**
+	 * The feature id for the '<em><b>Linked To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__LINKED_TO = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__NAME = 0;
+	int SOURCE__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Server Name</b></em>' attribute.
@@ -1008,7 +990,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__SERVER_NAME = 1;
+	int SOURCE__SERVER_NAME = 2;
 
 	/**
 	 * The feature id for the '<em><b>Port Number</b></em>' attribute.
@@ -1017,7 +999,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__PORT_NUMBER = 2;
+	int SOURCE__PORT_NUMBER = 3;
 
 	/**
 	 * The feature id for the '<em><b>User Name</b></em>' attribute.
@@ -1026,7 +1008,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__USER_NAME = 3;
+	int SOURCE__USER_NAME = 4;
 
 	/**
 	 * The feature id for the '<em><b>Password</b></em>' attribute.
@@ -1035,7 +1017,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__PASSWORD = 4;
+	int SOURCE__PASSWORD = 5;
 
 	/**
 	 * The number of structural features of the '<em>Source</em>' class.
@@ -1044,7 +1026,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE_FEATURE_COUNT = 5;
+	int SOURCE_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.FileImpl <em>File</em>}' class.
@@ -1075,13 +1057,22 @@ public interface PipelinePackage extends EPackage {
 	int FILE__PATH = 1;
 
 	/**
+	 * The feature id for the '<em><b>Comes From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE__COMES_FROM = 2;
+
+	/**
 	 * The number of structural features of the '<em>File</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_FEATURE_COUNT = 2;
+	int FILE_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.ChartImpl <em>Chart</em>}' class.
@@ -1176,15 +1167,6 @@ public interface PipelinePackage extends EPackage {
 	int ANALYSIS_OPERATION__ID = OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS_OPERATION__ATTRIBUTES = OPERATION__ATTRIBUTES;
-
-	/**
 	 * The number of structural features of the '<em>Analysis Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1229,15 +1211,6 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int DESCRIPTIVE_ANALYSIS_OPERATION__ID = ANALYSIS_OPERATION__ID;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTIVE_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1295,15 +1268,6 @@ public interface PipelinePackage extends EPackage {
 	int CLASSIFICATION_ANALYSIS_OPERATION__ID = ANALYSIS_OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSIFICATION_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1359,15 +1323,6 @@ public interface PipelinePackage extends EPackage {
 	int PREDICTIVE_ANALYSIS_OPERATION__ID = ANALYSIS_OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREDICTIVE_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1377,22 +1332,13 @@ public interface PipelinePackage extends EPackage {
 	int PREDICTIVE_ANALYSIS_OPERATION__NAME = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Predicted Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREDICTIVE_ANALYSIS_OPERATION__PREDICTED_VALUE = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Predictive Analysis Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PREDICTIVE_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 2;
+	int PREDICTIVE_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.ClusteringAnalysisOperationImpl <em>Clustering Analysis Operation</em>}' class.
@@ -1430,15 +1376,6 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int CLUSTERING_ANALYSIS_OPERATION__ID = ANALYSIS_OPERATION__ID;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLUSTERING_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1503,15 +1440,6 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int PREDEFINED_CLEANING_OPERATION__ID = CLEANING_OPERATION__ID;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREDEFINED_CLEANING_OPERATION__ATTRIBUTES = CLEANING_OPERATION__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2008,17 +1936,6 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getOperation_ID();
 
 	/**
-	 * Returns the meta object for the reference list '{@link pipeline.Operation#getAttributes <em>Attributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Attributes</em>'.
-	 * @see pipeline.Operation#getAttributes()
-	 * @see #getOperation()
-	 * @generated
-	 */
-	EReference getOperation_Attributes();
-
-	/**
 	 * Returns the meta object for class '{@link pipeline.InternalDataFlow <em>Internal Data Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2391,6 +2308,17 @@ public interface PipelinePackage extends EPackage {
 	EClass getSource();
 
 	/**
+	 * Returns the meta object for the reference '{@link pipeline.Source#getLinkedTo <em>Linked To</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Linked To</em>'.
+	 * @see pipeline.Source#getLinkedTo()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EReference getSource_LinkedTo();
+
+	/**
 	 * Returns the meta object for the attribute '{@link pipeline.Source#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2476,6 +2404,17 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFile_Path();
+
+	/**
+	 * Returns the meta object for the reference '{@link pipeline.File#getComesFrom <em>Comes From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Comes From</em>'.
+	 * @see pipeline.File#getComesFrom()
+	 * @see #getFile()
+	 * @generated
+	 */
+	EReference getFile_ComesFrom();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Chart <em>Chart</em>}'.
@@ -2613,17 +2552,6 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPredictiveAnalysisOperation_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link pipeline.PredictiveAnalysisOperation#getPredictedValue <em>Predicted Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Predicted Value</em>'.
-	 * @see pipeline.PredictiveAnalysisOperation#getPredictedValue()
-	 * @see #getPredictiveAnalysisOperation()
-	 * @generated
-	 */
-	EAttribute getPredictiveAnalysisOperation_PredictedValue();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.ClusteringAnalysisOperation <em>Clustering Analysis Operation</em>}'.
@@ -3049,14 +2977,6 @@ public interface PipelinePackage extends EPackage {
 		EAttribute OPERATION__ID = eINSTANCE.getOperation_ID();
 
 		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION__ATTRIBUTES = eINSTANCE.getOperation_Attributes();
-
-		/**
 		 * The meta object literal for the '{@link pipeline.impl.InternalDataFlowImpl <em>Internal Data Flow</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3363,6 +3283,14 @@ public interface PipelinePackage extends EPackage {
 		EClass SOURCE = eINSTANCE.getSource();
 
 		/**
+		 * The meta object literal for the '<em><b>Linked To</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SOURCE__LINKED_TO = eINSTANCE.getSource_LinkedTo();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3427,6 +3355,14 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FILE__PATH = eINSTANCE.getFile_Path();
+
+		/**
+		 * The meta object literal for the '<em><b>Comes From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FILE__COMES_FROM = eINSTANCE.getFile_ComesFrom();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.ChartImpl <em>Chart</em>}' class.
@@ -3543,14 +3479,6 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PREDICTIVE_ANALYSIS_OPERATION__NAME = eINSTANCE.getPredictiveAnalysisOperation_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Predicted Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PREDICTIVE_ANALYSIS_OPERATION__PREDICTED_VALUE = eINSTANCE.getPredictiveAnalysisOperation_PredictedValue();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.ClusteringAnalysisOperationImpl <em>Clustering Analysis Operation</em>}' class.

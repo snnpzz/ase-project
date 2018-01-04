@@ -46,8 +46,8 @@ public class PipelineModelingAssistantProviderOfSchemaEditPart extends PipelineM
 	*/
 	public List<IElementType> doGetRelTypesOnTarget(SchemaEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(PipelineElementTypes.ImportOperationImpUses_4012);
-		types.add(PipelineElementTypes.ExportOperationExpUses_4014);
+		types.add(PipelineElementTypes.ImportOperationImpUses_4007);
+		types.add(PipelineElementTypes.ExportOperationExpUses_4009);
 		return types;
 	}
 
@@ -66,10 +66,10 @@ public class PipelineModelingAssistantProviderOfSchemaEditPart extends PipelineM
 	*/
 	public List<IElementType> doGetTypesForSource(SchemaEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == PipelineElementTypes.ImportOperationImpUses_4012) {
-			types.add(PipelineElementTypes.ImportOperation_3013);
-		} else if (relationshipType == PipelineElementTypes.ExportOperationExpUses_4014) {
-			types.add(PipelineElementTypes.ExportOperation_3014);
+		if (relationshipType == PipelineElementTypes.ImportOperationImpUses_4007) {
+			types.add(PipelineElementTypes.ImportOperation_3001);
+		} else if (relationshipType == PipelineElementTypes.ExportOperationExpUses_4009) {
+			types.add(PipelineElementTypes.ExportOperation_3008);
 		}
 		return types;
 	}

@@ -17,7 +17,6 @@ import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
 import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ChartEditPart;
-import pipeline.diagram.edit.parts.ChartNameEditPart;
 import pipeline.diagram.edit.parts.ChartTitleEditPart;
 import pipeline.diagram.edit.parts.ClassificationAnalysisOperationEditPart;
 import pipeline.diagram.edit.parts.ClassificationAnalysisOperationNameEditPart;
@@ -42,7 +41,6 @@ import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.ExportOperationEditPart;
 import pipeline.diagram.edit.parts.ExportOperationExpUsesEditPart;
 import pipeline.diagram.edit.parts.ExportOperationIDEditPart;
-import pipeline.diagram.edit.parts.ExportOperationNameEditPart;
 import pipeline.diagram.edit.parts.ExportOperationWriteEditPart;
 import pipeline.diagram.edit.parts.ExportTaskEditPart;
 import pipeline.diagram.edit.parts.ExportTaskExportTaskExportOperationsCompartmentEditPart;
@@ -52,7 +50,6 @@ import pipeline.diagram.edit.parts.FileNameEditPart;
 import pipeline.diagram.edit.parts.ImportOperationEditPart;
 import pipeline.diagram.edit.parts.ImportOperationIDEditPart;
 import pipeline.diagram.edit.parts.ImportOperationImpUsesEditPart;
-import pipeline.diagram.edit.parts.ImportOperationNameEditPart;
 import pipeline.diagram.edit.parts.ImportOperationReadEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskAttributesEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
@@ -626,16 +623,16 @@ public class PipelineVisualIDRegistry {
 		case SourceEditPart.VISUAL_ID:
 		case FileEditPart.VISUAL_ID:
 		case ChartEditPart.VISUAL_ID:
+		case ImportOperationEditPart.VISUAL_ID:
 		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
 		case PredefinedCleaningOperationEditPart.VISUAL_ID:
 		case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
 		case ClassificationAnalysisOperationEditPart.VISUAL_ID:
 		case PredictiveAnalysisOperationEditPart.VISUAL_ID:
 		case ClusteringAnalysisOperationEditPart.VISUAL_ID:
+		case ExportOperationEditPart.VISUAL_ID:
 		case SimpleAttributeEditPart.VISUAL_ID:
 		case SimpleAttribute2EditPart.VISUAL_ID:
-		case ImportOperationEditPart.VISUAL_ID:
-		case ExportOperationEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

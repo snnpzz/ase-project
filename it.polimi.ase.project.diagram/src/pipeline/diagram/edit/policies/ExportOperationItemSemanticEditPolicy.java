@@ -36,7 +36,7 @@ public class ExportOperationItemSemanticEditPolicy extends PipelineBaseItemSeman
 	* @generated
 	*/
 	public ExportOperationItemSemanticEditPolicy() {
-		super(PipelineElementTypes.ExportOperation_3014);
+		super(PipelineElementTypes.ExportOperation_3008);
 	}
 
 	/**
@@ -88,10 +88,10 @@ public class ExportOperationItemSemanticEditPolicy extends PipelineBaseItemSeman
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.ExportOperationWrite_4013 == req.getElementType()) {
+		if (PipelineElementTypes.ExportOperationWrite_4008 == req.getElementType()) {
 			return getGEFWrapper(new ExportOperationWriteCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (PipelineElementTypes.ExportOperationExpUses_4014 == req.getElementType()) {
+		if (PipelineElementTypes.ExportOperationExpUses_4009 == req.getElementType()) {
 			return getGEFWrapper(new ExportOperationExpUsesCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -101,10 +101,10 @@ public class ExportOperationItemSemanticEditPolicy extends PipelineBaseItemSeman
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.ExportOperationWrite_4013 == req.getElementType()) {
+		if (PipelineElementTypes.ExportOperationWrite_4008 == req.getElementType()) {
 			return null;
 		}
-		if (PipelineElementTypes.ExportOperationExpUses_4014 == req.getElementType()) {
+		if (PipelineElementTypes.ExportOperationExpUses_4009 == req.getElementType()) {
 			return null;
 		}
 		return null;

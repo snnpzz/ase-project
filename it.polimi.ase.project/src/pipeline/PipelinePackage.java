@@ -993,22 +993,13 @@ public interface PipelinePackage extends EPackage {
 	int SOURCE = 16;
 
 	/**
-	 * The feature id for the '<em><b>Linked To</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOURCE__LINKED_TO = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__NAME = 1;
+	int SOURCE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Server Name</b></em>' attribute.
@@ -1017,7 +1008,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__SERVER_NAME = 2;
+	int SOURCE__SERVER_NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Port Number</b></em>' attribute.
@@ -1026,7 +1017,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__PORT_NUMBER = 3;
+	int SOURCE__PORT_NUMBER = 2;
 
 	/**
 	 * The feature id for the '<em><b>User Name</b></em>' attribute.
@@ -1035,7 +1026,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__USER_NAME = 4;
+	int SOURCE__USER_NAME = 3;
 
 	/**
 	 * The feature id for the '<em><b>Password</b></em>' attribute.
@@ -1044,7 +1035,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__PASSWORD = 5;
+	int SOURCE__PASSWORD = 4;
 
 	/**
 	 * The number of structural features of the '<em>Source</em>' class.
@@ -1053,7 +1044,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE_FEATURE_COUNT = 6;
+	int SOURCE_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.FileImpl <em>File</em>}' class.
@@ -1084,22 +1075,13 @@ public interface PipelinePackage extends EPackage {
 	int FILE__PATH = 1;
 
 	/**
-	 * The feature id for the '<em><b>Comes From</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE__COMES_FROM = 2;
-
-	/**
 	 * The number of structural features of the '<em>File</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_FEATURE_COUNT = 3;
+	int FILE_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.AnalysisOperationImpl <em>Analysis Operation</em>}' class.
@@ -2400,17 +2382,6 @@ public interface PipelinePackage extends EPackage {
 	EClass getSource();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.Source#getLinkedTo <em>Linked To</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Linked To</em>'.
-	 * @see pipeline.Source#getLinkedTo()
-	 * @see #getSource()
-	 * @generated
-	 */
-	EReference getSource_LinkedTo();
-
-	/**
 	 * Returns the meta object for the attribute '{@link pipeline.Source#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2496,17 +2467,6 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFile_Path();
-
-	/**
-	 * Returns the meta object for the reference '{@link pipeline.File#getComesFrom <em>Comes From</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Comes From</em>'.
-	 * @see pipeline.File#getComesFrom()
-	 * @see #getFile()
-	 * @generated
-	 */
-	EReference getFile_ComesFrom();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.CleaningOperation <em>Cleaning Operation</em>}'.
@@ -3383,14 +3343,6 @@ public interface PipelinePackage extends EPackage {
 		EClass SOURCE = eINSTANCE.getSource();
 
 		/**
-		 * The meta object literal for the '<em><b>Linked To</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SOURCE__LINKED_TO = eINSTANCE.getSource_LinkedTo();
-
-		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3455,14 +3407,6 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FILE__PATH = eINSTANCE.getFile_Path();
-
-		/**
-		 * The meta object literal for the '<em><b>Comes From</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FILE__COMES_FROM = eINSTANCE.getFile_ComesFrom();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.CleaningOperationImpl <em>Cleaning Operation</em>}' class.

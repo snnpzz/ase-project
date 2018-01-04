@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.EObject;
 public interface ImportOperation extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Read</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link pipeline.Source#getLinkedTo <em>Linked To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Read</em>' reference isn't clear,
@@ -35,8 +34,7 @@ public interface ImportOperation extends EObject {
 	 * @return the value of the '<em>Read</em>' reference.
 	 * @see #setRead(Source)
 	 * @see pipeline.PipelinePackage#getImportOperation_Read()
-	 * @see pipeline.Source#getLinkedTo
-	 * @model opposite="linkedTo" required="true"
+	 * @model required="true"
 	 *        annotation="gmf.link width='2' target.decoration='square' style='dash'"
 	 * @generated
 	 */

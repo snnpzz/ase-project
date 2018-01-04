@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.EObject;
 public interface ExportOperation extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Write</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link pipeline.File#getComesFrom <em>Comes From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Write</em>' reference isn't clear,
@@ -35,8 +34,7 @@ public interface ExportOperation extends EObject {
 	 * @return the value of the '<em>Write</em>' reference.
 	 * @see #setWrite(File)
 	 * @see pipeline.PipelinePackage#getExportOperation_Write()
-	 * @see pipeline.File#getComesFrom
-	 * @model opposite="comesFrom" required="true"
+	 * @model required="true"
 	 *        annotation="gmf.link width='2' target.decoration='filledsquare' style='dash'"
 	 * @generated
 	 */

@@ -60,7 +60,6 @@ public class SourceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addLinkedToPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addServerNamePropertyDescriptor(object);
 			addPortNumberPropertyDescriptor(object);
@@ -68,28 +67,6 @@ public class SourceItemProvider
 			addPasswordPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Linked To feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLinkedToPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Source_linkedTo_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_linkedTo_feature", "_UI_Source_type"),
-				 PipelinePackage.Literals.SOURCE__LINKED_TO,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

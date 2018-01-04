@@ -157,8 +157,7 @@
       <details key="label.text" value="Import"/>
       <details key="figure" value="ellipse"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="read" lowerBound="1" eType="#//Source"
-        eOpposite="#//Source/linkedTo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="read" lowerBound="1" eType="#//Source">
       <eAnnotations source="gmf.link">
         <details key="width" value="2"/>
         <details key="target.decoration" value="square"/>
@@ -181,8 +180,7 @@
       <details key="label.text" value="Export"/>
       <details key="figure" value="ellipse"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="write" lowerBound="1" eType="#//File"
-        eOpposite="#//File/comesFrom">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="write" lowerBound="1" eType="#//File">
       <eAnnotations source="gmf.link">
         <details key="width" value="2"/>
         <details key="target.decoration" value="filledsquare"/>
@@ -206,8 +204,6 @@
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedTo" lowerBound="1"
-        eType="#//ImportOperation" eOpposite="#//ImportOperation/read"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="portNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -220,8 +216,6 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="comesFrom" lowerBound="1"
-        eType="#//ExportOperation" eOpposite="#//ExportOperation/write"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Chart">
     <eAnnotations source="gmf.node">

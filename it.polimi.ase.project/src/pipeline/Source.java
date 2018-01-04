@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.Source#getLinkedTo <em>Linked To</em>}</li>
  *   <li>{@link pipeline.Source#getName <em>Name</em>}</li>
  *   <li>{@link pipeline.Source#getServerName <em>Server Name</em>}</li>
  *   <li>{@link pipeline.Source#getPortNumber <em>Port Number</em>}</li>
@@ -26,34 +25,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Source extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Linked To</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link pipeline.ImportOperation#getRead <em>Read</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Linked To</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Linked To</em>' reference.
-	 * @see #setLinkedTo(ImportOperation)
-	 * @see pipeline.PipelinePackage#getSource_LinkedTo()
-	 * @see pipeline.ImportOperation#getRead
-	 * @model opposite="read" required="true"
-	 * @generated
-	 */
-	ImportOperation getLinkedTo();
-
-	/**
-	 * Sets the value of the '{@link pipeline.Source#getLinkedTo <em>Linked To</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Linked To</em>' reference.
-	 * @see #getLinkedTo()
-	 * @generated
-	 */
-	void setLinkedTo(ImportOperation value);
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

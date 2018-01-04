@@ -147,7 +147,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//UserDefinedCleaningOperation/name"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Source">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Source/linkedTo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Source/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Source/serverName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Source/portNumber"/>
@@ -157,7 +156,6 @@
     <genClasses ecoreClass="pipeline.ecore#//File">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//File/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//File/path"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//File/comesFrom"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Chart">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/size"/>

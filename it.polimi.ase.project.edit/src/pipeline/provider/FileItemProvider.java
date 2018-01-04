@@ -62,7 +62,6 @@ public class FileItemProvider
 
 			addNamePropertyDescriptor(object);
 			addPathPropertyDescriptor(object);
-			addComesFromPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -107,28 +106,6 @@ public class FileItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Comes From feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addComesFromPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_File_comesFrom_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_File_comesFrom_feature", "_UI_File_type"),
-				 PipelinePackage.Literals.FILE__COMES_FROM,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

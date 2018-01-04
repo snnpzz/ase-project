@@ -62,7 +62,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									[generateTableRow(0, aPipeline.tasks -> select(aTask | aTask.oclIsTypeOf(CollectionTask)) -> first())/]
+									[comment [generateTableRow(0, aPipeline.tasks -> select(aTask | aTask.oclIsTypeOf(CollectionTask)) -> first())/]
 								</tbody>
 							</table>
 						</div>

@@ -234,7 +234,10 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CleaningOperation" abstract="true" eSuperTypes="#//Operation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AnalysisOperation" abstract="true" eSuperTypes="#//Operation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalysisOperation" abstract="true" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
+        upperBound="-1" eType="#//SimpleAttribute"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DescriptiveAnalysisOperation" eSuperTypes="#//AnalysisOperation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//DescriptiveOperation"/>
   </eClassifiers>
@@ -243,6 +246,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PredictiveAnalysisOperation" eSuperTypes="#//AnalysisOperation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//PredictiveOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="predictedValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClusteringAnalysisOperation" eSuperTypes="#//AnalysisOperation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//ClusteringOperation"/>

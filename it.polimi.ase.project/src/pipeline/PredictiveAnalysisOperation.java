@@ -13,6 +13,7 @@ package pipeline;
  * </p>
  * <ul>
  *   <li>{@link pipeline.PredictiveAnalysisOperation#getName <em>Name</em>}</li>
+ *   <li>{@link pipeline.PredictiveAnalysisOperation#getPredictedValue <em>Predicted Value</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getPredictiveAnalysisOperation()
@@ -48,5 +49,31 @@ public interface PredictiveAnalysisOperation extends AnalysisOperation {
 	 * @generated
 	 */
 	void setName(PredictiveOperation value);
+
+	/**
+	 * Returns the value of the '<em><b>Predicted Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Predicted Value</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Predicted Value</em>' attribute.
+	 * @see #setPredictedValue(String)
+	 * @see pipeline.PipelinePackage#getPredictiveAnalysisOperation_PredictedValue()
+	 * @model
+	 * @generated
+	 */
+	String getPredictedValue();
+
+	/**
+	 * Sets the value of the '{@link pipeline.PredictiveAnalysisOperation#getPredictedValue <em>Predicted Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Predicted Value</em>' attribute.
+	 * @see #getPredictedValue()
+	 * @generated
+	 */
+	void setPredictedValue(String value);
 
 } // PredictiveAnalysisOperation

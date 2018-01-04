@@ -417,7 +417,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_xNQsC-GXEeeU3dy_CQ-Szg"/>
     </children>
     <element xmi:type="ecore:EClass" href="pipeline.ecore#//ClassificationAnalysisOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xNQsAeGXEeeU3dy_CQ-Szg" x="805" y="693"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xNQsAeGXEeeU3dy_CQ-Szg" x="775" y="705"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_xhlWMOGXEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_xhlWMuGXEeeU3dy_CQ-Szg" type="5001"/>
@@ -425,6 +425,10 @@
       <children xmi:type="notation:Node" xmi:id="_hrD7MO8FEeeKqPfWoCQbzQ" type="3001">
         <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//PredictiveAnalysisOperation/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_hrD7Me8FEeeKqPfWoCQbzQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_DKtSEPGIEeefr4nx6trf5Q" type="3001">
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//PredictiveAnalysisOperation/predictedValue"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_DKtSEfGIEeefr4nx6trf5Q"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_xhlWNOGXEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_xhlWNeGXEeeU3dy_CQ-Szg"/>
@@ -441,7 +445,7 @@
       <layoutConstraint xmi:type="notation:Ratio" xmi:id="_xeb0MuGaEeeU3dy_CQ-Szg" value="0.23076923076923078"/>
     </children>
     <element xmi:type="ecore:EClass" href="pipeline.ecore#//PredictiveAnalysisOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xhlWMeGXEeeU3dy_CQ-Szg" x="966" y="693"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xhlWMeGXEeeU3dy_CQ-Szg" x="990" y="770"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_x2QlsOGXEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_x2QlsuGXEeeU3dy_CQ-Szg" type="5001"/>
@@ -466,7 +470,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_x2RMwuGXEeeU3dy_CQ-Szg"/>
     </children>
     <element xmi:type="ecore:EClass" href="pipeline.ecore#//ClusteringAnalysisOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x2QlseGXEeeU3dy_CQ-Szg" x="959" y="623"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x2QlseGXEeeU3dy_CQ-Szg" x="1042" y="636"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_yKPRoOGXEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_yKP4seGXEeeU3dy_CQ-Szg" type="5001"/>
@@ -1356,5 +1360,17 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_CQG-8fFwEeefr4nx6trf5Q" fontName="Segoe UI"/>
     <element xmi:type="ecore:EReference" href="pipeline.ecore#//Operation/attributes"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CQG-8vFwEeefr4nx6trf5Q" points="[45, 2, -1109, -71]$[1103, 73, -51, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_KvtUkPGIEeefr4nx6trf5Q" type="4002" source="_nQ8M0OGXEeeU3dy_CQ-Szg" target="_svNakO8EEeeKqPfWoCQbzQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_KvtUk_GIEeefr4nx6trf5Q" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_KvtUlPGIEeefr4nx6trf5Q" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_Kvt7oPGIEeefr4nx6trf5Q" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Kvt7ofGIEeefr4nx6trf5Q" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_KvtUkfGIEeefr4nx6trf5Q" fontName="Segoe UI"/>
+    <element xmi:type="ecore:EReference" href="pipeline.ecore#//AnalysisOperation/attributes"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KvtUkvGIEeefr4nx6trf5Q" points="[60, 5, -772, -70]$[827, 82, -5, 7]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KvzbMPGIEeefr4nx6trf5Q" id="(0.3627450980392157,0.8813559322033898)"/>
   </edges>
 </notation:Diagram>

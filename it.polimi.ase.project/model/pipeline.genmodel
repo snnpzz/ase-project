@@ -164,7 +164,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Chart/axes"/>
     </genClasses>
     <genClasses image="false" ecoreClass="pipeline.ecore#//CleaningOperation"/>
-    <genClasses image="false" ecoreClass="pipeline.ecore#//AnalysisOperation"/>
+    <genClasses image="false" ecoreClass="pipeline.ecore#//AnalysisOperation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//AnalysisOperation/attributes"/>
+    </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//DescriptiveAnalysisOperation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//DescriptiveAnalysisOperation/name"/>
     </genClasses>
@@ -173,6 +175,7 @@
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//PredictiveAnalysisOperation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//PredictiveAnalysisOperation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//PredictiveAnalysisOperation/predictedValue"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//ClusteringAnalysisOperation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//ClusteringAnalysisOperation/name"/>

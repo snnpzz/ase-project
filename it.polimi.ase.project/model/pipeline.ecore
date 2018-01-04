@@ -63,6 +63,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" eType="#//InternalDataFlow"
         eOpposite="#//InternalDataFlow/source"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
+        upperBound="-1" eType="#//SimpleAttribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InternalDataFlow">
     <eAnnotations source="gmf.link">
@@ -271,6 +273,7 @@
     <eLiterals name="removeNulls"/>
     <eLiterals name="removeNegative" value="1"/>
     <eLiterals name="round" value="2"/>
+    <eLiterals name="removeColumn" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ClusteringOperation">
     <eLiterals name="kMeans"/>

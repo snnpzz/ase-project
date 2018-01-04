@@ -601,6 +601,10 @@
         <element xmi:type="ecore:EEnumLiteral" href="pipeline.ecore#//PredefinedOperation/round"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_pKmO4O8FEeeKqPfWoCQbzQ"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_cKfdUPFwEeefr4nx6trf5Q" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="pipeline.ecore#//PredefinedOperation/removeColumn"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_cKgEYPFwEeefr4nx6trf5Q"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_OrVh1O8FEeeKqPfWoCQbzQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_OrVh1e8FEeeKqPfWoCQbzQ"/>
     </children>
@@ -609,7 +613,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_OrVh2O8FEeeKqPfWoCQbzQ"/>
     </children>
     <element xmi:type="ecore:EEnum" href="pipeline.ecore#//PredefinedOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OrVh0e8FEeeKqPfWoCQbzQ" x="518" y="833"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OrVh0e8FEeeKqPfWoCQbzQ" x="490" y="765"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_UoyXsO8FEeeKqPfWoCQbzQ" type="2005" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_UoyXsu8FEeeKqPfWoCQbzQ" type="5005"/>
@@ -1367,5 +1371,16 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_sDihEfCpEeeOqLCQ3Vozog" fontName="Segoe UI"/>
     <element xmi:type="ecore:EReference" href="pipeline.ecore#//VisualizationOperation/chart"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sDihEvCpEeeOqLCQ3Vozog" points="[-99, -25, 166, 25]$[-186, -102, 79, -52]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_CQG-8PFwEeefr4nx6trf5Q" type="4002" source="_oivoYOGWEeeU3dy_CQ-Szg" target="_svNakO8EEeeKqPfWoCQbzQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_CQI0IPFwEeefr4nx6trf5Q" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CQI0IfFwEeefr4nx6trf5Q" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_CQI0IvFwEeefr4nx6trf5Q" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CQI0I_FwEeefr4nx6trf5Q" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_CQG-8fFwEeefr4nx6trf5Q" fontName="Segoe UI"/>
+    <element xmi:type="ecore:EReference" href="pipeline.ecore#//Operation/attributes"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CQG-8vFwEeefr4nx6trf5Q" points="[45, 2, -1109, -71]$[1103, 73, -51, 0]"/>
   </edges>
 </notation:Diagram>

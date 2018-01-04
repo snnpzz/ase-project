@@ -590,6 +590,15 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getOperation_Attributes() {
+		return (EReference)operationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getInternalDataFlow() {
 		return internalDataFlowEClass;
 	}
@@ -1349,6 +1358,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEReference(operationEClass, OPERATION__INCOMING);
 		createEReference(operationEClass, OPERATION__OUTGOING);
 		createEAttribute(operationEClass, OPERATION__ID);
+		createEReference(operationEClass, OPERATION__ATTRIBUTES);
 
 		internalDataFlowEClass = createEClass(INTERNAL_DATA_FLOW);
 		createEAttribute(internalDataFlowEClass, INTERNAL_DATA_FLOW__FORMAT);
@@ -1528,6 +1538,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEReference(getOperation_Incoming(), this.getInternalDataFlow(), this.getInternalDataFlow_Target(), "incoming", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperation_Outgoing(), this.getInternalDataFlow(), this.getInternalDataFlow_Source(), "outgoing", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperation_ID(), ecorePackage.getEString(), "ID", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperation_Attributes(), this.getSimpleAttribute(), null, "attributes", null, 1, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(internalDataFlowEClass, InternalDataFlow.class, "InternalDataFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInternalDataFlow_Format(), this.getFormat(), "format", null, 0, 1, InternalDataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1629,6 +1640,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		addEEnumLiteral(predefinedOperationEEnum, PredefinedOperation.REMOVE_NULLS);
 		addEEnumLiteral(predefinedOperationEEnum, PredefinedOperation.REMOVE_NEGATIVE);
 		addEEnumLiteral(predefinedOperationEEnum, PredefinedOperation.ROUND);
+		addEEnumLiteral(predefinedOperationEEnum, PredefinedOperation.REMOVE_COLUMN);
 
 		initEEnum(clusteringOperationEEnum, ClusteringOperation.class, "ClusteringOperation");
 		addEEnumLiteral(clusteringOperationEEnum, ClusteringOperation.KMEANS);

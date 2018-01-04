@@ -1,0 +1,99 @@
+[comment encoding = UTF-8 /]
+[module generateRPipeline('http://www.project.ase.polimi.it/pipeline')]
+
+
+[template public generatePipeline(aPipeline : Pipeline)]
+[comment @main/]
+[file ('pipeline_'.concat(aPipeline.ID).concat('.R'), false, 'UTF-8')]
+# This will generate an executable version of the pipeline
+# Structure of the program:
+# - if sources are local files, place them in a folder named "sources" at the same level of the R file;
+# - all output files will be placed in a folder named "output" at the same level of the R file.
+
+# Import libraries
+# (If some libraries are missing, install them: install.packages(<library_name>) )
+library(readr)
+library(dplyr)
+library(tidyr)
+library(sqldf)
+
+
+# Collection task: import sources
+[importSource(aPipeline.sources)/]
+
+
+# Integration: join all data in a unique one
+[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)) <> null)]
+	[joinSources(aPipeline.sources, 
+		aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask).attributes)/]
+[/if]
+
+
+# Cleaning: do specified cleaning operation
+[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(CleaningTask)) <> null)]
+	[let cleanTask : CleaningTask = aPipeline.tasks -> select(t | t.oclIsTypeOf(CleaningTask)).oclAsType(CleaningTask)]
+		[for (op : CleaningOperation | cleanTask.cleaningOperations)]
+			[if (op.oclIsTypeOf(PredefinedCleaningOperation))]
+				# Predefined operation
+				[if (op.oclAsType(PredefinedCleaningOperation).name = 'removeNulls')]
+					# Remove null values
+
+				[elseif (op.oclAsType(PredefinedCleaningOperation).name = 'removeNegative')]
+					# Remove negative values
+
+				[elseif (op.oclAsType(PredefinedCleaningOperation).name = 'round')]
+					# Round values
+
+				[elseif]
+					# Remove column
+
+				[/if]
+			[elseif]
+				# User defined operation
+
+			[/if]
+		[/for]
+	[/let]
+[/if]
+
+
+# Analysis
+
+
+# Visualization
+[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)) <> null)]
+[/if]
+
+# Export
+[for (aFile: File | aPipeline.files)]
+	[exportFile(aFile)/]
+[/for]
+
+
+[/file]
+[/template]
+
+
+[template private importSource(aSources: OrderedSet(Source))]
+	[let index : Integer = 1]
+		[for (s : Source | aSources)]
+			[if (not(s.serverName.oclIsUndefined() or s.portNumber.oclIsUndefined()))]
+				# Remote file: download it
+				download.file([s.serverName.concat(':').concat(s.portNumber.toString()).concat('/').concat(s.name)/], "sources/[s.name/]", mode = "w")
+			[/if]
+			# Load file
+			['source'.concat(index.toString())/] = read.[s.name.substring(s.name.lastIndex('.'), s.name.size())/]("sources/[s.name/]")
+			[index = index + 1/]
+		[/for]
+	[/let]
+[/template]
+
+
+[template private joinSources(aSources: OrderedSet(Source), aAttributes: Sequence(Attribute))]
+
+[/template]
+
+
+[template private exportFile(aFile: File)]
+
+[/template]

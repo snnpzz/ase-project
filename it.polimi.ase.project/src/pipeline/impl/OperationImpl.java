@@ -2,18 +2,22 @@
  */
 package pipeline.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import pipeline.InternalDataFlow;
 import pipeline.Operation;
 import pipeline.PipelinePackage;
+import pipeline.SimpleAttribute;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +30,7 @@ import pipeline.PipelinePackage;
  *   <li>{@link pipeline.impl.OperationImpl#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link pipeline.impl.OperationImpl#getOutgoing <em>Outgoing</em>}</li>
  *   <li>{@link pipeline.impl.OperationImpl#getID <em>ID</em>}</li>
+ *   <li>{@link pipeline.impl.OperationImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @generated
@@ -70,6 +75,16 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttributes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SimpleAttribute> attributes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -236,6 +251,18 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SimpleAttribute> getAttributes() {
+		if (attributes == null) {
+			attributes = new EObjectResolvingEList<SimpleAttribute>(SimpleAttribute.class, this, PipelinePackage.OPERATION__ATTRIBUTES);
+		}
+		return attributes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -283,6 +310,8 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 				return basicGetOutgoing();
 			case PipelinePackage.OPERATION__ID:
 				return getID();
+			case PipelinePackage.OPERATION__ATTRIBUTES:
+				return getAttributes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -292,6 +321,7 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -303,6 +333,10 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 				return;
 			case PipelinePackage.OPERATION__ID:
 				setID((String)newValue);
+				return;
+			case PipelinePackage.OPERATION__ATTRIBUTES:
+				getAttributes().clear();
+				getAttributes().addAll((Collection<? extends SimpleAttribute>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -325,6 +359,9 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 			case PipelinePackage.OPERATION__ID:
 				setID(ID_EDEFAULT);
 				return;
+			case PipelinePackage.OPERATION__ATTRIBUTES:
+				getAttributes().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -343,6 +380,8 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 				return outgoing != null;
 			case PipelinePackage.OPERATION__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case PipelinePackage.OPERATION__ATTRIBUTES:
+				return attributes != null && !attributes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

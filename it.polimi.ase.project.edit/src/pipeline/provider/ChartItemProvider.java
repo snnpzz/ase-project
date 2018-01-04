@@ -70,6 +70,28 @@ public class ChartItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Chart_size_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Chart_size_feature", "_UI_Chart_type"),
+				 PipelinePackage.Literals.CHART__SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,28 +127,6 @@ public class ChartItemProvider
 				 getString("_UI_Chart_type_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Chart_type_feature", "_UI_Chart_type"),
 				 PipelinePackage.Literals.CHART__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Size feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSizePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Chart_size_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Chart_size_feature", "_UI_Chart_type"),
-				 PipelinePackage.Literals.CHART__SIZE,
 				 true,
 				 false,
 				 false,

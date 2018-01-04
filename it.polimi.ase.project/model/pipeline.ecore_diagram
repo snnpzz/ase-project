@@ -358,7 +358,7 @@
       <layoutConstraint xmi:type="notation:Ratio" xmi:id="_Xf5QketIEee4hrsBN4wSAg" value="0.23076923076923078"/>
     </children>
     <element xmi:type="ecore:EClass" href="pipeline.ecore#//CleaningOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m1aHYOGXEeeU3dy_CQ-Szg" x="637" y="154"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m1aHYOGXEeeU3dy_CQ-Szg" x="540" y="205"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_nQ8M0OGXEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_nQ8M0uGXEeeU3dy_CQ-Szg" type="5001"/>
@@ -1360,17 +1360,5 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_CQG-8fFwEeefr4nx6trf5Q" fontName="Segoe UI"/>
     <element xmi:type="ecore:EReference" href="pipeline.ecore#//Operation/attributes"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CQG-8vFwEeefr4nx6trf5Q" points="[45, 2, -1109, -71]$[1103, 73, -51, 0]"/>
-  </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_KvtUkPGIEeefr4nx6trf5Q" type="4002" source="_nQ8M0OGXEeeU3dy_CQ-Szg" target="_svNakO8EEeeKqPfWoCQbzQ">
-    <children xmi:type="notation:DecorationNode" xmi:id="_KvtUk_GIEeefr4nx6trf5Q" type="6001">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_KvtUlPGIEeefr4nx6trf5Q" y="40"/>
-    </children>
-    <children xmi:type="notation:DecorationNode" xmi:id="_Kvt7oPGIEeefr4nx6trf5Q" type="6003">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_Kvt7ofGIEeefr4nx6trf5Q" y="60"/>
-    </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="_KvtUkfGIEeefr4nx6trf5Q" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="pipeline.ecore#//AnalysisOperation/attributes"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KvtUkvGIEeefr4nx6trf5Q" points="[60, 5, -772, -70]$[827, 82, -5, 7]"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KvzbMPGIEeefr4nx6trf5Q" id="(0.3627450980392157,0.8813559322033898)"/>
   </edges>
 </notation:Diagram>

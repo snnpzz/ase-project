@@ -18,6 +18,13 @@ library(dplyr)
 library(tidyr)
 library(sqldf)
 
+library(MASS)
+library(class)
+library(e1071)
+library(randomForest)
+
+set.seed(501)
+pdf("output/[aPipeline.ID/].pdf)
 
 # Collection task: import sources as dataframes
 [importSource(aPipeline.sources)/]
@@ -36,15 +43,15 @@ library(sqldf)
 		[for (op : CleaningOperation | cleanTask.cleaningOperations)]
 			[if (op.oclIsTypeOf(PredefinedCleaningOperation))]
 				# Predefined operation
-				[if (op.oclAsType(PredefinedCleaningOperation).name = 'removeNulls')]
+				[if (op.oclAsType(PredefinedCleaningOperation).type = PredefinedOperation::removeNulls)]
 					# Remove null values
 					source <- na.omit(source)
-				[elseif (op.oclAsType(PredefinedCleaningOperation).name = 'removeNegative')]
+				[elseif (op.oclAsType(PredefinedCleaningOperation).type = PredefinedOperation::removeNegative)]
 					# Remove negative values
 					[for (attr : Attribute | op.attributes)]
 						source$[attr.name/] <- source['['/] source$[attr.name/] >= 0 ,[']'/]
 					[/for]
-				[elseif (op.oclAsType(PredefinedCleaningOperation).name = 'round')]
+				[elseif (op.oclAsType(PredefinedCleaningOperation).type = PredefinedOperation::round)]
 					# Round values
 					[for (attr : Attribute | op.attributes)]
 						source$[attr.name/] <- round(source$[attr.name/])
@@ -76,9 +83,9 @@ library(sqldf)
 		[elseif (op.oclIsTypeOf(ClusteringAnalysisOperation))]
 			# Clustering analysis
 			[doClusteringAnalysis(op.oclAsType(ClusteringAnalysisOperation))/]
-		[elseif]
+		[elseif] 
 			# Predictive analysis
-			[doDescriptiveAnalysis(op.oclAsType(PredictiveAnalysisOperation))/]
+			[doPredictiveAnalysis(op.oclAsType(PredictiveAnalysisOperation))/]
 		[/if]
 	[/for]
 [/let]
@@ -88,7 +95,7 @@ library(sqldf)
 [if (aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)) <> null)]
 	[let visTask : VisualizationTask = aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)).oclAsType(VisualizationTask)]
 		[for (op : VisualizationOperation | visTask.visualizationOperations)]
-			[drawChart(op.chart)/]
+			[prepareChart(op.chart)/]
 		[/for]
 	[/let]
 [/if]
@@ -97,7 +104,7 @@ library(sqldf)
 # Export
 [exportFiles(aPipeline.tasks -> select(t | t.oclIsTypeOf(ExportTask)).oclAsType(ExportTask))/]
 
-dev.off()
+# dev.off()
 
 rm(list = ls())
 [/file]
@@ -141,29 +148,129 @@ rm(list = ls())
 
 
 [template private doDescriptiveAnalysis(op: DescriptiveAnalysisOperation)]
-
+[if (op.type = DescriptiveOperation::Boxplot)]
+	[drawChart(ChartType::BoxPlot, op.attributes)/]
+[elseif (op.type = DescriptiveOperation::Histogram)]
+	[drawChart(ChartType::Histogram, op.attributes)/]
+[elseif (op.type = DescriptiveOperation::PieChart)]
+	[drawChart(ChartType::Pie, op.attributes)/]
+[elseif (op.type = DescriptiveOperation::ScatterPlot)]
+	[drawChart(ChartType::Scatter, op.attributes)/]
+[elseif]
+	# View data
+	source
+[/if]
 [/template]
 
 
 [template private doClassificationAnalysis(op: ClassificationAnalysisOperation)]
-
+[let formula : String = '']
+	[let index : Integer = 1]
+		[for (attr : Attribute | op.attributes)]	
+			[if (index = 1)]
+				[formula = attr.name.concat('~')/]
+			[elseif (index = 2)]
+				[formula = formula.concat(attr.name)/]
+			[elseif]
+				[formula = formula.concat('+').concat(attr.name)/]
+			[/if]			
+			[index = index + 1 /]		
+		[/for]
+	[/let]
+	[if (op.type = ClassificationOperation::LogisticRegression)]
+		# Logistic regression
+		[op.ID/] <- glm([formula/], data = source, family = binomial)
+	[elseif (op.type = ClassificationOperation::LDA)]
+		# LDA
+		[op.ID/] <- lda([formula/], data = source)
+	[elseif (op.type = ClassificationOperation::QDA)]
+		# QDA
+		[op.ID/] <- qda([formula/], data = source)
+	[elseif (op.type = ClassificationOperation::KNN)] 
+		# KNN
+		knnInd <- sample(nrow(sample), round(nrow(sample)*0.8)
+		[let columns : String = '']
+			[let index : Integer = 1]
+				[for (attr : Attribute | op.attributes)]	
+					[if (index = 1)]
+						[columns = attr.name.concat('[knnInd, ]')/]
+					[elseif (index = 2)]
+						[columns = columns.concat(',').concat(attr.name).concat('[knnInd, ]')/]
+					[/if]			
+					[index = index + 1 /]		
+				[/for]
+			[/let]
+			train  <- cbind([columns/])
+			knnInd <- -knnInd
+			test   <- cbind([columns/])
+			[op.ID/] <- knn(train, test, k = 10, prob = TRUE)
+			rm(knnInd, train, test)
+		[/let]
+	[elseif]
+		# SVM
+		[op.ID/] <- svm([op.attributes.name/] ~ ., data = source, kernel = "linear")
+	[/if]
+[/let]
 [/template]
 
 
 [template private doClusteringAnalysis(op: ClusteringAnalysisOperation)]
+[if (op.type = ClusteringOperation::kMeans)]
+	# Kmeans
+	[op.ID/] <- kmeans(source, [op.k/])
+[elseif]
+	# Hierarchical
+	[op.ID/] <- hclust(dist([op.attributes.name/]), [op.k/])
+[/if]
+[/template]
+
+
+[template private doPredictiveAnalysis(op: PredictiveAnalysisOperation)]
+[if (op.type = PredictiveOperation::SimpleRegression)]
+	# Simple regression
+	[op.ID/] <- lm([op.attributes.name/]~[op.attributes.next.name/], data = source)
+[elseif (op.type = PredictiveOperation::MultipleLinRegr)]
+	# Multiple linear regression
+	[let formula : String = '']
+		[let index : Integer = 1]
+			[for (attr : Attribute | op.attributes)]	
+				[if (index = 1)]
+					[formula = attr.name.concat('~')/]
+				[elseif (index = 2)]
+					[formula = formula.concat(attr.name)/]
+				[elseif]
+					[formula = formula.concat('+').concat(attr.name)/]
+				[/if]			
+				[index = index + 1 /]		
+			[/for]
+		[/let]
+		[op.ID/] <- lm([formula/], data = source)
+	[/let]
+[elseif]
+	# Random forests
+	[op.ID/] <- randomForest([op.attributes.name/], data = source, importante = TRUE, proximity = TRUE)
+[/if]
+[/template]
+
+
+[template private prepareChart(chart: Chart)]
 
 [/template]
 
 
-[template private doDescriptiveAnalysis(op: PredictiveAnalysisOperation)]
-
+[template private drawChart(type: ChartType, attributes: OrderedSet(Attribute))]
+[if (type = ChartType::Area)]
+[elseif (type = ChartType::Bar)]
+[elseif (type = ChartType::BoxPlot)]
+[elseif (type = ChartType::Column)]
+[elseif (type = ChartType::Histogram)]
+[elseif (type = ChartType::Line)]
+[elseif (type = ChartType::Pie)]
+[elseif (type = ChartType::Radar)]
+[elseif (type = ChartType::Scatter)]
+[elseif (type = ChartType::Surface)]
+[/if]
 [/template]
-
-
-[template private drawChart(chart: Chart)]
-
-[/template]
-
 
 [template private exportFiles(aTask: Sequence(ExportTask))]
 [for (exp : ExportOperation | aTask.exportOperations)]

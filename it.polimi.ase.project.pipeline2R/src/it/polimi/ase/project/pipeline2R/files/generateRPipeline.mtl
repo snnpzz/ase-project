@@ -2,8 +2,8 @@
 [module generateRPipeline('http://www.project.ase.polimi.it/pipeline')]
 
 
-[template public generatePipeline(aPipeline : Pipeline)]
-[comment @main/]
+[template public generateRPipeline(aPipeline : Pipeline)]
+
 [file ('pipeline_'.concat(aPipeline.ID).concat('.R'), false, 'UTF-8')]
 
 # This will generate an executable version of the pipeline
@@ -69,16 +69,16 @@ library(sqldf)
 	[for (op : AnalysisOperation | analysisTask.analysisOperations)]
 		[if (op.oclIsTypeOf(DescriptiveAnalysisOperation))]
 			# Descriptive analysis
-			
+			[doDescriptiveAnalysis(op.oclAsType(DescriptiveAnalysisOperation))/]
 		[elseif (op.oclIsTypeOf(ClassificationAnalysisOperation))]
 			# Classification analysis	
-
+			[doClassificationAnalysis(op.oclAsType(ClassificationAnalysisOperation))/]
 		[elseif (op.oclIsTypeOf(ClusteringAnalysisOperation))]
 			# Clustering analysis
-
+			[doClusteringAnalysis(op.oclAsType(ClusteringAnalysisOperation))/]
 		[elseif]
 			# Predictive analysis
-
+			[doDescriptiveAnalysis(op.oclAsType(PredictiveAnalysisOperation))/]
 		[/if]
 	[/for]
 [/let]
@@ -88,8 +88,7 @@ library(sqldf)
 [if (aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)) <> null)]
 	[let visTask : VisualizationTask = aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)).oclAsType(VisualizationTask)]
 		[for (op : VisualizationOperation | visTask.visualizationOperations)]
-			
-
+			[drawChart(op.chart)/]
 		[/for]
 	[/let]
 [/if]
@@ -138,6 +137,31 @@ rm(list = ls())
 		source = [merge/]
 	[/let]
 [/let]		
+[/template]
+
+
+[template private doDescriptiveAnalysis(op: DescriptiveAnalysisOperation)]
+
+[/template]
+
+
+[template private doClassificationAnalysis(op: ClassificationAnalysisOperation)]
+
+[/template]
+
+
+[template private doClusteringAnalysis(op: ClusteringAnalysisOperation)]
+
+[/template]
+
+
+[template private doDescriptiveAnalysis(op: PredictiveAnalysisOperation)]
+
+[/template]
+
+
+[template private drawChart(chart: Chart)]
+
 [/template]
 
 

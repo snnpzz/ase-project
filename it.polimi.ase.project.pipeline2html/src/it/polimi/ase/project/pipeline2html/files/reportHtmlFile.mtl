@@ -279,7 +279,6 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<td>#</td>
 					<td>Name</td>
 					<td>Type</td>
 				</tr>
@@ -287,15 +286,8 @@
 			<tbody>
 				[for (anAttribute : Attribute | aVisualizationOperation.chart.axes)]
 				<tr>
-					<td></td>
 					<td>[anAttribute.name/]</td>
-					<td>
-						[if (anAttribute.oclIsTypeOf(SimpleAttribute))]
-						Simple
-						[elseif (anAttribute.oclIsTypeOf(ComplexAttribute))]
-						Complex
-						[/if]
-					</td>
+					<td>[if (anAttribute.oclIsTypeOf(SimpleAttribute))]Simple Attribute[elseif (anAttribute.oclIsTypeOf(ComplexAttribute))]Complex Attribute[/if]</td>
 				</tr>
 				[/for]
 			</tbody>

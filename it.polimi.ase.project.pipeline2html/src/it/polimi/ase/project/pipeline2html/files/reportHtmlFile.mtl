@@ -23,7 +23,7 @@
 				<div class="collapse navbar-collapse" id="navbar">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="#">Pipeline [aPipeline.ID/]<span class="s-only">(current)</span></a>
+							<a class="nav-link" href="#">Pipeline [aPipeline.ID/]<span class="sr-only">(current)</span></a>
 						</li>
 					</ul>
 				</div>
@@ -34,7 +34,7 @@
 				<nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light" style="position:fixed;top:51px;bottom:0px;left:0px;z-index:1000;padding:20px 0;overflow-x:hidden;overflow-y:auto;border-right:1px solid #eee;">
 					<ul class="nav nav-pills flex-column">
 						<li class="nav-item" style="border-radius:0;">
-							<a class="nav-link active" href="#">Pipeline<span class="s-only">(current)</span></a>
+							<a class="nav-link active" href="#">Pipeline<span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item" style="border-radius:0;">
 							<a class="nav-link" href="#tasks">Tasks</a>

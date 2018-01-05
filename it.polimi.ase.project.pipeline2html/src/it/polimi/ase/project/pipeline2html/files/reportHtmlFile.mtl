@@ -107,20 +107,20 @@
 	<b>Name:</b> [if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))][anAnalysisOperation.oclAsType(ClassificationAnalysisOperation).type/][elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))][anAnalysisOperation.oclAsType(ClusteringAnalysisOperation).type/][elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))][anAnalysisOperation.oclAsType(DescriptiveAnalysisOperation).type/][elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))][anAnalysisOperation.oclAsType(PredictiveAnalysisOperation).type/][/if]
 	<br>
 	[if (anAnalysisOperation.incoming -> size() > 0)]
-	<span style="color:#007bff;font-size:1rem;">Input Internal Data Flow</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Input Internal Data Flow</b></span>
 	<br>
 	<b>Format:</b> [anAnalysisOperation.incoming.format/]
 	<br>
-	<b>Schema:</b>
+	<span style="color:#007bff;font-size:1rem;"><b>Schema:</b></span>
 	<br>
 	[anAnalysisOperation.incoming.schema.generateSchemaDiv()/]
 	[/if]
 	[if (anAnalysisOperation.outgoing -> size() > 0)]
-	<span style="color:#007bff;font-size:1rem;">Output Internal Data Flow</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Output Internal Data Flow</b></span>
 	<br>
 	<b>Format:</b> [anAnalysisOperation.outgoing.format/]
 	<br>
-	<b>Schema:</b>
+	<span style="color:#007bff;font-size:1rem;"><b>Schema:</b></span>
 	<br>
 	[anAnalysisOperation.outgoing.schema.generateSchemaDiv()/]
 	[/if]
@@ -140,20 +140,20 @@
 	<b>Name:</b> [if (aCleaningOperation.oclIsTypeOf(PredefinedCleaningOperation))][aCleaningOperation.oclAsType(PredefinedCleaningOperation).type/][elseif (aCleaningOperation.oclIsTypeOf(UserDefinedCleaningOperation))][aCleaningOperation.oclAsType(UserDefinedCleaningOperation).type/][/if]
 	<br>
 	[if (aCleaningOperation.incoming -> size() > 0)]
-	<span style="color:#007bff;font-size:1rem;">Input Internal Data Flow</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Input Internal Data Flow</b></span>
 	<br>
 	<b>Format:</b> [aCleaningOperation.incoming.format/]
 	<br>
-	<b>Schema:</b>
+	<span style="color:#007bff;font-size:1rem;"><b>Schema:</b></span>
 	<br>
 	[aCleaningOperation.incoming.schema.generateSchemaDiv()/]
 	[/if]
 	[if (aCleaningOperation.outgoing -> size() > 0)]
-	<span style="color:#007bff;font-size:1rem;">Output Internal Data Flow</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Output Internal Data Flow</b></span>
 	<br>
 	<b>Format:</b> [aCleaningOperation.outgoing.format/]
 	<br>
-	<b>Schema:</b>
+	<span style="color:#007bff;font-size:1rem;"><b>Schema:</b></span>
 	<br>
 	[aCleaningOperation.outgoing.schema.generateSchemaDiv()/]
 	[/if]
@@ -168,7 +168,7 @@
 	<h3>Export Operation [aExportOperation.ID/]</h3>
 	<b>ID:</b> [aExportOperation.ID/]
 	<br>
-	<span style="color:#007bff;font-size:1rem;">File</span>
+	<span style="color:#007bff;font-size:1rem;"><b>File</b></span>
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
@@ -185,7 +185,7 @@
 			</tbody>
 		</table>
 	</div>
-	<span style="color:#007bff;font-size:1rem;">Schema</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Schema</b></span>
 	[aExportOperation.use.generateSchemaDiv()/]
 </div>
 [/template]
@@ -195,9 +195,9 @@
 	<h3>Import Operation [anImportOperation.ID/]</h3>
 	<b>ID:</b> [anImportOperation.ID/]
 	<br>
-	<span style="color:#007bff;font-size:1rem;">Schema</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Schema</b></span>
 	[anImportOperation.use.generateSchemaDiv()/]
-	<span style="color:#007bff;font-size:1rem;">Source</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Source</b></span>
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
@@ -258,15 +258,14 @@
 	<b>ID:</b> [aVisualizationOperation.ID/]
 	<br>
 	[if (aVisualizationOperation.eContainer(VisualizationTask).incoming -> size() > 0)]
-	<span style="color:#007bff;font-size:1rem;">Input Internal Data Flow</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Input Internal Data Flow</b></span>
 	<br>
 	<b>Format:</b> [aVisualizationOperation.eContainer(VisualizationTask).incoming.format/]
 	<br>
-	<b>Schema:</b>
+	<span style="color:#007bff;font-size:1rem;"><b>Schema</b></span>
 	[aVisualizationOperation.eContainer(VisualizationTask).incoming -> first().schema.generateSchemaDiv()/]
 	[/if]
-	<span style="color:#007bff;font-size:1rem;">Chart</span>
-	<br>
+	<span style="color:#007bff;font-size:1rem;"><b>Chart</b></span>
 	<b>Title:</b> [aVisualizationOperation.chart.title/]
 	<br>
 	<b>Type:</b> [aVisualizationOperation.chart.type/]
@@ -279,6 +278,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<td>#</td>
 					<td>Name</td>
 					<td>Type</td>
 				</tr>
@@ -286,6 +286,7 @@
 			<tbody>
 				[for (anAttribute : Attribute | aVisualizationOperation.chart.axes)]
 				<tr>
+					<td></td>
 					<td>[anAttribute.name/]</td>
 					<td>[if (anAttribute.oclIsTypeOf(SimpleAttribute))]Simple Attribute[elseif (anAttribute.oclIsTypeOf(ComplexAttribute))]Complex Attribute[/if]</td>
 				</tr>
@@ -294,12 +295,11 @@
 		</table>
 	</div>
 	[if (aVisualizationOperation.eContainer(VisualizationTask).outgoing -> size() > 0)]
-	<span style="color:#007bff;font-size:1rem;">Output Internal Data Flow</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Output Internal Data Flow</b></span>
 	<br>
 	<b>Format:</b> [aVisualizationOperation.eContainer(VisualizationTask).outgoing.format/]
 	<br>
-	<b>Schema:</b>
-	<br>
+	<span style="color:#007bff;font-size:1rem;"><b>Schema<b></span>
 	[aVisualizationOperation.eContainer(VisualizationTask).outgoing -> first().schema.generateSchemaDiv()/]
 	[/if]
 </div>
@@ -309,7 +309,7 @@
 <div>
 	<b>Format:</b> [aDataFlow.format/]
 	<br>
-	<b>Schema:</b> 
+	<span style="color:#007bff;font-size:1rem;"><b>Schema</b></span>
 	<br>
 	[aDataFlow.schema.generateSchemaDiv()/]
 </div>
@@ -321,9 +321,9 @@
 	<b>ID:</b> [anAnalysisTask.ID/]
 	<br>
 	<b>Type:</b> Data Analysis Task
-	<span style="color:#007bff;font-size:1rem;">Input Data Flow</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Input Data Flow</b></span>
 	[generateDataFlowDiv(anAnalysisTask.incoming -> first())/]
-	<span style="color:#007bff;font-size:1rem;">Operation(s)</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Analysis Operation(s)</b></span>
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
@@ -340,7 +340,7 @@
 			</tbody>
 		</table>
 	</div>
-	<span style="color:#007bff;font-size:1rem;">Output Data Flow</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Output Data Flow</b></span>
 	[generateDataFlowDiv(anAnalysisTask.outgoing -> first())/]
 </div>
 [/template]
@@ -352,9 +352,9 @@
 	<br>
 	<b>Type:</b> Data Cleaning Task
 	<br>
-	<span style="color:#007bff;font-size:1rem;">Input Data Flow</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Input Data Flow</b></span>
 	[generateDataFlowDiv(aCleaningTask.incoming -> first())/]
-	<span style="color:#007bff;font-size:1rem;">Operation(s)</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Cleaning Operation(s)</b></span>
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
@@ -371,7 +371,7 @@
 			</tbody>
 		</table>
 	</div>
-	<span style="color:#007bff;font-size:1rem;">Output Data Flow</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Output Data Flow</b></span>
 	[generateDataFlowDiv(aCleaningTask.outgoing -> first())/]
 </div>
 [/template]
@@ -383,7 +383,7 @@
 	<br>
 	<b>Type:</b> Data Collection
 	<br>
-	<span style="color:#007bff;font-size:1rem;">Input Source(s)</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Input Source(s)</b></span>
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
@@ -410,7 +410,7 @@
 			</tbody>
 		</table>
 	</div>
-	<span style="color:#007bff;font-size:1rem;">Import Operation(s)</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Import Operation(s)</b></span>
 	<div class="table-responsive">
 		<table class="table">
 			<tbody>
@@ -422,7 +422,7 @@
 			</tbody>
 		</table>
 	</div>
-	<span style="color:#007bff;font-size:1rem;">Output Data Flow(s)</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Output Data Flow(s)</b></span>
 	<div class="table-responsive">
 		<table class="table">
 			<tbody>
@@ -444,9 +444,9 @@
 	<br>
 	<b>Type:</b> Data Export
 	<br>
-	<span style="color:#007bff;font-size:1rem;">Input Data Flow</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Input Data Flow</b></span>
 	[generateDataFlowDiv(anExportTask.incoming -> first())/]
-	<span style="color:#007bff;font-size:1rem;">Export Operation(s)</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Export Operation(s)</b></span>
 	<div class="table-responsive">
 		<table class="table">
 			<tbody>
@@ -462,7 +462,7 @@
 			</tbody>
 		</table>
 	</div>
-	<span style="color:#007bff;font-size:1rem;">Output File(s)</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Output File(s)</b></span>
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
@@ -491,7 +491,7 @@
 	<br>
 	<b>Type:</b> Data Integration
 	<br>
-	<span style="color:#007bff;">Input Data Flow(s)</span>
+	<span style="color:#007bff;"><b>Input Data Flow(s)</b></span>
 	<div class="table-responsive">
 		<table class="table">
 			<tbody>
@@ -503,7 +503,7 @@
 			<tbody>
 		</table>
 	</div>
-	<span style="color:#007bff;">Integration Operation(s)</span>
+	<span style="color:#007bff;"><b>Integration Operation(s)</b></span>
 	<div class="table-responsive">
 		<table class="table">
 			<tbody>
@@ -515,7 +515,7 @@
 			<tbody>
 		</table>
 	</div>
-	<span style="color:#007bff;">Output Data Flow</span>
+	<span style="color:#007bff;"><b>Output Data Flow</b></span>
 	[for (aDataFlow : DataFlow | anIntegrationTask.oclAsType(Task).outgoing)]
 	[generateDataFlowDiv(aDataFlow)/]
 	[/for]
@@ -528,9 +528,9 @@
 	<b>ID:</b> [aVisulizationTask.ID/]
 	<br>
 	<b>Type:</b> Data Visualization
-	<span style="color:#007bff;font-size:1rem;">Input Data Flow</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Input Data Flow</b></span>
 	[generateDataFlowDiv(aVisulizationTask.incoming -> first())/]
-	<span style="color:#007bff;font-size:1rem;">Visualization Operation(s)</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Visualization Operation(s)</b></span>
 	<div class="table-responsive">
 		<table class="table">
 			<tbody>
@@ -546,7 +546,7 @@
 			</tbody>
 		</table>
 	</div>
-	<span style="color:#007bff;font-size:1rem;">Output Data Flow</span>
+	<span style="color:#007bff;font-size:1rem;"><b>Output Data Flow</b></span>
 	[generateDataFlowDiv(aVisulizationTask.outgoing -> first())/]
 </div>
 [/template]
@@ -574,7 +574,7 @@
 <div>
 	<b>ID:</b> [aSchema.ID/]
 	<br>
-	<b>Attributes:</b>
+	<b>Attributes</b>
 	<br>
 	<div class="table-responsive">
 		<table class="table table-striped">

@@ -25,8 +25,8 @@ import pipeline.diagram.edit.commands.DataFlowReorientCommand;
 import pipeline.diagram.edit.parts.CollectionTaskCollectionTaskImportOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.ImportOperationEditPart;
-import pipeline.diagram.edit.parts.ImportOperationImpUsesEditPart;
 import pipeline.diagram.edit.parts.ImportOperationReadEditPart;
+import pipeline.diagram.edit.parts.ImportOperationUseEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 import pipeline.diagram.providers.PipelineElementTypes;
 
@@ -105,7 +105,7 @@ public class CollectionTaskItemSemanticEditPolicy extends PipelineBaseItemSemant
 								continue;
 							}
 							if (PipelineVisualIDRegistry
-									.getVisualID(outgoingLink) == ImportOperationImpUsesEditPart.VISUAL_ID) {
+									.getVisualID(outgoingLink) == ImportOperationUseEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
 										outgoingLink.getSource().getElement(), null,
 										outgoingLink.getTarget().getElement(), false);

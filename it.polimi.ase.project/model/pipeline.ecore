@@ -54,10 +54,6 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operation" abstract="true">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
-      <details key="figure" value="ellipse"/>
-    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" eType="#//InternalDataFlow"
         eOpposite="#//InternalDataFlow/target"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" eType="#//InternalDataFlow"
@@ -276,7 +272,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ClusteringOperation">
     <eLiterals name="kMeans"/>
-    <eLiterals name="Hierarchical" value="1" literal="Hierarchical"/>
+    <eLiterals name="Hierarchical" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ClassificationOperation">
     <eLiterals name="LogisticRegression"/>

@@ -38,7 +38,7 @@ public class PipelineModelingAssistantProviderOfImportOperationEditPart extends 
 	public List<IElementType> doGetRelTypesOnSource(ImportOperationEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(PipelineElementTypes.ImportOperationRead_4006);
-		types.add(PipelineElementTypes.ImportOperationImpUses_4007);
+		types.add(PipelineElementTypes.ImportOperationUse_4007);
 		return types;
 	}
 
@@ -63,7 +63,7 @@ public class PipelineModelingAssistantProviderOfImportOperationEditPart extends 
 			types.add(PipelineElementTypes.ImportOperationRead_4006);
 		}
 		if (targetEditPart instanceof SchemaEditPart) {
-			types.add(PipelineElementTypes.ImportOperationImpUses_4007);
+			types.add(PipelineElementTypes.ImportOperationUse_4007);
 		}
 		return types;
 	}
@@ -85,7 +85,7 @@ public class PipelineModelingAssistantProviderOfImportOperationEditPart extends 
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == PipelineElementTypes.ImportOperationRead_4006) {
 			types.add(PipelineElementTypes.Source_2007);
-		} else if (relationshipType == PipelineElementTypes.ImportOperationImpUses_4007) {
+		} else if (relationshipType == PipelineElementTypes.ImportOperationUse_4007) {
 			types.add(PipelineElementTypes.Schema_2009);
 		}
 		return types;

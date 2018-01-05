@@ -44,7 +44,7 @@ public class ComplexAttribute2EditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 3012;
+	public static final int VISUAL_ID = 3006;
 
 	/**
 	* @generated
@@ -279,11 +279,11 @@ public class ComplexAttribute2EditPart extends ShapeNodeEditPart {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == PipelineElementTypes.SimpleAttribute_3011) {
+			if (type == PipelineElementTypes.SimpleAttribute_3005) {
 				return getChildBySemanticHint(PipelineVisualIDRegistry
 						.getType(ComplexAttributeComplexAttributeAttributesCompartment2EditPart.VISUAL_ID));
 			}
-			if (type == PipelineElementTypes.ComplexAttribute_3012) {
+			if (type == PipelineElementTypes.ComplexAttribute_3006) {
 				return getChildBySemanticHint(PipelineVisualIDRegistry
 						.getType(ComplexAttributeComplexAttributeAttributesCompartment2EditPart.VISUAL_ID));
 			}

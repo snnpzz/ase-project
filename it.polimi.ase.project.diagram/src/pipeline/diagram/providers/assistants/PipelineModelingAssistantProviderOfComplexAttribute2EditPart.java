@@ -26,8 +26,8 @@ public class PipelineModelingAssistantProviderOfComplexAttribute2EditPart extend
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(PipelineElementTypes.SimpleAttribute_3011);
-		types.add(PipelineElementTypes.ComplexAttribute_3012);
+		types.add(PipelineElementTypes.SimpleAttribute_3005);
+		types.add(PipelineElementTypes.ComplexAttribute_3006);
 		return types;
 	}
 

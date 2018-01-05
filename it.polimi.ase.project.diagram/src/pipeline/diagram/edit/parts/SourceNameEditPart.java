@@ -60,7 +60,7 @@ public class SourceNameEditPart extends CompartmentEditPart implements ITextAwar
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5015;
+	public static final int VISUAL_ID = 5009;
 
 	/**
 	* @generated

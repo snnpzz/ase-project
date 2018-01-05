@@ -60,9 +60,9 @@ public class ImportOperationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addReadPropertyDescriptor(object);
-			addImpUsesPropertyDescriptor(object);
 			addIDPropertyDescriptor(object);
+			addReadPropertyDescriptor(object);
+			addUsePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,19 +90,19 @@ public class ImportOperationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Imp Uses feature.
+	 * This adds a property descriptor for the Use feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addImpUsesPropertyDescriptor(Object object) {
+	protected void addUsePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ImportOperation_impUses_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImportOperation_impUses_feature", "_UI_ImportOperation_type"),
-				 PipelinePackage.Literals.IMPORT_OPERATION__IMP_USES,
+				 getString("_UI_ImportOperation_use_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImportOperation_use_feature", "_UI_ImportOperation_type"),
+				 PipelinePackage.Literals.IMPORT_OPERATION__USE,
 				 true,
 				 false,
 				 true,

@@ -60,7 +60,7 @@ public class ChartTitleEditPart extends CompartmentEditPart implements ITextAwar
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5021;
+	public static final int VISUAL_ID = 5015;
 
 	/**
 	* @generated

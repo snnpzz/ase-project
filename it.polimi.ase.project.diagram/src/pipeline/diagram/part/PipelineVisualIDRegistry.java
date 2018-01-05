@@ -18,13 +18,9 @@ import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
 import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ChartEditPart;
 import pipeline.diagram.edit.parts.ChartTitleEditPart;
-import pipeline.diagram.edit.parts.ClassificationAnalysisOperationEditPart;
-import pipeline.diagram.edit.parts.ClassificationAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskIDEditPart;
-import pipeline.diagram.edit.parts.ClusteringAnalysisOperationEditPart;
-import pipeline.diagram.edit.parts.ClusteringAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskCollectionTaskImportOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskIDEditPart;
@@ -36,11 +32,9 @@ import pipeline.diagram.edit.parts.ComplexAttributeName2EditPart;
 import pipeline.diagram.edit.parts.ComplexAttributeNameEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
-import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationEditPart;
-import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.ExportOperationEditPart;
-import pipeline.diagram.edit.parts.ExportOperationExpUsesEditPart;
 import pipeline.diagram.edit.parts.ExportOperationIDEditPart;
+import pipeline.diagram.edit.parts.ExportOperationUseEditPart;
 import pipeline.diagram.edit.parts.ExportOperationWriteEditPart;
 import pipeline.diagram.edit.parts.ExportTaskEditPart;
 import pipeline.diagram.edit.parts.ExportTaskExportTaskExportOperationsCompartmentEditPart;
@@ -49,18 +43,14 @@ import pipeline.diagram.edit.parts.FileEditPart;
 import pipeline.diagram.edit.parts.FileNameEditPart;
 import pipeline.diagram.edit.parts.ImportOperationEditPart;
 import pipeline.diagram.edit.parts.ImportOperationIDEditPart;
-import pipeline.diagram.edit.parts.ImportOperationImpUsesEditPart;
 import pipeline.diagram.edit.parts.ImportOperationReadEditPart;
+import pipeline.diagram.edit.parts.ImportOperationUseEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskAttributesEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
-import pipeline.diagram.edit.parts.PredefinedCleaningOperationEditPart;
-import pipeline.diagram.edit.parts.PredefinedCleaningOperationNameEditPart;
-import pipeline.diagram.edit.parts.PredictiveAnalysisOperationEditPart;
-import pipeline.diagram.edit.parts.PredictiveAnalysisOperationNameEditPart;
 import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.edit.parts.SchemaSchemaAttributesCompartmentEditPart;
 import pipeline.diagram.edit.parts.SimpleAttribute2EditPart;
@@ -69,8 +59,6 @@ import pipeline.diagram.edit.parts.SimpleAttributeName2EditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeNameEditPart;
 import pipeline.diagram.edit.parts.SourceEditPart;
 import pipeline.diagram.edit.parts.SourceNameEditPart;
-import pipeline.diagram.edit.parts.UserDefinedCleaningOperationEditPart;
-import pipeline.diagram.edit.parts.UserDefinedCleaningOperationNameEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskIDEditPart;
 import pipeline.diagram.edit.parts.WrappingLabel2EditPart;
@@ -218,28 +206,6 @@ public class PipelineVisualIDRegistry {
 		case CollectionTaskCollectionTaskImportOperationsCompartmentEditPart.VISUAL_ID:
 			if (PipelinePackage.eINSTANCE.getImportOperation().isSuperTypeOf(domainElement.eClass())) {
 				return ImportOperationEditPart.VISUAL_ID;
-			}
-			break;
-		case CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID:
-			if (PipelinePackage.eINSTANCE.getUserDefinedCleaningOperation().isSuperTypeOf(domainElement.eClass())) {
-				return UserDefinedCleaningOperationEditPart.VISUAL_ID;
-			}
-			if (PipelinePackage.eINSTANCE.getPredefinedCleaningOperation().isSuperTypeOf(domainElement.eClass())) {
-				return PredefinedCleaningOperationEditPart.VISUAL_ID;
-			}
-			break;
-		case AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID:
-			if (PipelinePackage.eINSTANCE.getDescriptiveAnalysisOperation().isSuperTypeOf(domainElement.eClass())) {
-				return DescriptiveAnalysisOperationEditPart.VISUAL_ID;
-			}
-			if (PipelinePackage.eINSTANCE.getClassificationAnalysisOperation().isSuperTypeOf(domainElement.eClass())) {
-				return ClassificationAnalysisOperationEditPart.VISUAL_ID;
-			}
-			if (PipelinePackage.eINSTANCE.getPredictiveAnalysisOperation().isSuperTypeOf(domainElement.eClass())) {
-				return PredictiveAnalysisOperationEditPart.VISUAL_ID;
-			}
-			if (PipelinePackage.eINSTANCE.getClusteringAnalysisOperation().isSuperTypeOf(domainElement.eClass())) {
-				return ClusteringAnalysisOperationEditPart.VISUAL_ID;
 			}
 			break;
 		case ExportTaskExportTaskExportOperationsCompartmentEditPart.VISUAL_ID:
@@ -393,36 +359,6 @@ public class PipelineVisualIDRegistry {
 				return true;
 			}
 			break;
-		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
-			if (UserDefinedCleaningOperationNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case PredefinedCleaningOperationEditPart.VISUAL_ID:
-			if (PredefinedCleaningOperationNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
-			if (DescriptiveAnalysisOperationNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ClassificationAnalysisOperationEditPart.VISUAL_ID:
-			if (ClassificationAnalysisOperationNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case PredictiveAnalysisOperationEditPart.VISUAL_ID:
-			if (PredictiveAnalysisOperationNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ClusteringAnalysisOperationEditPart.VISUAL_ID:
-			if (ClusteringAnalysisOperationNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case ExportOperationEditPart.VISUAL_ID:
 			if (ExportOperationIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -456,28 +392,6 @@ public class PipelineVisualIDRegistry {
 			break;
 		case CollectionTaskCollectionTaskImportOperationsCompartmentEditPart.VISUAL_ID:
 			if (ImportOperationEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID:
-			if (UserDefinedCleaningOperationEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (PredefinedCleaningOperationEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID:
-			if (DescriptiveAnalysisOperationEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ClassificationAnalysisOperationEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (PredictiveAnalysisOperationEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ClusteringAnalysisOperationEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -530,17 +444,17 @@ public class PipelineVisualIDRegistry {
 				return true;
 			}
 			break;
-		case ImportOperationImpUsesEditPart.VISUAL_ID:
+		case ImportOperationUseEditPart.VISUAL_ID:
 			if (WrappingLabel5EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ExportOperationWriteEditPart.VISUAL_ID:
+		case ExportOperationUseEditPart.VISUAL_ID:
 			if (WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ExportOperationExpUsesEditPart.VISUAL_ID:
+		case ExportOperationWriteEditPart.VISUAL_ID:
 			if (WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -619,17 +533,13 @@ public class PipelineVisualIDRegistry {
 		case PipelineEditPart.VISUAL_ID:
 			return false;
 		case IntegrationTaskEditPart.VISUAL_ID:
+		case CleaningTaskEditPart.VISUAL_ID:
+		case AnalysisTaskEditPart.VISUAL_ID:
 		case VisualizationTaskEditPart.VISUAL_ID:
 		case SourceEditPart.VISUAL_ID:
 		case FileEditPart.VISUAL_ID:
 		case ChartEditPart.VISUAL_ID:
 		case ImportOperationEditPart.VISUAL_ID:
-		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
-		case PredefinedCleaningOperationEditPart.VISUAL_ID:
-		case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
-		case ClassificationAnalysisOperationEditPart.VISUAL_ID:
-		case PredictiveAnalysisOperationEditPart.VISUAL_ID:
-		case ClusteringAnalysisOperationEditPart.VISUAL_ID:
 		case ExportOperationEditPart.VISUAL_ID:
 		case SimpleAttributeEditPart.VISUAL_ID:
 		case SimpleAttribute2EditPart.VISUAL_ID:

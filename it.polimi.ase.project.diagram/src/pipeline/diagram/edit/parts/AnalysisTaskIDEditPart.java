@@ -60,7 +60,7 @@ public class AnalysisTaskIDEditPart extends CompartmentEditPart implements IText
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5011;
+	public static final int VISUAL_ID = 5005;
 
 	/**
 	* @generated

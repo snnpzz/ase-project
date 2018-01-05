@@ -18,7 +18,7 @@ import pipeline.diagram.edit.policies.PipelineBaseItemSemanticEditPolicy;
 /**
  * @generated
  */
-public class ImportOperationImpUsesCreateCommand extends EditElementCommand {
+public class ImportOperationUseCreateCommand extends EditElementCommand {
 
 	/**
 	* @generated
@@ -33,7 +33,7 @@ public class ImportOperationImpUsesCreateCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	public ImportOperationImpUsesCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
+	public ImportOperationUseCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
@@ -56,7 +56,7 @@ public class ImportOperationImpUsesCreateCommand extends EditElementCommand {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canCreateImportOperationImpUses_4007(getSource(),
+		return PipelineBaseItemSemanticEditPolicy.getLinkConstraints().canCreateImportOperationUse_4007(getSource(),
 				getTarget());
 	}
 
@@ -69,7 +69,7 @@ public class ImportOperationImpUsesCreateCommand extends EditElementCommand {
 		}
 
 		if (getSource() != null && getTarget() != null) {
-			getSource().setImpUses(getTarget());
+			getSource().setUse(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
 

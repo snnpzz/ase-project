@@ -78,7 +78,7 @@ public class FileItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPoli
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.ExportOperationWrite_4008 == req.getElementType()) {
+		if (PipelineElementTypes.ExportOperationWrite_4009 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -88,7 +88,7 @@ public class FileItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPoli
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.ExportOperationWrite_4008 == req.getElementType()) {
+		if (PipelineElementTypes.ExportOperationWrite_4009 == req.getElementType()) {
 			return getGEFWrapper(new ExportOperationWriteCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;

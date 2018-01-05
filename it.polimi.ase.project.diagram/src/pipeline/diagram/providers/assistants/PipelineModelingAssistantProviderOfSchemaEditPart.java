@@ -26,8 +26,8 @@ public class PipelineModelingAssistantProviderOfSchemaEditPart extends PipelineM
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(PipelineElementTypes.SimpleAttribute_3009);
-		types.add(PipelineElementTypes.ComplexAttribute_3010);
+		types.add(PipelineElementTypes.SimpleAttribute_3003);
+		types.add(PipelineElementTypes.ComplexAttribute_3004);
 		return types;
 	}
 
@@ -46,8 +46,8 @@ public class PipelineModelingAssistantProviderOfSchemaEditPart extends PipelineM
 	*/
 	public List<IElementType> doGetRelTypesOnTarget(SchemaEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(PipelineElementTypes.ImportOperationImpUses_4007);
-		types.add(PipelineElementTypes.ExportOperationExpUses_4009);
+		types.add(PipelineElementTypes.ImportOperationUse_4007);
+		types.add(PipelineElementTypes.ExportOperationUse_4008);
 		return types;
 	}
 
@@ -66,10 +66,10 @@ public class PipelineModelingAssistantProviderOfSchemaEditPart extends PipelineM
 	*/
 	public List<IElementType> doGetTypesForSource(SchemaEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == PipelineElementTypes.ImportOperationImpUses_4007) {
+		if (relationshipType == PipelineElementTypes.ImportOperationUse_4007) {
 			types.add(PipelineElementTypes.ImportOperation_3001);
-		} else if (relationshipType == PipelineElementTypes.ExportOperationExpUses_4009) {
-			types.add(PipelineElementTypes.ExportOperation_3008);
+		} else if (relationshipType == PipelineElementTypes.ExportOperationUse_4008) {
+			types.add(PipelineElementTypes.ExportOperation_3002);
 		}
 		return types;
 	}

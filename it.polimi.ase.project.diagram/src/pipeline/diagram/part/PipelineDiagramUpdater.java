@@ -16,18 +16,13 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
-import pipeline.AnalysisOperation;
 import pipeline.AnalysisTask;
 import pipeline.Attribute;
 import pipeline.Chart;
-import pipeline.ClassificationAnalysisOperation;
-import pipeline.CleaningOperation;
 import pipeline.CleaningTask;
-import pipeline.ClusteringAnalysisOperation;
 import pipeline.CollectionTask;
 import pipeline.ComplexAttribute;
 import pipeline.DataFlow;
-import pipeline.DescriptiveAnalysisOperation;
 import pipeline.ExportOperation;
 import pipeline.ExportTask;
 import pipeline.File;
@@ -37,22 +32,15 @@ import pipeline.InternalDataFlow;
 import pipeline.Operation;
 import pipeline.Pipeline;
 import pipeline.PipelinePackage;
-import pipeline.PredefinedCleaningOperation;
-import pipeline.PredictiveAnalysisOperation;
 import pipeline.Schema;
 import pipeline.SimpleAttribute;
 import pipeline.Source;
 import pipeline.Task;
-import pipeline.UserDefinedCleaningOperation;
 import pipeline.VisualizationTask;
-import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ChartEditPart;
-import pipeline.diagram.edit.parts.ClassificationAnalysisOperationEditPart;
-import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
-import pipeline.diagram.edit.parts.ClusteringAnalysisOperationEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskCollectionTaskImportOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
 import pipeline.diagram.edit.parts.ComplexAttribute2EditPart;
@@ -61,29 +49,25 @@ import pipeline.diagram.edit.parts.ComplexAttributeComplexAttributeAttributesCom
 import pipeline.diagram.edit.parts.ComplexAttributeEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
-import pipeline.diagram.edit.parts.DescriptiveAnalysisOperationEditPart;
 import pipeline.diagram.edit.parts.ExportOperationEditPart;
-import pipeline.diagram.edit.parts.ExportOperationExpUsesEditPart;
+import pipeline.diagram.edit.parts.ExportOperationUseEditPart;
 import pipeline.diagram.edit.parts.ExportOperationWriteEditPart;
 import pipeline.diagram.edit.parts.ExportTaskEditPart;
 import pipeline.diagram.edit.parts.ExportTaskExportTaskExportOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.FileEditPart;
 import pipeline.diagram.edit.parts.ImportOperationEditPart;
-import pipeline.diagram.edit.parts.ImportOperationImpUsesEditPart;
 import pipeline.diagram.edit.parts.ImportOperationReadEditPart;
+import pipeline.diagram.edit.parts.ImportOperationUseEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskAttributesEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
-import pipeline.diagram.edit.parts.PredefinedCleaningOperationEditPart;
-import pipeline.diagram.edit.parts.PredictiveAnalysisOperationEditPart;
 import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.edit.parts.SchemaSchemaAttributesCompartmentEditPart;
 import pipeline.diagram.edit.parts.SimpleAttribute2EditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeEditPart;
 import pipeline.diagram.edit.parts.SourceEditPart;
-import pipeline.diagram.edit.parts.UserDefinedCleaningOperationEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.providers.PipelineElementTypes;
 
@@ -108,10 +92,6 @@ public class PipelineDiagramUpdater {
 			return getPipeline_1000SemanticChildren(view);
 		case CollectionTaskCollectionTaskImportOperationsCompartmentEditPart.VISUAL_ID:
 			return getCollectionTaskCollectionTaskImportOperationsCompartment_7001SemanticChildren(view);
-		case CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID:
-			return getCleaningTaskCleaningTaskCleaningOperationsCompartment_7002SemanticChildren(view);
-		case AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID:
-			return getAnalysisTaskAnalysisTaskAnalysisOperationsCompartment_7003SemanticChildren(view);
 		case ExportTaskExportTaskExportOperationsCompartmentEditPart.VISUAL_ID:
 			return getExportTaskExportTaskExportOperationsCompartment_7004SemanticChildren(view);
 		case SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID:
@@ -214,72 +194,6 @@ public class PipelineDiagramUpdater {
 			ImportOperation childElement = (ImportOperation) it.next();
 			int visualID = PipelineVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ImportOperationEditPart.VISUAL_ID) {
-				result.add(new PipelineNodeDescriptor(childElement, visualID));
-				continue;
-			}
-		}
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	public static List<PipelineNodeDescriptor> getCleaningTaskCleaningTaskCleaningOperationsCompartment_7002SemanticChildren(
-			View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		CleaningTask modelElement = (CleaningTask) containerView.getElement();
-		LinkedList<PipelineNodeDescriptor> result = new LinkedList<PipelineNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getCleaningOperations().iterator(); it.hasNext();) {
-			CleaningOperation childElement = (CleaningOperation) it.next();
-			int visualID = PipelineVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == UserDefinedCleaningOperationEditPart.VISUAL_ID) {
-				result.add(new PipelineNodeDescriptor(childElement, visualID));
-				continue;
-			}
-			if (visualID == PredefinedCleaningOperationEditPart.VISUAL_ID) {
-				result.add(new PipelineNodeDescriptor(childElement, visualID));
-				continue;
-			}
-		}
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	public static List<PipelineNodeDescriptor> getAnalysisTaskAnalysisTaskAnalysisOperationsCompartment_7003SemanticChildren(
-			View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		AnalysisTask modelElement = (AnalysisTask) containerView.getElement();
-		LinkedList<PipelineNodeDescriptor> result = new LinkedList<PipelineNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getAnalysisOperations().iterator(); it.hasNext();) {
-			AnalysisOperation childElement = (AnalysisOperation) it.next();
-			int visualID = PipelineVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == DescriptiveAnalysisOperationEditPart.VISUAL_ID) {
-				result.add(new PipelineNodeDescriptor(childElement, visualID));
-				continue;
-			}
-			if (visualID == ClassificationAnalysisOperationEditPart.VISUAL_ID) {
-				result.add(new PipelineNodeDescriptor(childElement, visualID));
-				continue;
-			}
-			if (visualID == PredictiveAnalysisOperationEditPart.VISUAL_ID) {
-				result.add(new PipelineNodeDescriptor(childElement, visualID));
-				continue;
-			}
-			if (visualID == ClusteringAnalysisOperationEditPart.VISUAL_ID) {
 				result.add(new PipelineNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -427,28 +341,16 @@ public class PipelineDiagramUpdater {
 			return getChart_2010ContainedLinks(view);
 		case ImportOperationEditPart.VISUAL_ID:
 			return getImportOperation_3001ContainedLinks(view);
-		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
-			return getUserDefinedCleaningOperation_3002ContainedLinks(view);
-		case PredefinedCleaningOperationEditPart.VISUAL_ID:
-			return getPredefinedCleaningOperation_3003ContainedLinks(view);
-		case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
-			return getDescriptiveAnalysisOperation_3004ContainedLinks(view);
-		case ClassificationAnalysisOperationEditPart.VISUAL_ID:
-			return getClassificationAnalysisOperation_3005ContainedLinks(view);
-		case PredictiveAnalysisOperationEditPart.VISUAL_ID:
-			return getPredictiveAnalysisOperation_3006ContainedLinks(view);
-		case ClusteringAnalysisOperationEditPart.VISUAL_ID:
-			return getClusteringAnalysisOperation_3007ContainedLinks(view);
 		case ExportOperationEditPart.VISUAL_ID:
-			return getExportOperation_3008ContainedLinks(view);
+			return getExportOperation_3002ContainedLinks(view);
 		case SimpleAttributeEditPart.VISUAL_ID:
-			return getSimpleAttribute_3009ContainedLinks(view);
+			return getSimpleAttribute_3003ContainedLinks(view);
 		case ComplexAttributeEditPart.VISUAL_ID:
-			return getComplexAttribute_3010ContainedLinks(view);
+			return getComplexAttribute_3004ContainedLinks(view);
 		case SimpleAttribute2EditPart.VISUAL_ID:
-			return getSimpleAttribute_3011ContainedLinks(view);
+			return getSimpleAttribute_3005ContainedLinks(view);
 		case ComplexAttribute2EditPart.VISUAL_ID:
-			return getComplexAttribute_3012ContainedLinks(view);
+			return getComplexAttribute_3006ContainedLinks(view);
 		case DataFlowEditPart.VISUAL_ID:
 			return getDataFlow_4001ContainedLinks(view);
 		case InternalDataFlowEditPart.VISUAL_ID:
@@ -484,28 +386,16 @@ public class PipelineDiagramUpdater {
 			return getChart_2010IncomingLinks(view);
 		case ImportOperationEditPart.VISUAL_ID:
 			return getImportOperation_3001IncomingLinks(view);
-		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
-			return getUserDefinedCleaningOperation_3002IncomingLinks(view);
-		case PredefinedCleaningOperationEditPart.VISUAL_ID:
-			return getPredefinedCleaningOperation_3003IncomingLinks(view);
-		case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
-			return getDescriptiveAnalysisOperation_3004IncomingLinks(view);
-		case ClassificationAnalysisOperationEditPart.VISUAL_ID:
-			return getClassificationAnalysisOperation_3005IncomingLinks(view);
-		case PredictiveAnalysisOperationEditPart.VISUAL_ID:
-			return getPredictiveAnalysisOperation_3006IncomingLinks(view);
-		case ClusteringAnalysisOperationEditPart.VISUAL_ID:
-			return getClusteringAnalysisOperation_3007IncomingLinks(view);
 		case ExportOperationEditPart.VISUAL_ID:
-			return getExportOperation_3008IncomingLinks(view);
+			return getExportOperation_3002IncomingLinks(view);
 		case SimpleAttributeEditPart.VISUAL_ID:
-			return getSimpleAttribute_3009IncomingLinks(view);
+			return getSimpleAttribute_3003IncomingLinks(view);
 		case ComplexAttributeEditPart.VISUAL_ID:
-			return getComplexAttribute_3010IncomingLinks(view);
+			return getComplexAttribute_3004IncomingLinks(view);
 		case SimpleAttribute2EditPart.VISUAL_ID:
-			return getSimpleAttribute_3011IncomingLinks(view);
+			return getSimpleAttribute_3005IncomingLinks(view);
 		case ComplexAttribute2EditPart.VISUAL_ID:
-			return getComplexAttribute_3012IncomingLinks(view);
+			return getComplexAttribute_3006IncomingLinks(view);
 		case DataFlowEditPart.VISUAL_ID:
 			return getDataFlow_4001IncomingLinks(view);
 		case InternalDataFlowEditPart.VISUAL_ID:
@@ -541,28 +431,16 @@ public class PipelineDiagramUpdater {
 			return getChart_2010OutgoingLinks(view);
 		case ImportOperationEditPart.VISUAL_ID:
 			return getImportOperation_3001OutgoingLinks(view);
-		case UserDefinedCleaningOperationEditPart.VISUAL_ID:
-			return getUserDefinedCleaningOperation_3002OutgoingLinks(view);
-		case PredefinedCleaningOperationEditPart.VISUAL_ID:
-			return getPredefinedCleaningOperation_3003OutgoingLinks(view);
-		case DescriptiveAnalysisOperationEditPart.VISUAL_ID:
-			return getDescriptiveAnalysisOperation_3004OutgoingLinks(view);
-		case ClassificationAnalysisOperationEditPart.VISUAL_ID:
-			return getClassificationAnalysisOperation_3005OutgoingLinks(view);
-		case PredictiveAnalysisOperationEditPart.VISUAL_ID:
-			return getPredictiveAnalysisOperation_3006OutgoingLinks(view);
-		case ClusteringAnalysisOperationEditPart.VISUAL_ID:
-			return getClusteringAnalysisOperation_3007OutgoingLinks(view);
 		case ExportOperationEditPart.VISUAL_ID:
-			return getExportOperation_3008OutgoingLinks(view);
+			return getExportOperation_3002OutgoingLinks(view);
 		case SimpleAttributeEditPart.VISUAL_ID:
-			return getSimpleAttribute_3009OutgoingLinks(view);
+			return getSimpleAttribute_3003OutgoingLinks(view);
 		case ComplexAttributeEditPart.VISUAL_ID:
-			return getComplexAttribute_3010OutgoingLinks(view);
+			return getComplexAttribute_3004OutgoingLinks(view);
 		case SimpleAttribute2EditPart.VISUAL_ID:
-			return getSimpleAttribute_3011OutgoingLinks(view);
+			return getSimpleAttribute_3005OutgoingLinks(view);
 		case ComplexAttribute2EditPart.VISUAL_ID:
-			return getComplexAttribute_3012OutgoingLinks(view);
+			return getComplexAttribute_3006OutgoingLinks(view);
 		case DataFlowEditPart.VISUAL_ID:
 			return getDataFlow_4001OutgoingLinks(view);
 		case InternalDataFlowEditPart.VISUAL_ID:
@@ -665,88 +543,46 @@ public class PipelineDiagramUpdater {
 		ImportOperation modelElement = (ImportOperation) view.getElement();
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_ImportOperation_Read_4006(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_ImportOperation_ImpUses_4007(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ImportOperation_Use_4007(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getUserDefinedCleaningOperation_3002ContainedLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getPredefinedCleaningOperation_3003ContainedLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getDescriptiveAnalysisOperation_3004ContainedLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getClassificationAnalysisOperation_3005ContainedLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getPredictiveAnalysisOperation_3006ContainedLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getClusteringAnalysisOperation_3007ContainedLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getExportOperation_3008ContainedLinks(View view) {
+	public static List<PipelineLinkDescriptor> getExportOperation_3002ContainedLinks(View view) {
 		ExportOperation modelElement = (ExportOperation) view.getElement();
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_ExportOperation_Write_4008(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_ExportOperation_ExpUses_4009(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ExportOperation_Use_4008(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ExportOperation_Write_4009(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getSimpleAttribute_3009ContainedLinks(View view) {
+	public static List<PipelineLinkDescriptor> getSimpleAttribute_3003ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getComplexAttribute_3010ContainedLinks(View view) {
+	public static List<PipelineLinkDescriptor> getComplexAttribute_3004ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getSimpleAttribute_3011ContainedLinks(View view) {
+	public static List<PipelineLinkDescriptor> getSimpleAttribute_3005ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getComplexAttribute_3012ContainedLinks(View view) {
+	public static List<PipelineLinkDescriptor> getComplexAttribute_3006ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -862,7 +698,7 @@ public class PipelineDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_ExportOperation_Write_4008(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ExportOperation_Write_4009(modelElement, crossReferences));
 		return result;
 	}
 
@@ -876,8 +712,8 @@ public class PipelineDiagramUpdater {
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_DataFlow_Schema_4003(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_InternalDataFlow_Schema_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_ImportOperation_ImpUses_4007(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_ExportOperation_ExpUses_4009(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ImportOperation_Use_4007(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ExportOperation_Use_4008(modelElement, crossReferences));
 		return result;
 	}
 
@@ -898,86 +734,14 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getUserDefinedCleaningOperation_3002IncomingLinks(View view) {
-		UserDefinedCleaningOperation modelElement = (UserDefinedCleaningOperation) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_InternalDataFlow_4002(modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getPredefinedCleaningOperation_3003IncomingLinks(View view) {
-		PredefinedCleaningOperation modelElement = (PredefinedCleaningOperation) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_InternalDataFlow_4002(modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getDescriptiveAnalysisOperation_3004IncomingLinks(View view) {
-		DescriptiveAnalysisOperation modelElement = (DescriptiveAnalysisOperation) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_InternalDataFlow_4002(modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getClassificationAnalysisOperation_3005IncomingLinks(View view) {
-		ClassificationAnalysisOperation modelElement = (ClassificationAnalysisOperation) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_InternalDataFlow_4002(modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getPredictiveAnalysisOperation_3006IncomingLinks(View view) {
-		PredictiveAnalysisOperation modelElement = (PredictiveAnalysisOperation) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_InternalDataFlow_4002(modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getClusteringAnalysisOperation_3007IncomingLinks(View view) {
-		ClusteringAnalysisOperation modelElement = (ClusteringAnalysisOperation) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_InternalDataFlow_4002(modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getExportOperation_3008IncomingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getExportOperation_3002IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getSimpleAttribute_3009IncomingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getSimpleAttribute_3003IncomingLinks(View view) {
 		SimpleAttribute modelElement = (SimpleAttribute) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -990,7 +754,7 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getComplexAttribute_3010IncomingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getComplexAttribute_3004IncomingLinks(View view) {
 		ComplexAttribute modelElement = (ComplexAttribute) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -1002,7 +766,7 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getSimpleAttribute_3011IncomingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getSimpleAttribute_3005IncomingLinks(View view) {
 		SimpleAttribute modelElement = (SimpleAttribute) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -1015,7 +779,7 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getComplexAttribute_3012IncomingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getComplexAttribute_3006IncomingLinks(View view) {
 		ComplexAttribute modelElement = (ComplexAttribute) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -1137,106 +901,46 @@ public class PipelineDiagramUpdater {
 		ImportOperation modelElement = (ImportOperation) view.getElement();
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_ImportOperation_Read_4006(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_ImportOperation_ImpUses_4007(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ImportOperation_Use_4007(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getUserDefinedCleaningOperation_3002OutgoingLinks(View view) {
-		UserDefinedCleaningOperation modelElement = (UserDefinedCleaningOperation) view.getElement();
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_InternalDataFlow_4002(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getPredefinedCleaningOperation_3003OutgoingLinks(View view) {
-		PredefinedCleaningOperation modelElement = (PredefinedCleaningOperation) view.getElement();
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_InternalDataFlow_4002(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getDescriptiveAnalysisOperation_3004OutgoingLinks(View view) {
-		DescriptiveAnalysisOperation modelElement = (DescriptiveAnalysisOperation) view.getElement();
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_InternalDataFlow_4002(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getClassificationAnalysisOperation_3005OutgoingLinks(View view) {
-		ClassificationAnalysisOperation modelElement = (ClassificationAnalysisOperation) view.getElement();
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_InternalDataFlow_4002(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getPredictiveAnalysisOperation_3006OutgoingLinks(View view) {
-		PredictiveAnalysisOperation modelElement = (PredictiveAnalysisOperation) view.getElement();
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_InternalDataFlow_4002(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getClusteringAnalysisOperation_3007OutgoingLinks(View view) {
-		ClusteringAnalysisOperation modelElement = (ClusteringAnalysisOperation) view.getElement();
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_InternalDataFlow_4002(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<PipelineLinkDescriptor> getExportOperation_3008OutgoingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getExportOperation_3002OutgoingLinks(View view) {
 		ExportOperation modelElement = (ExportOperation) view.getElement();
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_ExportOperation_Write_4008(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_ExportOperation_ExpUses_4009(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ExportOperation_Use_4008(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ExportOperation_Write_4009(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getSimpleAttribute_3009OutgoingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getSimpleAttribute_3003OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getComplexAttribute_3010OutgoingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getComplexAttribute_3004OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getSimpleAttribute_3011OutgoingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getSimpleAttribute_3005OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PipelineLinkDescriptor> getComplexAttribute_3012OutgoingLinks(View view) {
+	public static List<PipelineLinkDescriptor> getComplexAttribute_3006OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -1332,29 +1036,6 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<PipelineLinkDescriptor> getIncomingTypeModelFacetLinks_InternalDataFlow_4002(
-			Operation target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
-		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != PipelinePackage.eINSTANCE.getInternalDataFlow_Target()
-					|| false == setting.getEObject() instanceof InternalDataFlow) {
-				continue;
-			}
-			InternalDataFlow link = (InternalDataFlow) setting.getEObject();
-			if (InternalDataFlowEditPart.VISUAL_ID != PipelineVisualIDRegistry.getLinkWithClassVisualID(link)) {
-				continue;
-			}
-			Operation src = link.getSource();
-			result.add(new PipelineLinkDescriptor(src, target, link, PipelineElementTypes.InternalDataFlow_4002,
-					InternalDataFlowEditPart.VISUAL_ID));
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
 	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_DataFlow_Schema_4003(
 			Schema target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
@@ -1420,14 +1101,14 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_ImportOperation_ImpUses_4007(
+	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_ImportOperation_Use_4007(
 			Schema target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() == PipelinePackage.eINSTANCE.getImportOperation_ImpUses()) {
+			if (setting.getEStructuralFeature() == PipelinePackage.eINSTANCE.getImportOperation_Use()) {
 				result.add(new PipelineLinkDescriptor(setting.getEObject(), target,
-						PipelineElementTypes.ImportOperationImpUses_4007, ImportOperationImpUsesEditPart.VISUAL_ID));
+						PipelineElementTypes.ImportOperationUse_4007, ImportOperationUseEditPart.VISUAL_ID));
 			}
 		}
 		return result;
@@ -1436,30 +1117,30 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_ExportOperation_Write_4008(
+	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_ExportOperation_Use_4008(
+			Schema target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == PipelinePackage.eINSTANCE.getExportOperation_Use()) {
+				result.add(new PipelineLinkDescriptor(setting.getEObject(), target,
+						PipelineElementTypes.ExportOperationUse_4008, ExportOperationUseEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_ExportOperation_Write_4009(
 			File target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == PipelinePackage.eINSTANCE.getExportOperation_Write()) {
 				result.add(new PipelineLinkDescriptor(setting.getEObject(), target,
-						PipelineElementTypes.ExportOperationWrite_4008, ExportOperationWriteEditPart.VISUAL_ID));
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_ExportOperation_ExpUses_4009(
-			Schema target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
-		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() == PipelinePackage.eINSTANCE.getExportOperation_ExpUses()) {
-				result.add(new PipelineLinkDescriptor(setting.getEObject(), target,
-						PipelineElementTypes.ExportOperationExpUses_4009, ExportOperationExpUsesEditPart.VISUAL_ID));
+						PipelineElementTypes.ExportOperationWrite_4009, ExportOperationWriteEditPart.VISUAL_ID));
 			}
 		}
 		return result;
@@ -1514,44 +1195,6 @@ public class PipelineDiagramUpdater {
 			}
 			result.add(new PipelineLinkDescriptor(src, dst, link, PipelineElementTypes.DataFlow_4001,
 					DataFlowEditPart.VISUAL_ID));
-		}
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	private static Collection<PipelineLinkDescriptor> getOutgoingTypeModelFacetLinks_InternalDataFlow_4002(
-			Operation source) {
-		Pipeline container = null;
-		// Find container element for the link.
-		// Climb up by containment hierarchy starting from the source
-		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null && container == null; element = element.eContainer()) {
-			if (element instanceof Pipeline) {
-				container = (Pipeline) element;
-			}
-		}
-		if (container == null) {
-			return Collections.emptyList();
-		}
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		for (Iterator<?> links = container.getInternalDataFlows().iterator(); links.hasNext();) {
-			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof InternalDataFlow) {
-				continue;
-			}
-			InternalDataFlow link = (InternalDataFlow) linkObject;
-			if (InternalDataFlowEditPart.VISUAL_ID != PipelineVisualIDRegistry.getLinkWithClassVisualID(link)) {
-				continue;
-			}
-			Operation dst = link.getTarget();
-			Operation src = link.getSource();
-			if (src != source) {
-				continue;
-			}
-			result.add(new PipelineLinkDescriptor(src, dst, link, PipelineElementTypes.InternalDataFlow_4002,
-					InternalDataFlowEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -1618,45 +1261,45 @@ public class PipelineDiagramUpdater {
 	/**
 	* @generated
 	*/
-	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_ImportOperation_ImpUses_4007(
+	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_ImportOperation_Use_4007(
 			ImportOperation source) {
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		Schema destination = source.getImpUses();
+		Schema destination = source.getUse();
 		if (destination == null) {
 			return result;
 		}
-		result.add(new PipelineLinkDescriptor(source, destination, PipelineElementTypes.ImportOperationImpUses_4007,
-				ImportOperationImpUsesEditPart.VISUAL_ID));
+		result.add(new PipelineLinkDescriptor(source, destination, PipelineElementTypes.ImportOperationUse_4007,
+				ImportOperationUseEditPart.VISUAL_ID));
 		return result;
 	}
 
 	/**
 	* @generated
 	*/
-	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_ExportOperation_Write_4008(
+	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_ExportOperation_Use_4008(
+			ExportOperation source) {
+		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
+		Schema destination = source.getUse();
+		if (destination == null) {
+			return result;
+		}
+		result.add(new PipelineLinkDescriptor(source, destination, PipelineElementTypes.ExportOperationUse_4008,
+				ExportOperationUseEditPart.VISUAL_ID));
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_ExportOperation_Write_4009(
 			ExportOperation source) {
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		File destination = source.getWrite();
 		if (destination == null) {
 			return result;
 		}
-		result.add(new PipelineLinkDescriptor(source, destination, PipelineElementTypes.ExportOperationWrite_4008,
+		result.add(new PipelineLinkDescriptor(source, destination, PipelineElementTypes.ExportOperationWrite_4009,
 				ExportOperationWriteEditPart.VISUAL_ID));
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_ExportOperation_ExpUses_4009(
-			ExportOperation source) {
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		Schema destination = source.getExpUses();
-		if (destination == null) {
-			return result;
-		}
-		result.add(new PipelineLinkDescriptor(source, destination, PipelineElementTypes.ExportOperationExpUses_4009,
-				ExportOperationExpUsesEditPart.VISUAL_ID));
 		return result;
 	}
 

@@ -18,12 +18,12 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 
-import pipeline.diagram.edit.commands.ImportOperationImpUsesCreateCommand;
-import pipeline.diagram.edit.commands.ImportOperationImpUsesReorientCommand;
 import pipeline.diagram.edit.commands.ImportOperationReadCreateCommand;
 import pipeline.diagram.edit.commands.ImportOperationReadReorientCommand;
-import pipeline.diagram.edit.parts.ImportOperationImpUsesEditPart;
+import pipeline.diagram.edit.commands.ImportOperationUseCreateCommand;
+import pipeline.diagram.edit.commands.ImportOperationUseReorientCommand;
 import pipeline.diagram.edit.parts.ImportOperationReadEditPart;
+import pipeline.diagram.edit.parts.ImportOperationUseEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 import pipeline.diagram.providers.PipelineElementTypes;
 
@@ -55,7 +55,7 @@ public class ImportOperationItemSemanticEditPolicy extends PipelineBaseItemSeman
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (PipelineVisualIDRegistry.getVisualID(outgoingLink) == ImportOperationImpUsesEditPart.VISUAL_ID) {
+			if (PipelineVisualIDRegistry.getVisualID(outgoingLink) == ImportOperationUseEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
@@ -91,8 +91,8 @@ public class ImportOperationItemSemanticEditPolicy extends PipelineBaseItemSeman
 		if (PipelineElementTypes.ImportOperationRead_4006 == req.getElementType()) {
 			return getGEFWrapper(new ImportOperationReadCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (PipelineElementTypes.ImportOperationImpUses_4007 == req.getElementType()) {
-			return getGEFWrapper(new ImportOperationImpUsesCreateCommand(req, req.getSource(), req.getTarget()));
+		if (PipelineElementTypes.ImportOperationUse_4007 == req.getElementType()) {
+			return getGEFWrapper(new ImportOperationUseCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -104,7 +104,7 @@ public class ImportOperationItemSemanticEditPolicy extends PipelineBaseItemSeman
 		if (PipelineElementTypes.ImportOperationRead_4006 == req.getElementType()) {
 			return null;
 		}
-		if (PipelineElementTypes.ImportOperationImpUses_4007 == req.getElementType()) {
+		if (PipelineElementTypes.ImportOperationUse_4007 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -120,8 +120,8 @@ public class ImportOperationItemSemanticEditPolicy extends PipelineBaseItemSeman
 		switch (getVisualID(req)) {
 		case ImportOperationReadEditPart.VISUAL_ID:
 			return getGEFWrapper(new ImportOperationReadReorientCommand(req));
-		case ImportOperationImpUsesEditPart.VISUAL_ID:
-			return getGEFWrapper(new ImportOperationImpUsesReorientCommand(req));
+		case ImportOperationUseEditPart.VISUAL_ID:
+			return getGEFWrapper(new ImportOperationUseReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

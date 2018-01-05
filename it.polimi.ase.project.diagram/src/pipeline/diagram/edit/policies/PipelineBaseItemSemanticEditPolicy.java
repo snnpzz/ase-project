@@ -391,20 +391,33 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateImportOperationImpUses_4007(ImportOperation source, Schema target) {
+		public boolean canCreateImportOperationUse_4007(ImportOperation source, Schema target) {
 			if (source != null) {
-				if (source.getImpUses() != null) {
+				if (source.getUse() != null) {
 					return false;
 				}
 			}
 
-			return canExistImportOperationImpUses_4007(source, target);
+			return canExistImportOperationUse_4007(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateExportOperationWrite_4008(ExportOperation source, File target) {
+		public boolean canCreateExportOperationUse_4008(ExportOperation source, Schema target) {
+			if (source != null) {
+				if (source.getUse() != null) {
+					return false;
+				}
+			}
+
+			return canExistExportOperationUse_4008(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateExportOperationWrite_4009(ExportOperation source, File target) {
 			if (source != null) {
 				if (source.getWrite() != null) {
 					return false;
@@ -414,20 +427,7 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return false;
 			}
 
-			return canExistExportOperationWrite_4008(source, target);
-		}
-
-		/**
-		 * @generated
-		 */
-		public boolean canCreateExportOperationExpUses_4009(ExportOperation source, Schema target) {
-			if (source != null) {
-				if (source.getExpUses() != null) {
-					return false;
-				}
-			}
-
-			return canExistExportOperationExpUses_4009(source, target);
+			return canExistExportOperationWrite_4009(source, target);
 		}
 
 		/**
@@ -489,21 +489,21 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		* @generated
 		*/
-		public boolean canExistImportOperationImpUses_4007(ImportOperation source, Schema target) {
+		public boolean canExistImportOperationUse_4007(ImportOperation source, Schema target) {
 			return true;
 		}
 
 		/**
 		* @generated
 		*/
-		public boolean canExistExportOperationWrite_4008(ExportOperation source, File target) {
+		public boolean canExistExportOperationUse_4008(ExportOperation source, Schema target) {
 			return true;
 		}
 
 		/**
 		* @generated
 		*/
-		public boolean canExistExportOperationExpUses_4009(ExportOperation source, Schema target) {
+		public boolean canExistExportOperationWrite_4009(ExportOperation source, File target) {
 			return true;
 		}
 

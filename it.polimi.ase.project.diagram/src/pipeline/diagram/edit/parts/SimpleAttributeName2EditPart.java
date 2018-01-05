@@ -60,7 +60,7 @@ public class SimpleAttributeName2EditPart extends CompartmentEditPart implements
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5018;
+	public static final int VISUAL_ID = 5012;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class SimpleAttributeName2EditPart extends CompartmentEditPart implements
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = PipelineParserProvider.getParser(PipelineElementTypes.SimpleAttribute_3011, getParserElement(),
+			parser = PipelineParserProvider.getParser(PipelineElementTypes.SimpleAttribute_3005, getParserElement(),
 					PipelineVisualIDRegistry
 							.getType(pipeline.diagram.edit.parts.SimpleAttributeName2EditPart.VISUAL_ID));
 		}

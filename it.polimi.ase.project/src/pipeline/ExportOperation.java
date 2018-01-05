@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.ExportOperation#getWrite <em>Write</em>}</li>
- *   <li>{@link pipeline.ExportOperation#getExpUses <em>Exp Uses</em>}</li>
  *   <li>{@link pipeline.ExportOperation#getID <em>ID</em>}</li>
+ *   <li>{@link pipeline.ExportOperation#getUse <em>Use</em>}</li>
+ *   <li>{@link pipeline.ExportOperation#getWrite <em>Write</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getExportOperation()
@@ -53,33 +53,6 @@ public interface ExportOperation extends EObject {
 	void setWrite(File value);
 
 	/**
-	 * Returns the value of the '<em><b>Exp Uses</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Exp Uses</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Exp Uses</em>' reference.
-	 * @see #setExpUses(Schema)
-	 * @see pipeline.PipelinePackage#getExportOperation_ExpUses()
-	 * @model required="true"
-	 *        annotation="gmf.link width='1' target.decoration='arrow'"
-	 * @generated
-	 */
-	Schema getExpUses();
-
-	/**
-	 * Sets the value of the '{@link pipeline.ExportOperation#getExpUses <em>Exp Uses</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Exp Uses</em>' reference.
-	 * @see #getExpUses()
-	 * @generated
-	 */
-	void setExpUses(Schema value);
-
-	/**
 	 * Returns the value of the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -104,5 +77,32 @@ public interface ExportOperation extends EObject {
 	 * @generated
 	 */
 	void setID(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Use</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Use</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Use</em>' reference.
+	 * @see #setUse(Schema)
+	 * @see pipeline.PipelinePackage#getExportOperation_Use()
+	 * @model required="true"
+	 *        annotation="gmf.link width='1' target.decoration='arrow'"
+	 * @generated
+	 */
+	Schema getUse();
+
+	/**
+	 * Sets the value of the '{@link pipeline.ExportOperation#getUse <em>Use</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Use</em>' reference.
+	 * @see #getUse()
+	 * @generated
+	 */
+	void setUse(Schema value);
 
 } // ExportOperation

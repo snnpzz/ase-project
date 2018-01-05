@@ -60,7 +60,7 @@ public class FileNameEditPart extends CompartmentEditPart implements ITextAwareE
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5016;
+	public static final int VISUAL_ID = 5010;
 
 	/**
 	* @generated

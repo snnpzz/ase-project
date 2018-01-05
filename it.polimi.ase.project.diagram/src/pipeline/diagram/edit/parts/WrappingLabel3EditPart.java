@@ -62,7 +62,7 @@ public class WrappingLabel3EditPart extends LabelEditPart implements ITextAwareE
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 6003;
+	public static final int VISUAL_ID = 6004;
 
 	/**
 	* @generated
@@ -309,8 +309,8 @@ public class WrappingLabel3EditPart extends LabelEditPart implements ITextAwareE
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = PipelineParserProvider.getParser(PipelineElementTypes.IntegrationTaskAttributes_4005,
-					getParserElement(), CommonParserHint.DESCRIPTION);
+			parser = PipelineParserProvider.getParser(PipelineElementTypes.ImportOperationRead_4006, getParserElement(),
+					CommonParserHint.DESCRIPTION);
 		}
 		return parser;
 	}

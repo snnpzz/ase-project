@@ -81,6 +81,7 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 			case PipelinePackage.SIMPLE_ATTRIBUTE: return createSimpleAttribute();
 			case PipelinePackage.COMPLEX_ATTRIBUTE: return createComplexAttribute();
 			case PipelinePackage.VISUALIZATION_OPERATION: return createVisualizationOperation();
+			case PipelinePackage.INTEGRATION_OPERATION: return createIntegrationOperation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -386,6 +387,16 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 	public VisualizationOperation createVisualizationOperation() {
 		VisualizationOperationImpl visualizationOperation = new VisualizationOperationImpl();
 		return visualizationOperation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IntegrationOperation createIntegrationOperation() {
+		IntegrationOperationImpl integrationOperation = new IntegrationOperationImpl();
+		return integrationOperation;
 	}
 
 	/**

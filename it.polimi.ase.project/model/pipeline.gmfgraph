@@ -16,13 +16,6 @@
       </figures>
       <figures xsi:type="gmfgraph:PolylineDecoration" name="DataFlowSchemaFigureTargetDecoration"/>
       <figures xsi:type="gmfgraph:PolylineDecoration" name="InternalDataFlowSchemaFigureTargetDecoration"/>
-      <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-        <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-        <template/>
-        <template x="-2" y="2"/>
-        <template x="-2" y="-2"/>
-        <template/>
-      </figures>
       <figures xsi:type="gmfgraph:PolygonDecoration" name="Sqare">
         <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
         <template y="1"/>
@@ -211,38 +204,32 @@
       <descriptors name="InternalDataFlowSchemaExternalLabelFigure">
         <actualFigure xsi:type="gmfgraph:Label" name="InternalDataFlowSchemaExternalLabel"/>
       </descriptors>
-      <descriptors name="IntegrationTaskAttributesFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="IntegrationTaskAttributesFigure" lineWidth="2" targetDecoration="/0/@figures.0/@figures.4"/>
-      </descriptors>
-      <descriptors name="IntegrationTaskAttributesExternalLabelFigure">
-        <actualFigure xsi:type="gmfgraph:Label" name="IntegrationTaskAttributesExternalLabel"/>
-      </descriptors>
       <descriptors name="ImportOperationReadFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ImportOperationReadFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.5"/>
+        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ImportOperationReadFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.4"/>
       </descriptors>
       <descriptors name="ImportOperationReadExternalLabelFigure">
         <actualFigure xsi:type="gmfgraph:Label" name="ImportOperationReadExternalLabel"/>
       </descriptors>
       <descriptors name="ImportOperationUseFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ImportOperationUseFigure" targetDecoration="/0/@figures.0/@figures.6"/>
+        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ImportOperationUseFigure" targetDecoration="/0/@figures.0/@figures.5"/>
       </descriptors>
       <descriptors name="ImportOperationUseExternalLabelFigure">
         <actualFigure xsi:type="gmfgraph:Label" name="ImportOperationUseExternalLabel"/>
       </descriptors>
       <descriptors name="ExportOperationUseFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ExportOperationUseFigure" targetDecoration="/0/@figures.0/@figures.7"/>
+        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ExportOperationUseFigure" targetDecoration="/0/@figures.0/@figures.6"/>
       </descriptors>
       <descriptors name="ExportOperationUseExternalLabelFigure">
         <actualFigure xsi:type="gmfgraph:Label" name="ExportOperationUseExternalLabel"/>
       </descriptors>
       <descriptors name="ExportOperationWriteFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ExportOperationWriteFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.8"/>
+        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ExportOperationWriteFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.7"/>
       </descriptors>
       <descriptors name="ExportOperationWriteExternalLabelFigure">
         <actualFigure xsi:type="gmfgraph:Label" name="ExportOperationWriteExternalLabel"/>
       </descriptors>
       <descriptors name="ChartAxesFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ChartAxesFigure" targetDecoration="/0/@figures.0/@figures.9"/>
+        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ChartAxesFigure" targetDecoration="/0/@figures.0/@figures.8"/>
       </descriptors>
       <descriptors name="ChartAxesExternalLabelFigure">
         <actualFigure xsi:type="gmfgraph:Label" name="ChartAxesExternalLabel"/>
@@ -266,7 +253,6 @@
     <connections name="InternalDataFlow" figure="InternalDataFlowFigure"/>
     <connections name="DataFlowSchema" figure="DataFlowSchemaFigure"/>
     <connections name="InternalDataFlowSchema" figure="InternalDataFlowSchemaFigure"/>
-    <connections name="IntegrationTaskAttributes" figure="IntegrationTaskAttributesFigure"/>
     <connections name="ImportOperationRead" figure="ImportOperationReadFigure"/>
     <connections name="ImportOperationUse" figure="ImportOperationUseFigure"/>
     <connections name="ExportOperationUse" figure="ExportOperationUseFigure"/>
@@ -293,7 +279,6 @@
     <labels name="ComplexAttributeLabel" figure="ComplexAttributeFigure" accessor="/0/@figures.0/@descriptors.13/@accessors.0"/>
     <labels name="DataFlowSchemaExternalLabel" figure="DataFlowSchemaExternalLabelFigure" elementIcon="false"/>
     <labels name="InternalDataFlowSchemaExternalLabel" figure="InternalDataFlowSchemaExternalLabelFigure" elementIcon="false"/>
-    <labels name="IntegrationTaskAttributesExternalLabel" figure="IntegrationTaskAttributesExternalLabelFigure" elementIcon="false"/>
     <labels name="ImportOperationReadExternalLabel" figure="ImportOperationReadExternalLabelFigure" elementIcon="false"/>
     <labels name="ImportOperationUseExternalLabel" figure="ImportOperationUseExternalLabelFigure" elementIcon="false"/>
     <labels name="ExportOperationUseExternalLabel" figure="ExportOperationUseExternalLabelFigure" elementIcon="false"/>

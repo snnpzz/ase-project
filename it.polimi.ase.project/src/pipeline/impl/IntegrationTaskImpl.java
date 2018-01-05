@@ -4,13 +4,18 @@ package pipeline.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import org.eclipse.emf.ecore.util.InternalEList;
 import pipeline.Attribute;
+import pipeline.IntegrationOperation;
 import pipeline.IntegrationTask;
 import pipeline.PipelinePackage;
 
@@ -22,22 +27,21 @@ import pipeline.PipelinePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.IntegrationTaskImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link pipeline.impl.IntegrationTaskImpl#getIntegrationOperations <em>Integration Operations</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class IntegrationTaskImpl extends TaskImpl implements IntegrationTask {
 	/**
-	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' reference list.
+	 * The cached value of the '{@link #getIntegrationOperations() <em>Integration Operations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttributes()
+	 * @see #getIntegrationOperations()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Attribute> attributes;
-
+	protected EList<IntegrationOperation> integrationOperations;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -62,11 +66,25 @@ public class IntegrationTaskImpl extends TaskImpl implements IntegrationTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Attribute> getAttributes() {
-		if (attributes == null) {
-			attributes = new EObjectResolvingEList<Attribute>(Attribute.class, this, PipelinePackage.INTEGRATION_TASK__ATTRIBUTES);
+	public EList<IntegrationOperation> getIntegrationOperations() {
+		if (integrationOperations == null) {
+			integrationOperations = new EObjectContainmentEList<IntegrationOperation>(IntegrationOperation.class, this, PipelinePackage.INTEGRATION_TASK__INTEGRATION_OPERATIONS);
 		}
-		return attributes;
+		return integrationOperations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PipelinePackage.INTEGRATION_TASK__INTEGRATION_OPERATIONS:
+				return ((InternalEList<?>)getIntegrationOperations()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -77,8 +95,8 @@ public class IntegrationTaskImpl extends TaskImpl implements IntegrationTask {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.INTEGRATION_TASK__ATTRIBUTES:
-				return getAttributes();
+			case PipelinePackage.INTEGRATION_TASK__INTEGRATION_OPERATIONS:
+				return getIntegrationOperations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -92,9 +110,9 @@ public class IntegrationTaskImpl extends TaskImpl implements IntegrationTask {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.INTEGRATION_TASK__ATTRIBUTES:
-				getAttributes().clear();
-				getAttributes().addAll((Collection<? extends Attribute>)newValue);
+			case PipelinePackage.INTEGRATION_TASK__INTEGRATION_OPERATIONS:
+				getIntegrationOperations().clear();
+				getIntegrationOperations().addAll((Collection<? extends IntegrationOperation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -108,8 +126,8 @@ public class IntegrationTaskImpl extends TaskImpl implements IntegrationTask {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.INTEGRATION_TASK__ATTRIBUTES:
-				getAttributes().clear();
+			case PipelinePackage.INTEGRATION_TASK__INTEGRATION_OPERATIONS:
+				getIntegrationOperations().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -123,8 +141,8 @@ public class IntegrationTaskImpl extends TaskImpl implements IntegrationTask {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.INTEGRATION_TASK__ATTRIBUTES:
-				return attributes != null && !attributes.isEmpty();
+			case PipelinePackage.INTEGRATION_TASK__INTEGRATION_OPERATIONS:
+				return integrationOperations != null && !integrationOperations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

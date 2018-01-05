@@ -624,6 +624,29 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link pipeline.IntegrationOperation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IntegrationOperationItemProvider integrationOperationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pipeline.IntegrationOperation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIntegrationOperationAdapter() {
+		if (integrationOperationItemProvider == null) {
+			integrationOperationItemProvider = new IntegrationOperationItemProvider(this);
+		}
+
+		return integrationOperationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -746,6 +769,7 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 		if (simpleAttributeItemProvider != null) simpleAttributeItemProvider.dispose();
 		if (complexAttributeItemProvider != null) complexAttributeItemProvider.dispose();
 		if (visualizationOperationItemProvider != null) visualizationOperationItemProvider.dispose();
+		if (integrationOperationItemProvider != null) integrationOperationItemProvider.dispose();
 	}
 
 }

@@ -45,7 +45,6 @@ import pipeline.diagram.edit.parts.ImportOperationEditPart;
 import pipeline.diagram.edit.parts.ImportOperationIDEditPart;
 import pipeline.diagram.edit.parts.ImportOperationReadEditPart;
 import pipeline.diagram.edit.parts.ImportOperationUseEditPart;
-import pipeline.diagram.edit.parts.IntegrationTaskAttributesEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
@@ -67,7 +66,6 @@ import pipeline.diagram.edit.parts.WrappingLabel4EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel5EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel6EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel7EditPart;
-import pipeline.diagram.edit.parts.WrappingLabel8EditPart;
 import pipeline.diagram.edit.parts.WrappingLabelEditPart;
 
 /**
@@ -434,33 +432,28 @@ public class PipelineVisualIDRegistry {
 				return true;
 			}
 			break;
-		case IntegrationTaskAttributesEditPart.VISUAL_ID:
+		case ImportOperationReadEditPart.VISUAL_ID:
 			if (WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ImportOperationReadEditPart.VISUAL_ID:
+		case ImportOperationUseEditPart.VISUAL_ID:
 			if (WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ImportOperationUseEditPart.VISUAL_ID:
+		case ExportOperationUseEditPart.VISUAL_ID:
 			if (WrappingLabel5EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ExportOperationUseEditPart.VISUAL_ID:
+		case ExportOperationWriteEditPart.VISUAL_ID:
 			if (WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ExportOperationWriteEditPart.VISUAL_ID:
-			if (WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case ChartAxesEditPart.VISUAL_ID:
-			if (WrappingLabel8EditPart.VISUAL_ID == nodeVisualID) {
+			if (WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

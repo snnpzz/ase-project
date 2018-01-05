@@ -35,7 +35,6 @@ import pipeline.diagram.edit.parts.FileEditPart;
 import pipeline.diagram.edit.parts.ImportOperationEditPart;
 import pipeline.diagram.edit.parts.ImportOperationReadEditPart;
 import pipeline.diagram.edit.parts.ImportOperationUseEditPart;
-import pipeline.diagram.edit.parts.IntegrationTaskAttributesEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
@@ -175,11 +174,6 @@ public class PipelineElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType IntegrationTaskAttributes_4005 = getElementType(
-			"it.polimi.ase.project.diagram.IntegrationTaskAttributes_4005"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
 	public static final IElementType ImportOperationRead_4006 = getElementType(
 			"it.polimi.ase.project.diagram.ImportOperationRead_4006"); //$NON-NLS-1$
 	/**
@@ -282,8 +276,6 @@ public class PipelineElementTypes {
 
 			elements.put(InternalDataFlowSchema_4004, PipelinePackage.eINSTANCE.getInternalDataFlow_Schema());
 
-			elements.put(IntegrationTaskAttributes_4005, PipelinePackage.eINSTANCE.getIntegrationTask_Attributes());
-
 			elements.put(ImportOperationRead_4006, PipelinePackage.eINSTANCE.getImportOperation_Read());
 
 			elements.put(ImportOperationUse_4007, PipelinePackage.eINSTANCE.getImportOperation_Use());
@@ -331,7 +323,6 @@ public class PipelineElementTypes {
 			KNOWN_ELEMENT_TYPES.add(InternalDataFlow_4002);
 			KNOWN_ELEMENT_TYPES.add(DataFlowSchema_4003);
 			KNOWN_ELEMENT_TYPES.add(InternalDataFlowSchema_4004);
-			KNOWN_ELEMENT_TYPES.add(IntegrationTaskAttributes_4005);
 			KNOWN_ELEMENT_TYPES.add(ImportOperationRead_4006);
 			KNOWN_ELEMENT_TYPES.add(ImportOperationUse_4007);
 			KNOWN_ELEMENT_TYPES.add(ExportOperationUse_4008);
@@ -388,8 +379,6 @@ public class PipelineElementTypes {
 			return DataFlowSchema_4003;
 		case InternalDataFlowSchemaEditPart.VISUAL_ID:
 			return InternalDataFlowSchema_4004;
-		case IntegrationTaskAttributesEditPart.VISUAL_ID:
-			return IntegrationTaskAttributes_4005;
 		case ImportOperationReadEditPart.VISUAL_ID:
 			return ImportOperationRead_4006;
 		case ImportOperationUseEditPart.VISUAL_ID:

@@ -160,41 +160,35 @@ public class PipelineEditPartFactory implements EditPartFactory {
 			case WrappingLabel2EditPart.VISUAL_ID:
 				return new WrappingLabel2EditPart(view);
 
-			case IntegrationTaskAttributesEditPart.VISUAL_ID:
-				return new IntegrationTaskAttributesEditPart(view);
+			case ImportOperationReadEditPart.VISUAL_ID:
+				return new ImportOperationReadEditPart(view);
 
 			case WrappingLabel3EditPart.VISUAL_ID:
 				return new WrappingLabel3EditPart(view);
 
-			case ImportOperationReadEditPart.VISUAL_ID:
-				return new ImportOperationReadEditPart(view);
+			case ImportOperationUseEditPart.VISUAL_ID:
+				return new ImportOperationUseEditPart(view);
 
 			case WrappingLabel4EditPart.VISUAL_ID:
 				return new WrappingLabel4EditPart(view);
 
-			case ImportOperationUseEditPart.VISUAL_ID:
-				return new ImportOperationUseEditPart(view);
+			case ExportOperationUseEditPart.VISUAL_ID:
+				return new ExportOperationUseEditPart(view);
 
 			case WrappingLabel5EditPart.VISUAL_ID:
 				return new WrappingLabel5EditPart(view);
 
-			case ExportOperationUseEditPart.VISUAL_ID:
-				return new ExportOperationUseEditPart(view);
+			case ExportOperationWriteEditPart.VISUAL_ID:
+				return new ExportOperationWriteEditPart(view);
 
 			case WrappingLabel6EditPart.VISUAL_ID:
 				return new WrappingLabel6EditPart(view);
 
-			case ExportOperationWriteEditPart.VISUAL_ID:
-				return new ExportOperationWriteEditPart(view);
-
-			case WrappingLabel7EditPart.VISUAL_ID:
-				return new WrappingLabel7EditPart(view);
-
 			case ChartAxesEditPart.VISUAL_ID:
 				return new ChartAxesEditPart(view);
 
-			case WrappingLabel8EditPart.VISUAL_ID:
-				return new WrappingLabel8EditPart(view);
+			case WrappingLabel7EditPart.VISUAL_ID:
+				return new WrappingLabel7EditPart(view);
 
 			}
 		}

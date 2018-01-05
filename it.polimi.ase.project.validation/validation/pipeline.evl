@@ -174,8 +174,8 @@ context CollectionTask{
 	}
 	
 	constraint pairsOfSchema {
-		check: self.importOperations.impUses -> forAll(s1 | self.outgoing -> select(df | df.schema == s1) -> size() > 0) and
-			self.outgoing.schema -> forAll(s2 | self.importOperations -> select(i | i.impUses == s2) -> size() > 0)
+		check: self.importOperations.use -> forAll(s1 | self.outgoing -> select(df | df.schema == s1) -> size() > 0) and
+			self.outgoing.schema -> forAll(s2 | self.importOperations -> select(i | i.use == s2) -> size() > 0)
 		message: "Links to schema must be paired wrt import and outgoing dataflow"
 	}
 }
@@ -189,7 +189,7 @@ context IntegrationTask{
 	}
 	
 	constraint canIntegrate {
-		check: self.attributes -> forAll(a1 | self.incoming.source.importOperations.impUses.attributes -> forAll(a2 | a1 == a2)) 
+		check: self.attributes -> forAll(a1 | self.incoming.source.importOperations.use.attributes -> forAll(a2 | a1 == a2)) 
 		message: "The attribute(s) for integration task must be present in all source schemas"
 	}
 	

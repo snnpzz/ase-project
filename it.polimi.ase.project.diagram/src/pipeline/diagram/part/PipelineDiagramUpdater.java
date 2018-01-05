@@ -58,7 +58,6 @@ import pipeline.diagram.edit.parts.FileEditPart;
 import pipeline.diagram.edit.parts.ImportOperationEditPart;
 import pipeline.diagram.edit.parts.ImportOperationReadEditPart;
 import pipeline.diagram.edit.parts.ImportOperationUseEditPart;
-import pipeline.diagram.edit.parts.IntegrationTaskAttributesEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
@@ -471,10 +470,7 @@ public class PipelineDiagramUpdater {
 	 * @generated
 	 */
 	public static List<PipelineLinkDescriptor> getIntegrationTask_2002ContainedLinks(View view) {
-		IntegrationTask modelElement = (IntegrationTask) view.getElement();
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_IntegrationTask_Attributes_4005(modelElement));
-		return result;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -746,7 +742,6 @@ public class PipelineDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_IntegrationTask_Attributes_4005(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Chart_Axes_4010(modelElement, crossReferences));
 		return result;
 	}
@@ -755,12 +750,7 @@ public class PipelineDiagramUpdater {
 	 * @generated
 	 */
 	public static List<PipelineLinkDescriptor> getComplexAttribute_3004IncomingLinks(View view) {
-		ComplexAttribute modelElement = (ComplexAttribute) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_IntegrationTask_Attributes_4005(modelElement, crossReferences));
-		return result;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -771,7 +761,6 @@ public class PipelineDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_IntegrationTask_Attributes_4005(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Chart_Axes_4010(modelElement, crossReferences));
 		return result;
 	}
@@ -780,12 +769,7 @@ public class PipelineDiagramUpdater {
 	 * @generated
 	 */
 	public static List<PipelineLinkDescriptor> getComplexAttribute_3006IncomingLinks(View view) {
-		ComplexAttribute modelElement = (ComplexAttribute) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_IntegrationTask_Attributes_4005(modelElement, crossReferences));
-		return result;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -819,7 +803,6 @@ public class PipelineDiagramUpdater {
 		IntegrationTask modelElement = (IntegrationTask) view.getElement();
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_DataFlow_4001(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_IntegrationTask_Attributes_4005(modelElement));
 		return result;
 	}
 
@@ -1068,23 +1051,6 @@ public class PipelineDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_IntegrationTask_Attributes_4005(
-			Attribute target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
-		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() == PipelinePackage.eINSTANCE.getIntegrationTask_Attributes()) {
-				result.add(new PipelineLinkDescriptor(setting.getEObject(), target,
-						PipelineElementTypes.IntegrationTaskAttributes_4005,
-						IntegrationTaskAttributesEditPart.VISUAL_ID));
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
 	private static Collection<PipelineLinkDescriptor> getIncomingFeatureModelFacetLinks_ImportOperation_Read_4006(
 			Source target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
@@ -1226,20 +1192,6 @@ public class PipelineDiagramUpdater {
 		}
 		result.add(new PipelineLinkDescriptor(source, destination, PipelineElementTypes.InternalDataFlowSchema_4004,
 				InternalDataFlowSchemaEditPart.VISUAL_ID));
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	private static Collection<PipelineLinkDescriptor> getOutgoingFeatureModelFacetLinks_IntegrationTask_Attributes_4005(
-			IntegrationTask source) {
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		for (Iterator<?> destinations = source.getAttributes().iterator(); destinations.hasNext();) {
-			Attribute destination = (Attribute) destinations.next();
-			result.add(new PipelineLinkDescriptor(source, destination,
-					PipelineElementTypes.IntegrationTaskAttributes_4005, IntegrationTaskAttributesEditPart.VISUAL_ID));
-		}
 		return result;
 	}
 

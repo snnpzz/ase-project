@@ -106,12 +106,13 @@ context Pipeline {
 	}
 	
 	constraint asManySourcesAsManyImportOperations {
-		check: self.sources -> size() == (self.tasks -> select(t | t.isTypeOf(CollectionTask)).importOperations) -> size()
+		check: self.sources -> size() == (self.tasks -> select(t | t.isTypeOf(CollectionTask)) -> collect(t | t.importOperations -> size()) -> sum())
 		message: "There must be as many input sources as many import operations."
+			
 	}
 	
 	constraint asManyFilesAsManyExportOperations {
-		check: self.files -> size() == (self.tasks -> select(t | t.isTypeOf(ExportTask)).exportOperations) -> size()
+		check: self.files -> size() == (self.tasks -> select(t | t.isTypeOf(ExportTask)) -> collect(t | t.exportOperations -> size()) -> sum())
 		message: "There must be as many output files as many export operations."
 	}
 	
@@ -134,7 +135,7 @@ context Pipeline {
 		check: self.tasks -> select(t | t.isTypeOf(AnalysisTask)).analysisOperations -> 
 			forAll (a1 | self.tasks -> select(t | t.isTypeOf(AnalysisTask)).analysisOperations -> 
 			forAll (a2 | a1 <> a2 implies a1.ID <> a2.ID and self.tasks -> select(t | t.isTypeOf(CleaningTask)).cleaningOperations -> forAll(a3 | a1.ID <> a3.ID) ))
-		message: "There can't be more analysis operations with the same name"
+		message: "There can't be more operations (either cleaning or analysis) with the same ID"
 	}
 }
 
@@ -157,8 +158,8 @@ context CollectionTask {
 	}
 	
 	constraint manyDataFlowsFromCollectionAsManyImports {
-		check: self.importOperations -> size() == self.outgoing -> size()
-		message: "In collection task there must be as many outgoing data flows as many input sources"
+		check: self.importOperations -> size() == (self.outgoing -> size())
+		message:  "In collection task there must be as many outgoing data flows as many input sources"
 	}
 	
 	constraint allOutgoingDataFlowsTargetingSameIntegrationTask {

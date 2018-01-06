@@ -38,13 +38,6 @@ context Pipeline {
 		message: "Missing outgoing data flow for some tasks"
 	}
 	
-	constraint sameDataFlowSchema {
-		check: self.tasks -> reject(T1 | T1.isTypeOf(CollectionTask) or T1.isTypeOf(ExportTask)) ->
-			forAll(t1 | self.tasks -> reject(T2 | T2.isTypeOf(CollectionTask) or T2.isTypeOf(ExportTask)) ->
-			forAll(t2 | t1.outgoing.schema == t2.outgoing.schema))
-		message: "Data Flow between tasks must be linked to the same schema"
-	}
-	
 	constraint operationNextIsCleaning {
 		check: self.internalDataFlows -> select(d | d.source.isKindOf(CleaningOperation) and 
 			d.target.isKindOf(AnalysisOperation)) -> size() == 0
@@ -144,6 +137,7 @@ context CollectionTask {
 
 
 context IntegrationTask {
+
 	constraint nextTypeIntegration {
 		check: self.outgoing.target -> select(t | t.isTypeOf(CollectionTask) or t.isTypeOf(IntegrationTask) or
 			t.isTypeOf(VisualizationTask) or t.isTypeOf(ExportTask)) -> size() == 0
@@ -155,8 +149,8 @@ context IntegrationTask {
 		message: "Integration task is not needed!"
 	}
 	
-	constraint need2AttributesForEachOperation {
-		check: self.integrationOperations -> forAll(op | op.attributes -> size() == 2)
+	constraint needAtLeast2AttributesForEachOperation {
+		check: self.integrationOperations -> forAll(op | op.attributes -> size() >= 2)
 		message: "There must be 2 attributes for each integration operation"
 	}
 }
@@ -231,6 +225,11 @@ context VisualizationTask {
 	constraint nextTypeVisualization {
 		check: self.outgoing.target -> reject(t | t.isTypeOf(ExportTask)) -> size() == 0
 		message: "Visualization task can be linked only to export task"
+	}
+	
+	constraint sameIncomingAndOutgoingSchema {
+		check: self.incoming.schema.includesAll(self.outgoing.schema)
+		message: "The incoming and the outgoing data flow must have the same schema."
 	}
 	
 }

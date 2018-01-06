@@ -315,13 +315,13 @@
                   <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HNz0ovMIEee_osTp2qioFw"/>
                 </children>
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_HNymgfMIEee_osTp2qioFw" fontName="Segoe UI" fontHeight="8"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HNymgvMIEee_osTp2qioFw" x="35" y="29" width="68" height="68"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HNymgvMIEee_osTp2qioFw" x="115" y="29" width="68" height="68"/>
               </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_Cn9D0vMIEee_osTp2qioFw"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_Cn9D0_MIEee_osTp2qioFw"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_Cn8cwfMIEee_osTp2qioFw" fontName="Segoe UI" fontHeight="8" bold="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cn8cwvMIEee_osTp2qioFw" x="1120" y="380"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cn8cwvMIEee_osTp2qioFw" x="1040" y="380" width="230"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_G7c5UPMIEee_osTp2qioFw" type="2001" element="_G7O24PMIEee_osTp2qioFw">
             <children xmi:type="notation:Node" xmi:id="_G7c5U_MIEee_osTp2qioFw" type="5002">
@@ -702,70 +702,6 @@
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Gb7MFPMFEee_osTp2qioFw" id="(1.0,0.3333333333333333)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Gb7MFfMFEee_osTp2qioFw" id="(0.0,0.3333333333333333)"/>
           </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_kud9gPMFEee_osTp2qioFw" type="4001" element="_kuQiIPMFEee_osTp2qioFw" source="_6LkNsPMEEee_osTp2qioFw" target="_xUO2EPMDEee_osTp2qioFw">
-            <children xmi:type="notation:Node" xmi:id="_kud9hPMFEee_osTp2qioFw" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kud9hfMFEee_osTp2qioFw" x="-1" y="-8"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_kud9hvMFEee_osTp2qioFw" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kud9h_MFEee_osTp2qioFw" x="-3" y="12"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_kud9iPMFEee_osTp2qioFw" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kud9ifMFEee_osTp2qioFw" x="-1" y="11"/>
-            </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_kud9gfMFEee_osTp2qioFw"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_kud9gvMFEee_osTp2qioFw" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kud9g_MFEee_osTp2qioFw" points="[0, 0, 9, -142]$[-9, 142, 0, 0]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kuekkPMFEee_osTp2qioFw" id="(0.5,1.0)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kuekkfMFEee_osTp2qioFw" id="(0.5,0.0)"/>
-          </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_t23scPMFEee_osTp2qioFw" type="4001" element="_t2xl0PMFEee_osTp2qioFw" source="_LoILMPMFEee_osTp2qioFw" target="_aUWkgPMEEee_osTp2qioFw">
-            <children xmi:type="notation:Node" xmi:id="_t23sdPMFEee_osTp2qioFw" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_t23sdfMFEee_osTp2qioFw" x="-48" y="-9"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_t23sdvMFEee_osTp2qioFw" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_t23sd_MFEee_osTp2qioFw" x="-3" y="11"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_t24TgPMFEee_osTp2qioFw" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_t24TgfMFEee_osTp2qioFw" x="-13" y="10"/>
-            </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_t23scfMFEee_osTp2qioFw"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_t23scvMFEee_osTp2qioFw" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_t23sc_MFEee_osTp2qioFw" points="[0, 0, 15, -142]$[-15, 142, 0, 0]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_t24TgvMFEee_osTp2qioFw" id="(0.36764705882352944,1.0)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_t24Tg_MFEee_osTp2qioFw" id="(0.3333333333333333,0.0)"/>
-          </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_MVvCoPMGEee_osTp2qioFw" type="4001" element="_MVjccPMGEee_osTp2qioFw" source="_IdGkMPMGEee_osTp2qioFw" target="_yYfIYPMDEee_osTp2qioFw">
-            <children xmi:type="notation:Node" xmi:id="_MVvpsPMGEee_osTp2qioFw" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MVvpsfMGEee_osTp2qioFw" x="1" y="-9"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_MVvpsvMGEee_osTp2qioFw" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MVvps_MGEee_osTp2qioFw" x="-1" y="11"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_MVvptPMGEee_osTp2qioFw" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MVvptfMGEee_osTp2qioFw" y="10"/>
-            </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_MVvCofMGEee_osTp2qioFw"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_MVvCovMGEee_osTp2qioFw" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MVvCo_MGEee_osTp2qioFw" points="[0, 0, 21, -217]$[-21, 217, 0, 0]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MVvptvMGEee_osTp2qioFw" id="(0.5882352941176471,1.0)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MVvpt_MGEee_osTp2qioFw" id="(0.5666666666666667,0.0)"/>
-          </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_Nqt4kPMGEee_osTp2qioFw" type="4001" element="_NqlVsPMGEee_osTp2qioFw" source="_IdGkMPMGEee_osTp2qioFw" target="_b9qEoPMEEee_osTp2qioFw">
-            <children xmi:type="notation:Node" xmi:id="_Nqt4lPMGEee_osTp2qioFw" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Nqt4lfMGEee_osTp2qioFw" x="-1" y="-9"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_Nqt4lvMGEee_osTp2qioFw" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Nqt4l_MGEee_osTp2qioFw" y="9"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_Nqt4mPMGEee_osTp2qioFw" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Nqt4mfMGEee_osTp2qioFw" x="-2" y="10"/>
-            </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Nqt4kfMGEee_osTp2qioFw"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_Nqt4kvMGEee_osTp2qioFw" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Nqt4k_MGEee_osTp2qioFw" points="[0, 0, -63, -177]$[63, 177, 0, 0]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Nqt4mvMGEee_osTp2qioFw" id="(0.4411764705882353,1.0)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Nqt4m_MGEee_osTp2qioFw" id="(0.26666666666666666,0.0)"/>
-          </edges>
           <edges xmi:type="notation:Edge" xmi:id="_-6Yl4PMHEee_osTp2qioFw" type="4001" element="_-6O04PMHEee_osTp2qioFw" source="_IdGkMPMGEee_osTp2qioFw" target="_6LkNsPMEEee_osTp2qioFw">
             <children xmi:type="notation:Node" xmi:id="_-6Yl5PMHEee_osTp2qioFw" type="6001">
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-6Yl5fMHEee_osTp2qioFw" y="-10"/>
@@ -812,7 +748,7 @@
             <styles xmi:type="notation:FontStyle" xmi:id="_DuJ24vMIEee_osTp2qioFw" fontName="Segoe UI" fontHeight="8"/>
             <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DuJ24_MIEee_osTp2qioFw" points="[0, 0, 0, -96]$[0, 96, 0, 0]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DuKd8vMIEee_osTp2qioFw" id="(0.47368421052631576,1.0)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DuKd8_MIEee_osTp2qioFw" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DuKd8_MIEee_osTp2qioFw" id="(0.6754385964912281,0.0)"/>
           </edges>
           <edges xmi:type="notation:Edge" xmi:id="_FDCmMPMIEee_osTp2qioFw" type="4001" element="_FC1K0PMIEee_osTp2qioFw" source="_DuJ24PMIEee_osTp2qioFw" target="_ICbhwPMDEee_osTp2qioFw">
             <children xmi:type="notation:Node" xmi:id="_FDDNQPMIEee_osTp2qioFw" type="6001">
@@ -856,7 +792,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='SourceNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_j7BgoPMAEee_osTp2qioFw" name="web.csv" incomingEdges="_2kpuMPMAEee_osTp2qioFw" width="-1" height="-1">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_j7BgoPMAEee_osTp2qioFw" name="web.json" incomingEdges="_2kpuMPMAEee_osTp2qioFw" width="-1" height="-1">
         <target xmi:type="pipeline:Source" href="sampleA.pipeline#//@sources.1"/>
         <semanticElements xmi:type="pipeline:Source" href="sampleA.pipeline#//@sources.1"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_j7CHsPMAEee_osTp2qioFw" showIcon="false" workspacePath="/it.polimi.ase.project.design/icons/source.svg">
@@ -1109,7 +1045,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
         </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_xUAzoPMDEee_osTp2qioFw" name="source" outgoingEdges="_jkjkkPMEEee_osTp2qioFw" incomingEdges="_ifW3EPMEEee_osTp2qioFw _kuQiIPMFEee_osTp2qioFw" width="3" height="3" resizeKind="EAST_WEST">
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_xUAzoPMDEee_osTp2qioFw" name="source" outgoingEdges="_jkjkkPMEEee_osTp2qioFw" incomingEdges="_ifW3EPMEEee_osTp2qioFw" width="3" height="3" resizeKind="EAST_WEST">
           <target xmi:type="pipeline:SimpleAttribute" href="sampleA.pipeline#//@schemas.2/@attributes.1"/>
           <semanticElements xmi:type="pipeline:SimpleAttribute" href="sampleA.pipeline#//@schemas.2/@attributes.1"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1120,7 +1056,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
         </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_yYVXYPMDEee_osTp2qioFw" name="socialCount" outgoingEdges="_GbsikPMFEee_osTp2qioFw" incomingEdges="_jkjkkPMEEee_osTp2qioFw _MVjccPMGEee_osTp2qioFw" width="3" height="3" resizeKind="EAST_WEST">
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_yYVXYPMDEee_osTp2qioFw" name="socialCount" outgoingEdges="_GbsikPMFEee_osTp2qioFw" incomingEdges="_jkjkkPMEEee_osTp2qioFw" width="3" height="3" resizeKind="EAST_WEST">
           <target xmi:type="pipeline:SimpleAttribute" href="sampleA.pipeline#//@schemas.2/@attributes.2"/>
           <semanticElements xmi:type="pipeline:SimpleAttribute" href="sampleA.pipeline#//@schemas.2/@attributes.2"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1131,7 +1067,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
         </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_aUGs4PMEEee_osTp2qioFw" name="siteName" outgoingEdges="_k8pY4PMEEee_osTp2qioFw" incomingEdges="_GbsikPMFEee_osTp2qioFw _t2xl0PMFEee_osTp2qioFw" width="3" height="3" resizeKind="EAST_WEST">
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_aUGs4PMEEee_osTp2qioFw" name="siteName" outgoingEdges="_k8pY4PMEEee_osTp2qioFw" incomingEdges="_GbsikPMFEee_osTp2qioFw" width="3" height="3" resizeKind="EAST_WEST">
           <target xmi:type="pipeline:SimpleAttribute" href="sampleA.pipeline#//@schemas.2/@attributes.3"/>
           <semanticElements xmi:type="pipeline:SimpleAttribute" href="sampleA.pipeline#//@schemas.2/@attributes.3"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1142,7 +1078,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
         </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_b9aNAPMEEee_osTp2qioFw" name="visits" incomingEdges="_k8pY4PMEEee_osTp2qioFw _NqlVsPMGEee_osTp2qioFw" width="3" height="3" resizeKind="EAST_WEST">
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_b9aNAPMEEee_osTp2qioFw" name="visits" incomingEdges="_k8pY4PMEEee_osTp2qioFw" width="3" height="3" resizeKind="EAST_WEST">
           <target xmi:type="pipeline:SimpleAttribute" href="sampleA.pipeline#//@schemas.2/@attributes.4"/>
           <semanticElements xmi:type="pipeline:SimpleAttribute" href="sampleA.pipeline#//@schemas.2/@attributes.4"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1197,7 +1133,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']"/>
-        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_6LU9IPMEEee_osTp2qioFw" name="removeColumn" outgoingEdges="_kuQiIPMFEee_osTp2qioFw __QHlUPMHEee_osTp2qioFw" incomingEdges="_-6O04PMHEee_osTp2qioFw" width="-1" height="-1">
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_6LU9IPMEEee_osTp2qioFw" name="removeColumn" outgoingEdges="__QHlUPMHEee_osTp2qioFw" incomingEdges="_-6O04PMHEee_osTp2qioFw" width="-1" height="-1">
           <target xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.0"/>
           <semanticElements xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.0"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1208,7 +1144,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationSubNode']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Ln8lAPMFEee_osTp2qioFw" name="removeColumn" outgoingEdges="_t2xl0PMFEee_osTp2qioFw" incomingEdges="__QHlUPMHEee_osTp2qioFw" width="-1" height="-1">
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Ln8lAPMFEee_osTp2qioFw" name="removeColumn" incomingEdges="__QHlUPMHEee_osTp2qioFw" width="-1" height="-1">
           <target xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.1"/>
           <semanticElements xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.1"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1219,7 +1155,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationSubNode']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Ic5v4PMGEee_osTp2qioFw" name="removeNulls" outgoingEdges="_MVjccPMGEee_osTp2qioFw _NqlVsPMGEee_osTp2qioFw _-6O04PMHEee_osTp2qioFw" width="-1" height="-1">
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Ic5v4PMGEee_osTp2qioFw" name="removeNulls" outgoingEdges="_-6O04PMHEee_osTp2qioFw" width="-1" height="-1">
           <target xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.2"/>
           <semanticElements xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.2"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1325,38 +1261,6 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_kuQiIPMFEee_osTp2qioFw" sourceNode="_6LU9IPMEEee_osTp2qioFw" targetNode="_xUAzoPMDEee_osTp2qioFw">
-        <target xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.0"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_kuRJMPMFEee_osTp2qioFw" size="2">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='operationAttributesEdge']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_kuRJMfMFEee_osTp2qioFw"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='operationAttributesEdge']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_t2xl0PMFEee_osTp2qioFw" sourceNode="_Ln8lAPMFEee_osTp2qioFw" targetNode="_aUGs4PMEEee_osTp2qioFw">
-        <target xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.1"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_t2xl0fMFEee_osTp2qioFw" size="2">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='operationAttributesEdge']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_t2xl0vMFEee_osTp2qioFw"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='operationAttributesEdge']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_MVjccPMGEee_osTp2qioFw" sourceNode="_Ic5v4PMGEee_osTp2qioFw" targetNode="_yYVXYPMDEee_osTp2qioFw">
-        <target xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.2"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_MVjccfMGEee_osTp2qioFw" size="2">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='operationAttributesEdge']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_MVjccvMGEee_osTp2qioFw"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='operationAttributesEdge']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_NqlVsPMGEee_osTp2qioFw" sourceNode="_Ic5v4PMGEee_osTp2qioFw" targetNode="_b9aNAPMEEee_osTp2qioFw">
-        <target xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.2"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_NqlVsfMGEee_osTp2qioFw" size="2">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='operationAttributesEdge']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_NqlVsvMGEee_osTp2qioFw"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='operationAttributesEdge']"/>
-      </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_-6O04PMHEee_osTp2qioFw" sourceNode="_Ic5v4PMGEee_osTp2qioFw" targetNode="_6LU9IPMEEee_osTp2qioFw">
         <target xmi:type="pipeline:InternalDataFlow" href="sampleA.pipeline#//@internalDataFlows.0"/>
         <semanticElements xmi:type="pipeline:InternalDataFlow" href="sampleA.pipeline#//@internalDataFlows.0"/>
@@ -1412,7 +1316,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='schemaEdge']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_G7O24PMIEee_osTp2qioFw" incomingEdges="_IryOgPMIEee_osTp2qioFw" width="-1" height="-1">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_G7O24PMIEee_osTp2qioFw" name="analysis.csv" incomingEdges="_IryOgPMIEee_osTp2qioFw" width="-1" height="-1">
         <target xmi:type="pipeline:File" href="sampleA.pipeline#//@files.0"/>
         <semanticElements xmi:type="pipeline:File" href="sampleA.pipeline#//@files.0"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>

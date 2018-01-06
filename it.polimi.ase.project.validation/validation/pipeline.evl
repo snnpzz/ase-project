@@ -91,6 +91,16 @@ context Pipeline {
  		check: self.files -> forAll(f | (self.tasks -> select(t | t.isTypeOf(ExportTask)).exportOperations -> forAll(e | e.write == f)) -> size() == 1)
  		message: "Exports must be linked to different output files"
   	}
+  	
+  	constraint formatExportedOnce {
+  		check: self.files.format -> forAll(f1 | self.files.format -> select(f2 | f2 == f1) -> size() == 1)
+  		message: "Each format can be exported at most once"
+  	}
+  	
+  	constraint ExportedFilesNameAreDifferent {
+  		check: self.files -> forAll(f1 | self.files -> forAll(f2 | f1 <> f2 implies f1.name <> f2.name))
+  		message: "Exported files must have different names"
+  	}
 	
 	constraint uniqueOperationName {
 		check: self.tasks -> select(t | t.isTypeOf(AnalysisTask)).analysisOperations -> 
@@ -168,12 +178,12 @@ context CleaningTask {
 		message: "Cleaning task can be linked only to analysis task"
 	}
 	
-	constraint uniqueInternalDataFlowIn {
+	constraint uniqueInternalDataFlowOut {
 		check: self.CleaningOperations -> forAll(o | o.outgoing -> size() <= 1)
 		message: "Cleaning operations can have at maximum one outgoing internal data flow"
 	}
 	
-	constraint uniqueInternalDataFlowOut {
+	constraint uniqueInternalDataFlowIn {
 		check: self.cleaningOperations -> forAll(o | o.incoming -> size() <= 1)
 		message: "Cleaning operations can have at maximum one incoming internal data flow"
 	}
@@ -216,6 +226,16 @@ context AnalysisTask{
 	constraint finalAnalysisOperation {
 		check: self.analysisOperations -> select(op | op.outgoing == null) -> size() == 1
 		message: "There can be just one final analysis operation. Some internal data flows are wrong"
+	}
+	
+	constraint outgoingDataFlowHasGeneratedAttributes {
+		check: self.outgoing.schema.attributes.includesAll(self.analysisOperations.outputAttributes)
+		message: "The outgoing dataflow schema of analysis doesn't respect the generated attributes" 
+	}
+	
+	constraint outgoingDataFlowHasRightSchema {
+		check: true
+		message: "The outgoing dataflow schema is wrong" 
 	}
 }
 
@@ -269,6 +289,16 @@ context ComplexAttribute {
 	constraint uniqueAttribute {
 		check: self.attributes -> forAll (a1 | self.attributes -> select (a2 | a1 == a2) -> size() == 1)
 		message: "There can't be many equal attributes in the same attribute"
+	}
+	
+}
+
+
+context ClusteringAnalysisOperation {
+
+	constraint KisSet{
+		check: self.k <> 0
+		message: "K parameter for clustering analysis operation must be set"
 	}
 	
 }

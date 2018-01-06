@@ -13,21 +13,21 @@
     <integrationOperations ID="joinDate1" attributes="//@schemas.0/@attributes.0 //@schemas.1/@attributes.0"/>
   </tasks>
   <tasks xsi:type="pipeline:CleaningTask" incoming="//@dataFlows.2" outgoing="//@dataFlows.3">
-    <cleaningOperations xsi:type="pipeline:PredefinedCleaningOperation" incoming="//@internalDataFlows.0" outgoing="//@internalDataFlows.1" ID="removeSource" attributes="//@schemas.2/@attributes.1" type="removeColumn"/>
-    <cleaningOperations xsi:type="pipeline:PredefinedCleaningOperation" incoming="//@internalDataFlows.1" ID="removeSiteName" attributes="//@schemas.2/@attributes.3" type="removeColumn"/>
-    <cleaningOperations xsi:type="pipeline:PredefinedCleaningOperation" outgoing="//@internalDataFlows.0" ID="removeAllNulls" attributes="//@schemas.2/@attributes.2 //@schemas.2/@attributes.4"/>
+    <cleaningOperations xsi:type="pipeline:PredefinedCleaningOperation" incoming="//@internalDataFlows.0" outgoing="//@internalDataFlows.1" ID="removeSource" type="removeColumn"/>
+    <cleaningOperations xsi:type="pipeline:PredefinedCleaningOperation" incoming="//@internalDataFlows.1" ID="removeSiteName" type="removeColumn"/>
+    <cleaningOperations xsi:type="pipeline:PredefinedCleaningOperation" outgoing="//@internalDataFlows.0" ID="removeAllNulls"/>
   </tasks>
   <tasks xsi:type="pipeline:AnalysisTask" incoming="//@dataFlows.3" outgoing="//@dataFlows.4">
-    <analysisOperations xsi:type="pipeline:ClusteringAnalysisOperation"/>
+    <analysisOperations xsi:type="pipeline:ClusteringAnalysisOperation" k="2"/>
   </tasks>
   <tasks xsi:type="pipeline:ExportTask" incoming="//@dataFlows.4">
     <exportOperations write="//@files.0"/>
   </tasks>
   <internalDataFlows source="//@tasks.2/@cleaningOperations.2" target="//@tasks.2/@cleaningOperations.0"/>
   <internalDataFlows source="//@tasks.2/@cleaningOperations.0" target="//@tasks.2/@cleaningOperations.1"/>
-  <sources linkedTo="importSocial" name="social.csv"/>
-  <sources linkedTo="importWeb" name="web.csv"/>
-  <files comesFrom="//@tasks.4/@exportOperations.0"/>
+  <sources name="social.csv"/>
+  <sources name="web.json" format="JSON"/>
+  <files name="analysis.csv"/>
   <schemas ID="socialSchema">
     <attributes xsi:type="pipeline:SimpleAttribute" name="date" next="//@schemas.0/@attributes.1" type="mDate"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="hour" next="//@schemas.0/@attributes.2" previous="//@schemas.0/@attributes.0" type="mInteger"/>

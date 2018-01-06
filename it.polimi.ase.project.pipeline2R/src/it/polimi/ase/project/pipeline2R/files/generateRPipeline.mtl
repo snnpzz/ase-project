@@ -31,8 +31,13 @@ pdf("output/[aPipeline.ID/].pdf)
 
 # Integration: join all data in a unique one
 [if (aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)) <> null)]
-	[joinSources(aPipeline.tasks -> select(t | t.oclIsTypeOf(CollectionTask)).oclAsType(CollectionTask).importOperations.read, 
-		aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask).attributes)/]
+	[let intTask : IntegrationTask = aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask)]
+		[for (op : IntegrationOperation | intTask.integrationOperations)]
+			[joinSources((aPipeline.sources -> select(s | aPipeline.tasks -> select(t | t.oclIsTypeOf(CollectionTask)).oclAsType(CollectionTask).importOperations ->	
+				select(op1 | op1.use.attributes.includes(op.attributes)).read) ).oclAsType(Source), Source, 
+				op.attributes)/]
+		[/for]
+	[/let]
 [/if]
 
 
@@ -125,7 +130,7 @@ rm(list = ls())
 [/template]
 
 
-[template private joinSources(aSources: Sequence(Source), aAttributes: Sequence(Attribute))]
+[template private joinSources(source1: Source, source2: Source, attributes: Sequence(Attribute))]
 [let attrs : String = '']
 	[for (attr : Attribute | aAttributes)]
 		[attrs.concat('"').concat(attr.name).concat('",')/]

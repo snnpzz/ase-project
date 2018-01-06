@@ -234,8 +234,15 @@ context AnalysisTask{
 	}
 	
 	constraint outgoingDataFlowHasRightSchema {
-		check: true
+		check: self.outgoing.schema.attributes.includesAll(self.analysisOperations.outputAttributes) and
+			self.outgoing.schema.attributes.includesAll(self.incoming.schema.attributes)
 		message: "The outgoing dataflow schema is wrong" 
+	}
+	
+	constraint outputAttributeNameIsNotUsed {
+		check: self.analysisOperation.outputAttributes -> forAll(attr1 | self.analysisOperation.outputAttributes ->
+			forAll(attr2 | attr1 <> attr2 implies attr1.name <> attr2.name))
+		message: "Output attributes of analysis operation must have different names"
 	}
 }
 

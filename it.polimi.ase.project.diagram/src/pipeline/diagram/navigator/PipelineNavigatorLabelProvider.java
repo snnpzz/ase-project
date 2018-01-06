@@ -459,7 +459,7 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	private String getSchema_2009Text(View view) {
 		Schema domainModelElement = (Schema) view.getElement();
 		if (domainModelElement != null) {
-			return domainModelElement.getID();
+			return domainModelElement.getName();
 		} else {
 			PipelineDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2009); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$

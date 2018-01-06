@@ -71,7 +71,7 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_M6M0guGVEeeU3dy_CQ-Szg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_M6M0g-GVEeeU3dy_CQ-Szg" type="7001">
       <children xmi:type="notation:Node" xmi:id="_jWOnkOtXEee4hrsBN4wSAg" type="3001">
-        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Schema/ID"/>
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Schema/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_jWOnketXEee4hrsBN4wSAg"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_M6M0hOGVEeeU3dy_CQ-Szg"/>

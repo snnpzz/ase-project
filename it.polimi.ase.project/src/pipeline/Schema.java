@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pipeline.Schema#getAttributes <em>Attributes</em>}</li>
- *   <li>{@link pipeline.Schema#getID <em>ID</em>}</li>
+ *   <li>{@link pipeline.Schema#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getSchema()
@@ -42,29 +42,29 @@ public interface Schema extends EObject {
 	EList<Attribute> getAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>ID</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>ID</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>ID</em>' attribute.
-	 * @see #setID(String)
-	 * @see pipeline.PipelinePackage#getSchema_ID()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see pipeline.PipelinePackage#getSchema_Name()
 	 * @model id="true"
 	 * @generated
 	 */
-	String getID();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link pipeline.Schema#getID <em>ID</em>}' attribute.
+	 * Sets the value of the '{@link pipeline.Schema#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>ID</em>' attribute.
-	 * @see #getID()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setID(String value);
+	void setName(String value);
 
 } // Schema

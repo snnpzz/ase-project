@@ -35,7 +35,7 @@ public interface Attribute extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see pipeline.PipelinePackage#getAttribute_Name()
-	 * @model
+	 * @model id="true"
 	 * @generated
 	 */
 	String getName();

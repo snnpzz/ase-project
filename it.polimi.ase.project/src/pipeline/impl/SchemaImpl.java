@@ -31,7 +31,7 @@ import pipeline.Schema;
  * </p>
  * <ul>
  *   <li>{@link pipeline.impl.SchemaImpl#getAttributes <em>Attributes</em>}</li>
- *   <li>{@link pipeline.impl.SchemaImpl#getID <em>ID</em>}</li>
+ *   <li>{@link pipeline.impl.SchemaImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,24 +48,24 @@ public class SchemaImpl extends EObjectImpl implements Schema {
 	protected EList<Attribute> attributes;
 
 	/**
-	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getID()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ID_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getID()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String id = ID_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,8 +103,8 @@ public class SchemaImpl extends EObjectImpl implements Schema {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getID() {
-		return id;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -112,11 +112,11 @@ public class SchemaImpl extends EObjectImpl implements Schema {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setID(String newID) {
-		String oldID = id;
-		id = newID;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.SCHEMA__ID, oldID, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.SCHEMA__NAME, oldName, name));
 	}
 
 	/**
@@ -143,8 +143,8 @@ public class SchemaImpl extends EObjectImpl implements Schema {
 		switch (featureID) {
 			case PipelinePackage.SCHEMA__ATTRIBUTES:
 				return getAttributes();
-			case PipelinePackage.SCHEMA__ID:
-				return getID();
+			case PipelinePackage.SCHEMA__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,8 +162,8 @@ public class SchemaImpl extends EObjectImpl implements Schema {
 				getAttributes().clear();
 				getAttributes().addAll((Collection<? extends Attribute>)newValue);
 				return;
-			case PipelinePackage.SCHEMA__ID:
-				setID((String)newValue);
+			case PipelinePackage.SCHEMA__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -180,8 +180,8 @@ public class SchemaImpl extends EObjectImpl implements Schema {
 			case PipelinePackage.SCHEMA__ATTRIBUTES:
 				getAttributes().clear();
 				return;
-			case PipelinePackage.SCHEMA__ID:
-				setID(ID_EDEFAULT);
+			case PipelinePackage.SCHEMA__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -197,8 +197,8 @@ public class SchemaImpl extends EObjectImpl implements Schema {
 		switch (featureID) {
 			case PipelinePackage.SCHEMA__ATTRIBUTES:
 				return attributes != null && !attributes.isEmpty();
-			case PipelinePackage.SCHEMA__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case PipelinePackage.SCHEMA__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -213,8 +213,8 @@ public class SchemaImpl extends EObjectImpl implements Schema {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (ID: ");
-		result.append(id);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

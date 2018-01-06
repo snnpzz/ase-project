@@ -50,12 +50,12 @@ class Schema {
 
   @gmf.compartment(layout="list")
   val Attribute[+] attributes;
-  id attr String ID;
+  id attr String name;
 }
 
 @gmf.node(label="name")
 abstract class Attribute {
-  attr String name;
+  id attr String name;
   ref Attribute#previous next;
   ref Attribute#next previous;
 }

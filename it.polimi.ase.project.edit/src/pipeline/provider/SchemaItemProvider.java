@@ -63,25 +63,25 @@ public class SchemaItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIDPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the ID feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIDPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Schema_ID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Schema_ID_feature", "_UI_Schema_type"),
-				 PipelinePackage.Literals.SCHEMA__ID,
+				 getString("_UI_Schema_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Schema_name_feature", "_UI_Schema_type"),
+				 PipelinePackage.Literals.SCHEMA__NAME,
 				 true,
 				 false,
 				 false,
@@ -139,7 +139,7 @@ public class SchemaItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Schema)object).getID();
+		String label = ((Schema)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Schema_type") :
 			getString("_UI_Schema_type") + " " + label;
@@ -158,7 +158,7 @@ public class SchemaItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Schema.class)) {
-			case PipelinePackage.SCHEMA__ID:
+			case PipelinePackage.SCHEMA__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case PipelinePackage.SCHEMA__ATTRIBUTES:

@@ -378,13 +378,13 @@ public interface PipelinePackage extends EPackage {
 	int SCHEMA__ATTRIBUTES = 0;
 
 	/**
-	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA__ID = 1;
+	int SCHEMA__NAME = 1;
 
 	/**
 	 * The number of structural features of the '<em>Schema</em>' class.
@@ -2185,15 +2185,15 @@ public interface PipelinePackage extends EPackage {
 	EReference getSchema_Attributes();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Schema#getID <em>ID</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.Schema#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>ID</em>'.
-	 * @see pipeline.Schema#getID()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see pipeline.Schema#getName()
 	 * @see #getSchema()
 	 * @generated
 	 */
-	EAttribute getSchema_ID();
+	EAttribute getSchema_Name();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Attribute <em>Attribute</em>}'.
@@ -3262,12 +3262,12 @@ public interface PipelinePackage extends EPackage {
 		EReference SCHEMA__ATTRIBUTES = eINSTANCE.getSchema_Attributes();
 
 		/**
-		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SCHEMA__ID = eINSTANCE.getSchema_ID();
+		EAttribute SCHEMA__NAME = eINSTANCE.getSchema_Name();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.AttributeImpl <em>Attribute</em>}' class.

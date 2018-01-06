@@ -93,14 +93,15 @@
         <details key="layout" value="list"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" abstract="true">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//Attribute"
         eOpposite="#//Attribute/previous"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="previous" eType="#//Attribute"

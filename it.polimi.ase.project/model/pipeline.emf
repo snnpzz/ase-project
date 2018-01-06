@@ -134,6 +134,7 @@ class Source {
 class File {
   attr String name;
   attr String path;
+  attr Format format;
 }
 
 @gmf.node(label="title", figure="rounded")

@@ -1001,6 +1001,15 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getFile_Format() {
+		return (EAttribute)fileEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getChart() {
 		return chartEClass;
 	}
@@ -1450,6 +1459,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		fileEClass = createEClass(FILE);
 		createEAttribute(fileEClass, FILE__NAME);
 		createEAttribute(fileEClass, FILE__PATH);
+		createEAttribute(fileEClass, FILE__FORMAT);
 
 		chartEClass = createEClass(CHART);
 		createEAttribute(chartEClass, CHART__SIZE);
@@ -1634,6 +1644,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEClass(fileEClass, File.class, "File", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFile_Name(), ecorePackage.getEString(), "name", null, 0, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFile_Path(), ecorePackage.getEString(), "path", null, 0, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFile_Format(), this.getFormat(), "format", null, 0, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(chartEClass, Chart.class, "Chart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getChart_Size(), this.getSize(), "size", null, 0, 1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

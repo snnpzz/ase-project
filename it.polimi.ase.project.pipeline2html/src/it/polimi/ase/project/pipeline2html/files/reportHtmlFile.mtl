@@ -54,12 +54,10 @@
 						<div class="table-responsive">
 							<table class="table table-striped">
 								<thead>
-									<tr>
-										<th>#</th>
-										<th>ID</th>
-										<th>Task Type</th>
-										<th>Details</th>
-									</tr>
+									<th>#</th>
+									<th>ID</th>
+									<th>Task Type</th>
+									<th>Details</th>
 								</thead>
 								<tbody>
 									[generateTableRow(1, aPipeline.tasks -> select(aTask | aTask.oclIsTypeOf(CollectionTask)) -> first())/]
@@ -160,14 +158,14 @@
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
-				<tr>
-					<td>Name</td>
-					<td>Path</td>
-				</tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Path</th>
 			</thead>
 			<tbody>
 				<tr>
 					<td>[aExportOperation.write.name/]</td>
+					<td>[aExportOperation.write.format/]</td>
 					<td>[aExportOperation.write.path/]</td>
 				</tr>
 			</tbody>
@@ -187,18 +185,18 @@
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
-				<tr>
-					<td>Name</td>
-					<td>Path</td>
-					<td>Server Name</td>
-					<td>Port Number</td>
-					<td>Username</td>
-					<td>Password</td>
-				</tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Path</th>
+				<th>Server Name</th>
+				<th>Port Number</th>
+				<th>Username</th>
+				<th>Password</th>
 			</thead>
 			<tbody>
 				<tr>
 					<td>[anImportOperation.read.name/]</td>
+					<td>[anImportOperation.read.format/]</td>
 					<td>[anImportOperation.read.path/]</td>
 					<td>[anImportOperation.read.serverName/]</td>
 					<td>[anImportOperation.read.portNumber/]</td>
@@ -220,10 +218,8 @@
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
-				<tr>
-					<td>Name</td>
-					<td>Schema</td>
-				</tr>
+				<th>Name</th>
+				<th>Schema</th>
 			</thead>
 			<tbody>
 				[for (anAttribute : Attribute | anIntegrationOperation.attributes)]
@@ -255,11 +251,9 @@
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
-				<tr>
-					<td>#</td>
-					<td>Name</td>
-					<td>Type</td>
-				</tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>Type</th>
 			</thead>
 			<tbody>
 				[for (anAttribute : Attribute | aVisualizationOperation.chart.axes)]
@@ -298,13 +292,11 @@
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
-				<tr>
-					<td>#</td>
-					<td>ID</td>
-					<td>Analysis Operation Type</td>
-					<td>Name</td>
-					<td>Details</td>
-				</tr>
+				<th>#</th>
+				<th>ID</th>
+				<th>Type</th>
+				<th>Name</th>
+				<th>Details</th>
 			</thead>
 			<tbody>
 				[generateTableRow(0, anAnalysisTask.analysisOperations -> select(anAnalysisOperation | anAnalysisOperation.oclAsType(Operation).incoming -> size() = 0) -> first())/]
@@ -329,13 +321,11 @@
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
-				<tr>
-					<td>#</td>
-					<td>ID</td>
-					<td>Cleaning Operation Type</td>
-					<td>Name</td>
-					<td>Details</td>
-				</tr>
+				<th>#</th>
+				<th>ID</th>
+				<th>Type</th>
+				<th>Name</th>
+				<th>Details</th>
 			</thead>
 			<tbody>
 				[generateTableRow(0, aCleaningTask.oclAsType(CleaningTask).cleaningOperations -> select(aCleaningOperation | aCleaningOperation.oclAsType(Operation).incoming -> size() = 0) -> first())/]
@@ -358,19 +348,19 @@
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
-				<tr>
-					<td>Name</td>
-					<td>Path</td>
-					<td>Server Name</td>
-					<td>Port Number</td>
-					<td>Username</td>
-					<td>Password</td>
-				</tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Path</th>
+				<th>Server Name</th>
+				<th>Port Number</th>
+				<th>Username</th>
+				<th>Password</th>
 			</thead>
 			<tbody>
 				[for (aSource : Source | aCollectionTask.importOperations.read)]
 				<tr>
 					<td>[aSource.name/]</td>
+					<td>[aSource.format/]</td>
 					<td>[aSource.path/]</td>
 					<td>[aSource.serverName/]</td>
 					<td>[aSource.portNumber/]</td>
@@ -437,15 +427,15 @@
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
-				<tr>
-					<td>Name</td>
-					<td>Path</td>
-				</tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Path</th>
 			</thead>
 			<tbody>
 				[for (aFile : File | anExportTask.exportOperations.write)]
 				<tr>
 					<td>[aFile.name/]</td>
+					<td>[aFile.format/]</td>
 					<td>[aFile.path/]</td>
 				</tr>
 				[/for]
@@ -521,10 +511,10 @@
 	<div class="table-responsive">
 		<table class="table">
 			<thead>
-				<td>Title</td>
-				<td>Type</td>
-				<td>Attributes</td>
-				<td>Size</td>
+				<th>Title</th>
+				<th>Type</th>
+				<th>Attributes</th>
+				<th>Size</th>
 			</thead>
 			<tbody>
 				<tr>
@@ -568,12 +558,10 @@
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
-				<tr>
-					<th>#</th>
-					<th>Attribute</th>
-					<th>Type</th>
-					<th>Details</th>
-				</tr>
+				<th>#</th>
+				<th>Attribute</th>
+				<th>Type</th>
+				<th>Details</th>
 			</thead>
 			<tbody>
 				[generateAttributeTableRow(0, aSchema.attributes -> select(anAttribute : Attribute | anAttribute.previous -> size() = 0) -> first())/]
@@ -603,12 +591,10 @@
 		<div class="table-responsive">
 			<table class="table table-striped">
 				<thead>
-					<tr>
-						<th>#</th>
-						<th>Attribute</th>
-						<th>Type</th>
-						<th>Details</th>
-					</tr>
+					<th>#</th>
+					<th>Attribute</th>
+					<th>Type</th>
+					<th>Details</th>
 				</thead>
 				<tbody>
 					[for (anAttribute : Attribute | aComplexAttribute.attributes)]

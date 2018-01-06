@@ -149,6 +149,7 @@
     <genClasses ecoreClass="pipeline.ecore#//File">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//File/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//File/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//File/format"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Chart">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/size"/>

@@ -201,6 +201,7 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="#//Format"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Chart">
     <eAnnotations source="gmf.node">

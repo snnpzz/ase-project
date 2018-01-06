@@ -230,21 +230,16 @@ context AnalysisTask{
 	}
 	
 	constraint outgoingDataFlowHasGeneratedAttributes {
-		check: self.outgoing.schema.attributes.includesAll(self.analysisOperations.outputAttributes)
+		check: self.outgoing.schema.attributes.includesAll(self.analysisOperations.outputAttribute)
 		message: "The outgoing dataflow schema of analysis doesn't respect the generated attributes" 
 	}
 	
 	constraint outgoingDataFlowHasRightSchema {
-		check: self.outgoing.schema.attributes.includesAll(self.analysisOperations.outputAttributes) and
+		check: self.outgoing.schema.attributes.includesAll(self.analysisOperations.outputAttribute) and
 			self.outgoing.schema.attributes.includesAll(self.incoming.schema.attributes)
 		message: "The outgoing dataflow schema is wrong" 
 	}
 	
-	constraint outputAttributeNameIsNotUsed {
-		check: self.analysisOperation.outputAttributes -> forAll(attr1 | self.analysisOperation.outputAttributes ->
-			forAll(attr2 | attr1 <> attr2 implies attr1.name <> attr2.name))
-		message: "Output attributes of analysis operation must have different names"
-	}
 }
 
 
@@ -355,8 +350,8 @@ context ClusteringAnalysisOperation {
 context PredictiveAnalysisOperation {
 	
 	constraint outputAttributeRequired {
-		check: self.outputAttribute -> size() == 1
-		message: "Predective analyzes require an output attribute"
+		check: self.outputAttribute == null
+		message: "Predective analyzes don't require an output attribute"
 	}
 	
 }

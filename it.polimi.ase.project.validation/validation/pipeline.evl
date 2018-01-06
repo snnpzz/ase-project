@@ -1,5 +1,6 @@
 
-context Pipeline{
+context Pipeline {
+
 	constraint uniqueTasks {
 		check: self.tasks -> select(t|t.isTypeOf(CollectionTask)) -> size() <= 1 and 
 			self.tasks -> select(t|t.isTypeOf(IntegrationTask)) -> size() <= 1 and
@@ -10,31 +11,31 @@ context Pipeline{
 		message: 'There can be at most 1 task per type.'
 	}
 	
-	constraint collectionPresent {
-		check: self.tasks -> select(t|t.isTypeOf(CollectionTask)) -> size() > 0
-		message: 'Missing mandatory collection task!'
+	constraint isCollectionTaskPresent {
+		check: self.tasks -> select(t | t.isTypeOf(CollectionTask)) -> size() > 0
+		message: 'There must be a Collection Task.'
 	}
 	
-	constraint analysisPresent {
-		check: self.tasks -> select(t|t.isTypeOf(AnalysisTask)) -> size() > 0
-		message: 'Missing mandatory analysis task!'
+	constraint isAnalysisTaskPresent {
+		check: self.tasks -> select(t | t.isTypeOf(AnalysisTask)) -> size() > 0
+		message: 'There must be an Analysis Task.'
 	}
 	
-	constraint exportPresent {
-		check: self.tasks -> select(t|t.isTypeOf(ExportTask)) -> size() > 0
-		message: 'Missing mandatory export task!'
+	constraint isExportTaskPresent {
+		check: self.tasks -> select(t | t.isTypeOf(ExportTask)) -> size() > 0
+		message: 'There must be an Export Task.'
 	}
 	
-	constraint uniqueDataFow {
+	constraint uniqueOutgoingDataFlow {
 		check: self.tasks -> reject(t | t.isTypeOf(CollectionTask) or t.isTypeOf(ExportTask)) ->
 			forAll(t | t.outgoing -> size() <= 1)
-		message: "All task except collection task must have a unique outgoing dataflow"
+		message: "All tasks, except Collection Task and Export Task, must have a unique outgoing data flow."
 	}
 	
-	constraint uniqueDataFow {
+	constraint isOutgoingDataFlowPresent {
 		check: self.tasks -> reject(t | t.isTypeOf(CollectionTask) or t.isTypeOf(ExportTask)) ->
 			forAll(t | t.outgoing -> size() > 0)
-		message: "Missing outgoing dataflow for some tasks"
+		message: "Missing outgoing data flow for some tasks"
 	}
 	
 	constraint sameDataFlowSchema {
@@ -63,21 +64,6 @@ context Pipeline{
 			forAll(d2 | d1 <> d2 implies d1.schema == d2.schema))
 		message: "Dataflows between cleaning operations must be linked to the same schema"
 	}
-		
-	constraint sameInternalDataFlowSchemaCleaningAsDataFlow {
-		check:  (self.internalDataFlows -> select(d | d.source.isKindOf(CleaningOperation) and d.target.isKindOf(CleaningOperation)) -> size() == 0) or
-			(self.internalDataFlows -> select(d | d.source.isKindOf(CleaningOperation) and d.target.isKindOf(CleaningOperation)) -> size() == 1 and 
-			self.internalDataFlows -> select(d | d.source.isKindOf(CleaningOperation) and d.target.isKindOf(CleaningOperation)).schema == 
-			self.dataFlows -> select(D | D.target.isTypeOf(CleaningTask)).schema) or
-			
-			(self.internalDataFlows -> select(d | d.source.isKindOf(CleaningOperation) and d.target.isKindOf(CleaningOperation)) -> size() > 1 and
-			self.internalDataFlows -> select(DF1 | DF1.source.isKindOf(CleaningOperation) and 
-			DF1.target.isKindOf(CleaningOperation)) -> forAll(d1 | self.internalDataFlows -> 
-			select(DF2 | DF2.source.isKindOf(CleaningOperation) and DF2.target.isKindOf(CleaningOperation)) ->
-			forAll(d2 | d1.schema == d2.schema and 
-			d1.schema == self.dataFlows -> select(D | D.target.isTypeOf(CleaningTask)).schema)))
-		message: "Dataflow between cleaning operations must be linked to the same schema as the external dataflow"
-	}
 	
 	constraint sameInternalDataFlowSchemaAnalysis {
 		check: self.internalDataFlows -> select(DF1 | DF1.source.isKindOf(AnalysisOperation) and 
@@ -100,7 +86,7 @@ context Pipeline{
 			select(DF2 | DF2.source.isKindOf(AnalysisOperation) and DF2.target.isKindOf(AnalysisOperation)) ->
 			forAll(d2 | d1<> d2 implies (d1.schema == d2.schema and
 			d1.schema == self.dataFlows -> select(D | D.target.isTypeOf(AnalysisTask)).schema))))
-		message: "Dataflow between analysis operations must be linked to the same schema as the external dataflow"
+		message: "Dataflow between analysis operations must be linked to the same schema as the external data flow"
 	}
 	
 	constraint dataFlowBetweenCleaningOperation {
@@ -153,7 +139,7 @@ context Pipeline{
 }
 
 
-context CollectionTask{
+context CollectionTask {
 	constraint initialTask {
 		check: self.incoming -> size() == 0
 		message: "Collection Task can't have an incoming data flow."
@@ -167,39 +153,40 @@ context CollectionTask{
 	
 	constraint outgoingDataFlow {
 		check: self.outgoing -> size() > 0
-		message: "Missing outgoing dataflow for collection task"
+		message: "There must be at least 1 outgoing data flow"
 	}
 	
 	constraint manyDataFlowsFromCollectionAsManyImports {
 		check: self.importOperations -> size() == self.outgoing -> size()
-		message: "In collection task there must be as many outgoing dataflows as many input sources"
+		message: "In collection task there must be as many outgoing data flows as many input sources"
 	}
 	
-	constraint manyDataFlowsAllToIntegration {
-		check: (self.outgoing -> size() == 1) or ((self.outgoing -> size() > 1) and (self.outgoing -> forAll(df | df.target.isTypeOf(IntegrationTask))))
-		message: "If there are many outgoing dataflows from collection task, all of them must be linked to integration task"
+	constraint allOutgoingDataFlowsTargetingSameIntegrationTask {
+		check: (self.outgoing -> size() > 1) and (self.outgoing.target -> size() > 1)
+		message: "If there are many outgoing data flows from the collection task, all of them must be linked to the same integration task"
 	}
 	
 	constraint pairsOfSchema {
-		check: self.importOperations.impUses -> forAll(s1 | self.outgoing -> select(df | df.schema == s1) -> size() > 0) and
-			self.outgoing.schema -> forAll(s2 | self.importOperations -> select(i | i.impUses == s2) -> size() > 0)
-		message: "Links to schema must be paired wrt import and outgoing dataflow"
+		check: self.importOperations.use -> forAll(s1 | self.outgoing -> select(df | df.schema == s1) -> size() > 0) and
+			self.outgoing.schema -> forAll(s2 | self.importOperations -> select(i | i.use == s2) -> size() > 0)
+		message: "Links to schema must be paired wrt import and outgoing data flow"
 	}
 }
 
 
-context IntegrationTask{
+context IntegrationTask {
+
+	constraint atLeastOneIntegrationOperation {
+		check: self.integrationOperations -> size() >= 1
+		message: "There must be at leat 1 integration operation."
+	}
+
 	constraint nextTypeIntegration {
 		check: self.outgoing.target -> select(t | t.isTypeOf(CollectionTask) or t.isTypeOf(IntegrationTask) or
 			t.isTypeOf(VisualizationTask) or t.isTypeOf(ExportTask)) -> size() == 0
 		message: "Integration task must be linked to cleaning or analysis task"
 	}
-	
-	constraint canIntegrate {
-		check: self.attributes -> forAll(a1 | self.incoming.source.importOperations.impUses.attributes -> forAll(a2 | a1 == a2)) 
-		message: "The attribute(s) for integration task must be present in all source schemas"
-	}
-	
+		
 	constraint integrationNeeded {
 		check: self.incoming.source.importOperations -> size() > 1
 		message: "Integration task is not needed!"
@@ -207,7 +194,16 @@ context IntegrationTask{
 }
 
 
-context CleaningTask{
+context CleaningTask {
+
+	constraint sameIncomingAndOutgoingSchema {
+		check: self.incoming.schema.includesAll(self.outgoing.schema)
+		message: "The incoming and the outgoing data flow must have the same schema."
+	}
+	
+	-- TODO
+	-- internal data flow have the same schema
+
 	constraint nextTypeCleaning {
 		check: self.outgoing.target -> reject(t | t.isTypeOf(AnalysisTask)) -> size() == 0
 		message: "Cleaning task can be linked only to analysis task"
@@ -235,8 +231,8 @@ context CleaningTask{
 	
 }
 
-
 context AnalysisTask{
+
 	constraint nextTypeAnalysis {
 		check: self.outgoing.target -> select(t | t.isTypeOf(CollectionTask) or t.isTypeOf(IntegrationTask) or
 			t.isTypeOf(CleaningTask) or t.isTypeOf(AnalysisTask)) -> size() == 0
@@ -245,7 +241,7 @@ context AnalysisTask{
 	
 	constraint uniqueInternalDataFlowIn {
 		check: self.analysisOperations -> forAll(o | o.outgoing -> size() <= 1)
-		message: "Analyzes operations can have at maximum one outgoing internal dataflow"
+		message: "Analyzes operations can have at maximum one outgoing internal data flow"
 	}
 	
 	constraint uniqueInternalDataFlowOut {
@@ -265,15 +261,18 @@ context AnalysisTask{
 }
 
 
-context VisualizationTask{
+context VisualizationTask {
+
 	constraint nextTypeVisualization {
 		check: self.outgoing.target -> reject(t | t.isTypeOf(ExportTask)) -> size() == 0
 		message: "Visualization task can be linked only to export task"
 	}
+	
 }
 
 
-context ExportTask{
+context ExportTask {
+
 	constraint finalTask {
 		check: self.outgoing -> size() == 0
 		message: "Export task can't have an outgoing data flow"
@@ -281,8 +280,8 @@ context ExportTask{
 	
 }
 
+context Schema {
 
-context Schema{
 	constraint uniqueNameAttribute {
 		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
 		message: "There can't be more attributes with the same name in the same schema"
@@ -292,10 +291,12 @@ context Schema{
 		check: self.attributes -> forAll (a1 | self.attributes -> select (a2 | a1 == a2) -> size() == 1)
 		message: "There can't be many equal attributes in the same schema"
 	}	
+	
 }
 
 
-context ComplexAttribute{
+context ComplexAttribute {
+
 	constraint uniqueNameAttribute {
 		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
 		message: "There can't be more attributes with the same name in the same attribute"
@@ -305,5 +306,6 @@ context ComplexAttribute{
 		check: self.attributes -> forAll (a1 | self.attributes -> select (a2 | a1 == a2) -> size() == 1)
 		message: "There can't be many equal attributes in the same attribute"
 	}
+	
 }
 

@@ -20,10 +20,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.diagram.edit.commands.ChartAxesCreateCommand;
 import pipeline.diagram.edit.commands.ChartAxesReorientCommand;
-import pipeline.diagram.edit.commands.IntegrationTaskAttributesCreateCommand;
-import pipeline.diagram.edit.commands.IntegrationTaskAttributesReorientCommand;
 import pipeline.diagram.edit.parts.ChartAxesEditPart;
-import pipeline.diagram.edit.parts.IntegrationTaskAttributesEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 import pipeline.diagram.providers.PipelineElementTypes;
 
@@ -48,13 +45,6 @@ public class SimpleAttributeItemSemanticEditPolicy extends PipelineBaseItemSeman
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == IntegrationTaskAttributesEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
-						incomingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
-				continue;
-			}
 			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == ChartAxesEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
@@ -88,9 +78,6 @@ public class SimpleAttributeItemSemanticEditPolicy extends PipelineBaseItemSeman
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.IntegrationTaskAttributes_4005 == req.getElementType()) {
-			return null;
-		}
 		if (PipelineElementTypes.ChartAxes_4010 == req.getElementType()) {
 			return null;
 		}
@@ -101,9 +88,6 @@ public class SimpleAttributeItemSemanticEditPolicy extends PipelineBaseItemSeman
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.IntegrationTaskAttributes_4005 == req.getElementType()) {
-			return getGEFWrapper(new IntegrationTaskAttributesCreateCommand(req, req.getSource(), req.getTarget()));
-		}
 		if (PipelineElementTypes.ChartAxes_4010 == req.getElementType()) {
 			return getGEFWrapper(new ChartAxesCreateCommand(req, req.getSource(), req.getTarget()));
 		}
@@ -118,8 +102,6 @@ public class SimpleAttributeItemSemanticEditPolicy extends PipelineBaseItemSeman
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case IntegrationTaskAttributesEditPart.VISUAL_ID:
-			return getGEFWrapper(new IntegrationTaskAttributesReorientCommand(req));
 		case ChartAxesEditPart.VISUAL_ID:
 			return getGEFWrapper(new ChartAxesReorientCommand(req));
 		}

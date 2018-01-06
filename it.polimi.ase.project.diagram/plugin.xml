@@ -259,7 +259,7 @@
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Pipeline"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,3001,3002,3003,3004,3005,3006"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005,4006,4007,4008,4009,4010"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4006,4007,4008,4009,4010"/>
       </viewProvider>
    </extension>
 
@@ -274,7 +274,7 @@
             <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,3001,3002,3003,3004,3005,3006"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001,4002,4003,4004,4005,4006,4007,4008,4009,4010"/>
+            <method name="getType()" value="4001,4002,4003,4004,4006,4007,4008,4009,4010"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5002,5003,5004,5005,5006,5008,5009,5010,5015,5001,5007,5011,5014,5012,5013"/>
@@ -613,15 +613,6 @@
       </metamodel>
       <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
          <specializationType
-               id="it.polimi.ase.project.diagram.IntegrationTaskAttributes_4005"
-               name="%metatype.name.IntegrationTaskAttributes_4005"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4005"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://www.project.ase.polimi.it/pipeline">
-         <specializationType
                id="it.polimi.ase.project.diagram.ImportOperationRead_4006"
                name="%metatype.name.ImportOperationRead_4006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
@@ -698,7 +689,6 @@
          <elementType ref="it.polimi.ase.project.diagram.InternalDataFlow_4002"/>
          <elementType ref="it.polimi.ase.project.diagram.DataFlowSchema_4003"/>
          <elementType ref="it.polimi.ase.project.diagram.InternalDataFlowSchema_4004"/>
-         <elementType ref="it.polimi.ase.project.diagram.IntegrationTaskAttributes_4005"/>
          <elementType ref="it.polimi.ase.project.diagram.ImportOperationRead_4006"/>
          <elementType ref="it.polimi.ase.project.diagram.ImportOperationUse_4007"/>
          <elementType ref="it.polimi.ase.project.diagram.ExportOperationUse_4008"/>

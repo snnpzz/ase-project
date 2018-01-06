@@ -378,13 +378,13 @@ public interface PipelinePackage extends EPackage {
 	int SCHEMA__ATTRIBUTES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA__NAME = 1;
+	int SCHEMA__ID = 1;
 
 	/**
 	 * The number of structural features of the '<em>Schema</em>' class.
@@ -534,13 +534,13 @@ public interface PipelinePackage extends EPackage {
 	int INTEGRATION_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Integration Operations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_TASK__ATTRIBUTES = TASK_FEATURE_COUNT + 0;
+	int INTEGRATION_TASK__INTEGRATION_OPERATIONS = TASK_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Integration Task</em>' class.
@@ -1697,6 +1697,43 @@ public interface PipelinePackage extends EPackage {
 	int VISUALIZATION_OPERATION_FEATURE_COUNT = 2;
 
 	/**
+	 * The meta object id for the '{@link pipeline.impl.IntegrationOperationImpl <em>Integration Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.IntegrationOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getIntegrationOperation()
+	 * @generated
+	 */
+	int INTEGRATION_OPERATION = 29;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_OPERATION__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_OPERATION__ATTRIBUTES = 1;
+
+	/**
+	 * The number of structural features of the '<em>Integration Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_OPERATION_FEATURE_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link pipeline.PredefinedOperation <em>Predefined Operation</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1704,7 +1741,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getPredefinedOperation()
 	 * @generated
 	 */
-	int PREDEFINED_OPERATION = 29;
+	int PREDEFINED_OPERATION = 30;
 
 	/**
 	 * The meta object id for the '{@link pipeline.ClusteringOperation <em>Clustering Operation</em>}' enum.
@@ -1714,7 +1751,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getClusteringOperation()
 	 * @generated
 	 */
-	int CLUSTERING_OPERATION = 30;
+	int CLUSTERING_OPERATION = 31;
 
 	/**
 	 * The meta object id for the '{@link pipeline.ClassificationOperation <em>Classification Operation</em>}' enum.
@@ -1724,7 +1761,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getClassificationOperation()
 	 * @generated
 	 */
-	int CLASSIFICATION_OPERATION = 31;
+	int CLASSIFICATION_OPERATION = 32;
 
 	/**
 	 * The meta object id for the '{@link pipeline.PredictiveOperation <em>Predictive Operation</em>}' enum.
@@ -1734,7 +1771,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getPredictiveOperation()
 	 * @generated
 	 */
-	int PREDICTIVE_OPERATION = 32;
+	int PREDICTIVE_OPERATION = 33;
 
 	/**
 	 * The meta object id for the '{@link pipeline.DescriptiveOperation <em>Descriptive Operation</em>}' enum.
@@ -1744,7 +1781,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getDescriptiveOperation()
 	 * @generated
 	 */
-	int DESCRIPTIVE_OPERATION = 33;
+	int DESCRIPTIVE_OPERATION = 34;
 
 	/**
 	 * The meta object id for the '{@link pipeline.ChartType <em>Chart Type</em>}' enum.
@@ -1754,7 +1791,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getChartType()
 	 * @generated
 	 */
-	int CHART_TYPE = 34;
+	int CHART_TYPE = 35;
 
 	/**
 	 * The meta object id for the '{@link pipeline.Format <em>Format</em>}' enum.
@@ -1764,7 +1801,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getFormat()
 	 * @generated
 	 */
-	int FORMAT = 35;
+	int FORMAT = 36;
 
 	/**
 	 * The meta object id for the '{@link pipeline.Size <em>Size</em>}' enum.
@@ -1774,7 +1811,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getSize()
 	 * @generated
 	 */
-	int SIZE = 36;
+	int SIZE = 37;
 
 	/**
 	 * The meta object id for the '{@link pipeline.Type <em>Type</em>}' enum.
@@ -1784,7 +1821,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 37;
+	int TYPE = 38;
 
 
 	/**
@@ -2112,15 +2149,15 @@ public interface PipelinePackage extends EPackage {
 	EReference getSchema_Attributes();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.Schema#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.Schema#getID <em>ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see pipeline.Schema#getName()
+	 * @return the meta object for the attribute '<em>ID</em>'.
+	 * @see pipeline.Schema#getID()
 	 * @see #getSchema()
 	 * @generated
 	 */
-	EAttribute getSchema_Name();
+	EAttribute getSchema_ID();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Attribute <em>Attribute</em>}'.
@@ -2197,15 +2234,15 @@ public interface PipelinePackage extends EPackage {
 	EClass getIntegrationTask();
 
 	/**
-	 * Returns the meta object for the reference list '{@link pipeline.IntegrationTask#getAttributes <em>Attributes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link pipeline.IntegrationTask#getIntegrationOperations <em>Integration Operations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Attributes</em>'.
-	 * @see pipeline.IntegrationTask#getAttributes()
+	 * @return the meta object for the containment reference list '<em>Integration Operations</em>'.
+	 * @see pipeline.IntegrationTask#getIntegrationOperations()
 	 * @see #getIntegrationTask()
 	 * @generated
 	 */
-	EReference getIntegrationTask_Attributes();
+	EReference getIntegrationTask_IntegrationOperations();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.CleaningTask <em>Cleaning Task</em>}'.
@@ -2793,6 +2830,38 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getVisualizationOperation_ID();
 
 	/**
+	 * Returns the meta object for class '{@link pipeline.IntegrationOperation <em>Integration Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Integration Operation</em>'.
+	 * @see pipeline.IntegrationOperation
+	 * @generated
+	 */
+	EClass getIntegrationOperation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pipeline.IntegrationOperation#getID <em>ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>ID</em>'.
+	 * @see pipeline.IntegrationOperation#getID()
+	 * @see #getIntegrationOperation()
+	 * @generated
+	 */
+	EAttribute getIntegrationOperation_ID();
+
+	/**
+	 * Returns the meta object for the reference list '{@link pipeline.IntegrationOperation#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Attributes</em>'.
+	 * @see pipeline.IntegrationOperation#getAttributes()
+	 * @see #getIntegrationOperation()
+	 * @generated
+	 */
+	EReference getIntegrationOperation_Attributes();
+
+	/**
 	 * Returns the meta object for enum '{@link pipeline.PredefinedOperation <em>Predefined Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3157,12 +3226,12 @@ public interface PipelinePackage extends EPackage {
 		EReference SCHEMA__ATTRIBUTES = eINSTANCE.getSchema_Attributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SCHEMA__NAME = eINSTANCE.getSchema_Name();
+		EAttribute SCHEMA__ID = eINSTANCE.getSchema_ID();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -3227,12 +3296,12 @@ public interface PipelinePackage extends EPackage {
 		EClass INTEGRATION_TASK = eINSTANCE.getIntegrationTask();
 
 		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Integration Operations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INTEGRATION_TASK__ATTRIBUTES = eINSTANCE.getIntegrationTask_Attributes();
+		EReference INTEGRATION_TASK__INTEGRATION_OPERATIONS = eINSTANCE.getIntegrationTask_IntegrationOperations();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.CleaningTaskImpl <em>Cleaning Task</em>}' class.
@@ -3713,6 +3782,32 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VISUALIZATION_OPERATION__ID = eINSTANCE.getVisualizationOperation_ID();
+
+		/**
+		 * The meta object literal for the '{@link pipeline.impl.IntegrationOperationImpl <em>Integration Operation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pipeline.impl.IntegrationOperationImpl
+		 * @see pipeline.impl.PipelinePackageImpl#getIntegrationOperation()
+		 * @generated
+		 */
+		EClass INTEGRATION_OPERATION = eINSTANCE.getIntegrationOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTEGRATION_OPERATION__ID = eINSTANCE.getIntegrationOperation_ID();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTEGRATION_OPERATION__ATTRIBUTES = eINSTANCE.getIntegrationOperation_Attributes();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.PredefinedOperation <em>Predefined Operation</em>}' enum.

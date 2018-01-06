@@ -111,8 +111,7 @@ public class SchemaSchemaAttributesCompartmentEditPart extends ListCompartmentEd
 				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request).getElementTypes()) {
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
-						if (elementType.equals(PipelineElementTypes.IntegrationTaskAttributes_4005)
-								|| elementType.equals(PipelineElementTypes.ChartAxes_4010))
+						if (elementType.equals(PipelineElementTypes.ChartAxes_4010))
 							return super.getTargetEditPart(request);
 					}
 				}

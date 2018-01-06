@@ -35,13 +35,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 
-import pipeline.Attribute;
 import pipeline.Chart;
 import pipeline.DataFlow;
 import pipeline.ExportOperation;
 import pipeline.File;
 import pipeline.ImportOperation;
-import pipeline.IntegrationTask;
 import pipeline.InternalDataFlow;
 import pipeline.Operation;
 import pipeline.Pipeline;
@@ -362,19 +360,6 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateIntegrationTaskAttributes_4005(IntegrationTask source, Attribute target) {
-			if (source != null) {
-				if (source.getAttributes().contains(target)) {
-					return false;
-				}
-			}
-
-			return canExistIntegrationTaskAttributes_4005(source, target);
-		}
-
-		/**
-		 * @generated
-		 */
 		public boolean canCreateImportOperationRead_4006(ImportOperation source, Source target) {
 			if (source != null) {
 				if (source.getRead() != null) {
@@ -469,13 +454,6 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		* @generated
 		*/
 		public boolean canExistInternalDataFlowSchema_4004(InternalDataFlow source, Schema target) {
-			return true;
-		}
-
-		/**
-		* @generated
-		*/
-		public boolean canExistIntegrationTaskAttributes_4005(IntegrationTask source, Attribute target) {
 			return true;
 		}
 

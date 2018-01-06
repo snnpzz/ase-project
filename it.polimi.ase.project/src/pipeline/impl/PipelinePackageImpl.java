@@ -31,6 +31,7 @@ import pipeline.ExportTask;
 import pipeline.File;
 import pipeline.Format;
 import pipeline.ImportOperation;
+import pipeline.IntegrationOperation;
 import pipeline.IntegrationTask;
 import pipeline.InternalDataFlow;
 import pipeline.Operation;
@@ -260,6 +261,13 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * @generated
 	 */
 	private EClass visualizationOperationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass integrationOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -660,7 +668,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSchema_Name() {
+	public EAttribute getSchema_ID() {
 		return (EAttribute)schemaEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -732,7 +740,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIntegrationTask_Attributes() {
+	public EReference getIntegrationTask_IntegrationOperations() {
 		return (EReference)integrationTaskEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1236,6 +1244,33 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getIntegrationOperation() {
+		return integrationOperationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIntegrationOperation_ID() {
+		return (EAttribute)integrationOperationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIntegrationOperation_Attributes() {
+		return (EReference)integrationOperationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPredefinedOperation() {
 		return predefinedOperationEEnum;
 	}
@@ -1375,7 +1410,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		schemaEClass = createEClass(SCHEMA);
 		createEReference(schemaEClass, SCHEMA__ATTRIBUTES);
-		createEAttribute(schemaEClass, SCHEMA__NAME);
+		createEAttribute(schemaEClass, SCHEMA__ID);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEAttribute(attributeEClass, ATTRIBUTE__NAME);
@@ -1386,7 +1421,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEReference(collectionTaskEClass, COLLECTION_TASK__IMPORT_OPERATIONS);
 
 		integrationTaskEClass = createEClass(INTEGRATION_TASK);
-		createEReference(integrationTaskEClass, INTEGRATION_TASK__ATTRIBUTES);
+		createEReference(integrationTaskEClass, INTEGRATION_TASK__INTEGRATION_OPERATIONS);
 
 		cleaningTaskEClass = createEClass(CLEANING_TASK);
 		createEReference(cleaningTaskEClass, CLEANING_TASK__CLEANING_OPERATIONS);
@@ -1462,6 +1497,10 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		visualizationOperationEClass = createEClass(VISUALIZATION_OPERATION);
 		createEReference(visualizationOperationEClass, VISUALIZATION_OPERATION__CHART);
 		createEAttribute(visualizationOperationEClass, VISUALIZATION_OPERATION__ID);
+
+		integrationOperationEClass = createEClass(INTEGRATION_OPERATION);
+		createEAttribute(integrationOperationEClass, INTEGRATION_OPERATION__ID);
+		createEReference(integrationOperationEClass, INTEGRATION_OPERATION__ATTRIBUTES);
 
 		// Create enums
 		predefinedOperationEEnum = createEEnum(PREDEFINED_OPERATION);
@@ -1556,7 +1595,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		initEClass(schemaEClass, Schema.class, "Schema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSchema_Attributes(), this.getAttribute(), null, "attributes", null, 1, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSchema_Name(), ecorePackage.getEString(), "name", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSchema_ID(), ecorePackage.getEString(), "ID", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1567,7 +1606,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEReference(getCollectionTask_ImportOperations(), this.getImportOperation(), null, "importOperations", null, 1, -1, CollectionTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(integrationTaskEClass, IntegrationTask.class, "IntegrationTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIntegrationTask_Attributes(), this.getAttribute(), null, "attributes", null, 1, -1, IntegrationTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIntegrationTask_IntegrationOperations(), this.getIntegrationOperation(), null, "integrationOperations", null, 1, -1, IntegrationTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(cleaningTaskEClass, CleaningTask.class, "CleaningTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCleaningTask_CleaningOperations(), this.getCleaningOperation(), null, "cleaningOperations", null, 1, -1, CleaningTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1643,6 +1682,10 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEClass(visualizationOperationEClass, VisualizationOperation.class, "VisualizationOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVisualizationOperation_Chart(), this.getChart(), null, "chart", null, 1, 1, VisualizationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisualizationOperation_ID(), ecorePackage.getEString(), "ID", null, 0, 1, VisualizationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(integrationOperationEClass, IntegrationOperation.class, "IntegrationOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIntegrationOperation_ID(), ecorePackage.getEString(), "ID", null, 0, 1, IntegrationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIntegrationOperation_Attributes(), this.getAttribute(), null, "attributes", null, 2, 2, IntegrationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(predefinedOperationEEnum, PredefinedOperation.class, "PredefinedOperation");
@@ -1843,14 +1886,6 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 			 "target.decoration", "arrow",
 			 "style", "dot",
 			 "tool.name", "InternalDFSchema"
-		   });	
-		addAnnotation
-		  (getIntegrationTask_Attributes(), 
-		   source, 
-		   new String[] {
-			 "width", "2",
-			 "target.decoration", "closedarrow",
-			 "tool.name", "IntegrationAttributes"
 		   });	
 		addAnnotation
 		  (getImportOperation_Read(), 

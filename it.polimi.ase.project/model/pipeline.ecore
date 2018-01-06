@@ -97,7 +97,8 @@
         <details key="layout" value="list"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" abstract="true">
     <eAnnotations source="gmf.node">
@@ -116,14 +117,8 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntegrationTask" eSuperTypes="#//Task">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
-        upperBound="-1" eType="#//Attribute">
-      <eAnnotations source="gmf.link">
-        <details key="width" value="2"/>
-        <details key="target.decoration" value="closedarrow"/>
-        <details key="tool.name" value="IntegrationAttributes"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="integrationOperations"
+        lowerBound="1" upperBound="-1" eType="#//IntegrationOperation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CleaningTask" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EReference" name="cleaningOperations" lowerBound="1"
@@ -327,5 +322,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="chart" lowerBound="1" eType="#//Chart"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegrationOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="2"
+        upperBound="2" eType="#//Attribute"/>
   </eClassifiers>
 </ecore:EPackage>

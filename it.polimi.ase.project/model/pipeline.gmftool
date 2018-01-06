@@ -170,15 +170,6 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="IntegrationAttributes"
-          description="Create new IntegrationAttributes">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="InternalDFSchema"
           description="Create new InternalDFSchema">
         <smallIcon

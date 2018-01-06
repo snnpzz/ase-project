@@ -52,7 +52,7 @@ class Schema {
 
   @gmf.compartment(layout="list")
   val Attribute[+] attributes;
-  attr String name;
+  id attr String ID;
 }
 
 @gmf.node(label="name")
@@ -69,9 +69,7 @@ class CollectionTask extends Task {
 }
 
 class IntegrationTask extends Task {
-
-  @gmf.link(width="2", target.decoration="closedarrow", tool.name="IntegrationAttributes")
-  ref Attribute[+] attributes;
+  val IntegrationOperation[+] integrationOperations;
 }
 
 class CleaningTask extends Task {
@@ -258,5 +256,10 @@ enum Type {
 class VisualizationOperation {
   ref Chart[1] chart;
   id attr String ID;
+}
+
+class IntegrationOperation {
+  attr String ID;
+  ref Attribute[2] attributes;
 }
 

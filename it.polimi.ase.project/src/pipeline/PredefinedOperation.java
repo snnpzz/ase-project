@@ -54,7 +54,15 @@ public enum PredefinedOperation implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	REMOVE_COLUMN(4, "removeColumn", "removeColumn");
+	REMOVE_COLUMN(4, "removeColumn", "removeColumn"), /**
+	 * The '<em><b>Remove Duplicates</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #REMOVE_DUPLICATES_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	REMOVE_DUPLICATES(4, "removeDuplicates", "removeDuplicates");
 
 	/**
 	 * The '<em><b>Remove Nulls</b></em>' literal value.
@@ -117,6 +125,21 @@ public enum PredefinedOperation implements Enumerator {
 	public static final int REMOVE_COLUMN_VALUE = 4;
 
 	/**
+	 * The '<em><b>Remove Duplicates</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Remove Duplicates</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #REMOVE_DUPLICATES
+	 * @model name="removeDuplicates"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int REMOVE_DUPLICATES_VALUE = 4;
+
+	/**
 	 * An array of all the '<em><b>Predefined Operation</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,6 +151,7 @@ public enum PredefinedOperation implements Enumerator {
 			REMOVE_NEGATIVE,
 			ROUND,
 			REMOVE_COLUMN,
+			REMOVE_DUPLICATES,
 		};
 
 	/**

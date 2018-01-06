@@ -13,10 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.InternalDataFlow#getFormat <em>Format</em>}</li>
  *   <li>{@link pipeline.InternalDataFlow#getSource <em>Source</em>}</li>
  *   <li>{@link pipeline.InternalDataFlow#getTarget <em>Target</em>}</li>
- *   <li>{@link pipeline.InternalDataFlow#getSchema <em>Schema</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getInternalDataFlow()
@@ -24,35 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface InternalDataFlow extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Format</b></em>' attribute.
-	 * The literals are from the enumeration {@link pipeline.Format}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Format</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Format</em>' attribute.
-	 * @see pipeline.Format
-	 * @see #setFormat(Format)
-	 * @see pipeline.PipelinePackage#getInternalDataFlow_Format()
-	 * @model
-	 * @generated
-	 */
-	Format getFormat();
-
-	/**
-	 * Sets the value of the '{@link pipeline.InternalDataFlow#getFormat <em>Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Format</em>' attribute.
-	 * @see pipeline.Format
-	 * @see #getFormat()
-	 * @generated
-	 */
-	void setFormat(Format value);
-
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link pipeline.Operation#getOutgoing <em>Outgoing</em>}'.
@@ -108,32 +77,5 @@ public interface InternalDataFlow extends EObject {
 	 * @generated
 	 */
 	void setTarget(Operation value);
-
-	/**
-	 * Returns the value of the '<em><b>Schema</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Schema</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Schema</em>' reference.
-	 * @see #setSchema(Schema)
-	 * @see pipeline.PipelinePackage#getInternalDataFlow_Schema()
-	 * @model required="true"
-	 *        annotation="gmf.link width='1' target.decoration='arrow' style='dot' tool.name='InternalDFSchema'"
-	 * @generated
-	 */
-	Schema getSchema();
-
-	/**
-	 * Sets the value of the '{@link pipeline.InternalDataFlow#getSchema <em>Schema</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Schema</em>' reference.
-	 * @see #getSchema()
-	 * @generated
-	 */
-	void setSchema(Schema value);
 
 } // InternalDataFlow

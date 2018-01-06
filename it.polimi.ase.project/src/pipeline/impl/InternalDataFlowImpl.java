@@ -25,35 +25,13 @@ import pipeline.Schema;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.InternalDataFlowImpl#getFormat <em>Format</em>}</li>
  *   <li>{@link pipeline.impl.InternalDataFlowImpl#getSource <em>Source</em>}</li>
  *   <li>{@link pipeline.impl.InternalDataFlowImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link pipeline.impl.InternalDataFlowImpl#getSchema <em>Schema</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlow {
-	/**
-	 * The default value of the '{@link #getFormat() <em>Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Format FORMAT_EDEFAULT = Format.CSV;
-
-	/**
-	 * The cached value of the '{@link #getFormat() <em>Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected Format format = FORMAT_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -75,16 +53,6 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 	protected Operation target;
 
 	/**
-	 * The cached value of the '{@link #getSchema() <em>Schema</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSchema()
-	 * @generated
-	 * @ordered
-	 */
-	protected Schema schema;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -101,27 +69,6 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 	@Override
 	protected EClass eStaticClass() {
 		return PipelinePackage.Literals.INTERNAL_DATA_FLOW;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Format getFormat() {
-		return format;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFormat(Format newFormat) {
-		Format oldFormat = format;
-		format = newFormat == null ? FORMAT_EDEFAULT : newFormat;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.INTERNAL_DATA_FLOW__FORMAT, oldFormat, format));
 	}
 
 	/**
@@ -249,44 +196,6 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Schema getSchema() {
-		if (schema != null && schema.eIsProxy()) {
-			InternalEObject oldSchema = (InternalEObject)schema;
-			schema = (Schema)eResolveProxy(oldSchema);
-			if (schema != oldSchema) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.INTERNAL_DATA_FLOW__SCHEMA, oldSchema, schema));
-			}
-		}
-		return schema;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Schema basicGetSchema() {
-		return schema;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSchema(Schema newSchema) {
-		Schema oldSchema = schema;
-		schema = newSchema;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.INTERNAL_DATA_FLOW__SCHEMA, oldSchema, schema));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -326,17 +235,12 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.INTERNAL_DATA_FLOW__FORMAT:
-				return getFormat();
 			case PipelinePackage.INTERNAL_DATA_FLOW__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
 			case PipelinePackage.INTERNAL_DATA_FLOW__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
-			case PipelinePackage.INTERNAL_DATA_FLOW__SCHEMA:
-				if (resolve) return getSchema();
-				return basicGetSchema();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -349,17 +253,11 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.INTERNAL_DATA_FLOW__FORMAT:
-				setFormat((Format)newValue);
-				return;
 			case PipelinePackage.INTERNAL_DATA_FLOW__SOURCE:
 				setSource((Operation)newValue);
 				return;
 			case PipelinePackage.INTERNAL_DATA_FLOW__TARGET:
 				setTarget((Operation)newValue);
-				return;
-			case PipelinePackage.INTERNAL_DATA_FLOW__SCHEMA:
-				setSchema((Schema)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -373,17 +271,11 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.INTERNAL_DATA_FLOW__FORMAT:
-				setFormat(FORMAT_EDEFAULT);
-				return;
 			case PipelinePackage.INTERNAL_DATA_FLOW__SOURCE:
 				setSource((Operation)null);
 				return;
 			case PipelinePackage.INTERNAL_DATA_FLOW__TARGET:
 				setTarget((Operation)null);
-				return;
-			case PipelinePackage.INTERNAL_DATA_FLOW__SCHEMA:
-				setSchema((Schema)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -397,32 +289,12 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.INTERNAL_DATA_FLOW__FORMAT:
-				return format != FORMAT_EDEFAULT;
 			case PipelinePackage.INTERNAL_DATA_FLOW__SOURCE:
 				return source != null;
 			case PipelinePackage.INTERNAL_DATA_FLOW__TARGET:
 				return target != null;
-			case PipelinePackage.INTERNAL_DATA_FLOW__SCHEMA:
-				return schema != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (format: ");
-		result.append(format);
-		result.append(')');
-		return result.toString();
 	}
 
 } //InternalDataFlowImpl

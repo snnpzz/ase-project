@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import pipeline.Format;
 import pipeline.ImportOperation;
 import pipeline.PipelinePackage;
 import pipeline.Source;
@@ -23,28 +24,18 @@ import pipeline.Source;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.SourceImpl#getLinkedTo <em>Linked To</em>}</li>
  *   <li>{@link pipeline.impl.SourceImpl#getName <em>Name</em>}</li>
  *   <li>{@link pipeline.impl.SourceImpl#getPath <em>Path</em>}</li>
  *   <li>{@link pipeline.impl.SourceImpl#getServerName <em>Server Name</em>}</li>
  *   <li>{@link pipeline.impl.SourceImpl#getPortNumber <em>Port Number</em>}</li>
  *   <li>{@link pipeline.impl.SourceImpl#getUserName <em>User Name</em>}</li>
  *   <li>{@link pipeline.impl.SourceImpl#getPassword <em>Password</em>}</li>
+ *   <li>{@link pipeline.impl.SourceImpl#getFormat <em>Format</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SourceImpl extends EObjectImpl implements Source {
-	/**
-	 * The cached value of the '{@link #getLinkedTo() <em>Linked To</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinkedTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected ImportOperation linkedTo;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -166,6 +157,26 @@ public class SourceImpl extends EObjectImpl implements Source {
 	protected String password = PASSWORD_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getFormat() <em>Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFormat()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Format FORMAT_EDEFAULT = Format.CSV;
+
+	/**
+	 * The cached value of the '{@link #getFormat() <em>Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFormat()
+	 * @generated
+	 * @ordered
+	 */
+	protected Format format = FORMAT_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -182,66 +193,6 @@ public class SourceImpl extends EObjectImpl implements Source {
 	@Override
 	protected EClass eStaticClass() {
 		return PipelinePackage.Literals.SOURCE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ImportOperation getLinkedTo() {
-		if (linkedTo != null && linkedTo.eIsProxy()) {
-			InternalEObject oldLinkedTo = (InternalEObject)linkedTo;
-			linkedTo = (ImportOperation)eResolveProxy(oldLinkedTo);
-			if (linkedTo != oldLinkedTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.SOURCE__LINKED_TO, oldLinkedTo, linkedTo));
-			}
-		}
-		return linkedTo;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ImportOperation basicGetLinkedTo() {
-		return linkedTo;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetLinkedTo(ImportOperation newLinkedTo, NotificationChain msgs) {
-		ImportOperation oldLinkedTo = linkedTo;
-		linkedTo = newLinkedTo;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PipelinePackage.SOURCE__LINKED_TO, oldLinkedTo, newLinkedTo);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLinkedTo(ImportOperation newLinkedTo) {
-		if (newLinkedTo != linkedTo) {
-			NotificationChain msgs = null;
-			if (linkedTo != null)
-				msgs = ((InternalEObject)linkedTo).eInverseRemove(this, PipelinePackage.IMPORT_OPERATION__READ, ImportOperation.class, msgs);
-			if (newLinkedTo != null)
-				msgs = ((InternalEObject)newLinkedTo).eInverseAdd(this, PipelinePackage.IMPORT_OPERATION__READ, ImportOperation.class, msgs);
-			msgs = basicSetLinkedTo(newLinkedTo, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.SOURCE__LINKED_TO, newLinkedTo, newLinkedTo));
 	}
 
 	/**
@@ -375,15 +326,8 @@ public class SourceImpl extends EObjectImpl implements Source {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case PipelinePackage.SOURCE__LINKED_TO:
-				if (linkedTo != null)
-					msgs = ((InternalEObject)linkedTo).eInverseRemove(this, PipelinePackage.IMPORT_OPERATION__READ, ImportOperation.class, msgs);
-				return basicSetLinkedTo((ImportOperation)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+	public Format getFormat() {
+		return format;
 	}
 
 	/**
@@ -391,13 +335,11 @@ public class SourceImpl extends EObjectImpl implements Source {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case PipelinePackage.SOURCE__LINKED_TO:
-				return basicSetLinkedTo(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public void setFormat(Format newFormat) {
+		Format oldFormat = format;
+		format = newFormat == null ? FORMAT_EDEFAULT : newFormat;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.SOURCE__FORMAT, oldFormat, format));
 	}
 
 	/**
@@ -408,9 +350,6 @@ public class SourceImpl extends EObjectImpl implements Source {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.SOURCE__LINKED_TO:
-				if (resolve) return getLinkedTo();
-				return basicGetLinkedTo();
 			case PipelinePackage.SOURCE__NAME:
 				return getName();
 			case PipelinePackage.SOURCE__PATH:
@@ -423,6 +362,8 @@ public class SourceImpl extends EObjectImpl implements Source {
 				return getUserName();
 			case PipelinePackage.SOURCE__PASSWORD:
 				return getPassword();
+			case PipelinePackage.SOURCE__FORMAT:
+				return getFormat();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -435,9 +376,6 @@ public class SourceImpl extends EObjectImpl implements Source {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.SOURCE__LINKED_TO:
-				setLinkedTo((ImportOperation)newValue);
-				return;
 			case PipelinePackage.SOURCE__NAME:
 				setName((String)newValue);
 				return;
@@ -456,6 +394,9 @@ public class SourceImpl extends EObjectImpl implements Source {
 			case PipelinePackage.SOURCE__PASSWORD:
 				setPassword((String)newValue);
 				return;
+			case PipelinePackage.SOURCE__FORMAT:
+				setFormat((Format)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -468,9 +409,6 @@ public class SourceImpl extends EObjectImpl implements Source {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.SOURCE__LINKED_TO:
-				setLinkedTo((ImportOperation)null);
-				return;
 			case PipelinePackage.SOURCE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -489,6 +427,9 @@ public class SourceImpl extends EObjectImpl implements Source {
 			case PipelinePackage.SOURCE__PASSWORD:
 				setPassword(PASSWORD_EDEFAULT);
 				return;
+			case PipelinePackage.SOURCE__FORMAT:
+				setFormat(FORMAT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -501,8 +442,6 @@ public class SourceImpl extends EObjectImpl implements Source {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.SOURCE__LINKED_TO:
-				return linkedTo != null;
 			case PipelinePackage.SOURCE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case PipelinePackage.SOURCE__PATH:
@@ -515,6 +454,8 @@ public class SourceImpl extends EObjectImpl implements Source {
 				return USER_NAME_EDEFAULT == null ? userName != null : !USER_NAME_EDEFAULT.equals(userName);
 			case PipelinePackage.SOURCE__PASSWORD:
 				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
+			case PipelinePackage.SOURCE__FORMAT:
+				return format != FORMAT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -541,6 +482,8 @@ public class SourceImpl extends EObjectImpl implements Source {
 		result.append(userName);
 		result.append(", password: ");
 		result.append(password);
+		result.append(", format: ");
+		result.append(format);
 		result.append(')');
 		return result.toString();
 	}

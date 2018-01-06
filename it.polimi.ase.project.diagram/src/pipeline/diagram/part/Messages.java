@@ -426,67 +426,52 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String InternalDFSchema4CreationTool_title;
+	public static String InternalDataFlow4CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String InternalDFSchema4CreationTool_desc;
+	public static String InternalDataFlow4CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String InternalDataFlow5CreationTool_title;
+	public static String Read5CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String InternalDataFlow5CreationTool_desc;
+	public static String Read5CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Read6CreationTool_title;
+	public static String Use6CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Read6CreationTool_desc;
+	public static String Use6CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Use7CreationTool_title;
+	public static String Write7CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Use7CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String Use8CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String Use8CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String Write9CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String Write9CreationTool_desc;
+	public static String Write7CreationTool_desc;
 
 	/**
 	* @generated
 	*/
 	public static String CollectionTaskCollectionTaskImportOperationsCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String IntegrationTaskIntegrationTaskIntegrationOperationsCompartmentEditPart_title;
 
 	/**
 	* @generated
@@ -497,6 +482,11 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String VisualizationTaskVisualizationTaskVisualizationOperationsCompartmentEditPart_title;
 
 	/**
 	* @generated
@@ -646,27 +636,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_InternalDataFlow_4002_outgoinglinks;
-
-	/**
-	* @generated
-	*/
 	public static String NavigatorGroupName_DataFlowSchema_4003_target;
 
 	/**
 	* @generated
 	*/
 	public static String NavigatorGroupName_DataFlowSchema_4003_source;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_InternalDataFlowSchema_4004_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_InternalDataFlowSchema_4004_source;
 
 	/**
 	* @generated
@@ -687,16 +662,6 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String NavigatorGroupName_ImportOperationUse_4007_source;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ExportOperationUse_4008_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ExportOperationUse_4008_source;
 
 	/**
 	* @generated

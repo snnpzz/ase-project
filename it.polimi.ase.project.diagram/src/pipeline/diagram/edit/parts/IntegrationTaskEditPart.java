@@ -5,6 +5,7 @@ package pipeline.diagram.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -29,6 +30,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 
 import pipeline.diagram.edit.policies.IntegrationTaskItemSemanticEditPolicy;
+import pipeline.diagram.edit.policies.OpenDiagramEditPolicy;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 
 /**
@@ -65,7 +67,7 @@ public class IntegrationTaskEditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new IntegrationTaskItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy()); // XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
@@ -117,6 +119,13 @@ public class IntegrationTaskEditPart extends ShapeNodeEditPart {
 					.setLabel(getPrimaryShape().getFigureIntegrationTaskLabelFigure());
 			return true;
 		}
+		if (childEditPart instanceof IntegrationTaskIntegrationTaskIntegrationOperationsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getIntegrationTaskIntegrationOperationsCompartmentFigure();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((IntegrationTaskIntegrationTaskIntegrationOperationsCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -125,6 +134,12 @@ public class IntegrationTaskEditPart extends ShapeNodeEditPart {
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof IntegrationTaskIDEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof IntegrationTaskIntegrationTaskIntegrationOperationsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getIntegrationTaskIntegrationOperationsCompartmentFigure();
+			pane.remove(((IntegrationTaskIntegrationTaskIntegrationOperationsCompartmentEditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		return false;
@@ -154,6 +169,9 @@ public class IntegrationTaskEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		if (editPart instanceof IntegrationTaskIntegrationTaskIntegrationOperationsCompartmentEditPart) {
+			return getPrimaryShape().getIntegrationTaskIntegrationOperationsCompartmentFigure();
+		}
 		return getContentPane();
 	}
 
@@ -271,6 +289,10 @@ public class IntegrationTaskEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private WrappingLabel fFigureIntegrationTaskLabelFigure;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fIntegrationTaskIntegrationOperationsCompartmentFigure;
 
 		/**
 		 * @generated
@@ -290,8 +312,16 @@ public class IntegrationTaskEditPart extends ShapeNodeEditPart {
 			fFigureIntegrationTaskLabelFigure = new WrappingLabel();
 
 			fFigureIntegrationTaskLabelFigure.setText("IntegrationTask");
+			fFigureIntegrationTaskLabelFigure
+					.setMaximumSize(new Dimension(getMapMode().DPtoLP(10000), getMapMode().DPtoLP(50)));
 
 			this.add(fFigureIntegrationTaskLabelFigure);
+
+			fIntegrationTaskIntegrationOperationsCompartmentFigure = new RectangleFigure();
+
+			fIntegrationTaskIntegrationOperationsCompartmentFigure.setOutline(false);
+
+			this.add(fIntegrationTaskIntegrationOperationsCompartmentFigure);
 
 		}
 
@@ -300,6 +330,13 @@ public class IntegrationTaskEditPart extends ShapeNodeEditPart {
 		 */
 		public WrappingLabel getFigureIntegrationTaskLabelFigure() {
 			return fFigureIntegrationTaskLabelFigure;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getIntegrationTaskIntegrationOperationsCompartmentFigure() {
+			return fIntegrationTaskIntegrationOperationsCompartmentFigure;
 		}
 
 	}

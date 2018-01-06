@@ -28,7 +28,6 @@ import pipeline.diagram.edit.parts.ComplexAttributeEditPart;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.ExportOperationEditPart;
-import pipeline.diagram.edit.parts.ExportOperationUseEditPart;
 import pipeline.diagram.edit.parts.ExportOperationWriteEditPart;
 import pipeline.diagram.edit.parts.ExportTaskEditPart;
 import pipeline.diagram.edit.parts.FileEditPart;
@@ -37,7 +36,6 @@ import pipeline.diagram.edit.parts.ImportOperationReadEditPart;
 import pipeline.diagram.edit.parts.ImportOperationUseEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
-import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
 import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.edit.parts.SimpleAttribute2EditPart;
@@ -169,11 +167,6 @@ public class PipelineElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType InternalDataFlowSchema_4004 = getElementType(
-			"it.polimi.ase.project.diagram.InternalDataFlowSchema_4004"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
 	public static final IElementType ImportOperationRead_4006 = getElementType(
 			"it.polimi.ase.project.diagram.ImportOperationRead_4006"); //$NON-NLS-1$
 	/**
@@ -181,11 +174,6 @@ public class PipelineElementTypes {
 	*/
 	public static final IElementType ImportOperationUse_4007 = getElementType(
 			"it.polimi.ase.project.diagram.ImportOperationUse_4007"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
-	public static final IElementType ExportOperationUse_4008 = getElementType(
-			"it.polimi.ase.project.diagram.ExportOperationUse_4008"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -274,13 +262,9 @@ public class PipelineElementTypes {
 
 			elements.put(DataFlowSchema_4003, PipelinePackage.eINSTANCE.getDataFlow_Schema());
 
-			elements.put(InternalDataFlowSchema_4004, PipelinePackage.eINSTANCE.getInternalDataFlow_Schema());
-
 			elements.put(ImportOperationRead_4006, PipelinePackage.eINSTANCE.getImportOperation_Read());
 
 			elements.put(ImportOperationUse_4007, PipelinePackage.eINSTANCE.getImportOperation_Use());
-
-			elements.put(ExportOperationUse_4008, PipelinePackage.eINSTANCE.getExportOperation_Use());
 
 			elements.put(ExportOperationWrite_4009, PipelinePackage.eINSTANCE.getExportOperation_Write());
 
@@ -322,10 +306,8 @@ public class PipelineElementTypes {
 			KNOWN_ELEMENT_TYPES.add(DataFlow_4001);
 			KNOWN_ELEMENT_TYPES.add(InternalDataFlow_4002);
 			KNOWN_ELEMENT_TYPES.add(DataFlowSchema_4003);
-			KNOWN_ELEMENT_TYPES.add(InternalDataFlowSchema_4004);
 			KNOWN_ELEMENT_TYPES.add(ImportOperationRead_4006);
 			KNOWN_ELEMENT_TYPES.add(ImportOperationUse_4007);
-			KNOWN_ELEMENT_TYPES.add(ExportOperationUse_4008);
 			KNOWN_ELEMENT_TYPES.add(ExportOperationWrite_4009);
 			KNOWN_ELEMENT_TYPES.add(ChartAxes_4010);
 		}
@@ -377,14 +359,10 @@ public class PipelineElementTypes {
 			return InternalDataFlow_4002;
 		case DataFlowSchemaEditPart.VISUAL_ID:
 			return DataFlowSchema_4003;
-		case InternalDataFlowSchemaEditPart.VISUAL_ID:
-			return InternalDataFlowSchema_4004;
 		case ImportOperationReadEditPart.VISUAL_ID:
 			return ImportOperationRead_4006;
 		case ImportOperationUseEditPart.VISUAL_ID:
 			return ImportOperationUse_4007;
-		case ExportOperationUseEditPart.VISUAL_ID:
-			return ExportOperationUse_4008;
 		case ExportOperationWriteEditPart.VISUAL_ID:
 			return ExportOperationWrite_4009;
 		case ChartAxesEditPart.VISUAL_ID:

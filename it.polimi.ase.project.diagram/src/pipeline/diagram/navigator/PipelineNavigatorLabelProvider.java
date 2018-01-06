@@ -21,8 +21,6 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
-import pipeline.DataFlow;
-import pipeline.InternalDataFlow;
 import pipeline.Pipeline;
 import pipeline.Schema;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
@@ -42,7 +40,6 @@ import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.ExportOperationEditPart;
 import pipeline.diagram.edit.parts.ExportOperationIDEditPart;
-import pipeline.diagram.edit.parts.ExportOperationUseEditPart;
 import pipeline.diagram.edit.parts.ExportOperationWriteEditPart;
 import pipeline.diagram.edit.parts.ExportTaskEditPart;
 import pipeline.diagram.edit.parts.ExportTaskIDEditPart;
@@ -55,7 +52,6 @@ import pipeline.diagram.edit.parts.ImportOperationUseEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
-import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
 import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.edit.parts.SimpleAttribute2EditPart;
@@ -192,18 +188,12 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 		case DataFlowSchemaEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.project.ase.polimi.it/pipeline?DataFlow?schema", //$NON-NLS-1$
 					PipelineElementTypes.DataFlowSchema_4003);
-		case InternalDataFlowSchemaEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.project.ase.polimi.it/pipeline?InternalDataFlow?schema", //$NON-NLS-1$
-					PipelineElementTypes.InternalDataFlowSchema_4004);
 		case ImportOperationReadEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.project.ase.polimi.it/pipeline?ImportOperation?read", //$NON-NLS-1$
 					PipelineElementTypes.ImportOperationRead_4006);
 		case ImportOperationUseEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.project.ase.polimi.it/pipeline?ImportOperation?use", //$NON-NLS-1$
 					PipelineElementTypes.ImportOperationUse_4007);
-		case ExportOperationUseEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.project.ase.polimi.it/pipeline?ExportOperation?use", //$NON-NLS-1$
-					PipelineElementTypes.ExportOperationUse_4008);
 		case ExportOperationWriteEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.project.ase.polimi.it/pipeline?ExportOperation?write", //$NON-NLS-1$
 					PipelineElementTypes.ExportOperationWrite_4009);
@@ -308,14 +298,10 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 			return getInternalDataFlow_4002Text(view);
 		case DataFlowSchemaEditPart.VISUAL_ID:
 			return getDataFlowSchema_4003Text(view);
-		case InternalDataFlowSchemaEditPart.VISUAL_ID:
-			return getInternalDataFlowSchema_4004Text(view);
 		case ImportOperationReadEditPart.VISUAL_ID:
 			return getImportOperationRead_4006Text(view);
 		case ImportOperationUseEditPart.VISUAL_ID:
 			return getImportOperationUse_4007Text(view);
-		case ExportOperationUseEditPart.VISUAL_ID:
-			return getExportOperationUse_4008Text(view);
 		case ExportOperationWriteEditPart.VISUAL_ID:
 			return getExportOperationWrite_4009Text(view);
 		case ChartAxesEditPart.VISUAL_ID:
@@ -594,26 +580,14 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	* @generated
 	*/
 	private String getDataFlow_4001Text(View view) {
-		DataFlow domainModelElement = (DataFlow) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getFormat());
-		} else {
-			PipelineDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4001); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
+		return ""; //$NON-NLS-1$
 	}
 
 	/**
 	* @generated
 	*/
 	private String getInternalDataFlow_4002Text(View view) {
-		InternalDataFlow domainModelElement = (InternalDataFlow) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getFormat());
-		} else {
-			PipelineDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4002); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
+		return ""; //$NON-NLS-1$
 	}
 
 	/**
@@ -627,21 +601,6 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 					ParserOptions.NONE.intValue());
 		} else {
 			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6001); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	* @generated
-	*/
-	private String getInternalDataFlowSchema_4004Text(View view) {
-		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.InternalDataFlowSchema_4004,
-				view.getElement() != null ? view.getElement() : view, CommonParserHint.DESCRIPTION);
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6002); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -672,21 +631,6 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 					ParserOptions.NONE.intValue());
 		} else {
 			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6005); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	* @generated
-	*/
-	private String getExportOperationUse_4008Text(View view) {
-		IParser parser = PipelineParserProvider.getParser(PipelineElementTypes.ExportOperationUse_4008,
-				view.getElement() != null ? view.getElement() : view, CommonParserHint.DESCRIPTION);
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			PipelineDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6006); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

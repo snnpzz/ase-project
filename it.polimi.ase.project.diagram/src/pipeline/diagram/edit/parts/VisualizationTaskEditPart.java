@@ -5,6 +5,7 @@ package pipeline.diagram.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -28,6 +29,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 
+import pipeline.diagram.edit.policies.OpenDiagramEditPolicy;
 import pipeline.diagram.edit.policies.VisualizationTaskItemSemanticEditPolicy;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 
@@ -65,7 +67,7 @@ public class VisualizationTaskEditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new VisualizationTaskItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy()); // XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
@@ -117,6 +119,13 @@ public class VisualizationTaskEditPart extends ShapeNodeEditPart {
 					.setLabel(getPrimaryShape().getFigureVisualizationTaskLabelFigure());
 			return true;
 		}
+		if (childEditPart instanceof VisualizationTaskVisualizationTaskVisualizationOperationsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getVisualizationTaskVisualizationOperationsCompartmentFigure();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((VisualizationTaskVisualizationTaskVisualizationOperationsCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -125,6 +134,12 @@ public class VisualizationTaskEditPart extends ShapeNodeEditPart {
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof VisualizationTaskIDEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof VisualizationTaskVisualizationTaskVisualizationOperationsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getVisualizationTaskVisualizationOperationsCompartmentFigure();
+			pane.remove(((VisualizationTaskVisualizationTaskVisualizationOperationsCompartmentEditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		return false;
@@ -154,6 +169,9 @@ public class VisualizationTaskEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		if (editPart instanceof VisualizationTaskVisualizationTaskVisualizationOperationsCompartmentEditPart) {
+			return getPrimaryShape().getVisualizationTaskVisualizationOperationsCompartmentFigure();
+		}
 		return getContentPane();
 	}
 
@@ -271,6 +289,10 @@ public class VisualizationTaskEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private WrappingLabel fFigureVisualizationTaskLabelFigure;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fVisualizationTaskVisualizationOperationsCompartmentFigure;
 
 		/**
 		 * @generated
@@ -290,8 +312,16 @@ public class VisualizationTaskEditPart extends ShapeNodeEditPart {
 			fFigureVisualizationTaskLabelFigure = new WrappingLabel();
 
 			fFigureVisualizationTaskLabelFigure.setText("VisualizationTask");
+			fFigureVisualizationTaskLabelFigure
+					.setMaximumSize(new Dimension(getMapMode().DPtoLP(10000), getMapMode().DPtoLP(50)));
 
 			this.add(fFigureVisualizationTaskLabelFigure);
+
+			fVisualizationTaskVisualizationOperationsCompartmentFigure = new RectangleFigure();
+
+			fVisualizationTaskVisualizationOperationsCompartmentFigure.setOutline(false);
+
+			this.add(fVisualizationTaskVisualizationOperationsCompartmentFigure);
 
 		}
 
@@ -300,6 +330,13 @@ public class VisualizationTaskEditPart extends ShapeNodeEditPart {
 		 */
 		public WrappingLabel getFigureVisualizationTaskLabelFigure() {
 			return fFigureVisualizationTaskLabelFigure;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getVisualizationTaskVisualizationOperationsCompartmentFigure() {
+			return fVisualizationTaskVisualizationOperationsCompartmentFigure;
 		}
 
 	}

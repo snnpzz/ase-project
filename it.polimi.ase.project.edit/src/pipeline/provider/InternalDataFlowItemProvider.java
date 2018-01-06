@@ -61,34 +61,10 @@ public class InternalDataFlowItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFormatPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
-			addSchemaPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Format feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFormatPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_InternalDataFlow_format_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_InternalDataFlow_format_feature", "_UI_InternalDataFlow_type"),
-				 PipelinePackage.Literals.INTERNAL_DATA_FLOW__FORMAT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -136,28 +112,6 @@ public class InternalDataFlowItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Schema feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSchemaPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_InternalDataFlow_schema_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_InternalDataFlow_schema_feature", "_UI_InternalDataFlow_type"),
-				 PipelinePackage.Literals.INTERNAL_DATA_FLOW__SCHEMA,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns InternalDataFlow.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -176,11 +130,7 @@ public class InternalDataFlowItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Format labelValue = ((InternalDataFlow)object).getFormat();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_InternalDataFlow_type") :
-			getString("_UI_InternalDataFlow_type") + " " + label;
+		return getString("_UI_InternalDataFlow_type");
 	}
 	
 
@@ -194,12 +144,6 @@ public class InternalDataFlowItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(InternalDataFlow.class)) {
-			case PipelinePackage.INTERNAL_DATA_FLOW__FORMAT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

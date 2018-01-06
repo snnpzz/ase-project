@@ -347,27 +347,11 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateInternalDataFlowSchema_4004(InternalDataFlow source, Schema target) {
-			if (source != null) {
-				if (source.getSchema() != null) {
-					return false;
-				}
-			}
-
-			return canExistInternalDataFlowSchema_4004(source, target);
-		}
-
-		/**
-		 * @generated
-		 */
 		public boolean canCreateImportOperationRead_4006(ImportOperation source, Source target) {
 			if (source != null) {
 				if (source.getRead() != null) {
 					return false;
 				}
-			}
-			if (target != null && (target.getLinkedTo() != null)) {
-				return false;
 			}
 
 			return canExistImportOperationRead_4006(source, target);
@@ -389,27 +373,11 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateExportOperationUse_4008(ExportOperation source, Schema target) {
-			if (source != null) {
-				if (source.getUse() != null) {
-					return false;
-				}
-			}
-
-			return canExistExportOperationUse_4008(source, target);
-		}
-
-		/**
-		 * @generated
-		 */
 		public boolean canCreateExportOperationWrite_4009(ExportOperation source, File target) {
 			if (source != null) {
 				if (source.getWrite() != null) {
 					return false;
 				}
-			}
-			if (target != null && (target.getComesFrom() != null)) {
-				return false;
 			}
 
 			return canExistExportOperationWrite_4009(source, target);
@@ -453,13 +421,6 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		* @generated
 		*/
-		public boolean canExistInternalDataFlowSchema_4004(InternalDataFlow source, Schema target) {
-			return true;
-		}
-
-		/**
-		* @generated
-		*/
 		public boolean canExistImportOperationRead_4006(ImportOperation source, Source target) {
 			return true;
 		}
@@ -468,13 +429,6 @@ public class PipelineBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		* @generated
 		*/
 		public boolean canExistImportOperationUse_4007(ImportOperation source, Schema target) {
-			return true;
-		}
-
-		/**
-		* @generated
-		*/
-		public boolean canExistExportOperationUse_4008(ExportOperation source, Schema target) {
 			return true;
 		}
 

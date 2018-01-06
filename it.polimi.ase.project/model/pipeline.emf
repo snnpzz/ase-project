@@ -22,7 +22,6 @@ abstract class Task {
 
 @gmf.link(source="source", target="target", width="2", target.decoration="filledclosedarrow")
 class DataFlow {
-  attr Format format;
   ref Task#incoming target;
   ref Task#outgoing source;
 
@@ -34,17 +33,13 @@ abstract class Operation {
   ref InternalDataFlow#target incoming;
   ref InternalDataFlow#source outgoing;
   attr String ID;
-  ref SimpleAttribute[+] attributes;
+  ref SimpleAttribute[+] inputAttributes;
 }
 
 @gmf.link(source="source", target="target", width="2", target.decoration="filledclosedarrow", style="dash")
 class InternalDataFlow {
-  attr Format format;
   ref Operation#outgoing source;
   ref Operation#incoming target;
-
-  @gmf.link(width="1", target.decoration="arrow", style="dot", tool.name="InternalDFSchema")
-  ref Schema[1] schema;
 }
 
 @gmf.node(label="name", label.placement="none", figure="rounded")
@@ -69,6 +64,8 @@ class CollectionTask extends Task {
 }
 
 class IntegrationTask extends Task {
+
+  @gmf.compartment
   val IntegrationOperation[+] integrationOperations;
 }
 
@@ -85,6 +82,8 @@ class AnalysisTask extends Task {
 }
 
 class VisualizationTask extends Task {
+
+  @gmf.compartment
   val VisualizationOperation[+] visualizationOperations;
 }
 
@@ -99,7 +98,7 @@ class ImportOperation {
   id attr String ID;
 
   @gmf.link(width="2", target.decoration="square", style="dash")
-  ref Source[1]#linkedTo read;
+  ref Source[1] read;
 
   @gmf.link(width="1", target.decoration="arrow")
   ref Schema[1] use;
@@ -109,11 +108,8 @@ class ImportOperation {
 class ExportOperation {
   id attr String ID;
 
-  @gmf.link(width="1", target.decoration="arrow")
-  ref Schema[1] use;
-
   @gmf.link(width="2", target.decoration="filledsquare", style="dash")
-  ref File[1]#comesFrom write;
+  ref File[1] write;
 }
 
 class UserDefinedCleaningOperation extends CleaningOperation {
@@ -122,20 +118,20 @@ class UserDefinedCleaningOperation extends CleaningOperation {
 
 @gmf.node(label="name")
 class Source {
-  ref ImportOperation[1]#read linkedTo;
   attr String name;
   attr String path;
   attr String serverName;
   attr int portNumber;
   attr String userName;
   attr String password;
+  attr Format format;
 }
 
 @gmf.node(label="name")
 class File {
   attr String name;
   attr String path;
-  ref ExportOperation[1]#write comesFrom;
+  attr Format format;
 }
 
 @gmf.node(label="title", figure="rounded")
@@ -152,6 +148,7 @@ abstract class CleaningOperation extends Operation {
 }
 
 abstract class AnalysisOperation extends Operation {
+  ref SimpleAttribute[+] outputAttributes;
 }
 
 class DescriptiveAnalysisOperation extends AnalysisOperation {
@@ -190,6 +187,7 @@ enum PredefinedOperation {
   removeNegative = 1;
   round = 2;
   removeColumn = 4;
+  removeDuplicates = 4;
 }
 
 enum ClusteringOperation {
@@ -260,6 +258,6 @@ class VisualizationOperation {
 
 class IntegrationOperation {
   attr String ID;
-  ref Attribute[2] attributes;
+  ref Attribute[+] attributes;
 }
 

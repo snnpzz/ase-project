@@ -7,6 +7,7 @@ import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.common.core.command.ICompositeCommand;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
@@ -14,11 +15,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
+import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.diagram.edit.commands.DataFlowCreateCommand;
 import pipeline.diagram.edit.commands.DataFlowReorientCommand;
 import pipeline.diagram.edit.parts.DataFlowEditPart;
+import pipeline.diagram.edit.parts.IntegrationTaskIntegrationTaskIntegrationOperationsCompartmentEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 import pipeline.diagram.providers.PipelineElementTypes;
 
@@ -62,6 +65,7 @@ public class IntegrationTaskItemSemanticEditPolicy extends PipelineBaseItemSeman
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
 			// there are indirectly referenced children, need extra commands: false
+			addDestroyChildNodesCommand(cmd);
 			addDestroyShortcutsCommand(cmd, view);
 			// delete host element
 			cmd.add(new DestroyElementCommand(req));
@@ -69,6 +73,25 @@ public class IntegrationTaskItemSemanticEditPolicy extends PipelineBaseItemSeman
 			cmd.add(new DeleteCommand(getEditingDomain(), view));
 		}
 		return getGEFWrapper(cmd.reduce());
+	}
+
+	/**
+	* @generated
+	*/
+	private void addDestroyChildNodesCommand(ICompositeCommand cmd) {
+		View view = (View) getHost().getModel();
+		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
+			Node node = (Node) nit.next();
+			switch (PipelineVisualIDRegistry.getVisualID(node)) {
+			case IntegrationTaskIntegrationTaskIntegrationOperationsCompartmentEditPart.VISUAL_ID:
+				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
+					Node cnode = (Node) cit.next();
+					switch (PipelineVisualIDRegistry.getVisualID(cnode)) {
+					}
+				}
+				break;
+			}
+		}
 	}
 
 	/**

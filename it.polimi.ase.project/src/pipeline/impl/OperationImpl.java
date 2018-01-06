@@ -33,7 +33,7 @@ import pipeline.SimpleAttribute;
  *   <li>{@link pipeline.impl.OperationImpl#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link pipeline.impl.OperationImpl#getOutgoing <em>Outgoing</em>}</li>
  *   <li>{@link pipeline.impl.OperationImpl#getID <em>ID</em>}</li>
- *   <li>{@link pipeline.impl.OperationImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link pipeline.impl.OperationImpl#getInputAttributes <em>Input Attributes</em>}</li>
  * </ul>
  *
  * @generated
@@ -80,14 +80,14 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	protected String id = ID_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' reference list.
+	 * The cached value of the '{@link #getInputAttributes() <em>Input Attributes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttributes()
+	 * @see #getInputAttributes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SimpleAttribute> attributes;
+	protected EList<SimpleAttribute> inputAttributes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,11 +254,11 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SimpleAttribute> getAttributes() {
-		if (attributes == null) {
-			attributes = new EObjectResolvingEList<SimpleAttribute>(SimpleAttribute.class, this, PipelinePackage.OPERATION__ATTRIBUTES);
+	public EList<SimpleAttribute> getInputAttributes() {
+		if (inputAttributes == null) {
+			inputAttributes = new EObjectResolvingEList<SimpleAttribute>(SimpleAttribute.class, this, PipelinePackage.OPERATION__INPUT_ATTRIBUTES);
 		}
-		return attributes;
+		return inputAttributes;
 	}
 
 	/**
@@ -313,8 +313,8 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 				return basicGetOutgoing();
 			case PipelinePackage.OPERATION__ID:
 				return getID();
-			case PipelinePackage.OPERATION__ATTRIBUTES:
-				return getAttributes();
+			case PipelinePackage.OPERATION__INPUT_ATTRIBUTES:
+				return getInputAttributes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -337,9 +337,9 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 			case PipelinePackage.OPERATION__ID:
 				setID((String)newValue);
 				return;
-			case PipelinePackage.OPERATION__ATTRIBUTES:
-				getAttributes().clear();
-				getAttributes().addAll((Collection<? extends SimpleAttribute>)newValue);
+			case PipelinePackage.OPERATION__INPUT_ATTRIBUTES:
+				getInputAttributes().clear();
+				getInputAttributes().addAll((Collection<? extends SimpleAttribute>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -362,8 +362,8 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 			case PipelinePackage.OPERATION__ID:
 				setID(ID_EDEFAULT);
 				return;
-			case PipelinePackage.OPERATION__ATTRIBUTES:
-				getAttributes().clear();
+			case PipelinePackage.OPERATION__INPUT_ATTRIBUTES:
+				getInputAttributes().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -383,8 +383,8 @@ public abstract class OperationImpl extends EObjectImpl implements Operation {
 				return outgoing != null;
 			case PipelinePackage.OPERATION__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case PipelinePackage.OPERATION__ATTRIBUTES:
-				return attributes != null && !attributes.isEmpty();
+			case PipelinePackage.OPERATION__INPUT_ATTRIBUTES:
+				return inputAttributes != null && !inputAttributes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

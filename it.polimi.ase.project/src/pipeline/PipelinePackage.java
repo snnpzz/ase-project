@@ -204,22 +204,13 @@ public interface PipelinePackage extends EPackage {
 	int DATA_FLOW = 2;
 
 	/**
-	 * The feature id for the '<em><b>Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_FLOW__FORMAT = 0;
-
-	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW__TARGET = 1;
+	int DATA_FLOW__TARGET = 0;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -228,7 +219,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW__SOURCE = 2;
+	int DATA_FLOW__SOURCE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Schema</b></em>' reference.
@@ -237,7 +228,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW__SCHEMA = 3;
+	int DATA_FLOW__SCHEMA = 2;
 
 	/**
 	 * The number of structural features of the '<em>Data Flow</em>' class.
@@ -246,7 +237,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_FEATURE_COUNT = 4;
+	int DATA_FLOW_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.OperationImpl <em>Operation</em>}' class.
@@ -286,13 +277,13 @@ public interface PipelinePackage extends EPackage {
 	int OPERATION__ID = 2;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__ATTRIBUTES = 3;
+	int OPERATION__INPUT_ATTRIBUTES = 3;
 
 	/**
 	 * The number of structural features of the '<em>Operation</em>' class.
@@ -314,22 +305,13 @@ public interface PipelinePackage extends EPackage {
 	int INTERNAL_DATA_FLOW = 4;
 
 	/**
-	 * The feature id for the '<em><b>Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_DATA_FLOW__FORMAT = 0;
-
-	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_DATA_FLOW__SOURCE = 1;
+	int INTERNAL_DATA_FLOW__SOURCE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -338,16 +320,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_DATA_FLOW__TARGET = 2;
-
-	/**
-	 * The feature id for the '<em><b>Schema</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_DATA_FLOW__SCHEMA = 3;
+	int INTERNAL_DATA_FLOW__TARGET = 1;
 
 	/**
 	 * The number of structural features of the '<em>Internal Data Flow</em>' class.
@@ -356,7 +329,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_DATA_FLOW_FEATURE_COUNT = 4;
+	int INTERNAL_DATA_FLOW_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.SchemaImpl <em>Schema</em>}' class.
@@ -837,22 +810,13 @@ public interface PipelinePackage extends EPackage {
 	int EXPORT_OPERATION__ID = 0;
 
 	/**
-	 * The feature id for the '<em><b>Use</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPORT_OPERATION__USE = 1;
-
-	/**
 	 * The feature id for the '<em><b>Write</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORT_OPERATION__WRITE = 2;
+	int EXPORT_OPERATION__WRITE = 1;
 
 	/**
 	 * The number of structural features of the '<em>Export Operation</em>' class.
@@ -861,7 +825,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORT_OPERATION_FEATURE_COUNT = 3;
+	int EXPORT_OPERATION_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.CleaningOperationImpl <em>Cleaning Operation</em>}' class.
@@ -901,13 +865,13 @@ public interface PipelinePackage extends EPackage {
 	int CLEANING_OPERATION__ID = OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLEANING_OPERATION__ATTRIBUTES = OPERATION__ATTRIBUTES;
+	int CLEANING_OPERATION__INPUT_ATTRIBUTES = OPERATION__INPUT_ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Cleaning Operation</em>' class.
@@ -956,13 +920,13 @@ public interface PipelinePackage extends EPackage {
 	int USER_DEFINED_CLEANING_OPERATION__ID = CLEANING_OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_DEFINED_CLEANING_OPERATION__ATTRIBUTES = CLEANING_OPERATION__ATTRIBUTES;
+	int USER_DEFINED_CLEANING_OPERATION__INPUT_ATTRIBUTES = CLEANING_OPERATION__INPUT_ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -993,22 +957,13 @@ public interface PipelinePackage extends EPackage {
 	int SOURCE = 16;
 
 	/**
-	 * The feature id for the '<em><b>Linked To</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOURCE__LINKED_TO = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__NAME = 1;
+	int SOURCE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' attribute.
@@ -1017,7 +972,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__PATH = 2;
+	int SOURCE__PATH = 1;
 
 	/**
 	 * The feature id for the '<em><b>Server Name</b></em>' attribute.
@@ -1026,7 +981,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__SERVER_NAME = 3;
+	int SOURCE__SERVER_NAME = 2;
 
 	/**
 	 * The feature id for the '<em><b>Port Number</b></em>' attribute.
@@ -1035,7 +990,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__PORT_NUMBER = 4;
+	int SOURCE__PORT_NUMBER = 3;
 
 	/**
 	 * The feature id for the '<em><b>User Name</b></em>' attribute.
@@ -1044,7 +999,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__USER_NAME = 5;
+	int SOURCE__USER_NAME = 4;
 
 	/**
 	 * The feature id for the '<em><b>Password</b></em>' attribute.
@@ -1053,7 +1008,16 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__PASSWORD = 6;
+	int SOURCE__PASSWORD = 5;
+
+	/**
+	 * The feature id for the '<em><b>Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__FORMAT = 6;
 
 	/**
 	 * The number of structural features of the '<em>Source</em>' class.
@@ -1093,13 +1057,13 @@ public interface PipelinePackage extends EPackage {
 	int FILE__PATH = 1;
 
 	/**
-	 * The feature id for the '<em><b>Comes From</b></em>' reference.
+	 * The feature id for the '<em><b>Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FILE__COMES_FROM = 2;
+	int FILE__FORMAT = 2;
 
 	/**
 	 * The number of structural features of the '<em>File</em>' class.
@@ -1203,13 +1167,22 @@ public interface PipelinePackage extends EPackage {
 	int ANALYSIS_OPERATION__ID = OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_OPERATION__ATTRIBUTES = OPERATION__ATTRIBUTES;
+	int ANALYSIS_OPERATION__INPUT_ATTRIBUTES = OPERATION__INPUT_ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Output Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES = OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Analysis Operation</em>' class.
@@ -1218,7 +1191,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_OPERATION_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 0;
+	int ANALYSIS_OPERATION_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.DescriptiveAnalysisOperationImpl <em>Descriptive Analysis Operation</em>}' class.
@@ -1258,13 +1231,22 @@ public interface PipelinePackage extends EPackage {
 	int DESCRIPTIVE_ANALYSIS_OPERATION__ID = ANALYSIS_OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTIVE_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
+	int DESCRIPTIVE_ANALYSIS_OPERATION__INPUT_ATTRIBUTES = ANALYSIS_OPERATION__INPUT_ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Output Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTIVE_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1322,13 +1304,22 @@ public interface PipelinePackage extends EPackage {
 	int CLASSIFICATION_ANALYSIS_OPERATION__ID = ANALYSIS_OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFICATION_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
+	int CLASSIFICATION_ANALYSIS_OPERATION__INPUT_ATTRIBUTES = ANALYSIS_OPERATION__INPUT_ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Output Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFICATION_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1386,13 +1377,22 @@ public interface PipelinePackage extends EPackage {
 	int PREDICTIVE_ANALYSIS_OPERATION__ID = ANALYSIS_OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PREDICTIVE_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
+	int PREDICTIVE_ANALYSIS_OPERATION__INPUT_ATTRIBUTES = ANALYSIS_OPERATION__INPUT_ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Output Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICTIVE_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1450,13 +1450,22 @@ public interface PipelinePackage extends EPackage {
 	int CLUSTERING_ANALYSIS_OPERATION__ID = ANALYSIS_OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTERING_ANALYSIS_OPERATION__ATTRIBUTES = ANALYSIS_OPERATION__ATTRIBUTES;
+	int CLUSTERING_ANALYSIS_OPERATION__INPUT_ATTRIBUTES = ANALYSIS_OPERATION__INPUT_ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Output Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTERING_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1523,13 +1532,13 @@ public interface PipelinePackage extends EPackage {
 	int PREDEFINED_CLEANING_OPERATION__ID = CLEANING_OPERATION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PREDEFINED_CLEANING_OPERATION__ATTRIBUTES = CLEANING_OPERATION__ATTRIBUTES;
+	int PREDEFINED_CLEANING_OPERATION__INPUT_ATTRIBUTES = CLEANING_OPERATION__INPUT_ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1976,17 +1985,6 @@ public interface PipelinePackage extends EPackage {
 	EClass getDataFlow();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pipeline.DataFlow#getFormat <em>Format</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Format</em>'.
-	 * @see pipeline.DataFlow#getFormat()
-	 * @see #getDataFlow()
-	 * @generated
-	 */
-	EAttribute getDataFlow_Format();
-
-	/**
 	 * Returns the meta object for the reference '{@link pipeline.DataFlow#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2063,15 +2061,15 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getOperation_ID();
 
 	/**
-	 * Returns the meta object for the reference list '{@link pipeline.Operation#getAttributes <em>Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link pipeline.Operation#getInputAttributes <em>Input Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Attributes</em>'.
-	 * @see pipeline.Operation#getAttributes()
+	 * @return the meta object for the reference list '<em>Input Attributes</em>'.
+	 * @see pipeline.Operation#getInputAttributes()
 	 * @see #getOperation()
 	 * @generated
 	 */
-	EReference getOperation_Attributes();
+	EReference getOperation_InputAttributes();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.InternalDataFlow <em>Internal Data Flow</em>}'.
@@ -2082,17 +2080,6 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getInternalDataFlow();
-
-	/**
-	 * Returns the meta object for the attribute '{@link pipeline.InternalDataFlow#getFormat <em>Format</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Format</em>'.
-	 * @see pipeline.InternalDataFlow#getFormat()
-	 * @see #getInternalDataFlow()
-	 * @generated
-	 */
-	EAttribute getInternalDataFlow_Format();
 
 	/**
 	 * Returns the meta object for the reference '{@link pipeline.InternalDataFlow#getSource <em>Source</em>}'.
@@ -2115,17 +2102,6 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInternalDataFlow_Target();
-
-	/**
-	 * Returns the meta object for the reference '{@link pipeline.InternalDataFlow#getSchema <em>Schema</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Schema</em>'.
-	 * @see pipeline.InternalDataFlow#getSchema()
-	 * @see #getInternalDataFlow()
-	 * @generated
-	 */
-	EReference getInternalDataFlow_Schema();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Schema <em>Schema</em>}'.
@@ -2404,17 +2380,6 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getExportOperation_ID();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.ExportOperation#getUse <em>Use</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Use</em>'.
-	 * @see pipeline.ExportOperation#getUse()
-	 * @see #getExportOperation()
-	 * @generated
-	 */
-	EReference getExportOperation_Use();
-
-	/**
 	 * Returns the meta object for class '{@link pipeline.UserDefinedCleaningOperation <em>User Defined Cleaning Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2444,17 +2409,6 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSource();
-
-	/**
-	 * Returns the meta object for the reference '{@link pipeline.Source#getLinkedTo <em>Linked To</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Linked To</em>'.
-	 * @see pipeline.Source#getLinkedTo()
-	 * @see #getSource()
-	 * @generated
-	 */
-	EReference getSource_LinkedTo();
 
 	/**
 	 * Returns the meta object for the attribute '{@link pipeline.Source#getName <em>Name</em>}'.
@@ -2523,6 +2477,17 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getSource_Password();
 
 	/**
+	 * Returns the meta object for the attribute '{@link pipeline.Source#getFormat <em>Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Format</em>'.
+	 * @see pipeline.Source#getFormat()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_Format();
+
+	/**
 	 * Returns the meta object for class '{@link pipeline.File <em>File</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2555,15 +2520,15 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getFile_Path();
 
 	/**
-	 * Returns the meta object for the reference '{@link pipeline.File#getComesFrom <em>Comes From</em>}'.
+	 * Returns the meta object for the attribute '{@link pipeline.File#getFormat <em>Format</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Comes From</em>'.
-	 * @see pipeline.File#getComesFrom()
+	 * @return the meta object for the attribute '<em>Format</em>'.
+	 * @see pipeline.File#getFormat()
 	 * @see #getFile()
 	 * @generated
 	 */
-	EReference getFile_ComesFrom();
+	EAttribute getFile_Format();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Chart <em>Chart</em>}'.
@@ -2638,6 +2603,17 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAnalysisOperation();
+
+	/**
+	 * Returns the meta object for the reference list '{@link pipeline.AnalysisOperation#getOutputAttributes <em>Output Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Output Attributes</em>'.
+	 * @see pipeline.AnalysisOperation#getOutputAttributes()
+	 * @see #getAnalysisOperation()
+	 * @generated
+	 */
+	EReference getAnalysisOperation_OutputAttributes();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.DescriptiveAnalysisOperation <em>Descriptive Analysis Operation</em>}'.
@@ -3092,14 +3068,6 @@ public interface PipelinePackage extends EPackage {
 		EClass DATA_FLOW = eINSTANCE.getDataFlow();
 
 		/**
-		 * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA_FLOW__FORMAT = eINSTANCE.getDataFlow_Format();
-
-		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3158,12 +3126,12 @@ public interface PipelinePackage extends EPackage {
 		EAttribute OPERATION__ID = eINSTANCE.getOperation_ID();
 
 		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Input Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPERATION__ATTRIBUTES = eINSTANCE.getOperation_Attributes();
+		EReference OPERATION__INPUT_ATTRIBUTES = eINSTANCE.getOperation_InputAttributes();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.InternalDataFlowImpl <em>Internal Data Flow</em>}' class.
@@ -3174,14 +3142,6 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EClass INTERNAL_DATA_FLOW = eINSTANCE.getInternalDataFlow();
-
-		/**
-		 * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INTERNAL_DATA_FLOW__FORMAT = eINSTANCE.getInternalDataFlow_Format();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -3198,14 +3158,6 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EReference INTERNAL_DATA_FLOW__TARGET = eINSTANCE.getInternalDataFlow_Target();
-
-		/**
-		 * The meta object literal for the '<em><b>Schema</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INTERNAL_DATA_FLOW__SCHEMA = eINSTANCE.getInternalDataFlow_Schema();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.SchemaImpl <em>Schema</em>}' class.
@@ -3436,14 +3388,6 @@ public interface PipelinePackage extends EPackage {
 		EAttribute EXPORT_OPERATION__ID = eINSTANCE.getExportOperation_ID();
 
 		/**
-		 * The meta object literal for the '<em><b>Use</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXPORT_OPERATION__USE = eINSTANCE.getExportOperation_Use();
-
-		/**
 		 * The meta object literal for the '{@link pipeline.impl.UserDefinedCleaningOperationImpl <em>User Defined Cleaning Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3470,14 +3414,6 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EClass SOURCE = eINSTANCE.getSource();
-
-		/**
-		 * The meta object literal for the '<em><b>Linked To</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SOURCE__LINKED_TO = eINSTANCE.getSource_LinkedTo();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3528,6 +3464,14 @@ public interface PipelinePackage extends EPackage {
 		EAttribute SOURCE__PASSWORD = eINSTANCE.getSource_Password();
 
 		/**
+		 * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__FORMAT = eINSTANCE.getSource_Format();
+
+		/**
 		 * The meta object literal for the '{@link pipeline.impl.FileImpl <em>File</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3554,12 +3498,12 @@ public interface PipelinePackage extends EPackage {
 		EAttribute FILE__PATH = eINSTANCE.getFile_Path();
 
 		/**
-		 * The meta object literal for the '<em><b>Comes From</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FILE__COMES_FROM = eINSTANCE.getFile_ComesFrom();
+		EAttribute FILE__FORMAT = eINSTANCE.getFile_Format();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.ChartImpl <em>Chart</em>}' class.
@@ -3622,6 +3566,14 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ANALYSIS_OPERATION = eINSTANCE.getAnalysisOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Output Attributes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES = eINSTANCE.getAnalysisOperation_OutputAttributes();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.DescriptiveAnalysisOperationImpl <em>Descriptive Analysis Operation</em>}' class.

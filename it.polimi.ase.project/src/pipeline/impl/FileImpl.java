@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import pipeline.ExportOperation;
 import pipeline.File;
+import pipeline.Format;
 import pipeline.PipelinePackage;
 
 /**
@@ -25,7 +26,7 @@ import pipeline.PipelinePackage;
  * <ul>
  *   <li>{@link pipeline.impl.FileImpl#getName <em>Name</em>}</li>
  *   <li>{@link pipeline.impl.FileImpl#getPath <em>Path</em>}</li>
- *   <li>{@link pipeline.impl.FileImpl#getComesFrom <em>Comes From</em>}</li>
+ *   <li>{@link pipeline.impl.FileImpl#getFormat <em>Format</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,14 +73,24 @@ public class FileImpl extends EObjectImpl implements File {
 	protected String path = PATH_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getComesFrom() <em>Comes From</em>}' reference.
+	 * The default value of the '{@link #getFormat() <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComesFrom()
+	 * @see #getFormat()
 	 * @generated
 	 * @ordered
 	 */
-	protected ExportOperation comesFrom;
+	protected static final Format FORMAT_EDEFAULT = Format.CSV;
+
+	/**
+	 * The cached value of the '{@link #getFormat() <em>Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFormat()
+	 * @generated
+	 * @ordered
+	 */
+	protected Format format = FORMAT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,16 +158,8 @@ public class FileImpl extends EObjectImpl implements File {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExportOperation getComesFrom() {
-		if (comesFrom != null && comesFrom.eIsProxy()) {
-			InternalEObject oldComesFrom = (InternalEObject)comesFrom;
-			comesFrom = (ExportOperation)eResolveProxy(oldComesFrom);
-			if (comesFrom != oldComesFrom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.FILE__COMES_FROM, oldComesFrom, comesFrom));
-			}
-		}
-		return comesFrom;
+	public Format getFormat() {
+		return format;
 	}
 
 	/**
@@ -164,72 +167,11 @@ public class FileImpl extends EObjectImpl implements File {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExportOperation basicGetComesFrom() {
-		return comesFrom;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetComesFrom(ExportOperation newComesFrom, NotificationChain msgs) {
-		ExportOperation oldComesFrom = comesFrom;
-		comesFrom = newComesFrom;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PipelinePackage.FILE__COMES_FROM, oldComesFrom, newComesFrom);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComesFrom(ExportOperation newComesFrom) {
-		if (newComesFrom != comesFrom) {
-			NotificationChain msgs = null;
-			if (comesFrom != null)
-				msgs = ((InternalEObject)comesFrom).eInverseRemove(this, PipelinePackage.EXPORT_OPERATION__WRITE, ExportOperation.class, msgs);
-			if (newComesFrom != null)
-				msgs = ((InternalEObject)newComesFrom).eInverseAdd(this, PipelinePackage.EXPORT_OPERATION__WRITE, ExportOperation.class, msgs);
-			msgs = basicSetComesFrom(newComesFrom, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.FILE__COMES_FROM, newComesFrom, newComesFrom));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case PipelinePackage.FILE__COMES_FROM:
-				if (comesFrom != null)
-					msgs = ((InternalEObject)comesFrom).eInverseRemove(this, PipelinePackage.EXPORT_OPERATION__WRITE, ExportOperation.class, msgs);
-				return basicSetComesFrom((ExportOperation)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case PipelinePackage.FILE__COMES_FROM:
-				return basicSetComesFrom(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public void setFormat(Format newFormat) {
+		Format oldFormat = format;
+		format = newFormat == null ? FORMAT_EDEFAULT : newFormat;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.FILE__FORMAT, oldFormat, format));
 	}
 
 	/**
@@ -244,9 +186,8 @@ public class FileImpl extends EObjectImpl implements File {
 				return getName();
 			case PipelinePackage.FILE__PATH:
 				return getPath();
-			case PipelinePackage.FILE__COMES_FROM:
-				if (resolve) return getComesFrom();
-				return basicGetComesFrom();
+			case PipelinePackage.FILE__FORMAT:
+				return getFormat();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -265,8 +206,8 @@ public class FileImpl extends EObjectImpl implements File {
 			case PipelinePackage.FILE__PATH:
 				setPath((String)newValue);
 				return;
-			case PipelinePackage.FILE__COMES_FROM:
-				setComesFrom((ExportOperation)newValue);
+			case PipelinePackage.FILE__FORMAT:
+				setFormat((Format)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -286,8 +227,8 @@ public class FileImpl extends EObjectImpl implements File {
 			case PipelinePackage.FILE__PATH:
 				setPath(PATH_EDEFAULT);
 				return;
-			case PipelinePackage.FILE__COMES_FROM:
-				setComesFrom((ExportOperation)null);
+			case PipelinePackage.FILE__FORMAT:
+				setFormat(FORMAT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -305,8 +246,8 @@ public class FileImpl extends EObjectImpl implements File {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case PipelinePackage.FILE__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
-			case PipelinePackage.FILE__COMES_FROM:
-				return comesFrom != null;
+			case PipelinePackage.FILE__FORMAT:
+				return format != FORMAT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -325,6 +266,8 @@ public class FileImpl extends EObjectImpl implements File {
 		result.append(name);
 		result.append(", path: ");
 		result.append(path);
+		result.append(", format: ");
+		result.append(format);
 		result.append(')');
 		return result.toString();
 	}

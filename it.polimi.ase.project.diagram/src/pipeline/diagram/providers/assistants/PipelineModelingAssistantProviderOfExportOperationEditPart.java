@@ -13,7 +13,6 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
 import pipeline.diagram.edit.parts.ExportOperationEditPart;
 import pipeline.diagram.edit.parts.FileEditPart;
-import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.providers.PipelineElementTypes;
 import pipeline.diagram.providers.PipelineModelingAssistantProvider;
 
@@ -36,8 +35,7 @@ public class PipelineModelingAssistantProviderOfExportOperationEditPart extends 
 	* @generated
 	*/
 	public List<IElementType> doGetRelTypesOnSource(ExportOperationEditPart source) {
-		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(PipelineElementTypes.ExportOperationUse_4008);
+		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(PipelineElementTypes.ExportOperationWrite_4009);
 		return types;
 	}
@@ -59,9 +57,6 @@ public class PipelineModelingAssistantProviderOfExportOperationEditPart extends 
 	public List<IElementType> doGetRelTypesOnSourceAndTarget(ExportOperationEditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof SchemaEditPart) {
-			types.add(PipelineElementTypes.ExportOperationUse_4008);
-		}
 		if (targetEditPart instanceof FileEditPart) {
 			types.add(PipelineElementTypes.ExportOperationWrite_4009);
 		}
@@ -83,9 +78,7 @@ public class PipelineModelingAssistantProviderOfExportOperationEditPart extends 
 	*/
 	public List<IElementType> doGetTypesForTarget(ExportOperationEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == PipelineElementTypes.ExportOperationUse_4008) {
-			types.add(PipelineElementTypes.Schema_2009);
-		} else if (relationshipType == PipelineElementTypes.ExportOperationWrite_4009) {
+		if (relationshipType == PipelineElementTypes.ExportOperationWrite_4009) {
 			types.add(PipelineElementTypes.File_2008);
 		}
 		return types;

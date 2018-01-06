@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pipeline.ExportOperation#getID <em>ID</em>}</li>
- *   <li>{@link pipeline.ExportOperation#getUse <em>Use</em>}</li>
  *   <li>{@link pipeline.ExportOperation#getWrite <em>Write</em>}</li>
  * </ul>
  *
@@ -25,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
 public interface ExportOperation extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Write</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link pipeline.File#getComesFrom <em>Comes From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Write</em>' reference isn't clear,
@@ -35,8 +33,7 @@ public interface ExportOperation extends EObject {
 	 * @return the value of the '<em>Write</em>' reference.
 	 * @see #setWrite(File)
 	 * @see pipeline.PipelinePackage#getExportOperation_Write()
-	 * @see pipeline.File#getComesFrom
-	 * @model opposite="comesFrom" required="true"
+	 * @model required="true"
 	 *        annotation="gmf.link width='2' target.decoration='filledsquare' style='dash'"
 	 * @generated
 	 */
@@ -77,32 +74,5 @@ public interface ExportOperation extends EObject {
 	 * @generated
 	 */
 	void setID(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Use</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Use</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Use</em>' reference.
-	 * @see #setUse(Schema)
-	 * @see pipeline.PipelinePackage#getExportOperation_Use()
-	 * @model required="true"
-	 *        annotation="gmf.link width='1' target.decoration='arrow'"
-	 * @generated
-	 */
-	Schema getUse();
-
-	/**
-	 * Sets the value of the '{@link pipeline.ExportOperation#getUse <em>Use</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Use</em>' reference.
-	 * @see #getUse()
-	 * @generated
-	 */
-	void setUse(Schema value);
 
 } // ExportOperation

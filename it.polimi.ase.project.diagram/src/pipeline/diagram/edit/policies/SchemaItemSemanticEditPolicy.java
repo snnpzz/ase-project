@@ -22,18 +22,12 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import pipeline.diagram.edit.commands.DataFlowSchemaCreateCommand;
 import pipeline.diagram.edit.commands.DataFlowSchemaReorientCommand;
-import pipeline.diagram.edit.commands.ExportOperationUseCreateCommand;
-import pipeline.diagram.edit.commands.ExportOperationUseReorientCommand;
 import pipeline.diagram.edit.commands.ImportOperationUseCreateCommand;
 import pipeline.diagram.edit.commands.ImportOperationUseReorientCommand;
-import pipeline.diagram.edit.commands.InternalDataFlowSchemaCreateCommand;
-import pipeline.diagram.edit.commands.InternalDataFlowSchemaReorientCommand;
 import pipeline.diagram.edit.parts.ChartAxesEditPart;
 import pipeline.diagram.edit.parts.ComplexAttributeEditPart;
 import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
-import pipeline.diagram.edit.parts.ExportOperationUseEditPart;
 import pipeline.diagram.edit.parts.ImportOperationUseEditPart;
-import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.SchemaSchemaAttributesCompartmentEditPart;
 import pipeline.diagram.edit.parts.SimpleAttributeEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
@@ -67,21 +61,7 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == InternalDataFlowSchemaEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
-						incomingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
-				continue;
-			}
 			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == ImportOperationUseEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
-						incomingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
-				continue;
-			}
-			if (PipelineVisualIDRegistry.getVisualID(incomingLink) == ExportOperationUseEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
@@ -160,13 +140,7 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 		if (PipelineElementTypes.DataFlowSchema_4003 == req.getElementType()) {
 			return null;
 		}
-		if (PipelineElementTypes.InternalDataFlowSchema_4004 == req.getElementType()) {
-			return null;
-		}
 		if (PipelineElementTypes.ImportOperationUse_4007 == req.getElementType()) {
-			return null;
-		}
-		if (PipelineElementTypes.ExportOperationUse_4008 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -179,14 +153,8 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 		if (PipelineElementTypes.DataFlowSchema_4003 == req.getElementType()) {
 			return getGEFWrapper(new DataFlowSchemaCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (PipelineElementTypes.InternalDataFlowSchema_4004 == req.getElementType()) {
-			return getGEFWrapper(new InternalDataFlowSchemaCreateCommand(req, req.getSource(), req.getTarget()));
-		}
 		if (PipelineElementTypes.ImportOperationUse_4007 == req.getElementType()) {
 			return getGEFWrapper(new ImportOperationUseCreateCommand(req, req.getSource(), req.getTarget()));
-		}
-		if (PipelineElementTypes.ExportOperationUse_4008 == req.getElementType()) {
-			return getGEFWrapper(new ExportOperationUseCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -201,12 +169,8 @@ public class SchemaItemSemanticEditPolicy extends PipelineBaseItemSemanticEditPo
 		switch (getVisualID(req)) {
 		case DataFlowSchemaEditPart.VISUAL_ID:
 			return getGEFWrapper(new DataFlowSchemaReorientCommand(req));
-		case InternalDataFlowSchemaEditPart.VISUAL_ID:
-			return getGEFWrapper(new InternalDataFlowSchemaReorientCommand(req));
 		case ImportOperationUseEditPart.VISUAL_ID:
 			return getGEFWrapper(new ImportOperationUseReorientCommand(req));
-		case ExportOperationUseEditPart.VISUAL_ID:
-			return getGEFWrapper(new ExportOperationUseReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

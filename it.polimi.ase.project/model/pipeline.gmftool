@@ -170,15 +170,6 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="InternalDFSchema"
-          description="Create new InternalDFSchema">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="InternalDataFlow"
           description="Create new InternalDataFlow">
         <smallIcon
@@ -190,15 +181,6 @@
           xsi:type="gmftool:CreationTool"
           title="Read"
           description="Create new Read">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Use"
-          description="Create new Use">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

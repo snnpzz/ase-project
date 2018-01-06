@@ -34,7 +34,6 @@ import pipeline.diagram.edit.parts.DataFlowEditPart;
 import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.ExportOperationEditPart;
 import pipeline.diagram.edit.parts.ExportOperationIDEditPart;
-import pipeline.diagram.edit.parts.ExportOperationUseEditPart;
 import pipeline.diagram.edit.parts.ExportOperationWriteEditPart;
 import pipeline.diagram.edit.parts.ExportTaskEditPart;
 import pipeline.diagram.edit.parts.ExportTaskExportTaskExportOperationsCompartmentEditPart;
@@ -47,8 +46,8 @@ import pipeline.diagram.edit.parts.ImportOperationReadEditPart;
 import pipeline.diagram.edit.parts.ImportOperationUseEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
+import pipeline.diagram.edit.parts.IntegrationTaskIntegrationTaskIntegrationOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
-import pipeline.diagram.edit.parts.InternalDataFlowSchemaEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
 import pipeline.diagram.edit.parts.SchemaEditPart;
 import pipeline.diagram.edit.parts.SchemaSchemaAttributesCompartmentEditPart;
@@ -60,12 +59,11 @@ import pipeline.diagram.edit.parts.SourceEditPart;
 import pipeline.diagram.edit.parts.SourceNameEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskIDEditPart;
+import pipeline.diagram.edit.parts.VisualizationTaskVisualizationTaskVisualizationOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.WrappingLabel2EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel3EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel4EditPart;
 import pipeline.diagram.edit.parts.WrappingLabel5EditPart;
-import pipeline.diagram.edit.parts.WrappingLabel6EditPart;
-import pipeline.diagram.edit.parts.WrappingLabel7EditPart;
 import pipeline.diagram.edit.parts.WrappingLabelEditPart;
 
 /**
@@ -302,6 +300,9 @@ public class PipelineVisualIDRegistry {
 			if (IntegrationTaskIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (IntegrationTaskIntegrationTaskIntegrationOperationsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case CleaningTaskEditPart.VISUAL_ID:
 			if (CleaningTaskIDEditPart.VISUAL_ID == nodeVisualID) {
@@ -321,6 +322,9 @@ public class PipelineVisualIDRegistry {
 			break;
 		case VisualizationTaskEditPart.VISUAL_ID:
 			if (VisualizationTaskIDEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (VisualizationTaskVisualizationTaskVisualizationOperationsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -427,33 +431,23 @@ public class PipelineVisualIDRegistry {
 				return true;
 			}
 			break;
-		case InternalDataFlowSchemaEditPart.VISUAL_ID:
+		case ImportOperationReadEditPart.VISUAL_ID:
 			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ImportOperationReadEditPart.VISUAL_ID:
+		case ImportOperationUseEditPart.VISUAL_ID:
 			if (WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ImportOperationUseEditPart.VISUAL_ID:
+		case ExportOperationWriteEditPart.VISUAL_ID:
 			if (WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ExportOperationUseEditPart.VISUAL_ID:
-			if (WrappingLabel5EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ExportOperationWriteEditPart.VISUAL_ID:
-			if (WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case ChartAxesEditPart.VISUAL_ID:
-			if (WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
+			if (WrappingLabel5EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -505,8 +499,10 @@ public class PipelineVisualIDRegistry {
 	public static boolean isCompartmentVisualID(int visualID) {
 		switch (visualID) {
 		case CollectionTaskCollectionTaskImportOperationsCompartmentEditPart.VISUAL_ID:
+		case IntegrationTaskIntegrationTaskIntegrationOperationsCompartmentEditPart.VISUAL_ID:
 		case CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID:
 		case AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID:
+		case VisualizationTaskVisualizationTaskVisualizationOperationsCompartmentEditPart.VISUAL_ID:
 		case ExportTaskExportTaskExportOperationsCompartmentEditPart.VISUAL_ID:
 		case SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID:
 		case ComplexAttributeComplexAttributeAttributesCompartmentEditPart.VISUAL_ID:

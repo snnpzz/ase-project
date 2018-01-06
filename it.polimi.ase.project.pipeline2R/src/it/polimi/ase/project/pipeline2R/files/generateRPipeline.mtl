@@ -47,17 +47,17 @@ pdf("output/[aPipeline.ID/].pdf)
 					source <- na.omit(source)
 				[elseif (op.oclAsType(PredefinedCleaningOperation).type = PredefinedOperation::removeNegative)]
 					# Remove negative values
-					[for (attr : Attribute | op.attributes)]
+					[for (attr : Attribute | op.inputAttributes)]
 						source$[attr.name/] <- source['['/] source$[attr.name/] >= 0 ,[']'/]
 					[/for]
 				[elseif (op.oclAsType(PredefinedCleaningOperation).type = PredefinedOperation::round)]
 					# Round values
-					[for (attr : Attribute | op.attributes)]
+					[for (attr : Attribute | op.inputAttributes)]
 						source$[attr.name/] <- round(source$[attr.name/])
 					[/for]
 				[elseif]
 					# Remove column
-					[for (attr : Attribute | op.attributes)]
+					[for (attr : Attribute | op.inputAttributes)]
 						source$[attr.name/] <- NULL
 					[/for]
 				[/if]
@@ -148,13 +148,13 @@ rm(list = ls())
 
 [template private doDescriptiveAnalysis(op: DescriptiveAnalysisOperation)]
 [if (op.type = DescriptiveOperation::Boxplot)]
-	[drawChart(ChartType::BoxPlot, op.attributes)/]
+	[drawChart(ChartType::BoxPlot, op.inputAttributes)/]
 [elseif (op.type = DescriptiveOperation::Histogram)]
-	[drawChart(ChartType::Histogram, op.attributes)/]
+	[drawChart(ChartType::Histogram, op.inputAttributes)/]
 [elseif (op.type = DescriptiveOperation::PieChart)]
-	[drawChart(ChartType::Pie, op.attributes)/]
+	[drawChart(ChartType::Pie, op.inputAttributes)/]
 [elseif (op.type = DescriptiveOperation::ScatterPlot)]
-	[drawChart(ChartType::Scatter, op.attributes)/]
+	[drawChart(ChartType::Scatter, op.inputAttributes)/]
 [elseif]
 	# View data
 	source
@@ -165,7 +165,7 @@ rm(list = ls())
 [template private doClassificationAnalysis(op: ClassificationAnalysisOperation)]
 [let formula : String = '']
 	[let index : Integer = 1]
-		[for (attr : Attribute | op.attributes)]	
+		[for (attr : Attribute | op.inputAttributes)]	
 			[if (index = 1)]
 				[formula = attr.name.concat('~')/]
 			[elseif (index = 2)]
@@ -190,7 +190,7 @@ rm(list = ls())
 		knnInd <- sample(nrow(sample), round(nrow(sample)*0.8)
 		[let columns : String = '']
 			[let index : Integer = 1]
-				[for (attr : Attribute | op.attributes)]	
+				[for (attr : Attribute | op.inputAttributes)]	
 					[if (index = 1)]
 						[columns = attr.name.concat('[knnInd, ]')/]
 					[elseif (index = 2)]
@@ -207,7 +207,7 @@ rm(list = ls())
 		[/let]
 	[elseif]
 		# SVM
-		[op.ID/] <- svm([op.attributes.name/] ~ ., data = source, kernel = "linear")
+		[op.ID/] <- svm([op.inputAttributes.name/] ~ ., data = source, kernel = "linear")
 	[/if]
 [/let]
 [/template]
@@ -219,7 +219,7 @@ rm(list = ls())
 	[op.ID/] <- kmeans(source, [op.k/])
 [elseif]
 	# Hierarchical
-	[op.ID/] <- hclust(dist([op.attributes.name/]), [op.k/])
+	[op.ID/] <- hclust(dist([op.inputAttributes.name/]), [op.k/])
 [/if]
 [/template]
 
@@ -227,12 +227,12 @@ rm(list = ls())
 [template private doPredictiveAnalysis(op: PredictiveAnalysisOperation)]
 [if (op.type = PredictiveOperation::SimpleRegression)]
 	# Simple regression
-	[op.ID/] <- lm([op.attributes.name/]~[op.attributes.next.name/], data = source)
+	[op.ID/] <- lm([op.inputAttributes.name/]~[op.inputAttributes.next.name/], data = source)
 [elseif (op.type = PredictiveOperation::MultipleLinRegr)]
 	# Multiple linear regression
 	[let formula : String = '']
 		[let index : Integer = 1]
-			[for (attr : Attribute | op.attributes)]	
+			[for (attr : Attribute | op.inputAttributes)]	
 				[if (index = 1)]
 					[formula = attr.name.concat('~')/]
 				[elseif (index = 2)]
@@ -247,7 +247,7 @@ rm(list = ls())
 	[/let]
 [elseif]
 	# Random forests
-	[op.ID/] <- randomForest([op.attributes.name/], data = source, importante = TRUE, proximity = TRUE)
+	[op.ID/] <- randomForest([op.inputAttributes.name/], data = source, importante = TRUE, proximity = TRUE)
 [/if]
 [/template]
 

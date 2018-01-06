@@ -18,11 +18,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 
-import pipeline.diagram.edit.commands.ExportOperationUseCreateCommand;
-import pipeline.diagram.edit.commands.ExportOperationUseReorientCommand;
 import pipeline.diagram.edit.commands.ExportOperationWriteCreateCommand;
 import pipeline.diagram.edit.commands.ExportOperationWriteReorientCommand;
-import pipeline.diagram.edit.parts.ExportOperationUseEditPart;
 import pipeline.diagram.edit.parts.ExportOperationWriteEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 import pipeline.diagram.providers.PipelineElementTypes;
@@ -48,13 +45,6 @@ public class ExportOperationItemSemanticEditPolicy extends PipelineBaseItemSeman
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (PipelineVisualIDRegistry.getVisualID(outgoingLink) == ExportOperationUseEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
-						outgoingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
-				continue;
-			}
 			if (PipelineVisualIDRegistry.getVisualID(outgoingLink) == ExportOperationWriteEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
@@ -88,9 +78,6 @@ public class ExportOperationItemSemanticEditPolicy extends PipelineBaseItemSeman
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.ExportOperationUse_4008 == req.getElementType()) {
-			return getGEFWrapper(new ExportOperationUseCreateCommand(req, req.getSource(), req.getTarget()));
-		}
 		if (PipelineElementTypes.ExportOperationWrite_4009 == req.getElementType()) {
 			return getGEFWrapper(new ExportOperationWriteCreateCommand(req, req.getSource(), req.getTarget()));
 		}
@@ -101,9 +88,6 @@ public class ExportOperationItemSemanticEditPolicy extends PipelineBaseItemSeman
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (PipelineElementTypes.ExportOperationUse_4008 == req.getElementType()) {
-			return null;
-		}
 		if (PipelineElementTypes.ExportOperationWrite_4009 == req.getElementType()) {
 			return null;
 		}
@@ -118,8 +102,6 @@ public class ExportOperationItemSemanticEditPolicy extends PipelineBaseItemSeman
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case ExportOperationUseEditPart.VISUAL_ID:
-			return getGEFWrapper(new ExportOperationUseReorientCommand(req));
 		case ExportOperationWriteEditPart.VISUAL_ID:
 			return getGEFWrapper(new ExportOperationWriteReorientCommand(req));
 		}

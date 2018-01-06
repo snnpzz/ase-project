@@ -61,7 +61,7 @@ public interface IntegrationOperation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attributes</em>' reference list.
 	 * @see pipeline.PipelinePackage#getIntegrationOperation_Attributes()
-	 * @model lower="2" upper="2"
+	 * @model required="true"
 	 * @generated
 	 */
 	EList<Attribute> getAttributes();

@@ -45,9 +45,8 @@ public class PipelineModelingAssistantProviderOfSchemaEditPart extends PipelineM
 	* @generated
 	*/
 	public List<IElementType> doGetRelTypesOnTarget(SchemaEditPart target) {
-		List<IElementType> types = new ArrayList<IElementType>(2);
+		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(PipelineElementTypes.ImportOperationUse_4007);
-		types.add(PipelineElementTypes.ExportOperationUse_4008);
 		return types;
 	}
 
@@ -68,8 +67,6 @@ public class PipelineModelingAssistantProviderOfSchemaEditPart extends PipelineM
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == PipelineElementTypes.ImportOperationUse_4007) {
 			types.add(PipelineElementTypes.ImportOperation_3001);
-		} else if (relationshipType == PipelineElementTypes.ExportOperationUse_4008) {
-			types.add(PipelineElementTypes.ExportOperation_3002);
 		}
 		return types;
 	}

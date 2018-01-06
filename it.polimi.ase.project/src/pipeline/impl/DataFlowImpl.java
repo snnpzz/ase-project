@@ -25,7 +25,6 @@ import pipeline.Task;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.DataFlowImpl#getFormat <em>Format</em>}</li>
  *   <li>{@link pipeline.impl.DataFlowImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link pipeline.impl.DataFlowImpl#getSource <em>Source</em>}</li>
  *   <li>{@link pipeline.impl.DataFlowImpl#getSchema <em>Schema</em>}</li>
@@ -34,26 +33,6 @@ import pipeline.Task;
  * @generated
  */
 public class DataFlowImpl extends EObjectImpl implements DataFlow {
-	/**
-	 * The default value of the '{@link #getFormat() <em>Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Format FORMAT_EDEFAULT = Format.CSV;
-
-	/**
-	 * The cached value of the '{@link #getFormat() <em>Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected Format format = FORMAT_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -101,27 +80,6 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	@Override
 	protected EClass eStaticClass() {
 		return PipelinePackage.Literals.DATA_FLOW;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Format getFormat() {
-		return format;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFormat(Format newFormat) {
-		Format oldFormat = format;
-		format = newFormat == null ? FORMAT_EDEFAULT : newFormat;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.DATA_FLOW__FORMAT, oldFormat, format));
 	}
 
 	/**
@@ -326,8 +284,6 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.DATA_FLOW__FORMAT:
-				return getFormat();
 			case PipelinePackage.DATA_FLOW__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
@@ -349,9 +305,6 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.DATA_FLOW__FORMAT:
-				setFormat((Format)newValue);
-				return;
 			case PipelinePackage.DATA_FLOW__TARGET:
 				setTarget((Task)newValue);
 				return;
@@ -373,9 +326,6 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.DATA_FLOW__FORMAT:
-				setFormat(FORMAT_EDEFAULT);
-				return;
 			case PipelinePackage.DATA_FLOW__TARGET:
 				setTarget((Task)null);
 				return;
@@ -397,8 +347,6 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.DATA_FLOW__FORMAT:
-				return format != FORMAT_EDEFAULT;
 			case PipelinePackage.DATA_FLOW__TARGET:
 				return target != null;
 			case PipelinePackage.DATA_FLOW__SOURCE:
@@ -407,22 +355,6 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 				return schema != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (format: ");
-		result.append(format);
-		result.append(')');
-		return result.toString();
 	}
 
 } //DataFlowImpl

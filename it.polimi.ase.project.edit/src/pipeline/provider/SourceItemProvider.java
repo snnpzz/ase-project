@@ -60,37 +60,15 @@ public class SourceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addLinkedToPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addPathPropertyDescriptor(object);
 			addServerNamePropertyDescriptor(object);
 			addPortNumberPropertyDescriptor(object);
 			addUserNamePropertyDescriptor(object);
 			addPasswordPropertyDescriptor(object);
+			addFormatPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Linked To feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLinkedToPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Source_linkedTo_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_linkedTo_feature", "_UI_Source_type"),
-				 PipelinePackage.Literals.SOURCE__LINKED_TO,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -226,6 +204,28 @@ public class SourceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Format feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFormatPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_format_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_format_feature", "_UI_Source_type"),
+				 PipelinePackage.Literals.SOURCE__FORMAT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Source.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -269,6 +269,7 @@ public class SourceItemProvider
 			case PipelinePackage.SOURCE__PORT_NUMBER:
 			case PipelinePackage.SOURCE__USER_NAME:
 			case PipelinePackage.SOURCE__PASSWORD:
+			case PipelinePackage.SOURCE__FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

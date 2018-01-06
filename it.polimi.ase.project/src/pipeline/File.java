@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link pipeline.File#getName <em>Name</em>}</li>
  *   <li>{@link pipeline.File#getPath <em>Path</em>}</li>
- *   <li>{@link pipeline.File#getComesFrom <em>Comes From</em>}</li>
+ *   <li>{@link pipeline.File#getFormat <em>Format</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getFile()
@@ -76,31 +76,32 @@ public interface File extends EObject {
 	void setPath(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Comes From</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link pipeline.ExportOperation#getWrite <em>Write</em>}'.
+	 * Returns the value of the '<em><b>Format</b></em>' attribute.
+	 * The literals are from the enumeration {@link pipeline.Format}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Comes From</em>' reference isn't clear,
+	 * If the meaning of the '<em>Format</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Comes From</em>' reference.
-	 * @see #setComesFrom(ExportOperation)
-	 * @see pipeline.PipelinePackage#getFile_ComesFrom()
-	 * @see pipeline.ExportOperation#getWrite
-	 * @model opposite="write" required="true"
+	 * @return the value of the '<em>Format</em>' attribute.
+	 * @see pipeline.Format
+	 * @see #setFormat(Format)
+	 * @see pipeline.PipelinePackage#getFile_Format()
+	 * @model
 	 * @generated
 	 */
-	ExportOperation getComesFrom();
+	Format getFormat();
 
 	/**
-	 * Sets the value of the '{@link pipeline.File#getComesFrom <em>Comes From</em>}' reference.
+	 * Sets the value of the '{@link pipeline.File#getFormat <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Comes From</em>' reference.
-	 * @see #getComesFrom()
+	 * @param value the new value of the '<em>Format</em>' attribute.
+	 * @see pipeline.Format
+	 * @see #getFormat()
 	 * @generated
 	 */
-	void setComesFrom(ExportOperation value);
+	void setFormat(Format value);
 
 } // File

@@ -63,7 +63,7 @@ public class OperationItemProvider
 			addIncomingPropertyDescriptor(object);
 			addOutgoingPropertyDescriptor(object);
 			addIDPropertyDescriptor(object);
-			addAttributesPropertyDescriptor(object);
+			addInputAttributesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -135,19 +135,19 @@ public class OperationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Attributes feature.
+	 * This adds a property descriptor for the Input Attributes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAttributesPropertyDescriptor(Object object) {
+	protected void addInputAttributesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Operation_attributes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Operation_attributes_feature", "_UI_Operation_type"),
-				 PipelinePackage.Literals.OPERATION__ATTRIBUTES,
+				 getString("_UI_Operation_inputAttributes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Operation_inputAttributes_feature", "_UI_Operation_type"),
+				 PipelinePackage.Literals.OPERATION__INPUT_ATTRIBUTES,
 				 true,
 				 false,
 				 true,

@@ -1445,7 +1445,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_JbaCtvMKEeeQSeKNaGOZyw" y="60"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_JbaCsfMKEeeQSeKNaGOZyw" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="pipeline.ecore#//AnalysisOperation/outputAttributes"/>
+    <element xmi:type="ecore:EReference" href="pipeline.ecore#//AnalysisOperation/outputAttribute"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JbaCsvMKEeeQSeKNaGOZyw" points="[29, 1, -786, -43]$[822, 74, 7, 30]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JbdtEPMKEeeQSeKNaGOZyw" id="(0.7563025210084033,0.6538461538461539)"/>
   </edges>

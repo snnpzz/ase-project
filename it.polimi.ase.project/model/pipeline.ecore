@@ -222,8 +222,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CleaningOperation" abstract="true" eSuperTypes="#//Operation"/>
   <eClassifiers xsi:type="ecore:EClass" name="AnalysisOperation" abstract="true" eSuperTypes="#//Operation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outputAttributes" lowerBound="1"
-        upperBound="-1" eType="#//SimpleAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputAttribute" eType="#//SimpleAttribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DescriptiveAnalysisOperation" eSuperTypes="#//AnalysisOperation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DescriptiveOperation"/>

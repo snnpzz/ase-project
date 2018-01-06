@@ -1752,13 +1752,22 @@ public interface PipelinePackage extends EPackage {
 	int INTEGRATION_OPERATION__ID = 0;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_OPERATION__ATTRIBUTES = 1;
+	int INTEGRATION_OPERATION__INPUT_ATTRIBUTES = 1;
+
+	/**
+	 * The feature id for the '<em><b>Output Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_OPERATION__OUTPUT_ATTRIBUTE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Integration Operation</em>' class.
@@ -1767,7 +1776,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_OPERATION_FEATURE_COUNT = 2;
+	int INTEGRATION_OPERATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link pipeline.PredefinedOperation <em>Predefined Operation</em>}' enum.
@@ -2887,15 +2896,26 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getIntegrationOperation_ID();
 
 	/**
-	 * Returns the meta object for the reference list '{@link pipeline.IntegrationOperation#getAttributes <em>Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link pipeline.IntegrationOperation#getInputAttributes <em>Input Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Attributes</em>'.
-	 * @see pipeline.IntegrationOperation#getAttributes()
+	 * @return the meta object for the reference list '<em>Input Attributes</em>'.
+	 * @see pipeline.IntegrationOperation#getInputAttributes()
 	 * @see #getIntegrationOperation()
 	 * @generated
 	 */
-	EReference getIntegrationOperation_Attributes();
+	EReference getIntegrationOperation_InputAttributes();
+
+	/**
+	 * Returns the meta object for the reference '{@link pipeline.IntegrationOperation#getOutputAttribute <em>Output Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Output Attribute</em>'.
+	 * @see pipeline.IntegrationOperation#getOutputAttribute()
+	 * @see #getIntegrationOperation()
+	 * @generated
+	 */
+	EReference getIntegrationOperation_OutputAttribute();
 
 	/**
 	 * Returns the meta object for enum '{@link pipeline.PredefinedOperation <em>Predefined Operation</em>}'.
@@ -3838,12 +3858,20 @@ public interface PipelinePackage extends EPackage {
 		EAttribute INTEGRATION_OPERATION__ID = eINSTANCE.getIntegrationOperation_ID();
 
 		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Input Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INTEGRATION_OPERATION__ATTRIBUTES = eINSTANCE.getIntegrationOperation_Attributes();
+		EReference INTEGRATION_OPERATION__INPUT_ATTRIBUTES = eINSTANCE.getIntegrationOperation_InputAttributes();
+
+		/**
+		 * The meta object literal for the '<em><b>Output Attribute</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTEGRATION_OPERATION__OUTPUT_ATTRIBUTE = eINSTANCE.getIntegrationOperation_OutputAttribute();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.PredefinedOperation <em>Predefined Operation</em>}' enum.

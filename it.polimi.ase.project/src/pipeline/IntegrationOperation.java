@@ -16,7 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pipeline.IntegrationOperation#getID <em>ID</em>}</li>
- *   <li>{@link pipeline.IntegrationOperation#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link pipeline.IntegrationOperation#getInputAttributes <em>Input Attributes</em>}</li>
+ *   <li>{@link pipeline.IntegrationOperation#getOutputAttribute <em>Output Attribute</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getIntegrationOperation()
@@ -51,19 +52,45 @@ public interface IntegrationOperation extends EObject {
 	void setID(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Attributes</b></em>' reference list.
+	 * Returns the value of the '<em><b>Input Attributes</b></em>' reference list.
 	 * The list contents are of type {@link pipeline.Attribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Attributes</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Input Attributes</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attributes</em>' reference list.
-	 * @see pipeline.PipelinePackage#getIntegrationOperation_Attributes()
+	 * @return the value of the '<em>Input Attributes</em>' reference list.
+	 * @see pipeline.PipelinePackage#getIntegrationOperation_InputAttributes()
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<Attribute> getAttributes();
+	EList<Attribute> getInputAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Output Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Output Attribute</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Output Attribute</em>' reference.
+	 * @see #setOutputAttribute(Attribute)
+	 * @see pipeline.PipelinePackage#getIntegrationOperation_OutputAttribute()
+	 * @model required="true"
+	 * @generated
+	 */
+	Attribute getOutputAttribute();
+
+	/**
+	 * Sets the value of the '{@link pipeline.IntegrationOperation#getOutputAttribute <em>Output Attribute</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Output Attribute</em>' reference.
+	 * @see #getOutputAttribute()
+	 * @generated
+	 */
+	void setOutputAttribute(Attribute value);
 
 } // IntegrationOperation

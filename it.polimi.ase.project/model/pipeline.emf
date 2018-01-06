@@ -261,6 +261,7 @@ class VisualizationOperation {
 
 class IntegrationOperation {
   attr String ID;
-  ref Attribute[+] attributes;
+  ref Attribute[+] inputAttributes;
+  ref Attribute[1] outputAttribute;
 }
 

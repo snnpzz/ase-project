@@ -1262,8 +1262,17 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIntegrationOperation_Attributes() {
+	public EReference getIntegrationOperation_InputAttributes() {
 		return (EReference)integrationOperationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIntegrationOperation_OutputAttribute() {
+		return (EReference)integrationOperationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1500,7 +1509,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		integrationOperationEClass = createEClass(INTEGRATION_OPERATION);
 		createEAttribute(integrationOperationEClass, INTEGRATION_OPERATION__ID);
-		createEReference(integrationOperationEClass, INTEGRATION_OPERATION__ATTRIBUTES);
+		createEReference(integrationOperationEClass, INTEGRATION_OPERATION__INPUT_ATTRIBUTES);
+		createEReference(integrationOperationEClass, INTEGRATION_OPERATION__OUTPUT_ATTRIBUTE);
 
 		// Create enums
 		predefinedOperationEEnum = createEEnum(PREDEFINED_OPERATION);
@@ -1685,7 +1695,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		initEClass(integrationOperationEClass, IntegrationOperation.class, "IntegrationOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIntegrationOperation_ID(), ecorePackage.getEString(), "ID", null, 0, 1, IntegrationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIntegrationOperation_Attributes(), this.getAttribute(), null, "attributes", null, 1, -1, IntegrationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIntegrationOperation_InputAttributes(), this.getAttribute(), null, "inputAttributes", null, 1, -1, IntegrationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIntegrationOperation_OutputAttribute(), this.getAttribute(), null, "outputAttribute", null, 1, 1, IntegrationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(predefinedOperationEEnum, PredefinedOperation.class, "PredefinedOperation");

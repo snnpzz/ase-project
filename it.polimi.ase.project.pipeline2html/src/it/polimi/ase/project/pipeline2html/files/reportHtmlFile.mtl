@@ -262,14 +262,31 @@
 	<h3>Operation [anIntegrationOperation.ID/]</h3>
 	<b>ID:</b> [anIntegrationOperation.ID/]
 	<br>
-	<b>Attributes:</b>
+	<span style="color:#007bff;font-size:1.5rem;">Input Attibutes</span>
+	<br>
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
 				<th>Name</th>
 			</thead>
 			<tbody>
-				[for (anAttribute : Attribute | anIntegrationOperation.attributes)]
+				[for (anAttribute : Attribute | anIntegrationOperation.inputAttributes)]
+				<tr>
+					<td>[anAttribute.eContainer(Schema).name/].[anAttribute.name/]</td>
+				</tr>
+				[/for]
+			</tbody>
+		</table>
+	</div>
+	<span style="color:#007bff;font-size:1.5rem;">Output Attibutes</span>
+	<br>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<th>Name</th>
+			</thead>
+			<tbody>
+				[for (anAttribute : Attribute | anIntegrationOperation.outputAttribute)]
 				<tr>
 					<td>[anAttribute.eContainer(Schema).name/].[anAttribute.name/]</td>
 				</tr>

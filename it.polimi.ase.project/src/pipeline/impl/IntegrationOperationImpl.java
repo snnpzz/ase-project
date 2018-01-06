@@ -10,6 +10,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
@@ -28,7 +29,8 @@ import pipeline.PipelinePackage;
  * </p>
  * <ul>
  *   <li>{@link pipeline.impl.IntegrationOperationImpl#getID <em>ID</em>}</li>
- *   <li>{@link pipeline.impl.IntegrationOperationImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link pipeline.impl.IntegrationOperationImpl#getInputAttributes <em>Input Attributes</em>}</li>
+ *   <li>{@link pipeline.impl.IntegrationOperationImpl#getOutputAttribute <em>Output Attribute</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,14 +57,24 @@ public class IntegrationOperationImpl extends EObjectImpl implements Integration
 	protected String id = ID_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' reference list.
+	 * The cached value of the '{@link #getInputAttributes() <em>Input Attributes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttributes()
+	 * @see #getInputAttributes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Attribute> attributes;
+	protected EList<Attribute> inputAttributes;
+
+	/**
+	 * The cached value of the '{@link #getOutputAttribute() <em>Output Attribute</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutputAttribute()
+	 * @generated
+	 * @ordered
+	 */
+	protected Attribute outputAttribute;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,11 +121,49 @@ public class IntegrationOperationImpl extends EObjectImpl implements Integration
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Attribute> getAttributes() {
-		if (attributes == null) {
-			attributes = new EObjectResolvingEList<Attribute>(Attribute.class, this, PipelinePackage.INTEGRATION_OPERATION__ATTRIBUTES);
+	public EList<Attribute> getInputAttributes() {
+		if (inputAttributes == null) {
+			inputAttributes = new EObjectResolvingEList<Attribute>(Attribute.class, this, PipelinePackage.INTEGRATION_OPERATION__INPUT_ATTRIBUTES);
 		}
-		return attributes;
+		return inputAttributes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute getOutputAttribute() {
+		if (outputAttribute != null && outputAttribute.eIsProxy()) {
+			InternalEObject oldOutputAttribute = (InternalEObject)outputAttribute;
+			outputAttribute = (Attribute)eResolveProxy(oldOutputAttribute);
+			if (outputAttribute != oldOutputAttribute) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.INTEGRATION_OPERATION__OUTPUT_ATTRIBUTE, oldOutputAttribute, outputAttribute));
+			}
+		}
+		return outputAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute basicGetOutputAttribute() {
+		return outputAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOutputAttribute(Attribute newOutputAttribute) {
+		Attribute oldOutputAttribute = outputAttribute;
+		outputAttribute = newOutputAttribute;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.INTEGRATION_OPERATION__OUTPUT_ATTRIBUTE, oldOutputAttribute, outputAttribute));
 	}
 
 	/**
@@ -126,8 +176,11 @@ public class IntegrationOperationImpl extends EObjectImpl implements Integration
 		switch (featureID) {
 			case PipelinePackage.INTEGRATION_OPERATION__ID:
 				return getID();
-			case PipelinePackage.INTEGRATION_OPERATION__ATTRIBUTES:
-				return getAttributes();
+			case PipelinePackage.INTEGRATION_OPERATION__INPUT_ATTRIBUTES:
+				return getInputAttributes();
+			case PipelinePackage.INTEGRATION_OPERATION__OUTPUT_ATTRIBUTE:
+				if (resolve) return getOutputAttribute();
+				return basicGetOutputAttribute();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -144,9 +197,12 @@ public class IntegrationOperationImpl extends EObjectImpl implements Integration
 			case PipelinePackage.INTEGRATION_OPERATION__ID:
 				setID((String)newValue);
 				return;
-			case PipelinePackage.INTEGRATION_OPERATION__ATTRIBUTES:
-				getAttributes().clear();
-				getAttributes().addAll((Collection<? extends Attribute>)newValue);
+			case PipelinePackage.INTEGRATION_OPERATION__INPUT_ATTRIBUTES:
+				getInputAttributes().clear();
+				getInputAttributes().addAll((Collection<? extends Attribute>)newValue);
+				return;
+			case PipelinePackage.INTEGRATION_OPERATION__OUTPUT_ATTRIBUTE:
+				setOutputAttribute((Attribute)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -163,8 +219,11 @@ public class IntegrationOperationImpl extends EObjectImpl implements Integration
 			case PipelinePackage.INTEGRATION_OPERATION__ID:
 				setID(ID_EDEFAULT);
 				return;
-			case PipelinePackage.INTEGRATION_OPERATION__ATTRIBUTES:
-				getAttributes().clear();
+			case PipelinePackage.INTEGRATION_OPERATION__INPUT_ATTRIBUTES:
+				getInputAttributes().clear();
+				return;
+			case PipelinePackage.INTEGRATION_OPERATION__OUTPUT_ATTRIBUTE:
+				setOutputAttribute((Attribute)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -180,8 +239,10 @@ public class IntegrationOperationImpl extends EObjectImpl implements Integration
 		switch (featureID) {
 			case PipelinePackage.INTEGRATION_OPERATION__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case PipelinePackage.INTEGRATION_OPERATION__ATTRIBUTES:
-				return attributes != null && !attributes.isEmpty();
+			case PipelinePackage.INTEGRATION_OPERATION__INPUT_ATTRIBUTES:
+				return inputAttributes != null && !inputAttributes.isEmpty();
+			case PipelinePackage.INTEGRATION_OPERATION__OUTPUT_ATTRIBUTE:
+				return outputAttribute != null;
 		}
 		return super.eIsSet(featureID);
 	}

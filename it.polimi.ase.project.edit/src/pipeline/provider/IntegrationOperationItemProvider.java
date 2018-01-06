@@ -61,7 +61,8 @@ public class IntegrationOperationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addIDPropertyDescriptor(object);
-			addAttributesPropertyDescriptor(object);
+			addInputAttributesPropertyDescriptor(object);
+			addOutputAttributePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,19 +90,41 @@ public class IntegrationOperationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Attributes feature.
+	 * This adds a property descriptor for the Input Attributes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAttributesPropertyDescriptor(Object object) {
+	protected void addInputAttributesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IntegrationOperation_attributes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IntegrationOperation_attributes_feature", "_UI_IntegrationOperation_type"),
-				 PipelinePackage.Literals.INTEGRATION_OPERATION__ATTRIBUTES,
+				 getString("_UI_IntegrationOperation_inputAttributes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IntegrationOperation_inputAttributes_feature", "_UI_IntegrationOperation_type"),
+				 PipelinePackage.Literals.INTEGRATION_OPERATION__INPUT_ATTRIBUTES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Output Attribute feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOutputAttributePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IntegrationOperation_outputAttribute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IntegrationOperation_outputAttribute_feature", "_UI_IntegrationOperation_type"),
+				 PipelinePackage.Literals.INTEGRATION_OPERATION__OUTPUT_ATTRIBUTE,
 				 true,
 				 false,
 				 true,

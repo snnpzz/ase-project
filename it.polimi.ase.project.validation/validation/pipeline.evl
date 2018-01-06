@@ -330,8 +330,8 @@ context DescriptiveAnalysisOperation {
 context ClusteringAnalysisOperation {
 
 	constraint KisSet{
-		check: self.k <> 0
-		message: "K parameter for clustering analysis operation must be set"
+		check: self.k > 0
+		message: "K parameter for clustering analysis operation must be set and must be positive"
 	}
 	
 	constraint KmeansNeedOutputAttribute {

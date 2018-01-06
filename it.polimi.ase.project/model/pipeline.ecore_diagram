@@ -45,6 +45,10 @@
   <children xmi:type="notation:Shape" xmi:id="_LtXN8OGVEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_LtX1AOGVEeeU3dy_CQ-Szg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_LtX1AeGVEeeU3dy_CQ-Szg" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_1dod8PMPEeeH28c1CV9Ipg" type="3001">
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//DataFlow/ID"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_1dod8fMPEeeH28c1CV9Ipg"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_LtX1AuGVEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_LtX1A-GVEeeU3dy_CQ-Szg"/>
     </children>
@@ -516,6 +520,10 @@
   <children xmi:type="notation:Shape" xmi:id="_0waF0OGbEeeU3dy_CQ-Szg" type="2001" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_0was4OGbEeeU3dy_CQ-Szg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_0was4eGbEeeU3dy_CQ-Szg" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_J8Q6wPMPEeeH28c1CV9Ipg" type="3001">
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//InternalDataFlow/ID"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_J8Q6wfMPEeeH28c1CV9Ipg"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_0was4uGbEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_0was4-GbEeeU3dy_CQ-Szg"/>
     </children>

@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pipeline.File#getName <em>Name</em>}</li>
- *   <li>{@link pipeline.File#getPath <em>Path</em>}</li>
  *   <li>{@link pipeline.File#getFormat <em>Format</em>}</li>
+ *   <li>{@link pipeline.File#getPath <em>Path</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getFile()

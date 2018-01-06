@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link pipeline.InternalDataFlow#getSource <em>Source</em>}</li>
  *   <li>{@link pipeline.InternalDataFlow#getTarget <em>Target</em>}</li>
+ *   <li>{@link pipeline.InternalDataFlow#getID <em>ID</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getInternalDataFlow()
@@ -77,5 +78,31 @@ public interface InternalDataFlow extends EObject {
 	 * @generated
 	 */
 	void setTarget(Operation value);
+
+	/**
+	 * Returns the value of the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>ID</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>ID</em>' attribute.
+	 * @see #setID(String)
+	 * @see pipeline.PipelinePackage#getInternalDataFlow_ID()
+	 * @model id="true"
+	 * @generated
+	 */
+	String getID();
+
+	/**
+	 * Sets the value of the '{@link pipeline.InternalDataFlow#getID <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>ID</em>' attribute.
+	 * @see #getID()
+	 * @generated
+	 */
+	void setID(String value);
 
 } // InternalDataFlow

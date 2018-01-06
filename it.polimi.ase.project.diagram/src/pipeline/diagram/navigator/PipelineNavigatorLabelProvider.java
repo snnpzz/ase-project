@@ -21,6 +21,8 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
+import pipeline.DataFlow;
+import pipeline.InternalDataFlow;
 import pipeline.Pipeline;
 import pipeline.Schema;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
@@ -580,14 +582,26 @@ public class PipelineNavigatorLabelProvider extends LabelProvider
 	* @generated
 	*/
 	private String getDataFlow_4001Text(View view) {
-		return ""; //$NON-NLS-1$
+		DataFlow domainModelElement = (DataFlow) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getID();
+		} else {
+			PipelineDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4001); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**
 	* @generated
 	*/
 	private String getInternalDataFlow_4002Text(View view) {
-		return ""; //$NON-NLS-1$
+		InternalDataFlow domainModelElement = (InternalDataFlow) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getID();
+		} else {
+			PipelineDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4002); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**

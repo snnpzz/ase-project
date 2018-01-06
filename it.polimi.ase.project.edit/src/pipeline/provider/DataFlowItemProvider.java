@@ -64,6 +64,7 @@ public class DataFlowItemProvider
 			addTargetPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
 			addSchemaPropertyDescriptor(object);
+			addIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -135,6 +136,28 @@ public class DataFlowItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the ID feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIDPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataFlow_ID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlow_ID_feature", "_UI_DataFlow_type"),
+				 PipelinePackage.Literals.DATA_FLOW__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns DataFlow.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -153,7 +176,10 @@ public class DataFlowItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_DataFlow_type");
+		String label = ((DataFlow)object).getID();
+		return label == null || label.length() == 0 ?
+			getString("_UI_DataFlow_type") :
+			getString("_UI_DataFlow_type") + " " + label;
 	}
 	
 
@@ -167,6 +193,12 @@ public class DataFlowItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(DataFlow.class)) {
+			case PipelinePackage.DATA_FLOW__ID:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

@@ -63,6 +63,7 @@ public class InternalDataFlowItemProvider
 
 			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
+			addIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -112,6 +113,28 @@ public class InternalDataFlowItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the ID feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIDPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InternalDataFlow_ID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InternalDataFlow_ID_feature", "_UI_InternalDataFlow_type"),
+				 PipelinePackage.Literals.INTERNAL_DATA_FLOW__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns InternalDataFlow.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,7 +153,10 @@ public class InternalDataFlowItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_InternalDataFlow_type");
+		String label = ((InternalDataFlow)object).getID();
+		return label == null || label.length() == 0 ?
+			getString("_UI_InternalDataFlow_type") :
+			getString("_UI_InternalDataFlow_type") + " " + label;
 	}
 	
 
@@ -144,6 +170,12 @@ public class InternalDataFlowItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(InternalDataFlow.class)) {
+			case PipelinePackage.INTERNAL_DATA_FLOW__ID:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

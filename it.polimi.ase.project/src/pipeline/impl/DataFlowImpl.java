@@ -28,6 +28,7 @@ import pipeline.Task;
  *   <li>{@link pipeline.impl.DataFlowImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link pipeline.impl.DataFlowImpl#getSource <em>Source</em>}</li>
  *   <li>{@link pipeline.impl.DataFlowImpl#getSchema <em>Schema</em>}</li>
+ *   <li>{@link pipeline.impl.DataFlowImpl#getID <em>ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,6 +63,26 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	 * @ordered
 	 */
 	protected Schema schema;
+
+	/**
+	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -245,6 +266,27 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getID() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setID(String newID) {
+		String oldID = id;
+		id = newID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.DATA_FLOW__ID, oldID, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -293,6 +335,8 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 			case PipelinePackage.DATA_FLOW__SCHEMA:
 				if (resolve) return getSchema();
 				return basicGetSchema();
+			case PipelinePackage.DATA_FLOW__ID:
+				return getID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -313,6 +357,9 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 				return;
 			case PipelinePackage.DATA_FLOW__SCHEMA:
 				setSchema((Schema)newValue);
+				return;
+			case PipelinePackage.DATA_FLOW__ID:
+				setID((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -335,6 +382,9 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 			case PipelinePackage.DATA_FLOW__SCHEMA:
 				setSchema((Schema)null);
 				return;
+			case PipelinePackage.DATA_FLOW__ID:
+				setID(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -353,8 +403,26 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 				return source != null;
 			case PipelinePackage.DATA_FLOW__SCHEMA:
 				return schema != null;
+			case PipelinePackage.DATA_FLOW__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (ID: ");
+		result.append(id);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DataFlowImpl

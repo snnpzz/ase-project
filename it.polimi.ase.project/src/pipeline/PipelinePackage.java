@@ -231,13 +231,22 @@ public interface PipelinePackage extends EPackage {
 	int DATA_FLOW__SCHEMA = 2;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FLOW__ID = 3;
+
+	/**
 	 * The number of structural features of the '<em>Data Flow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_FEATURE_COUNT = 3;
+	int DATA_FLOW_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.OperationImpl <em>Operation</em>}' class.
@@ -323,13 +332,22 @@ public interface PipelinePackage extends EPackage {
 	int INTERNAL_DATA_FLOW__TARGET = 1;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_DATA_FLOW__ID = 2;
+
+	/**
 	 * The number of structural features of the '<em>Internal Data Flow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_DATA_FLOW_FEATURE_COUNT = 2;
+	int INTERNAL_DATA_FLOW_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.SchemaImpl <em>Schema</em>}' class.
@@ -1048,22 +1066,22 @@ public interface PipelinePackage extends EPackage {
 	int FILE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE__PATH = 1;
-
-	/**
 	 * The feature id for the '<em><b>Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FILE__FORMAT = 2;
+	int FILE__FORMAT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE__PATH = 2;
 
 	/**
 	 * The number of structural features of the '<em>File</em>' class.
@@ -2018,6 +2036,17 @@ public interface PipelinePackage extends EPackage {
 	EReference getDataFlow_Schema();
 
 	/**
+	 * Returns the meta object for the attribute '{@link pipeline.DataFlow#getID <em>ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>ID</em>'.
+	 * @see pipeline.DataFlow#getID()
+	 * @see #getDataFlow()
+	 * @generated
+	 */
+	EAttribute getDataFlow_ID();
+
+	/**
 	 * Returns the meta object for class '{@link pipeline.Operation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2102,6 +2131,17 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInternalDataFlow_Target();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pipeline.InternalDataFlow#getID <em>ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>ID</em>'.
+	 * @see pipeline.InternalDataFlow#getID()
+	 * @see #getInternalDataFlow()
+	 * @generated
+	 */
+	EAttribute getInternalDataFlow_ID();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Schema <em>Schema</em>}'.
@@ -3092,6 +3132,14 @@ public interface PipelinePackage extends EPackage {
 		EReference DATA_FLOW__SCHEMA = eINSTANCE.getDataFlow_Schema();
 
 		/**
+		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_FLOW__ID = eINSTANCE.getDataFlow_ID();
+
+		/**
 		 * The meta object literal for the '{@link pipeline.impl.OperationImpl <em>Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3158,6 +3206,14 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EReference INTERNAL_DATA_FLOW__TARGET = eINSTANCE.getInternalDataFlow_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTERNAL_DATA_FLOW__ID = eINSTANCE.getInternalDataFlow_ID();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.SchemaImpl <em>Schema</em>}' class.

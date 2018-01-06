@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/it.polimi.ase.project/src" modelPluginID="it.polimi.ase.project"
     modelName="Pipeline" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
     copyrightFields="false">
-  <foreignModel>pipeline.ecore</foreignModel>
+  <foreignModel>pipeline.emf</foreignModel>
   <genPackages prefix="Pipeline" disposableProviderFactory="true" ecorePackage="pipeline.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//PredefinedOperation">
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//PredefinedOperation/removeNulls"/>
@@ -84,6 +84,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//DataFlow/target"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//DataFlow/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//DataFlow/schema"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//DataFlow/ID"/>
     </genClasses>
     <genClasses image="false" ecoreClass="pipeline.ecore#//Operation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Operation/incoming"/>
@@ -94,6 +95,7 @@
     <genClasses ecoreClass="pipeline.ecore#//InternalDataFlow">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDataFlow/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//InternalDataFlow/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//InternalDataFlow/ID"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Schema">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pipeline.ecore#//Schema/attributes"/>
@@ -145,8 +147,8 @@
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//File">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//File/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//File/path"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//File/format"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//File/path"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//Chart">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Chart/size"/>

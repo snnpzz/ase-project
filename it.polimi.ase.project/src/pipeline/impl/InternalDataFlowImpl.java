@@ -27,6 +27,7 @@ import pipeline.Schema;
  * <ul>
  *   <li>{@link pipeline.impl.InternalDataFlowImpl#getSource <em>Source</em>}</li>
  *   <li>{@link pipeline.impl.InternalDataFlowImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link pipeline.impl.InternalDataFlowImpl#getID <em>ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -51,6 +52,26 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 	 * @ordered
 	 */
 	protected Operation target;
+
+	/**
+	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,6 +217,27 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getID() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setID(String newID) {
+		String oldID = id;
+		id = newID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.INTERNAL_DATA_FLOW__ID, oldID, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -241,6 +283,8 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 			case PipelinePackage.INTERNAL_DATA_FLOW__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
+			case PipelinePackage.INTERNAL_DATA_FLOW__ID:
+				return getID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -258,6 +302,9 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 				return;
 			case PipelinePackage.INTERNAL_DATA_FLOW__TARGET:
 				setTarget((Operation)newValue);
+				return;
+			case PipelinePackage.INTERNAL_DATA_FLOW__ID:
+				setID((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -277,6 +324,9 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 			case PipelinePackage.INTERNAL_DATA_FLOW__TARGET:
 				setTarget((Operation)null);
 				return;
+			case PipelinePackage.INTERNAL_DATA_FLOW__ID:
+				setID(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -293,8 +343,26 @@ public class InternalDataFlowImpl extends EObjectImpl implements InternalDataFlo
 				return source != null;
 			case PipelinePackage.INTERNAL_DATA_FLOW__TARGET:
 				return target != null;
+			case PipelinePackage.INTERNAL_DATA_FLOW__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (ID: ");
+		result.append(id);
+		result.append(')');
+		return result.toString();
 	}
 
 } //InternalDataFlowImpl

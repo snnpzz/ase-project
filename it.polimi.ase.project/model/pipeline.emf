@@ -27,6 +27,7 @@ class DataFlow {
 
   @gmf.link(width="1", target.decoration="arrow", tool.name="DFSchema", style="dot")
   ref Schema[1] schema;
+  id attr String ID;
 }
 
 abstract class Operation {
@@ -40,6 +41,7 @@ abstract class Operation {
 class InternalDataFlow {
   ref Operation#outgoing source;
   ref Operation#incoming target;
+  id attr String ID;
 }
 
 @gmf.node(label="name", label.placement="none", figure="rounded")
@@ -130,8 +132,8 @@ class Source {
 @gmf.node(label="name")
 class File {
   attr String name;
-  attr String path;
   attr Format format;
+  attr String path;
 }
 
 @gmf.node(label="title", figure="rounded")

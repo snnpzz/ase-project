@@ -109,20 +109,14 @@
 	[if (anAnalysisOperation.incoming -> size() > 0)]
 	<span style="color:#007bff;font-size:1rem;"><b>Input Internal Data Flow</b></span>
 	<br>
-	<b>Format:</b> [anAnalysisOperation.incoming.format/]
+	<b>ID:</b> [anAnalysisOperation.incoming.ID/]
 	<br>
-	<span style="color:#007bff;font-size:1rem;"><b>Schema:</b></span>
-	<br>
-	[anAnalysisOperation.incoming.schema.generateSchemaDiv()/]
 	[/if]
 	[if (anAnalysisOperation.outgoing -> size() > 0)]
 	<span style="color:#007bff;font-size:1rem;"><b>Output Internal Data Flow</b></span>
 	<br>
-	<b>Format:</b> [anAnalysisOperation.outgoing.format/]
+	<b>ID:</b> [anAnalysisOperation.outgoing.ID/]
 	<br>
-	<span style="color:#007bff;font-size:1rem;"><b>Schema:</b></span>
-	<br>
-	[anAnalysisOperation.outgoing.schema.generateSchemaDiv()/]
 	[/if]
 </div>
 [if not(anAnalysisOperation.outgoing.target.oclIsUndefined())]
@@ -142,20 +136,14 @@
 	[if (aCleaningOperation.incoming -> size() > 0)]
 	<span style="color:#007bff;font-size:1rem;"><b>Input Internal Data Flow</b></span>
 	<br>
-	<b>Format:</b> [aCleaningOperation.incoming.format/]
+	<b>ID:</b> [aCleaningOperation.incoming.ID/]
 	<br>
-	<span style="color:#007bff;font-size:1rem;"><b>Schema:</b></span>
-	<br>
-	[aCleaningOperation.incoming.schema.generateSchemaDiv()/]
 	[/if]
 	[if (aCleaningOperation.outgoing -> size() > 0)]
 	<span style="color:#007bff;font-size:1rem;"><b>Output Internal Data Flow</b></span>
 	<br>
-	<b>Format:</b> [aCleaningOperation.outgoing.format/]
+	<b>ID:</b> [aCleaningOperation.outgoing.ID/]
 	<br>
-	<span style="color:#007bff;font-size:1rem;"><b>Schema:</b></span>
-	<br>
-	[aCleaningOperation.outgoing.schema.generateSchemaDiv()/]
 	[/if]
 </div>
 [if not(aCleaningOperation.outgoing.target.oclIsUndefined())]
@@ -185,8 +173,6 @@
 			</tbody>
 		</table>
 	</div>
-	<span style="color:#007bff;font-size:1rem;"><b>Schema</b></span>
-	[aExportOperation.use.generateSchemaDiv()/]
 </div>
 [/template]
 
@@ -257,14 +243,6 @@
 	<h3>Viualization Operation [aVisualizationOperation.ID/]</h3>
 	<b>ID:</b> [aVisualizationOperation.ID/]
 	<br>
-	[if (aVisualizationOperation.eContainer(VisualizationTask).incoming -> size() > 0)]
-	<span style="color:#007bff;font-size:1rem;"><b>Input Internal Data Flow</b></span>
-	<br>
-	<b>Format:</b> [aVisualizationOperation.eContainer(VisualizationTask).incoming.format/]
-	<br>
-	<span style="color:#007bff;font-size:1rem;"><b>Schema</b></span>
-	[aVisualizationOperation.eContainer(VisualizationTask).incoming -> first().schema.generateSchemaDiv()/]
-	[/if]
 	<span style="color:#007bff;font-size:1rem;"><b>Chart</b></span>
 	<b>Title:</b> [aVisualizationOperation.chart.title/]
 	<br>
@@ -294,21 +272,12 @@
 			</tbody>
 		</table>
 	</div>
-	[if (aVisualizationOperation.eContainer(VisualizationTask).outgoing -> size() > 0)]
-	<span style="color:#007bff;font-size:1rem;"><b>Output Internal Data Flow</b></span>
-	<br>
-	<b>Format:</b> [aVisualizationOperation.eContainer(VisualizationTask).outgoing.format/]
-	<br>
-	<span style="color:#007bff;font-size:1rem;"><b>Schema<b></span>
-	[aVisualizationOperation.eContainer(VisualizationTask).outgoing -> first().schema.generateSchemaDiv()/]
-	[/if]
 </div>
 [/template]
 
 [template private generateDataFlowDiv(aDataFlow : DataFlow)]
 <div>
-	<b>Format:</b> [aDataFlow.format/]
-	<br>
+	<b>ID:</b> [aDataFlow.ID/]
 	<span style="color:#007bff;font-size:1rem;"><b>Schema</b></span>
 	<br>
 	[aDataFlow.schema.generateSchemaDiv()/]
@@ -546,6 +515,24 @@
 			</tbody>
 		</table>
 	</div>
+	<span style="color:#007bff;font-size:1rem;"><b>Charts</b></span>
+	<div class="table-responsive">
+		<table class="table">
+			<thead>
+				<td>Title</td>
+				<td>Type</td>
+				<td>Attributes</td>
+				<td>Size</td>
+			</thead>
+			<tbody>
+				<tr>
+					[for (aChart : Chart | aVisulizationTask.visualizationOperations.chart)]
+					[aChart.generateChartTableRow()/]
+					[/for]
+				<tr>
+			</tbody>
+		</table>
+	</div>
 	<span style="color:#007bff;font-size:1rem;"><b>Output Data Flow</b></span>
 	[generateDataFlowDiv(aVisulizationTask.outgoing -> first())/]
 </div>
@@ -583,10 +570,11 @@
 					<th>#</th>
 					<th>Attribute</th>
 					<th>Type</th>
+					<th>Details</th>
 				</tr>
 			</thead>
 			<tbody>
-				[generateTableRow(0, aSchema.attributes -> select(anAttribute : Attribute | anAttribute.previous -> size() = 0) -> first())/]
+				[generateAttributeTableRow(0, aSchema.attributes -> select(anAttribute : Attribute | anAttribute.previous -> size() = 0) -> first())/]
 			</tbody>
 		</table>
 	</div>
@@ -601,14 +589,53 @@
 </td>
 [/template]
 
-[template private generateTableRow(aInteger : Integer, anAttribute : Attribute)]
+[template private generateComplexAttributeTableRow(anInteger : Integer, aComplexAttribute : ComplexAttribute)]
 <tr>
-	<td>[aInteger/]</td>
-	<td>[anAttribute.name/]</td>
-	<td>[if (anAttribute.oclIsTypeOf(SimpleAttribute))]Simple Attribute[elseif (anAttribute.oclIsTypeOf(ComplexAttribute))]Complex Attribute[/if]</td>
+	<td>[anInteger/]</td>
+	<td>[aComplexAttribute.name/]</td>
+	<td>Complex Attribute</td>
+	<td><a data-toggle="collapse" href="#collapse-[aComplexAttribute.name/]" role ="button" aria-expanded="false" aria-controls="collapse-[aComplexAttribute.name/]">+</a></td>
 </tr>
+<tr>
+	<div class="collapse" id="collapse-[aComplexAttribute.name/]">
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Attribute</th>
+						<th>Type</th>
+						<th>Details</th>
+					</tr>
+				</thead>
+				<tbody>
+					[for (anAttribute : Attribute | aComplexAttribute.attributes)]
+					[generateAttributeTableRow(0, anAttribute)/]
+					[/for]
+				</tbody>
+			</table>
+		</div>	
+	</div>
+</tr>
+[/template]
+
+[template private generateSimpleAttributeTableRow(anInteger : Integer, aSimpleAttribute : SimpleAttribute)]
+<tr>
+	<td>[anInteger/]</td>
+	<td>[aSimpleAttribute.name/]</td>
+	<td>Simple Attribute</td>
+	<td></td>
+</tr>
+[/template]
+
+[template private generateAttributeTableRow(anInteger : Integer, anAttribute : Attribute)]
+[if (anAttribute.oclIsTypeOf(SimpleAttribute))]
+[generateSimpleAttributeTableRow(anInteger, anAttribute.oclAsType(SimpleAttribute))/]
+[elseif (anAttribute.oclIsTypeOf(ComplexAttribute))]
+[generateComplexAttributeTableRow(anInteger, anAttribute.oclAsType(ComplexAttribute))/]
+[/if]
 [if not(anAttribute.next.oclIsUndefined())]
-[generateTableRow(aInteger + 1, anAttribute.next)/]
+[generateAttributeTableRow(anInteger + 1, anAttribute.next)/]
 [/if]
 [/template]
 
@@ -647,6 +674,15 @@
 [if not(aCleaningOperation.outgoing.target.oclIsUndefined())]
 [generateTableRow(aInteger + 1, aCleaningOperation.outgoing.target.oclAsType(CleaningOperation))/]
 [/if]
+[/template]
+
+[template private generateChartTableRow(aChart : Chart)]
+<tr>
+	<td>[aChart.title/]</td>
+	<td>[aChart.type/]</td>
+	<td>[for (anAttribute : Attribute | aChart.axes)][anAttribute.name/][if not(anAttribute.next.next.oclIsUndefined())], [/if][/for]</td>
+	<td>[aChart.size/]</td>
+</tr>
 [/template]
 
 [template private generateTableRow(aInteger : Integer, aTask : Task)]

@@ -61,8 +61,8 @@ public class FileItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addPathPropertyDescriptor(object);
 			addFormatPropertyDescriptor(object);
+			addPathPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -172,8 +172,8 @@ public class FileItemProvider
 
 		switch (notification.getFeatureID(File.class)) {
 			case PipelinePackage.FILE__NAME:
-			case PipelinePackage.FILE__PATH:
 			case PipelinePackage.FILE__FORMAT:
+			case PipelinePackage.FILE__PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

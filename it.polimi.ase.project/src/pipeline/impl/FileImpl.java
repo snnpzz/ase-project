@@ -25,8 +25,8 @@ import pipeline.PipelinePackage;
  * </p>
  * <ul>
  *   <li>{@link pipeline.impl.FileImpl#getName <em>Name</em>}</li>
- *   <li>{@link pipeline.impl.FileImpl#getPath <em>Path</em>}</li>
  *   <li>{@link pipeline.impl.FileImpl#getFormat <em>Format</em>}</li>
+ *   <li>{@link pipeline.impl.FileImpl#getPath <em>Path</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,26 +53,6 @@ public class FileImpl extends EObjectImpl implements File {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPath()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PATH_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPath()
-	 * @generated
-	 * @ordered
-	 */
-	protected String path = PATH_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getFormat() <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -91,6 +71,26 @@ public class FileImpl extends EObjectImpl implements File {
 	 * @ordered
 	 */
 	protected Format format = FORMAT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String path = PATH_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -184,10 +184,10 @@ public class FileImpl extends EObjectImpl implements File {
 		switch (featureID) {
 			case PipelinePackage.FILE__NAME:
 				return getName();
-			case PipelinePackage.FILE__PATH:
-				return getPath();
 			case PipelinePackage.FILE__FORMAT:
 				return getFormat();
+			case PipelinePackage.FILE__PATH:
+				return getPath();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,11 +203,11 @@ public class FileImpl extends EObjectImpl implements File {
 			case PipelinePackage.FILE__NAME:
 				setName((String)newValue);
 				return;
-			case PipelinePackage.FILE__PATH:
-				setPath((String)newValue);
-				return;
 			case PipelinePackage.FILE__FORMAT:
 				setFormat((Format)newValue);
+				return;
+			case PipelinePackage.FILE__PATH:
+				setPath((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -224,11 +224,11 @@ public class FileImpl extends EObjectImpl implements File {
 			case PipelinePackage.FILE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case PipelinePackage.FILE__PATH:
-				setPath(PATH_EDEFAULT);
-				return;
 			case PipelinePackage.FILE__FORMAT:
 				setFormat(FORMAT_EDEFAULT);
+				return;
+			case PipelinePackage.FILE__PATH:
+				setPath(PATH_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -244,10 +244,10 @@ public class FileImpl extends EObjectImpl implements File {
 		switch (featureID) {
 			case PipelinePackage.FILE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case PipelinePackage.FILE__PATH:
-				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case PipelinePackage.FILE__FORMAT:
 				return format != FORMAT_EDEFAULT;
+			case PipelinePackage.FILE__PATH:
+				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -264,10 +264,10 @@ public class FileImpl extends EObjectImpl implements File {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", path: ");
-		result.append(path);
 		result.append(", format: ");
 		result.append(format);
+		result.append(", path: ");
+		result.append(path);
 		result.append(')');
 		return result.toString();
 	}

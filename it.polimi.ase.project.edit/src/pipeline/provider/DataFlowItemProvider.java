@@ -65,6 +65,7 @@ public class DataFlowItemProvider
 			addSourcePropertyDescriptor(object);
 			addSchemaPropertyDescriptor(object);
 			addIDPropertyDescriptor(object);
+			addFormatPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -158,6 +159,28 @@ public class DataFlowItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Format feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFormatPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataFlow_format_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlow_format_feature", "_UI_DataFlow_type"),
+				 PipelinePackage.Literals.DATA_FLOW__FORMAT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns DataFlow.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -196,6 +219,7 @@ public class DataFlowItemProvider
 
 		switch (notification.getFeatureID(DataFlow.class)) {
 			case PipelinePackage.DATA_FLOW__ID:
+			case PipelinePackage.DATA_FLOW__FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

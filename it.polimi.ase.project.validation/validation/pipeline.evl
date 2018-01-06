@@ -1,4 +1,3 @@
-
 context Pipeline {
 
 	constraint uniqueTasks {
@@ -13,23 +12,23 @@ context Pipeline {
 	
 	constraint isCollectionTaskPresent {
 		check: self.tasks -> select(t | t.isTypeOf(CollectionTask)) -> size() > 0
-		message: 'There must be a Collection Task.'
+		message: 'There must be a collection task.'
 	}
 	
 	constraint isAnalysisTaskPresent {
 		check: self.tasks -> select(t | t.isTypeOf(AnalysisTask)) -> size() > 0
-		message: 'There must be an Analysis Task.'
+		message: 'There must be an analysis task.'
 	}
 	
 	constraint isExportTaskPresent {
 		check: self.tasks -> select(t | t.isTypeOf(ExportTask)) -> size() > 0
-		message: 'There must be an Export Task.'
+		message: 'There must be an export task.'
 	}
 	
 	constraint uniqueOutgoingDataFlow {
 		check: self.tasks -> reject(t | t.isTypeOf(CollectionTask) or t.isTypeOf(ExportTask)) ->
 			forAll(t | t.outgoing -> size() <= 1)
-		message: "All tasks, except Collection Task and Export Task, must have a unique outgoing data flow."
+		message: "All tasks, except collection task and export task, must have a unique outgoing data flow."
 	}
 	
 	constraint isOutgoingDataFlowPresent {
@@ -210,7 +209,7 @@ context AnalysisTask{
 	
 	constraint uniqueInternalDataFlowIn {
 		check: self.analysisOperations -> forAll(o | o.outgoing -> size() <= 1)
-		message: "Analyzes operations can have at maximum one outgoing internal data flow"
+		message: "Analysis operations can have at maximum one outgoing internal data flow"
 	}
 	
 	constraint uniqueInternalDataFlowOut {
@@ -283,7 +282,7 @@ context ComplexAttribute {
 
 	constraint uniqueNameAttribute {
 		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
-		message: "There can't be more attributes with the same name in the same attribute"
+		message: "There can't be more attributes with the same name in the same complex attribute"
 	}	
 	
 	constraint uniqueAttribute {
@@ -296,7 +295,7 @@ context ComplexAttribute {
 
 context ClusteringAnalysisOperation {
 
-	constraint KisSet{
+	constraint isKSet{
 		check: self.k <> 0
 		message: "K parameter for clustering analysis operation must be set"
 	}

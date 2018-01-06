@@ -5,7 +5,7 @@ package pipeline;
 class Pipeline {
   val DataFlow[+] dataFlows;
   val Task[+] tasks;
-  attr String ID;
+  id attr String ID;
   val InternalDataFlow[*] internalDataFlows;
   val Source[+] sources;
   val File[*] files;
@@ -15,7 +15,7 @@ class Pipeline {
 
 @gmf.node(label="ID", figure="rounded")
 abstract class Task {
-  attr String ID;
+  id attr String ID;
   ref DataFlow[*]#target incoming;
   ref DataFlow[*]#source outgoing;
 }
@@ -28,6 +28,7 @@ class DataFlow {
   @gmf.link(width="1", target.decoration="arrow", tool.name="DFSchema", style="dot")
   ref Schema[1] schema;
   id attr String ID;
+  attr Format format;
 }
 
 abstract class Operation {
@@ -132,7 +133,6 @@ class Source {
 @gmf.node(label="name")
 class File {
   attr String name;
-  attr Format format;
   attr String path;
 }
 

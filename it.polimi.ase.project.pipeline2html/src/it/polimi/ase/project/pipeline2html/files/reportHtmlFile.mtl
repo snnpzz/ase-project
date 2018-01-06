@@ -278,6 +278,8 @@
 [template private generateDataFlowDiv(aDataFlow : DataFlow)]
 <div>
 	<b>ID:</b> [aDataFlow.ID/]
+	<br>
+	<b>Format:</b> [aDataFlow.format/]
 	<span style="color:#007bff;font-size:1rem;"><b>Schema</b></span>
 	<br>
 	[aDataFlow.schema.generateSchemaDiv()/]

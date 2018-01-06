@@ -25,7 +25,6 @@ import pipeline.PipelinePackage;
  * </p>
  * <ul>
  *   <li>{@link pipeline.impl.FileImpl#getName <em>Name</em>}</li>
- *   <li>{@link pipeline.impl.FileImpl#getFormat <em>Format</em>}</li>
  *   <li>{@link pipeline.impl.FileImpl#getPath <em>Path</em>}</li>
  * </ul>
  *
@@ -51,26 +50,6 @@ public class FileImpl extends EObjectImpl implements File {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFormat() <em>Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Format FORMAT_EDEFAULT = Format.CSV;
-
-	/**
-	 * The cached value of the '{@link #getFormat() <em>Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected Format format = FORMAT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
@@ -158,34 +137,11 @@ public class FileImpl extends EObjectImpl implements File {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Format getFormat() {
-		return format;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFormat(Format newFormat) {
-		Format oldFormat = format;
-		format = newFormat == null ? FORMAT_EDEFAULT : newFormat;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.FILE__FORMAT, oldFormat, format));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PipelinePackage.FILE__NAME:
 				return getName();
-			case PipelinePackage.FILE__FORMAT:
-				return getFormat();
 			case PipelinePackage.FILE__PATH:
 				return getPath();
 		}
@@ -202,9 +158,6 @@ public class FileImpl extends EObjectImpl implements File {
 		switch (featureID) {
 			case PipelinePackage.FILE__NAME:
 				setName((String)newValue);
-				return;
-			case PipelinePackage.FILE__FORMAT:
-				setFormat((Format)newValue);
 				return;
 			case PipelinePackage.FILE__PATH:
 				setPath((String)newValue);
@@ -224,9 +177,6 @@ public class FileImpl extends EObjectImpl implements File {
 			case PipelinePackage.FILE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case PipelinePackage.FILE__FORMAT:
-				setFormat(FORMAT_EDEFAULT);
-				return;
 			case PipelinePackage.FILE__PATH:
 				setPath(PATH_EDEFAULT);
 				return;
@@ -244,8 +194,6 @@ public class FileImpl extends EObjectImpl implements File {
 		switch (featureID) {
 			case PipelinePackage.FILE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case PipelinePackage.FILE__FORMAT:
-				return format != FORMAT_EDEFAULT;
 			case PipelinePackage.FILE__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 		}
@@ -264,8 +212,6 @@ public class FileImpl extends EObjectImpl implements File {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", format: ");
-		result.append(format);
 		result.append(", path: ");
 		result.append(path);
 		result.append(')');

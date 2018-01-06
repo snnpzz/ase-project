@@ -240,13 +240,22 @@ public interface PipelinePackage extends EPackage {
 	int DATA_FLOW__ID = 3;
 
 	/**
+	 * The feature id for the '<em><b>Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FLOW__FORMAT = 4;
+
+	/**
 	 * The number of structural features of the '<em>Data Flow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_FEATURE_COUNT = 4;
+	int DATA_FLOW_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.OperationImpl <em>Operation</em>}' class.
@@ -1066,22 +1075,13 @@ public interface PipelinePackage extends EPackage {
 	int FILE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE__FORMAT = 1;
-
-	/**
 	 * The feature id for the '<em><b>Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FILE__PATH = 2;
+	int FILE__PATH = 1;
 
 	/**
 	 * The number of structural features of the '<em>File</em>' class.
@@ -1090,7 +1090,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_FEATURE_COUNT = 3;
+	int FILE_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.ChartImpl <em>Chart</em>}' class.
@@ -2047,6 +2047,17 @@ public interface PipelinePackage extends EPackage {
 	EAttribute getDataFlow_ID();
 
 	/**
+	 * Returns the meta object for the attribute '{@link pipeline.DataFlow#getFormat <em>Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Format</em>'.
+	 * @see pipeline.DataFlow#getFormat()
+	 * @see #getDataFlow()
+	 * @generated
+	 */
+	EAttribute getDataFlow_Format();
+
+	/**
 	 * Returns the meta object for class '{@link pipeline.Operation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2558,17 +2569,6 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFile_Path();
-
-	/**
-	 * Returns the meta object for the attribute '{@link pipeline.File#getFormat <em>Format</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Format</em>'.
-	 * @see pipeline.File#getFormat()
-	 * @see #getFile()
-	 * @generated
-	 */
-	EAttribute getFile_Format();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.Chart <em>Chart</em>}'.
@@ -3140,6 +3140,14 @@ public interface PipelinePackage extends EPackage {
 		EAttribute DATA_FLOW__ID = eINSTANCE.getDataFlow_ID();
 
 		/**
+		 * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_FLOW__FORMAT = eINSTANCE.getDataFlow_Format();
+
+		/**
 		 * The meta object literal for the '{@link pipeline.impl.OperationImpl <em>Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3552,14 +3560,6 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FILE__PATH = eINSTANCE.getFile_Path();
-
-		/**
-		 * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FILE__FORMAT = eINSTANCE.getFile_Format();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.ChartImpl <em>Chart</em>}' class.

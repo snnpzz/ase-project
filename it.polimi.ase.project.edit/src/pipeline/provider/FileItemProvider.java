@@ -61,7 +61,6 @@ public class FileItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addFormatPropertyDescriptor(object);
 			addPathPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -112,28 +111,6 @@ public class FileItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Format feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFormatPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_File_format_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_File_format_feature", "_UI_File_type"),
-				 PipelinePackage.Literals.FILE__FORMAT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns File.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -172,7 +149,6 @@ public class FileItemProvider
 
 		switch (notification.getFeatureID(File.class)) {
 			case PipelinePackage.FILE__NAME:
-			case PipelinePackage.FILE__FORMAT:
 			case PipelinePackage.FILE__PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

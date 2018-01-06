@@ -49,6 +49,10 @@
         <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//DataFlow/ID"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_1dod8fMPEeeH28c1CV9Ipg"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_udroQPMaEeekXqKYkYFSQQ" type="3001">
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//DataFlow/format"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_udroQfMaEeekXqKYkYFSQQ"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_LtX1AuGVEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_LtX1A-GVEeeU3dy_CQ-Szg"/>
     </children>
@@ -349,10 +353,6 @@
       <children xmi:type="notation:Node" xmi:id="_Cd3toOGXEeeU3dy_CQ-Szg" type="3001">
         <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//File/path"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Cd3toeGXEeeU3dy_CQ-Szg"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_qwpbAPMIEeeQSeKNaGOZyw" type="3001">
-        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//File/format"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_qwpbAfMIEeeQSeKNaGOZyw"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_BVqIYuGXEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_BVqIY-GXEeeU3dy_CQ-Szg"/>

@@ -37,7 +37,7 @@ public interface Task extends EObject {
 	 * @return the value of the '<em>ID</em>' attribute.
 	 * @see #setID(String)
 	 * @see pipeline.PipelinePackage#getTask_ID()
-	 * @model
+	 * @model id="true"
 	 * @generated
 	 */
 	String getID();

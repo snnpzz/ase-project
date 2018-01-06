@@ -29,6 +29,7 @@ import pipeline.Task;
  *   <li>{@link pipeline.impl.DataFlowImpl#getSource <em>Source</em>}</li>
  *   <li>{@link pipeline.impl.DataFlowImpl#getSchema <em>Schema</em>}</li>
  *   <li>{@link pipeline.impl.DataFlowImpl#getID <em>ID</em>}</li>
+ *   <li>{@link pipeline.impl.DataFlowImpl#getFormat <em>Format</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,6 +84,26 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getFormat() <em>Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFormat()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Format FORMAT_EDEFAULT = Format.CSV;
+
+	/**
+	 * The cached value of the '{@link #getFormat() <em>Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFormat()
+	 * @generated
+	 * @ordered
+	 */
+	protected Format format = FORMAT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -287,6 +308,27 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Format getFormat() {
+		return format;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFormat(Format newFormat) {
+		Format oldFormat = format;
+		format = newFormat == null ? FORMAT_EDEFAULT : newFormat;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.DATA_FLOW__FORMAT, oldFormat, format));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -337,6 +379,8 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 				return basicGetSchema();
 			case PipelinePackage.DATA_FLOW__ID:
 				return getID();
+			case PipelinePackage.DATA_FLOW__FORMAT:
+				return getFormat();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -360,6 +404,9 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 				return;
 			case PipelinePackage.DATA_FLOW__ID:
 				setID((String)newValue);
+				return;
+			case PipelinePackage.DATA_FLOW__FORMAT:
+				setFormat((Format)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -385,6 +432,9 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 			case PipelinePackage.DATA_FLOW__ID:
 				setID(ID_EDEFAULT);
 				return;
+			case PipelinePackage.DATA_FLOW__FORMAT:
+				setFormat(FORMAT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -405,6 +455,8 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 				return schema != null;
 			case PipelinePackage.DATA_FLOW__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case PipelinePackage.DATA_FLOW__FORMAT:
+				return format != FORMAT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -421,6 +473,8 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (ID: ");
 		result.append(id);
+		result.append(", format: ");
+		result.append(format);
 		result.append(')');
 		return result.toString();
 	}

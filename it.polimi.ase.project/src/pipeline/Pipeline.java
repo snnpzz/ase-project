@@ -73,7 +73,7 @@ public interface Pipeline extends EObject {
 	 * @return the value of the '<em>ID</em>' attribute.
 	 * @see #setID(String)
 	 * @see pipeline.PipelinePackage#getPipeline_ID()
-	 * @model
+	 * @model id="true"
 	 * @generated
 	 */
 	String getID();

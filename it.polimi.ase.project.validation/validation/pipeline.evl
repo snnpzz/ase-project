@@ -1,3 +1,4 @@
+
 context Pipeline {
 
 	constraint uniqueTasks {
@@ -12,23 +13,23 @@ context Pipeline {
 	
 	constraint isCollectionTaskPresent {
 		check: self.tasks -> select(t | t.isTypeOf(CollectionTask)) -> size() > 0
-		message: 'There must be a collection task.'
+		message: 'There must be a Collection Task.'
 	}
 	
 	constraint isAnalysisTaskPresent {
 		check: self.tasks -> select(t | t.isTypeOf(AnalysisTask)) -> size() > 0
-		message: 'There must be an analysis task.'
+		message: 'There must be an Analysis Task.'
 	}
 	
 	constraint isExportTaskPresent {
 		check: self.tasks -> select(t | t.isTypeOf(ExportTask)) -> size() > 0
-		message: 'There must be an export task.'
+		message: 'There must be an Export Task.'
 	}
 	
 	constraint uniqueOutgoingDataFlow {
 		check: self.tasks -> reject(t | t.isTypeOf(CollectionTask) or t.isTypeOf(ExportTask)) ->
 			forAll(t | t.outgoing -> size() <= 1)
-		message: "All tasks, except collection task and export task, must have a unique outgoing data flow."
+		message: "All tasks, except Collection Task and Export Task, must have a unique outgoing data flow."
 	}
 	
 	constraint isOutgoingDataFlowPresent {
@@ -77,8 +78,14 @@ context Pipeline {
 	}
 	
 	constraint ifManySourcesIntegration {
-		check: (self.sources -> size() == 1) or (self.sources -> size() > 1 and self.tasks -> select(t | t.isTypeOf(IntegrationTask)) -> size() == 1)
+		check: self.sources -> size() > 1 implies self.tasks -> select(t | t.isTypeOf(IntegrationTask)) -> size() == 1
 		message: "If there are many input sources there must be a integration task"
+	}
+	
+	constraint numberOfIntegrationOperation {
+		check: self.sources -> size() > 1 implies self.sources -> size() ==
+			self.tasks -> select(t | t.isTypeOf(IntegrationTask)).integrationOperations -> size()
+		message: "The number of integration operation must be the number of sources - 1"
 	}
 	
 	constraint SourceImportedOnce {
@@ -117,8 +124,8 @@ context CollectionTask {
 	}
 	
 	constraint nextTypeCollection {
-		check: (self.outgoing -> size() == 1) and (self.outgoing.target -> select(t |t.isTypeOf(CollectionTask) or t.isTypeOf(VisualizationTask) or
-			t.isTypeOf(ExportTask)) -> size() == 0) or (self.outgoing -> size() > 1)
+		check: (self.outgoing -> size() == 1) and (self.outgoing.target -> select(t |t.isTypeOf(CollectionTask) or 
+			t.isTypeOf(VisualizationTask) or t.isTypeOf(ExportTask)) -> size() == 0) or (self.outgoing -> size() > 1)
 		message: "Collection task must be linked to integration, cleaning or analysis task"
 	}
 	
@@ -133,7 +140,7 @@ context CollectionTask {
 	}
 	
 	constraint allOutgoingDataFlowsTargetingSameIntegrationTask {
-		check: (self.outgoing -> size() > 1) and (self.outgoing.target -> size() > 1)
+		check: (self.outgoing -> size() > 1) implies (self.outgoing.target -> forAll(t | t.isTypeOf(IntegrationTask)))
 		message: "If there are many outgoing data flows from the collection task, all of them must be linked to the same integration task"
 	}
 	
@@ -166,11 +173,6 @@ context IntegrationTask {
 
 
 context CleaningTask {
-
-	constraint sameIncomingAndOutgoingSchema {
-		check: self.incoming.schema.includesAll(self.outgoing.schema)
-		message: "The incoming and the outgoing data flow must have the same schema."
-	}
 
 	constraint nextTypeCleaning {
 		check: self.outgoing.target -> reject(t | t.isTypeOf(AnalysisTask)) -> size() == 0
@@ -209,7 +211,7 @@ context AnalysisTask{
 	
 	constraint uniqueInternalDataFlowIn {
 		check: self.analysisOperations -> forAll(o | o.outgoing -> size() <= 1)
-		message: "Analysis operations can have at maximum one outgoing internal data flow"
+		message: "Analyzes operations can have at maximum one outgoing internal data flow"
 	}
 	
 	constraint uniqueInternalDataFlowOut {
@@ -228,21 +230,16 @@ context AnalysisTask{
 	}
 	
 	constraint outgoingDataFlowHasGeneratedAttributes {
-		check: self.outgoing.schema.attributes.includesAll(self.analysisOperations.outputAttributes)
+		check: self.outgoing.schema.attributes.includesAll(self.analysisOperations.outputAttribute)
 		message: "The outgoing dataflow schema of analysis doesn't respect the generated attributes" 
 	}
 	
 	constraint outgoingDataFlowHasRightSchema {
-		check: self.outgoing.schema.attributes.includesAll(self.analysisOperations.outputAttributes) and
+		check: self.outgoing.schema.attributes.includesAll(self.analysisOperations.outputAttribute) and
 			self.outgoing.schema.attributes.includesAll(self.incoming.schema.attributes)
 		message: "The outgoing dataflow schema is wrong" 
 	}
 	
-	constraint outputAttributeNameIsNotUsed {
-		check: self.analysisOperation.outputAttributes -> forAll(attr1 | self.analysisOperation.outputAttributes ->
-			forAll(attr2 | attr1 <> attr2 implies attr1.name <> attr2.name))
-		message: "Output attributes of analysis operation must have different names"
-	}
 }
 
 
@@ -289,7 +286,7 @@ context ComplexAttribute {
 
 	constraint uniqueNameAttribute {
 		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
-		message: "There can't be more attributes with the same name in the same complex attribute"
+		message: "There can't be more attributes with the same name in the same attribute"
 	}	
 	
 	constraint uniqueAttribute {
@@ -300,11 +297,67 @@ context ComplexAttribute {
 }
 
 
+context ClassificationAnalysisOperation {
+
+	constraint LogisticRegressionOnBoolean {
+		check: self.inputAttributes -> forAll(attr | attr.type == "mBoolean")
+		message: "Classification analysis: logistic regression must be applied to boolean values"
+	}
+	
+	constraint Log_LDA_QDA_SVM_noOutput {
+		check: (self.type == LogisticRegression or self.type == LDA or self.type == QDA or 
+			self.type == SVM) implies (self.outputAttribute -> size() == 0)
+		message: "Classification analysis: Logistic regression, LDA, QDA and SVM don't need an output attribute"
+	}
+	
+	constraint KNN_needsOutput {
+		check: (self.type == KNN) implies (self.outputAttribute -> size() == 1)
+		message: "Classification analysis: KNN requires an output attribute"
+	}
+}
+
+
+context DescriptiveAnalysisOperation {
+
+	constraint noOutputNeeded {
+		check: self.outputAttribute -> size() == 0
+		message: "Description analyzes don't require output attribute"
+	}
+	
+}
+
+
 context ClusteringAnalysisOperation {
 
-	constraint isKSet{
-		check: self.k <> 0
-		message: "K parameter for clustering analysis operation must be set"
+	constraint KisSet{
+		check: self.k > 0
+		message: "K parameter for clustering analysis operation must be set and must be positive"
+	}
+	
+	constraint KmeansNeedOutputAttribute {
+		check: self.outputAttribute -> size() == 1
+		message: "Clustering analysis: kmeans requires an output attribute"
+	}
+	
+	constraint HierarchicalNoOutputAttribute {
+		check: self.outputAttribute -> size() == 0
+		message: "Clustering analysis: hierarchical clustering doesn't require an output attribute"
+	}
+	
+}
+
+
+context PredictiveAnalysisOperation {
+	
+	constraint outputAttributeRequired {
+		check: self.outputAttribute -> size() == 0
+		message: "Predective analyzes don't require an output attribute"
+	}
+	
+	constraint regressionOnNumericValues {
+		check: (self.type == SimpleRegression or self.type == MultipleLinRegr) implies
+			(self.inputAttributes -> forAll(attr | attr.type == mInteger or attr.type == mDouble))
+		message: "Predictive analysis: regression must have integer or double input attributes"
 	}
 	
 }

@@ -12,8 +12,12 @@
 # - all output files will be placed in a folder named "output" at the same level of the R file.
 
 # Import libraries
-# (If some libraries are missing, install them: install.packages(<library_name>) )
+# (If some libraries are missing, install them: install.packages("library_name") )
 library(readr)
+
+# install.packages("reshape")
+library(reshape)
+
 library(MASS)
 library(class)
 library(e1071)
@@ -32,11 +36,7 @@ pdf("output/[aPipeline.ID/].pdf)
 # Integration: join all data in a unique one
 [if (aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)) <> null)]
 	[let intTask : IntegrationTask = aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask)]
-		[for (op : IntegrationOperation | intTask.integrationOperations)]
-			[joinSources((aPipeline.sources -> select(s | aPipeline.tasks -> select(t | t.oclIsTypeOf(CollectionTask)).oclAsType(CollectionTask).importOperations ->	
-				select(op1 | op1.use.attributes.includes(op.attributes)).read) ).oclAsType(Source), Source, 
-				op.attributes)/]
-		[/for]
+		[joinSources(aPipeline.sources, intTask.integrationOperations.inputAttributes)/]
 	[/let]
 [/if]
 
@@ -60,11 +60,14 @@ pdf("output/[aPipeline.ID/].pdf)
 					[for (attr : Attribute | op.inputAttributes)]
 						source$[attr.name/] <- round(source$[attr.name/])
 					[/for]
-				[elseif]
+				[elseif (op.oclAsType(PredefinedCleaningOperation).type = PredefinedOperation::round)]
 					# Remove column
 					[for (attr : Attribute | op.inputAttributes)]
 						source$[attr.name/] <- NULL
 					[/for]
+				[elseif]
+					# Remove duplicates
+					source <- unique(source)
 				[/if]
 			[elseif]
 				# User defined operation
@@ -130,22 +133,32 @@ rm(list = ls())
 [/template]
 
 
-[template private joinSources(source1: Source, source2: Source, attributes: Sequence(Attribute))]
-[let attrs : String = '']
-	[for (attr : Attribute | aAttributes)]
-		[attrs.concat('"').concat(attr.name).concat('",')/]
-	[/for]
-	
-	[let merge : String = 'merge(source1, source2, by=c('.concat(attrs).concat('), all.x=TRUE)')]
+[template private joinSources(aSources: OrderedSet(Source), aAttributes: Sequence(Attribute))]
+[aAttributes = aAttributes.oclAsSet() /]	
+[let listSources : String = '']
+	[let attrs : String = '']
 		[let index : Integer = 1]
 			[for (source : Source | aSources)]	
 				[if (index > 1)]
-					[merge = 'merge('.concat(merge).concat(', source').concat(index.toString()).concat(', by=c(').concat(attrs).concat('),, all.x=TRUE')/]
-				[/if]			
+					[listSources = listSources.concat(', source').concat(index.toString()) /]
+				[elseif]
+					[listSources = listSources.concat('source').concat(index.toString()) /]
+				[/if]
 				[index = index + 1 /]		
 			[/for]
+			[index = 1/]
+			[for (attr : Attribute | aAttributes)]
+				[if (index > 1)]
+					[attrs = attrs.concat(', "').concat(attr.name).concat('"')/]
+				[elseif]
+					[attrs = attrs.concat('"').concat(attr.name).concat('"')/]
+				[/if]
+				[index = index + 1/]
+			[/for]
 		[/let]
-		source = [merge/]
+	
+		sourcesList <- list([listSources/])
+		source <- merge_all(sourcesList, by = c([attrs/]))
 	[/let]
 [/let]		
 [/template]
@@ -184,12 +197,15 @@ rm(list = ls())
 	[if (op.type = ClassificationOperation::LogisticRegression)]
 		# Logistic regression
 		[op.ID/] <- glm([formula/], data = source, family = binomial)
+		summary([op.ID/])
 	[elseif (op.type = ClassificationOperation::LDA)]
 		# LDA
 		[op.ID/] <- lda([formula/], data = source)
+		[op.ID/]
 	[elseif (op.type = ClassificationOperation::QDA)]
 		# QDA
 		[op.ID/] <- qda([formula/], data = source)
+		[op.ID/]
 	[elseif (op.type = ClassificationOperation::KNN)] 
 		# KNN
 		knnInd <- sample(nrow(sample), round(nrow(sample)*0.8)
@@ -208,11 +224,13 @@ rm(list = ls())
 			knnInd <- -knnInd
 			test   <- cbind([columns/])
 			[op.ID/] <- knn(train, test, k = 10, prob = TRUE)
+			source$[op.outputAttribute.name/] <- [op.ID/]
 			rm(knnInd, train, test)
 		[/let]
 	[elseif]
 		# SVM
 		[op.ID/] <- svm([op.inputAttributes.name/] ~ ., data = source, kernel = "linear")
+		[op.ID/]
 	[/if]
 [/let]
 [/template]
@@ -222,9 +240,13 @@ rm(list = ls())
 [if (op.type = ClusteringOperation::kMeans)]
 	# Kmeans
 	[op.ID/] <- kmeans(source, [op.k/])
+	plot(source, col = [op.ID/]$cluster)
+	source$[op.outputAttribute.name/] <- [op.ID/]$cluster
 [elseif]
 	# Hierarchical
 	[op.ID/] <- hclust(dist([op.inputAttributes.name/]), [op.k/])
+	source$[op.outputAttribute.name/] <- [op.ID/]$order
+	plot([op.ID/])
 [/if]
 [/template]
 
@@ -233,6 +255,7 @@ rm(list = ls())
 [if (op.type = PredictiveOperation::SimpleRegression)]
 	# Simple regression
 	[op.ID/] <- lm([op.inputAttributes.name/]~[op.inputAttributes.next.name/], data = source)
+	summary([op.ID/])
 [elseif (op.type = PredictiveOperation::MultipleLinRegr)]
 	# Multiple linear regression
 	[let formula : String = '']
@@ -249,10 +272,12 @@ rm(list = ls())
 			[/for]
 		[/let]
 		[op.ID/] <- lm([formula/], data = source)
+		summary([op.ID/])
 	[/let]
 [elseif]
 	# Random forests
 	[op.ID/] <- randomForest([op.inputAttributes.name/], data = source, importante = TRUE, proximity = TRUE)
+	print([op.ID/])
 [/if]
 [/template]
 

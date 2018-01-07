@@ -242,12 +242,12 @@ context AnalysisTask{
 	}
 	
 	constraint outgoingDataFlowHasGeneratedAttributes {
-		check: self.outgoing.schema.attributes.includesAll(self.analysisOperations.outputAttributes)
+		check: self.outgoing.schema.attributes.includesAll(self.analysisOperations.outputAttribute)
 		message: "The outgoing dataflow schema of analysis doesn't respect the generated attributes" 
 	}
 	
 	constraint outgoingDataFlowHasRightSchema {
-		check: self.outgoing.schema.attributes.includesAll(self.analysisOperations.outputAttributes) and
+		check: self.outgoing.schema.attributes.includesAll(self.analysisOperations.outputAttribute) and
 			self.outgoing.schema.attributes.includesAll(self.incoming.schema.attributes)
 		message: "The outgoing dataflow schema is wrong" 
 	}
@@ -333,26 +333,24 @@ context ClassificationAnalysisOperation {
 	-- == LogisticRegression doesn't work :(
 	constraint Log_LDA_QDA_SVM_noOutput {
 		check: (self.type == LogisticRegression or self.type == LDA or self.type == QDA or 
-			self.type == SVM) implies (self.outputAttributes -> size() == 0)
+			self.type == SVM) implies (self.outputAttribute -> size() == 0)
 		message: "Classification analysis: Logistic regression, LDA, QDA and SVM don't need an output attribute"
 	}
 	
 	constraint KNN_needsOutput {
-		check: (self.type == KNN) implies (self.outputAttributes -> size() == 1)
+		check: (self.type == KNN) implies (self.outputAttribute -> size() == 1)
 		message: "Classification analysis: KNN requires an output attribute"
 	}
 }
 
-
 context DescriptiveAnalysisOperation {
 
 	constraint noOutputNeeded {
-		check: self.outputAttributes -> size() == 0
+		check: self.outputAttribute -> size() == 0
 		message: "Description analyzes don't require output attribute"
 	}
 	
 }
-
 
 context ClusteringAnalysisOperation {
 
@@ -362,22 +360,21 @@ context ClusteringAnalysisOperation {
 	}
 	
 	constraint KmeansNeedOutputAttribute {
-		check: self.outputAttributes -> size() == 1
+		check: self.outputAttribute -> size() == 1
 		message: "Clustering analysis: kmeans requires an output attribute"
 	}
 	
 	constraint HierarchicalNoOutputAttribute {
-		check: self.outputAttributes -> size() == 0
+		check: self.outputAttribute -> size() == 0
 		message: "Clustering analysis: hierarchical clustering doesn't require an output attribute"
 	}
 	
 }
 
-
 context PredictiveAnalysisOperation {
 	
-	constraint outputAttributesRequired {
-		check: self.outputAttributes -> size() == 0
+	constraint outputAttributeRequired {
+		check: self.outputAttribute -> size() == 0
 		message: "Predective analyzes don't require an output attribute"
 	}
 	

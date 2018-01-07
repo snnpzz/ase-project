@@ -761,7 +761,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_aZ6o1u8FEeeKqPfWoCQbzQ"/>
     </children>
     <element xmi:type="ecore:EEnum" href="pipeline.ecore#//DescriptiveOperation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aZ6Bwe8FEeeKqPfWoCQbzQ" x="890" y="875"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aZ6Bwe8FEeeKqPfWoCQbzQ" x="973" y="896"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_sjcSoO8IEeeKqPfWoCQbzQ" type="2005" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_sjcSou8IEeeKqPfWoCQbzQ" type="5005"/>

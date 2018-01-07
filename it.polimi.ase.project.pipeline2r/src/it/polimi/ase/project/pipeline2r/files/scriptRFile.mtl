@@ -70,7 +70,8 @@ pdf("output/[aPipeline.ID/].pdf)
 					source <- unique(source)
 				[/if]
 			[elseif]
-				# User defined operation
+				# TODO: User defined cleaning operation
+				# [op.ID/]: [op.oclAsType(UserDefinedCleaningOperation).type/]
 
 			[/if]
 		[/for]

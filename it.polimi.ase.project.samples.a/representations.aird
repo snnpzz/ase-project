@@ -1278,5 +1278,1280 @@
       <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer"/>
       <target xmi:type="pipeline:Pipeline" href="socialSensors.pipeline#/"/>
     </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_GBNFEPOsEeeXN4BnvsfbCw" name="sampleAdiagram">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_GBNFEfOsEeeXN4BnvsfbCw" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_GBNFEvOsEeeXN4BnvsfbCw"/>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_GBYrQPOsEeeXN4BnvsfbCw" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_GBYrQfOsEeeXN4BnvsfbCw" type="Sirius" element="_GBNFEPOsEeeXN4BnvsfbCw" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_GBZSUPOsEeeXN4BnvsfbCw" type="2001" element="_GBNFE_OsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBZSU_OsEeeXN4BnvsfbCw" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_GBZSVPOsEeeXN4BnvsfbCw" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBc8sPOsEeeXN4BnvsfbCw" type="3005" element="_GBNFFPOsEeeXN4BnvsfbCw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GBc8sfOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBc8svOsEeeXN4BnvsfbCw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_GBZSUfOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBZSUvOsEeeXN4BnvsfbCw" y="-2" width="62" height="80"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GBZ5YPOsEeeXN4BnvsfbCw" type="2001" element="_GBNFFfOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBZ5Y_OsEeeXN4BnvsfbCw" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_GBZ5ZPOsEeeXN4BnvsfbCw" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBc8s_OsEeeXN4BnvsfbCw" type="3005" element="_GBNFFvOsEeeXN4BnvsfbCw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GBc8tPOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBc8tfOsEeeXN4BnvsfbCw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_GBZ5YfOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBZ5YvOsEeeXN4BnvsfbCw" x="120" width="56" height="76"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GBagcPOsEeeXN4BnvsfbCw" type="2001" element="_GBNFF_OsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBagc_OsEeeXN4BnvsfbCw" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_GBagdPOsEeeXN4BnvsfbCw" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBc8tvOsEeeXN4BnvsfbCw" type="3005" element="_GBNFGPOsEeeXN4BnvsfbCw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GBc8t_OsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBc8uPOsEeeXN4BnvsfbCw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_GBagcfOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBagcvOsEeeXN4BnvsfbCw" x="240" width="56" height="76"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GBbHgPOsEeeXN4BnvsfbCw" type="2002" element="_GBNFGfOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBbHg_OsEeeXN4BnvsfbCw" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_GBbHhPOsEeeXN4BnvsfbCw" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_GBc8ufOsEeeXN4BnvsfbCw" type="3007" element="_GBNFG_OsEeeXN4BnvsfbCw">
+                <children xmi:type="notation:Node" xmi:id="_GBc8vPOsEeeXN4BnvsfbCw" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_GBc8vfOsEeeXN4BnvsfbCw" y="-21"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_GBdjwPOsEeeXN4BnvsfbCw" type="3005" element="_GBNFHPOsEeeXN4BnvsfbCw">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_GBdjwfOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBdjwvOsEeeXN4BnvsfbCw"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBc8uvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBc8u_OsEeeXN4BnvsfbCw" x="30" y="29" width="68" height="68"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_GBbHhfOsEeeXN4BnvsfbCw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_GBbHhvOsEeeXN4BnvsfbCw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_GBbHgfOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBbHgvOsEeeXN4BnvsfbCw" x="1020" y="170"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GBbHh_OsEeeXN4BnvsfbCw" type="2002" element="_GBNFHfOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBbHivOsEeeXN4BnvsfbCw" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_GBbHi_OsEeeXN4BnvsfbCw" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_GBdjw_OsEeeXN4BnvsfbCw" type="3007" element="_GBNFH_OsEeeXN4BnvsfbCw">
+                <children xmi:type="notation:Node" xmi:id="_GBdjxvOsEeeXN4BnvsfbCw" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_GBdjx_OsEeeXN4BnvsfbCw" y="-21"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_GBfY8POsEeeXN4BnvsfbCw" type="3005" element="_GBNFIPOsEeeXN4BnvsfbCw">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_GBfY8fOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBfY8vOsEeeXN4BnvsfbCw"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBdjxPOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBdjxfOsEeeXN4BnvsfbCw" x="30" y="129" width="68" height="68"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_GBeK0POsEeeXN4BnvsfbCw" type="3007" element="_GBNFIfOsEeeXN4BnvsfbCw">
+                <children xmi:type="notation:Node" xmi:id="_GBeK0_OsEeeXN4BnvsfbCw" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_GBeK1POsEeeXN4BnvsfbCw" y="-21"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_GBfY8_OsEeeXN4BnvsfbCw" type="3005" element="_GBNFIvOsEeeXN4BnvsfbCw">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_GBfY9POsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBfY9fOsEeeXN4BnvsfbCw"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBeK0fOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBeK0vOsEeeXN4BnvsfbCw" x="30" y="29" width="68" height="68"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_GBex4POsEeeXN4BnvsfbCw" type="3007" element="_GBNFI_OsEeeXN4BnvsfbCw">
+                <children xmi:type="notation:Node" xmi:id="_GBex4_OsEeeXN4BnvsfbCw" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_GBex5POsEeeXN4BnvsfbCw" y="-21"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_GBfY9vOsEeeXN4BnvsfbCw" type="3005" element="_GBNFJPOsEeeXN4BnvsfbCw">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_GBfY9_OsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBfY-POsEeeXN4BnvsfbCw"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBex4fOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBex4vOsEeeXN4BnvsfbCw" x="30" y="254" width="68" height="68"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_GBbHjPOsEeeXN4BnvsfbCw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_GBbHjfOsEeeXN4BnvsfbCw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_GBbHiPOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBbHifOsEeeXN4BnvsfbCw" x="1020" y="345"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GBbukPOsEeeXN4BnvsfbCw" type="2002" element="_GBNFJfOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBbuk_OsEeeXN4BnvsfbCw" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_GBbulPOsEeeXN4BnvsfbCw" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_GBfY-fOsEeeXN4BnvsfbCw" type="3007" element="_GBNFJ_OsEeeXN4BnvsfbCw">
+                <children xmi:type="notation:Node" xmi:id="_GBgAAPOsEeeXN4BnvsfbCw" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_GBgAAfOsEeeXN4BnvsfbCw" y="-21"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_GBh1MPOsEeeXN4BnvsfbCw" type="3005" element="_GBNFKPOsEeeXN4BnvsfbCw">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_GBh1MfOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBh1MvOsEeeXN4BnvsfbCw"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBfY-vOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBfY-_OsEeeXN4BnvsfbCw" x="30" y="30" width="68" height="68"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_GBgAAvOsEeeXN4BnvsfbCw" type="3007" element="_GBNFKfOsEeeXN4BnvsfbCw">
+                <children xmi:type="notation:Node" xmi:id="_GBhOIPOsEeeXN4BnvsfbCw" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_GBhOIfOsEeeXN4BnvsfbCw" y="-21"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_GBh1M_OsEeeXN4BnvsfbCw" type="3005" element="_GBNFKvOsEeeXN4BnvsfbCw">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_GBh1NPOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBh1NfOsEeeXN4BnvsfbCw"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBgAA_OsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBgABPOsEeeXN4BnvsfbCw" x="130" y="30" width="68" height="68"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_GBbulfOsEeeXN4BnvsfbCw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_GBbulvOsEeeXN4BnvsfbCw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_GBbukfOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBbukvOsEeeXN4BnvsfbCw" x="955" y="930"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GBbul_OsEeeXN4BnvsfbCw" type="2002" element="_GBNFK_OsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBbumvOsEeeXN4BnvsfbCw" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_GBbum_OsEeeXN4BnvsfbCw" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_GBicQPOsEeeXN4BnvsfbCw" type="3007" element="_GBNFLfOsEeeXN4BnvsfbCw">
+                <children xmi:type="notation:Node" xmi:id="_GBicQ_OsEeeXN4BnvsfbCw" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_GBicRPOsEeeXN4BnvsfbCw" x="-1"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_GBicRfOsEeeXN4BnvsfbCw" type="3005" element="_GBNFLvOsEeeXN4BnvsfbCw">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_GBicRvOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBicR_OsEeeXN4BnvsfbCw"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBicQfOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBicQvOsEeeXN4BnvsfbCw" x="30" y="29" width="68" height="68"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_GBbunPOsEeeXN4BnvsfbCw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_GBbunfOsEeeXN4BnvsfbCw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_GBbumPOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBbumfOsEeeXN4BnvsfbCw" x="1020"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GBbunvOsEeeXN4BnvsfbCw" type="2002" element="_GBNFL_OsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBbuofOsEeeXN4BnvsfbCw" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_GBcVoPOsEeeXN4BnvsfbCw" type="7001">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_GBcVofOsEeeXN4BnvsfbCw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_GBcVovOsEeeXN4BnvsfbCw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBjDUPOsEeeXN4BnvsfbCw" type="3012" element="_GBNFMPOsEeeXN4BnvsfbCw">
+              <children xmi:type="notation:Node" xmi:id="_GBjDU_OsEeeXN4BnvsfbCw" type="5010">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_GBjDVPOsEeeXN4BnvsfbCw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_GBjqZ_OsEeeXN4BnvsfbCw" type="3003" element="_GBNFMfOsEeeXN4BnvsfbCw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBjqaPOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBjqafOsEeeXN4BnvsfbCw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GBjDUfOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBjDUvOsEeeXN4BnvsfbCw" x="-22" width="30" height="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBjDVfOsEeeXN4BnvsfbCw" type="3012" element="_GBNFMvOsEeeXN4BnvsfbCw">
+              <children xmi:type="notation:Node" xmi:id="_GBjDWPOsEeeXN4BnvsfbCw" type="5010">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_GBjDWfOsEeeXN4BnvsfbCw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_GBjqavOsEeeXN4BnvsfbCw" type="3003" element="_GBNFM_OsEeeXN4BnvsfbCw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBjqa_OsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBjqbPOsEeeXN4BnvsfbCw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GBjDVvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBjDV_OsEeeXN4BnvsfbCw" x="-22" y="31" width="30" height="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBjDWvOsEeeXN4BnvsfbCw" type="3012" element="_GBNFNPOsEeeXN4BnvsfbCw">
+              <children xmi:type="notation:Node" xmi:id="_GBjqYPOsEeeXN4BnvsfbCw" type="5010">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_GBjqYfOsEeeXN4BnvsfbCw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_GBkRcPOsEeeXN4BnvsfbCw" type="3003" element="_GBNFNfOsEeeXN4BnvsfbCw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBkRcfOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBkRcvOsEeeXN4BnvsfbCw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GBjDW_OsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBjDXPOsEeeXN4BnvsfbCw" x="9" y="60" width="30" height="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBjqYvOsEeeXN4BnvsfbCw" type="3012" element="_GBNFNvOsEeeXN4BnvsfbCw">
+              <children xmi:type="notation:Node" xmi:id="_GBjqZfOsEeeXN4BnvsfbCw" type="5010">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_GBjqZvOsEeeXN4BnvsfbCw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_GBkRc_OsEeeXN4BnvsfbCw" type="3003" element="_GBNFN_OsEeeXN4BnvsfbCw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBkRdPOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBkRdfOsEeeXN4BnvsfbCw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GBjqY_OsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBjqZPOsEeeXN4BnvsfbCw" x="40" y="60" width="30" height="30"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_GBbun_OsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBbuoPOsEeeXN4BnvsfbCw" x="355"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GBcVo_OsEeeXN4BnvsfbCw" type="2002" element="_GBNFOfOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBcVpvOsEeeXN4BnvsfbCw" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_GBcVp_OsEeeXN4BnvsfbCw" type="7001">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_GBcVqPOsEeeXN4BnvsfbCw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_GBcVqfOsEeeXN4BnvsfbCw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBkRdvOsEeeXN4BnvsfbCw" type="3012" element="_GBNFOvOsEeeXN4BnvsfbCw">
+              <children xmi:type="notation:Node" xmi:id="_GBkRefOsEeeXN4BnvsfbCw" type="5010">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_GBkRevOsEeeXN4BnvsfbCw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_GBk4gvOsEeeXN4BnvsfbCw" type="3003" element="_GBNFO_OsEeeXN4BnvsfbCw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBk4g_OsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBk4hPOsEeeXN4BnvsfbCw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GBkRd_OsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBkRePOsEeeXN4BnvsfbCw" x="-22" width="30" height="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBkRe_OsEeeXN4BnvsfbCw" type="3012" element="_GBNFPPOsEeeXN4BnvsfbCw">
+              <children xmi:type="notation:Node" xmi:id="_GBkRfvOsEeeXN4BnvsfbCw" type="5010">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_GBkRf_OsEeeXN4BnvsfbCw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_GBk4hfOsEeeXN4BnvsfbCw" type="3003" element="_GBNFPfOsEeeXN4BnvsfbCw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBk4hvOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBk4h_OsEeeXN4BnvsfbCw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GBkRfPOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBkRffOsEeeXN4BnvsfbCw" x="-22" y="35" width="30" height="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBkRgPOsEeeXN4BnvsfbCw" type="3012" element="_GBNFPvOsEeeXN4BnvsfbCw">
+              <children xmi:type="notation:Node" xmi:id="_GBk4gPOsEeeXN4BnvsfbCw" type="5010">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_GBk4gfOsEeeXN4BnvsfbCw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_GBk4iPOsEeeXN4BnvsfbCw" type="3003" element="_GBNFP_OsEeeXN4BnvsfbCw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBk4ifOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBk4ivOsEeeXN4BnvsfbCw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GBkRgfOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBkRgvOsEeeXN4BnvsfbCw" x="-22" y="31" width="30" height="30"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_GBcVpPOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBcVpfOsEeeXN4BnvsfbCw" x="565"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GBcVqvOsEeeXN4BnvsfbCw" type="2002" element="_GBNFQfOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBcVrfOsEeeXN4BnvsfbCw" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_GBcVrvOsEeeXN4BnvsfbCw" type="7001">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_GBcVr_OsEeeXN4BnvsfbCw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_GBcVsPOsEeeXN4BnvsfbCw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBlfkPOsEeeXN4BnvsfbCw" type="3012" element="_GBNFQvOsEeeXN4BnvsfbCw">
+              <children xmi:type="notation:Node" xmi:id="_GBlfk_OsEeeXN4BnvsfbCw" type="5010">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_GBlflPOsEeeXN4BnvsfbCw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_GBmtt_OsEeeXN4BnvsfbCw" type="3003" element="_GBNFQ_OsEeeXN4BnvsfbCw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBmtuPOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBmtufOsEeeXN4BnvsfbCw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GBlfkfOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBlfkvOsEeeXN4BnvsfbCw" x="-22" width="30" height="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBlflfOsEeeXN4BnvsfbCw" type="3012" element="_GBNFRPOsEeeXN4BnvsfbCw">
+              <children xmi:type="notation:Node" xmi:id="_GBlfmPOsEeeXN4BnvsfbCw" type="5010">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_GBlfmfOsEeeXN4BnvsfbCw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_GBmtuvOsEeeXN4BnvsfbCw" type="3003" element="_GBNFRfOsEeeXN4BnvsfbCw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBmtu_OsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBmtvPOsEeeXN4BnvsfbCw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GBlflvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBlfl_OsEeeXN4BnvsfbCw" x="-22" y="31" width="30" height="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBmGoPOsEeeXN4BnvsfbCw" type="3012" element="_GBNFRvOsEeeXN4BnvsfbCw">
+              <children xmi:type="notation:Node" xmi:id="_GBmGo_OsEeeXN4BnvsfbCw" type="5010">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_GBmGpPOsEeeXN4BnvsfbCw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_GBnUwPOsEeeXN4BnvsfbCw" type="3003" element="_GBNFR_OsEeeXN4BnvsfbCw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBnUwfOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBnUwvOsEeeXN4BnvsfbCw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GBmGofOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBmGovOsEeeXN4BnvsfbCw" x="9" y="60" width="30" height="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBmGpfOsEeeXN4BnvsfbCw" type="3012" element="_GBNFSPOsEeeXN4BnvsfbCw">
+              <children xmi:type="notation:Node" xmi:id="_GBmtsPOsEeeXN4BnvsfbCw" type="5010">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_GBmtsfOsEeeXN4BnvsfbCw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_GBnUw_OsEeeXN4BnvsfbCw" type="3003" element="_GBNFSfOsEeeXN4BnvsfbCw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBnUxPOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBnUxfOsEeeXN4BnvsfbCw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GBmGpvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBmGp_OsEeeXN4BnvsfbCw" x="40" y="80" width="30" height="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBmtsvOsEeeXN4BnvsfbCw" type="3012" element="_GBNFSvOsEeeXN4BnvsfbCw">
+              <children xmi:type="notation:Node" xmi:id="_GBmttfOsEeeXN4BnvsfbCw" type="5010">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_GBmttvOsEeeXN4BnvsfbCw" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_GBn70POsEeeXN4BnvsfbCw" type="3003" element="_GBNFS_OsEeeXN4BnvsfbCw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBn70fOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBn70vOsEeeXN4BnvsfbCw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_GBmts_OsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBmttPOsEeeXN4BnvsfbCw" x="71" y="60" width="30" height="30"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_GBcVq_OsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBcVrPOsEeeXN4BnvsfbCw" x="775"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GBcVsfOsEeeXN4BnvsfbCw" type="2002" element="_GBNFTfOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBcVtPOsEeeXN4BnvsfbCw" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_GBcVtfOsEeeXN4BnvsfbCw" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_GBn70_OsEeeXN4BnvsfbCw" type="3007" element="_GBNFT_OsEeeXN4BnvsfbCw">
+                <children xmi:type="notation:Node" xmi:id="_GBn71vOsEeeXN4BnvsfbCw" visible="false" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_GBn71_OsEeeXN4BnvsfbCw" y="-21"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_GBoi4POsEeeXN4BnvsfbCw" type="3005" element="_GBNFUfOsEeeXN4BnvsfbCw">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_GBoi4fOsEeeXN4BnvsfbCw" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBoi4vOsEeeXN4BnvsfbCw"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_GBn71POsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBn71fOsEeeXN4BnvsfbCw" x="30" y="29" width="68" height="68"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_GBcVtvOsEeeXN4BnvsfbCw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_GBcVt_OsEeeXN4BnvsfbCw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_GBcVsvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBcVs_OsEeeXN4BnvsfbCw" x="1020" y="760"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_GBYrQvOsEeeXN4BnvsfbCw"/>
+          <edges xmi:type="notation:Edge" xmi:id="_GBpJ8POsEeeXN4BnvsfbCw" type="4001" element="_GBNFUvOsEeeXN4BnvsfbCw" source="_GBbukPOsEeeXN4BnvsfbCw" target="_GBcVsfOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBpJ9POsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBpJ9fOsEeeXN4BnvsfbCw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBpJ9vOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBpJ9_OsEeeXN4BnvsfbCw" y="1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBpJ-POsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBpJ-fOsEeeXN4BnvsfbCw" y="1"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBpJ8fOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBpJ8vOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBpJ8_OsEeeXN4BnvsfbCw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBpxAPOsEeeXN4BnvsfbCw" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBpxAfOsEeeXN4BnvsfbCw" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBpxAvOsEeeXN4BnvsfbCw" type="4001" element="_GBNFVfOsEeeXN4BnvsfbCw" source="_GBbukPOsEeeXN4BnvsfbCw" target="_GBcVsfOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBpxBvOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBpxB_OsEeeXN4BnvsfbCw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBpxCPOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBpxCfOsEeeXN4BnvsfbCw" y="1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBpxCvOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBpxC_OsEeeXN4BnvsfbCw" y="1"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBpxA_OsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBpxBPOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBpxBfOsEeeXN4BnvsfbCw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBpxDPOsEeeXN4BnvsfbCw" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBpxDfOsEeeXN4BnvsfbCw" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBpxDvOsEeeXN4BnvsfbCw" type="4001" element="_GBNFWPOsEeeXN4BnvsfbCw" source="_GBcVsfOsEeeXN4BnvsfbCw" target="_GBbHh_OsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBpxEvOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBpxE_OsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBpxFPOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBpxFfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBpxFvOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBpxF_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBpxD_OsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBpxEPOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBpxEfOsEeeXN4BnvsfbCw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBpxGPOsEeeXN4BnvsfbCw" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBpxGfOsEeeXN4BnvsfbCw" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBpxGvOsEeeXN4BnvsfbCw" type="4001" element="_GBNFW_OsEeeXN4BnvsfbCw" source="_GBbHh_OsEeeXN4BnvsfbCw" target="_GBbHgPOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBqYEPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBqYEfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBqYEvOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBqYE_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBqYFPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBqYFfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBpxG_OsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBpxHPOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBpxHfOsEeeXN4BnvsfbCw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBqYFvOsEeeXN4BnvsfbCw" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBqYF_OsEeeXN4BnvsfbCw" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBqYGPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFXvOsEeeXN4BnvsfbCw" source="_GBbHgPOsEeeXN4BnvsfbCw" target="_GBbul_OsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBqYHPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBqYHfOsEeeXN4BnvsfbCw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBqYHvOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBqYH_OsEeeXN4BnvsfbCw" y="1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBqYIPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBqYIfOsEeeXN4BnvsfbCw" y="1"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBqYGfOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBqYGvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBqYG_OsEeeXN4BnvsfbCw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBqYIvOsEeeXN4BnvsfbCw" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBqYI_OsEeeXN4BnvsfbCw" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBqYJPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFYfOsEeeXN4BnvsfbCw" source="_GBex4POsEeeXN4BnvsfbCw" target="_GBdjw_OsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBqYKPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBqYKfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBqYKvOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBqYK_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBqYLPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBqYLfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBqYJfOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBqYJvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBqYJ_OsEeeXN4BnvsfbCw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBqYLvOsEeeXN4BnvsfbCw" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBqYL_OsEeeXN4BnvsfbCw" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBq_IPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFZPOsEeeXN4BnvsfbCw" source="_GBdjw_OsEeeXN4BnvsfbCw" target="_GBeK0POsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBq_JPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBq_JfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBq_JvOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBq_J_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBq_KPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBq_KfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBq_IfOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBq_IvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBq_I_OsEeeXN4BnvsfbCw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBq_KvOsEeeXN4BnvsfbCw" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBq_K_OsEeeXN4BnvsfbCw" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBq_LPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFZ_OsEeeXN4BnvsfbCw" source="_GBfY-fOsEeeXN4BnvsfbCw" target="_GBZ5YPOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBq_MPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBq_MfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBq_MvOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBq_M_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBq_NPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBq_NfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBq_LfOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBq_LvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBq_L_OsEeeXN4BnvsfbCw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBq_NvOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBq_N_OsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBrmMPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFavOsEeeXN4BnvsfbCw" source="_GBgAAvOsEeeXN4BnvsfbCw" target="_GBagcPOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBrmNPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBrmNfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBsNQPOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBsNQfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBsNQvOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBsNQ_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBrmMfOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBrmMvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBrmM_OsEeeXN4BnvsfbCw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBsNRPOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBsNRfOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBsNRvOsEeeXN4BnvsfbCw" type="4001" element="_GBNFbfOsEeeXN4BnvsfbCw" source="_GBfY-fOsEeeXN4BnvsfbCw" target="_GBbunvOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBsNSvOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBsNS_OsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBs0UPOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBs0UfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBs0UvOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBs0U_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBsNR_OsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBsNSPOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBsNSfOsEeeXN4BnvsfbCw" points="[0, 0, 0, 0]$[-1, -1, -1, -1]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBs0VPOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBs0VfOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBs0VvOsEeeXN4BnvsfbCw" type="4001" element="_GBNFcPOsEeeXN4BnvsfbCw" source="_GBgAAvOsEeeXN4BnvsfbCw" target="_GBcVo_OsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBs0WvOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBs0W_OsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBs0XPOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBs0XfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBs0XvOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBs0X_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBs0V_OsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBs0WPOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBs0WfOsEeeXN4BnvsfbCw" points="[0, 0, 0, 0]$[-1, -1, -1, -1]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBs0YPOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBs0YfOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBs0YvOsEeeXN4BnvsfbCw" type="4001" element="_GBNFc_OsEeeXN4BnvsfbCw" source="_GBicQPOsEeeXN4BnvsfbCw" target="_GBZSUPOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBs0ZvOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBs0Z_OsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBs0aPOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBs0afOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBs0avOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBs0a_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBs0Y_OsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBs0ZPOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBs0ZfOsEeeXN4BnvsfbCw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBtbYPOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBtbYfOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBtbYvOsEeeXN4BnvsfbCw" type="4001" element="_GBNFdvOsEeeXN4BnvsfbCw" source="_GBjDUPOsEeeXN4BnvsfbCw" target="_GBjDVfOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBtbZvOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBtbZ_OsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBtbaPOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBtbafOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBtbavOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBtba_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBtbY_OsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBtbZPOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBtbZfOsEeeXN4BnvsfbCw" points="[0, 0, 0, 0]$[0, 31, 0, 31]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBtbbPOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBtbbfOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBtbbvOsEeeXN4BnvsfbCw" type="4001" element="_GBNFefOsEeeXN4BnvsfbCw" source="_GBjDVfOsEeeXN4BnvsfbCw" target="_GBjDWvOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBtbcvOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBtbc_OsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBtbdPOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBtbdfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBuCcPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBuCcfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBtbb_OsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBtbcPOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBtbcfOsEeeXN4BnvsfbCw" points="[0, 31, 0, 31]$[9, 60, 9, 60]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBuCcvOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBuCc_OsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBuCdPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFfPOsEeeXN4BnvsfbCw" source="_GBjDWvOsEeeXN4BnvsfbCw" target="_GBjqYvOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBuCePOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBuCefOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBuCevOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBuCe_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBuCfPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBuCffOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBuCdfOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBuCdvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBuCd_OsEeeXN4BnvsfbCw" points="[0, 0, -1, 2]$[1, -2, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBuCfvOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBuCf_OsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBuCgPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFf_OsEeeXN4BnvsfbCw" source="_GBkRdvOsEeeXN4BnvsfbCw" target="_GBkRgPOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBuChPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBuChfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBuChvOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBuCh_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBuCiPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBuCifOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBuCgfOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBuCgvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBuCg_OsEeeXN4BnvsfbCw" points="[0, 0, 0, 8]$[0, -8, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBuCivOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBuCi_OsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBuCjPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFgvOsEeeXN4BnvsfbCw" source="_GBkRe_OsEeeXN4BnvsfbCw" target="_GBkRdvOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBupgPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBupgfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBupgvOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBupg_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBuphPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBuphfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBuCjfOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBuCjvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBuCj_OsEeeXN4BnvsfbCw" points="[0, 0, 0, 35]$[0, -35, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBuphvOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBuph_OsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBupiPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFhfOsEeeXN4BnvsfbCw" source="_GBlfkPOsEeeXN4BnvsfbCw" target="_GBlflfOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBupjPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBupjfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBupjvOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBupj_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBupkPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBupkfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBupifOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBupivOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBupi_OsEeeXN4BnvsfbCw" points="[0, 0, 0, -23]$[0, 23, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBupkvOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBupk_OsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBuplPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFiPOsEeeXN4BnvsfbCw" source="_GBlflfOsEeeXN4BnvsfbCw" target="_GBmGoPOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBvQkPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBvQkfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBvQkvOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBvQk_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBvQlPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBvQlfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBuplfOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBuplvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBupl_OsEeeXN4BnvsfbCw" points="[0, 31, 0, 31]$[9, 60, 9, 60]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBvQlvOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBvQl_OsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBvQmPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFi_OsEeeXN4BnvsfbCw" source="_GBmGoPOsEeeXN4BnvsfbCw" target="_GBmGpfOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBvQnPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBvQnfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBvQnvOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBvQn_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBvQoPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBvQofOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBvQmfOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBvQmvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBvQm_OsEeeXN4BnvsfbCw" points="[9, 60, 9, 60]$[40, 80, 40, 80]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBvQovOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBvQo_OsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBvQpPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFjvOsEeeXN4BnvsfbCw" source="_GBmGpfOsEeeXN4BnvsfbCw" target="_GBmtsvOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBvQqPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBvQqfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBvQqvOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBvQq_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBvQrPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBvQrfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBvQpfOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBvQpvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBvQp_OsEeeXN4BnvsfbCw" points="[0, 0, -32, 2]$[32, -2, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBvQrvOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBvQr_OsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBv3oPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFkfOsEeeXN4BnvsfbCw" source="_GBn70_OsEeeXN4BnvsfbCw" target="_GBjDUPOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBv3pPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBv3pfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBv3pvOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBv3p_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBv3qPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBv3qfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBv3ofOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBv3ovOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBv3o_OsEeeXN4BnvsfbCw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBv3qvOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBv3q_OsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBv3rPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFlPOsEeeXN4BnvsfbCw" source="_GBn70_OsEeeXN4BnvsfbCw" target="_GBkRdvOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBv3sPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBv3sfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBv3svOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBv3s_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBv3tPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBv3tfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBv3rfOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBv3rvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBv3r_OsEeeXN4BnvsfbCw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBv3tvOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBv3t_OsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBv3uPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFl_OsEeeXN4BnvsfbCw" source="_GBpJ8POsEeeXN4BnvsfbCw" target="_GBbunvOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBv3vPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBv3vfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBv3vvOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBv3v_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBv3wPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBv3wfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBv3ufOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBv3uvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBv3u_OsEeeXN4BnvsfbCw" points="[0, 0, 0, 0]$[-1, -1, -1, -1]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBwesPOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBwesfOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBwesvOsEeeXN4BnvsfbCw" type="4001" element="_GBNFmvOsEeeXN4BnvsfbCw" source="_GBpxAvOsEeeXN4BnvsfbCw" target="_GBcVo_OsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBwetvOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBwet_OsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBweuPOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBweufOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBweuvOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBweu_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBwes_OsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBwetPOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBwetfOsEeeXN4BnvsfbCw" points="[0, 0, 0, 0]$[-1, -1, -1, -1]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBwevPOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBwevfOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBwevvOsEeeXN4BnvsfbCw" type="4001" element="_GBNFnfOsEeeXN4BnvsfbCw" source="_GBpxDvOsEeeXN4BnvsfbCw" target="_GBcVqvOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBxFwPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBxFwfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBxFwvOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBxFw_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBxFxPOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBxFxfOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBwev_OsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBwewPOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBwewfOsEeeXN4BnvsfbCw" points="[0, 0, 0, 0]$[-1, -1, -1, -1]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBxFxvOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBxFx_OsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBxFyPOsEeeXN4BnvsfbCw" type="4001" element="_GBNFoPOsEeeXN4BnvsfbCw" source="_GBpxGvOsEeeXN4BnvsfbCw" target="_GBcVqvOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBxFzPOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBxFzfOsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBxFzvOsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBxFz_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBxF0POsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBxF0fOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBxFyfOsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBxFyvOsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBxFy_OsEeeXN4BnvsfbCw" points="[0, 0, 0, 0]$[-1, -1, -1, -1]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBxs0POsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBxs0fOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_GBxs0vOsEeeXN4BnvsfbCw" type="4001" element="_GBNFo_OsEeeXN4BnvsfbCw" source="_GBqYGPOsEeeXN4BnvsfbCw" target="_GBcVqvOsEeeXN4BnvsfbCw">
+            <children xmi:type="notation:Node" xmi:id="_GBxs1vOsEeeXN4BnvsfbCw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBxs1_OsEeeXN4BnvsfbCw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBxs2POsEeeXN4BnvsfbCw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBxs2fOsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GBxs2vOsEeeXN4BnvsfbCw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GBxs2_OsEeeXN4BnvsfbCw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GBxs0_OsEeeXN4BnvsfbCw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GBxs1POsEeeXN4BnvsfbCw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GBxs1fOsEeeXN4BnvsfbCw" points="[0, 0, 0, 0]$[-1, -1, -1, -1]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBxs3POsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GBxs3fOsEeeXN4BnvsfbCw" id="(0.5,0.5)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_GBNFE_OsEeeXN4BnvsfbCw" name="analysis.csv" incomingEdges="_GBNFc_OsEeeXN4BnvsfbCw" width="-1" height="-1">
+        <target xmi:type="pipeline:File" href="socialSensors.pipeline#//@files.0"/>
+        <semanticElements xmi:type="pipeline:File" href="socialSensors.pipeline#//@files.0"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_GBNFFPOsEeeXN4BnvsfbCw" showIcon="false" workspacePath="/it.polimi.ase.project.design/icons/file.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='FileNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='FileNode']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_GBNFFfOsEeeXN4BnvsfbCw" name="social.csv" incomingEdges="_GBNFZ_OsEeeXN4BnvsfbCw" width="-1" height="-1">
+        <target xmi:type="pipeline:Source" href="socialSensors.pipeline#//@sources.0"/>
+        <semanticElements xmi:type="pipeline:Source" href="socialSensors.pipeline#//@sources.0"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_GBNFFvOsEeeXN4BnvsfbCw" showIcon="false" workspacePath="/it.polimi.ase.project.design/icons/source.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='SourceNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='SourceNode']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_GBNFF_OsEeeXN4BnvsfbCw" name="web.json" incomingEdges="_GBNFavOsEeeXN4BnvsfbCw" width="-1" height="-1">
+        <target xmi:type="pipeline:Source" href="socialSensors.pipeline#//@sources.1"/>
+        <semanticElements xmi:type="pipeline:Source" href="socialSensors.pipeline#//@sources.1"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_GBNFGPOsEeeXN4BnvsfbCw" showIcon="false" workspacePath="/it.polimi.ase.project.design/icons/source.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='SourceNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='SourceNode']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_GBNFGfOsEeeXN4BnvsfbCw" name="Analysis Task" outgoingEdges="_GBNFXvOsEeeXN4BnvsfbCw" incomingEdges="_GBNFW_OsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:AnalysisTask" href="socialSensors.pipeline#//@tasks.3"/>
+        <semanticElements xmi:type="pipeline:AnalysisTask" href="socialSensors.pipeline#//@tasks.3"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_GBNFGvOsEeeXN4BnvsfbCw" borderSize="1" borderSizeComputationExpression="1" foregroundColor="204,242,166">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_GBNFG_OsEeeXN4BnvsfbCw" name="kMeans" width="-1" height="-1">
+          <target xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#//@tasks.3/@analysisOperations.0"/>
+          <semanticElements xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#//@tasks.3/@analysisOperations.0"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_GBNFHPOsEeeXN4BnvsfbCw" showIcon="false" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='clusteringAnalysisOperationSubNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='clusteringAnalysisOperationSubNode']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_GBNFHfOsEeeXN4BnvsfbCw" name="Cleaning Task" outgoingEdges="_GBNFW_OsEeeXN4BnvsfbCw" incomingEdges="_GBNFWPOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:CleaningTask" href="socialSensors.pipeline#//@tasks.2"/>
+        <semanticElements xmi:type="pipeline:CleaningTask" href="socialSensors.pipeline#//@tasks.2"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_GBNFHvOsEeeXN4BnvsfbCw" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_GBNFH_OsEeeXN4BnvsfbCw" name="removeColumn" outgoingEdges="_GBNFZPOsEeeXN4BnvsfbCw" incomingEdges="_GBNFYfOsEeeXN4BnvsfbCw" width="-1" height="-1">
+          <target xmi:type="pipeline:PredefinedCleaningOperation" href="socialSensors.pipeline#removeSource"/>
+          <semanticElements xmi:type="pipeline:PredefinedCleaningOperation" href="socialSensors.pipeline#removeSource"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_GBNFIPOsEeeXN4BnvsfbCw" showIcon="false" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationSubNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationSubNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_GBNFIfOsEeeXN4BnvsfbCw" name="removeColumn" incomingEdges="_GBNFZPOsEeeXN4BnvsfbCw" width="-1" height="-1">
+          <target xmi:type="pipeline:PredefinedCleaningOperation" href="socialSensors.pipeline#removeSiteName"/>
+          <semanticElements xmi:type="pipeline:PredefinedCleaningOperation" href="socialSensors.pipeline#removeSiteName"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_GBNFIvOsEeeXN4BnvsfbCw" showIcon="false" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationSubNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationSubNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_GBNFI_OsEeeXN4BnvsfbCw" name="removeNulls" outgoingEdges="_GBNFYfOsEeeXN4BnvsfbCw" width="-1" height="-1">
+          <target xmi:type="pipeline:PredefinedCleaningOperation" href="socialSensors.pipeline#removeAllNulls"/>
+          <semanticElements xmi:type="pipeline:PredefinedCleaningOperation" href="socialSensors.pipeline#removeAllNulls"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_GBNFJPOsEeeXN4BnvsfbCw" showIcon="false" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationSubNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationSubNode']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_GBNFJfOsEeeXN4BnvsfbCw" name="Collection Task" outgoingEdges="_GBNFUvOsEeeXN4BnvsfbCw _GBNFVfOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:CollectionTask" href="socialSensors.pipeline#//@tasks.0"/>
+        <semanticElements xmi:type="pipeline:CollectionTask" href="socialSensors.pipeline#//@tasks.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_GBNFJvOsEeeXN4BnvsfbCw" borderSize="1" borderSizeComputationExpression="1" foregroundColor="246,139,139">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_GBNFJ_OsEeeXN4BnvsfbCw" name="importSocial" outgoingEdges="_GBNFZ_OsEeeXN4BnvsfbCw _GBNFbfOsEeeXN4BnvsfbCw" width="-1" height="-1">
+          <target xmi:type="pipeline:ImportOperation" href="socialSensors.pipeline#//@tasks.0/@importOperations.0"/>
+          <semanticElements xmi:type="pipeline:ImportOperation" href="socialSensors.pipeline#//@tasks.0/@importOperations.0"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_GBNFKPOsEeeXN4BnvsfbCw" showIcon="false" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer']/@subNodeMappings[name='Import%20Operation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer']/@subNodeMappings[name='Import%20Operation']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_GBNFKfOsEeeXN4BnvsfbCw" name="importWeb" outgoingEdges="_GBNFavOsEeeXN4BnvsfbCw _GBNFcPOsEeeXN4BnvsfbCw" width="-1" height="-1">
+          <target xmi:type="pipeline:ImportOperation" href="socialSensors.pipeline#//@tasks.0/@importOperations.1"/>
+          <semanticElements xmi:type="pipeline:ImportOperation" href="socialSensors.pipeline#//@tasks.0/@importOperations.1"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_GBNFKvOsEeeXN4BnvsfbCw" showIcon="false" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer']/@subNodeMappings[name='Import%20Operation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer']/@subNodeMappings[name='Import%20Operation']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_GBNFK_OsEeeXN4BnvsfbCw" name="Export Task" incomingEdges="_GBNFXvOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:ExportTask" href="socialSensors.pipeline#//@tasks.4"/>
+        <semanticElements xmi:type="pipeline:ExportTask" href="socialSensors.pipeline#//@tasks.4"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_GBNFLPOsEeeXN4BnvsfbCw" borderSize="1" borderSizeComputationExpression="1" foregroundColor="217,196,215">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Export%20Task']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Export%20Task']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_GBNFLfOsEeeXN4BnvsfbCw" outgoingEdges="_GBNFc_OsEeeXN4BnvsfbCw" width="-1" height="-1">
+          <target xmi:type="pipeline:ExportOperation" href="socialSensors.pipeline#//@tasks.4/@exportOperations.0"/>
+          <semanticElements xmi:type="pipeline:ExportOperation" href="socialSensors.pipeline#//@tasks.4/@exportOperations.0"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_GBNFLvOsEeeXN4BnvsfbCw" showIcon="false" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Export%20Task']/@subNodeMappings[name='Export%20Operation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Export%20Task']/@subNodeMappings[name='Export%20Operation']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_GBNFL_OsEeeXN4BnvsfbCw" name="Schema" incomingEdges="_GBNFbfOsEeeXN4BnvsfbCw _GBNFl_OsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:Schema" href="socialSensors.pipeline#//@schemas.0"/>
+        <semanticElements xmi:type="pipeline:Schema" href="socialSensors.pipeline#//@schemas.0"/>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_GBNFMPOsEeeXN4BnvsfbCw" name="date" outgoingEdges="_GBNFdvOsEeeXN4BnvsfbCw" incomingEdges="_GBNFkfOsEeeXN4BnvsfbCw" width="3" height="3" resizeKind="EAST_WEST">
+          <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.0/@attributes.0"/>
+          <semanticElements xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.0/@attributes.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_GBNFMfOsEeeXN4BnvsfbCw" showIcon="false" labelPosition="node" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
+        </ownedBorderedNodes>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_GBNFMvOsEeeXN4BnvsfbCw" name="hour" outgoingEdges="_GBNFefOsEeeXN4BnvsfbCw" incomingEdges="_GBNFdvOsEeeXN4BnvsfbCw" width="3" height="3" resizeKind="EAST_WEST">
+          <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.0/@attributes.1"/>
+          <semanticElements xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.0/@attributes.1"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_GBNFM_OsEeeXN4BnvsfbCw" showIcon="false" labelPosition="node" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
+        </ownedBorderedNodes>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_GBNFNPOsEeeXN4BnvsfbCw" name="source" outgoingEdges="_GBNFfPOsEeeXN4BnvsfbCw" incomingEdges="_GBNFefOsEeeXN4BnvsfbCw" width="3" height="3" resizeKind="EAST_WEST">
+          <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.0/@attributes.2"/>
+          <semanticElements xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.0/@attributes.2"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_GBNFNfOsEeeXN4BnvsfbCw" showIcon="false" labelPosition="node" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
+        </ownedBorderedNodes>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_GBNFNvOsEeeXN4BnvsfbCw" name="socialCount" incomingEdges="_GBNFfPOsEeeXN4BnvsfbCw" width="3" height="3" resizeKind="EAST_WEST">
+          <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.0/@attributes.3"/>
+          <semanticElements xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.0/@attributes.3"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_GBNFN_OsEeeXN4BnvsfbCw" showIcon="false" labelPosition="node" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
+        </ownedBorderedNodes>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_GBNFOPOsEeeXN4BnvsfbCw" borderSize="1" borderSizeComputationExpression="1">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_GBNFOfOsEeeXN4BnvsfbCw" name="Schema" incomingEdges="_GBNFcPOsEeeXN4BnvsfbCw _GBNFmvOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:Schema" href="socialSensors.pipeline#//@schemas.1"/>
+        <semanticElements xmi:type="pipeline:Schema" href="socialSensors.pipeline#//@schemas.1"/>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_GBNFOvOsEeeXN4BnvsfbCw" name="date" outgoingEdges="_GBNFf_OsEeeXN4BnvsfbCw" incomingEdges="_GBNFgvOsEeeXN4BnvsfbCw _GBNFlPOsEeeXN4BnvsfbCw" width="3" height="3" resizeKind="EAST_WEST">
+          <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.1/@attributes.0"/>
+          <semanticElements xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.1/@attributes.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_GBNFO_OsEeeXN4BnvsfbCw" showIcon="false" labelPosition="node" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
+        </ownedBorderedNodes>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_GBNFPPOsEeeXN4BnvsfbCw" name="siteName" outgoingEdges="_GBNFgvOsEeeXN4BnvsfbCw" width="3" height="3" resizeKind="EAST_WEST">
+          <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.1/@attributes.1"/>
+          <semanticElements xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.1/@attributes.1"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_GBNFPfOsEeeXN4BnvsfbCw" showIcon="false" labelPosition="node" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
+        </ownedBorderedNodes>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_GBNFPvOsEeeXN4BnvsfbCw" name="visits" incomingEdges="_GBNFf_OsEeeXN4BnvsfbCw" width="3" height="3" resizeKind="EAST_WEST">
+          <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.1/@attributes.2"/>
+          <semanticElements xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.1/@attributes.2"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_GBNFP_OsEeeXN4BnvsfbCw" showIcon="false" labelPosition="node" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
+        </ownedBorderedNodes>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_GBNFQPOsEeeXN4BnvsfbCw" borderSize="1" borderSizeComputationExpression="1">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_GBNFQfOsEeeXN4BnvsfbCw" name="Schema" incomingEdges="_GBNFnfOsEeeXN4BnvsfbCw _GBNFoPOsEeeXN4BnvsfbCw _GBNFo_OsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:Schema" href="socialSensors.pipeline#//@schemas.2"/>
+        <semanticElements xmi:type="pipeline:Schema" href="socialSensors.pipeline#//@schemas.2"/>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_GBNFQvOsEeeXN4BnvsfbCw" name="date" outgoingEdges="_GBNFhfOsEeeXN4BnvsfbCw" width="3" height="3" resizeKind="EAST_WEST">
+          <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.2/@attributes.0"/>
+          <semanticElements xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.2/@attributes.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_GBNFQ_OsEeeXN4BnvsfbCw" showIcon="false" labelPosition="node" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
+        </ownedBorderedNodes>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_GBNFRPOsEeeXN4BnvsfbCw" name="source" outgoingEdges="_GBNFiPOsEeeXN4BnvsfbCw" incomingEdges="_GBNFhfOsEeeXN4BnvsfbCw" width="3" height="3" resizeKind="EAST_WEST">
+          <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.2/@attributes.1"/>
+          <semanticElements xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.2/@attributes.1"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_GBNFRfOsEeeXN4BnvsfbCw" showIcon="false" labelPosition="node" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
+        </ownedBorderedNodes>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_GBNFRvOsEeeXN4BnvsfbCw" name="socialCount" outgoingEdges="_GBNFi_OsEeeXN4BnvsfbCw" incomingEdges="_GBNFiPOsEeeXN4BnvsfbCw" width="3" height="3" resizeKind="EAST_WEST">
+          <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.2/@attributes.2"/>
+          <semanticElements xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.2/@attributes.2"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_GBNFR_OsEeeXN4BnvsfbCw" showIcon="false" labelPosition="node" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
+        </ownedBorderedNodes>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_GBNFSPOsEeeXN4BnvsfbCw" name="siteName" outgoingEdges="_GBNFjvOsEeeXN4BnvsfbCw" incomingEdges="_GBNFi_OsEeeXN4BnvsfbCw" width="3" height="3" resizeKind="EAST_WEST">
+          <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.2/@attributes.3"/>
+          <semanticElements xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.2/@attributes.3"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_GBNFSfOsEeeXN4BnvsfbCw" showIcon="false" labelPosition="node" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
+        </ownedBorderedNodes>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_GBNFSvOsEeeXN4BnvsfbCw" name="visits" incomingEdges="_GBNFjvOsEeeXN4BnvsfbCw" width="3" height="3" resizeKind="EAST_WEST">
+          <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.2/@attributes.4"/>
+          <semanticElements xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.2/@attributes.4"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_GBNFS_OsEeeXN4BnvsfbCw" showIcon="false" labelPosition="node" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']"/>
+        </ownedBorderedNodes>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_GBNFTPOsEeeXN4BnvsfbCw" borderSize="1" borderSizeComputationExpression="1">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_GBNFTfOsEeeXN4BnvsfbCw" name="Integration Task" outgoingEdges="_GBNFWPOsEeeXN4BnvsfbCw" incomingEdges="_GBNFUvOsEeeXN4BnvsfbCw _GBNFVfOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:IntegrationTask" href="socialSensors.pipeline#//@tasks.1"/>
+        <semanticElements xmi:type="pipeline:IntegrationTask" href="socialSensors.pipeline#//@tasks.1"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_GBNFTvOsEeeXN4BnvsfbCw" borderSize="1" borderSizeComputationExpression="1" foregroundColor="253,206,137">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='integrationTaskContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='integrationTaskContainer']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_GBNFT_OsEeeXN4BnvsfbCw" name="Integration Operation" outgoingEdges="_GBNFkfOsEeeXN4BnvsfbCw _GBNFlPOsEeeXN4BnvsfbCw" width="-1" height="-1" resizeKind="NSEW">
+          <target xmi:type="pipeline:IntegrationOperation" href="socialSensors.pipeline#//@tasks.1/@integrationOperations.0"/>
+          <semanticElements xmi:type="pipeline:IntegrationOperation" href="socialSensors.pipeline#//@tasks.1/@integrationOperations.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_GBNFUPOsEeeXN4BnvsfbCw"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_GBNFUfOsEeeXN4BnvsfbCw" showIcon="false" hideLabelByDefault="true" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='integrationTaskContainer']/@subNodeMappings[name='integrationOperationSubNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='integrationTaskContainer']/@subNodeMappings[name='integrationOperationSubNode']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFUvOsEeeXN4BnvsfbCw" outgoingEdges="_GBNFl_OsEeeXN4BnvsfbCw" sourceNode="_GBNFJfOsEeeXN4BnvsfbCw" targetNode="_GBNFTfOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:DataFlow" href="socialSensors.pipeline#//@dataFlows.0"/>
+        <semanticElements xmi:type="pipeline:DataFlow" href="socialSensors.pipeline#//@dataFlows.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFU_OsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFVPOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFVfOsEeeXN4BnvsfbCw" outgoingEdges="_GBNFmvOsEeeXN4BnvsfbCw" sourceNode="_GBNFJfOsEeeXN4BnvsfbCw" targetNode="_GBNFTfOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:DataFlow" href="socialSensors.pipeline#//@dataFlows.1"/>
+        <semanticElements xmi:type="pipeline:DataFlow" href="socialSensors.pipeline#//@dataFlows.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFVvOsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFV_OsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFWPOsEeeXN4BnvsfbCw" outgoingEdges="_GBNFnfOsEeeXN4BnvsfbCw" sourceNode="_GBNFTfOsEeeXN4BnvsfbCw" targetNode="_GBNFHfOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:DataFlow" href="socialSensors.pipeline#//@dataFlows.2"/>
+        <semanticElements xmi:type="pipeline:DataFlow" href="socialSensors.pipeline#//@dataFlows.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFWfOsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFWvOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFW_OsEeeXN4BnvsfbCw" outgoingEdges="_GBNFoPOsEeeXN4BnvsfbCw" sourceNode="_GBNFHfOsEeeXN4BnvsfbCw" targetNode="_GBNFGfOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:DataFlow" href="socialSensors.pipeline#//@dataFlows.3"/>
+        <semanticElements xmi:type="pipeline:DataFlow" href="socialSensors.pipeline#//@dataFlows.3"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFXPOsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFXfOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFXvOsEeeXN4BnvsfbCw" outgoingEdges="_GBNFo_OsEeeXN4BnvsfbCw" sourceNode="_GBNFGfOsEeeXN4BnvsfbCw" targetNode="_GBNFK_OsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:DataFlow" href="socialSensors.pipeline#//@dataFlows.4"/>
+        <semanticElements xmi:type="pipeline:DataFlow" href="socialSensors.pipeline#//@dataFlows.4"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFX_OsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFYPOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFYfOsEeeXN4BnvsfbCw" sourceNode="_GBNFI_OsEeeXN4BnvsfbCw" targetNode="_GBNFH_OsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:InternalDataFlow" href="socialSensors.pipeline#//@internalDataFlows.0"/>
+        <semanticElements xmi:type="pipeline:InternalDataFlow" href="socialSensors.pipeline#//@internalDataFlows.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFYvOsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='internalDataFlowEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFY_OsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='internalDataFlowEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFZPOsEeeXN4BnvsfbCw" sourceNode="_GBNFH_OsEeeXN4BnvsfbCw" targetNode="_GBNFIfOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:InternalDataFlow" href="socialSensors.pipeline#//@internalDataFlows.1"/>
+        <semanticElements xmi:type="pipeline:InternalDataFlow" href="socialSensors.pipeline#//@internalDataFlows.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFZfOsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='internalDataFlowEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFZvOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='internalDataFlowEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFZ_OsEeeXN4BnvsfbCw" sourceNode="_GBNFJ_OsEeeXN4BnvsfbCw" targetNode="_GBNFFfOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:ImportOperation" href="socialSensors.pipeline#//@tasks.0/@importOperations.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFaPOsEeeXN4BnvsfbCw" lineStyle="dot" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='readEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFafOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='readEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFavOsEeeXN4BnvsfbCw" sourceNode="_GBNFKfOsEeeXN4BnvsfbCw" targetNode="_GBNFF_OsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:ImportOperation" href="socialSensors.pipeline#//@tasks.0/@importOperations.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFa_OsEeeXN4BnvsfbCw" lineStyle="dot" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='readEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFbPOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='readEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFbfOsEeeXN4BnvsfbCw" sourceNode="_GBNFJ_OsEeeXN4BnvsfbCw" targetNode="_GBNFL_OsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:ImportOperation" href="socialSensors.pipeline#//@tasks.0/@importOperations.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFbvOsEeeXN4BnvsfbCw" lineStyle="dash" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='useEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFb_OsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='useEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFcPOsEeeXN4BnvsfbCw" sourceNode="_GBNFKfOsEeeXN4BnvsfbCw" targetNode="_GBNFOfOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:ImportOperation" href="socialSensors.pipeline#//@tasks.0/@importOperations.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFcfOsEeeXN4BnvsfbCw" lineStyle="dash" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='useEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFcvOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='useEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFc_OsEeeXN4BnvsfbCw" sourceNode="_GBNFLfOsEeeXN4BnvsfbCw" targetNode="_GBNFE_OsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:ExportOperation" href="socialSensors.pipeline#//@tasks.4/@exportOperations.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFdPOsEeeXN4BnvsfbCw" lineStyle="dot" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='writeEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFdfOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='writeEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFdvOsEeeXN4BnvsfbCw" sourceNode="_GBNFMPOsEeeXN4BnvsfbCw" targetNode="_GBNFMvOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.0/@attributes.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFd_OsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFePOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFefOsEeeXN4BnvsfbCw" sourceNode="_GBNFMvOsEeeXN4BnvsfbCw" targetNode="_GBNFNPOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.0/@attributes.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFevOsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFe_OsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFfPOsEeeXN4BnvsfbCw" sourceNode="_GBNFNPOsEeeXN4BnvsfbCw" targetNode="_GBNFNvOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.0/@attributes.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFffOsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFfvOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFf_OsEeeXN4BnvsfbCw" sourceNode="_GBNFOvOsEeeXN4BnvsfbCw" targetNode="_GBNFPvOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.1/@attributes.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFgPOsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFgfOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFgvOsEeeXN4BnvsfbCw" sourceNode="_GBNFPPOsEeeXN4BnvsfbCw" targetNode="_GBNFOvOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.1/@attributes.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFg_OsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFhPOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFhfOsEeeXN4BnvsfbCw" sourceNode="_GBNFQvOsEeeXN4BnvsfbCw" targetNode="_GBNFRPOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.2/@attributes.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFhvOsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFh_OsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFiPOsEeeXN4BnvsfbCw" sourceNode="_GBNFRPOsEeeXN4BnvsfbCw" targetNode="_GBNFRvOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.2/@attributes.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFifOsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFivOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFi_OsEeeXN4BnvsfbCw" sourceNode="_GBNFRvOsEeeXN4BnvsfbCw" targetNode="_GBNFSPOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.2/@attributes.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFjPOsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFjfOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFjvOsEeeXN4BnvsfbCw" sourceNode="_GBNFSPOsEeeXN4BnvsfbCw" targetNode="_GBNFSvOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:SimpleAttribute" href="socialSensors.pipeline#//@schemas.2/@attributes.3"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFj_OsEeeXN4BnvsfbCw" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFkPOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFkfOsEeeXN4BnvsfbCw" sourceNode="_GBNFT_OsEeeXN4BnvsfbCw" targetNode="_GBNFMPOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:IntegrationOperation" href="socialSensors.pipeline#//@tasks.1/@integrationOperations.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFkvOsEeeXN4BnvsfbCw" lineStyle="dash" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='integrationOperationInputAttributes']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFk_OsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='integrationOperationInputAttributes']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFlPOsEeeXN4BnvsfbCw" sourceNode="_GBNFT_OsEeeXN4BnvsfbCw" targetNode="_GBNFOvOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:IntegrationOperation" href="socialSensors.pipeline#//@tasks.1/@integrationOperations.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFlfOsEeeXN4BnvsfbCw" lineStyle="dash" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='integrationOperationInputAttributes']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFlvOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='integrationOperationInputAttributes']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFl_OsEeeXN4BnvsfbCw" sourceNode="_GBNFUvOsEeeXN4BnvsfbCw" targetNode="_GBNFL_OsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:DataFlow" href="socialSensors.pipeline#//@dataFlows.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFmPOsEeeXN4BnvsfbCw" lineStyle="dash" targetArrow="NoDecoration" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='schemaEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFmfOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='schemaEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFmvOsEeeXN4BnvsfbCw" sourceNode="_GBNFVfOsEeeXN4BnvsfbCw" targetNode="_GBNFOfOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:DataFlow" href="socialSensors.pipeline#//@dataFlows.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFm_OsEeeXN4BnvsfbCw" lineStyle="dash" targetArrow="NoDecoration" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='schemaEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFnPOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='schemaEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFnfOsEeeXN4BnvsfbCw" sourceNode="_GBNFWPOsEeeXN4BnvsfbCw" targetNode="_GBNFQfOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:DataFlow" href="socialSensors.pipeline#//@dataFlows.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFnvOsEeeXN4BnvsfbCw" lineStyle="dash" targetArrow="NoDecoration" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='schemaEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFn_OsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='schemaEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFoPOsEeeXN4BnvsfbCw" sourceNode="_GBNFW_OsEeeXN4BnvsfbCw" targetNode="_GBNFQfOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:DataFlow" href="socialSensors.pipeline#//@dataFlows.3"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFofOsEeeXN4BnvsfbCw" lineStyle="dash" targetArrow="NoDecoration" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='schemaEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFovOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='schemaEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GBNFo_OsEeeXN4BnvsfbCw" sourceNode="_GBNFXvOsEeeXN4BnvsfbCw" targetNode="_GBNFQfOsEeeXN4BnvsfbCw">
+        <target xmi:type="pipeline:DataFlow" href="socialSensors.pipeline#//@dataFlows.4"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GBNFpPOsEeeXN4BnvsfbCw" lineStyle="dash" targetArrow="NoDecoration" size="2" strokeColor="0,0,0">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='schemaEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GBNFpfOsEeeXN4BnvsfbCw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='schemaEdge']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_GBNFpvOsEeeXN4BnvsfbCw"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer"/>
+      <target xmi:type="pipeline:Pipeline" href="socialSensors.pipeline#/"/>
+    </ownedRepresentations>
   </ownedViews>
 </viewpoint:DAnalysis>

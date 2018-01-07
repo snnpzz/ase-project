@@ -5,22 +5,22 @@
   <dataFlows target="//@tasks.2" source="//@tasks.1" schema="//@schemas.2"/>
   <dataFlows target="//@tasks.3" source="//@tasks.2" schema="//@schemas.2"/>
   <dataFlows target="//@tasks.4" source="//@tasks.3" schema="//@schemas.2"/>
-  <tasks xsi:type="pipeline:CollectionTask" outgoing="//@dataFlows.0 //@dataFlows.1">
+  <tasks xsi:type="pipeline:CollectionTask" ID="CollectionTask" outgoing="//@dataFlows.0 //@dataFlows.1">
     <importOperations ID="importSocial" read="//@sources.0" use="//@schemas.0"/>
     <importOperations ID="importWeb" read="//@sources.1" use="//@schemas.1"/>
   </tasks>
-  <tasks xsi:type="pipeline:IntegrationTask" incoming="//@dataFlows.0 //@dataFlows.1" outgoing="//@dataFlows.2">
+  <tasks xsi:type="pipeline:IntegrationTask" ID="IntegrationTask" incoming="//@dataFlows.0 //@dataFlows.1" outgoing="//@dataFlows.2">
     <integrationOperations ID="joinDate1" inputAttributes="//@schemas.0/@attributes.0 //@schemas.1/@attributes.0"/>
   </tasks>
-  <tasks xsi:type="pipeline:CleaningTask" incoming="//@dataFlows.2" outgoing="//@dataFlows.3">
+  <tasks xsi:type="pipeline:CleaningTask" ID="CleaningTask" incoming="//@dataFlows.2" outgoing="//@dataFlows.3">
     <cleaningOperations xsi:type="pipeline:PredefinedCleaningOperation" incoming="//@internalDataFlows.0" outgoing="//@internalDataFlows.1" ID="removeSource" type="removeColumn"/>
     <cleaningOperations xsi:type="pipeline:PredefinedCleaningOperation" incoming="//@internalDataFlows.1" ID="removeSiteName" type="removeColumn"/>
     <cleaningOperations xsi:type="pipeline:PredefinedCleaningOperation" outgoing="//@internalDataFlows.0" ID="removeAllNulls"/>
   </tasks>
-  <tasks xsi:type="pipeline:AnalysisTask" incoming="//@dataFlows.3" outgoing="//@dataFlows.4">
+  <tasks xsi:type="pipeline:AnalysisTask" ID="AnalysisTask" incoming="//@dataFlows.3" outgoing="//@dataFlows.4">
     <analysisOperations xsi:type="pipeline:ClusteringAnalysisOperation" k="2"/>
   </tasks>
-  <tasks xsi:type="pipeline:ExportTask" incoming="//@dataFlows.4">
+  <tasks xsi:type="pipeline:ExportTask" ID="ExportTask" incoming="//@dataFlows.4">
     <exportOperations write="//@files.0"/>
   </tasks>
   <internalDataFlows source="removeAllNulls" target="removeSource"/>

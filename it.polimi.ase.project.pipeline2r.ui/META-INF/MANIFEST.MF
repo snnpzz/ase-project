@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Pipeline to R Module IDE Plug-in
-Bundle-SymbolicName: it.polimi.ase.project.pipeline2R.ui;singleton:=true
+Bundle-SymbolicName: it.polimi.ase.project.pipeline2r.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: it.polimi.ase.project.pipeline2r.ui.Activator
 Bundle-Vendor: Eclipse Modeling Project

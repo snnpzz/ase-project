@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package it.polimi.ase.project.pipeline2R.main;
+package it.polimi.ase.project.pipeline2r.main;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class MainModule extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/it/polimi/ase/project/pipeline2R/main/mainModule";
+    public static final String MODULE_FILE_NAME = "/it/polimi/ase/project/pipeline2r/main/mainModule";
     
     /**
      * The name of the templates that are to be generated.

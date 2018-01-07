@@ -54,7 +54,7 @@ public enum PredefinedOperation implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	REMOVE_COLUMN(4, "removeColumn", "removeColumn"), /**
+	REMOVE_COLUMN(3, "removeColumn", "removeColumn"), /**
 	 * The '<em><b>Remove Duplicates</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -122,7 +122,7 @@ public enum PredefinedOperation implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int REMOVE_COLUMN_VALUE = 4;
+	public static final int REMOVE_COLUMN_VALUE = 3;
 
 	/**
 	 * The '<em><b>Remove Duplicates</b></em>' literal value.
@@ -212,6 +212,7 @@ public enum PredefinedOperation implements Enumerator {
 			case REMOVE_NEGATIVE_VALUE: return REMOVE_NEGATIVE;
 			case ROUND_VALUE: return ROUND;
 			case REMOVE_COLUMN_VALUE: return REMOVE_COLUMN;
+			case REMOVE_DUPLICATES_VALUE: return REMOVE_DUPLICATES;
 		}
 		return null;
 	}

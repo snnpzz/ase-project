@@ -36,7 +36,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LINE(0, "Line", "Line"),
+	LINE(1, "Line", "Line"),
 
 	/**
 	 * The '<em><b>Pie</b></em>' literal object.
@@ -46,7 +46,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PIE(0, "Pie", "Pie"),
+	PIE(2, "Pie", "Pie"),
 
 	/**
 	 * The '<em><b>Bar</b></em>' literal object.
@@ -56,7 +56,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BAR(0, "Bar", "Bar"),
+	BAR(3, "Bar", "Bar"),
 
 	/**
 	 * The '<em><b>Area</b></em>' literal object.
@@ -66,7 +66,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	AREA(0, "Area", "Area"),
+	AREA(4, "Area", "Area"),
 
 	/**
 	 * The '<em><b>Scatter</b></em>' literal object.
@@ -76,7 +76,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SCATTER(0, "Scatter", "Scatter"),
+	SCATTER(5, "Scatter", "Scatter"),
 
 	/**
 	 * The '<em><b>Surface</b></em>' literal object.
@@ -86,7 +86,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SURFACE(0, "Surface", "Surface"),
+	SURFACE(6, "Surface", "Surface"),
 
 	/**
 	 * The '<em><b>Radar</b></em>' literal object.
@@ -96,7 +96,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RADAR(0, "Radar", "Radar"),
+	RADAR(7, "Radar", "Radar"),
 
 	/**
 	 * The '<em><b>Histogram</b></em>' literal object.
@@ -106,7 +106,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HISTOGRAM(0, "Histogram", "Histogram"),
+	HISTOGRAM(8, "Histogram", "Histogram"),
 
 	/**
 	 * The '<em><b>Box Plot</b></em>' literal object.
@@ -116,7 +116,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BOX_PLOT(0, "BoxPlot", "BoxPlot");
+	BOX_PLOT(9, "BoxPlot", "BoxPlot");
 
 	/**
 	 * The '<em><b>Column</b></em>' literal value.
@@ -146,7 +146,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LINE_VALUE = 0;
+	public static final int LINE_VALUE = 1;
 
 	/**
 	 * The '<em><b>Pie</b></em>' literal value.
@@ -161,7 +161,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PIE_VALUE = 0;
+	public static final int PIE_VALUE = 2;
 
 	/**
 	 * The '<em><b>Bar</b></em>' literal value.
@@ -176,7 +176,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BAR_VALUE = 0;
+	public static final int BAR_VALUE = 3;
 
 	/**
 	 * The '<em><b>Area</b></em>' literal value.
@@ -191,7 +191,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int AREA_VALUE = 0;
+	public static final int AREA_VALUE = 4;
 
 	/**
 	 * The '<em><b>Scatter</b></em>' literal value.
@@ -206,7 +206,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SCATTER_VALUE = 0;
+	public static final int SCATTER_VALUE = 5;
 
 	/**
 	 * The '<em><b>Surface</b></em>' literal value.
@@ -221,7 +221,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SURFACE_VALUE = 0;
+	public static final int SURFACE_VALUE = 6;
 
 	/**
 	 * The '<em><b>Radar</b></em>' literal value.
@@ -236,7 +236,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RADAR_VALUE = 0;
+	public static final int RADAR_VALUE = 7;
 
 	/**
 	 * The '<em><b>Histogram</b></em>' literal value.
@@ -251,7 +251,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HISTOGRAM_VALUE = 0;
+	public static final int HISTOGRAM_VALUE = 8;
 
 	/**
 	 * The '<em><b>Box Plot</b></em>' literal value.
@@ -266,7 +266,7 @@ public enum ChartType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BOX_PLOT_VALUE = 0;
+	public static final int BOX_PLOT_VALUE = 9;
 
 	/**
 	 * An array of all the '<em><b>Chart Type</b></em>' enumerators.
@@ -343,6 +343,15 @@ public enum ChartType implements Enumerator {
 	public static ChartType get(int value) {
 		switch (value) {
 			case COLUMN_VALUE: return COLUMN;
+			case LINE_VALUE: return LINE;
+			case PIE_VALUE: return PIE;
+			case BAR_VALUE: return BAR;
+			case AREA_VALUE: return AREA;
+			case SCATTER_VALUE: return SCATTER;
+			case SURFACE_VALUE: return SURFACE;
+			case RADAR_VALUE: return RADAR;
+			case HISTOGRAM_VALUE: return HISTOGRAM;
+			case BOX_PLOT_VALUE: return BOX_PLOT;
 		}
 		return null;
 	}

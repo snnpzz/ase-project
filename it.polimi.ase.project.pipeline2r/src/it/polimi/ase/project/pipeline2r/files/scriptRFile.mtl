@@ -4,7 +4,7 @@
 
 [template public generateRPipeline(aPipeline : Pipeline)]
 
-[file ('pipeline_'.concat(aPipeline.ID).concat('.R'), false, 'UTF-8')]
+[file ('pipeline_'.concat(aPipeline.ID).concat('.r'), false, 'UTF-8')]
 
 # This will generate an executable version of the pipeline
 # Structure of the program:
@@ -27,92 +27,82 @@ library(randomForest)
 library(ggplot2)
 
 set.seed(501)
-pdf("output/[aPipeline.ID/].pdf)
+pdf("output/[aPipeline.ID/].pdf")
 
 # Collection task: import sources as dataframes
+
 [importSource(aPipeline.sources)/]
 
 
-# Integration: join all data in a unique one
 [if (aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)) <> null)]
-	[let intTask : IntegrationTask = aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask)]
-		[joinSources(aPipeline.sources, intTask.integrationOperations.inputAttributes)/]
-	[/let]
+# Integration task: join all data in a unique one
+
+[joinSources(aPipeline.sources, aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask).integrationOperations.inputAttributes)/]
 [/if]
 
 
-# Cleaning: do specified cleaning operation
 [if (aPipeline.tasks -> select(t | t.oclIsTypeOf(CleaningTask)) <> null)]
-	[let cleanTask : CleaningTask = aPipeline.tasks -> select(t | t.oclIsTypeOf(CleaningTask)).oclAsType(CleaningTask)]
-		[for (op : CleaningOperation | cleanTask.cleaningOperations)]
-			[if (op.oclIsTypeOf(PredefinedCleaningOperation))]
-				# Predefined operation
-				[if (op.oclAsType(PredefinedCleaningOperation).type = PredefinedOperation::removeNulls)]
-					# Remove null values
-					source <- na.omit(source)
-				[elseif (op.oclAsType(PredefinedCleaningOperation).type = PredefinedOperation::removeNegative)]
-					# Remove negative values
-					[for (attr : Attribute | op.inputAttributes)]
-						source$[attr.name/] <- source['['/] source$[attr.name/] >= 0 ,[']'/]
-					[/for]
-				[elseif (op.oclAsType(PredefinedCleaningOperation).type = PredefinedOperation::round)]
-					# Round values
-					[for (attr : Attribute | op.inputAttributes)]
-						source$[attr.name/] <- round(source$[attr.name/])
-					[/for]
-				[elseif (op.oclAsType(PredefinedCleaningOperation).type = PredefinedOperation::round)]
-					# Remove column
-					[for (attr : Attribute | op.inputAttributes)]
-						source$[attr.name/] <- NULL
-					[/for]
-				[elseif]
-					# Remove duplicates
-					source <- unique(source)
-				[/if]
-			[elseif]
-				# TODO: User defined cleaning operation
-				# [op.ID/]: [op.oclAsType(UserDefinedCleaningOperation).type/]
+# Cleaning: do specified cleaning operation
+	[for (op : CleaningOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(CleaningTask)).oclAsType(CleaningTask).cleaningOperations)]
+		[if (op.oclIsTypeOf(PredefinedCleaningOperation))]
 
+# Predefined operation : [if (op.oclAsType(PredefinedCleaningOperation).type.toString() = 'removeNulls')] remove null values
+	source <- na.omit(source)
+			[elseif (op.oclAsType(PredefinedCleaningOperation).type.toString() = 'removeNegative')] remove negative values
+				[for (attr : Attribute | op.inputAttributes)]
+	source$[attr.name/] <- source['['/] source$[attr.name/] >= 0 ,[']'/]
+				[/for]
+			[elseif (op.oclAsType(PredefinedCleaningOperation).type.toString() = 'round')] round values
+				[for (attr : Attribute | op.inputAttributes)]
+	source$[attr.name/] <- round(source$[attr.name/])
+				[/for]
+			[elseif (op.oclAsType(PredefinedCleaningOperation).type.toString() = 'removeColumn')] remove column
+				[for (attr : Attribute | op.inputAttributes)]
+	source$[attr.name/] <- NULL
+				[/for]
+			[else] remove duplicates
+	source <- unique(source)
 			[/if]
-		[/for]
-	[/let]
-[/if]
-
-
-# Analysis
-[let analysisTask : AnalysisTask = aPipeline.tasks -> select(t | t.oclIsTypeOf(AnalysisTask)).oclAsType(AnalysisTask)]
-	[for (op : AnalysisOperation | analysisTask.analysisOperations)]
-		[if (op.oclIsTypeOf(DescriptiveAnalysisOperation))]
-			# Descriptive analysis
-			[doDescriptiveAnalysis(op.oclAsType(DescriptiveAnalysisOperation))/]
-		[elseif (op.oclIsTypeOf(ClassificationAnalysisOperation))]
-			# Classification analysis	
-			[doClassificationAnalysis(op.oclAsType(ClassificationAnalysisOperation))/]
-		[elseif (op.oclIsTypeOf(ClusteringAnalysisOperation))]
-			# Clustering analysis
-			[doClusteringAnalysis(op.oclAsType(ClusteringAnalysisOperation))/]
-		[elseif] 
-			# Predictive analysis
-			[doPredictiveAnalysis(op.oclAsType(PredictiveAnalysisOperation))/]
+		[else]
+# TODO: User defined cleaning operation
+# [op.ID/]: [op.oclAsType(UserDefinedCleaningOperation).type/]
 		[/if]
 	[/for]
-[/let]
-
-
-# Visualization
-[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)) <> null)]
-	[let visTask : VisualizationTask = aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)).oclAsType(VisualizationTask)]
-		[for (op : VisualizationOperation | visTask.visualizationOperations)]
-			[prepareChart(op.chart)/]
-		[/for]
-	[/let]
 [/if]
 
 
-# Export
+# Analysis task
+
+[for (op : AnalysisOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(AnalysisTask)).oclAsType(AnalysisTask).analysisOperations)]
+	[if (op.oclIsTypeOf(DescriptiveAnalysisOperation))]
+# Descriptive analysis
+		[doDescriptiveAnalysis(op.oclAsType(DescriptiveAnalysisOperation))/]
+	[elseif (op.oclIsTypeOf(ClassificationAnalysisOperation))]
+# Classification analysis	
+		[doClassificationAnalysis(op.oclAsType(ClassificationAnalysisOperation))/]
+	[elseif (op.oclIsTypeOf(ClusteringAnalysisOperation))]
+# Clustering analysis
+		[doClusteringAnalysis(op.oclAsType(ClusteringAnalysisOperation))/]
+	[else] 
+# Predictive analysis
+	[doPredictiveAnalysis(op.oclAsType(PredictiveAnalysisOperation))/]
+	[/if]
+[/for]
+
+
+[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)) <> null)]
+# Visualization task
+
+	[for (op : VisualizationOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)).oclAsType(VisualizationTask).visualizationOperations)]
+		[prepareChart(op.chart)/]
+	[/for]
+[/if]
+
+
+# Export task
 [exportFiles(aPipeline.tasks -> select(t | t.oclIsTypeOf(ExportTask)).oclAsType(ExportTask))/]
 
-# dev.off()
+dev.off()
 
 rm(list = ls())
 [/file]
@@ -120,48 +110,38 @@ rm(list = ls())
 
 
 [template private importSource(aSources: OrderedSet(Source))]
-[let index : Integer = 1]
-	[for (s : Source | aSources)]
-		[if (not(s.serverName.oclIsUndefined() or s.portNumber.oclIsUndefined()))]
-			# Remote file: download it
-			download.file([s.serverName.concat(':').concat(s.portNumber.toString()).concat('/').concat(s.name)/], "sources/[s.name/]", mode = "w")
-		[/if]
-		# Load file
-		['source'.concat(index.toString())/] = read.[s.name.substring(s.name.lastIndex('.'), s.name.size())/]("sources/[s.name/]")
-		[index = index + 1 /]
-	[/for]
-[/let]
+[for (s : Source | aSources)]
+	[if (not(s.serverName.oclIsUndefined() or s.portNumber.oclIsUndefined()))]
+# Remote file: download it
+download.file([s.serverName.concat(':').concat(s.portNumber.toString()).concat('/').concat(s.name)/], "sources/[s.name/]", mode = "w")	
+	[/if]
+# Load file [s.name/]
+['source'.concat(i.toString())/] <- read[s.name.substring(s.name.lastIndex('.'), s.name.size())/]("sources/[s.name/]")
+[/for]
 [/template]
 
 
-[template private joinSources(aSources: OrderedSet(Source), aAttributes: Sequence(Attribute))]
-[aAttributes = aAttributes.oclAsSet() /]	
-[let listSources : String = '']
-	[let attrs : String = '']
-		[let index : Integer = 1]
-			[for (source : Source | aSources)]	
-				[if (index > 1)]
-					[listSources = listSources.concat(', source').concat(index.toString()) /]
-				[elseif]
-					[listSources = listSources.concat('source').concat(index.toString()) /]
-				[/if]
-				[index = index + 1 /]		
-			[/for]
-			[index = 1/]
-			[for (attr : Attribute | aAttributes)]
-				[if (index > 1)]
-					[attrs = attrs.concat(', "').concat(attr.name).concat('"')/]
-				[elseif]
-					[attrs = attrs.concat('"').concat(attr.name).concat('"')/]
-				[/if]
-				[index = index + 1/]
-			[/for]
-		[/let]
-	
-		sourcesList <- list([listSources/])
-		source <- merge_all(sourcesList, by = c([attrs/]))
-	[/let]
-[/let]		
+[template private joinSources(aSources: OrderedSet(Source), aAttributes: Sequence(Attribute))] 
+sourceList <- list(
+	[for (source : Source | aSources)]	
+		[if (i = 1)]
+			['source'.concat(i.toString()) /]
+		[else]
+			[', source'.concat(i.toString()) /]
+		[/if]		
+	[/for]
+)
+joinAttributes <- c(
+	[for (attr : Attribute | aAttributes.oclAsSet())]
+		[if (i = 1)]
+			['"'.concat(attr.name).concat('"')/]
+		[else]
+			[', "'.concat(attr.name).concat('"')/]
+		[/if]
+	[/for]
+)
+joinAttributes <- unique(joinAttributes)
+source <- merge_all(sourceList, by = joinAttributes)	
 [/template]
 
 
@@ -174,9 +154,10 @@ rm(list = ls())
 	[drawChart(ChartType::Pie, op.inputAttributes)/]
 [elseif (op.type = DescriptiveOperation::ScatterPlot)]
 	[drawChart(ChartType::Scatter, op.inputAttributes)/]
-[elseif]
-	# View data
-	source
+[else]
+# View data
+View(source)
+source
 [/if]
 [/template]
 
@@ -189,7 +170,7 @@ rm(list = ls())
 				[formula = attr.name.concat('~')/]
 			[elseif (index = 2)]
 				[formula = formula.concat(attr.name)/]
-			[elseif]
+			[else]
 				[formula = formula.concat('+').concat(attr.name)/]
 			[/if]			
 			[index = index + 1 /]		
@@ -228,7 +209,7 @@ rm(list = ls())
 			source$[op.outputAttribute.name/] <- [op.ID/]
 			rm(knnInd, train, test)
 		[/let]
-	[elseif]
+	[else]
 		# SVM
 		[op.ID/] <- svm([op.inputAttributes.name/] ~ ., data = source, kernel = "linear")
 		[op.ID/]
@@ -243,7 +224,7 @@ rm(list = ls())
 	[op.ID/] <- kmeans(source, [op.k/])
 	plot(source, col = [op.ID/]$cluster)
 	source$[op.outputAttribute.name/] <- [op.ID/]$cluster
-[elseif]
+[else]
 	# Hierarchical
 	[op.ID/] <- hclust(dist([op.inputAttributes.name/]), [op.k/])
 	source$[op.outputAttribute.name/] <- [op.ID/]$order
@@ -266,7 +247,7 @@ rm(list = ls())
 					[formula = attr.name.concat('~')/]
 				[elseif (index = 2)]
 					[formula = formula.concat(attr.name)/]
-				[elseif]
+				[else]
 					[formula = formula.concat('+').concat(attr.name)/]
 				[/if]			
 				[index = index + 1 /]		
@@ -275,7 +256,7 @@ rm(list = ls())
 		[op.ID/] <- lm([formula/], data = source)
 		summary([op.ID/])
 	[/let]
-[elseif]
+[else]
 	# Random forests
 	[op.ID/] <- randomForest([op.inputAttributes.name/], data = source, importante = TRUE, proximity = TRUE)
 	print([op.ID/])
@@ -321,3 +302,4 @@ rm(list = ls())
 
 [/for]
 [/template]
+

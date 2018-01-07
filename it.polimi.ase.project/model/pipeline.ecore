@@ -249,7 +249,7 @@
     <eLiterals name="removeNulls"/>
     <eLiterals name="removeNegative" value="1"/>
     <eLiterals name="round" value="2"/>
-    <eLiterals name="removeColumn" value="4"/>
+    <eLiterals name="removeColumn" value="3"/>
     <eLiterals name="removeDuplicates" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ClusteringOperation">
@@ -277,15 +277,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ChartType">
     <eLiterals name="Column"/>
-    <eLiterals name="Line"/>
-    <eLiterals name="Pie"/>
-    <eLiterals name="Bar"/>
-    <eLiterals name="Area"/>
-    <eLiterals name="Scatter"/>
-    <eLiterals name="Surface"/>
-    <eLiterals name="Radar"/>
-    <eLiterals name="Histogram"/>
-    <eLiterals name="BoxPlot"/>
+    <eLiterals name="Line" value="1"/>
+    <eLiterals name="Pie" value="2"/>
+    <eLiterals name="Bar" value="3"/>
+    <eLiterals name="Area" value="4"/>
+    <eLiterals name="Scatter" value="5"/>
+    <eLiterals name="Surface" value="6"/>
+    <eLiterals name="Radar" value="7"/>
+    <eLiterals name="Histogram" value="8"/>
+    <eLiterals name="BoxPlot" value="9"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Format">
     <eLiterals name="CSV"/>

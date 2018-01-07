@@ -189,7 +189,7 @@ enum PredefinedOperation {
   removeNulls = 0;
   removeNegative = 1;
   round = 2;
-  removeColumn = 4;
+  removeColumn = 3;
   removeDuplicates = 4;
 }
 
@@ -222,15 +222,15 @@ enum DescriptiveOperation {
 
 enum ChartType {
   Column = 0;
-  Line = 0;
-  Pie = 0;
-  Bar = 0;
-  Area = 0;
-  Scatter = 0;
-  Surface = 0;
-  Radar = 0;
-  Histogram = 0;
-  BoxPlot = 0;
+  Line = 1;
+  Pie = 2;
+  Bar = 3;
+  Area = 4;
+  Scatter = 5;
+  Surface = 6;
+  Radar = 7;
+  Histogram = 8;
+  BoxPlot = 9;
 }
 
 enum Format {

@@ -87,7 +87,7 @@ public class GenerateAll {
 		//};
 		//gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 		monitor.subTask("Loading...");
-		it.polimi.ase.project.pipeline2r.main.MainModule gen0 = new it.polimi.ase.project.pipeline2r.main.MainModule(modelURI, targetFolder.getLocation().toFile(), arguments);
+		it.polimi.ase.project.pipeline2R.main.MainModule gen0 = new it.polimi.ase.project.pipeline2R.main.MainModule(modelURI, targetFolder.getLocation().toFile(), arguments);
 		monitor.worked(1);
 		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("it.polimi.ase.project.pipeline2r", "it.polimi.ase.project.pipeline2r.main.MainModule", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);

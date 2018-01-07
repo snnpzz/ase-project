@@ -133,7 +133,7 @@
 				<th>Name</th>
 			</thead>
 			<tbody>
-				[for (anAttribute : Attribute | anAnalysisOperation.outputAttributes)]
+				[for (anAttribute : Attribute | anAnalysisOperation.outputAttribute)]
 				<tr>
 					<td>[anAttribute.eContainer(Schema).name/].[anAttribute.name/]</td>
 				<tr>

@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package it.polimi.ase.project.pipeline2r;
+package it.polimi.ase.project.pipeline2R;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;

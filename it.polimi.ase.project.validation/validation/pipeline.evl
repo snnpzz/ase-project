@@ -330,15 +330,14 @@ context ClassificationAnalysisOperation {
 		message: "Classification analysis: logistic regression must be applied to boolean values"
 	}
 	
-	-- == LogisticRegression doesn't work :(
 	constraint Log_LDA_QDA_SVM_noOutput {
-		check: (self.type == LogisticRegression or self.type == LDA or self.type == QDA or 
-			self.type == SVM) implies (self.outputAttribute -> size() == 0)
+		check: (self.type == "LogisticRegression" or self.type == "LDA" or self.type == "QDA" or self.type == "SVM") implies 
+			(self.outputAttribute -> size() == 0)
 		message: "Classification analysis: Logistic regression, LDA, QDA and SVM don't need an output attribute"
 	}
 	
 	constraint KNN_needsOutput {
-		check: (self.type == KNN) implies (self.outputAttribute -> size() == 1)
+		check: (self.type == ClassificationOperation::KNN) implies (self.outputAttribute -> size() == 1)
 		message: "Classification analysis: KNN requires an output attribute"
 	}
 }
@@ -360,12 +359,12 @@ context ClusteringAnalysisOperation {
 	}
 	
 	constraint KmeansNeedOutputAttribute {
-		check: self.outputAttribute -> size() == 1
+		check: (self.type == "kMeans") implies self.outputAttribute -> size() == 1
 		message: "Clustering analysis: kmeans requires an output attribute"
 	}
 	
 	constraint HierarchicalNoOutputAttribute {
-		check: self.outputAttribute -> size() == 0
+		check: (self.type == "Hierarchical") implies self.outputAttribute -> size() == 0
 		message: "Clustering analysis: hierarchical clustering doesn't require an output attribute"
 	}
 	
@@ -379,7 +378,7 @@ context PredictiveAnalysisOperation {
 	}
 	
 	constraint regressionOnNumericValues {
-		check: (self.type == SimpleRegression or self.type == MultipleLinRegr) implies
+		check: (self.type == "SimpleRegression" or self.type == "MultipleLinRegr") implies
 			(self.inputAttributes -> forAll(attr | attr.type == mInteger or attr.type == mDouble))
 		message: "Predictive analysis: regression must have integer or double input attributes"
 	}

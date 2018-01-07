@@ -172,8 +172,8 @@ context IntegrationTask {
 	}
 	
 	constraint needAtLeast2AttributesForEachOperation {
-		check: self.integrationOperations -> forAll(op | op.attributes -> size() >= 2)
-		message: "There must be 2 attributes for each integration operation"
+		check: self.integrationOperations -> forAll(op | op.inputAttributes -> size() >= 2)
+		message: "There must be 2 input attributes for each integration operation"
 	}
 	
 	constraint uniqueIntegrationOperationIDs {

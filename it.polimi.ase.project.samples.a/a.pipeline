@@ -10,7 +10,7 @@
     <importOperations ID="importWeb" read="//@sources.1" use="webSchema"/>
   </tasks>
   <tasks xsi:type="pipeline:IntegrationTask" incoming="//@dataFlows.0 //@dataFlows.1" outgoing="//@dataFlows.2">
-    <integrationOperations ID="joinDate1" attributes="//@schemas.0/@attributes.0 //@schemas.1/@attributes.0"/>
+    <integrationOperations ID="joinDate1" inputAttributes="//@schemas.0/@attributes.0 //@schemas.1/@attributes.0"/>
   </tasks>
   <tasks xsi:type="pipeline:CleaningTask" incoming="//@dataFlows.2" outgoing="//@dataFlows.3">
     <cleaningOperations xsi:type="pipeline:PredefinedCleaningOperation" incoming="//@internalDataFlows.0" outgoing="//@internalDataFlows.1" ID="removeSource" type="removeColumn"/>
@@ -28,18 +28,18 @@
   <sources name="social.csv"/>
   <sources name="web.json" format="JSON"/>
   <files name="analysis.csv"/>
-  <schemas ID="socialSchema">
+  <schemas name="socialSchema">
     <attributes xsi:type="pipeline:SimpleAttribute" name="date" next="//@schemas.0/@attributes.1" type="mDate"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="hour" next="//@schemas.0/@attributes.2" previous="//@schemas.0/@attributes.0" type="mInteger"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="source" next="//@schemas.0/@attributes.3" previous="//@schemas.0/@attributes.1"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="socialCount" previous="//@schemas.0/@attributes.2" type="mInteger"/>
   </schemas>
-  <schemas ID="webSchema">
+  <schemas name="webSchema">
     <attributes xsi:type="pipeline:SimpleAttribute" name="date" next="//@schemas.1/@attributes.2" previous="//@schemas.1/@attributes.1" type="mDate"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="siteName" next="//@schemas.1/@attributes.0"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="visits" previous="//@schemas.1/@attributes.0" type="mInteger"/>
   </schemas>
-  <schemas ID="joinSchema">
+  <schemas name="joinSchema">
     <attributes xsi:type="pipeline:SimpleAttribute" name="date" next="//@schemas.2/@attributes.1" type="mDate"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="source" next="//@schemas.2/@attributes.2" previous="//@schemas.2/@attributes.0"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="socialCount" next="//@schemas.2/@attributes.3" previous="//@schemas.2/@attributes.1" type="mInteger"/>

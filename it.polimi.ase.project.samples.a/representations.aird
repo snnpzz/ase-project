@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:pipeline="http://www.project.ase.polimi.it/pipeline" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_M_EgYPGOEee6fYCDTxl_TQ" selectedViews="_Ta9noPMAEee_osTp2qioFw" version="11.0.0.201604141600">
-  <semanticResources>sampleA.pipeline</semanticResources>
   <ownedViews xmi:type="viewpoint:DView" xmi:id="_Ta9noPMAEee_osTp2qioFw">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']"/>
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_V4pLAPMAEee_osTp2qioFw" name="sampleA_Diagram">
@@ -1134,8 +1133,8 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']"/>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_6LU9IPMEEee_osTp2qioFw" name="removeColumn" outgoingEdges="__QHlUPMHEee_osTp2qioFw" incomingEdges="_-6O04PMHEee_osTp2qioFw" width="-1" height="-1">
-          <target xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.0"/>
-          <semanticElements xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.0"/>
+          <target xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#removeSource"/>
+          <semanticElements xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#removeSource"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1145,8 +1144,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationSubNode']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Ln8lAPMFEee_osTp2qioFw" name="removeColumn" incomingEdges="__QHlUPMHEee_osTp2qioFw" width="-1" height="-1">
-          <target xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.1"/>
-          <semanticElements xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.1"/>
+          <target xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#removeSiteName"/>
+          <semanticElements xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#removeSiteName"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1156,8 +1155,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationSubNode']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Ic5v4PMGEee_osTp2qioFw" name="removeNulls" outgoingEdges="_-6O04PMHEee_osTp2qioFw" width="-1" height="-1">
-          <target xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.2"/>
-          <semanticElements xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#//@tasks.2/@cleaningOperations.2"/>
+          <target xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#removeAllNulls"/>
+          <semanticElements xmi:type="pipeline:PredefinedCleaningOperation" href="sampleA.pipeline#removeAllNulls"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>

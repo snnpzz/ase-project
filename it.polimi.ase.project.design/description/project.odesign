@@ -87,8 +87,8 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="chartAttributesEdge" label="Chart Attributes Edge" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='chartNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="var:axes" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='reconnectChartAttributes']">
-          <style sizeComputationExpression="2">
+        <edgeMappings name="chartAttributesEdge" label="Chart Attributes Edge" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@nodeMappings[name='chartNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:axes" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='reconnectChartAttributes']">
+          <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -206,7 +206,7 @@
         </containerMappings>
         <containerMappings name="Export Task" label="Export Task" domainClass="ExportTask">
           <subNodeMappings name="Export Operation" label="Export Operation" semanticCandidatesExpression="feature:eAllContents" domainClass="ExportOperation">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:ID" sizeComputationExpression="-1" labelPosition="node" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:ID" sizeComputationExpression="-1" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -656,6 +656,7 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="axes" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="axes" elementExpression="var:source"/>
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>
@@ -669,6 +670,7 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="attributes" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="attributes" elementExpression="var:source"/>
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>
@@ -695,6 +697,7 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="inputAttributes" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="inputAttributes" elementExpression="var:source"/>
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>
@@ -721,6 +724,7 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="inputAttributes" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="inputAttributes" elementExpression="var:source"/>
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>
@@ -760,6 +764,7 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var.element">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="outputAttributes" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="outputAttributes" elementExpression="var:source"/>
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>

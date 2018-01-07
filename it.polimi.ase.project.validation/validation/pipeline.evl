@@ -296,6 +296,15 @@ context ComplexAttribute {
 	
 }
 
+context IntegrationOperation {
+
+	constraint differentSchema {
+		check: self.inputAttributes.eContainer() <> self.outputAttribute.eContainer()
+		message: 'The output attribut must belong to a schea different from the one of the input attributes.'
+	}
+
+}
+
 
 context ClassificationAnalysisOperation {
 

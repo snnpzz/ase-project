@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module generateRPipeline('http://www.project.ase.polimi.it/pipeline')]
+[module scriptRFile('http://www.project.ase.polimi.it/pipeline')]
 
 
 [template public generateRPipeline(aPipeline : Pipeline)]

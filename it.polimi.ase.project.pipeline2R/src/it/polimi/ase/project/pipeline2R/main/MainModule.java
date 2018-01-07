@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package it.polimi.ase.project.pipeline2R.main;
+package it.polimi.ase.project.pipeline2r.main;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
 /**
- * Entry point of the 'GenerateRPipeline' generation module.
+ * Entry point of the 'MainModule' generation module.
  *
  * @generated
  */
@@ -35,7 +35,7 @@ public class MainModule extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/it/polimi/ase/project/pipeline2R/main/mainModule";
+    public static final String MODULE_FILE_NAME = "/it/polimi/ase/project/pipeline2r/main/mainModule";
     
     /**
      * The name of the templates that are to be generated.

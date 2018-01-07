@@ -323,7 +323,6 @@ context IntegrationOperation {
 
 }
 
-
 context ClassificationAnalysisOperation {
 
 	constraint LogisticRegressionOnBoolean {

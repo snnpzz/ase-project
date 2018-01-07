@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="mainModule" name="it.polimi.ase.project.pipeline2R">
-    <property name="ECLIPSE_HOME" value="../../../../../../Downloads/Eclipse.app/Contents/Eclipse"/>
-    <property name="ECLIPSE_WORKSPACE" value="../.."/>
+<project default="mainModule" name="it.polimi.ase.project.pipeline2r">
+    <property name="ECLIPSE_HOME" value="../../../../../../../../eclipse/epsilon/eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../../workspace/epsilon"/>
 
     <!-- The classpath with only the dependencies used by the project -->
-    <path id="it.polimi.ase.project.pipeline2R.libraryclasspath">
-        <pathelement location="${ECLIPSE_WORKSPACE}/it.polimi.ase.project.pipeline2R/bin"/>
+    <path id="it.polimi.ase.project.pipeline2r.libraryclasspath">
+        <pathelement location="${ECLIPSE_WORKSPACE}/it.polimi.ase.project.pipeline2r/bin"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.12.0.v20160606-1342.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/javax.inject_1.0.0.v20091030.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.11.1.v20160708-1632.jar"/>
@@ -32,23 +32,23 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/com.google.guava_15.0.0.v201403281430.jar"/>
     </path>
 
-    <path id="it.polimi.ase.project.pipeline2R.classpath">
-        <path refid="it.polimi.ase.project.pipeline2R.libraryclasspath"/>
+    <path id="it.polimi.ase.project.pipeline2r.classpath">
+        <path refid="it.polimi.ase.project.pipeline2r.libraryclasspath"/>
     </path>
 
     <!-- The classpath with only the jars available in the plugin folder of Eclipse -->
-    <path id="it.polimi.ase.project.pipeline2R.libraryclasspath.alljars">
-        <pathelement location="../it.polimi.ase.project.pipeline2R/bin"/>
+    <path id="it.polimi.ase.project.pipeline2r.libraryclasspath.alljars">
+        <pathelement location="../it.polimi.ase.project.pipeline2r/bin"/>
         <fileset dir="${ECLIPSE_HOME}/plugins/" includes="*.jar"/>
     </path>
 
-    <path id="it.polimi.ase.project.pipeline2R.classpath.alljars">
-        <path refid="it.polimi.ase.project.pipeline2R.libraryclasspath.alljars"/>
+    <path id="it.polimi.ase.project.pipeline2r.classpath.alljars">
+        <path refid="it.polimi.ase.project.pipeline2r.libraryclasspath.alljars"/>
     </path>
 
     <!-- The default task with the jars used by this project -->
     <target name="mainModule">
-        <java classname="it.polimi.ase.project.pipeline2R.main.MainModule" classpathref="it.polimi.ase.project.pipeline2R.classpath">
+        <java classname="it.polimi.ase.project.pipeline2r.main.MainModule" classpathref="it.polimi.ase.project.pipeline2r.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
@@ -59,7 +59,7 @@
         Keep in mind that having two versions of the same jar can create problems
     -->
     <target name="mainModule.alljars">
-        <java classname="it.polimi.ase.project.pipeline2R.main.MainModule" classpathref="it.polimi.ase.project.pipeline2R.classpath">
+        <java classname="it.polimi.ase.project.pipeline2r.main.MainModule" classpathref="it.polimi.ase.project.pipeline2r.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>

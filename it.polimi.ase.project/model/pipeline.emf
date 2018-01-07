@@ -35,7 +35,7 @@ abstract class Operation {
   ref InternalDataFlow#target incoming;
   ref InternalDataFlow#source outgoing;
   id attr String[1] ID;
-  ref SimpleAttribute[+] inputAttributes;
+  ref SimpleAttribute[*] inputAttributes;
 }
 
 @gmf.link(source="source", target="target", width="2", target.decoration="filledclosedarrow", style="dash")

@@ -61,8 +61,8 @@
         eOpposite="#//InternalDataFlow/source"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inputAttributes" lowerBound="1"
-        upperBound="-1" eType="#//SimpleAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputAttributes" upperBound="-1"
+        eType="#//SimpleAttribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InternalDataFlow">
     <eAnnotations source="gmf.link">

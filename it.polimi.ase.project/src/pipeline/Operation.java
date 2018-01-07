@@ -119,7 +119,7 @@ public interface Operation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Input Attributes</em>' reference list.
 	 * @see pipeline.PipelinePackage#getOperation_InputAttributes()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	EList<SimpleAttribute> getInputAttributes();

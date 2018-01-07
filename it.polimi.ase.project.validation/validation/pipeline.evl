@@ -252,6 +252,12 @@ context AnalysisTask{
 		message: "The outgoing dataflow schema is wrong" 
 	}
 	
+	constraint uniqueOutputAttributeName {
+ 		check: self.analysisOperation.outputAttributes -> forAll(attr1 | self.analysisOperation.outputAttributes ->
+ 			forAll(attr2 | attr1 <> attr2 implies attr1.name <> attr2.name))
+ 		message: "Output attributes of analysis operation must have different names"
+ 	}
+	
 }
 
 
@@ -323,6 +329,35 @@ context IntegrationOperation {
 
 }
 
+
+context PredefinedCleaningOperation {
+
+	constraint removeNegative_Column_round_needInput {
+		check:  (self.type == "removeNegative" or self.type == "removeColumn" or self.type == "round") implies (self.outputAttribute -> size() > 0)
+		message: "Cleaning operation: removeNegative, removeColumn and round require at least one input attribute"
+	}
+	
+	constraint removeNegativeOnNumericValues {
+		check: (self.type == "removeNegative" or self.type == "round") implies (self.inputAttributes -> forAll(attr | attr.type == "mInteger" or attr.type == "mDouble"))
+		message: "Cleaning operation: removeNegative and round can be applied only to numeric attributes (integer or double)"
+	}
+	
+	constraint roundIntegerValues {
+		check: (self.type == "round") implies (self.inputAttributes -> forAll(attr | attr.type = "mDouble"))
+		message: "Cleaning oepration: round can be applied only to double attributes"
+	}
+}
+
+
+context AnalysisOperation {
+
+	constraint atLeastOneInputAttribute {
+		check: self.inputAttributes -> size() > 0
+		message: "All analysis operations must have at least one input attribute"
+	}
+	
+}
+
 context ClassificationAnalysisOperation {
 
 	constraint LogisticRegressionOnBoolean {
@@ -358,9 +393,9 @@ context ClusteringAnalysisOperation {
 		message: "K parameter for clustering analysis operation must be set and must be positive"
 	}
 	
-	constraint KmeansNeedOutputAttribute {
-		check: (self.type == "kMeans") implies self.outputAttribute -> size() == 1
-		message: "Clustering analysis: kmeans requires an output attribute"
+	constraint KmeansHasIntegerOutputAttribute {
+		check: (self.type == "kMeans") implies (self.outputAttribute -> size() == 1 and self.outputAttribute.type == "mInteger")
+		message: "Clustering analysis: kmeans requires an integer output attribute"
 	}
 	
 	constraint HierarchicalNoOutputAttribute {
@@ -372,9 +407,9 @@ context ClusteringAnalysisOperation {
 
 context PredictiveAnalysisOperation {
 	
-	constraint outputAttributeRequired {
+	constraint outputAttributeNotRequired {
 		check: self.outputAttribute -> size() == 0
-		message: "Predective analyzes don't require an output attribute"
+		message: "Predictive analyzes don't require an output attribute"
 	}
 	
 	constraint regressionOnNumericValues {

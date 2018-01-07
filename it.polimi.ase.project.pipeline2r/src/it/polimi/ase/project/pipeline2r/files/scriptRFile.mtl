@@ -29,20 +29,22 @@ library(ggplot2)
 set.seed(501)
 pdf("output/[aPipeline.ID/].pdf")
 
-# Collection task: import sources as dataframes
+## COLLECTION TASK
+# Import sources as dataframes
 
 [importSource(aPipeline.sources)/]
 
 
 [if (aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)) <> null)]
-# Integration task: join all data in a unique one
+## INTEGRATION TASK
+# Join all data in a unique one
 
 [joinSources(aPipeline.sources, aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask).integrationOperations.inputAttributes)/]
 [/if]
 
 
 [if (aPipeline.tasks -> select(t | t.oclIsTypeOf(CleaningTask)) <> null)]
-# Cleaning: do specified cleaning operation
+## CLEANING TASK
 	[for (op : CleaningOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(CleaningTask)).oclAsType(CleaningTask).cleaningOperations)]
 		[if (op.oclIsTypeOf(PredefinedCleaningOperation))]
 
@@ -71,7 +73,7 @@ pdf("output/[aPipeline.ID/].pdf")
 [/if]
 
 
-# Analysis task
+## ANALYSIS TASK
 
 [for (op : AnalysisOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(AnalysisTask)).oclAsType(AnalysisTask).analysisOperations)]
 	[if (op.oclIsTypeOf(DescriptiveAnalysisOperation))]
@@ -85,13 +87,13 @@ pdf("output/[aPipeline.ID/].pdf")
 		[doClusteringAnalysis(op.oclAsType(ClusteringAnalysisOperation))/]
 	[else] 
 # Predictive analysis
-	[doPredictiveAnalysis(op.oclAsType(PredictiveAnalysisOperation))/]
+		[doPredictiveAnalysis(op.oclAsType(PredictiveAnalysisOperation))/]
 	[/if]
 [/for]
 
 
 [if (aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)) <> null)]
-# Visualization task
+## VISUALIZATION TASK
 
 	[for (op : VisualizationOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)).oclAsType(VisualizationTask).visualizationOperations)]
 		[prepareChart(op.chart)/]
@@ -99,7 +101,7 @@ pdf("output/[aPipeline.ID/].pdf")
 [/if]
 
 
-# Export task
+## EXPORT TASK
 [exportFiles(aPipeline.tasks -> select(t | t.oclIsTypeOf(ExportTask)).oclAsType(ExportTask))/]
 
 dev.off()
@@ -112,11 +114,17 @@ rm(list = ls())
 [template private importSource(aSources: OrderedSet(Source))]
 [for (s : Source | aSources)]
 	[if (not(s.serverName.oclIsUndefined() or s.portNumber.oclIsUndefined()))]
-# Remote file: download it
+# Remote file: download it and then load
 download.file([s.serverName.concat(':').concat(s.portNumber.toString()).concat('/').concat(s.name)/], "sources/[s.name/]", mode = "w")	
+#['source'.concat(i.toString())/] <- read.[s.format.toString().toLower()/]("sources/[s.name/]")
+['source'.concat(i.toString())/] <- read.table("sources/[s.name/]")
 	[/if]
 # Load file [s.name/]
-['source'.concat(i.toString())/] <- read[s.name.substring(s.name.lastIndex('.'), s.name.size())/]("sources/[s.name/]")
+	[if (not(s.path.oclIsUndefined()))]
+['source'.concat(i.toString())/] <- read.table("[s.path/]/[s.name/]")
+	[else]
+['source'.concat(i.toString())/] <- read.table("sources/[s.name/]")
+	[/if]
 [/for]
 [/template]
 
@@ -162,64 +170,61 @@ source
 [/template]
 
 
-[template private doClassificationAnalysis(op: ClassificationAnalysisOperation)]
-[let formula : String = '']
-	[let index : Integer = 1]
-		[for (attr : Attribute | op.inputAttributes)]	
-			[if (index = 1)]
-				[formula = attr.name.concat('~')/]
-			[elseif (index = 2)]
-				[formula = formula.concat(attr.name)/]
-			[else]
-				[formula = formula.concat('+').concat(attr.name)/]
-			[/if]			
-			[index = index + 1 /]		
-		[/for]
-	[/let]
-	[if (op.type = ClassificationOperation::LogisticRegression)]
-		# Logistic regression
-		[op.ID/] <- glm([formula/], data = source, family = binomial)
-		summary([op.ID/])
-	[elseif (op.type = ClassificationOperation::LDA)]
-		# LDA
-		[op.ID/] <- lda([formula/], data = source)
-		[op.ID/]
-	[elseif (op.type = ClassificationOperation::QDA)]
-		# QDA
-		[op.ID/] <- qda([formula/], data = source)
-		[op.ID/]
-	[elseif (op.type = ClassificationOperation::KNN)] 
-		# KNN
-		knnInd <- sample(nrow(sample), round(nrow(sample)*0.8)
-		[let columns : String = '']
-			[let index : Integer = 1]
-				[for (attr : Attribute | op.inputAttributes)]	
-					[if (index = 1)]
-						[columns = attr.name.concat('[knnInd, ]')/]
-					[elseif (index = 2)]
-						[columns = columns.concat(',').concat(attr.name).concat('[knnInd, ]')/]
-					[/if]			
-					[index = index + 1 /]		
-				[/for]
-			[/let]
-			train  <- cbind([columns/])
-			knnInd <- -knnInd
-			test   <- cbind([columns/])
-			[op.ID/] <- knn(train, test, k = 10, prob = TRUE)
-			source$[op.outputAttribute.name/] <- [op.ID/]
-			rm(knnInd, train, test)
-		[/let]
+[template private writeFormula(attributes: OrderedSet(Attribute))]
+[for (attr : Attribute | attributes)]	
+	[if (i = 1)]
+		[attr.name.concat(' ~ ')/]
+	[elseif (i = 2)]
+		[attr.name/]
 	[else]
-		# SVM
-		[op.ID/] <- svm([op.inputAttributes.name/] ~ ., data = source, kernel = "linear")
-		[op.ID/]
-	[/if]
-[/let]
+		[' + '.concat(attr.name)/]
+	[/if]			
+[/for]
+[/template]
+
+
+[template private writeColumns(attributes: OrderedSet(Attribute))]
+[for (attr : Attribute | attributes)]	
+	[if (i = 1)]
+		[attr.name.concat('[knnInd, ]')/]
+	[elseif (i = 2)]
+		[','.concat(attr.name).concat('[knnInd, ]')/]
+	[/if]				
+[/for]
+[/template]
+
+[template private doClassificationAnalysis(op: ClassificationAnalysisOperation)]
+[if (op.type.toString() = 'LogisticRegression')]
+	# Logistic regression
+	[op.ID/] <- glm([writeFormula(op.inputAttributes)/], data = source, family = binomial)
+	summary([op.ID/])
+[elseif (op.type.toString() = 'LDA')]
+	# LDA
+	[op.ID/] <- lda([writeFormula(op.inputAttributes)/], data = source)
+	[op.ID/]
+[elseif (op.type.toString() = 'QDA')]
+	# QDA
+	[op.ID/] <- qda([writeFormula(op.inputAttributes)/], data = source)
+	[op.ID/]
+[elseif (op.type.toString() = 'KNN')] 
+	# KNN
+	knnInd <- sample(nrow(sample), round(nrow(sample)*0.8)
+	train  <- cbind([writeColumns(op.inputAttributes)/])
+	knnInd <- -knnInd
+	test   <- cbind([writeColumns(op.inputAttributes)/])
+	[op.ID/] <- knn(train, test, k = 10, prob = TRUE)
+	source$[op.outputAttribute.name/] <- [op.ID/]
+	rm(knnInd, train, test)
+[else]
+	# SVM
+	[op.ID/] <- svm([op.inputAttributes.name/] ~ ., data = source, kernel = "linear")
+	[op.ID/]
+[/if]
 [/template]
 
 
 [template private doClusteringAnalysis(op: ClusteringAnalysisOperation)]
-[if (op.type = ClusteringOperation::kMeans)]
+[if (op.type.toString() = 'kMeans')]
 	# Kmeans
 	[op.ID/] <- kmeans(source, [op.k/])
 	plot(source, col = [op.ID/]$cluster)
@@ -234,28 +239,13 @@ source
 
 
 [template private doPredictiveAnalysis(op: PredictiveAnalysisOperation)]
-[if (op.type = PredictiveOperation::SimpleRegression)]
+[if (op.type.toString() = 'SimpleRegression')]
 	# Simple regression
 	[op.ID/] <- lm([op.inputAttributes.name/]~[op.inputAttributes.next.name/], data = source)
 	summary([op.ID/])
-[elseif (op.type = PredictiveOperation::MultipleLinRegr)]
+[elseif (op.type.toString() = 'MultipleLinRegr')]
 	# Multiple linear regression
-	[let formula : String = '']
-		[let index : Integer = 1]
-			[for (attr : Attribute | op.inputAttributes)]	
-				[if (index = 1)]
-					[formula = attr.name.concat('~')/]
-				[elseif (index = 2)]
-					[formula = formula.concat(attr.name)/]
-				[else]
-					[formula = formula.concat('+').concat(attr.name)/]
-				[/if]			
-				[index = index + 1 /]		
-			[/for]
-		[/let]
-		[op.ID/] <- lm([formula/], data = source)
-		summary([op.ID/])
-	[/let]
+	[op.ID/] <- lm([writeFormula(op.inputAttributes)/], data = source)
 [else]
 	# Random forests
 	[op.ID/] <- randomForest([op.inputAttributes.name/], data = source, importante = TRUE, proximity = TRUE)
@@ -270,36 +260,35 @@ source
 
 
 [template private drawChart(type: ChartType, attributes: OrderedSet(Attribute))]
-[let dataframe : String = '']
-	[for (attr: Attribute | attributes)]
-		[dataframe = dataframe.concat(attr.name).concat(', ')/]
-	[/for]
-	data2plot <- data.frame([dataframe/] row.names = FALSE)
+data2plot <- data.frame(	
+[for (attr: Attribute | attributes)]
+	[attr.name.concat(', ')/]
+[/for]
+	row.names = FALSE)
 	
-	[if (type = ChartType::Area)]
-	[elseif (type = ChartType::Bar)]
-		barplot(data2plot, horizontal = TRUE)
-	[elseif (type = ChartType::BoxPlot)]
-		boxplot(data2plot)
-	[elseif (type = ChartType::Column)]
-		barplot(data2plot)
-	[elseif (type = ChartType::Histogram)]
-		hist([attributes.name/]
-	[elseif (type = ChartType::Line)]
-		plot(data2plot)
-		lines(data2plot['['/],2[']'/])
-	[elseif (type = ChartType::Pie)]
-	[elseif (type = ChartType::Radar)]
-	[elseif (type = ChartType::Scatter)]
-		plot(data2Plot)
-	[elseif (type = ChartType::Surface)]
-	[/if]
-[/let]
+[if (type.toString() = 'Area')]
+[elseif (type.toString() = 'Bar')]
+	barplot(data2plot, horizontal = TRUE)
+[elseif (type.toString() = 'BoxPlot')]
+	boxplot(data2plot)
+[elseif (type.toString() = 'Column')]
+	barplot(data2plot)
+[elseif (type.toString() = 'Histogram')]
+	hist([attributes.name/]
+[elseif (type.toString() = 'Line')]
+	plot(data2plot)
+	lines(data2plot['['/],2[']'/])
+[elseif (type.toString() = 'Pie')]
+[elseif (type.toString() = 'Radar')]
+[elseif (type.toString() = 'Scatter')]
+	plot(data2Plot)
+[elseif (type.toString() = 'Surface')]
+[/if]
 [/template]
 
 [template private exportFiles(aTask: Sequence(ExportTask))]
 [for (exp : ExportOperation | aTask.exportOperations)]
-
+	write.table(source, file = "output/[exp.write.name/]")
 [/for]
 [/template]
 

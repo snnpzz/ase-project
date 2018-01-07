@@ -22,16 +22,18 @@ library(ggplot2)
 set.seed(501)
 pdf("output/socialSensors.pdf")
 
-# Collection task: import sources as dataframes
+## COLLECTION TASK
+# Import sources as dataframes
 
 # Load file social.csv
-source1 <- read.csv("sources/social.csv")
+source1 <- read.table("sources/social.csv")
 # Load file web.json
-source2 <- read.json("sources/web.json")
+source2 <- read.table("sources/web.json")
 
 
 
-# Integration: join all data in a unique one
+## INTEGRATION TASK
+# Join all data in a unique one
 
 sourceList <- list(
 			source1
@@ -45,26 +47,36 @@ joinAttributes <- unique(joinAttributes)
 source <- merge_all(sourceList, by = joinAttributes)	
 
 
-# Cleaning: do specified cleaning operation
+## CLEANING TASK
 
 # Predefined operation :  remove column
+	source$source <- NULL
 
 # Predefined operation :  remove column
+	source$siteName <- NULL
 
 # Predefined operation :  remove null values
 	source <- na.omit(source)
 
 
-# Analysis
+## ANALYSIS TASK
+
+# Clustering analysis
+			# Kmeans
+			kMeansCount <- kmeans(source, 2)
+			plot(source, col = kMeansCount$cluster)
+			source$countkM <- kMeansCount$cluster
+		
 
 
-# Visualization
-
-
-# Export
+## VISUALIZATION TASK
 
 
 
-# dev.off()
+## EXPORT TASK
+	write.table(source, file = "output/analysis.csv")
+
+
+dev.off()
 
 rm(list = ls())

@@ -1,0 +1,323 @@
+[comment encoding = UTF-8 /]
+[module scriptRFile('http://www.project.ase.polimi.it/pipeline')]
+
+
+[template public generateRPipeline(aPipeline : Pipeline)]
+
+[file ('pipeline_'.concat(aPipeline.ID).concat('.R'), false, 'UTF-8')]
+
+# This will generate an executable version of the pipeline
+# Structure of the program:
+# - if sources are local files, place them in a folder named "sources" at the same level of the R file;
+# - all output files will be placed in a folder named "output" at the same level of the R file.
+
+# Import libraries
+# (If some libraries are missing, install them: install.packages("library_name") )
+library(readr)
+
+# install.packages("reshape")
+library(reshape)
+
+library(MASS)
+library(class)
+library(e1071)
+library(randomForest)
+
+# install.packages(ggplot2)
+library(ggplot2)
+
+set.seed(501)
+pdf("output/[aPipeline.ID/].pdf)
+
+# Collection task: import sources as dataframes
+[importSource(aPipeline.sources)/]
+
+
+# Integration: join all data in a unique one
+[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)) <> null)]
+	[let intTask : IntegrationTask = aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask)]
+		[joinSources(aPipeline.sources, intTask.integrationOperations.inputAttributes)/]
+	[/let]
+[/if]
+
+
+# Cleaning: do specified cleaning operation
+[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(CleaningTask)) <> null)]
+	[let cleanTask : CleaningTask = aPipeline.tasks -> select(t | t.oclIsTypeOf(CleaningTask)).oclAsType(CleaningTask)]
+		[for (op : CleaningOperation | cleanTask.cleaningOperations)]
+			[if (op.oclIsTypeOf(PredefinedCleaningOperation))]
+				# Predefined operation
+				[if (op.oclAsType(PredefinedCleaningOperation).type = PredefinedOperation::removeNulls)]
+					# Remove null values
+					source <- na.omit(source)
+				[elseif (op.oclAsType(PredefinedCleaningOperation).type = PredefinedOperation::removeNegative)]
+					# Remove negative values
+					[for (attr : Attribute | op.inputAttributes)]
+						source$[attr.name/] <- source['['/] source$[attr.name/] >= 0 ,[']'/]
+					[/for]
+				[elseif (op.oclAsType(PredefinedCleaningOperation).type = PredefinedOperation::round)]
+					# Round values
+					[for (attr : Attribute | op.inputAttributes)]
+						source$[attr.name/] <- round(source$[attr.name/])
+					[/for]
+				[elseif (op.oclAsType(PredefinedCleaningOperation).type = PredefinedOperation::round)]
+					# Remove column
+					[for (attr : Attribute | op.inputAttributes)]
+						source$[attr.name/] <- NULL
+					[/for]
+				[elseif]
+					# Remove duplicates
+					source <- unique(source)
+				[/if]
+			[elseif]
+				# TODO: User defined cleaning operation
+				# [op.ID/]: [op.oclAsType(UserDefinedCleaningOperation).type/]
+
+			[/if]
+		[/for]
+	[/let]
+[/if]
+
+
+# Analysis
+[let analysisTask : AnalysisTask = aPipeline.tasks -> select(t | t.oclIsTypeOf(AnalysisTask)).oclAsType(AnalysisTask)]
+	[for (op : AnalysisOperation | analysisTask.analysisOperations)]
+		[if (op.oclIsTypeOf(DescriptiveAnalysisOperation))]
+			# Descriptive analysis
+			[doDescriptiveAnalysis(op.oclAsType(DescriptiveAnalysisOperation))/]
+		[elseif (op.oclIsTypeOf(ClassificationAnalysisOperation))]
+			# Classification analysis	
+			[doClassificationAnalysis(op.oclAsType(ClassificationAnalysisOperation))/]
+		[elseif (op.oclIsTypeOf(ClusteringAnalysisOperation))]
+			# Clustering analysis
+			[doClusteringAnalysis(op.oclAsType(ClusteringAnalysisOperation))/]
+		[elseif] 
+			# Predictive analysis
+			[doPredictiveAnalysis(op.oclAsType(PredictiveAnalysisOperation))/]
+		[/if]
+	[/for]
+[/let]
+
+
+# Visualization
+[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)) <> null)]
+	[let visTask : VisualizationTask = aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)).oclAsType(VisualizationTask)]
+		[for (op : VisualizationOperation | visTask.visualizationOperations)]
+			[prepareChart(op.chart)/]
+		[/for]
+	[/let]
+[/if]
+
+
+# Export
+[exportFiles(aPipeline.tasks -> select(t | t.oclIsTypeOf(ExportTask)).oclAsType(ExportTask))/]
+
+# dev.off()
+
+rm(list = ls())
+[/file]
+[/template]
+
+
+[template private importSource(aSources: OrderedSet(Source))]
+[let index : Integer = 1]
+	[for (s : Source | aSources)]
+		[if (not(s.serverName.oclIsUndefined() or s.portNumber.oclIsUndefined()))]
+			# Remote file: download it
+			download.file([s.serverName.concat(':').concat(s.portNumber.toString()).concat('/').concat(s.name)/], "sources/[s.name/]", mode = "w")
+		[/if]
+		# Load file
+		['source'.concat(index.toString())/] = read.[s.name.substring(s.name.lastIndex('.'), s.name.size())/]("sources/[s.name/]")
+		[index = index + 1 /]
+	[/for]
+[/let]
+[/template]
+
+
+[template private joinSources(aSources: OrderedSet(Source), aAttributes: Sequence(Attribute))]
+[aAttributes = aAttributes.oclAsSet() /]	
+[let listSources : String = '']
+	[let attrs : String = '']
+		[let index : Integer = 1]
+			[for (source : Source | aSources)]	
+				[if (index > 1)]
+					[listSources = listSources.concat(', source').concat(index.toString()) /]
+				[elseif]
+					[listSources = listSources.concat('source').concat(index.toString()) /]
+				[/if]
+				[index = index + 1 /]		
+			[/for]
+			[index = 1/]
+			[for (attr : Attribute | aAttributes)]
+				[if (index > 1)]
+					[attrs = attrs.concat(', "').concat(attr.name).concat('"')/]
+				[elseif]
+					[attrs = attrs.concat('"').concat(attr.name).concat('"')/]
+				[/if]
+				[index = index + 1/]
+			[/for]
+		[/let]
+	
+		sourcesList <- list([listSources/])
+		source <- merge_all(sourcesList, by = c([attrs/]))
+	[/let]
+[/let]		
+[/template]
+
+
+[template private doDescriptiveAnalysis(op: DescriptiveAnalysisOperation)]
+[if (op.type = DescriptiveOperation::Boxplot)]
+	[drawChart(ChartType::BoxPlot, op.inputAttributes)/]
+[elseif (op.type = DescriptiveOperation::Histogram)]
+	[drawChart(ChartType::Histogram, op.inputAttributes)/]
+[elseif (op.type = DescriptiveOperation::PieChart)]
+	[drawChart(ChartType::Pie, op.inputAttributes)/]
+[elseif (op.type = DescriptiveOperation::ScatterPlot)]
+	[drawChart(ChartType::Scatter, op.inputAttributes)/]
+[elseif]
+	# View data
+	source
+[/if]
+[/template]
+
+
+[template private doClassificationAnalysis(op: ClassificationAnalysisOperation)]
+[let formula : String = '']
+	[let index : Integer = 1]
+		[for (attr : Attribute | op.inputAttributes)]	
+			[if (index = 1)]
+				[formula = attr.name.concat('~')/]
+			[elseif (index = 2)]
+				[formula = formula.concat(attr.name)/]
+			[elseif]
+				[formula = formula.concat('+').concat(attr.name)/]
+			[/if]			
+			[index = index + 1 /]		
+		[/for]
+	[/let]
+	[if (op.type = ClassificationOperation::LogisticRegression)]
+		# Logistic regression
+		[op.ID/] <- glm([formula/], data = source, family = binomial)
+		summary([op.ID/])
+	[elseif (op.type = ClassificationOperation::LDA)]
+		# LDA
+		[op.ID/] <- lda([formula/], data = source)
+		[op.ID/]
+	[elseif (op.type = ClassificationOperation::QDA)]
+		# QDA
+		[op.ID/] <- qda([formula/], data = source)
+		[op.ID/]
+	[elseif (op.type = ClassificationOperation::KNN)] 
+		# KNN
+		knnInd <- sample(nrow(sample), round(nrow(sample)*0.8)
+		[let columns : String = '']
+			[let index : Integer = 1]
+				[for (attr : Attribute | op.inputAttributes)]	
+					[if (index = 1)]
+						[columns = attr.name.concat('[knnInd, ]')/]
+					[elseif (index = 2)]
+						[columns = columns.concat(',').concat(attr.name).concat('[knnInd, ]')/]
+					[/if]			
+					[index = index + 1 /]		
+				[/for]
+			[/let]
+			train  <- cbind([columns/])
+			knnInd <- -knnInd
+			test   <- cbind([columns/])
+			[op.ID/] <- knn(train, test, k = 10, prob = TRUE)
+			source$[op.outputAttribute.name/] <- [op.ID/]
+			rm(knnInd, train, test)
+		[/let]
+	[elseif]
+		# SVM
+		[op.ID/] <- svm([op.inputAttributes.name/] ~ ., data = source, kernel = "linear")
+		[op.ID/]
+	[/if]
+[/let]
+[/template]
+
+
+[template private doClusteringAnalysis(op: ClusteringAnalysisOperation)]
+[if (op.type = ClusteringOperation::kMeans)]
+	# Kmeans
+	[op.ID/] <- kmeans(source, [op.k/])
+	plot(source, col = [op.ID/]$cluster)
+	source$[op.outputAttribute.name/] <- [op.ID/]$cluster
+[elseif]
+	# Hierarchical
+	[op.ID/] <- hclust(dist([op.inputAttributes.name/]), [op.k/])
+	source$[op.outputAttribute.name/] <- [op.ID/]$order
+	plot([op.ID/])
+[/if]
+[/template]
+
+
+[template private doPredictiveAnalysis(op: PredictiveAnalysisOperation)]
+[if (op.type = PredictiveOperation::SimpleRegression)]
+	# Simple regression
+	[op.ID/] <- lm([op.inputAttributes.name/]~[op.inputAttributes.next.name/], data = source)
+	summary([op.ID/])
+[elseif (op.type = PredictiveOperation::MultipleLinRegr)]
+	# Multiple linear regression
+	[let formula : String = '']
+		[let index : Integer = 1]
+			[for (attr : Attribute | op.inputAttributes)]	
+				[if (index = 1)]
+					[formula = attr.name.concat('~')/]
+				[elseif (index = 2)]
+					[formula = formula.concat(attr.name)/]
+				[elseif]
+					[formula = formula.concat('+').concat(attr.name)/]
+				[/if]			
+				[index = index + 1 /]		
+			[/for]
+		[/let]
+		[op.ID/] <- lm([formula/], data = source)
+		summary([op.ID/])
+	[/let]
+[elseif]
+	# Random forests
+	[op.ID/] <- randomForest([op.inputAttributes.name/], data = source, importante = TRUE, proximity = TRUE)
+	print([op.ID/])
+[/if]
+[/template]
+
+
+[template private prepareChart(chart: Chart)]
+[drawChart(chart.type, chart.axes)/]
+[/template]
+
+
+[template private drawChart(type: ChartType, attributes: OrderedSet(Attribute))]
+[let dataframe : String = '']
+	[for (attr: Attribute | attributes)]
+		[dataframe = dataframe.concat(attr.name).concat(', ')/]
+	[/for]
+	data2plot <- data.frame([dataframe/] row.names = FALSE)
+	
+	[if (type = ChartType::Area)]
+	[elseif (type = ChartType::Bar)]
+		barplot(data2plot, horizontal = TRUE)
+	[elseif (type = ChartType::BoxPlot)]
+		boxplot(data2plot)
+	[elseif (type = ChartType::Column)]
+		barplot(data2plot)
+	[elseif (type = ChartType::Histogram)]
+		hist([attributes.name/]
+	[elseif (type = ChartType::Line)]
+		plot(data2plot)
+		lines(data2plot['['/],2[']'/])
+	[elseif (type = ChartType::Pie)]
+	[elseif (type = ChartType::Radar)]
+	[elseif (type = ChartType::Scatter)]
+		plot(data2Plot)
+	[elseif (type = ChartType::Surface)]
+	[/if]
+[/let]
+[/template]
+
+[template private exportFiles(aTask: Sequence(ExportTask))]
+[for (exp : ExportOperation | aTask.exportOperations)]
+
+[/for]
+[/template]

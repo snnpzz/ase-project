@@ -1,4 +1,3 @@
-
 context Pipeline {
 
 	constraint uniqueTasks {
@@ -8,28 +7,28 @@ context Pipeline {
 			self.tasks -> select(t|t.isTypeOf(AnalysisTask)) -> size() <= 1 and
 			self.tasks -> select(t|t.isTypeOf(VisualizationTask)) -> size() <= 1 and
 			self.tasks -> select(t|t.isTypeOf(ExportTask)) -> size() <= 1
-		message: 'There can be at most 1 task per type.'
+		message: 'There can be at most 1 task per type'
 	}
 	
 	constraint isCollectionTaskPresent {
 		check: self.tasks -> select(t | t.isTypeOf(CollectionTask)) -> size() > 0
-		message: 'There must be a Collection Task.'
+		message: 'There must be a collection task'
 	}
 	
 	constraint isAnalysisTaskPresent {
 		check: self.tasks -> select(t | t.isTypeOf(AnalysisTask)) -> size() > 0
-		message: 'There must be an Analysis Task.'
+		message: 'There must be an analysis task'
 	}
 	
 	constraint isExportTaskPresent {
 		check: self.tasks -> select(t | t.isTypeOf(ExportTask)) -> size() > 0
-		message: 'There must be an Export Task.'
+		message: 'There must be an export task'
 	}
 	
 	constraint uniqueOutgoingDataFlow {
 		check: self.tasks -> reject(t | t.isTypeOf(CollectionTask) or t.isTypeOf(ExportTask)) ->
 			forAll(t | t.outgoing -> size() <= 1)
-		message: "All tasks, except Collection Task and Export Task, must have a unique outgoing data flow."
+		message: "All tasks, except collectiona task and export task, must have a unique outgoing data flow"
 	}
 	
 	constraint isOutgoingDataFlowPresent {
@@ -88,7 +87,7 @@ context Pipeline {
 		message: "The number of integration operation must be the number of sources - 1"
 	}
 	
-	constraint SourceImportedOnce {
+	constraint sourceImportedOnce {
 		check: self.sources -> forAll(s | (self.tasks -> select(t | t.isTypeOf(CollectionTask)).importOperations -> forAll(i | i.read == s)) -> size() == 1)
 		message: "Imports must be linked to different input sources"
  	}
@@ -118,9 +117,10 @@ context Pipeline {
 
 
 context CollectionTask {
+
 	constraint initialTask {
 		check: self.incoming -> size() == 0
-		message: "Collection Task can't have an incoming data flow."
+		message: "Collection task can't have an incoming data flow"
 	}
 	
 	constraint nextTypeCollection {
@@ -149,6 +149,12 @@ context CollectionTask {
 			self.outgoing.schema -> forAll(s2 | self.importOperations -> select(i | i.use == s2) -> size() > 0)
 		message: "Links to schema must be paired wrt import and outgoing data flow"
 	}
+	
+	
+	constraint uniqueImportOperationIDs {
+		check: self.importOperations -> forAll (importOperationA | self.importOperations -> select (importOperationB | importOperationB.ID = importOperationA.ID) -> size() = 1) 
+		message: 'There can\'t be two import operations with the same ID'
+	}
 }
 
 
@@ -169,6 +175,12 @@ context IntegrationTask {
 		check: self.integrationOperations -> forAll(op | op.attributes -> size() >= 2)
 		message: "There must be 2 attributes for each integration operation"
 	}
+	
+	constraint uniqueIntegrationOperationIDs {
+		check: self.integrationOperations -> forAll (integrationOperationA | self.integrationOperations -> select (integrationOperationB | integrationOperationB.ID = integrationOperationA.ID) -> size() = 1) 
+		message: 'There can\'t be two import operations with the same ID'
+	}
+	
 }
 
 
@@ -252,7 +264,7 @@ context VisualizationTask {
 	
 	constraint sameIncomingAndOutgoingSchema {
 		check: self.incoming.schema.includesAll(self.outgoing.schema)
-		message: "The incoming and the outgoing data flow must have the same schema."
+		message: "The incoming and the outgoing data flow must have the same schema"
 	}
 	
 }
@@ -263,6 +275,11 @@ context ExportTask {
 	constraint finalTask {
 		check: self.outgoing -> size() == 0
 		message: "Export task can't have an outgoing data flow"
+	}
+	
+	constraint uniqueExportOperationIDs {
+		check: self.exportOperations -> forAll (exportOperationA | self.exportOperations -> select (exportOperationB | exportOperationB.ID = exportOperationA.ID) -> size() = 1) 
+		message: 'There can\'t be two export operations with the same ID'
 	}
 	
 }
@@ -300,7 +317,7 @@ context IntegrationOperation {
 
 	constraint differentSchema {
 		check: self.inputAttributes.eContainer() <> self.outputAttribute.eContainer()
-		message: 'The output attribut must belong to a schea different from the one of the input attributes.'
+		message: 'The output attribut must belong to a schema different from the one of the input attributes'
 	}
 
 }

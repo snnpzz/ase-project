@@ -60,7 +60,7 @@ public interface ExportOperation extends EObject {
 	 * @return the value of the '<em>ID</em>' attribute.
 	 * @see #setID(String)
 	 * @see pipeline.PipelinePackage#getExportOperation_ID()
-	 * @model id="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getID();

@@ -90,7 +90,7 @@ public interface InternalDataFlow extends EObject {
 	 * @return the value of the '<em>ID</em>' attribute.
 	 * @see #setID(String)
 	 * @see pipeline.PipelinePackage#getInternalDataFlow_ID()
-	 * @model id="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getID();

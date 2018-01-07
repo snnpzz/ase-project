@@ -52,7 +52,7 @@ public interface Schema extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see pipeline.PipelinePackage#getSchema_Name()
-	 * @model id="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();

@@ -5,7 +5,7 @@ package pipeline;
 class Pipeline {
   val DataFlow[+] dataFlows;
   val Task[+] tasks;
-  id attr String ID;
+  attr String[1] ID;
   val InternalDataFlow[*] internalDataFlows;
   val Source[+] sources;
   val File[*] files;
@@ -15,7 +15,7 @@ class Pipeline {
 
 @gmf.node(label="ID", figure="rounded")
 abstract class Task {
-  id attr String ID;
+  attr String[1] ID;
   ref DataFlow[*]#target incoming;
   ref DataFlow[*]#source outgoing;
 }
@@ -27,14 +27,14 @@ class DataFlow {
 
   @gmf.link(width="1", target.decoration="arrow", tool.name="DFSchema", style="dot")
   ref Schema[1] schema;
-  id attr String ID;
+  attr String[1] ID;
   attr Format format;
 }
 
 abstract class Operation {
   ref InternalDataFlow#target incoming;
   ref InternalDataFlow#source outgoing;
-  attr String ID;
+  id attr String[1] ID;
   ref SimpleAttribute[+] inputAttributes;
 }
 
@@ -42,7 +42,7 @@ abstract class Operation {
 class InternalDataFlow {
   ref Operation#outgoing source;
   ref Operation#incoming target;
-  id attr String ID;
+  attr String[1] ID;
 }
 
 @gmf.node(label="name", label.placement="none", figure="rounded")
@@ -50,12 +50,12 @@ class Schema {
 
   @gmf.compartment(layout="list")
   val Attribute[+] attributes;
-  id attr String name;
+  attr String[1] name;
 }
 
 @gmf.node(label="name")
 abstract class Attribute {
-  id attr String name;
+  attr String[1] name;
   ref Attribute#previous next;
   ref Attribute#next previous;
 }
@@ -98,7 +98,7 @@ class ExportTask extends Task {
 
 @gmf.node(label="ID", label.text="Import", figure="ellipse")
 class ImportOperation {
-  id attr String ID;
+  attr String[1] ID;
 
   @gmf.link(width="2", target.decoration="square", style="dash")
   ref Source[1] read;
@@ -109,7 +109,7 @@ class ImportOperation {
 
 @gmf.node(label="ID", label.text="Export", figure="ellipse")
 class ExportOperation {
-  id attr String ID;
+  attr String[1] ID;
 
   @gmf.link(width="2", target.decoration="filledsquare", style="dash")
   ref File[1] write;
@@ -256,11 +256,11 @@ enum Type {
 
 class VisualizationOperation {
   ref Chart[1] chart;
-  id attr String ID;
+  attr String[1] ID;
 }
 
 class IntegrationOperation {
-  attr String ID;
+  attr String[1] ID;
   ref Attribute[+] inputAttributes;
   ref Attribute[1] outputAttribute;
 }

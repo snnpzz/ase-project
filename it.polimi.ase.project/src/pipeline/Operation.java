@@ -93,7 +93,7 @@ public interface Operation extends EObject {
 	 * @return the value of the '<em>ID</em>' attribute.
 	 * @see #setID(String)
 	 * @see pipeline.PipelinePackage#getOperation_ID()
-	 * @model
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getID();

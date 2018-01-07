@@ -59,7 +59,7 @@ public interface VisualizationOperation extends EObject {
 	 * @return the value of the '<em>ID</em>' attribute.
 	 * @see #setID(String)
 	 * @see pipeline.PipelinePackage#getVisualizationOperation_ID()
-	 * @model id="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getID();

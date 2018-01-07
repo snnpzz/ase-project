@@ -253,7 +253,7 @@ context AnalysisTask{
 	}
 	
 	constraint uniqueOutputAttributeName {
- 		check: self.analysisOperation.outputAttributes -> forAll(attr1 | self.analysisOperation.outputAttributes ->
+ 		check: self.analysisOperations.outputAttribute -> forAll(attr1 | self.analysisOperations.outputAttribute ->
  			forAll(attr2 | attr1 <> attr2 implies attr1.name <> attr2.name))
  		message: "Output attributes of analysis operation must have different names"
  	}

@@ -43,25 +43,25 @@ public class AnalysisOperationItemProvider extends OperationItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOutputAttributesPropertyDescriptor(object);
+			addOutputAttributePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Output Attributes feature.
+	 * This adds a property descriptor for the Output Attribute feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOutputAttributesPropertyDescriptor(Object object) {
+	protected void addOutputAttributePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AnalysisOperation_outputAttributes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AnalysisOperation_outputAttributes_feature", "_UI_AnalysisOperation_type"),
-				 PipelinePackage.Literals.ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES,
+				 getString("_UI_AnalysisOperation_outputAttribute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AnalysisOperation_outputAttribute_feature", "_UI_AnalysisOperation_type"),
+				 PipelinePackage.Literals.ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE,
 				 true,
 				 false,
 				 true,

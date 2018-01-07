@@ -159,7 +159,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="pipeline.ecore#//CleaningOperation"/>
     <genClasses image="false" ecoreClass="pipeline.ecore#//AnalysisOperation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//AnalysisOperation/outputAttributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//AnalysisOperation/outputAttribute"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//DescriptiveAnalysisOperation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//DescriptiveAnalysisOperation/type"/>

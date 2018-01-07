@@ -331,7 +331,7 @@ context ClassificationAnalysisOperation {
 		message: "Classification analysis: logistic regression must be applied to boolean values"
 	}
 	
-	-- == LogisticRegression doesn't work :('
+	-- == LogisticRegression doesn't work :(
 	constraint Log_LDA_QDA_SVM_noOutput {
 		check: (self.type == LogisticRegression or self.type == LDA or self.type == QDA or 
 			self.type == SVM) implies (self.outputAttributes -> size() == 0)

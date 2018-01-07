@@ -151,7 +151,7 @@ abstract class CleaningOperation extends Operation {
 }
 
 abstract class AnalysisOperation extends Operation {
-  ref SimpleAttribute[+] outputAttributes;
+  ref SimpleAttribute outputAttribute;
 }
 
 class DescriptiveAnalysisOperation extends AnalysisOperation {

@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pipeline.AnalysisOperation#getOutputAttributes <em>Output Attributes</em>}</li>
+ *   <li>{@link pipeline.AnalysisOperation#getOutputAttribute <em>Output Attribute</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getAnalysisOperation()
@@ -24,18 +24,28 @@ import org.eclipse.emf.common.util.EList;
 public interface AnalysisOperation extends Operation {
 
 	/**
-	 * Returns the value of the '<em><b>Output Attributes</b></em>' reference list.
-	 * The list contents are of type {@link pipeline.SimpleAttribute}.
+	 * Returns the value of the '<em><b>Output Attribute</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Output Attributes</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Output Attribute</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Output Attributes</em>' reference list.
-	 * @see pipeline.PipelinePackage#getAnalysisOperation_OutputAttributes()
-	 * @model required="true"
+	 * @return the value of the '<em>Output Attribute</em>' reference.
+	 * @see #setOutputAttribute(SimpleAttribute)
+	 * @see pipeline.PipelinePackage#getAnalysisOperation_OutputAttribute()
+	 * @model
 	 * @generated
 	 */
-	EList<SimpleAttribute> getOutputAttributes();
+	SimpleAttribute getOutputAttribute();
+
+	/**
+	 * Sets the value of the '{@link pipeline.AnalysisOperation#getOutputAttribute <em>Output Attribute</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Output Attribute</em>' reference.
+	 * @see #getOutputAttribute()
+	 * @generated
+	 */
+	void setOutputAttribute(SimpleAttribute value);
 } // AnalysisOperation

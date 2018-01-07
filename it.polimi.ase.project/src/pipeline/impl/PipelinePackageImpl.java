@@ -1073,7 +1073,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAnalysisOperation_OutputAttributes() {
+	public EReference getAnalysisOperation_OutputAttribute() {
 		return (EReference)analysisOperationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1479,7 +1479,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		cleaningOperationEClass = createEClass(CLEANING_OPERATION);
 
 		analysisOperationEClass = createEClass(ANALYSIS_OPERATION);
-		createEReference(analysisOperationEClass, ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES);
+		createEReference(analysisOperationEClass, ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE);
 
 		descriptiveAnalysisOperationEClass = createEClass(DESCRIPTIVE_ANALYSIS_OPERATION);
 		createEAttribute(descriptiveAnalysisOperationEClass, DESCRIPTIVE_ANALYSIS_OPERATION__TYPE);
@@ -1665,7 +1665,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEClass(cleaningOperationEClass, CleaningOperation.class, "CleaningOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(analysisOperationEClass, AnalysisOperation.class, "AnalysisOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnalysisOperation_OutputAttributes(), this.getSimpleAttribute(), null, "outputAttributes", null, 1, -1, AnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnalysisOperation_OutputAttribute(), this.getSimpleAttribute(), null, "outputAttribute", null, 0, 1, AnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(descriptiveAnalysisOperationEClass, DescriptiveAnalysisOperation.class, "DescriptiveAnalysisOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDescriptiveAnalysisOperation_Type(), this.getDescriptiveOperation(), "type", null, 0, 1, DescriptiveAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

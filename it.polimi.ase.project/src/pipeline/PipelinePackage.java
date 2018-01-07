@@ -1203,13 +1203,13 @@ public interface PipelinePackage extends EPackage {
 	int ANALYSIS_OPERATION__INPUT_ATTRIBUTES = OPERATION__INPUT_ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Output Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Output Attribute</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES = OPERATION_FEATURE_COUNT + 0;
+	int ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE = OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Analysis Operation</em>' class.
@@ -1267,13 +1267,13 @@ public interface PipelinePackage extends EPackage {
 	int DESCRIPTIVE_ANALYSIS_OPERATION__INPUT_ATTRIBUTES = ANALYSIS_OPERATION__INPUT_ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Output Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Output Attribute</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTIVE_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES;
+	int DESCRIPTIVE_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1340,13 +1340,13 @@ public interface PipelinePackage extends EPackage {
 	int CLASSIFICATION_ANALYSIS_OPERATION__INPUT_ATTRIBUTES = ANALYSIS_OPERATION__INPUT_ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Output Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Output Attribute</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFICATION_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES;
+	int CLASSIFICATION_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1413,13 +1413,13 @@ public interface PipelinePackage extends EPackage {
 	int PREDICTIVE_ANALYSIS_OPERATION__INPUT_ATTRIBUTES = ANALYSIS_OPERATION__INPUT_ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Output Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Output Attribute</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PREDICTIVE_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES;
+	int PREDICTIVE_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1486,13 +1486,13 @@ public interface PipelinePackage extends EPackage {
 	int CLUSTERING_ANALYSIS_OPERATION__INPUT_ATTRIBUTES = ANALYSIS_OPERATION__INPUT_ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Output Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>Output Attribute</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTERING_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES;
+	int CLUSTERING_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -2674,15 +2674,15 @@ public interface PipelinePackage extends EPackage {
 	EClass getAnalysisOperation();
 
 	/**
-	 * Returns the meta object for the reference list '{@link pipeline.AnalysisOperation#getOutputAttributes <em>Output Attributes</em>}'.
+	 * Returns the meta object for the reference '{@link pipeline.AnalysisOperation#getOutputAttribute <em>Output Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Output Attributes</em>'.
-	 * @see pipeline.AnalysisOperation#getOutputAttributes()
+	 * @return the meta object for the reference '<em>Output Attribute</em>'.
+	 * @see pipeline.AnalysisOperation#getOutputAttribute()
 	 * @see #getAnalysisOperation()
 	 * @generated
 	 */
-	EReference getAnalysisOperation_OutputAttributes();
+	EReference getAnalysisOperation_OutputAttribute();
 
 	/**
 	 * Returns the meta object for class '{@link pipeline.DescriptiveAnalysisOperation <em>Descriptive Analysis Operation</em>}'.
@@ -3672,12 +3672,12 @@ public interface PipelinePackage extends EPackage {
 		EClass ANALYSIS_OPERATION = eINSTANCE.getAnalysisOperation();
 
 		/**
-		 * The meta object literal for the '<em><b>Output Attributes</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Output Attribute</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES = eINSTANCE.getAnalysisOperation_OutputAttributes();
+		EReference ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE = eINSTANCE.getAnalysisOperation_OutputAttribute();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.DescriptiveAnalysisOperationImpl <em>Descriptive Analysis Operation</em>}' class.

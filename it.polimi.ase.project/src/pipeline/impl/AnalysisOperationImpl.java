@@ -3,9 +3,12 @@
 package pipeline.impl;
 
 import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import pipeline.AnalysisOperation;
 import pipeline.PipelinePackage;
@@ -19,22 +22,21 @@ import pipeline.SimpleAttribute;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pipeline.impl.AnalysisOperationImpl#getOutputAttributes <em>Output Attributes</em>}</li>
+ *   <li>{@link pipeline.impl.AnalysisOperationImpl#getOutputAttribute <em>Output Attribute</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class AnalysisOperationImpl extends OperationImpl implements AnalysisOperation {
 	/**
-	 * The cached value of the '{@link #getOutputAttributes() <em>Output Attributes</em>}' reference list.
+	 * The cached value of the '{@link #getOutputAttribute() <em>Output Attribute</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOutputAttributes()
+	 * @see #getOutputAttribute()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SimpleAttribute> outputAttributes;
-
+	protected SimpleAttribute outputAttribute;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -59,11 +61,37 @@ public abstract class AnalysisOperationImpl extends OperationImpl implements Ana
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SimpleAttribute> getOutputAttributes() {
-		if (outputAttributes == null) {
-			outputAttributes = new EObjectResolvingEList<SimpleAttribute>(SimpleAttribute.class, this, PipelinePackage.ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES);
+	public SimpleAttribute getOutputAttribute() {
+		if (outputAttribute != null && outputAttribute.eIsProxy()) {
+			InternalEObject oldOutputAttribute = (InternalEObject)outputAttribute;
+			outputAttribute = (SimpleAttribute)eResolveProxy(oldOutputAttribute);
+			if (outputAttribute != oldOutputAttribute) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PipelinePackage.ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE, oldOutputAttribute, outputAttribute));
+			}
 		}
-		return outputAttributes;
+		return outputAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SimpleAttribute basicGetOutputAttribute() {
+		return outputAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOutputAttribute(SimpleAttribute newOutputAttribute) {
+		SimpleAttribute oldOutputAttribute = outputAttribute;
+		outputAttribute = newOutputAttribute;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE, oldOutputAttribute, outputAttribute));
 	}
 
 	/**
@@ -74,8 +102,9 @@ public abstract class AnalysisOperationImpl extends OperationImpl implements Ana
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PipelinePackage.ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES:
-				return getOutputAttributes();
+			case PipelinePackage.ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE:
+				if (resolve) return getOutputAttribute();
+				return basicGetOutputAttribute();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -89,9 +118,8 @@ public abstract class AnalysisOperationImpl extends OperationImpl implements Ana
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PipelinePackage.ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES:
-				getOutputAttributes().clear();
-				getOutputAttributes().addAll((Collection<? extends SimpleAttribute>)newValue);
+			case PipelinePackage.ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE:
+				setOutputAttribute((SimpleAttribute)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -105,8 +133,8 @@ public abstract class AnalysisOperationImpl extends OperationImpl implements Ana
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES:
-				getOutputAttributes().clear();
+			case PipelinePackage.ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE:
+				setOutputAttribute((SimpleAttribute)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -120,8 +148,8 @@ public abstract class AnalysisOperationImpl extends OperationImpl implements Ana
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PipelinePackage.ANALYSIS_OPERATION__OUTPUT_ATTRIBUTES:
-				return outputAttributes != null && !outputAttributes.isEmpty();
+			case PipelinePackage.ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE:
+				return outputAttribute != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -45,11 +45,45 @@
 					</ul>
 				</nav>
 				<main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
-					<section id="#pipeline">
-					<h1>Pipeline [aPipeline.ID/]</h1>
-					<b>ID:</b> [aPipeline.ID/]
-					</section>
-					<section id="tasks">
+					<div id="#pipeline">
+						<h1>Pipeline [aPipeline.ID/]</h1>
+						<b>ID:</b> [aPipeline.ID/]
+						<section class="row text-center placeholders">
+							<div class="col-6 col-sm-3 placeholder">
+								<div style="position:relative;text-align:center;color:white;">
+									<img width="200" height="200" class="img-fluid rounded-circle" alt="Circle" src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" style="padding-top:1.5rem;padding-bottom:1.5rem;"/>
+									<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.5rem;">[aPipeline.sources -> size()/]</div>			
+								</div>
+								<h4>Source(s)</h4>
+								<div class="text-muted"></div>
+							</div>
+							<div class="col-6 col-sm-3 placeholder">
+								<div style="position:relative;text-align:center;color:white;">	
+									<img width="200" height="200" class="img-fluid rounded-circle" alt="Circle" src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" style="padding-top:1.5rem;padding-bottom:1.5rem;"/>
+									<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.5rem;">[aPipeline.tasks -> size()/]</div>	
+								</div>								
+								<h4>Task(s)</h4>
+								<div class="text-muted"></div>
+							</div>
+							<div class="col-6 col-sm-3 placeholder">
+								<div style="position:relative;text-align:center;color:white;">
+									<img width="200" height="200" class="img-fluid rounded-circle" alt="Circle" src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" style="padding-top:1.5rem;padding-bottom:1.5rem;"/>
+									<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.5rem;">[aPipeline.charts -> size()/]</div>	
+								</div>
+								<h4>Chart(s)</h4>
+								<div class="text-muted"></div>
+							</div>
+							<div class="col-6 col-sm-3 placeholder">
+								<div style="position:relative;text-align:center;color:white;">
+									<img width="200" height="200" class="img-fluid rounded-circle" alt="Circle" src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" style="padding-top:1.5rem;padding-bottom:1.5rem;"/>
+									<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.5rem;">[aPipeline.files -> size()/]</div>	
+								</div>
+								<h4>File(s)</h4>
+								<div class="text-muted"></div>
+							</div>
+						</section>
+					</div>
+					<div id="tasks">
 						<h2>Tasks</h2>
 						<div class="table-responsive">
 							<table class="table table-striped">
@@ -65,8 +99,8 @@
 							</table>
 						</div>
 						[aPipeline.tasks -> select(aTask | aTask.oclIsTypeOf(CollectionTask)) -> first().generateTaskDiv()/]
-					</section>
-					<section id="operations">
+					</div>
+					<div id="operations">
 						<h2>Operations</h2>
 						[for (anImportOperation : ImportOperation | aPipeline.tasks -> select(aTask : Task | aTask.oclIsTypeOf(CollectionTask)) ->first().oclAsType(CollectionTask).importOperations)]
 						[anImportOperation.generateImportOperationDiv()/]	
@@ -82,7 +116,7 @@
 						[for (anExportOperation : ExportOperation | aPipeline.tasks -> select(aTask : Task | aTask.oclIsTypeOf(ExportTask)) ->first().oclAsType(ExportTask).exportOperations)]
 						[anExportOperation.generateExportOperationDiv()/]	
 						[/for]
-					</section>			
+					</div>			
 				</main>
 			</div>
 		</div>
@@ -100,7 +134,7 @@
 	<h3>Analysis Operation [anAnalysisOperation.ID/]</h3>
 	<b>ID:</b> [anAnalysisOperation.ID/]
 	<br>
-	<b>Type:</b> [if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))]Classification Analysis Operation[elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))]Clustering Analysis Operation[elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))]Descriptive Analysis Operation[elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))]Predictive Analysis Operation[/if]
+	<b>Type:</b> [if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))]Classification[elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))]Clustering[elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))]Descriptive[elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))]Predictive[/if] Analysis Operation
 	<br>
 	<b>Name:</b> [if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))][anAnalysisOperation.oclAsType(ClassificationAnalysisOperation).type/][elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))][anAnalysisOperation.oclAsType(ClusteringAnalysisOperation).type/][elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))][anAnalysisOperation.oclAsType(DescriptiveAnalysisOperation).type/][elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))][anAnalysisOperation.oclAsType(PredictiveAnalysisOperation).type/][/if]
 	<br>
@@ -201,11 +235,12 @@
 [/if]
 [/template]
 
-[template private generateExportOperationDiv(aExportOperation : ExportOperation)]
-<div id="export-operation-[aExportOperation.ID/]">
-	<h3>Export Operation [aExportOperation.ID/]</h3>
-	<b>ID:</b> [aExportOperation.ID/]
+[template private generateExportOperationDiv(anExportOperation : ExportOperation)]
+<div id="export-operation-[anExportOperation.ID/]">
+	<h3>Export Operation [anExportOperation.ID/]</h3>
+	<b>ID:</b> [anExportOperation.ID/]
 	<br>
+	[if (anExportOperation.write -> size() > 0)]
 	<span style="font-size:1.5rem;">File</span>
 	<div class="table-responsive">
 		<table class="table table-striped">
@@ -216,13 +251,14 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td>[aExportOperation.write.name/]</td>
-					<td>[aExportOperation.write.format/]</td>
-					<td>[aExportOperation.write.path/]</td>
+					<td>[anExportOperation.write.name/]</td>
+					<td>[anExportOperation.write.format/]</td>
+					<td>[anExportOperation.write.path/]</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+	[/if]
 </div>
 [/template]
 
@@ -231,8 +267,11 @@
 	<h3>Import Operation [anImportOperation.ID/]</h3>
 	<b>ID:</b> [anImportOperation.ID/]
 	<br>
+	[if (anImportOperation.use -> size() > 0)]
 	<span style="font-size:1.5rem;">Schema</span>
 	[anImportOperation.use.generateSchemaDiv()/]
+	[/if]
+	[if (anImportOperation.read -> size() > 0)]
 	<span style="font-size:1.5rem;">Source</span>
 	<div class="table-responsive">
 		<table class="table table-striped">
@@ -258,6 +297,7 @@
 			</tbody>
 		</table>
 	</div>
+	[/if]
 </div>
 [/template]
 
@@ -266,6 +306,7 @@
 	<h3>Operation [anIntegrationOperation.ID/]</h3>
 	<b>ID:</b> [anIntegrationOperation.ID/]
 	<br>
+	[if (anIntegrationOperation.inputAttributes -> size() > 0)]
 	<span style="font-size:1.5rem;">Input Attibutes</span>
 	<br>
 	<div class="table-responsive">
@@ -282,6 +323,8 @@
 			</tbody>
 		</table>
 	</div>
+	[/if]
+	[if (anIntegrationOperation.outputAttribute -> size() > 0)]
 	<span style="font-size:1.5rem;">Output Attibute</span>
 	<br>
 	<div class="table-responsive">
@@ -296,6 +339,7 @@
 			</tbody>
 		</table>
 	</div>
+	[/if]
 </div>
 [/template]
 
@@ -304,6 +348,7 @@
 	<h3>Viualization Operation [aVisualizationOperation.ID/]</h3>
 	<b>ID:</b> [aVisualizationOperation.ID/]
 	<br>
+	[if (aVisualizationOperation.chart -> size() > 0)]
 	<span style="font-size:1.5rem;">Chart</span>
 	<br>
 	<b>Title:</b> [aVisualizationOperation.chart.title/]
@@ -312,6 +357,7 @@
 	<br>
 	<b>Size:</b> [aVisualizationOperation.chart.size/]
 	<br>
+	[if (aVisualizationOperation.chart.axes -> size() > 0)]
 	<span style="font-size:1.5rem;">Attributes</span>
 	<br>
 	<div class="table-responsive">
@@ -330,6 +376,8 @@
 			</tbody>
 		</table>
 	</div>
+	[/if]
+	[/if]
 </div>
 [/template]
 
@@ -339,9 +387,11 @@
 	<br>
 	<b>Format:</b> [aDataFlow.format/]
 	<br>
+	[if (aDataFlow.schema -> size() > 0)]
 	<span style="font-size:1.5rem;">Schema</span>
 	<br>
 	[aDataFlow.schema.generateSchemaDiv()/]
+	[/if]
 </div>
 [/template]
 
@@ -352,8 +402,11 @@
 	<br>
 	<b>Type:</b> Data Analysis Task
 	<br>
+	[if (anAnalysisTask.incoming -> size() > 0)]
 	<span style="font-size:1.5rem;">Input Data Flow</span>
 	[generateDataFlowDiv(anAnalysisTask.incoming -> first())/]
+	[/if]
+	[if (anAnalysisTask.analysisOperations -> size() > 0)]
 	<span style="font-size:1.5rem;">Analysis Operation(s)</span>
 	<div class="table-responsive">
 		<table class="table table-striped">
@@ -369,8 +422,11 @@
 			</tbody>
 		</table>
 	</div>
+	[/if]
+	[if (anAnalysisTask.outgoing -> size() > 0)]
 	<span style="font-size:1.5rem;">Output Data Flow</span>
 	[generateDataFlowDiv(anAnalysisTask.outgoing -> first())/]
+	[/if]
 </div>
 [/template]
 
@@ -381,8 +437,11 @@
 	<br>
 	<b>Type:</b> Data Cleaning Task
 	<br>
+	[if (aCleaningTask.incoming -> size() > 0)]
 	<span style="font-size:1.5rem;">Input Data Flow</span>
 	[generateDataFlowDiv(aCleaningTask.incoming -> first())/]
+	[/if]
+	[if (aCleaningTask.cleaningOperations -> size() > 0)]
 	<span style="font-size:1.5rem;">Cleaning Operation(s)</span>
 	<div class="table-responsive">
 		<table class="table table-striped">
@@ -398,8 +457,11 @@
 			</tbody>
 		</table>
 	</div>
+	[/if]
+	[if (aCleaningTask.outgoing -> size() > 0)]
 	<span style="font-size:1.5rem;">Output Data Flow</span>
 	[generateDataFlowDiv(aCleaningTask.outgoing -> first())/]
+	[/if]
 </div>
 [/template]
 
@@ -410,6 +472,7 @@
 	<br>
 	<b>Type:</b> Data Collection Task
 	<br>
+	[if (aCollectionTask.importOperations.read -> size () > 0)]
 	<span style="font-size:1.5rem;">Input Source(s)</span>
 	<div class="table-responsive">
 		<table class="table table-striped">
@@ -437,6 +500,8 @@
 			</tbody>
 		</table>
 	</div>
+	[/if]
+	[if (aCollectionTask.importOperations -> size() > 0)]
 	<span style="font-size:1.5rem;">Import Operation(s)</span>
 	<div class="table-responsive">
 		<table class="table">
@@ -449,6 +514,8 @@
 			</tbody>
 		</table>
 	</div>
+	[/if]
+	[if (aCollectionTask.outgoing -> size() > 0)]
 	<span style="font-size:1.5rem;">Output Data Flow(s)</span>
 	<div class="table-responsive">
 		<table class="table">
@@ -461,6 +528,7 @@
 			<tbody>
 		</table>
 	</div>
+	[/if]
 </div>
 [/template]
 
@@ -471,8 +539,11 @@
 	<br>
 	<b>Type:</b> Data Export Task
 	<br>
+	[if (anExportTask.incoming -> size() > 0)]
 	<span style="font-size:1.5rem;">Input Data Flow</span>
 	[generateDataFlowDiv(anExportTask.incoming -> first())/]
+	[/if]
+	[if (anExportTask.exportOperations -> size() > 0)]
 	<span style="font-size:1.5rem;">Export Operation(s)</span>
 	<div class="table-responsive">
 		<table class="table">
@@ -489,6 +560,8 @@
 			</tbody>
 		</table>
 	</div>
+	[/if]
+	[if (anExportTask.exportOperations.write -> size() > 0)]
 	<span style="font-size:1.5rem;">Output File(s)</span>
 	<div class="table-responsive">
 		<table class="table table-striped">
@@ -508,6 +581,7 @@
 			</tbody>
 		</table>
 	</div>
+	[/if]
 </div>
 [/template]
 
@@ -516,8 +590,9 @@
 	<h3>Task [anIntegrationTask.ID /]</h3>
 	<b>ID:</b> [anIntegrationTask.ID /]
 	<br>
-	<b>Type:</b> Data Integration
+	<b>Type:</b> Data Integration Task
 	<br>
+	[if (anIntegrationTask.incoming -> size() > 0)]
 	<span style="font-size:1.5rem;">Input Data Flow(s)</span>
 	<div class="table-responsive">
 		<table class="table">
@@ -530,6 +605,8 @@
 			<tbody>
 		</table>
 	</div>
+	[/if]
+	[if (anIntegrationTask.integrationOperations -> size() > 0)]
 	<span style="font-size:1.5rem;">Integration Operation(s)</span>
 	<div class="table-responsive">
 		<table class="table">
@@ -546,10 +623,13 @@
 			<tbody>
 		</table>
 	</div>
+	[/if]
+	[if (anIntegrationTask.outgoing -> size() > 0)]
 	<span style="font-size:1.5rem;">Output Data Flow</span>
 	[for (aDataFlow : DataFlow | anIntegrationTask.oclAsType(Task).outgoing)]
 	[generateDataFlowDiv(aDataFlow)/]
 	[/for]
+	[/if]
 </div>
 [/template]
 
@@ -560,8 +640,11 @@
 	<br>
 	<b>Type:</b> Data Visualization Task
 	<br>
+	[if (aVisulizationTask.incoming -> size() > 0)]
 	<span style="font-size:1.5rem;">Input Data Flow</span>
 	[generateDataFlowDiv(aVisulizationTask.incoming -> first())/]
+	[/if]
+	[if (aVisulizationTask.visualizationOperations -> size() > 0)]
 	<span style="font-size:1.5rem;">Visualization Operation(s)</span>
 	<div class="table-responsive">
 		<table class="table">
@@ -578,6 +661,8 @@
 			</tbody>
 		</table>
 	</div>
+	[/if]
+	[if (aVisulizationTask.visualizationOperations.chart -> size() > 0)]
 	<span style="font-size:1.5rem;">Charts</span>
 	<div class="table-responsive">
 		<table class="table">
@@ -596,8 +681,11 @@
 			</tbody>
 		</table>
 	</div>
+	[/if]
+	[if (aVisulizationTask.outgoing -> size() > 0)]
 	<span style="font-size:1.5rem;">Output Data Flow</span>
 	[generateDataFlowDiv(aVisulizationTask.outgoing -> first())/]
+	[/if]
 </div>
 [/template]
 
@@ -624,6 +712,7 @@
 <div>
 	<b>Name:</b> [aSchema.name/]
 	<br>
+	[if (aSchema.attributes -> size() > 0)]
 	<span style="font-size:1.25rem;">Attribute(s)</span>
 	<br>
 	<div class="table-responsive">
@@ -639,6 +728,7 @@
 			</tbody>
 		</table>
 	</div>
+	[/if]
 </div>
 [/template]
 
@@ -657,7 +747,9 @@
 	<td>Complex Attribute</td>
 	<td>[if not(aComplexAttribute.eContainer(Attribute).oclIsUndefined())][aComplexAttribute.eContainer(Attribute).name/][/if]</td>
 </tr>
+[if not(aComplexAttribute.attributes -> select(anAttribute : Attribute | anAttribute.previous -> size() = 0) -> first().oclIsUndefined())]
 [generateAttributeTableRow(1, aComplexAttribute.attributes -> select(anAttribute : Attribute | anAttribute.previous -> size() = 0) -> first())/]
+[/if]
 [/template]
 
 [template private generateSimpleAttributeTableRow(anInteger : Integer, aSimpleAttribute : SimpleAttribute)]
@@ -684,18 +776,8 @@
 <tr>
 	<td>[aInteger/]</td>
 	<td>[anAnalysisOperation.ID/]</td>
-	<td>[if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))]Classification Analysis Operation[elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))]Clustering Analysis Operation[elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))]Descriptive Analysis Operation[elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))]Predictive Analysis Operation[/if]</td>
-	<td>
-		[if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))]
-		[anAnalysisOperation.oclAsType(ClassificationAnalysisOperation).type/]
-		[elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))]
-		[anAnalysisOperation.oclAsType(ClusteringAnalysisOperation).type/]
-		[elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))]
-		[anAnalysisOperation.oclAsType(DescriptiveAnalysisOperation).type/]
-		[elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))]
-		[anAnalysisOperation.oclAsType(PredictiveAnalysisOperation).type/]
-		[/if]
-	</td>
+	<td>[if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))]Classification[elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))]Clustering[elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))]Descriptive[elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))]Predictive[/if] Analysis Operation</td>
+	<td>[if (anAnalysisOperation.oclIsTypeOf(ClassificationAnalysisOperation))][anAnalysisOperation.oclAsType(ClassificationAnalysisOperation).type/][elseif (anAnalysisOperation.oclIsTypeOf(ClusteringAnalysisOperation))][anAnalysisOperation.oclAsType(ClusteringAnalysisOperation).type/][elseif (anAnalysisOperation.oclIsTypeOf(DescriptiveAnalysisOperation))][anAnalysisOperation.oclAsType(DescriptiveAnalysisOperation).type/][elseif (anAnalysisOperation.oclIsTypeOf(PredictiveAnalysisOperation))][anAnalysisOperation.oclAsType(PredictiveAnalysisOperation).type/][/if]</td>
 	<td><a href="#analysis-operation-[anAnalysisOperation.ID/]">+</a></td>
 </tr>
 [if not(anAnalysisOperation.outgoing.target.oclIsUndefined())]
@@ -707,8 +789,7 @@
 <tr>
 	<td>[aInteger/]</td>
 	<td>[aCleaningOperation.ID/]</td>
-	<td>[if (aCleaningOperation.oclIsTypeOf(PredefinedCleaningOperation))]Predefined Cleaning Operation[elseif (aCleaningOperation.oclIsTypeOf(UserDefinedCleaningOperation))]User-Defined Cleaning Operation[/if]
-	</td>
+	<td>[if (aCleaningOperation.oclIsTypeOf(PredefinedCleaningOperation))]Predefined[elseif (aCleaningOperation.oclIsTypeOf(UserDefinedCleaningOperation))]User-Defined[/if] Cleaning Operation</td>
 	<td>[if (aCleaningOperation.oclIsTypeOf(PredefinedCleaningOperation))][aCleaningOperation.oclAsType(PredefinedCleaningOperation).type/][elseif (aCleaningOperation.oclIsTypeOf(UserDefinedCleaningOperation))][aCleaningOperation.oclAsType(UserDefinedCleaningOperation).type/][/if]</td>
 	<td><a href="#cleaning-operation-[aCleaningOperation.ID/]">+</a></td>
 </tr>
@@ -730,21 +811,7 @@
 <tr>
 	<td>[aInteger/]</td>
 	<td>[aTask.ID/]</td>
-	<td>
-		[if (aTask.oclIsTypeOf(CollectionTask))]
-		Data Collection Task
-		[elseif (aTask.oclIsTypeOf(IntegrationTask))]
-		Integration Task
-		[elseif (aTask.oclIsTypeOf(CleaningTask))]
-		Cleaning Task
-		[elseif (aTask.oclIsTypeOf(AnalysisTask))]
-		Analysis Task
-		[elseif (aTask.oclIsTypeOf(VisualizationTask))]
-		Visualization Task
-		[elseif (aTask.oclIsTypeOf(ExportTask))]
-		Export Task
-		[/if]
-	</td>
+	<td>Data [if (aTask.oclIsTypeOf(CollectionTask))]Collection[elseif (aTask.oclIsTypeOf(IntegrationTask))]Integration[elseif (aTask.oclIsTypeOf(CleaningTask))]Cleaning[elseif (aTask.oclIsTypeOf(AnalysisTask))]Analysis[elseif (aTask.oclIsTypeOf(VisualizationTask))]Visualization[elseif (aTask.oclIsTypeOf(ExportTask))]Export[/if] Task</td>
 	<td><a href="#task-[aTask.ID/]">+</a></td>
 </tr>
 [if not(aTask.outgoing -> first().target.oclIsUndefined())]

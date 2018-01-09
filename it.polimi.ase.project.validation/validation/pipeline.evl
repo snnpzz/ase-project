@@ -181,12 +181,12 @@ context IntegrationTask {
 		message: "There can't be two import operations with the same ID"
 	}
 
-	constraint differentInputAndOutputAttributesSchemas {
-		check: self.integrationOperations -> forAll(op | op.outputAttribute -> size() <> 0 implies
-			(self.outgoing.schema.attributes -> exists(attr2 | op.outputAttribute == attr2)) and not
-			(self.incoming.schema.attributes -> exists(attr2 | op.outputAttribute == attr2)) )
-		message: "The output attribute of integration task must belong to a schema different from the one of the input attributes"
-	}
+	-- Same problem checking type
+	-- constraint differentInputAndOutputAttributesSchemas {
+	-- 	check: self.integrationOperations -> forAll(op | op.outputAttribute -> size() > 0 implies
+	--		(self.outgoing.schema.attributes -> collect(a | a.name) -> first -> includes(op.outputAttribute.name)) )
+	--	message: "The output attribute of integration task must belong to a schema different from the one of the input attributes"
+	--}
 	
 }
 
@@ -249,13 +249,16 @@ context AnalysisTask{
 	}
 	
 	constraint outputSchemaIsCompatibleWithInputSchema {
-		check: self.incoming.schema.attributes -> forAll(attr1 | self.outgoing.schema.attributes -> 
-			select(attr2 | attr1.name == attr2.name and attr1.type == attr2.type) -> size() <> 0)
+		check: self.outgoing.schema.attributes -> collect(a | a.name) -> first() -> includesAll(self.incoming.schema.attributes -> collect(a | a.name) -> first())
+			-- Problem checking type   and self.outgoing.schema.attributes -> collect(a | a.type) -> first() -> includesAll(self.incoming.schema.attributes -> collect(a | a.type) -> first())
 		message: "The outgoing data flow schema must contain all the attributes of the incoming data flow schema"
 	}
 	
 	constraint outgoingDataFlowHasRightSchema {
-		check: self.analysisOperations.outputAttribute -> forAll(attr1 | self.outgoing.schema.attributes -> exists(attr2 | attr1.name = attr2.name and attr1.type = attr2.type))
+		check: self.analysisOperations.outputAttribute -> size() > 0 implies
+			self.analysisOperations.outputAttribute -> forAll(attr | 
+			self.outgoing.schema.attributes -> collect(a | a.name) -> first() -> exists(n | n == attr.name) )
+			-- Problem checking type   and self.outgoing.schema.attributes -> collect(a | a.type) -> first() -> exists(t | t == attr.type) )
 		message: "The outgoing dataflow schema must contain all the generated output attributes" 
 	}
 	
@@ -264,10 +267,10 @@ context AnalysisTask{
  			forAll(attr2 | attr1 <> attr2 implies attr1.name <> attr2.name))
  		message: "Output attributes of analysis operation must have different names"
  	}
-	
+
 }
 
-
+	
 context VisualizationTask {
 
 	constraint nextTypeVisualization {
@@ -314,7 +317,6 @@ context Schema {
 			self.attributes -> select(attr | attr.previous == null) -> size() == 1
 		message: "Attributes in the schema must be linked as a chain"
 	}
-	
 }
 
 

@@ -18,7 +18,7 @@
     <cleaningOperations xsi:type="pipeline:PredefinedCleaningOperation" outgoing="//@internalDataFlows.0" ID="removeAllNulls"/>
   </tasks>
   <tasks xsi:type="pipeline:AnalysisTask" ID="AnalysisTask" incoming="//@dataFlows.3" outgoing="//@dataFlows.4">
-    <analysisOperations xsi:type="pipeline:ClusteringAnalysisOperation" ID="kMeansCount" inputAttributes="//@schemas.2/@attributes.2 //@schemas.3/@attributes.1" outputAttribute="//@schemas.4/@attributes.3" k="2"/>
+    <analysisOperations xsi:type="pipeline:ClusteringAnalysisOperation" ID="HierarchCount" inputAttributes="//@schemas.2/@attributes.2 //@schemas.3/@attributes.1" outputAttribute="//@schemas.4/@attributes.3" type="Hierarchical" k="2"/>
   </tasks>
   <tasks xsi:type="pipeline:ExportTask" ID="ExportTask" incoming="//@dataFlows.4">
     <exportOperations ID="exp1" write="//@files.0"/>

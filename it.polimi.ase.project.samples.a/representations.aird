@@ -818,8 +818,8 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']"/>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2D9f6_OYEeeNiq-PXYbYRQ" name="kMeans" width="-1" height="-1">
-          <target xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#kMeansCount"/>
-          <semanticElements xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#kMeansCount"/>
+          <target xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#HierarchCount"/>
+          <semanticElements xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#HierarchCount"/>
           <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_2D9f7POYEeeNiq-PXYbYRQ" showIcon="false" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
             <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='clusteringAnalysisOperationSubNode']/@style"/>
           </ownedStyle>
@@ -2346,9 +2346,9 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']"/>
-        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_GBNFG_OsEeeXN4BnvsfbCw" name="kMeans" outgoingEdges="_tCZnsPO3Eee8_5BpZOOjug _UCkycPPKEee9OIMHf_JPbw _U8w88PVCEeeCquQTupfC1A" width="-1" height="-1">
-          <target xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#kMeansCount"/>
-          <semanticElements xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#kMeansCount"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_GBNFG_OsEeeXN4BnvsfbCw" name="Hierarchical" outgoingEdges="_tCZnsPO3Eee8_5BpZOOjug _UCkycPPKEee9OIMHf_JPbw _U8w88PVCEeeCquQTupfC1A" width="-1" height="-1">
+          <target xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#HierarchCount"/>
+          <semanticElements xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#HierarchCount"/>
           <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_GBNFHPOsEeeXN4BnvsfbCw" showIcon="false" workspacePath="/it.polimi.ase.project.design/icons/operation.svg">
             <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='clusteringAnalysisOperationSubNode']/@style"/>
           </ownedStyle>
@@ -2806,7 +2806,7 @@
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='schemaEdge']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_tCZnsPO3Eee8_5BpZOOjug" sourceNode="_GBNFG_OsEeeXN4BnvsfbCw" targetNode="_GBNFRvOsEeeXN4BnvsfbCw">
-        <target xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#kMeansCount"/>
+        <target xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#HierarchCount"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_tCbc4PO3Eee8_5BpZOOjug" lineStyle="dash" size="2" strokeColor="0,0,0">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='inputAttributesEdge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_tCbc4fO3Eee8_5BpZOOjug"/>
@@ -2950,7 +2950,7 @@
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='nextAttributeEdge']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_UCkycPPKEee9OIMHf_JPbw" sourceNode="_GBNFG_OsEeeXN4BnvsfbCw" targetNode="_wq-Q4PO3Eee8_5BpZOOjug">
-        <target xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#kMeansCount"/>
+        <target xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#HierarchCount"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_UCkycfPKEee9OIMHf_JPbw" lineStyle="dash" size="2" strokeColor="0,0,0">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='inputAttributesEdge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_UCkycvPKEee9OIMHf_JPbw"/>
@@ -2958,7 +2958,7 @@
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='inputAttributesEdge']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_U8w88PVCEeeCquQTupfC1A" sourceNode="_GBNFG_OsEeeXN4BnvsfbCw" targetNode="_K1HkYvPKEee9OIMHf_JPbw">
-        <target xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#kMeansCount"/>
+        <target xmi:type="pipeline:ClusteringAnalysisOperation" href="socialSensors.pipeline#HierarchCount"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_U8w88fVCEeeCquQTupfC1A" lineStyle="dash" size="2" strokeColor="0,0,0">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/it.polimi.ase.project.design/description/project.odesign#//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20Diagram']/@defaultLayer/@edgeMappings[name='analysisOperationOutputAttributeEdge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_U8w88vVCEeeCquQTupfC1A"/>

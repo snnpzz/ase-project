@@ -178,7 +178,14 @@ context IntegrationTask {
 	
 	constraint uniqueIntegrationOperationIDs {
 		check: self.integrationOperations -> forAll (integrationOperationA | self.integrationOperations -> select (integrationOperationB | integrationOperationB.ID = integrationOperationA.ID) -> size() = 1) 
-		message: 'There can\'t be two import operations with the same ID'
+		message: "There can't be two import operations with the same ID"
+	}
+
+	constraint differentInputAndOutputAttributesSchemas {
+		check: self.integrationOperations -> forAll(op | op.outputAttribute -> size() <> 0 implies
+			(self.outgoing.schema.attributes -> exists(attr2 | op.outputAttribute == attr2)) and not
+			(self.incoming.schema.attributes -> exists(attr2 | op.outputAttribute == attr2)) )
+		message: "The output attribute of integration task must belong to a schema different from the one of the input attributes"
 	}
 	
 }
@@ -248,7 +255,7 @@ context AnalysisTask{
 	}
 	
 	constraint outgoingDataFlowHasRightSchema {
-		check: self.outgoing.schema.attributes.includesAll(self.analysisOperations.outputAttribute)
+		check: self.analysisOperations.outputAttribute -> forAll(attr1 | self.outgoing.schema.attributes -> exists(attr2 | attr1.name = attr2.name and attr1.type = attr2.type))
 		message: "The outgoing dataflow schema must contain all the generated output attributes" 
 	}
 	
@@ -331,16 +338,6 @@ context ComplexAttribute {
 	
 }
 
-context IntegrationOperation {
-
-	-- TODO 		
-	-- constraint differentSchemas {
-		-- check: 
-		-- message: 'The output attribute must belong to a schema different from the one of the input attributes'
-	-- }
-
-}
-
 
 context PredefinedCleaningOperation {
 
@@ -405,14 +402,14 @@ context ClusteringAnalysisOperation {
 		message: "K parameter for clustering analysis operation must be set and must be positive"
 	}
 	
-	constraint KmeansHasIntegerOutputAttribute {
-		check: (self.type.value == 0) implies (self.outputAttribute <> null and self.outputAttribute.type.value == 1)
-		message: "Clustering analysis: kmeans requires an integer output attribute"
+	constraint kMeansNoInput {
+		check: self.type.value == 0 implies self.inputAttributes -> size() == 0
+		message: "Clustering analysis: kMeans doesn't require input attributes"
 	}
 	
-	constraint HierarchicalNoOutputAttribute {
-		check: (self.type.value == 1) implies self.outputAttribute -> size() == 0
-		message: "Clustering analysis: hierarchical clustering doesn't require an output attribute"
+	constraint ClusteringHasIntegerOutputAttribute {
+		check: self.outputAttribute-> size() ==  1 and self.outputAttribute.type.value == 1
+		message: "Clustering analyzes require an integer output attribute"
 	}
 	
 }

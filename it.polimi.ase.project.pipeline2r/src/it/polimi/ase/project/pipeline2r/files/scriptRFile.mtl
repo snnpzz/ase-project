@@ -8,8 +8,12 @@
 
 # This will generate an executable version of the pipeline
 # Structure of the program:
-# - if sources are local files, place them in a folder named "sources" at the same level of the R file;
+# - if sources are local files and path is not specified, place them in a folder named "sources" at the same level of the R file;
+	if sources are remote, if they don't require credentials they will be automatically downloaded, otherwise you need to manually
+	download them;
 # - all output files will be placed in a folder named "output" at the same level of the R file.
+
+# A pdf file will be anyway exported in "output/[aPipeline.ID/].pdf"
 
 # Import libraries
 # (If some libraries are missing, install them: install.packages("library_name") )
@@ -26,8 +30,10 @@ library(randomForest)
 # install.packages(ggplot2)
 library(ggplot2)
 
+
 set.seed(501)
 pdf("output/[aPipeline.ID/].pdf")
+
 
 ## COLLECTION TASK
 # Import sources as dataframes
@@ -35,15 +41,15 @@ pdf("output/[aPipeline.ID/].pdf")
 [importSource(aPipeline.sources)/]
 
 
-[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)) <> null)]
+[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)) -> size() <> 0)]
 ## INTEGRATION TASK
-# Join all data in a unique one
+# Join all data in a unique data frame
 
 [joinSources(aPipeline.sources, aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask).integrationOperations.inputAttributes)/]
 [/if]
 
 
-[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(CleaningTask)) <> null)]
+[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(CleaningTask)) -> size() <> 0)]
 ## CLEANING TASK
 	[for (op : CleaningOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(CleaningTask)).oclAsType(CleaningTask).cleaningOperations)]
 		[if (op.oclIsTypeOf(PredefinedCleaningOperation))]
@@ -91,15 +97,15 @@ pdf("output/[aPipeline.ID/].pdf")
 	[/if]
 [/for]
 
+[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)) -> size() <> 0)]
 
-[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)) <> null)]
 ## VISUALIZATION TASK
 
 	[for (op : VisualizationOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(VisualizationTask)).oclAsType(VisualizationTask).visualizationOperations)]
 		[prepareChart(op.chart)/]
 	[/for]
-[/if]
 
+[/if]
 
 ## EXPORT TASK
 [exportFiles(aPipeline.tasks -> select(t | t.oclIsTypeOf(ExportTask)).oclAsType(ExportTask))/]
@@ -114,12 +120,21 @@ rm(list = ls())
 [template private importSource(aSources: OrderedSet(Source))]
 [for (s : Source | aSources)]
 	[if (not(s.serverName.oclIsUndefined() or s.portNumber.oclIsUndefined()))]
-# Remote file: download it and then load
+		[if (not(s.userName.oclIsUndefined() or s.password.oclIsUndefined()))]
+# TODO
+# The requested source requires credential:
+# Link: [s.serverName/][if not(s.portNumber.oclIsUndefined())]:[s.portNumber/][/if]/[s.name/]
+# Credentials:
+	# Username: [s.userName/]
+	# Password: [s.password/]
+		[else]
+# Remote source: downloading file
 download.file([s.serverName.concat(':').concat(s.portNumber.toString()).concat('/').concat(s.name)/], "sources/[s.name/]", mode = "w")	
-#['source'.concat(i.toString())/] <- read.[s.format.toString().toLower()/]("sources/[s.name/]")
+[comment #['source'.concat(i.toString())/ <- read.[s.format.toString().toLower()/("sources/[s.name/") /]
 ['source'.concat(i.toString())/] <- read.table("sources/[s.name/]")
+		[/if]
 	[/if]
-# Load file [s.name/]
+# Loading file [s.name/]
 	[if (not(s.path.oclIsUndefined()))]
 ['source'.concat(i.toString())/] <- read.table("[s.path/]/[s.name/]")
 	[else]
@@ -183,12 +198,12 @@ source
 [/template]
 
 
-[template private writeColumns(attributes: OrderedSet(Attribute))]
+[template private writeColumns(attributes: OrderedSet(Attribute), sep: String)]
 [for (attr : Attribute | attributes)]	
 	[if (i = 1)]
-		[attr.name.concat('[knnInd, ]')/]
+		[attr.name.concat(sep)/]
 	[elseif (i = 2)]
-		[','.concat(attr.name).concat('[knnInd, ]')/]
+		[','.concat(attr.name).concat(sep)/]
 	[/if]				
 [/for]
 [/template]
@@ -209,9 +224,9 @@ source
 [elseif (op.type.toString() = 'KNN')] 
 	# KNN
 	knnInd <- sample(nrow(sample), round(nrow(sample)*0.8)
-	train  <- cbind([writeColumns(op.inputAttributes)/])
+	train  <- cbind([writeColumns(op.inputAttributes, '[knnInd, ]')/])
 	knnInd <- -knnInd
-	test   <- cbind([writeColumns(op.inputAttributes)/])
+	test   <- cbind([writeColumns(op.inputAttributes, '[knnInd, ]')/])
 	[op.ID/] <- knn(train, test, k = 10, prob = TRUE)
 	source$[op.outputAttribute.name/] <- [op.ID/]
 	rm(knnInd, train, test)
@@ -231,7 +246,10 @@ source
 	source$[op.outputAttribute.name/] <- [op.ID/]$cluster
 [else]
 	# Hierarchical
-	[op.ID/] <- hclust(dist([op.inputAttributes.name/]), [op.k/])
+	[op.ID/] <- hclust(
+	[if (op.inputAttributes -> size() = 0)] source
+	[else] dist(data.frame([writeColumns(op.inputAttributes, '')/]))
+	[/if], [op.k/])
 	source$[op.outputAttribute.name/] <- [op.ID/]$order
 	plot([op.ID/])
 [/if]
@@ -285,6 +303,7 @@ data2plot <- data.frame(
 [elseif (type.toString() = 'Surface')]
 [/if]
 [/template]
+
 
 [template private exportFiles(aTask: Sequence(ExportTask))]
 [for (exp : ExportOperation | aTask.exportOperations)]

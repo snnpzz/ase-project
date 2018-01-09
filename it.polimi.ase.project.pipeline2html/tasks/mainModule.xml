@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="mainModule" name="it.polimi.ase.project.pipeline2html">
-    <property name="ECLIPSE_HOME" value="../../../../../../../../eclipse/epsilon/eclipse"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../../workspace/epsilon"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../Program Files (x86)/eclipse-epsilon-1.4-win32-x86_64"/>
+    <property name="ECLIPSE_WORKSPACE" value="../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="it.polimi.ase.project.pipeline2html.libraryclasspath">

@@ -78,7 +78,7 @@ public interface IntegrationOperation extends EObject {
 	 * @return the value of the '<em>Output Attribute</em>' reference.
 	 * @see #setOutputAttribute(Attribute)
 	 * @see pipeline.PipelinePackage#getIntegrationOperation_OutputAttribute()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	Attribute getOutputAttribute();

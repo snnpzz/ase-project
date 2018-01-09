@@ -313,7 +313,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputAttributes" lowerBound="1"
         upperBound="-1" eType="#//Attribute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outputAttribute" lowerBound="1"
-        eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputAttribute" eType="#//Attribute"/>
   </eClassifiers>
 </ecore:EPackage>

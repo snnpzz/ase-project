@@ -4,6 +4,8 @@
 # - if sources are local files, place them in a folder named "sources" at the same level of the R file;
 # - all output files will be placed in a folder named "output" at the same level of the R file.
 
+# A pdf file will be anyway exported in "output/socialSensors.pdf"
+
 # Import libraries
 # (If some libraries are missing, install them: install.packages("library_name") )
 library(readr)
@@ -25,9 +27,9 @@ pdf("output/socialSensors.pdf")
 ## COLLECTION TASK
 # Import sources as dataframes
 
-# Load file social.csv
+# Loading file social.csv
 source1 <- read.table("sources/social.csv")
-# Load file web.json
+# Loading file web.json
 source2 <- read.table("sources/web.json")
 
 
@@ -67,10 +69,6 @@ source <- merge_all(sourceList, by = joinAttributes)
 			plot(source, col = kMeansCount$cluster)
 			source$countkM <- kMeansCount$cluster
 		
-
-
-## VISUALIZATION TASK
-
 
 
 ## EXPORT TASK

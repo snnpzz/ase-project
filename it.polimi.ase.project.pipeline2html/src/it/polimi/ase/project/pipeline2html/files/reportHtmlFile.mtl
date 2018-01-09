@@ -150,11 +150,13 @@
 		<table class="table table-striped">
 			<thead>
 				<th>Name</th>
+				<th>Type</th>
 			</thead>
 			<tbody>
-				[for (anAttribute : Attribute | anAnalysisOperation.inputAttributes)]
+				[for (aSimpleAttribute : SimpleAttribute | anAnalysisOperation.inputAttributes)]
 				<tr>
-					<td>[anAttribute.eContainer(Schema).name/].[anAttribute.name/]</td>
+					<td>[aSimpleAttribute.eContainer(Schema).name/].[aSimpleAttribute.name/]</td>
+					<td>[aSimpleAttribute.type/]</td>
 				<tr>
 				[/for]
 			</tbody>
@@ -168,10 +170,12 @@
 		<table class="table table-striped">
 			<thead>
 				<th>Name</th>
+				<th>Type</th>
 			</thead>
 			<tbody>
 				<tr>
 					<td>[anAnalysisOperation.outputAttribute.eContainer(Schema).name/].[anAnalysisOperation.outputAttribute.name/]</td>
+					<td>[anAnalysisOperation.outputAttribute.type/]</td>
 				<tr>
 			</tbody>
 		</table>
@@ -211,11 +215,13 @@
 		<table class="table table-striped">
 			<thead>
 				<th>Name</th>
+				<th>Type</th>
 			</thead>
 			<tbody>
-				[for (anAttribute : Attribute | aCleaningOperation.inputAttributes)]
+				[for (aSimpleAttribute : SimpleAttribute | aCleaningOperation.inputAttributes)]
 				<tr>
-					<td>[anAttribute.eContainer(Schema).name/].[anAttribute.name/]</td>
+					<td>[aSimpleAttribute.eContainer(Schema).name/].[aSimpleAttribute.name/]</td>
+					<td>[aSimpleAttribute.type/]</td>
 				<tr>
 				[/for]
 			</tbody>
@@ -303,7 +309,7 @@
 
 [template private generateIntegrationOperationDiv(anIntegrationOperation : IntegrationOperation)]
 <div id="integration-operation-[anIntegrationOperation.ID/]">
-	<h3>Operation [anIntegrationOperation.ID/]</h3>
+	<h3>Integration Operation [anIntegrationOperation.ID/]</h3>
 	<b>ID:</b> [anIntegrationOperation.ID/]
 	<br>
 	[if (anIntegrationOperation.inputAttributes -> size() > 0)]
@@ -367,10 +373,10 @@
 				<th>Type</th>
 			</thead>
 			<tbody>
-				[for (anAttribute : Attribute | aVisualizationOperation.chart.axes)]
+				[for (aSimpleAttribute : SimpleAttribute | aVisualizationOperation.chart.axes)]
 				<tr>
-					<td>[anAttribute.name/]</td>
-					<td>[if (anAttribute.oclIsTypeOf(SimpleAttribute))]Simple[elseif (anAttribute.oclIsTypeOf(ComplexAttribute))]Complex[/if] Attribute</td>
+					<td>[aSimpleAttribute.eContainer(Schema).name/].[aSimpleAttribute.name/]</td>
+					<td>[aSimpleAttribute.type/]</td>
 				</tr>
 				[/for]
 			</tbody>
@@ -721,7 +727,8 @@
 				<th>#</th>
 				<th>Attribute</th>
 				<th>Type</th>
-				<th>Parent</th>
+				<th>Data Type</th>
+				<th>Parent Name</th>
 			</thead>
 			<tbody>
 				[generateAttributeTableRow(1, aSchema.attributes -> select(anAttribute : Attribute | anAttribute.previous -> size() = 0) -> first())/]
@@ -745,6 +752,7 @@
 	<td>[anInteger/]</td>
 	<td>[aComplexAttribute.name/]</td>
 	<td>Complex Attribute</td>
+	<td></td>
 	<td>[if not(aComplexAttribute.eContainer(Attribute).oclIsUndefined())][aComplexAttribute.eContainer(Attribute).name/][/if]</td>
 </tr>
 [if not(aComplexAttribute.attributes -> select(anAttribute : Attribute | anAttribute.previous -> size() = 0) -> first().oclIsUndefined())]
@@ -757,6 +765,7 @@
 	<td>[anInteger/]</td>
 	<td>[aSimpleAttribute.name/]</td>
 	<td>Simple Attribute</td>
+	<td>[aSimpleAttribute.type/]</td>
 	<td>[if not(aSimpleAttribute.eContainer(Attribute).oclIsUndefined())][aSimpleAttribute.eContainer(Attribute).name/][/if]</td>
 </tr>
 [/template]
@@ -802,7 +811,7 @@
 <tr>
 	<td>[aChart.title/]</td>
 	<td>[aChart.type/]</td>
-	<td>[let attributes : String = aChart.axes -> iterate(aSimpleAttribute : SimpleAttribute; aString : String = ' ' | aString.concat(aSimpleAttribute.name + ', '))][attributes.substring(1, attributes.lastIndexOf(',') - 1)/][/let]</td>
+	<td>[let attributes : String = aChart.axes -> iterate(aSimpleAttribute : SimpleAttribute; aString : String = ' ' | aString.concat(aSimpleAttribute.eContainer(Schema).name + '.' + aSimpleAttribute.name + ', '))][attributes.substring(1, attributes.lastIndexOf(',') - 1)/][/let]</td>
 	<td>[aChart.size/]</td>
 </tr>
 [/template]

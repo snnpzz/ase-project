@@ -180,13 +180,6 @@ context IntegrationTask {
 		check: self.integrationOperations -> forAll (integrationOperationA | self.integrationOperations -> select (integrationOperationB | integrationOperationB.ID = integrationOperationA.ID) -> size() = 1) 
 		message: "There can't be two import operations with the same ID"
 	}
-
-	-- Same problem checking type
-	-- constraint differentInputAndOutputAttributesSchemas {
-	-- 	check: self.integrationOperations -> forAll(op | op.outputAttribute -> size() > 0 implies
-	--		(self.outgoing.schema.attributes -> collect(a | a.name) -> first -> includes(op.outputAttribute.name)) )
-	--	message: "The output attribute of integration task must belong to a schema different from the one of the input attributes"
-	--}
 	
 }
 
@@ -250,7 +243,7 @@ context AnalysisTask{
 	
 	constraint outputSchemaIsCompatibleWithInputSchema {
 		check: self.outgoing.schema.attributes -> collect(a | a.name) -> first() -> includesAll(self.incoming.schema.attributes -> collect(a | a.name) -> first())
-			-- Problem checking type   and self.outgoing.schema.attributes -> collect(a | a.type) -> first() -> includesAll(self.incoming.schema.attributes -> collect(a | a.type) -> first())
+			-- Problem checking type and self.outgoing.schema.attributes -> collect(a | a.type) -> first() -> includesAll(self.incoming.schema.attributes -> collect(a | a.type) -> first())
 		message: "The outgoing data flow schema must contain all the attributes of the incoming data flow schema"
 	}
 	
@@ -258,7 +251,7 @@ context AnalysisTask{
 		check: self.analysisOperations.outputAttribute -> size() > 0 implies
 			self.analysisOperations.outputAttribute -> forAll(attr | 
 			self.outgoing.schema.attributes -> collect(a | a.name) -> first() -> exists(n | n == attr.name) )
-			-- Problem checking type   and self.outgoing.schema.attributes -> collect(a | a.type) -> first() -> exists(t | t == attr.type) )
+			-- Problem checking type and self.outgoing.schema.attributes -> collect(a | a.type) -> first() -> exists(t | t == attr.type) )
 		message: "The outgoing dataflow schema must contain all the generated output attributes" 
 	}
 	

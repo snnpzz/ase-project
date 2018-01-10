@@ -178,7 +178,7 @@ context IntegrationTask {
 	
 	constraint uniqueIntegrationOperationIDs {
 		check: self.integrationOperations -> forAll (integrationOperationA | self.integrationOperations -> select (integrationOperationB | integrationOperationB.ID = integrationOperationA.ID) -> size() = 1) 
-		message: "There can't be two import operations with the same ID"
+		message: "There can't be two integration operations with the same ID"
 	}
 	
 }
@@ -355,7 +355,7 @@ context PredefinedCleaningOperation {
 context ClassificationAnalysisOperation {
 
 	constraint LogisticRegressionOnBoolean {
-		check: self.inputAttributes -> forAll(attr | attr.type.value == 3)
+		check: self.type.value == 0 implies self.inputAttributes -> forAll(attr | attr.type.value == 3)
 		message: "Classification analysis: logistic regression must be applied to boolean values"
 	}
 	

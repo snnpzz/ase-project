@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pipeline:Pipeline xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pipeline="http://www.project.ase.polimi.it/pipeline">
-  <dataFlows target="//@tasks.1" source="//@tasks.0" schema="//@schemas.0"/>
-  <dataFlows target="//@tasks.1" source="//@tasks.0" schema="//@schemas.1"/>
-  <dataFlows target="//@tasks.1" source="//@tasks.0" schema="//@schemas.2"/>
-  <dataFlows target="//@tasks.2" source="//@tasks.1" schema="//@schemas.3"/>
-  <dataFlows target="//@tasks.3" source="//@tasks.2" schema="//@schemas.4"/>
-  <dataFlows target="//@tasks.4" source="//@tasks.3" schema="//@schemas.5"/>
-  <tasks xsi:type="pipeline:CollectionTask" outgoing="//@dataFlows.0 //@dataFlows.1 //@dataFlows.2">
+  <dataFlows target="//@tasks.1" source="//@tasks.0" schema="//@schemas.0" ID="df1"/>
+  <dataFlows target="//@tasks.1" source="//@tasks.0" schema="//@schemas.1" ID="df2" format="TXT"/>
+  <dataFlows target="//@tasks.1" source="//@tasks.0" schema="//@schemas.2" ID="df3"/>
+  <dataFlows target="//@tasks.2" source="//@tasks.1" schema="//@schemas.3" ID="df4"/>
+  <dataFlows target="//@tasks.3" source="//@tasks.2" schema="//@schemas.4" ID="df5"/>
+  <dataFlows target="//@tasks.4" source="//@tasks.3" schema="//@schemas.5" ID="df6"/>
+  <tasks xsi:type="pipeline:CollectionTask" ID="Collection" outgoing="//@dataFlows.0 //@dataFlows.1 //@dataFlows.2">
     <importOperations ID="importTemp" read="//@sources.0" use="//@schemas.0"/>
     <importOperations ID="importPress" read="//@sources.1" use="//@schemas.1"/>
     <importOperations ID="importPM" read="//@sources.2" use="//@schemas.2"/>
   </tasks>
-  <tasks xsi:type="pipeline:IntegrationTask" incoming="//@dataFlows.0 //@dataFlows.1 //@dataFlows.2" outgoing="//@dataFlows.3">
-    <integrationOperations inputAttributes="//@schemas.0/@attributes.0 //@schemas.2/@attributes.0"/>
-    <integrationOperations inputAttributes="//@schemas.1/@attributes.0 //@schemas.2/@attributes.0"/>
+  <tasks xsi:type="pipeline:IntegrationTask" ID="Integration" incoming="//@dataFlows.0 //@dataFlows.1 //@dataFlows.2" outgoing="//@dataFlows.3">
+    <integrationOperations ID="humTemp_poll" inputAttributes="//@schemas.0/@attributes.0 //@schemas.2/@attributes.0"/>
+    <integrationOperations ID="press_poll" inputAttributes="//@schemas.1/@attributes.0 //@schemas.2/@attributes.0"/>
   </tasks>
-  <tasks xsi:type="pipeline:CleaningTask" incoming="//@dataFlows.3" outgoing="//@dataFlows.4">
+  <tasks xsi:type="pipeline:CleaningTask" ID="Cleaning" incoming="//@dataFlows.3" outgoing="//@dataFlows.4">
     <cleaningOperations xsi:type="pipeline:UserDefinedCleaningOperation" outgoing="//@internalDataFlows.0" ID="formatDate" inputAttributes="//@schemas.3/@attributes.0" type="ConvertTimestampinDateAndHour"/>
-    <cleaningOperations xsi:type="pipeline:PredefinedCleaningOperation" incoming="//@internalDataFlows.0" outgoing="//@internalDataFlows.1" inputAttributes="//@schemas.3/@attributes.4" type="removeColumn"/>
-    <cleaningOperations xsi:type="pipeline:PredefinedCleaningOperation" incoming="//@internalDataFlows.1"/>
+    <cleaningOperations xsi:type="pipeline:PredefinedCleaningOperation" incoming="//@internalDataFlows.0" outgoing="//@internalDataFlows.1" ID="removePM1" inputAttributes="//@schemas.3/@attributes.4" type="removeColumn"/>
+    <cleaningOperations xsi:type="pipeline:PredefinedCleaningOperation" incoming="//@internalDataFlows.1" ID="removeNulls"/>
   </tasks>
-  <tasks xsi:type="pipeline:AnalysisTask" incoming="//@dataFlows.4" outgoing="//@dataFlows.5">
+  <tasks xsi:type="pipeline:AnalysisTask" ID="Analysis" incoming="//@dataFlows.4" outgoing="//@dataFlows.5">
     <analysisOperations xsi:type="pipeline:ClusteringAnalysisOperation" outgoing="//@internalDataFlows.2" ID="kMeans" outputAttribute="//@schemas.5/@attributes.7" k="4"/>
-    <analysisOperations xsi:type="pipeline:ClassificationAnalysisOperation" incoming="//@internalDataFlows.2" outgoing="//@internalDataFlows.3" ID="LDA_goodDay" outputAttribute="//@schemas.5/@attributes.8" type="LDA"/>
+    <analysisOperations xsi:type="pipeline:ClassificationAnalysisOperation" incoming="//@internalDataFlows.2" outgoing="//@internalDataFlows.3" ID="KNN_goodDay" inputAttributes="//@schemas.4/@attributes.1 //@schemas.4/@attributes.2" outputAttribute="//@schemas.5/@attributes.8" type="KNN"/>
     <analysisOperations xsi:type="pipeline:PredictiveAnalysisOperation" incoming="//@internalDataFlows.3" outgoing="//@internalDataFlows.4" ID="regrTemp" inputAttributes="//@schemas.4/@attributes.1 //@schemas.4/@attributes.5 //@schemas.4/@attributes.4" type="MultipleLinRegr"/>
     <analysisOperations xsi:type="pipeline:PredictiveAnalysisOperation" incoming="//@internalDataFlows.4" ID="regrHum" inputAttributes="//@schemas.4/@attributes.2 //@schemas.4/@attributes.5 //@schemas.4/@attributes.4" type="MultipleLinRegr"/>
   </tasks>
-  <tasks xsi:type="pipeline:ExportTask" incoming="//@dataFlows.5">
-    <exportOperations write="//@files.0"/>
+  <tasks xsi:type="pipeline:ExportTask" ID="Export" incoming="//@dataFlows.5">
+    <exportOperations ID="export1" write="//@files.0"/>
   </tasks>
-  <internalDataFlows source="formatDate" target="//@tasks.2/@cleaningOperations.1"/>
-  <internalDataFlows source="//@tasks.2/@cleaningOperations.1" target="//@tasks.2/@cleaningOperations.2"/>
-  <internalDataFlows source="kMeans" target="LDA_goodDay"/>
-  <internalDataFlows source="LDA_goodDay" target="regrTemp"/>
-  <internalDataFlows source="regrTemp" target="regrHum"/>
+  <internalDataFlows source="formatDate" target="removePM1" ID="cdf1"/>
+  <internalDataFlows source="removePM1" target="removeNulls" ID="cdf2"/>
+  <internalDataFlows source="kMeans" target="KNN_goodDay" ID="adf1"/>
+  <internalDataFlows source="KNN_goodDay" target="regrTemp" ID="adf2"/>
+  <internalDataFlows source="regrTemp" target="regrHum" ID="adf3"/>
   <sources name="humidityTemp.csv"/>
   <sources name="pressure.txt" format="TXT"/>
   <sources name="pollution.csv"/>
@@ -63,7 +63,7 @@
   </schemas>
   <schemas name="HumTempSchema">
     <attributes xsi:type="pipeline:SimpleAttribute" name="date" next="//@schemas.4/@attributes.6" type="mDate"/>
-    <attributes xsi:type="pipeline:SimpleAttribute" name="temperature" next="//@schemas.4/@attributes.2" previous="//@schemas.4/@attributes.6" type="mDate"/>
+    <attributes xsi:type="pipeline:SimpleAttribute" name="temperature" next="//@schemas.4/@attributes.2" previous="//@schemas.4/@attributes.6" type="mDouble"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="humidity" next="//@schemas.4/@attributes.3" previous="//@schemas.4/@attributes.1" type="mInteger"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="pressure" next="//@schemas.4/@attributes.5" previous="//@schemas.4/@attributes.2" type="mDouble"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="pm10" previous="//@schemas.4/@attributes.5" type="mInteger"/>
@@ -72,13 +72,13 @@
   </schemas>
   <schemas name="HumTempSchema">
     <attributes xsi:type="pipeline:SimpleAttribute" name="date" next="//@schemas.5/@attributes.6" type="mDate"/>
-    <attributes xsi:type="pipeline:SimpleAttribute" name="temperature" next="//@schemas.5/@attributes.2" previous="//@schemas.5/@attributes.6" type="mDate"/>
+    <attributes xsi:type="pipeline:SimpleAttribute" name="temperature" next="//@schemas.5/@attributes.2" previous="//@schemas.5/@attributes.6" type="mDouble"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="humidity" next="//@schemas.5/@attributes.3" previous="//@schemas.5/@attributes.1" type="mInteger"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="pressure" next="//@schemas.5/@attributes.5" previous="//@schemas.5/@attributes.2" type="mDouble"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="pm10" next="//@schemas.5/@attributes.7" previous="//@schemas.5/@attributes.5" type="mInteger"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="pm25" next="//@schemas.5/@attributes.4" previous="//@schemas.5/@attributes.3" type="mInteger"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="hour" next="//@schemas.5/@attributes.1" previous="//@schemas.5/@attributes.0"/>
     <attributes xsi:type="pipeline:SimpleAttribute" name="PMgroup" next="//@schemas.5/@attributes.8" previous="//@schemas.5/@attributes.4" type="mInteger"/>
-    <attributes xsi:type="pipeline:SimpleAttribute" name="goodDay" previous="//@schemas.5/@attributes.7"/>
+    <attributes xsi:type="pipeline:SimpleAttribute" name="goodDay" previous="//@schemas.5/@attributes.7" type="mInteger"/>
   </schemas>
 </pipeline:Pipeline>

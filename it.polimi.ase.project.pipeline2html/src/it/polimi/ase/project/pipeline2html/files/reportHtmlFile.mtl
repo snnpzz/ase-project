@@ -406,6 +406,10 @@
 	<h3>Task [anAnalysisTask.ID/]</h3>
 	<b>ID:</b> [anAnalysisTask.ID/]
 	<br>
+	<b>Maximum Space:</b> [anAnalysisTask.maxSpace/]
+	<br>
+	<b>Maximum Time:</b> [anAnalysisTask.maxTime/]
+	<br>
 	<b>Type:</b> Data Analysis Task
 	<br>
 	[if (anAnalysisTask.incoming -> size() > 0)]
@@ -441,6 +445,10 @@
 	<h3>Task [aCleaningTask.ID/]</h3>
 	<b>ID:</b> [aCleaningTask.ID/]
 	<br>
+	<b>Maximum Space:</b> [aCleaningTask.maxSpace/]
+	<br>
+	<b>Maximum Time:</b> [aCleaningTask.maxTime/]
+	<br>
 	<b>Type:</b> Data Cleaning Task
 	<br>
 	[if (aCleaningTask.incoming -> size() > 0)]
@@ -471,10 +479,71 @@
 </div>
 [/template]
 
+[template private generateExportTaskDiv(anExportTask : ExportTask)]
+<div id="task-[anExportTask.ID/]">
+	<h3>Task [anExportTask.ID/]</h3>
+	<b>ID:</b> [anExportTask.ID/]
+	<br>
+	<b>Maximum Space:</b> [anExportTask.maxSpace/]
+	<br>
+	<b>Maximum Time:</b> [anExportTask.maxTime/]
+	<br>
+	<b>Type:</b> Data Export Task
+	<br>
+	[if (anExportTask.incoming -> size() > 0)]
+	<span style="font-size:1.5rem;">Input Data Flow</span>
+	[generateDataFlowDiv(anExportTask.incoming -> first())/]
+	[/if]
+	[if (anExportTask.exportOperations -> size() > 0)]
+	<span style="font-size:1.5rem;">Export Operation(s)</span>
+	<div class="table-responsive">
+		<table class="table">
+			<tbody>
+				<tr>
+					[for (anExportOperation : ExportOperation | anExportTask.exportOperations)]
+					<td>
+						<b>ID:</b> [anExportOperation.ID/]
+						<br>
+						<b>Details:</b> <a href="#export-operation-[anExportOperation.ID/]">+</a>
+					</td>
+					[/for]
+				<tr>
+			</tbody>
+		</table>
+	</div>
+	[/if]
+	[if (anExportTask.exportOperations.write -> size() > 0)]
+	<span style="font-size:1.5rem;">Output File(s)</span>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Path</th>
+			</thead>
+			<tbody>
+				[for (aFile : File | anExportTask.exportOperations.write)]
+				<tr>
+					<td>[aFile.name/]</td>
+					<td>[aFile.format/]</td>
+					<td>[aFile.path/]</td>
+				</tr>
+				[/for]
+			</tbody>
+		</table>
+	</div>
+	[/if]
+</div>
+[/template]
+
 [template private generateCollectionTaskDiv(aCollectionTask : CollectionTask)]
 <div id="task-[aCollectionTask.ID/]">
 	<h3>Task [aCollectionTask.ID/]</h3>
 	<b>ID:</b> [aCollectionTask.ID/]
+	<br>
+	<b>Maximum Space:</b> [aCollectionTask.maxSpace/]
+	<br>
+	<b>Maximum Time:</b> [aCollectionTask.maxTime/]
 	<br>
 	<b>Type:</b> Data Collection Task
 	<br>
@@ -538,63 +607,14 @@
 </div>
 [/template]
 
-[template private generateExportTaskDiv(anExportTask : ExportTask)]
-<div id="task-[anExportTask.ID/]">
-	<h3>Task [anExportTask.ID/]</h3>
-	<b>ID:</b> [anExportTask.ID/]
-	<br>
-	<b>Type:</b> Data Export Task
-	<br>
-	[if (anExportTask.incoming -> size() > 0)]
-	<span style="font-size:1.5rem;">Input Data Flow</span>
-	[generateDataFlowDiv(anExportTask.incoming -> first())/]
-	[/if]
-	[if (anExportTask.exportOperations -> size() > 0)]
-	<span style="font-size:1.5rem;">Export Operation(s)</span>
-	<div class="table-responsive">
-		<table class="table">
-			<tbody>
-				<tr>
-					[for (anExportOperation : ExportOperation | anExportTask.exportOperations)]
-					<td>
-						<b>ID:</b> [anExportOperation.ID/]
-						<br>
-						<b>Details:</b> <a href="#export-operation-[anExportOperation.ID/]">+</a>
-					</td>
-					[/for]
-				<tr>
-			</tbody>
-		</table>
-	</div>
-	[/if]
-	[if (anExportTask.exportOperations.write -> size() > 0)]
-	<span style="font-size:1.5rem;">Output File(s)</span>
-	<div class="table-responsive">
-		<table class="table table-striped">
-			<thead>
-				<th>Name</th>
-				<th>Type</th>
-				<th>Path</th>
-			</thead>
-			<tbody>
-				[for (aFile : File | anExportTask.exportOperations.write)]
-				<tr>
-					<td>[aFile.name/]</td>
-					<td>[aFile.format/]</td>
-					<td>[aFile.path/]</td>
-				</tr>
-				[/for]
-			</tbody>
-		</table>
-	</div>
-	[/if]
-</div>
-[/template]
-
 [template private generateIntegrationTaskDiv(anIntegrationTask : IntegrationTask)]
 <div id="task-[anIntegrationTask.ID /]">
 	<h3>Task [anIntegrationTask.ID /]</h3>
 	<b>ID:</b> [anIntegrationTask.ID /]
+	<br>
+	<b>Maximum Space:</b> [anIntegrationTask.maxSpace/]
+	<br>
+	<b>Maximum Time:</b> [anIntegrationTask.maxTime/]
 	<br>
 	<b>Type:</b> Data Integration Task
 	<br>
@@ -643,6 +663,10 @@
 <div id="task-[aVisulizationTask.ID/]">
 	<h3>Task [aVisulizationTask.ID/]</h3>
 	<b>ID:</b> [aVisulizationTask.ID/]
+	<br>
+	<b>Maximum Space:</b> [aVisulizationTask.maxSpace/]
+	<br>
+	<b>Maximum Time:</b> [aVisulizationTask.maxTime/]
 	<br>
 	<b>Type:</b> Data Visualization Task
 	<br>
@@ -695,25 +719,6 @@
 </div>
 [/template]
 
-[template private generateTaskDiv(aTask : Task)]
-[if (aTask.oclIsTypeOf(CollectionTask))]
-[aTask.oclAsType(CollectionTask).generateCollectionTaskDiv()/]		
-[elseif (aTask.oclIsTypeOf(IntegrationTask))]
-[aTask.oclAsType(IntegrationTask).generateIntegrationTaskDiv()/]
-[elseif (aTask.oclIsTypeOf(CleaningTask))]
-[aTask.oclAsType(CleaningTask).generateCleaningTaskDiv()/]
-[elseif (aTask.oclIsTypeOf(AnalysisTask))]
-[aTask.oclAsType(AnalysisTask).generateAnalysisTaskDiv()/]
-[elseif (aTask.oclIsTypeOf(VisualizationTask))]
-[aTask.oclAsType(VisualizationTask).generateVisualizationTaskDiv()/]
-[elseif (aTask.oclIsTypeOf(ExportTask))]
-[aTask.oclAsType(ExportTask).generateExportTaskDiv()/]
-[/if]
-[if not(aTask.outgoing.target -> first().oclIsUndefined())]
-[aTask.outgoing.target -> first().generateTaskDiv()/]
-[/if]
-[/template]
-
 [template private generateSchemaDiv(aSchema: Schema)]
 <div>
 	<b>Name:</b> [aSchema.name/]
@@ -737,6 +742,25 @@
 	</div>
 	[/if]
 </div>
+[/template]
+
+[template private generateTaskDiv(aTask : Task)]
+[if (aTask.oclIsTypeOf(CollectionTask))]
+[aTask.oclAsType(CollectionTask).generateCollectionTaskDiv()/]		
+[elseif (aTask.oclIsTypeOf(IntegrationTask))]
+[aTask.oclAsType(IntegrationTask).generateIntegrationTaskDiv()/]
+[elseif (aTask.oclIsTypeOf(CleaningTask))]
+[aTask.oclAsType(CleaningTask).generateCleaningTaskDiv()/]
+[elseif (aTask.oclIsTypeOf(AnalysisTask))]
+[aTask.oclAsType(AnalysisTask).generateAnalysisTaskDiv()/]
+[elseif (aTask.oclIsTypeOf(VisualizationTask))]
+[aTask.oclAsType(VisualizationTask).generateVisualizationTaskDiv()/]
+[elseif (aTask.oclIsTypeOf(ExportTask))]
+[aTask.oclAsType(ExportTask).generateExportTaskDiv()/]
+[/if]
+[if not(aTask.outgoing.target -> first().oclIsUndefined())]
+[aTask.outgoing.target -> first().generateTaskDiv()/]
+[/if]
 [/template]
 
 [template private generateTableCell(anImportOperation : ImportOperation)]

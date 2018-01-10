@@ -529,7 +529,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="VisualizationOperation" referenceName="tasks"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="VisualizationTask" referenceName="tasks"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>

@@ -241,26 +241,25 @@ context AnalysisTask{
 		message: "There can be just one final analysis operation. Some internal data flows are wrong"
 	}
 	
+	
 	constraint outputSchemaIsCompatibleWithInputSchema {
-		check: self.outgoing.schema.attributes -> collect(a | a.name) -> first() -> includesAll(self.incoming.schema.attributes -> collect(a | a.name) -> first())
-			-- Problem checking type and self.outgoing.schema.attributes -> collect(a | a.type) -> first() -> includesAll(self.incoming.schema.attributes -> collect(a | a.type) -> first())
+		check: self.incoming.schema.attributes -> first() -> forAll(attr1 | self.outgoing.schema.attributes -> first() -> exists(attr2 |
+			attr1.name == attr2.name and attr1.type == attr2.type))
 		message: "The outgoing data flow schema must contain all the attributes of the incoming data flow schema"
 	}
 	
 	constraint outgoingDataFlowHasRightSchema {
-		check: self.analysisOperations.outputAttribute -> size() > 0 implies
-			self.analysisOperations.outputAttribute -> forAll(attr | 
-			self.outgoing.schema.attributes -> collect(a | a.name) -> first() -> exists(n | n == attr.name) )
-			-- Problem checking type and self.outgoing.schema.attributes -> collect(a | a.type) -> first() -> exists(t | t == attr.type) )
+		check: self.analysisOperations.outputAttribute -> select(attr | attr <> null) -> size() > 0 implies
+			self.analysisOperations.outputAttribute -> select(attr | attr <> null) -> forAll(attr1 |
+			self.outgoing.schema.attributes -> first() -> exists(attr2 | attr1.name == attr2.name and attr1.type == attr2.type))
 		message: "The outgoing dataflow schema must contain all the generated output attributes" 
 	}
 	
 	constraint uniqueOutputAttributeName {
- 		check: self.analysisOperations.outputAttribute -> forAll(attr1 | self.analysisOperations.outputAttribute ->
- 			forAll(attr2 | attr1 <> attr2 implies attr1.name <> attr2.name))
+ 		check: self.analysisOperations.outputAttribute -> select(attr | attr <> null) -> forAll(attr1 | self.analysisOperations.outputAttribute ->
+ 			select(attr | attr <> null) -> forAll(attr2 | attr1 <> attr2 implies attr1.name <> attr2.name))
  		message: "Output attributes of analysis operation must have different names"
  	}
-
 }
 
 	
@@ -356,8 +355,11 @@ context PredefinedCleaningOperation {
 context AnalysisOperation {
 
 	constraint atLeastOneInputAttribute {
-		check: self.inputAttributes -> size() > 0
-		message: "All analysis operations must have at least one input attribute"
+		check: ((self.isTypeOf(DescriptiveAnalysisOperation) and self.type.value == 5) implies self.inputAttributes -> size() == 0) and
+			(self.isTypeOf(ClassificationAnalysisOperation) implies self.inputAttributes -> size() > 0) and
+			((self.isTypeOf(ClusteringAnalysisOperation) and self.type.value == 0) implies self.inputAttributes -> size() == 0) and
+			(self.isTypeOf(PredictiveAnalysisOperation) implies self.inputAttributes -> size() > 0)
+		message: "Analysis operations must have at least one input attribute"
 	}
 	
 }
@@ -371,12 +373,12 @@ context ClassificationAnalysisOperation {
 	
 	constraint Log_LDA_QDA_SVM_noOutput {
 		check: (self.type.value == 0 or self.type.value == 1 or self.type.value == 2 or self.type.value == 4) implies 
-			(self.outputAttribute -> size() == 0)
+			(self.outputAttribute == null) -- -> size() == 0)
 		message: "Classification analysis: Logistic regression, LDA, QDA and SVM don't need an output attribute"
 	}
 	
 	constraint KNN_needsOutput {
-		check: (self.type.value == ClassificationOperation::KNN) implies (self.outputAttribute -> size() == 1)
+		check: (self.type.value == 3) implies (self.outputAttribute -> size() == 1)
 		message: "Classification analysis: KNN requires an output attribute"
 	}
 }
@@ -384,7 +386,7 @@ context ClassificationAnalysisOperation {
 context DescriptiveAnalysisOperation {
 
 	constraint noOutputNeeded {
-		check: self.outputAttribute -> size() == 0
+		check: self.outputAttribute == null
 		message: "Description analyzes don't require output attribute"
 	}
 	
@@ -412,13 +414,13 @@ context ClusteringAnalysisOperation {
 context PredictiveAnalysisOperation {
 	
 	constraint outputAttributeNotRequired {
-		check: self.outputAttribute -> size() == 0
+		check: self.outputAttribute == null
 		message: "Predictive analyzes don't require an output attribute"
 	}
 	
 	constraint regressionOnNumericValues {
 		check: (self.type.value == 0 or self.type.value == 1) implies
-			(self.inputAttributes -> forAll(attr | attr.type.value.value == 1 or attr.type.value == 2))
+			(self.inputAttributes -> forAll(attr | attr.type.value == 1 or attr.type.value == 2))
 		message: "Predictive analysis: regression must have integer or double input attributes"
 	}
 	

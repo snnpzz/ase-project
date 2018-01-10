@@ -18,6 +18,8 @@ abstract class Task {
   attr String[1] ID;
   ref DataFlow[*]#target incoming;
   ref DataFlow[*]#source outgoing;
+  attr int maxSpace;
+  attr int maxTime;
 }
 
 @gmf.link(source="source", target="target", width="2", target.decoration="filledclosedarrow")

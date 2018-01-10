@@ -33,6 +33,8 @@ import pipeline.Task;
  *   <li>{@link pipeline.impl.TaskImpl#getID <em>ID</em>}</li>
  *   <li>{@link pipeline.impl.TaskImpl#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link pipeline.impl.TaskImpl#getOutgoing <em>Outgoing</em>}</li>
+ *   <li>{@link pipeline.impl.TaskImpl#getMaxSpace <em>Max Space</em>}</li>
+ *   <li>{@link pipeline.impl.TaskImpl#getMaxTime <em>Max Time</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,6 +79,46 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * @ordered
 	 */
 	protected EList<DataFlow> outgoing;
+
+	/**
+	 * The default value of the '{@link #getMaxSpace() <em>Max Space</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxSpace()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAX_SPACE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getMaxSpace() <em>Max Space</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxSpace()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maxSpace = MAX_SPACE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMaxTime() <em>Max Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAX_TIME_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getMaxTime() <em>Max Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maxTime = MAX_TIME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,6 +189,48 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getMaxSpace() {
+		return maxSpace;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxSpace(int newMaxSpace) {
+		int oldMaxSpace = maxSpace;
+		maxSpace = newMaxSpace;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.TASK__MAX_SPACE, oldMaxSpace, maxSpace));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getMaxTime() {
+		return maxTime;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxTime(int newMaxTime) {
+		int oldMaxTime = maxTime;
+		maxTime = newMaxTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PipelinePackage.TASK__MAX_TIME, oldMaxTime, maxTime));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -189,6 +273,10 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 				return getIncoming();
 			case PipelinePackage.TASK__OUTGOING:
 				return getOutgoing();
+			case PipelinePackage.TASK__MAX_SPACE:
+				return getMaxSpace();
+			case PipelinePackage.TASK__MAX_TIME:
+				return getMaxTime();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,6 +301,12 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 				getOutgoing().clear();
 				getOutgoing().addAll((Collection<? extends DataFlow>)newValue);
 				return;
+			case PipelinePackage.TASK__MAX_SPACE:
+				setMaxSpace((Integer)newValue);
+				return;
+			case PipelinePackage.TASK__MAX_TIME:
+				setMaxTime((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -234,6 +328,12 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 			case PipelinePackage.TASK__OUTGOING:
 				getOutgoing().clear();
 				return;
+			case PipelinePackage.TASK__MAX_SPACE:
+				setMaxSpace(MAX_SPACE_EDEFAULT);
+				return;
+			case PipelinePackage.TASK__MAX_TIME:
+				setMaxTime(MAX_TIME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -252,6 +352,10 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 				return incoming != null && !incoming.isEmpty();
 			case PipelinePackage.TASK__OUTGOING:
 				return outgoing != null && !outgoing.isEmpty();
+			case PipelinePackage.TASK__MAX_SPACE:
+				return maxSpace != MAX_SPACE_EDEFAULT;
+			case PipelinePackage.TASK__MAX_TIME:
+				return maxTime != MAX_TIME_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -268,6 +372,10 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (ID: ");
 		result.append(id);
+		result.append(", maxSpace: ");
+		result.append(maxSpace);
+		result.append(", maxTime: ");
+		result.append(maxTime);
 		result.append(')');
 		return result.toString();
 	}

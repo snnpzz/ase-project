@@ -30,6 +30,8 @@
         eType="#//DataFlow" eOpposite="#//DataFlow/target"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" upperBound="-1"
         eType="#//DataFlow" eOpposite="#//DataFlow/source"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSpace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataFlow">
     <eAnnotations source="gmf.link">

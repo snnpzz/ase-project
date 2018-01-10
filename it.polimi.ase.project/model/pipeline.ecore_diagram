@@ -28,6 +28,14 @@
         <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Task/ID"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_GrQwkeGWEeeU3dy_CQ-Szg"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_g3sCsPZGEeeRtsIwZGRIFA" type="3001">
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Task/maxSpace"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g3sCsfZGEeeRtsIwZGRIFA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_jXwywPZGEeeRtsIwZGRIFA" type="3001">
+        <element xmi:type="ecore:EAttribute" href="pipeline.ecore#//Task/maxTime"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_jXwywfZGEeeRtsIwZGRIFA"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_LHGfNOGVEeeU3dy_CQ-Szg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_LHGfNeGVEeeU3dy_CQ-Szg"/>
     </children>

@@ -79,6 +79,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Task/ID"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Task/incoming"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//Task/outgoing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Task/maxSpace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pipeline.ecore#//Task/maxTime"/>
     </genClasses>
     <genClasses ecoreClass="pipeline.ecore#//DataFlow">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pipeline.ecore#//DataFlow/target"/>

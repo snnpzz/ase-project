@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pipeline.Task#getID <em>ID</em>}</li>
  *   <li>{@link pipeline.Task#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link pipeline.Task#getOutgoing <em>Outgoing</em>}</li>
+ *   <li>{@link pipeline.Task#getMaxSpace <em>Max Space</em>}</li>
+ *   <li>{@link pipeline.Task#getMaxTime <em>Max Time</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getTask()
@@ -87,5 +89,57 @@ public interface Task extends EObject {
 	 * @generated
 	 */
 	EList<DataFlow> getOutgoing();
+
+	/**
+	 * Returns the value of the '<em><b>Max Space</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Space</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Space</em>' attribute.
+	 * @see #setMaxSpace(int)
+	 * @see pipeline.PipelinePackage#getTask_MaxSpace()
+	 * @model
+	 * @generated
+	 */
+	int getMaxSpace();
+
+	/**
+	 * Sets the value of the '{@link pipeline.Task#getMaxSpace <em>Max Space</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Space</em>' attribute.
+	 * @see #getMaxSpace()
+	 * @generated
+	 */
+	void setMaxSpace(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Time</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Time</em>' attribute.
+	 * @see #setMaxTime(int)
+	 * @see pipeline.PipelinePackage#getTask_MaxTime()
+	 * @model
+	 * @generated
+	 */
+	int getMaxTime();
+
+	/**
+	 * Sets the value of the '{@link pipeline.Task#getMaxTime <em>Max Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Time</em>' attribute.
+	 * @see #getMaxTime()
+	 * @generated
+	 */
+	void setMaxTime(int value);
 
 } // Task

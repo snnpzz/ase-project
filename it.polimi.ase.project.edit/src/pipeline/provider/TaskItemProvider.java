@@ -63,6 +63,8 @@ public class TaskItemProvider
 			addIDPropertyDescriptor(object);
 			addIncomingPropertyDescriptor(object);
 			addOutgoingPropertyDescriptor(object);
+			addMaxSpacePropertyDescriptor(object);
+			addMaxTimePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -134,6 +136,50 @@ public class TaskItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Max Space feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaxSpacePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Task_maxSpace_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Task_maxSpace_feature", "_UI_Task_type"),
+				 PipelinePackage.Literals.TASK__MAX_SPACE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Max Time feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaxTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Task_maxTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Task_maxTime_feature", "_UI_Task_type"),
+				 PipelinePackage.Literals.TASK__MAX_TIME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,6 +207,8 @@ public class TaskItemProvider
 
 		switch (notification.getFeatureID(Task.class)) {
 			case PipelinePackage.TASK__ID:
+			case PipelinePackage.TASK__MAX_SPACE:
+			case PipelinePackage.TASK__MAX_TIME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

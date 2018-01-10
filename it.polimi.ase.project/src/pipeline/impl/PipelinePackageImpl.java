@@ -515,6 +515,24 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTask_MaxSpace() {
+		return (EAttribute)taskEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTask_MaxTime() {
+		return (EAttribute)taskEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDataFlow() {
 		return dataFlowEClass;
 	}
@@ -1398,6 +1416,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEAttribute(taskEClass, TASK__ID);
 		createEReference(taskEClass, TASK__INCOMING);
 		createEReference(taskEClass, TASK__OUTGOING);
+		createEAttribute(taskEClass, TASK__MAX_SPACE);
+		createEAttribute(taskEClass, TASK__MAX_TIME);
 
 		dataFlowEClass = createEClass(DATA_FLOW);
 		createEReference(dataFlowEClass, DATA_FLOW__TARGET);
@@ -1584,6 +1604,8 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEAttribute(getTask_ID(), ecorePackage.getEString(), "ID", null, 1, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_Incoming(), this.getDataFlow(), this.getDataFlow_Target(), "incoming", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_Outgoing(), this.getDataFlow(), this.getDataFlow_Source(), "outgoing", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTask_MaxSpace(), ecorePackage.getEInt(), "maxSpace", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTask_MaxTime(), ecorePackage.getEInt(), "maxTime", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataFlowEClass, DataFlow.class, "DataFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataFlow_Target(), this.getTask(), this.getTask_Incoming(), "target", null, 0, 1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

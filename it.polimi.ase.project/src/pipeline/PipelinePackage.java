@@ -185,13 +185,31 @@ public interface PipelinePackage extends EPackage {
 	int TASK__OUTGOING = 2;
 
 	/**
+	 * The feature id for the '<em><b>Max Space</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__MAX_SPACE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Max Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__MAX_TIME = 4;
+
+	/**
 	 * The number of structural features of the '<em>Task</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_FEATURE_COUNT = 3;
+	int TASK_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.DataFlowImpl <em>Data Flow</em>}' class.
@@ -479,6 +497,24 @@ public interface PipelinePackage extends EPackage {
 	int COLLECTION_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>Max Space</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_TASK__MAX_SPACE = TASK__MAX_SPACE;
+
+	/**
+	 * The feature id for the '<em><b>Max Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_TASK__MAX_TIME = TASK__MAX_TIME;
+
+	/**
 	 * The feature id for the '<em><b>Import Operations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -532,6 +568,24 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int INTEGRATION_TASK__OUTGOING = TASK__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Max Space</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_TASK__MAX_SPACE = TASK__MAX_SPACE;
+
+	/**
+	 * The feature id for the '<em><b>Max Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_TASK__MAX_TIME = TASK__MAX_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Integration Operations</b></em>' containment reference list.
@@ -589,6 +643,24 @@ public interface PipelinePackage extends EPackage {
 	int CLEANING_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>Max Space</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLEANING_TASK__MAX_SPACE = TASK__MAX_SPACE;
+
+	/**
+	 * The feature id for the '<em><b>Max Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLEANING_TASK__MAX_TIME = TASK__MAX_TIME;
+
+	/**
 	 * The feature id for the '<em><b>Cleaning Operations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -642,6 +714,24 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int ANALYSIS_TASK__OUTGOING = TASK__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Max Space</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_TASK__MAX_SPACE = TASK__MAX_SPACE;
+
+	/**
+	 * The feature id for the '<em><b>Max Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_TASK__MAX_TIME = TASK__MAX_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Analysis Operations</b></em>' containment reference list.
@@ -699,6 +789,24 @@ public interface PipelinePackage extends EPackage {
 	int VISUALIZATION_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>Max Space</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_TASK__MAX_SPACE = TASK__MAX_SPACE;
+
+	/**
+	 * The feature id for the '<em><b>Max Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_TASK__MAX_TIME = TASK__MAX_TIME;
+
+	/**
 	 * The feature id for the '<em><b>Visualization Operations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -752,6 +860,24 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int EXPORT_TASK__OUTGOING = TASK__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Max Space</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPORT_TASK__MAX_SPACE = TASK__MAX_SPACE;
+
+	/**
+	 * The feature id for the '<em><b>Max Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPORT_TASK__MAX_TIME = TASK__MAX_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Export Operations</b></em>' containment reference list.
@@ -2011,6 +2137,28 @@ public interface PipelinePackage extends EPackage {
 	EReference getTask_Outgoing();
 
 	/**
+	 * Returns the meta object for the attribute '{@link pipeline.Task#getMaxSpace <em>Max Space</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Space</em>'.
+	 * @see pipeline.Task#getMaxSpace()
+	 * @see #getTask()
+	 * @generated
+	 */
+	EAttribute getTask_MaxSpace();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pipeline.Task#getMaxTime <em>Max Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Time</em>'.
+	 * @see pipeline.Task#getMaxTime()
+	 * @see #getTask()
+	 * @generated
+	 */
+	EAttribute getTask_MaxTime();
+
+	/**
 	 * Returns the meta object for class '{@link pipeline.DataFlow <em>Data Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3136,6 +3284,22 @@ public interface PipelinePackage extends EPackage {
 		 * @generated
 		 */
 		EReference TASK__OUTGOING = eINSTANCE.getTask_Outgoing();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Space</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TASK__MAX_SPACE = eINSTANCE.getTask_MaxSpace();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TASK__MAX_TIME = eINSTANCE.getTask_MaxTime();
 
 		/**
 		 * The meta object literal for the '{@link pipeline.impl.DataFlowImpl <em>Data Flow</em>}' class.

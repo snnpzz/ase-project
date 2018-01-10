@@ -9,8 +9,8 @@
 # This will generate an executable version of the pipeline
 # Structure of the program:
 # - if sources are local files and path is not specified, place them in a folder named "sources" at the same level of the R file;
-	if sources are remote, if they don't require credentials they will be automatically downloaded, otherwise you need to manually
-	download them;
+#	if sources are remote, if they don't require credentials they will be automatically downloaded, otherwise you need to manually
+#	download them;
 # - all output files will be placed in a folder named "output" at the same level of the R file.
 
 # A pdf file will be anyway exported in "output/[aPipeline.ID/].pdf"
@@ -292,7 +292,7 @@ data2plot <- data.frame(
 [elseif (type.toString() = 'Column')]
 	barplot(data2plot)
 [elseif (type.toString() = 'Histogram')]
-	hist([attributes.name/]
+	hist([attributes.name/])
 [elseif (type.toString() = 'Line')]
 	plot(data2plot)
 	lines(data2plot['['/],2[']'/])

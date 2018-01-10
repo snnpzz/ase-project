@@ -223,11 +223,11 @@ source
 	[op.ID/]
 [elseif (op.type.toString() = 'KNN')] 
 	# KNN
-	knnInd <- sample(nrow(sample), round(nrow(sample)*0.8)
+	knnInd <- sample(nrow(source), round(nrow(source)*0.8)
 	train  <- cbind([writeColumns(op.inputAttributes, '[knnInd, ]')/])
 	knnInd <- -knnInd
 	test   <- cbind([writeColumns(op.inputAttributes, '[knnInd, ]')/])
-	[op.ID/] <- knn(train, test, k = 10, prob = TRUE)
+	[op.ID/] <- knn(train, test, k = 3, prob = TRUE)
 	source$[op.outputAttribute.name/] <- [op.ID/]
 	rm(knnInd, train, test)
 [else]

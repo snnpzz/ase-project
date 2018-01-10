@@ -60,7 +60,7 @@ public class ExportTaskIDEditPart extends CompartmentEditPart implements ITextAw
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5008;
+	public static final int VISUAL_ID = 5006;
 
 	/**
 	* @generated

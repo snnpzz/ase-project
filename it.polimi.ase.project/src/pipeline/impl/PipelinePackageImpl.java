@@ -498,7 +498,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * @generated
 	 */
 	public EReference getTask_Incoming() {
-		return (EReference)taskEClass.getEStructuralFeatures().get(1);
+		return (EReference)taskEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -507,7 +507,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * @generated
 	 */
 	public EReference getTask_Outgoing() {
-		return (EReference)taskEClass.getEStructuralFeatures().get(2);
+		return (EReference)taskEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -516,7 +516,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * @generated
 	 */
 	public EAttribute getTask_MaxSpace() {
-		return (EAttribute)taskEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)taskEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -525,7 +525,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 	 * @generated
 	 */
 	public EAttribute getTask_MaxTime() {
-		return (EAttribute)taskEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)taskEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1414,10 +1414,10 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		taskEClass = createEClass(TASK);
 		createEAttribute(taskEClass, TASK__ID);
-		createEReference(taskEClass, TASK__INCOMING);
-		createEReference(taskEClass, TASK__OUTGOING);
 		createEAttribute(taskEClass, TASK__MAX_SPACE);
 		createEAttribute(taskEClass, TASK__MAX_TIME);
+		createEReference(taskEClass, TASK__INCOMING);
+		createEReference(taskEClass, TASK__OUTGOING);
 
 		dataFlowEClass = createEClass(DATA_FLOW);
 		createEReference(dataFlowEClass, DATA_FLOW__TARGET);
@@ -1469,12 +1469,42 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEReference(importOperationEClass, IMPORT_OPERATION__READ);
 		createEReference(importOperationEClass, IMPORT_OPERATION__USE);
 
-		exportOperationEClass = createEClass(EXPORT_OPERATION);
-		createEAttribute(exportOperationEClass, EXPORT_OPERATION__ID);
-		createEReference(exportOperationEClass, EXPORT_OPERATION__WRITE);
+		integrationOperationEClass = createEClass(INTEGRATION_OPERATION);
+		createEAttribute(integrationOperationEClass, INTEGRATION_OPERATION__ID);
+		createEReference(integrationOperationEClass, INTEGRATION_OPERATION__INPUT_ATTRIBUTES);
+		createEReference(integrationOperationEClass, INTEGRATION_OPERATION__OUTPUT_ATTRIBUTE);
+
+		cleaningOperationEClass = createEClass(CLEANING_OPERATION);
+
+		predefinedCleaningOperationEClass = createEClass(PREDEFINED_CLEANING_OPERATION);
+		createEAttribute(predefinedCleaningOperationEClass, PREDEFINED_CLEANING_OPERATION__TYPE);
 
 		userDefinedCleaningOperationEClass = createEClass(USER_DEFINED_CLEANING_OPERATION);
 		createEAttribute(userDefinedCleaningOperationEClass, USER_DEFINED_CLEANING_OPERATION__TYPE);
+
+		analysisOperationEClass = createEClass(ANALYSIS_OPERATION);
+		createEReference(analysisOperationEClass, ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE);
+
+		classificationAnalysisOperationEClass = createEClass(CLASSIFICATION_ANALYSIS_OPERATION);
+		createEAttribute(classificationAnalysisOperationEClass, CLASSIFICATION_ANALYSIS_OPERATION__TYPE);
+
+		clusteringAnalysisOperationEClass = createEClass(CLUSTERING_ANALYSIS_OPERATION);
+		createEAttribute(clusteringAnalysisOperationEClass, CLUSTERING_ANALYSIS_OPERATION__TYPE);
+		createEAttribute(clusteringAnalysisOperationEClass, CLUSTERING_ANALYSIS_OPERATION__K);
+
+		descriptiveAnalysisOperationEClass = createEClass(DESCRIPTIVE_ANALYSIS_OPERATION);
+		createEAttribute(descriptiveAnalysisOperationEClass, DESCRIPTIVE_ANALYSIS_OPERATION__TYPE);
+
+		predictiveAnalysisOperationEClass = createEClass(PREDICTIVE_ANALYSIS_OPERATION);
+		createEAttribute(predictiveAnalysisOperationEClass, PREDICTIVE_ANALYSIS_OPERATION__TYPE);
+
+		visualizationOperationEClass = createEClass(VISUALIZATION_OPERATION);
+		createEReference(visualizationOperationEClass, VISUALIZATION_OPERATION__CHART);
+		createEAttribute(visualizationOperationEClass, VISUALIZATION_OPERATION__ID);
+
+		exportOperationEClass = createEClass(EXPORT_OPERATION);
+		createEAttribute(exportOperationEClass, EXPORT_OPERATION__ID);
+		createEReference(exportOperationEClass, EXPORT_OPERATION__WRITE);
 
 		sourceEClass = createEClass(SOURCE);
 		createEAttribute(sourceEClass, SOURCE__NAME);
@@ -1496,41 +1526,11 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createEAttribute(chartEClass, CHART__TYPE);
 		createEReference(chartEClass, CHART__AXES);
 
-		cleaningOperationEClass = createEClass(CLEANING_OPERATION);
-
-		analysisOperationEClass = createEClass(ANALYSIS_OPERATION);
-		createEReference(analysisOperationEClass, ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE);
-
-		descriptiveAnalysisOperationEClass = createEClass(DESCRIPTIVE_ANALYSIS_OPERATION);
-		createEAttribute(descriptiveAnalysisOperationEClass, DESCRIPTIVE_ANALYSIS_OPERATION__TYPE);
-
-		classificationAnalysisOperationEClass = createEClass(CLASSIFICATION_ANALYSIS_OPERATION);
-		createEAttribute(classificationAnalysisOperationEClass, CLASSIFICATION_ANALYSIS_OPERATION__TYPE);
-
-		predictiveAnalysisOperationEClass = createEClass(PREDICTIVE_ANALYSIS_OPERATION);
-		createEAttribute(predictiveAnalysisOperationEClass, PREDICTIVE_ANALYSIS_OPERATION__TYPE);
-
-		clusteringAnalysisOperationEClass = createEClass(CLUSTERING_ANALYSIS_OPERATION);
-		createEAttribute(clusteringAnalysisOperationEClass, CLUSTERING_ANALYSIS_OPERATION__TYPE);
-		createEAttribute(clusteringAnalysisOperationEClass, CLUSTERING_ANALYSIS_OPERATION__K);
-
-		predefinedCleaningOperationEClass = createEClass(PREDEFINED_CLEANING_OPERATION);
-		createEAttribute(predefinedCleaningOperationEClass, PREDEFINED_CLEANING_OPERATION__TYPE);
-
 		simpleAttributeEClass = createEClass(SIMPLE_ATTRIBUTE);
 		createEAttribute(simpleAttributeEClass, SIMPLE_ATTRIBUTE__TYPE);
 
 		complexAttributeEClass = createEClass(COMPLEX_ATTRIBUTE);
 		createEReference(complexAttributeEClass, COMPLEX_ATTRIBUTE__ATTRIBUTES);
-
-		visualizationOperationEClass = createEClass(VISUALIZATION_OPERATION);
-		createEReference(visualizationOperationEClass, VISUALIZATION_OPERATION__CHART);
-		createEAttribute(visualizationOperationEClass, VISUALIZATION_OPERATION__ID);
-
-		integrationOperationEClass = createEClass(INTEGRATION_OPERATION);
-		createEAttribute(integrationOperationEClass, INTEGRATION_OPERATION__ID);
-		createEReference(integrationOperationEClass, INTEGRATION_OPERATION__INPUT_ATTRIBUTES);
-		createEReference(integrationOperationEClass, INTEGRATION_OPERATION__OUTPUT_ATTRIBUTE);
 
 		// Create enums
 		predefinedOperationEEnum = createEEnum(PREDEFINED_OPERATION);
@@ -1578,14 +1578,14 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		analysisTaskEClass.getESuperTypes().add(this.getTask());
 		visualizationTaskEClass.getESuperTypes().add(this.getTask());
 		exportTaskEClass.getESuperTypes().add(this.getTask());
-		userDefinedCleaningOperationEClass.getESuperTypes().add(this.getCleaningOperation());
 		cleaningOperationEClass.getESuperTypes().add(this.getOperation());
-		analysisOperationEClass.getESuperTypes().add(this.getOperation());
-		descriptiveAnalysisOperationEClass.getESuperTypes().add(this.getAnalysisOperation());
-		classificationAnalysisOperationEClass.getESuperTypes().add(this.getAnalysisOperation());
-		predictiveAnalysisOperationEClass.getESuperTypes().add(this.getAnalysisOperation());
-		clusteringAnalysisOperationEClass.getESuperTypes().add(this.getAnalysisOperation());
 		predefinedCleaningOperationEClass.getESuperTypes().add(this.getCleaningOperation());
+		userDefinedCleaningOperationEClass.getESuperTypes().add(this.getCleaningOperation());
+		analysisOperationEClass.getESuperTypes().add(this.getOperation());
+		classificationAnalysisOperationEClass.getESuperTypes().add(this.getAnalysisOperation());
+		clusteringAnalysisOperationEClass.getESuperTypes().add(this.getAnalysisOperation());
+		descriptiveAnalysisOperationEClass.getESuperTypes().add(this.getAnalysisOperation());
+		predictiveAnalysisOperationEClass.getESuperTypes().add(this.getAnalysisOperation());
 		simpleAttributeEClass.getESuperTypes().add(this.getAttribute());
 		complexAttributeEClass.getESuperTypes().add(this.getAttribute());
 
@@ -1602,10 +1602,10 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 
 		initEClass(taskEClass, Task.class, "Task", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTask_ID(), ecorePackage.getEString(), "ID", null, 1, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTask_Incoming(), this.getDataFlow(), this.getDataFlow_Target(), "incoming", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTask_Outgoing(), this.getDataFlow(), this.getDataFlow_Source(), "outgoing", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTask_MaxSpace(), ecorePackage.getEInt(), "maxSpace", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTask_MaxTime(), ecorePackage.getEInt(), "maxTime", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTask_Incoming(), this.getDataFlow(), this.getDataFlow_Target(), "incoming", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTask_Outgoing(), this.getDataFlow(), this.getDataFlow_Source(), "outgoing", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataFlowEClass, DataFlow.class, "DataFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataFlow_Target(), this.getTask(), this.getTask_Incoming(), "target", null, 0, 1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1657,12 +1657,42 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEReference(getImportOperation_Read(), this.getSource(), null, "read", null, 1, 1, ImportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getImportOperation_Use(), this.getSchema(), null, "use", null, 1, 1, ImportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(exportOperationEClass, ExportOperation.class, "ExportOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getExportOperation_ID(), ecorePackage.getEString(), "ID", null, 1, 1, ExportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExportOperation_Write(), this.getFile(), null, "write", null, 1, 1, ExportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(integrationOperationEClass, IntegrationOperation.class, "IntegrationOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIntegrationOperation_ID(), ecorePackage.getEString(), "ID", null, 1, 1, IntegrationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIntegrationOperation_InputAttributes(), this.getAttribute(), null, "inputAttributes", null, 1, -1, IntegrationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIntegrationOperation_OutputAttribute(), this.getAttribute(), null, "outputAttribute", null, 0, 1, IntegrationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(cleaningOperationEClass, CleaningOperation.class, "CleaningOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(predefinedCleaningOperationEClass, PredefinedCleaningOperation.class, "PredefinedCleaningOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPredefinedCleaningOperation_Type(), this.getPredefinedOperation(), "type", "", 0, 1, PredefinedCleaningOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(userDefinedCleaningOperationEClass, UserDefinedCleaningOperation.class, "UserDefinedCleaningOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserDefinedCleaningOperation_Type(), ecorePackage.getEString(), "type", null, 0, 1, UserDefinedCleaningOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(analysisOperationEClass, AnalysisOperation.class, "AnalysisOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAnalysisOperation_OutputAttribute(), this.getSimpleAttribute(), null, "outputAttribute", null, 0, 1, AnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(classificationAnalysisOperationEClass, ClassificationAnalysisOperation.class, "ClassificationAnalysisOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getClassificationAnalysisOperation_Type(), this.getClassificationOperation(), "type", null, 0, 1, ClassificationAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(clusteringAnalysisOperationEClass, ClusteringAnalysisOperation.class, "ClusteringAnalysisOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getClusteringAnalysisOperation_Type(), this.getClusteringOperation(), "type", null, 0, 1, ClusteringAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClusteringAnalysisOperation_K(), ecorePackage.getEInt(), "k", null, 0, 1, ClusteringAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(descriptiveAnalysisOperationEClass, DescriptiveAnalysisOperation.class, "DescriptiveAnalysisOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDescriptiveAnalysisOperation_Type(), this.getDescriptiveOperation(), "type", null, 0, 1, DescriptiveAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(predictiveAnalysisOperationEClass, PredictiveAnalysisOperation.class, "PredictiveAnalysisOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPredictiveAnalysisOperation_Type(), this.getPredictiveOperation(), "type", null, 0, 1, PredictiveAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(visualizationOperationEClass, VisualizationOperation.class, "VisualizationOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVisualizationOperation_Chart(), this.getChart(), null, "chart", null, 1, 1, VisualizationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVisualizationOperation_ID(), ecorePackage.getEString(), "ID", null, 1, 1, VisualizationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(exportOperationEClass, ExportOperation.class, "ExportOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getExportOperation_ID(), ecorePackage.getEString(), "ID", null, 1, 1, ExportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExportOperation_Write(), this.getFile(), null, "write", null, 1, 1, ExportOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sourceEClass, Source.class, "Source", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSource_Name(), ecorePackage.getEString(), "name", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1684,41 +1714,11 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		initEAttribute(getChart_Type(), this.getChartType(), "type", null, 0, 1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getChart_Axes(), this.getSimpleAttribute(), null, "axes", null, 1, -1, Chart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(cleaningOperationEClass, CleaningOperation.class, "CleaningOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(analysisOperationEClass, AnalysisOperation.class, "AnalysisOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnalysisOperation_OutputAttribute(), this.getSimpleAttribute(), null, "outputAttribute", null, 0, 1, AnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(descriptiveAnalysisOperationEClass, DescriptiveAnalysisOperation.class, "DescriptiveAnalysisOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDescriptiveAnalysisOperation_Type(), this.getDescriptiveOperation(), "type", null, 0, 1, DescriptiveAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(classificationAnalysisOperationEClass, ClassificationAnalysisOperation.class, "ClassificationAnalysisOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getClassificationAnalysisOperation_Type(), this.getClassificationOperation(), "type", null, 0, 1, ClassificationAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(predictiveAnalysisOperationEClass, PredictiveAnalysisOperation.class, "PredictiveAnalysisOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPredictiveAnalysisOperation_Type(), this.getPredictiveOperation(), "type", null, 0, 1, PredictiveAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(clusteringAnalysisOperationEClass, ClusteringAnalysisOperation.class, "ClusteringAnalysisOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getClusteringAnalysisOperation_Type(), this.getClusteringOperation(), "type", null, 0, 1, ClusteringAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getClusteringAnalysisOperation_K(), ecorePackage.getEInt(), "k", null, 0, 1, ClusteringAnalysisOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(predefinedCleaningOperationEClass, PredefinedCleaningOperation.class, "PredefinedCleaningOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPredefinedCleaningOperation_Type(), this.getPredefinedOperation(), "type", "", 0, 1, PredefinedCleaningOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(simpleAttributeEClass, SimpleAttribute.class, "SimpleAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSimpleAttribute_Type(), this.getType(), "type", null, 0, 1, SimpleAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(complexAttributeEClass, ComplexAttribute.class, "ComplexAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComplexAttribute_Attributes(), this.getAttribute(), null, "attributes", null, 1, -1, ComplexAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(visualizationOperationEClass, VisualizationOperation.class, "VisualizationOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVisualizationOperation_Chart(), this.getChart(), null, "chart", null, 1, 1, VisualizationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisualizationOperation_ID(), ecorePackage.getEString(), "ID", null, 1, 1, VisualizationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(integrationOperationEClass, IntegrationOperation.class, "IntegrationOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIntegrationOperation_ID(), ecorePackage.getEString(), "ID", null, 1, 1, IntegrationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIntegrationOperation_InputAttributes(), this.getAttribute(), null, "inputAttributes", null, 1, -1, IntegrationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIntegrationOperation_OutputAttribute(), this.getAttribute(), null, "outputAttribute", null, 0, 1, IntegrationOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(predefinedOperationEEnum, PredefinedOperation.class, "PredefinedOperation");
@@ -1789,10 +1789,6 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		createGmfAnnotations();
 		// gmf.node
 		createGmf_1Annotations();
-		// gmf.link
-		createGmf_2Annotations();
-		// gmf.compartment
-		createGmf_3Annotations();
 	}
 
 	/**
@@ -1822,177 +1818,7 @@ public class PipelinePackageImpl extends EPackageImpl implements PipelinePackage
 		  (taskEClass, 
 		   source, 
 		   new String[] {
-			 "label", "ID",
-			 "figure", "rounded"
-		   });	
-		addAnnotation
-		  (schemaEClass, 
-		   source, 
-		   new String[] {
-			 "label", "name",
-			 "label.placement", "none",
-			 "figure", "rounded"
-		   });	
-		addAnnotation
-		  (attributeEClass, 
-		   source, 
-		   new String[] {
-			 "label", "name"
-		   });	
-		addAnnotation
-		  (importOperationEClass, 
-		   source, 
-		   new String[] {
-			 "label", "ID",
-			 "label.text", "Import",
-			 "figure", "ellipse"
-		   });	
-		addAnnotation
-		  (exportOperationEClass, 
-		   source, 
-		   new String[] {
-			 "label", "ID",
-			 "label.text", "Export",
-			 "figure", "ellipse"
-		   });	
-		addAnnotation
-		  (sourceEClass, 
-		   source, 
-		   new String[] {
-			 "label", "name"
-		   });	
-		addAnnotation
-		  (fileEClass, 
-		   source, 
-		   new String[] {
-			 "label", "name"
-		   });	
-		addAnnotation
-		  (chartEClass, 
-		   source, 
-		   new String[] {
-			 "label", "title",
-			 "figure", "rounded"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>gmf.link</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createGmf_2Annotations() {
-		String source = "gmf.link";	
-		addAnnotation
-		  (dataFlowEClass, 
-		   source, 
-		   new String[] {
-			 "source", "source",
-			 "target", "target",
-			 "width", "2",
-			 "target.decoration", "filledclosedarrow"
-		   });	
-		addAnnotation
-		  (getDataFlow_Schema(), 
-		   source, 
-		   new String[] {
-			 "width", "1",
-			 "target.decoration", "arrow",
-			 "tool.name", "DFSchema",
-			 "style", "dot"
-		   });	
-		addAnnotation
-		  (internalDataFlowEClass, 
-		   source, 
-		   new String[] {
-			 "source", "source",
-			 "target", "target",
-			 "width", "2",
-			 "target.decoration", "filledclosedarrow",
-			 "style", "dash"
-		   });	
-		addAnnotation
-		  (getImportOperation_Read(), 
-		   source, 
-		   new String[] {
-			 "width", "2",
-			 "target.decoration", "square",
-			 "style", "dash"
-		   });	
-		addAnnotation
-		  (getImportOperation_Use(), 
-		   source, 
-		   new String[] {
-			 "width", "1",
-			 "target.decoration", "arrow"
-		   });	
-		addAnnotation
-		  (getExportOperation_Write(), 
-		   source, 
-		   new String[] {
-			 "width", "2",
-			 "target.decoration", "filledsquare",
-			 "style", "dash"
-		   });	
-		addAnnotation
-		  (getChart_Axes(), 
-		   source, 
-		   new String[] {
-			 "width", "1",
-			 "target.decoration", "closedarrow"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>gmf.compartment</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createGmf_3Annotations() {
-		String source = "gmf.compartment";	
-		addAnnotation
-		  (getSchema_Attributes(), 
-		   source, 
-		   new String[] {
-			 "layout", "list"
-		   });	
-		addAnnotation
-		  (getCollectionTask_ImportOperations(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getIntegrationTask_IntegrationOperations(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getCleaningTask_CleaningOperations(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getAnalysisTask_AnalysisOperations(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getVisualizationTask_VisualizationOperations(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getExportTask_ExportOperations(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getComplexAttribute_Attributes(), 
-		   source, 
-		   new String[] {
-			 "layout", "list"
+			 "label", "ID"
 		   });
 	}
 

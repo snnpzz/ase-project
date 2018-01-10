@@ -61,10 +61,10 @@ public class TaskItemProvider
 			super.getPropertyDescriptors(object);
 
 			addIDPropertyDescriptor(object);
-			addIncomingPropertyDescriptor(object);
-			addOutgoingPropertyDescriptor(object);
 			addMaxSpacePropertyDescriptor(object);
 			addMaxTimePropertyDescriptor(object);
+			addIncomingPropertyDescriptor(object);
+			addOutgoingPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}

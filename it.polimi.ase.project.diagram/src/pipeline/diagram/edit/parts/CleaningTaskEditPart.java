@@ -67,7 +67,7 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CleaningTaskItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy()); // XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
@@ -118,12 +118,6 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 			((CleaningTaskIDEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCleaningTaskLabelFigure());
 			return true;
 		}
-		if (childEditPart instanceof CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getCleaningTaskCleaningOperationsCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart) childEditPart).getFigure());
-			return true;
-		}
 		return false;
 	}
 
@@ -132,11 +126,6 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof CleaningTaskIDEditPart) {
-			return true;
-		}
-		if (childEditPart instanceof CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getCleaningTaskCleaningOperationsCompartmentFigure();
-			pane.remove(((CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -166,9 +155,6 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart) {
-			return getPrimaryShape().getCleaningTaskCleaningOperationsCompartmentFigure();
-		}
 		return getContentPane();
 	}
 
@@ -286,10 +272,6 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private WrappingLabel fFigureCleaningTaskLabelFigure;
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fCleaningTaskCleaningOperationsCompartmentFigure;
 
 		/**
 		 * @generated
@@ -309,16 +291,8 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 			fFigureCleaningTaskLabelFigure = new WrappingLabel();
 
 			fFigureCleaningTaskLabelFigure.setText("CleaningTask");
-			fFigureCleaningTaskLabelFigure
-					.setMaximumSize(new Dimension(getMapMode().DPtoLP(10000), getMapMode().DPtoLP(50)));
 
 			this.add(fFigureCleaningTaskLabelFigure);
-
-			fCleaningTaskCleaningOperationsCompartmentFigure = new RectangleFigure();
-
-			fCleaningTaskCleaningOperationsCompartmentFigure.setOutline(false);
-
-			this.add(fCleaningTaskCleaningOperationsCompartmentFigure);
 
 		}
 
@@ -327,13 +301,6 @@ public class CleaningTaskEditPart extends ShapeNodeEditPart {
 		 */
 		public WrappingLabel getFigureCleaningTaskLabelFigure() {
 			return fFigureCleaningTaskLabelFigure;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getCleaningTaskCleaningOperationsCompartmentFigure() {
-			return fCleaningTaskCleaningOperationsCompartmentFigure;
 		}
 
 	}

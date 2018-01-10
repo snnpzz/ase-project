@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see pipeline.PipelinePackage#getImportOperation()
- * @model annotation="gmf.node label='ID' label.text='Import' figure='ellipse'"
+ * @model
  * @generated
  */
 public interface ImportOperation extends EObject {
@@ -35,7 +35,6 @@ public interface ImportOperation extends EObject {
 	 * @see #setRead(Source)
 	 * @see pipeline.PipelinePackage#getImportOperation_Read()
 	 * @model required="true"
-	 *        annotation="gmf.link width='2' target.decoration='square' style='dash'"
 	 * @generated
 	 */
 	Source getRead();
@@ -62,7 +61,6 @@ public interface ImportOperation extends EObject {
 	 * @see #setUse(Schema)
 	 * @see pipeline.PipelinePackage#getImportOperation_Use()
 	 * @model required="true"
-	 *        annotation="gmf.link width='1' target.decoration='arrow'"
 	 * @generated
 	 */
 	Schema getUse();

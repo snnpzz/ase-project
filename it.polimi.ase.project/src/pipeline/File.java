@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see pipeline.PipelinePackage#getFile()
- * @model annotation="gmf.node label='name'"
+ * @model
  * @generated
  */
 public interface File extends EObject {

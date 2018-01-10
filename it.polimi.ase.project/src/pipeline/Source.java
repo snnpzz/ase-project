@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see pipeline.PipelinePackage#getSource()
- * @model annotation="gmf.node label='name'"
+ * @model
  * @generated
  */
 public interface Source extends EObject {

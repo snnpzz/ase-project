@@ -56,18 +56,6 @@ public class PipelineItemSemanticEditPolicy extends PipelineBaseItemSemanticEdit
 		if (PipelineElementTypes.ExportTask_2006 == req.getElementType()) {
 			return getGEFWrapper(new ExportTaskCreateCommand(req));
 		}
-		if (PipelineElementTypes.Source_2007 == req.getElementType()) {
-			return getGEFWrapper(new SourceCreateCommand(req));
-		}
-		if (PipelineElementTypes.File_2008 == req.getElementType()) {
-			return getGEFWrapper(new FileCreateCommand(req));
-		}
-		if (PipelineElementTypes.Schema_2009 == req.getElementType()) {
-			return getGEFWrapper(new SchemaCreateCommand(req));
-		}
-		if (PipelineElementTypes.Chart_2010 == req.getElementType()) {
-			return getGEFWrapper(new ChartCreateCommand(req));
-		}
 		return super.getCreateCommand(req);
 	}
 

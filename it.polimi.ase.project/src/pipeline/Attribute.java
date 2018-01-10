@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see pipeline.PipelinePackage#getAttribute()
  * @model abstract="true"
- *        annotation="gmf.node label='name'"
  * @generated
  */
 public interface Attribute extends EObject {

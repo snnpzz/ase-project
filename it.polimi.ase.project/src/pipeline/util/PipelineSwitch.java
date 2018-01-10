@@ -156,9 +156,24 @@ public class PipelineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.EXPORT_OPERATION: {
-				ExportOperation exportOperation = (ExportOperation)theEObject;
-				T result = caseExportOperation(exportOperation);
+			case PipelinePackage.INTEGRATION_OPERATION: {
+				IntegrationOperation integrationOperation = (IntegrationOperation)theEObject;
+				T result = caseIntegrationOperation(integrationOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PipelinePackage.CLEANING_OPERATION: {
+				CleaningOperation cleaningOperation = (CleaningOperation)theEObject;
+				T result = caseCleaningOperation(cleaningOperation);
+				if (result == null) result = caseOperation(cleaningOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PipelinePackage.PREDEFINED_CLEANING_OPERATION: {
+				PredefinedCleaningOperation predefinedCleaningOperation = (PredefinedCleaningOperation)theEObject;
+				T result = casePredefinedCleaningOperation(predefinedCleaningOperation);
+				if (result == null) result = caseCleaningOperation(predefinedCleaningOperation);
+				if (result == null) result = caseOperation(predefinedCleaningOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -167,6 +182,57 @@ public class PipelineSwitch<T> extends Switch<T> {
 				T result = caseUserDefinedCleaningOperation(userDefinedCleaningOperation);
 				if (result == null) result = caseCleaningOperation(userDefinedCleaningOperation);
 				if (result == null) result = caseOperation(userDefinedCleaningOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PipelinePackage.ANALYSIS_OPERATION: {
+				AnalysisOperation analysisOperation = (AnalysisOperation)theEObject;
+				T result = caseAnalysisOperation(analysisOperation);
+				if (result == null) result = caseOperation(analysisOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PipelinePackage.CLASSIFICATION_ANALYSIS_OPERATION: {
+				ClassificationAnalysisOperation classificationAnalysisOperation = (ClassificationAnalysisOperation)theEObject;
+				T result = caseClassificationAnalysisOperation(classificationAnalysisOperation);
+				if (result == null) result = caseAnalysisOperation(classificationAnalysisOperation);
+				if (result == null) result = caseOperation(classificationAnalysisOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION: {
+				ClusteringAnalysisOperation clusteringAnalysisOperation = (ClusteringAnalysisOperation)theEObject;
+				T result = caseClusteringAnalysisOperation(clusteringAnalysisOperation);
+				if (result == null) result = caseAnalysisOperation(clusteringAnalysisOperation);
+				if (result == null) result = caseOperation(clusteringAnalysisOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PipelinePackage.DESCRIPTIVE_ANALYSIS_OPERATION: {
+				DescriptiveAnalysisOperation descriptiveAnalysisOperation = (DescriptiveAnalysisOperation)theEObject;
+				T result = caseDescriptiveAnalysisOperation(descriptiveAnalysisOperation);
+				if (result == null) result = caseAnalysisOperation(descriptiveAnalysisOperation);
+				if (result == null) result = caseOperation(descriptiveAnalysisOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION: {
+				PredictiveAnalysisOperation predictiveAnalysisOperation = (PredictiveAnalysisOperation)theEObject;
+				T result = casePredictiveAnalysisOperation(predictiveAnalysisOperation);
+				if (result == null) result = caseAnalysisOperation(predictiveAnalysisOperation);
+				if (result == null) result = caseOperation(predictiveAnalysisOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PipelinePackage.VISUALIZATION_OPERATION: {
+				VisualizationOperation visualizationOperation = (VisualizationOperation)theEObject;
+				T result = caseVisualizationOperation(visualizationOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PipelinePackage.EXPORT_OPERATION: {
+				ExportOperation exportOperation = (ExportOperation)theEObject;
+				T result = caseExportOperation(exportOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -188,60 +254,6 @@ public class PipelineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PipelinePackage.CLEANING_OPERATION: {
-				CleaningOperation cleaningOperation = (CleaningOperation)theEObject;
-				T result = caseCleaningOperation(cleaningOperation);
-				if (result == null) result = caseOperation(cleaningOperation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PipelinePackage.ANALYSIS_OPERATION: {
-				AnalysisOperation analysisOperation = (AnalysisOperation)theEObject;
-				T result = caseAnalysisOperation(analysisOperation);
-				if (result == null) result = caseOperation(analysisOperation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PipelinePackage.DESCRIPTIVE_ANALYSIS_OPERATION: {
-				DescriptiveAnalysisOperation descriptiveAnalysisOperation = (DescriptiveAnalysisOperation)theEObject;
-				T result = caseDescriptiveAnalysisOperation(descriptiveAnalysisOperation);
-				if (result == null) result = caseAnalysisOperation(descriptiveAnalysisOperation);
-				if (result == null) result = caseOperation(descriptiveAnalysisOperation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PipelinePackage.CLASSIFICATION_ANALYSIS_OPERATION: {
-				ClassificationAnalysisOperation classificationAnalysisOperation = (ClassificationAnalysisOperation)theEObject;
-				T result = caseClassificationAnalysisOperation(classificationAnalysisOperation);
-				if (result == null) result = caseAnalysisOperation(classificationAnalysisOperation);
-				if (result == null) result = caseOperation(classificationAnalysisOperation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION: {
-				PredictiveAnalysisOperation predictiveAnalysisOperation = (PredictiveAnalysisOperation)theEObject;
-				T result = casePredictiveAnalysisOperation(predictiveAnalysisOperation);
-				if (result == null) result = caseAnalysisOperation(predictiveAnalysisOperation);
-				if (result == null) result = caseOperation(predictiveAnalysisOperation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION: {
-				ClusteringAnalysisOperation clusteringAnalysisOperation = (ClusteringAnalysisOperation)theEObject;
-				T result = caseClusteringAnalysisOperation(clusteringAnalysisOperation);
-				if (result == null) result = caseAnalysisOperation(clusteringAnalysisOperation);
-				if (result == null) result = caseOperation(clusteringAnalysisOperation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PipelinePackage.PREDEFINED_CLEANING_OPERATION: {
-				PredefinedCleaningOperation predefinedCleaningOperation = (PredefinedCleaningOperation)theEObject;
-				T result = casePredefinedCleaningOperation(predefinedCleaningOperation);
-				if (result == null) result = caseCleaningOperation(predefinedCleaningOperation);
-				if (result == null) result = caseOperation(predefinedCleaningOperation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case PipelinePackage.SIMPLE_ATTRIBUTE: {
 				SimpleAttribute simpleAttribute = (SimpleAttribute)theEObject;
 				T result = caseSimpleAttribute(simpleAttribute);
@@ -253,18 +265,6 @@ public class PipelineSwitch<T> extends Switch<T> {
 				ComplexAttribute complexAttribute = (ComplexAttribute)theEObject;
 				T result = caseComplexAttribute(complexAttribute);
 				if (result == null) result = caseAttribute(complexAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PipelinePackage.VISUALIZATION_OPERATION: {
-				VisualizationOperation visualizationOperation = (VisualizationOperation)theEObject;
-				T result = caseVisualizationOperation(visualizationOperation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PipelinePackage.INTEGRATION_OPERATION: {
-				IntegrationOperation integrationOperation = (IntegrationOperation)theEObject;
-				T result = caseIntegrationOperation(integrationOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

@@ -186,52 +186,6 @@ public class PipelineVisualIDRegistry {
 			if (PipelinePackage.eINSTANCE.getExportTask().isSuperTypeOf(domainElement.eClass())) {
 				return ExportTaskEditPart.VISUAL_ID;
 			}
-			if (PipelinePackage.eINSTANCE.getSource().isSuperTypeOf(domainElement.eClass())) {
-				return SourceEditPart.VISUAL_ID;
-			}
-			if (PipelinePackage.eINSTANCE.getFile().isSuperTypeOf(domainElement.eClass())) {
-				return FileEditPart.VISUAL_ID;
-			}
-			if (PipelinePackage.eINSTANCE.getSchema().isSuperTypeOf(domainElement.eClass())) {
-				return SchemaEditPart.VISUAL_ID;
-			}
-			if (PipelinePackage.eINSTANCE.getChart().isSuperTypeOf(domainElement.eClass())) {
-				return ChartEditPart.VISUAL_ID;
-			}
-			break;
-		case CollectionTaskCollectionTaskImportOperationsCompartmentEditPart.VISUAL_ID:
-			if (PipelinePackage.eINSTANCE.getImportOperation().isSuperTypeOf(domainElement.eClass())) {
-				return ImportOperationEditPart.VISUAL_ID;
-			}
-			break;
-		case ExportTaskExportTaskExportOperationsCompartmentEditPart.VISUAL_ID:
-			if (PipelinePackage.eINSTANCE.getExportOperation().isSuperTypeOf(domainElement.eClass())) {
-				return ExportOperationEditPart.VISUAL_ID;
-			}
-			break;
-		case SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID:
-			if (PipelinePackage.eINSTANCE.getSimpleAttribute().isSuperTypeOf(domainElement.eClass())) {
-				return SimpleAttributeEditPart.VISUAL_ID;
-			}
-			if (PipelinePackage.eINSTANCE.getComplexAttribute().isSuperTypeOf(domainElement.eClass())) {
-				return ComplexAttributeEditPart.VISUAL_ID;
-			}
-			break;
-		case ComplexAttributeComplexAttributeAttributesCompartmentEditPart.VISUAL_ID:
-			if (PipelinePackage.eINSTANCE.getSimpleAttribute().isSuperTypeOf(domainElement.eClass())) {
-				return SimpleAttribute2EditPart.VISUAL_ID;
-			}
-			if (PipelinePackage.eINSTANCE.getComplexAttribute().isSuperTypeOf(domainElement.eClass())) {
-				return ComplexAttribute2EditPart.VISUAL_ID;
-			}
-			break;
-		case ComplexAttributeComplexAttributeAttributesCompartment2EditPart.VISUAL_ID:
-			if (PipelinePackage.eINSTANCE.getSimpleAttribute().isSuperTypeOf(domainElement.eClass())) {
-				return SimpleAttribute2EditPart.VISUAL_ID;
-			}
-			if (PipelinePackage.eINSTANCE.getComplexAttribute().isSuperTypeOf(domainElement.eClass())) {
-				return ComplexAttribute2EditPart.VISUAL_ID;
-			}
 			break;
 		}
 		return -1;
@@ -275,24 +229,9 @@ public class PipelineVisualIDRegistry {
 			if (ExportTaskEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (SourceEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (FileEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (SchemaEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ChartEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			break;
 		case CollectionTaskEditPart.VISUAL_ID:
 			if (CollectionTaskIDEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (CollectionTaskCollectionTaskImportOperationsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -300,15 +239,9 @@ public class PipelineVisualIDRegistry {
 			if (IntegrationTaskIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (IntegrationTaskIntegrationTaskIntegrationOperationsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			break;
 		case CleaningTaskEditPart.VISUAL_ID:
 			if (CleaningTaskIDEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -316,138 +249,14 @@ public class PipelineVisualIDRegistry {
 			if (AnalysisTaskIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			break;
 		case VisualizationTaskEditPart.VISUAL_ID:
 			if (VisualizationTaskIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (VisualizationTaskVisualizationTaskVisualizationOperationsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			break;
 		case ExportTaskEditPart.VISUAL_ID:
 			if (ExportTaskIDEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ExportTaskExportTaskExportOperationsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case SourceEditPart.VISUAL_ID:
-			if (SourceNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case FileEditPart.VISUAL_ID:
-			if (FileNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case SchemaEditPart.VISUAL_ID:
-			if (SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ChartEditPart.VISUAL_ID:
-			if (ChartTitleEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ImportOperationEditPart.VISUAL_ID:
-			if (ImportOperationIDEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ExportOperationEditPart.VISUAL_ID:
-			if (ExportOperationIDEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case SimpleAttributeEditPart.VISUAL_ID:
-			if (SimpleAttributeNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ComplexAttributeEditPart.VISUAL_ID:
-			if (ComplexAttributeNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ComplexAttributeComplexAttributeAttributesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case SimpleAttribute2EditPart.VISUAL_ID:
-			if (SimpleAttributeName2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ComplexAttribute2EditPart.VISUAL_ID:
-			if (ComplexAttributeName2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ComplexAttributeComplexAttributeAttributesCompartment2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case CollectionTaskCollectionTaskImportOperationsCompartmentEditPart.VISUAL_ID:
-			if (ImportOperationEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ExportTaskExportTaskExportOperationsCompartmentEditPart.VISUAL_ID:
-			if (ExportOperationEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID:
-			if (SimpleAttributeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ComplexAttributeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ComplexAttributeComplexAttributeAttributesCompartmentEditPart.VISUAL_ID:
-			if (SimpleAttribute2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ComplexAttribute2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ComplexAttributeComplexAttributeAttributesCompartment2EditPart.VISUAL_ID:
-			if (SimpleAttribute2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ComplexAttribute2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case DataFlowSchemaEditPart.VISUAL_ID:
-			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ImportOperationReadEditPart.VISUAL_ID:
-			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ImportOperationUseEditPart.VISUAL_ID:
-			if (WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ExportOperationWriteEditPart.VISUAL_ID:
-			if (WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ChartAxesEditPart.VISUAL_ID:
-			if (WrappingLabel5EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -461,12 +270,6 @@ public class PipelineVisualIDRegistry {
 	public static int getLinkWithClassVisualID(EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
-		}
-		if (PipelinePackage.eINSTANCE.getDataFlow().isSuperTypeOf(domainElement.eClass())) {
-			return DataFlowEditPart.VISUAL_ID;
-		}
-		if (PipelinePackage.eINSTANCE.getInternalDataFlow().isSuperTypeOf(domainElement.eClass())) {
-			return InternalDataFlowEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -497,20 +300,6 @@ public class PipelineVisualIDRegistry {
 	* @generated
 	*/
 	public static boolean isCompartmentVisualID(int visualID) {
-		switch (visualID) {
-		case CollectionTaskCollectionTaskImportOperationsCompartmentEditPart.VISUAL_ID:
-		case IntegrationTaskIntegrationTaskIntegrationOperationsCompartmentEditPart.VISUAL_ID:
-		case CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart.VISUAL_ID:
-		case AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart.VISUAL_ID:
-		case VisualizationTaskVisualizationTaskVisualizationOperationsCompartmentEditPart.VISUAL_ID:
-		case ExportTaskExportTaskExportOperationsCompartmentEditPart.VISUAL_ID:
-		case SchemaSchemaAttributesCompartmentEditPart.VISUAL_ID:
-		case ComplexAttributeComplexAttributeAttributesCompartmentEditPart.VISUAL_ID:
-		case ComplexAttributeComplexAttributeAttributesCompartment2EditPart.VISUAL_ID:
-			return true;
-		default:
-			break;
-		}
 		return false;
 	}
 
@@ -521,17 +310,12 @@ public class PipelineVisualIDRegistry {
 		switch (visualID) {
 		case PipelineEditPart.VISUAL_ID:
 			return false;
+		case CollectionTaskEditPart.VISUAL_ID:
 		case IntegrationTaskEditPart.VISUAL_ID:
 		case CleaningTaskEditPart.VISUAL_ID:
 		case AnalysisTaskEditPart.VISUAL_ID:
 		case VisualizationTaskEditPart.VISUAL_ID:
-		case SourceEditPart.VISUAL_ID:
-		case FileEditPart.VISUAL_ID:
-		case ChartEditPart.VISUAL_ID:
-		case ImportOperationEditPart.VISUAL_ID:
-		case ExportOperationEditPart.VISUAL_ID:
-		case SimpleAttributeEditPart.VISUAL_ID:
-		case SimpleAttribute2EditPart.VISUAL_ID:
+		case ExportTaskEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

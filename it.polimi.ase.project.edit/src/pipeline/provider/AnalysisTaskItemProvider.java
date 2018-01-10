@@ -139,22 +139,22 @@ public class AnalysisTaskItemProvider extends TaskItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(PipelinePackage.Literals.ANALYSIS_TASK__ANALYSIS_OPERATIONS,
-				 PipelineFactory.eINSTANCE.createDescriptiveAnalysisOperation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PipelinePackage.Literals.ANALYSIS_TASK__ANALYSIS_OPERATIONS,
 				 PipelineFactory.eINSTANCE.createClassificationAnalysisOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PipelinePackage.Literals.ANALYSIS_TASK__ANALYSIS_OPERATIONS,
-				 PipelineFactory.eINSTANCE.createPredictiveAnalysisOperation()));
+				 PipelineFactory.eINSTANCE.createClusteringAnalysisOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PipelinePackage.Literals.ANALYSIS_TASK__ANALYSIS_OPERATIONS,
-				 PipelineFactory.eINSTANCE.createClusteringAnalysisOperation()));
+				 PipelineFactory.eINSTANCE.createDescriptiveAnalysisOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PipelinePackage.Literals.ANALYSIS_TASK__ANALYSIS_OPERATIONS,
+				 PipelineFactory.eINSTANCE.createPredictiveAnalysisOperation()));
 	}
 
 }

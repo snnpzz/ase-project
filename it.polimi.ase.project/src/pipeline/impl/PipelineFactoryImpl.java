@@ -68,20 +68,20 @@ public class PipelineFactoryImpl extends EFactoryImpl implements PipelineFactory
 			case PipelinePackage.VISUALIZATION_TASK: return createVisualizationTask();
 			case PipelinePackage.EXPORT_TASK: return createExportTask();
 			case PipelinePackage.IMPORT_OPERATION: return createImportOperation();
-			case PipelinePackage.EXPORT_OPERATION: return createExportOperation();
+			case PipelinePackage.INTEGRATION_OPERATION: return createIntegrationOperation();
+			case PipelinePackage.PREDEFINED_CLEANING_OPERATION: return createPredefinedCleaningOperation();
 			case PipelinePackage.USER_DEFINED_CLEANING_OPERATION: return createUserDefinedCleaningOperation();
+			case PipelinePackage.CLASSIFICATION_ANALYSIS_OPERATION: return createClassificationAnalysisOperation();
+			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION: return createClusteringAnalysisOperation();
+			case PipelinePackage.DESCRIPTIVE_ANALYSIS_OPERATION: return createDescriptiveAnalysisOperation();
+			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION: return createPredictiveAnalysisOperation();
+			case PipelinePackage.VISUALIZATION_OPERATION: return createVisualizationOperation();
+			case PipelinePackage.EXPORT_OPERATION: return createExportOperation();
 			case PipelinePackage.SOURCE: return createSource();
 			case PipelinePackage.FILE: return createFile();
 			case PipelinePackage.CHART: return createChart();
-			case PipelinePackage.DESCRIPTIVE_ANALYSIS_OPERATION: return createDescriptiveAnalysisOperation();
-			case PipelinePackage.CLASSIFICATION_ANALYSIS_OPERATION: return createClassificationAnalysisOperation();
-			case PipelinePackage.PREDICTIVE_ANALYSIS_OPERATION: return createPredictiveAnalysisOperation();
-			case PipelinePackage.CLUSTERING_ANALYSIS_OPERATION: return createClusteringAnalysisOperation();
-			case PipelinePackage.PREDEFINED_CLEANING_OPERATION: return createPredefinedCleaningOperation();
 			case PipelinePackage.SIMPLE_ATTRIBUTE: return createSimpleAttribute();
 			case PipelinePackage.COMPLEX_ATTRIBUTE: return createComplexAttribute();
-			case PipelinePackage.VISUALIZATION_OPERATION: return createVisualizationOperation();
-			case PipelinePackage.INTEGRATION_OPERATION: return createIntegrationOperation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

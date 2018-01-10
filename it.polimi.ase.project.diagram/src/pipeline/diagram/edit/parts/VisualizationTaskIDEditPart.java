@@ -60,7 +60,7 @@ public class VisualizationTaskIDEditPart extends CompartmentEditPart implements 
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5006;
+	public static final int VISUAL_ID = 5005;
 
 	/**
 	* @generated

@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see pipeline.PipelinePackage#getDataFlow()
- * @model annotation="gmf.link source='source' target='target' width='2' target.decoration='filledclosedarrow'"
+ * @model
  * @generated
  */
 public interface DataFlow extends EObject {
@@ -93,7 +93,6 @@ public interface DataFlow extends EObject {
 	 * @see #setSchema(Schema)
 	 * @see pipeline.PipelinePackage#getDataFlow_Schema()
 	 * @model required="true"
-	 *        annotation="gmf.link width='1' target.decoration='arrow' tool.name='DFSchema' style='dot'"
 	 * @generated
 	 */
 	Schema getSchema();

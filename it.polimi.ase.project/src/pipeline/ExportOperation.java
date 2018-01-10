@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see pipeline.PipelinePackage#getExportOperation()
- * @model annotation="gmf.node label='ID' label.text='Export' figure='ellipse'"
+ * @model
  * @generated
  */
 public interface ExportOperation extends EObject {
@@ -34,7 +34,6 @@ public interface ExportOperation extends EObject {
 	 * @see #setWrite(File)
 	 * @see pipeline.PipelinePackage#getExportOperation_Write()
 	 * @model required="true"
-	 *        annotation="gmf.link width='2' target.decoration='filledsquare' style='dash'"
 	 * @generated
 	 */
 	File getWrite();

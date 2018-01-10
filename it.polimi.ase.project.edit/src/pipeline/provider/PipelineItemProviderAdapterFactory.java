@@ -756,20 +756,20 @@ public class PipelineItemProviderAdapterFactory extends PipelineAdapterFactory i
 		if (visualizationTaskItemProvider != null) visualizationTaskItemProvider.dispose();
 		if (exportTaskItemProvider != null) exportTaskItemProvider.dispose();
 		if (importOperationItemProvider != null) importOperationItemProvider.dispose();
-		if (exportOperationItemProvider != null) exportOperationItemProvider.dispose();
+		if (integrationOperationItemProvider != null) integrationOperationItemProvider.dispose();
+		if (predefinedCleaningOperationItemProvider != null) predefinedCleaningOperationItemProvider.dispose();
 		if (userDefinedCleaningOperationItemProvider != null) userDefinedCleaningOperationItemProvider.dispose();
+		if (classificationAnalysisOperationItemProvider != null) classificationAnalysisOperationItemProvider.dispose();
+		if (clusteringAnalysisOperationItemProvider != null) clusteringAnalysisOperationItemProvider.dispose();
+		if (descriptiveAnalysisOperationItemProvider != null) descriptiveAnalysisOperationItemProvider.dispose();
+		if (predictiveAnalysisOperationItemProvider != null) predictiveAnalysisOperationItemProvider.dispose();
+		if (visualizationOperationItemProvider != null) visualizationOperationItemProvider.dispose();
+		if (exportOperationItemProvider != null) exportOperationItemProvider.dispose();
 		if (sourceItemProvider != null) sourceItemProvider.dispose();
 		if (fileItemProvider != null) fileItemProvider.dispose();
 		if (chartItemProvider != null) chartItemProvider.dispose();
-		if (descriptiveAnalysisOperationItemProvider != null) descriptiveAnalysisOperationItemProvider.dispose();
-		if (classificationAnalysisOperationItemProvider != null) classificationAnalysisOperationItemProvider.dispose();
-		if (predictiveAnalysisOperationItemProvider != null) predictiveAnalysisOperationItemProvider.dispose();
-		if (clusteringAnalysisOperationItemProvider != null) clusteringAnalysisOperationItemProvider.dispose();
-		if (predefinedCleaningOperationItemProvider != null) predefinedCleaningOperationItemProvider.dispose();
 		if (simpleAttributeItemProvider != null) simpleAttributeItemProvider.dispose();
 		if (complexAttributeItemProvider != null) complexAttributeItemProvider.dispose();
-		if (visualizationOperationItemProvider != null) visualizationOperationItemProvider.dispose();
-		if (integrationOperationItemProvider != null) integrationOperationItemProvider.dispose();
 	}
 
 }

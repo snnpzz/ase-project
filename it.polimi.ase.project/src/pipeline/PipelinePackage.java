@@ -167,31 +167,13 @@ public interface PipelinePackage extends EPackage {
 	int TASK__ID = 0;
 
 	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TASK__INCOMING = 1;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TASK__OUTGOING = 2;
-
-	/**
 	 * The feature id for the '<em><b>Max Space</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__MAX_SPACE = 3;
+	int TASK__MAX_SPACE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Max Time</b></em>' attribute.
@@ -200,7 +182,25 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__MAX_TIME = 4;
+	int TASK__MAX_TIME = 2;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__INCOMING = 3;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__OUTGOING = 4;
 
 	/**
 	 * The number of structural features of the '<em>Task</em>' class.
@@ -479,24 +479,6 @@ public interface PipelinePackage extends EPackage {
 	int COLLECTION_TASK__ID = TASK__ID;
 
 	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLLECTION_TASK__INCOMING = TASK__INCOMING;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLLECTION_TASK__OUTGOING = TASK__OUTGOING;
-
-	/**
 	 * The feature id for the '<em><b>Max Space</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -513,6 +495,24 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int COLLECTION_TASK__MAX_TIME = TASK__MAX_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_TASK__INCOMING = TASK__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>Import Operations</b></em>' containment reference list.
@@ -552,24 +552,6 @@ public interface PipelinePackage extends EPackage {
 	int INTEGRATION_TASK__ID = TASK__ID;
 
 	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGRATION_TASK__INCOMING = TASK__INCOMING;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGRATION_TASK__OUTGOING = TASK__OUTGOING;
-
-	/**
 	 * The feature id for the '<em><b>Max Space</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -586,6 +568,24 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int INTEGRATION_TASK__MAX_TIME = TASK__MAX_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_TASK__INCOMING = TASK__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>Integration Operations</b></em>' containment reference list.
@@ -625,24 +625,6 @@ public interface PipelinePackage extends EPackage {
 	int CLEANING_TASK__ID = TASK__ID;
 
 	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLEANING_TASK__INCOMING = TASK__INCOMING;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLEANING_TASK__OUTGOING = TASK__OUTGOING;
-
-	/**
 	 * The feature id for the '<em><b>Max Space</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -659,6 +641,24 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int CLEANING_TASK__MAX_TIME = TASK__MAX_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLEANING_TASK__INCOMING = TASK__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLEANING_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>Cleaning Operations</b></em>' containment reference list.
@@ -698,24 +698,6 @@ public interface PipelinePackage extends EPackage {
 	int ANALYSIS_TASK__ID = TASK__ID;
 
 	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS_TASK__INCOMING = TASK__INCOMING;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS_TASK__OUTGOING = TASK__OUTGOING;
-
-	/**
 	 * The feature id for the '<em><b>Max Space</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -732,6 +714,24 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int ANALYSIS_TASK__MAX_TIME = TASK__MAX_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_TASK__INCOMING = TASK__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>Analysis Operations</b></em>' containment reference list.
@@ -771,24 +771,6 @@ public interface PipelinePackage extends EPackage {
 	int VISUALIZATION_TASK__ID = TASK__ID;
 
 	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VISUALIZATION_TASK__INCOMING = TASK__INCOMING;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VISUALIZATION_TASK__OUTGOING = TASK__OUTGOING;
-
-	/**
 	 * The feature id for the '<em><b>Max Space</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -805,6 +787,24 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int VISUALIZATION_TASK__MAX_TIME = TASK__MAX_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_TASK__INCOMING = TASK__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>Visualization Operations</b></em>' containment reference list.
@@ -844,24 +844,6 @@ public interface PipelinePackage extends EPackage {
 	int EXPORT_TASK__ID = TASK__ID;
 
 	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPORT_TASK__INCOMING = TASK__INCOMING;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPORT_TASK__OUTGOING = TASK__OUTGOING;
-
-	/**
 	 * The feature id for the '<em><b>Max Space</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -878,6 +860,24 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int EXPORT_TASK__MAX_TIME = TASK__MAX_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPORT_TASK__INCOMING = TASK__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPORT_TASK__OUTGOING = TASK__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>Export Operations</b></em>' containment reference list.
@@ -951,34 +951,7 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getExportOperation()
 	 * @generated
 	 */
-	int EXPORT_OPERATION = 14;
-
-	/**
-	 * The feature id for the '<em><b>ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPORT_OPERATION__ID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Write</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPORT_OPERATION__WRITE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Export Operation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPORT_OPERATION_FEATURE_COUNT = 2;
+	int EXPORT_OPERATION = 24;
 
 	/**
 	 * The meta object id for the '{@link pipeline.impl.CleaningOperationImpl <em>Cleaning Operation</em>}' class.
@@ -988,7 +961,183 @@ public interface PipelinePackage extends EPackage {
 	 * @see pipeline.impl.PipelinePackageImpl#getCleaningOperation()
 	 * @generated
 	 */
-	int CLEANING_OPERATION = 19;
+	int CLEANING_OPERATION = 15;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.UserDefinedCleaningOperationImpl <em>User Defined Cleaning Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.UserDefinedCleaningOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getUserDefinedCleaningOperation()
+	 * @generated
+	 */
+	int USER_DEFINED_CLEANING_OPERATION = 17;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.SourceImpl <em>Source</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.SourceImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getSource()
+	 * @generated
+	 */
+	int SOURCE = 25;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.FileImpl <em>File</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.FileImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getFile()
+	 * @generated
+	 */
+	int FILE = 26;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.ChartImpl <em>Chart</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.ChartImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getChart()
+	 * @generated
+	 */
+	int CHART = 27;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.AnalysisOperationImpl <em>Analysis Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.AnalysisOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getAnalysisOperation()
+	 * @generated
+	 */
+	int ANALYSIS_OPERATION = 18;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.DescriptiveAnalysisOperationImpl <em>Descriptive Analysis Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.DescriptiveAnalysisOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getDescriptiveAnalysisOperation()
+	 * @generated
+	 */
+	int DESCRIPTIVE_ANALYSIS_OPERATION = 21;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.ClassificationAnalysisOperationImpl <em>Classification Analysis Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.ClassificationAnalysisOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getClassificationAnalysisOperation()
+	 * @generated
+	 */
+	int CLASSIFICATION_ANALYSIS_OPERATION = 19;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.PredictiveAnalysisOperationImpl <em>Predictive Analysis Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.PredictiveAnalysisOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getPredictiveAnalysisOperation()
+	 * @generated
+	 */
+	int PREDICTIVE_ANALYSIS_OPERATION = 22;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.ClusteringAnalysisOperationImpl <em>Clustering Analysis Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.ClusteringAnalysisOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getClusteringAnalysisOperation()
+	 * @generated
+	 */
+	int CLUSTERING_ANALYSIS_OPERATION = 20;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.PredefinedCleaningOperationImpl <em>Predefined Cleaning Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.PredefinedCleaningOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getPredefinedCleaningOperation()
+	 * @generated
+	 */
+	int PREDEFINED_CLEANING_OPERATION = 16;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.SimpleAttributeImpl <em>Simple Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.SimpleAttributeImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getSimpleAttribute()
+	 * @generated
+	 */
+	int SIMPLE_ATTRIBUTE = 28;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.ComplexAttributeImpl <em>Complex Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.ComplexAttributeImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getComplexAttribute()
+	 * @generated
+	 */
+	int COMPLEX_ATTRIBUTE = 29;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.VisualizationOperationImpl <em>Visualization Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.VisualizationOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getVisualizationOperation()
+	 * @generated
+	 */
+	int VISUALIZATION_OPERATION = 23;
+
+	/**
+	 * The meta object id for the '{@link pipeline.impl.IntegrationOperationImpl <em>Integration Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pipeline.impl.IntegrationOperationImpl
+	 * @see pipeline.impl.PipelinePackageImpl#getIntegrationOperation()
+	 * @generated
+	 */
+	int INTEGRATION_OPERATION = 14;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_OPERATION__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_OPERATION__INPUT_ATTRIBUTES = 1;
+
+	/**
+	 * The feature id for the '<em><b>Output Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_OPERATION__OUTPUT_ATTRIBUTE = 2;
+
+	/**
+	 * The number of structural features of the '<em>Integration Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_OPERATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1036,14 +1185,58 @@ public interface PipelinePackage extends EPackage {
 	int CLEANING_OPERATION_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.UserDefinedCleaningOperationImpl <em>User Defined Cleaning Operation</em>}' class.
+	 * The feature id for the '<em><b>Incoming</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.UserDefinedCleaningOperationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getUserDefinedCleaningOperation()
 	 * @generated
+	 * @ordered
 	 */
-	int USER_DEFINED_CLEANING_OPERATION = 15;
+	int PREDEFINED_CLEANING_OPERATION__INCOMING = CLEANING_OPERATION__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDEFINED_CLEANING_OPERATION__OUTGOING = CLEANING_OPERATION__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDEFINED_CLEANING_OPERATION__ID = CLEANING_OPERATION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDEFINED_CLEANING_OPERATION__INPUT_ATTRIBUTES = CLEANING_OPERATION__INPUT_ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDEFINED_CLEANING_OPERATION__TYPE = CLEANING_OPERATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Predefined Cleaning Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDEFINED_CLEANING_OPERATION_FEATURE_COUNT = CLEANING_OPERATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1100,199 +1293,6 @@ public interface PipelinePackage extends EPackage {
 	int USER_DEFINED_CLEANING_OPERATION_FEATURE_COUNT = CLEANING_OPERATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.SourceImpl <em>Source</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.SourceImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getSource()
-	 * @generated
-	 */
-	int SOURCE = 16;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOURCE__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOURCE__PATH = 1;
-
-	/**
-	 * The feature id for the '<em><b>Server Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOURCE__SERVER_NAME = 2;
-
-	/**
-	 * The feature id for the '<em><b>Port Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOURCE__PORT_NUMBER = 3;
-
-	/**
-	 * The feature id for the '<em><b>User Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOURCE__USER_NAME = 4;
-
-	/**
-	 * The feature id for the '<em><b>Password</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOURCE__PASSWORD = 5;
-
-	/**
-	 * The feature id for the '<em><b>Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOURCE__FORMAT = 6;
-
-	/**
-	 * The number of structural features of the '<em>Source</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOURCE_FEATURE_COUNT = 7;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.FileImpl <em>File</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.FileImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getFile()
-	 * @generated
-	 */
-	int FILE = 17;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE__PATH = 1;
-
-	/**
-	 * The feature id for the '<em><b>Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE__FORMAT = 2;
-
-	/**
-	 * The number of structural features of the '<em>File</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_FEATURE_COUNT = 3;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.ChartImpl <em>Chart</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.ChartImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getChart()
-	 * @generated
-	 */
-	int CHART = 18;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHART__SIZE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHART__TITLE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHART__TYPE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Axes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHART__AXES = 3;
-
-	/**
-	 * The number of structural features of the '<em>Chart</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHART_FEATURE_COUNT = 4;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.AnalysisOperationImpl <em>Analysis Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.AnalysisOperationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getAnalysisOperation()
-	 * @generated
-	 */
-	int ANALYSIS_OPERATION = 20;
-
-	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1345,89 +1345,6 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int ANALYSIS_OPERATION_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.DescriptiveAnalysisOperationImpl <em>Descriptive Analysis Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.DescriptiveAnalysisOperationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getDescriptiveAnalysisOperation()
-	 * @generated
-	 */
-	int DESCRIPTIVE_ANALYSIS_OPERATION = 21;
-
-	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTIVE_ANALYSIS_OPERATION__INCOMING = ANALYSIS_OPERATION__INCOMING;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTIVE_ANALYSIS_OPERATION__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
-
-	/**
-	 * The feature id for the '<em><b>ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTIVE_ANALYSIS_OPERATION__ID = ANALYSIS_OPERATION__ID;
-
-	/**
-	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTIVE_ANALYSIS_OPERATION__INPUT_ATTRIBUTES = ANALYSIS_OPERATION__INPUT_ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Output Attribute</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTIVE_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTIVE_ANALYSIS_OPERATION__TYPE = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Descriptive Analysis Operation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTIVE_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.ClassificationAnalysisOperationImpl <em>Classification Analysis Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.ClassificationAnalysisOperationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getClassificationAnalysisOperation()
-	 * @generated
-	 */
-	int CLASSIFICATION_ANALYSIS_OPERATION = 22;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1491,89 +1408,6 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int CLASSIFICATION_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.PredictiveAnalysisOperationImpl <em>Predictive Analysis Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.PredictiveAnalysisOperationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getPredictiveAnalysisOperation()
-	 * @generated
-	 */
-	int PREDICTIVE_ANALYSIS_OPERATION = 23;
-
-	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREDICTIVE_ANALYSIS_OPERATION__INCOMING = ANALYSIS_OPERATION__INCOMING;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREDICTIVE_ANALYSIS_OPERATION__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
-
-	/**
-	 * The feature id for the '<em><b>ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREDICTIVE_ANALYSIS_OPERATION__ID = ANALYSIS_OPERATION__ID;
-
-	/**
-	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREDICTIVE_ANALYSIS_OPERATION__INPUT_ATTRIBUTES = ANALYSIS_OPERATION__INPUT_ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Output Attribute</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREDICTIVE_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREDICTIVE_ANALYSIS_OPERATION__TYPE = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Predictive Analysis Operation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PREDICTIVE_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.ClusteringAnalysisOperationImpl <em>Clustering Analysis Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.ClusteringAnalysisOperationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getClusteringAnalysisOperation()
-	 * @generated
-	 */
-	int CLUSTERING_ANALYSIS_OPERATION = 24;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
@@ -1648,23 +1482,13 @@ public interface PipelinePackage extends EPackage {
 	int CLUSTERING_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.PredefinedCleaningOperationImpl <em>Predefined Cleaning Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.PredefinedCleaningOperationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getPredefinedCleaningOperation()
-	 * @generated
-	 */
-	int PREDEFINED_CLEANING_OPERATION = 25;
-
-	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PREDEFINED_CLEANING_OPERATION__INCOMING = CLEANING_OPERATION__INCOMING;
+	int DESCRIPTIVE_ANALYSIS_OPERATION__INCOMING = ANALYSIS_OPERATION__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
@@ -1673,7 +1497,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDEFINED_CLEANING_OPERATION__OUTGOING = CLEANING_OPERATION__OUTGOING;
+	int DESCRIPTIVE_ANALYSIS_OPERATION__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -1682,7 +1506,7 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDEFINED_CLEANING_OPERATION__ID = CLEANING_OPERATION__ID;
+	int DESCRIPTIVE_ANALYSIS_OPERATION__ID = ANALYSIS_OPERATION__ID;
 
 	/**
 	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
@@ -1691,7 +1515,16 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDEFINED_CLEANING_OPERATION__INPUT_ATTRIBUTES = CLEANING_OPERATION__INPUT_ATTRIBUTES;
+	int DESCRIPTIVE_ANALYSIS_OPERATION__INPUT_ATTRIBUTES = ANALYSIS_OPERATION__INPUT_ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Output Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTIVE_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1700,26 +1533,286 @@ public interface PipelinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PREDEFINED_CLEANING_OPERATION__TYPE = CLEANING_OPERATION_FEATURE_COUNT + 0;
+	int DESCRIPTIVE_ANALYSIS_OPERATION__TYPE = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Predefined Cleaning Operation</em>' class.
+	 * The number of structural features of the '<em>Descriptive Analysis Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PREDEFINED_CLEANING_OPERATION_FEATURE_COUNT = CLEANING_OPERATION_FEATURE_COUNT + 1;
+	int DESCRIPTIVE_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.SimpleAttributeImpl <em>Simple Attribute</em>}' class.
+	 * The feature id for the '<em><b>Incoming</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.SimpleAttributeImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getSimpleAttribute()
 	 * @generated
+	 * @ordered
 	 */
-	int SIMPLE_ATTRIBUTE = 26;
+	int PREDICTIVE_ANALYSIS_OPERATION__INCOMING = ANALYSIS_OPERATION__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICTIVE_ANALYSIS_OPERATION__OUTGOING = ANALYSIS_OPERATION__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICTIVE_ANALYSIS_OPERATION__ID = ANALYSIS_OPERATION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICTIVE_ANALYSIS_OPERATION__INPUT_ATTRIBUTES = ANALYSIS_OPERATION__INPUT_ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Output Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICTIVE_ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE = ANALYSIS_OPERATION__OUTPUT_ATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICTIVE_ANALYSIS_OPERATION__TYPE = ANALYSIS_OPERATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Predictive Analysis Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICTIVE_ANALYSIS_OPERATION_FEATURE_COUNT = ANALYSIS_OPERATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Chart</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_OPERATION__CHART = 0;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_OPERATION__ID = 1;
+
+	/**
+	 * The number of structural features of the '<em>Visualization Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_OPERATION_FEATURE_COUNT = 2;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPORT_OPERATION__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Write</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPORT_OPERATION__WRITE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Export Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPORT_OPERATION_FEATURE_COUNT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__PATH = 1;
+
+	/**
+	 * The feature id for the '<em><b>Server Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__SERVER_NAME = 2;
+
+	/**
+	 * The feature id for the '<em><b>Port Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__PORT_NUMBER = 3;
+
+	/**
+	 * The feature id for the '<em><b>User Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__USER_NAME = 4;
+
+	/**
+	 * The feature id for the '<em><b>Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__PASSWORD = 5;
+
+	/**
+	 * The feature id for the '<em><b>Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__FORMAT = 6;
+
+	/**
+	 * The number of structural features of the '<em>Source</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_FEATURE_COUNT = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE__PATH = 1;
+
+	/**
+	 * The feature id for the '<em><b>Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE__FORMAT = 2;
+
+	/**
+	 * The number of structural features of the '<em>File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_FEATURE_COUNT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHART__SIZE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHART__TITLE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHART__TYPE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Axes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHART__AXES = 3;
+
+	/**
+	 * The number of structural features of the '<em>Chart</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHART_FEATURE_COUNT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1767,16 +1860,6 @@ public interface PipelinePackage extends EPackage {
 	int SIMPLE_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link pipeline.impl.ComplexAttributeImpl <em>Complex Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.ComplexAttributeImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getComplexAttribute()
-	 * @generated
-	 */
-	int COMPLEX_ATTRIBUTE = 27;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1820,89 +1903,6 @@ public interface PipelinePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPLEX_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.VisualizationOperationImpl <em>Visualization Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.VisualizationOperationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getVisualizationOperation()
-	 * @generated
-	 */
-	int VISUALIZATION_OPERATION = 28;
-
-	/**
-	 * The feature id for the '<em><b>Chart</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VISUALIZATION_OPERATION__CHART = 0;
-
-	/**
-	 * The feature id for the '<em><b>ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VISUALIZATION_OPERATION__ID = 1;
-
-	/**
-	 * The number of structural features of the '<em>Visualization Operation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VISUALIZATION_OPERATION_FEATURE_COUNT = 2;
-
-	/**
-	 * The meta object id for the '{@link pipeline.impl.IntegrationOperationImpl <em>Integration Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pipeline.impl.IntegrationOperationImpl
-	 * @see pipeline.impl.PipelinePackageImpl#getIntegrationOperation()
-	 * @generated
-	 */
-	int INTEGRATION_OPERATION = 29;
-
-	/**
-	 * The feature id for the '<em><b>ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGRATION_OPERATION__ID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGRATION_OPERATION__INPUT_ATTRIBUTES = 1;
-
-	/**
-	 * The feature id for the '<em><b>Output Attribute</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGRATION_OPERATION__OUTPUT_ATTRIBUTE = 2;
-
-	/**
-	 * The number of structural features of the '<em>Integration Operation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGRATION_OPERATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link pipeline.PredefinedOperation <em>Predefined Operation</em>}' enum.

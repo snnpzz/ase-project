@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see pipeline.PipelinePackage#getChart()
- * @model annotation="gmf.node label='title' figure='rounded'"
+ * @model
  * @generated
  */
 public interface Chart extends EObject {
@@ -122,7 +122,6 @@ public interface Chart extends EObject {
 	 * @return the value of the '<em>Axes</em>' reference list.
 	 * @see pipeline.PipelinePackage#getChart_Axes()
 	 * @model required="true"
-	 *        annotation="gmf.link width='1' target.decoration='closedarrow'"
 	 * @generated
 	 */
 	EList<SimpleAttribute> getAxes();

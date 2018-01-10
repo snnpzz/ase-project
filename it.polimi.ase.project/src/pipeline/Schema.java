@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see pipeline.PipelinePackage#getSchema()
- * @model annotation="gmf.node label='name' label.placement='none' figure='rounded'"
+ * @model
  * @generated
  */
 public interface Schema extends EObject {
@@ -36,7 +36,6 @@ public interface Schema extends EObject {
 	 * @return the value of the '<em>Attributes</em>' containment reference list.
 	 * @see pipeline.PipelinePackage#getSchema_Attributes()
 	 * @model containment="true" required="true"
-	 *        annotation="gmf.compartment layout='list'"
 	 * @generated
 	 */
 	EList<Attribute> getAttributes();

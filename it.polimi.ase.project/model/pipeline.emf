@@ -13,21 +13,18 @@ class Pipeline {
   val Chart[*] charts;
 }
 
-@gmf.node(label="ID", figure="rounded")
+@gmf.node(label="ID")
 abstract class Task {
   attr String[1] ID;
-  ref DataFlow[*]#target incoming;
-  ref DataFlow[*]#source outgoing;
   attr int maxSpace;
   attr int maxTime;
+  ref DataFlow[*]#target incoming;
+  ref DataFlow[*]#source outgoing;
 }
 
-@gmf.link(source="source", target="target", width="2", target.decoration="filledclosedarrow")
 class DataFlow {
   ref Task#incoming target;
   ref Task#outgoing source;
-
-  @gmf.link(width="1", target.decoration="arrow", tool.name="DFSchema", style="dot")
   ref Schema[1] schema;
   attr String[1] ID;
   attr Format format;
@@ -40,22 +37,17 @@ abstract class Operation {
   ref SimpleAttribute[*] inputAttributes;
 }
 
-@gmf.link(source="source", target="target", width="2", target.decoration="filledclosedarrow", style="dash")
 class InternalDataFlow {
   ref Operation#outgoing source;
   ref Operation#incoming target;
   attr String[1] ID;
 }
 
-@gmf.node(label="name", label.placement="none", figure="rounded")
 class Schema {
-
-  @gmf.compartment(layout="list")
   val Attribute[+] attributes;
   attr String[1] name;
 }
 
-@gmf.node(label="name")
 abstract class Attribute {
   attr String[1] name;
   ref Attribute#previous next;
@@ -63,65 +55,83 @@ abstract class Attribute {
 }
 
 class CollectionTask extends Task {
-
-  @gmf.compartment
   val ImportOperation[+] importOperations;
 }
 
 class IntegrationTask extends Task {
-
-  @gmf.compartment
   val IntegrationOperation[+] integrationOperations;
 }
 
 class CleaningTask extends Task {
-
-  @gmf.compartment
   val CleaningOperation[+] cleaningOperations;
 }
 
 class AnalysisTask extends Task {
-
-  @gmf.compartment
   val AnalysisOperation[+] analysisOperations;
 }
 
 class VisualizationTask extends Task {
-
-  @gmf.compartment
   val VisualizationOperation[+] visualizationOperations;
 }
 
 class ExportTask extends Task {
-
-  @gmf.compartment
   val ExportOperation[+] exportOperations;
 }
 
-@gmf.node(label="ID", label.text="Import", figure="ellipse")
 class ImportOperation {
   attr String[1] ID;
-
-  @gmf.link(width="2", target.decoration="square", style="dash")
   ref Source[1] read;
-
-  @gmf.link(width="1", target.decoration="arrow")
   ref Schema[1] use;
 }
 
-@gmf.node(label="ID", label.text="Export", figure="ellipse")
-class ExportOperation {
+class IntegrationOperation {
   attr String[1] ID;
+  ref Attribute[+] inputAttributes;
+  ref Attribute outputAttribute;
+}
 
-  @gmf.link(width="2", target.decoration="filledsquare", style="dash")
-  ref File[1] write;
+abstract class CleaningOperation extends Operation {
+}
+
+class PredefinedCleaningOperation extends CleaningOperation {
+  attr PredefinedOperation type = "";
 }
 
 class UserDefinedCleaningOperation extends CleaningOperation {
   attr String type;
 }
 
-@gmf.node(label="name")
+abstract class AnalysisOperation extends Operation {
+  ref SimpleAttribute outputAttribute;
+}
+
+class ClassificationAnalysisOperation extends AnalysisOperation {
+  attr ClassificationOperation type;
+}
+
+class ClusteringAnalysisOperation extends AnalysisOperation {
+  attr ClusteringOperation type;
+  attr int k;
+}
+
+class DescriptiveAnalysisOperation extends AnalysisOperation {
+  attr DescriptiveOperation type;
+}
+
+class PredictiveAnalysisOperation extends AnalysisOperation {
+  attr PredictiveOperation type;
+}
+
+class VisualizationOperation {
+  ref Chart[1] chart;
+  attr String[1] ID;
+}
+
+class ExportOperation {
+  attr String[1] ID;
+  ref File[1] write;
+}
+
 class Source {
   attr String name;
   attr String path;
@@ -132,49 +142,17 @@ class Source {
   attr Format format;
 }
 
-@gmf.node(label="name")
 class File {
   attr String name;
   attr String path;
   attr Format format;
 }
 
-@gmf.node(label="title", figure="rounded")
 class Chart {
   attr Size size;
   attr String title;
   attr ChartType type;
-
-  @gmf.link(width="1", target.decoration="closedarrow")
   ref SimpleAttribute[+] axes;
-}
-
-abstract class CleaningOperation extends Operation {
-}
-
-abstract class AnalysisOperation extends Operation {
-  ref SimpleAttribute outputAttribute;
-}
-
-class DescriptiveAnalysisOperation extends AnalysisOperation {
-  attr DescriptiveOperation type;
-}
-
-class ClassificationAnalysisOperation extends AnalysisOperation {
-  attr ClassificationOperation type;
-}
-
-class PredictiveAnalysisOperation extends AnalysisOperation {
-  attr PredictiveOperation type;
-}
-
-class ClusteringAnalysisOperation extends AnalysisOperation {
-  attr ClusteringOperation type;
-  attr int k;
-}
-
-class PredefinedCleaningOperation extends CleaningOperation {
-  attr PredefinedOperation type = "";
 }
 
 class SimpleAttribute extends Attribute {
@@ -182,8 +160,6 @@ class SimpleAttribute extends Attribute {
 }
 
 class ComplexAttribute extends Attribute {
-
-  @gmf.compartment(layout="list")
   val Attribute[+] attributes;
 }
 
@@ -254,16 +230,5 @@ enum Type {
   mDouble = 2;
   mBoolean = 3;
   mDate = 4;
-}
-
-class VisualizationOperation {
-  ref Chart[1] chart;
-  attr String[1] ID;
-}
-
-class IntegrationOperation {
-  attr String[1] ID;
-  ref Attribute[+] inputAttributes;
-  ref Attribute outputAttribute;
 }
 

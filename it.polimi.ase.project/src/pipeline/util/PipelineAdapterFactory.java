@@ -124,12 +124,48 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 				return createImportOperationAdapter();
 			}
 			@Override
-			public Adapter caseExportOperation(ExportOperation object) {
-				return createExportOperationAdapter();
+			public Adapter caseIntegrationOperation(IntegrationOperation object) {
+				return createIntegrationOperationAdapter();
+			}
+			@Override
+			public Adapter caseCleaningOperation(CleaningOperation object) {
+				return createCleaningOperationAdapter();
+			}
+			@Override
+			public Adapter casePredefinedCleaningOperation(PredefinedCleaningOperation object) {
+				return createPredefinedCleaningOperationAdapter();
 			}
 			@Override
 			public Adapter caseUserDefinedCleaningOperation(UserDefinedCleaningOperation object) {
 				return createUserDefinedCleaningOperationAdapter();
+			}
+			@Override
+			public Adapter caseAnalysisOperation(AnalysisOperation object) {
+				return createAnalysisOperationAdapter();
+			}
+			@Override
+			public Adapter caseClassificationAnalysisOperation(ClassificationAnalysisOperation object) {
+				return createClassificationAnalysisOperationAdapter();
+			}
+			@Override
+			public Adapter caseClusteringAnalysisOperation(ClusteringAnalysisOperation object) {
+				return createClusteringAnalysisOperationAdapter();
+			}
+			@Override
+			public Adapter caseDescriptiveAnalysisOperation(DescriptiveAnalysisOperation object) {
+				return createDescriptiveAnalysisOperationAdapter();
+			}
+			@Override
+			public Adapter casePredictiveAnalysisOperation(PredictiveAnalysisOperation object) {
+				return createPredictiveAnalysisOperationAdapter();
+			}
+			@Override
+			public Adapter caseVisualizationOperation(VisualizationOperation object) {
+				return createVisualizationOperationAdapter();
+			}
+			@Override
+			public Adapter caseExportOperation(ExportOperation object) {
+				return createExportOperationAdapter();
 			}
 			@Override
 			public Adapter caseSource(Source object) {
@@ -144,48 +180,12 @@ public class PipelineAdapterFactory extends AdapterFactoryImpl {
 				return createChartAdapter();
 			}
 			@Override
-			public Adapter caseCleaningOperation(CleaningOperation object) {
-				return createCleaningOperationAdapter();
-			}
-			@Override
-			public Adapter caseAnalysisOperation(AnalysisOperation object) {
-				return createAnalysisOperationAdapter();
-			}
-			@Override
-			public Adapter caseDescriptiveAnalysisOperation(DescriptiveAnalysisOperation object) {
-				return createDescriptiveAnalysisOperationAdapter();
-			}
-			@Override
-			public Adapter caseClassificationAnalysisOperation(ClassificationAnalysisOperation object) {
-				return createClassificationAnalysisOperationAdapter();
-			}
-			@Override
-			public Adapter casePredictiveAnalysisOperation(PredictiveAnalysisOperation object) {
-				return createPredictiveAnalysisOperationAdapter();
-			}
-			@Override
-			public Adapter caseClusteringAnalysisOperation(ClusteringAnalysisOperation object) {
-				return createClusteringAnalysisOperationAdapter();
-			}
-			@Override
-			public Adapter casePredefinedCleaningOperation(PredefinedCleaningOperation object) {
-				return createPredefinedCleaningOperationAdapter();
-			}
-			@Override
 			public Adapter caseSimpleAttribute(SimpleAttribute object) {
 				return createSimpleAttributeAdapter();
 			}
 			@Override
 			public Adapter caseComplexAttribute(ComplexAttribute object) {
 				return createComplexAttributeAdapter();
-			}
-			@Override
-			public Adapter caseVisualizationOperation(VisualizationOperation object) {
-				return createVisualizationOperationAdapter();
-			}
-			@Override
-			public Adapter caseIntegrationOperation(IntegrationOperation object) {
-				return createIntegrationOperationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {

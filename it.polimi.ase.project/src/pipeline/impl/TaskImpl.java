@@ -31,10 +31,10 @@ import pipeline.Task;
  * </p>
  * <ul>
  *   <li>{@link pipeline.impl.TaskImpl#getID <em>ID</em>}</li>
- *   <li>{@link pipeline.impl.TaskImpl#getIncoming <em>Incoming</em>}</li>
- *   <li>{@link pipeline.impl.TaskImpl#getOutgoing <em>Outgoing</em>}</li>
  *   <li>{@link pipeline.impl.TaskImpl#getMaxSpace <em>Max Space</em>}</li>
  *   <li>{@link pipeline.impl.TaskImpl#getMaxTime <em>Max Time</em>}</li>
+ *   <li>{@link pipeline.impl.TaskImpl#getIncoming <em>Incoming</em>}</li>
+ *   <li>{@link pipeline.impl.TaskImpl#getOutgoing <em>Outgoing</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,26 +59,6 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getIncoming() <em>Incoming</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIncoming()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<DataFlow> incoming;
-
-	/**
-	 * The cached value of the '{@link #getOutgoing() <em>Outgoing</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOutgoing()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<DataFlow> outgoing;
 
 	/**
 	 * The default value of the '{@link #getMaxSpace() <em>Max Space</em>}' attribute.
@@ -119,6 +99,26 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * @ordered
 	 */
 	protected int maxTime = MAX_TIME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getIncoming() <em>Incoming</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIncoming()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<DataFlow> incoming;
+
+	/**
+	 * The cached value of the '{@link #getOutgoing() <em>Outgoing</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutgoing()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<DataFlow> outgoing;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -269,14 +269,14 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 		switch (featureID) {
 			case PipelinePackage.TASK__ID:
 				return getID();
-			case PipelinePackage.TASK__INCOMING:
-				return getIncoming();
-			case PipelinePackage.TASK__OUTGOING:
-				return getOutgoing();
 			case PipelinePackage.TASK__MAX_SPACE:
 				return getMaxSpace();
 			case PipelinePackage.TASK__MAX_TIME:
 				return getMaxTime();
+			case PipelinePackage.TASK__INCOMING:
+				return getIncoming();
+			case PipelinePackage.TASK__OUTGOING:
+				return getOutgoing();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -293,6 +293,12 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 			case PipelinePackage.TASK__ID:
 				setID((String)newValue);
 				return;
+			case PipelinePackage.TASK__MAX_SPACE:
+				setMaxSpace((Integer)newValue);
+				return;
+			case PipelinePackage.TASK__MAX_TIME:
+				setMaxTime((Integer)newValue);
+				return;
 			case PipelinePackage.TASK__INCOMING:
 				getIncoming().clear();
 				getIncoming().addAll((Collection<? extends DataFlow>)newValue);
@@ -300,12 +306,6 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 			case PipelinePackage.TASK__OUTGOING:
 				getOutgoing().clear();
 				getOutgoing().addAll((Collection<? extends DataFlow>)newValue);
-				return;
-			case PipelinePackage.TASK__MAX_SPACE:
-				setMaxSpace((Integer)newValue);
-				return;
-			case PipelinePackage.TASK__MAX_TIME:
-				setMaxTime((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -322,17 +322,17 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 			case PipelinePackage.TASK__ID:
 				setID(ID_EDEFAULT);
 				return;
-			case PipelinePackage.TASK__INCOMING:
-				getIncoming().clear();
-				return;
-			case PipelinePackage.TASK__OUTGOING:
-				getOutgoing().clear();
-				return;
 			case PipelinePackage.TASK__MAX_SPACE:
 				setMaxSpace(MAX_SPACE_EDEFAULT);
 				return;
 			case PipelinePackage.TASK__MAX_TIME:
 				setMaxTime(MAX_TIME_EDEFAULT);
+				return;
+			case PipelinePackage.TASK__INCOMING:
+				getIncoming().clear();
+				return;
+			case PipelinePackage.TASK__OUTGOING:
+				getOutgoing().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -348,14 +348,14 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 		switch (featureID) {
 			case PipelinePackage.TASK__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case PipelinePackage.TASK__INCOMING:
-				return incoming != null && !incoming.isEmpty();
-			case PipelinePackage.TASK__OUTGOING:
-				return outgoing != null && !outgoing.isEmpty();
 			case PipelinePackage.TASK__MAX_SPACE:
 				return maxSpace != MAX_SPACE_EDEFAULT;
 			case PipelinePackage.TASK__MAX_TIME:
 				return maxTime != MAX_TIME_EDEFAULT;
+			case PipelinePackage.TASK__INCOMING:
+				return incoming != null && !incoming.isEmpty();
+			case PipelinePackage.TASK__OUTGOING:
+				return outgoing != null && !outgoing.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

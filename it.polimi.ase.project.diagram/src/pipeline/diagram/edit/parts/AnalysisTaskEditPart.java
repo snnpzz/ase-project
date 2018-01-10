@@ -67,7 +67,7 @@ public class AnalysisTaskEditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AnalysisTaskItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy()); // XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
@@ -118,12 +118,6 @@ public class AnalysisTaskEditPart extends ShapeNodeEditPart {
 			((AnalysisTaskIDEditPart) childEditPart).setLabel(getPrimaryShape().getFigureAnalysisTaskLabelFigure());
 			return true;
 		}
-		if (childEditPart instanceof AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getAnalysisTaskAnalysisOperationsCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart) childEditPart).getFigure());
-			return true;
-		}
 		return false;
 	}
 
@@ -132,11 +126,6 @@ public class AnalysisTaskEditPart extends ShapeNodeEditPart {
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof AnalysisTaskIDEditPart) {
-			return true;
-		}
-		if (childEditPart instanceof AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getAnalysisTaskAnalysisOperationsCompartmentFigure();
-			pane.remove(((AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -166,9 +155,6 @@ public class AnalysisTaskEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart) {
-			return getPrimaryShape().getAnalysisTaskAnalysisOperationsCompartmentFigure();
-		}
 		return getContentPane();
 	}
 
@@ -286,10 +272,6 @@ public class AnalysisTaskEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private WrappingLabel fFigureAnalysisTaskLabelFigure;
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fAnalysisTaskAnalysisOperationsCompartmentFigure;
 
 		/**
 		 * @generated
@@ -309,16 +291,8 @@ public class AnalysisTaskEditPart extends ShapeNodeEditPart {
 			fFigureAnalysisTaskLabelFigure = new WrappingLabel();
 
 			fFigureAnalysisTaskLabelFigure.setText("AnalysisTask");
-			fFigureAnalysisTaskLabelFigure
-					.setMaximumSize(new Dimension(getMapMode().DPtoLP(10000), getMapMode().DPtoLP(50)));
 
 			this.add(fFigureAnalysisTaskLabelFigure);
-
-			fAnalysisTaskAnalysisOperationsCompartmentFigure = new RectangleFigure();
-
-			fAnalysisTaskAnalysisOperationsCompartmentFigure.setOutline(false);
-
-			this.add(fAnalysisTaskAnalysisOperationsCompartmentFigure);
 
 		}
 
@@ -327,13 +301,6 @@ public class AnalysisTaskEditPart extends ShapeNodeEditPart {
 		 */
 		public WrappingLabel getFigureAnalysisTaskLabelFigure() {
 			return fFigureAnalysisTaskLabelFigure;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getAnalysisTaskAnalysisOperationsCompartmentFigure() {
-			return fAnalysisTaskAnalysisOperationsCompartmentFigure;
 		}
 
 	}

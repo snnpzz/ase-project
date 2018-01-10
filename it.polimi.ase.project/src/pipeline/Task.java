@@ -16,15 +16,15 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pipeline.Task#getID <em>ID</em>}</li>
- *   <li>{@link pipeline.Task#getIncoming <em>Incoming</em>}</li>
- *   <li>{@link pipeline.Task#getOutgoing <em>Outgoing</em>}</li>
  *   <li>{@link pipeline.Task#getMaxSpace <em>Max Space</em>}</li>
  *   <li>{@link pipeline.Task#getMaxTime <em>Max Time</em>}</li>
+ *   <li>{@link pipeline.Task#getIncoming <em>Incoming</em>}</li>
+ *   <li>{@link pipeline.Task#getOutgoing <em>Outgoing</em>}</li>
  * </ul>
  *
  * @see pipeline.PipelinePackage#getTask()
  * @model abstract="true"
- *        annotation="gmf.node label='ID' figure='rounded'"
+ *        annotation="gmf.node label='ID'"
  * @generated
  */
 public interface Task extends EObject {

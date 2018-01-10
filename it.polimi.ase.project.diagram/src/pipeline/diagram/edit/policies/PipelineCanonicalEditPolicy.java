@@ -67,11 +67,6 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	* @generated
 	*/
-	private Set<EStructuralFeature> myFeaturesToSynchronize;
-
-	/**
-	* @generated
-	*/
 	protected void refreshOnActivate() {
 		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
 		List<?> c = getHost().getChildren();
@@ -84,16 +79,8 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	* @generated
 	*/
-	protected Set getFeaturesToSynchronize() {
-		if (myFeaturesToSynchronize == null) {
-			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_Tasks());
-			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_Sources());
-			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_Files());
-			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_Schemas());
-			myFeaturesToSynchronize.add(PipelinePackage.eINSTANCE.getPipeline_Charts());
-		}
-		return myFeaturesToSynchronize;
+	protected EStructuralFeature getFeatureToSynchronize() {
+		return PipelinePackage.eINSTANCE.getPipeline_Tasks();
 	}
 
 	/**
@@ -134,10 +121,6 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 		case AnalysisTaskEditPart.VISUAL_ID:
 		case VisualizationTaskEditPart.VISUAL_ID:
 		case ExportTaskEditPart.VISUAL_ID:
-		case SourceEditPart.VISUAL_ID:
-		case FileEditPart.VISUAL_ID:
-		case SchemaEditPart.VISUAL_ID:
-		case ChartEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -231,8 +214,6 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 			postProcessRefreshSemantic(createdViews);
 		}
 
-		Collection<IAdaptable> createdConnectionViews = refreshConnections();
-
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
 			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
@@ -240,276 +221,7 @@ public class PipelineCanonicalEditPolicy extends CanonicalEditPolicy {
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 
-		createdViews.addAll(createdConnectionViews);
-
 		makeViewsImmutable(createdViews);
-	}
-
-	/**
-	* @generated
-	*/
-	private Collection<IAdaptable> refreshConnections() {
-		Domain2Notation domain2NotationMap = new Domain2Notation();
-		Collection<PipelineLinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
-		Collection existingLinks = new LinkedList(getDiagram().getEdges());
-		for (Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
-			Edge nextDiagramLink = (Edge) linksIterator.next();
-			int diagramLinkVisualID = PipelineVisualIDRegistry.getVisualID(nextDiagramLink);
-			if (diagramLinkVisualID == -1) {
-				if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
-					linksIterator.remove();
-				}
-				continue;
-			}
-			EObject diagramLinkObject = nextDiagramLink.getElement();
-			EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
-			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
-			for (Iterator<PipelineLinkDescriptor> linkDescriptorsIterator = linkDescriptors
-					.iterator(); linkDescriptorsIterator.hasNext();) {
-				PipelineLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator.next();
-				if (diagramLinkObject == nextLinkDescriptor.getModelElement()
-						&& diagramLinkSrc == nextLinkDescriptor.getSource()
-						&& diagramLinkDst == nextLinkDescriptor.getDestination()
-						&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
-					linksIterator.remove();
-					linkDescriptorsIterator.remove();
-					break;
-				}
-			}
-		}
-		deleteViews(existingLinks.iterator());
-		return createConnections(linkDescriptors, domain2NotationMap);
-	}
-
-	/**
-	* @generated
-	*/
-	private Collection<PipelineLinkDescriptor> collectAllLinks(View view, Domain2Notation domain2NotationMap) {
-		if (!PipelineEditPart.MODEL_ID.equals(PipelineVisualIDRegistry.getModelID(view))) {
-			return Collections.emptyList();
-		}
-		LinkedList<PipelineLinkDescriptor> result = new LinkedList<PipelineLinkDescriptor>();
-		switch (PipelineVisualIDRegistry.getVisualID(view)) {
-		case PipelineEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getPipeline_1000ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case CollectionTaskEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getCollectionTask_2001ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case IntegrationTaskEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getIntegrationTask_2002ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case CleaningTaskEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getCleaningTask_2003ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case AnalysisTaskEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getAnalysisTask_2004ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case VisualizationTaskEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getVisualizationTask_2005ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case ExportTaskEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getExportTask_2006ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case SourceEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getSource_2007ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case FileEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getFile_2008ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case SchemaEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getSchema_2009ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case ChartEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getChart_2010ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case ImportOperationEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getImportOperation_3001ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case ExportOperationEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getExportOperation_3002ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case SimpleAttributeEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getSimpleAttribute_3003ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case ComplexAttributeEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getComplexAttribute_3004ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case SimpleAttribute2EditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getSimpleAttribute_3005ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case ComplexAttribute2EditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getComplexAttribute_3006ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case DataFlowEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getDataFlow_4001ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case InternalDataFlowEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PipelineDiagramUpdater.getInternalDataFlow_4002ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		}
-		for (Iterator children = view.getChildren().iterator(); children.hasNext();) {
-			result.addAll(collectAllLinks((View) children.next(), domain2NotationMap));
-		}
-		for (Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
-			result.addAll(collectAllLinks((View) edges.next(), domain2NotationMap));
-		}
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	private Collection<IAdaptable> createConnections(Collection<PipelineLinkDescriptor> linkDescriptors,
-			Domain2Notation domain2NotationMap) {
-		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
-		for (PipelineLinkDescriptor nextLinkDescriptor : linkDescriptors) {
-			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap);
-			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap);
-			if (sourceEditPart == null || targetEditPart == null) {
-				continue;
-			}
-			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(
-					nextLinkDescriptor.getSemanticAdapter(),
-					PipelineVisualIDRegistry.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND, false,
-					((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
-			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
-			ccr.setType(RequestConstants.REQ_CONNECTION_START);
-			ccr.setSourceEditPart(sourceEditPart);
-			sourceEditPart.getCommand(ccr);
-			ccr.setTargetEditPart(targetEditPart);
-			ccr.setType(RequestConstants.REQ_CONNECTION_END);
-			Command cmd = targetEditPart.getCommand(ccr);
-			if (cmd != null && cmd.canExecute()) {
-				executeCommand(cmd);
-				IAdaptable viewAdapter = (IAdaptable) ccr.getNewObject();
-				if (viewAdapter != null) {
-					adapters.add(viewAdapter);
-				}
-			}
-		}
-		return adapters;
-	}
-
-	/**
-	* @generated
-	*/
-	private EditPart getEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap) {
-		View view = (View) domain2NotationMap.get(domainModelElement);
-		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
-		}
-		return null;
-	}
-
-	/**
-	* @generated
-	*/
-	private Diagram getDiagram() {
-		return ((View) getHost().getModel()).getDiagram();
-	}
-
-	/**
-	* @generated
-	*/
-	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
-		return getEditPart(descriptor.getSource(), domain2NotationMap);
-	}
-
-	/**
-	* @generated
-	*/
-	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
-		return getEditPart(descriptor.getDestination(), domain2NotationMap);
-	}
-
-	/**
-	* @generated
-	*/
-	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap,
-			int hintVisualId) {
-		View view = (View) domain2NotationMap.getHinted(domainModelElement,
-				PipelineVisualIDRegistry.getType(hintVisualId));
-		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
-		}
-		return null;
 	}
 
 	/**

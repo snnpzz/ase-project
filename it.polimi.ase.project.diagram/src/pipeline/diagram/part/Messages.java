@@ -251,11 +251,6 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Connections2Group_title;
-
-	/**
-	* @generated
-	*/
 	public static String AnalysisTask1CreationTool_title;
 
 	/**
@@ -266,422 +261,57 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Chart2CreationTool_title;
+	public static String CleaningTask2CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Chart2CreationTool_desc;
+	public static String CleaningTask2CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String CleaningTask3CreationTool_title;
+	public static String CollectionTask3CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String CleaningTask3CreationTool_desc;
+	public static String CollectionTask3CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String CollectionTask4CreationTool_title;
+	public static String ExportTask4CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String CollectionTask4CreationTool_desc;
+	public static String ExportTask4CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ComplexAttribute5CreationTool_title;
+	public static String IntegrationTask5CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ComplexAttribute5CreationTool_desc;
+	public static String IntegrationTask5CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String ExportOperation6CreationTool_title;
+	public static String VisualizationTask6CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ExportOperation6CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String ExportTask7CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String ExportTask7CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String File8CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String File8CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String ImportOperation9CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String ImportOperation9CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String IntegrationTask10CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String IntegrationTask10CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String Schema11CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String Schema11CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String SimpleAttribute12CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String SimpleAttribute12CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String Source13CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String Source13CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String VisualizationTask14CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String VisualizationTask14CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String Axes1CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String Axes1CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String DFSchema2CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String DFSchema2CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String DataFlow3CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String DataFlow3CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String InternalDataFlow4CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String InternalDataFlow4CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String Read5CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String Read5CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String Use6CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String Use6CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String Write7CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String Write7CreationTool_desc;
-
-	/**
-	* @generated
-	*/
-	public static String CollectionTaskCollectionTaskImportOperationsCompartmentEditPart_title;
-
-	/**
-	* @generated
-	*/
-	public static String IntegrationTaskIntegrationTaskIntegrationOperationsCompartmentEditPart_title;
-
-	/**
-	* @generated
-	*/
-	public static String CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart_title;
-
-	/**
-	* @generated
-	*/
-	public static String AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart_title;
-
-	/**
-	* @generated
-	*/
-	public static String VisualizationTaskVisualizationTaskVisualizationOperationsCompartmentEditPart_title;
-
-	/**
-	* @generated
-	*/
-	public static String ExportTaskExportTaskExportOperationsCompartmentEditPart_title;
-
-	/**
-	* @generated
-	*/
-	public static String SchemaSchemaAttributesCompartmentEditPart_title;
-
-	/**
-	* @generated
-	*/
-	public static String ComplexAttributeComplexAttributeAttributesCompartmentEditPart_title;
-
-	/**
-	* @generated
-	*/
-	public static String ComplexAttributeComplexAttributeAttributesCompartment2EditPart_title;
+	public static String VisualizationTask6CreationTool_desc;
 
 	/**
 	* @generated
 	*/
 	public static String CommandName_OpenDiagram;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Pipeline_1000_links;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_CollectionTask_2001_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_CollectionTask_2001_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_IntegrationTask_2002_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_IntegrationTask_2002_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_CleaningTask_2003_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_CleaningTask_2003_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_AnalysisTask_2004_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_AnalysisTask_2004_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_VisualizationTask_2005_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_VisualizationTask_2005_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ExportTask_2006_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ExportTask_2006_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Source_2007_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_File_2008_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Schema_2009_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Chart_2010_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ImportOperation_3001_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ExportOperation_3002_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_SimpleAttribute_3003_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_SimpleAttribute_3005_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_DataFlow_4001_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_DataFlow_4001_source;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_DataFlow_4001_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_DataFlowSchema_4003_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_DataFlowSchema_4003_source;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ImportOperationRead_4006_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ImportOperationRead_4006_source;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ImportOperationUse_4007_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ImportOperationUse_4007_source;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ExportOperationWrite_4009_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ExportOperationWrite_4009_source;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ChartAxes_4010_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ChartAxes_4010_source;
 
 	/**
 	* @generated

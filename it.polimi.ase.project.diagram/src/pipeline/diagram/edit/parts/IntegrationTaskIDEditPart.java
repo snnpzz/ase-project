@@ -60,7 +60,7 @@ public class IntegrationTaskIDEditPart extends CompartmentEditPart implements IT
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5003;
+	public static final int VISUAL_ID = 5002;
 
 	/**
 	* @generated

@@ -33,7 +33,6 @@ public interface ComplexAttribute extends Attribute {
 	 * @return the value of the '<em>Attributes</em>' containment reference list.
 	 * @see pipeline.PipelinePackage#getComplexAttribute_Attributes()
 	 * @model containment="true" required="true"
-	 *        annotation="gmf.compartment layout='list'"
 	 * @generated
 	 */
 	EList<Attribute> getAttributes();

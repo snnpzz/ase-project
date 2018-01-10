@@ -1,283 +1,71 @@
 <?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition">
-  <gmfgraph:Canvas name="pipeline">
-    <figures name="Default">
-      <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledClosedArrow">
-        <template/>
-        <template x="-2" y="2"/>
-        <template x="-2" y="-2"/>
-        <template/>
-      </figures>
-      <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledClosedArrow">
-        <template/>
-        <template x="-2" y="2"/>
-        <template x="-2" y="-2"/>
-        <template/>
-      </figures>
-      <figures xsi:type="gmfgraph:PolylineDecoration" name="DataFlowSchemaFigureTargetDecoration"/>
-      <figures xsi:type="gmfgraph:PolygonDecoration" name="Sqare">
-        <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-        <template y="1"/>
-        <template x="-1" y="1"/>
-        <template x="-1" y="-1"/>
-        <template y="-1"/>
-        <template y="1"/>
-      </figures>
-      <figures xsi:type="gmfgraph:PolylineDecoration" name="ImportOperationUseFigureTargetDecoration"/>
-      <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledSqare">
-        <template y="1"/>
-        <template x="-1" y="1"/>
-        <template x="-1" y="-1"/>
-        <template y="-1"/>
-        <template y="1"/>
-      </figures>
-      <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-        <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-        <template/>
-        <template x="-2" y="2"/>
-        <template x="-2" y="-2"/>
-        <template/>
-      </figures>
-      <descriptors name="SchemaFigure">
-        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="SchemaFigure">
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
-          </border>
-          <children xsi:type="gmfgraph:Rectangle" name="SchemaAttributesCompartmentFigure" outline="false"/>
-        </actualFigure>
-        <accessors accessor="getSchemaAttributesCompartmentFigure" figure="/0/@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-      </descriptors>
-      <descriptors name="CollectionTaskFigure">
-        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="CollectionTaskFigure">
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
-          </border>
-          <children xsi:type="gmfgraph:Label" name="CollectionTaskLabelFigure" text="CollectionTask">
-            <maximumSize dx="10000" dy="50"/>
-          </children>
-          <children xsi:type="gmfgraph:Rectangle" name="CollectionTaskImportOperationsCompartmentFigure" outline="false"/>
-        </actualFigure>
-        <accessors accessor="getFigureCollectionTaskLabelFigure" figure="/0/@figures.0/@descriptors.1/@actualFigure/@children.0"/>
-        <accessors accessor="getCollectionTaskImportOperationsCompartmentFigure" figure="/0/@figures.0/@descriptors.1/@actualFigure/@children.1"/>
-      </descriptors>
-      <descriptors name="IntegrationTaskFigure">
-        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="IntegrationTaskFigure">
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
-          </border>
-          <children xsi:type="gmfgraph:Label" name="IntegrationTaskLabelFigure" text="IntegrationTask">
-            <maximumSize dx="10000" dy="50"/>
-          </children>
-          <children xsi:type="gmfgraph:Rectangle" name="IntegrationTaskIntegrationOperationsCompartmentFigure" outline="false"/>
-        </actualFigure>
-        <accessors accessor="getFigureIntegrationTaskLabelFigure" figure="/0/@figures.0/@descriptors.2/@actualFigure/@children.0"/>
-        <accessors accessor="getIntegrationTaskIntegrationOperationsCompartmentFigure" figure="/0/@figures.0/@descriptors.2/@actualFigure/@children.1"/>
-      </descriptors>
-      <descriptors name="CleaningTaskFigure">
-        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="CleaningTaskFigure">
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
-          </border>
-          <children xsi:type="gmfgraph:Label" name="CleaningTaskLabelFigure" text="CleaningTask">
-            <maximumSize dx="10000" dy="50"/>
-          </children>
-          <children xsi:type="gmfgraph:Rectangle" name="CleaningTaskCleaningOperationsCompartmentFigure" outline="false"/>
-        </actualFigure>
-        <accessors accessor="getFigureCleaningTaskLabelFigure" figure="/0/@figures.0/@descriptors.3/@actualFigure/@children.0"/>
-        <accessors accessor="getCleaningTaskCleaningOperationsCompartmentFigure" figure="/0/@figures.0/@descriptors.3/@actualFigure/@children.1"/>
-      </descriptors>
-      <descriptors name="AnalysisTaskFigure">
-        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="AnalysisTaskFigure">
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
-          </border>
-          <children xsi:type="gmfgraph:Label" name="AnalysisTaskLabelFigure" text="AnalysisTask">
-            <maximumSize dx="10000" dy="50"/>
-          </children>
-          <children xsi:type="gmfgraph:Rectangle" name="AnalysisTaskAnalysisOperationsCompartmentFigure" outline="false"/>
-        </actualFigure>
-        <accessors accessor="getFigureAnalysisTaskLabelFigure" figure="/0/@figures.0/@descriptors.4/@actualFigure/@children.0"/>
-        <accessors accessor="getAnalysisTaskAnalysisOperationsCompartmentFigure" figure="/0/@figures.0/@descriptors.4/@actualFigure/@children.1"/>
-      </descriptors>
-      <descriptors name="VisualizationTaskFigure">
-        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="VisualizationTaskFigure">
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
-          </border>
-          <children xsi:type="gmfgraph:Label" name="VisualizationTaskLabelFigure" text="VisualizationTask">
-            <maximumSize dx="10000" dy="50"/>
-          </children>
-          <children xsi:type="gmfgraph:Rectangle" name="VisualizationTaskVisualizationOperationsCompartmentFigure" outline="false"/>
-        </actualFigure>
-        <accessors accessor="getFigureVisualizationTaskLabelFigure" figure="/0/@figures.0/@descriptors.5/@actualFigure/@children.0"/>
-        <accessors accessor="getVisualizationTaskVisualizationOperationsCompartmentFigure" figure="/0/@figures.0/@descriptors.5/@actualFigure/@children.1"/>
-      </descriptors>
-      <descriptors name="ExportTaskFigure">
-        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ExportTaskFigure">
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
-          </border>
-          <children xsi:type="gmfgraph:Label" name="ExportTaskLabelFigure" text="ExportTask">
-            <maximumSize dx="10000" dy="50"/>
-          </children>
-          <children xsi:type="gmfgraph:Rectangle" name="ExportTaskExportOperationsCompartmentFigure" outline="false"/>
-        </actualFigure>
-        <accessors accessor="getFigureExportTaskLabelFigure" figure="/0/@figures.0/@descriptors.6/@actualFigure/@children.0"/>
-        <accessors accessor="getExportTaskExportOperationsCompartmentFigure" figure="/0/@figures.0/@descriptors.6/@actualFigure/@children.1"/>
-      </descriptors>
-      <descriptors name="ImportOperationFigure">
-        <actualFigure xsi:type="gmfgraph:Ellipse" name="ImportOperationFigure">
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
-          </border>
-          <children xsi:type="gmfgraph:Label" name="ImportOperationLabelFigure" text="Import"/>
-        </actualFigure>
-        <accessors accessor="getFigureImportOperationLabelFigure" figure="/0/@figures.0/@descriptors.7/@actualFigure/@children.0"/>
-      </descriptors>
-      <descriptors name="ExportOperationFigure">
-        <actualFigure xsi:type="gmfgraph:Ellipse" name="ExportOperationFigure">
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
-          </border>
-          <children xsi:type="gmfgraph:Label" name="ExportOperationLabelFigure" text="Export"/>
-        </actualFigure>
-        <accessors accessor="getFigureExportOperationLabelFigure" figure="/0/@figures.0/@descriptors.8/@actualFigure/@children.0"/>
-      </descriptors>
-      <descriptors name="SourceFigure">
-        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="SourceFigure">
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
-          </border>
-          <children xsi:type="gmfgraph:Label" name="SourceLabelFigure" text="Source"/>
-        </actualFigure>
-        <accessors accessor="getFigureSourceLabelFigure" figure="/0/@figures.0/@descriptors.9/@actualFigure/@children.0"/>
-      </descriptors>
-      <descriptors name="FileFigure">
-        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="FileFigure">
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
-          </border>
-          <children xsi:type="gmfgraph:Label" name="FileLabelFigure" text="File"/>
-        </actualFigure>
-        <accessors accessor="getFigureFileLabelFigure" figure="/0/@figures.0/@descriptors.10/@actualFigure/@children.0"/>
-      </descriptors>
-      <descriptors name="ChartFigure">
-        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ChartFigure">
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
-          </border>
-          <children xsi:type="gmfgraph:Label" name="ChartLabelFigure" text="Chart"/>
-        </actualFigure>
-        <accessors accessor="getFigureChartLabelFigure" figure="/0/@figures.0/@descriptors.11/@actualFigure/@children.0"/>
-      </descriptors>
-      <descriptors name="SimpleAttributeFigure">
-        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="SimpleAttributeFigure">
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
-          </border>
-          <children xsi:type="gmfgraph:Label" name="SimpleAttributeLabelFigure" text="SimpleAttribute"/>
-        </actualFigure>
-        <accessors accessor="getFigureSimpleAttributeLabelFigure" figure="/0/@figures.0/@descriptors.12/@actualFigure/@children.0"/>
-      </descriptors>
-      <descriptors name="ComplexAttributeFigure">
-        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ComplexAttributeFigure">
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
-          </border>
-          <children xsi:type="gmfgraph:Label" name="ComplexAttributeLabelFigure" text="ComplexAttribute">
-            <maximumSize dx="10000" dy="50"/>
-          </children>
-          <children xsi:type="gmfgraph:Rectangle" name="ComplexAttributeAttributesCompartmentFigure" outline="false"/>
-        </actualFigure>
-        <accessors accessor="getFigureComplexAttributeLabelFigure" figure="/0/@figures.0/@descriptors.13/@actualFigure/@children.0"/>
-        <accessors accessor="getComplexAttributeAttributesCompartmentFigure" figure="/0/@figures.0/@descriptors.13/@actualFigure/@children.1"/>
-      </descriptors>
-      <descriptors name="DataFlowFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DataFlowFigure" lineWidth="2" targetDecoration="/0/@figures.0/@figures.0"/>
-      </descriptors>
-      <descriptors name="InternalDataFlowFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="InternalDataFlowFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.1"/>
-      </descriptors>
-      <descriptors name="DataFlowSchemaFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DataFlowSchemaFigure" lineKind="LINE_DOT" targetDecoration="/0/@figures.0/@figures.2"/>
-      </descriptors>
-      <descriptors name="DataFlowSchemaExternalLabelFigure">
-        <actualFigure xsi:type="gmfgraph:Label" name="DataFlowSchemaExternalLabel"/>
-      </descriptors>
-      <descriptors name="ImportOperationReadFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ImportOperationReadFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.3"/>
-      </descriptors>
-      <descriptors name="ImportOperationReadExternalLabelFigure">
-        <actualFigure xsi:type="gmfgraph:Label" name="ImportOperationReadExternalLabel"/>
-      </descriptors>
-      <descriptors name="ImportOperationUseFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ImportOperationUseFigure" targetDecoration="/0/@figures.0/@figures.4"/>
-      </descriptors>
-      <descriptors name="ImportOperationUseExternalLabelFigure">
-        <actualFigure xsi:type="gmfgraph:Label" name="ImportOperationUseExternalLabel"/>
-      </descriptors>
-      <descriptors name="ExportOperationWriteFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ExportOperationWriteFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="/0/@figures.0/@figures.5"/>
-      </descriptors>
-      <descriptors name="ExportOperationWriteExternalLabelFigure">
-        <actualFigure xsi:type="gmfgraph:Label" name="ExportOperationWriteExternalLabel"/>
-      </descriptors>
-      <descriptors name="ChartAxesFigure">
-        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ChartAxesFigure" targetDecoration="/0/@figures.0/@figures.6"/>
-      </descriptors>
-      <descriptors name="ChartAxesExternalLabelFigure">
-        <actualFigure xsi:type="gmfgraph:Label" name="ChartAxesExternalLabel"/>
-      </descriptors>
-    </figures>
-    <nodes name="Schema" figure="SchemaFigure"/>
-    <nodes name="CollectionTask" figure="CollectionTaskFigure"/>
-    <nodes name="IntegrationTask" figure="IntegrationTaskFigure"/>
-    <nodes name="CleaningTask" figure="CleaningTaskFigure"/>
-    <nodes name="AnalysisTask" figure="AnalysisTaskFigure"/>
-    <nodes name="VisualizationTask" figure="VisualizationTaskFigure"/>
-    <nodes name="ExportTask" figure="ExportTaskFigure"/>
-    <nodes name="ImportOperation" figure="ImportOperationFigure"/>
-    <nodes name="ExportOperation" figure="ExportOperationFigure"/>
-    <nodes name="Source" figure="SourceFigure"/>
-    <nodes name="File" figure="FileFigure"/>
-    <nodes name="Chart" figure="ChartFigure"/>
-    <nodes name="SimpleAttribute" figure="SimpleAttributeFigure"/>
-    <nodes name="ComplexAttribute" figure="ComplexAttributeFigure"/>
-    <connections name="DataFlow" figure="DataFlowFigure"/>
-    <connections name="InternalDataFlow" figure="InternalDataFlowFigure"/>
-    <connections name="DataFlowSchema" figure="DataFlowSchemaFigure"/>
-    <connections name="ImportOperationRead" figure="ImportOperationReadFigure"/>
-    <connections name="ImportOperationUse" figure="ImportOperationUseFigure"/>
-    <connections name="ExportOperationWrite" figure="ExportOperationWriteFigure"/>
-    <connections name="ChartAxes" figure="ChartAxesFigure"/>
-    <compartments name="SchemaAttributesCompartment" figure="SchemaFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.0/@accessors.0"/>
-    <compartments name="CollectionTaskImportOperationsCompartment" figure="CollectionTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.1/@accessors.1"/>
-    <compartments name="IntegrationTaskIntegrationOperationsCompartment" figure="IntegrationTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.2/@accessors.1"/>
-    <compartments name="CleaningTaskCleaningOperationsCompartment" figure="CleaningTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.3/@accessors.1"/>
-    <compartments name="AnalysisTaskAnalysisOperationsCompartment" figure="AnalysisTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.4/@accessors.1"/>
-    <compartments name="VisualizationTaskVisualizationOperationsCompartment" figure="VisualizationTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.5/@accessors.1"/>
-    <compartments name="ExportTaskExportOperationsCompartment" figure="ExportTaskFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.6/@accessors.1"/>
-    <compartments name="ComplexAttributeAttributesCompartment" figure="ComplexAttributeFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.13/@accessors.1"/>
-    <labels name="CollectionTaskLabel" figure="CollectionTaskFigure" accessor="/0/@figures.0/@descriptors.1/@accessors.0"/>
-    <labels name="IntegrationTaskLabel" figure="IntegrationTaskFigure" accessor="/0/@figures.0/@descriptors.2/@accessors.0"/>
-    <labels name="CleaningTaskLabel" figure="CleaningTaskFigure" accessor="/0/@figures.0/@descriptors.3/@accessors.0"/>
-    <labels name="AnalysisTaskLabel" figure="AnalysisTaskFigure" accessor="/0/@figures.0/@descriptors.4/@accessors.0"/>
-    <labels name="VisualizationTaskLabel" figure="VisualizationTaskFigure" accessor="/0/@figures.0/@descriptors.5/@accessors.0"/>
-    <labels name="ExportTaskLabel" figure="ExportTaskFigure" accessor="/0/@figures.0/@descriptors.6/@accessors.0"/>
-    <labels name="ImportOperationLabel" figure="ImportOperationFigure" accessor="/0/@figures.0/@descriptors.7/@accessors.0"/>
-    <labels name="ExportOperationLabel" figure="ExportOperationFigure" accessor="/0/@figures.0/@descriptors.8/@accessors.0"/>
-    <labels name="SourceLabel" figure="SourceFigure" accessor="/0/@figures.0/@descriptors.9/@accessors.0"/>
-    <labels name="FileLabel" figure="FileFigure" accessor="/0/@figures.0/@descriptors.10/@accessors.0"/>
-    <labels name="ChartLabel" figure="ChartFigure" accessor="/0/@figures.0/@descriptors.11/@accessors.0"/>
-    <labels name="SimpleAttributeLabel" figure="SimpleAttributeFigure" accessor="/0/@figures.0/@descriptors.12/@accessors.0"/>
-    <labels name="ComplexAttributeLabel" figure="ComplexAttributeFigure" accessor="/0/@figures.0/@descriptors.13/@accessors.0"/>
-    <labels name="DataFlowSchemaExternalLabel" figure="DataFlowSchemaExternalLabelFigure" elementIcon="false"/>
-    <labels name="ImportOperationReadExternalLabel" figure="ImportOperationReadExternalLabelFigure" elementIcon="false"/>
-    <labels name="ImportOperationUseExternalLabel" figure="ImportOperationUseExternalLabelFigure" elementIcon="false"/>
-    <labels name="ExportOperationWriteExternalLabel" figure="ExportOperationWriteExternalLabelFigure" elementIcon="false"/>
-    <labels name="ChartAxesExternalLabel" figure="ChartAxesExternalLabelFigure" elementIcon="false"/>
-  </gmfgraph:Canvas>
-  <gmfgraph:Label name="SchemaLabelFigure" text="Schema">
-    <maximumSize dx="10000" dy="50"/>
-  </gmfgraph:Label>
-</xmi:XMI>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="pipeline">
+  <figures name="Default">
+    <descriptors name="CollectionTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="CollectionTaskFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="CollectionTaskLabelFigure" text="CollectionTask"/>
+      </actualFigure>
+      <accessors accessor="getFigureCollectionTaskLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="IntegrationTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="IntegrationTaskFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="IntegrationTaskLabelFigure" text="IntegrationTask"/>
+      </actualFigure>
+      <accessors accessor="getFigureIntegrationTaskLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="CleaningTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="CleaningTaskFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="CleaningTaskLabelFigure" text="CleaningTask"/>
+      </actualFigure>
+      <accessors accessor="getFigureCleaningTaskLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="AnalysisTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="AnalysisTaskFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="AnalysisTaskLabelFigure" text="AnalysisTask"/>
+      </actualFigure>
+      <accessors accessor="getFigureAnalysisTaskLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="VisualizationTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="VisualizationTaskFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="VisualizationTaskLabelFigure" text="VisualizationTask"/>
+      </actualFigure>
+      <accessors accessor="getFigureVisualizationTaskLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ExportTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ExportTaskFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ExportTaskLabelFigure" text="ExportTask"/>
+      </actualFigure>
+      <accessors accessor="getFigureExportTaskLabelFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+    </descriptors>
+  </figures>
+  <nodes name="CollectionTask" figure="CollectionTaskFigure"/>
+  <nodes name="IntegrationTask" figure="IntegrationTaskFigure"/>
+  <nodes name="CleaningTask" figure="CleaningTaskFigure"/>
+  <nodes name="AnalysisTask" figure="AnalysisTaskFigure"/>
+  <nodes name="VisualizationTask" figure="VisualizationTaskFigure"/>
+  <nodes name="ExportTask" figure="ExportTaskFigure"/>
+  <labels name="CollectionTaskLabel" figure="CollectionTaskFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="IntegrationTaskLabel" figure="IntegrationTaskFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="CleaningTaskLabel" figure="CleaningTaskFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="AnalysisTaskLabel" figure="AnalysisTaskFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="VisualizationTaskLabel" figure="VisualizationTaskFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <labels name="ExportTaskLabel" figure="ExportTaskFigure" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+</gmfgraph:Canvas>

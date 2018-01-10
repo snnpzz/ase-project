@@ -64,11 +64,6 @@ public class PipelineDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	* @generated
 	*/
-	private PipelineBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
-
-	/**
-	* @generated
-	*/
 	private ElementInitializers initializers;
 
 	/**
@@ -94,7 +89,6 @@ public class PipelineDiagramEditorPlugin extends AbstractUIPlugin {
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
-		linkConstraints = null;
 		initializers = null;
 		instance = null;
 		super.stop(context);
@@ -208,20 +202,6 @@ public class PipelineDiagramEditorPlugin extends AbstractUIPlugin {
 			documentProvider = new PipelineDocumentProvider();
 		}
 		return documentProvider;
-	}
-
-	/**
-	* @generated
-	*/
-	public PipelineBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
-		return linkConstraints;
-	}
-
-	/**
-	* @generated
-	*/
-	public void setLinkConstraints(PipelineBaseItemSemanticEditPolicy.LinkConstraints lc) {
-		this.linkConstraints = lc;
 	}
 
 	/**

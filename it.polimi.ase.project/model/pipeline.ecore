@@ -3,6 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pipeline" nsURI="http://www.project.ase.polimi.it/pipeline"
     nsPrefix="pipeline">
   <eClassifiers xsi:type="ecore:EClass" name="Pipeline">
+    <eAnnotations source="gmf.diagram"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataFlows" lowerBound="1"
         upperBound="-1" eType="#//DataFlow" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" lowerBound="1" upperBound="-1"
@@ -20,6 +21,9 @@
         eType="#//Chart" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Task" abstract="true">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="ID"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSpace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -96,12 +100,43 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="read" lowerBound="1" eType="#//Source"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="use" lowerBound="1" eType="#//Schema"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExportOperation">
+  <eClassifiers xsi:type="ecore:EClass" name="IntegrationOperation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="write" lowerBound="1" eType="#//File"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputAttributes" lowerBound="1"
+        upperBound="-1" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputAttribute" eType="#//Attribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CleaningOperation" abstract="true" eSuperTypes="#//Operation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PredefinedCleaningOperation" eSuperTypes="#//CleaningOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PredefinedOperation"
+        defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UserDefinedCleaningOperation" eSuperTypes="#//CleaningOperation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalysisOperation" abstract="true" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputAttribute" eType="#//SimpleAttribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassificationAnalysisOperation" eSuperTypes="#//AnalysisOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ClassificationOperation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClusteringAnalysisOperation" eSuperTypes="#//AnalysisOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ClusteringOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="k" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DescriptiveAnalysisOperation" eSuperTypes="#//AnalysisOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DescriptiveOperation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PredictiveAnalysisOperation" eSuperTypes="#//AnalysisOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PredictiveOperation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VisualizationOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="chart" lowerBound="1" eType="#//Chart"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExportOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="write" lowerBound="1" eType="#//File"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Source">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -123,27 +158,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ChartType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="axes" lowerBound="1" upperBound="-1"
         eType="#//SimpleAttribute"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CleaningOperation" abstract="true" eSuperTypes="#//Operation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AnalysisOperation" abstract="true" eSuperTypes="#//Operation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outputAttribute" eType="#//SimpleAttribute"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DescriptiveAnalysisOperation" eSuperTypes="#//AnalysisOperation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DescriptiveOperation"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ClassificationAnalysisOperation" eSuperTypes="#//AnalysisOperation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ClassificationOperation"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PredictiveAnalysisOperation" eSuperTypes="#//AnalysisOperation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PredictiveOperation"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ClusteringAnalysisOperation" eSuperTypes="#//AnalysisOperation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ClusteringOperation"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="k" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PredefinedCleaningOperation" eSuperTypes="#//CleaningOperation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PredefinedOperation"
-        defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SimpleAttribute" eSuperTypes="#//Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type"/>
@@ -211,15 +225,5 @@
     <eLiterals name="mDouble" value="2"/>
     <eLiterals name="mBoolean" value="3"/>
     <eLiterals name="mDate" value="4"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VisualizationOperation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="chart" lowerBound="1" eType="#//Chart"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IntegrationOperation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inputAttributes" lowerBound="1"
-        upperBound="-1" eType="#//Attribute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outputAttribute" eType="#//Attribute"/>
   </eClassifiers>
 </ecore:EPackage>

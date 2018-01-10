@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see pipeline.PipelinePackage#getInternalDataFlow()
- * @model annotation="gmf.link source='source' target='target' width='2' target.decoration='filledclosedarrow' style='dash'"
+ * @model
  * @generated
  */
 public interface InternalDataFlow extends EObject {

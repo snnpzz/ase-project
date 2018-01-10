@@ -5,7 +5,6 @@ package pipeline.diagram.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
-import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -29,7 +28,6 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 
-import pipeline.diagram.edit.policies.OpenDiagramEditPolicy;
 import pipeline.diagram.edit.policies.VisualizationTaskItemSemanticEditPolicy;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 

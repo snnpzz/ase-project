@@ -22,7 +22,6 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
-import pipeline.diagram.edit.policies.PipelineBaseItemSemanticEditPolicy;
 import pipeline.diagram.providers.ElementInitializers;
 import pipeline.provider.PipelineItemProviderAdapterFactory;
 

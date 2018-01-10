@@ -3,70 +3,23 @@
 */
 package pipeline.diagram.part;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
-import pipeline.AnalysisTask;
-import pipeline.Attribute;
-import pipeline.Chart;
-import pipeline.CleaningTask;
-import pipeline.CollectionTask;
-import pipeline.ComplexAttribute;
-import pipeline.DataFlow;
-import pipeline.ExportOperation;
-import pipeline.ExportTask;
-import pipeline.File;
-import pipeline.ImportOperation;
-import pipeline.IntegrationTask;
-import pipeline.InternalDataFlow;
-import pipeline.Operation;
 import pipeline.Pipeline;
-import pipeline.PipelinePackage;
-import pipeline.Schema;
-import pipeline.SimpleAttribute;
-import pipeline.Source;
 import pipeline.Task;
-import pipeline.VisualizationTask;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
-import pipeline.diagram.edit.parts.ChartAxesEditPart;
-import pipeline.diagram.edit.parts.ChartEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
-import pipeline.diagram.edit.parts.CollectionTaskCollectionTaskImportOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
-import pipeline.diagram.edit.parts.ComplexAttribute2EditPart;
-import pipeline.diagram.edit.parts.ComplexAttributeComplexAttributeAttributesCompartment2EditPart;
-import pipeline.diagram.edit.parts.ComplexAttributeComplexAttributeAttributesCompartmentEditPart;
-import pipeline.diagram.edit.parts.ComplexAttributeEditPart;
-import pipeline.diagram.edit.parts.DataFlowEditPart;
-import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
-import pipeline.diagram.edit.parts.ExportOperationEditPart;
-import pipeline.diagram.edit.parts.ExportOperationWriteEditPart;
 import pipeline.diagram.edit.parts.ExportTaskEditPart;
-import pipeline.diagram.edit.parts.ExportTaskExportTaskExportOperationsCompartmentEditPart;
-import pipeline.diagram.edit.parts.FileEditPart;
-import pipeline.diagram.edit.parts.ImportOperationEditPart;
-import pipeline.diagram.edit.parts.ImportOperationReadEditPart;
-import pipeline.diagram.edit.parts.ImportOperationUseEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
-import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
-import pipeline.diagram.edit.parts.SchemaEditPart;
-import pipeline.diagram.edit.parts.SchemaSchemaAttributesCompartmentEditPart;
-import pipeline.diagram.edit.parts.SimpleAttribute2EditPart;
-import pipeline.diagram.edit.parts.SimpleAttributeEditPart;
-import pipeline.diagram.edit.parts.SourceEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
-import pipeline.diagram.providers.PipelineElementTypes;
 
 /**
  * @generated

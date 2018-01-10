@@ -11,14 +11,10 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 
 import pipeline.diagram.edit.commands.AnalysisTaskCreateCommand;
-import pipeline.diagram.edit.commands.ChartCreateCommand;
 import pipeline.diagram.edit.commands.CleaningTaskCreateCommand;
 import pipeline.diagram.edit.commands.CollectionTaskCreateCommand;
 import pipeline.diagram.edit.commands.ExportTaskCreateCommand;
-import pipeline.diagram.edit.commands.FileCreateCommand;
 import pipeline.diagram.edit.commands.IntegrationTaskCreateCommand;
-import pipeline.diagram.edit.commands.SchemaCreateCommand;
-import pipeline.diagram.edit.commands.SourceCreateCommand;
 import pipeline.diagram.edit.commands.VisualizationTaskCreateCommand;
 import pipeline.diagram.providers.PipelineElementTypes;
 

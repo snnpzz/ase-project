@@ -3,8 +3,6 @@
  */
 package pipeline.diagram.providers;
 
-import java.util.ArrayList;
-
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
@@ -25,80 +23,34 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
-import org.eclipse.gmf.runtime.notation.Connector;
 import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.FontStyle;
-import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.MeasurementUnit;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
-import org.eclipse.gmf.runtime.notation.RelativeBendpoints;
-import org.eclipse.gmf.runtime.notation.Routing;
 import org.eclipse.gmf.runtime.notation.Shape;
-import org.eclipse.gmf.runtime.notation.TitleStyle;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.gmf.runtime.notation.datatype.RelativeBendpoint;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
 
-import pipeline.diagram.edit.parts.AnalysisTaskAnalysisTaskAnalysisOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskEditPart;
 import pipeline.diagram.edit.parts.AnalysisTaskIDEditPart;
-import pipeline.diagram.edit.parts.ChartAxesEditPart;
-import pipeline.diagram.edit.parts.ChartEditPart;
-import pipeline.diagram.edit.parts.ChartTitleEditPart;
-import pipeline.diagram.edit.parts.CleaningTaskCleaningTaskCleaningOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskEditPart;
 import pipeline.diagram.edit.parts.CleaningTaskIDEditPart;
-import pipeline.diagram.edit.parts.CollectionTaskCollectionTaskImportOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskEditPart;
 import pipeline.diagram.edit.parts.CollectionTaskIDEditPart;
-import pipeline.diagram.edit.parts.ComplexAttribute2EditPart;
-import pipeline.diagram.edit.parts.ComplexAttributeComplexAttributeAttributesCompartment2EditPart;
-import pipeline.diagram.edit.parts.ComplexAttributeComplexAttributeAttributesCompartmentEditPart;
-import pipeline.diagram.edit.parts.ComplexAttributeEditPart;
-import pipeline.diagram.edit.parts.ComplexAttributeName2EditPart;
-import pipeline.diagram.edit.parts.ComplexAttributeNameEditPart;
-import pipeline.diagram.edit.parts.DataFlowEditPart;
-import pipeline.diagram.edit.parts.DataFlowSchemaEditPart;
-import pipeline.diagram.edit.parts.ExportOperationEditPart;
-import pipeline.diagram.edit.parts.ExportOperationIDEditPart;
-import pipeline.diagram.edit.parts.ExportOperationWriteEditPart;
 import pipeline.diagram.edit.parts.ExportTaskEditPart;
-import pipeline.diagram.edit.parts.ExportTaskExportTaskExportOperationsCompartmentEditPart;
 import pipeline.diagram.edit.parts.ExportTaskIDEditPart;
-import pipeline.diagram.edit.parts.FileEditPart;
-import pipeline.diagram.edit.parts.FileNameEditPart;
-import pipeline.diagram.edit.parts.ImportOperationEditPart;
-import pipeline.diagram.edit.parts.ImportOperationIDEditPart;
-import pipeline.diagram.edit.parts.ImportOperationReadEditPart;
-import pipeline.diagram.edit.parts.ImportOperationUseEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskEditPart;
 import pipeline.diagram.edit.parts.IntegrationTaskIDEditPart;
-import pipeline.diagram.edit.parts.IntegrationTaskIntegrationTaskIntegrationOperationsCompartmentEditPart;
-import pipeline.diagram.edit.parts.InternalDataFlowEditPart;
 import pipeline.diagram.edit.parts.PipelineEditPart;
-import pipeline.diagram.edit.parts.SchemaEditPart;
-import pipeline.diagram.edit.parts.SchemaSchemaAttributesCompartmentEditPart;
-import pipeline.diagram.edit.parts.SimpleAttribute2EditPart;
-import pipeline.diagram.edit.parts.SimpleAttributeEditPart;
-import pipeline.diagram.edit.parts.SimpleAttributeName2EditPart;
-import pipeline.diagram.edit.parts.SimpleAttributeNameEditPart;
-import pipeline.diagram.edit.parts.SourceEditPart;
-import pipeline.diagram.edit.parts.SourceNameEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskEditPart;
 import pipeline.diagram.edit.parts.VisualizationTaskIDEditPart;
-import pipeline.diagram.edit.parts.VisualizationTaskVisualizationTaskVisualizationOperationsCompartmentEditPart;
-import pipeline.diagram.edit.parts.WrappingLabel2EditPart;
-import pipeline.diagram.edit.parts.WrappingLabel3EditPart;
-import pipeline.diagram.edit.parts.WrappingLabel4EditPart;
-import pipeline.diagram.edit.parts.WrappingLabel5EditPart;
-import pipeline.diagram.edit.parts.WrappingLabelEditPart;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 
 /**
@@ -129,10 +81,10 @@ public class PipelineViewProvider extends AbstractProvider implements IViewProvi
 	*/
 	protected boolean provides(CreateViewForKindOperation op) {
 		/*
-		    if (op.getViewKind() == Node.class)
-		      return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
-		    if (op.getViewKind() == Edge.class)
-		      return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+				if (op.getViewKind() == Node.class)
+					return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+				if (op.getViewKind() == Edge.class)
+					return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
 		*/
 		return true;
 	}

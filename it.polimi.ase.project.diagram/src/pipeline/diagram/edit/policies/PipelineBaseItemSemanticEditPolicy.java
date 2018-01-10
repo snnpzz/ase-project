@@ -35,19 +35,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 
-import pipeline.Chart;
-import pipeline.DataFlow;
-import pipeline.ExportOperation;
-import pipeline.File;
-import pipeline.ImportOperation;
-import pipeline.InternalDataFlow;
-import pipeline.Operation;
-import pipeline.Pipeline;
-import pipeline.Schema;
-import pipeline.SimpleAttribute;
-import pipeline.Source;
-import pipeline.Task;
-import pipeline.diagram.part.PipelineDiagramEditorPlugin;
 import pipeline.diagram.part.PipelineVisualIDRegistry;
 import pipeline.diagram.providers.PipelineElementTypes;
 

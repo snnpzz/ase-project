@@ -287,9 +287,9 @@ Then some _cleaning operation_ in the _Cleaning task_ are done:
 * a _predefined_ operation, precisely _removeColumn_, removing the _source_ column;
 * another _user defined_ operation, in which data are aggregated by date (number of posts and number of users are added, and as mostActiveHour we will consider the maximum).
 
-The order is defined by the _internal dataflow_.
-(Since _user defined_ operation are defined by a simple short description by the user, in the  implementation of the pipeline the user will have to complete these operations.)
-_Cleaning operation_ that requires input attributes are linked to them by dashed arrows.
+The order is defined by the _internal dataflow_.  
+_Cleaning operation_ that requires input attributes are linked to them by dashed arrows.  
+(Since _user defined_ operation are defined by a simple short description by the user, in the  implementation of the pipeline the user will have to complete these operations.)  
 
 The _dataflow_ from _Cleaning task_ to _Analysis Task_ has a new _schema_, which is like the initial one, except for the _source_ attribute which was removed.
 Now analysis operations are performed (again the order is defined by the _internal dataflow_):
@@ -298,11 +298,11 @@ Now analysis operations are performed (again the order is defined by the _intern
 * _kMeans_: observation will be grouped into k (in this case we specify k = 5) clusters, and a new attribute _group_ is added to the schema;
 * _LinearRegression_: a simple linear model predicting the _mostActiveHour_ on _numbUsers_;
 * _MultipleLinearRegression_: a linear model predicting the _mostActiveHour_ on _numbUsers_ and _numbPosts_.
-Again _analysis operations_ are linked to their input/output attributes (if present) by dashed arrows.
+Again _analysis operations_ are linked to their input/output attributes (if present) by dashed arrows.  
 
-The final _dataflow_, from _Analysis Task_ to _Export task_, has again another schema, which is the previous one plus the attribute _group_.
-In the final task (_Export task_), just one file is exported through an _export operation_, and the file _analyzesPosts.csv_ is generated.
-The _export operation_ is linked to its _file_ by a dotted line.
+The final _dataflow_, from _Analysis Task_ to _Export task_, has again another schema, which is the previous one plus the attribute _group_.  
+
+In the final task (_Export task_), just one file is exported through an _export operation_, and the file _analyzesPosts.csv_ is generated. The _export operation_ is linked to its _file_ by a dotted line.  
 
 Here is a representation of the model:
 
@@ -326,18 +326,18 @@ The _schemas_ are:
   * _pm25_: integer representing the pm2.5 particles value;
   * _pm10_: integer representing the pm10 particles value.
 
-Since we have three sources, we have an _Integration task_, and we have 3 dataflows between _Cleaning_ and _Integration_ tasks.
+Since we have three sources, we have an _Integration task_, and we have 3 dataflows between _Cleaning_ and _Integration_ tasks.  
 In the _Integration Task_, we have 2 _integration operations_, which join couple by couple the sources in a unique one.  
-(Since one source is a txt format, in the implementation part the user will have to complete the join part, after splitting the file in the right columns.)
+(Since one source is a txt format, in the implementation part the user will have to complete the join part, after splitting the file in the right columns.)  
 
-After the integration, the schema has the following attributes: _timestamp_, _temperature_, _humidity_, _pressure_, _pm1_, _pm25_ and _pm10_.
+After the integration, the schema has the following attributes: _timestamp_, _temperature_, _humidity_, _pressure_, _pm1_, _pm25_ and _pm10_.  
 
 In the _Cleaning task_ we have the following _cleaning operations_:
 * a _user defined_ operation will format _timestamp_ into _date_ and _hour_;
 * _removeColumn_ _pm1_;
 * _removeNulls_ on the whole table.
 
-Since one column was splitted in two other columns, and another was removed, the outgoing dataflow from _cleaning task_ has a new _schema_.
+Since one column was splitted in two other columns, and another was removed, the outgoing dataflow from _cleaning task_ has a new _schema_.  
 
 Then we do the following _analysis operations_ in the _Analysis Task_:
 * _kMeans_ with k = 4;

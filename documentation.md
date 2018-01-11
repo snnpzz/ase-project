@@ -12,7 +12,15 @@ The metamodel is defined by a _.ecore_ file and some constraints (validation rul
 
 ![](https://github.com/SPozzoli/ase-project/blob/master/Pictures/pipeline.png)
 
+# Abstract Syntax
+
+The metamodel is defined by a _.ecore_ file and some constraints (validation rules).
+
+![](https://github.com/SPozzoli/ase-project/blob/master/Pictures/pipeline.png)
+
+
 ## Ecore
+
 The container of our model is the _EClass_ **Pipeline**, which is an aggregation of the following _EClasses_:
 * **Task**: the abstract class representing the various tasks, it has a name as identifier, it specializes into the concrete EClasses **CollectionTask**, **IntegrationTask**, **CleaningTask**, **AnalysisTask**, **VisualizationTask** and **ExportTask**;
 * **DataFlow**: this class represents the flow of data through the various tasks;
@@ -50,23 +58,203 @@ Task is linked to DataFlow by two binary associations, so from the point of view
 * dataflow, we can get the _source_ and _target_ task.
 Operations are linked by the InternalDataFlow as tasks are linked by the DataFlow.
 
+
 ## Validation
+
 To complete our model, we made some other assumptions, which are represented by constraints we added to the model.  
-The tasks are executed in the order we defined them:  
-Collection -> Integration -> Cleaning -> Analysis -> Visualization -> Export  
-Furthermore, not all of them must be present, the mandatory ones are Collection, Analysis and Export: if the source is unique, there is no need for Integration; the data can be already cleaned (no need for Cleaning); a user may not want to see the results of analysis (no need for Visualization). 
+  
+The tasks are unique and executed in the order we defined them: `  Collection -> Integration -> Cleaning -> Analysis -> Visualization -> Export  `  
 
-All tasks except Collection and Export, must have a unique outgoing dataflow, and all tasks except Integration and Collection must have a unique incoming dataflow. From Collection to Integration task there can be multiple data flows, precisely as many as the sources are.
+This assumption is expressed by these type of constraints:  
+``` 
+ context Pipeline {
+	constraint uniqueTasks {
+		check: self.tasks -> select(t|t.isTypeOf(CollectionTask)) -> size() <= 1 and 
+			self.tasks -> select(t|t.isTypeOf(IntegrationTask)) -> size() <= 1 and
+			self.tasks -> select(t|t.isTypeOf(CleaningTask)) -> size() <= 1 and
+			self.tasks -> select(t|t.isTypeOf(AnalysisTask)) -> size() <= 1 and
+			self.tasks -> select(t|t.isTypeOf(VisualizationTask)) -> size() <= 1 and
+			self.tasks -> select(t|t.isTypeOf(ExportTask)) -> size() <= 1
+		message: 'There can be at most 1 task per type'
+	}
+ }
+```
+``` 
+ context CollectionTask {  
+     constraint initialTask {  
+         check: self.incoming -> size() == 0  
+         message: "Collection task can't have an incoming data flow"  
+     }  
+     constraint nextTypeCollection {  
+         check: (self.outgoing -> size() == 1) and (self.outgoing.target -> select(t |t.isTypeOf(CollectionTask) or 
+                t.isTypeOf(VisualizationTask) or t.isTypeOf(ExportTask)) -> size() == 0) or (self.outgoing -> size() > 1)
+         message: "Collection task must be linked to integration, cleaning or analysis task"  
+     }  
+ }
+```  
 
-Also the internal dataflow between operations must be unique (and obviously a cleaning operation can be linked only to another cleaning operation, and an analysis operation can be linked only to another analysis operation, so the internal data flow can't exit the task).
-Within Cleaning and Analysis Task, operation must be all executed once (they all have one incoming and one outgoing internal data flow, except for the first and the last, and there must not be cycles).
+Furthermore, not all of them must be present, the mandatory ones are Collection, Analysis and Export: if the source is unique, there is no need for Integration; the data can be already cleaned (no need for Cleaning); a user may not want to see the results of analysis (no need for Visualization).  
+  
+All tasks except Collection and Export, must have a unique outgoing dataflow, and all tasks except Integration and Collection must have a unique incoming dataflow. From Collection to Integration task there can be multiple data flows, precisely as many as the sources are.  
+```
+ context CollectionTask {
+	constraint manyDataFlowsFromCollectionAsManyImports {
+		check: self.importOperations -> size() == (self.outgoing -> size())
+		message:  "In collection task there must be as many outgoing data flows as many input sources"
+	}
+	constraint allOutgoingDataFlowsTargetingSameIntegrationTask {
+		check: (self.outgoing -> size() > 1) implies (self.outgoing.target -> forAll(t | t.isTypeOf(IntegrationTask)))
+		message: "If there are many outgoing data flows from the collection task, all of them must be linked to
+                         the same integration task"
+	}
+ }
+```  
+  
+Also the internal dataflow between operations must be unique (and obviously a cleaning operation can be linked only to another cleaning operation, and an analysis operation can be linked only to another analysis operation, so the internal data flow can't exit the task).  
+```
+context Pipeline {
+	constraint dataFlowBetweenCleaningOperation {
+		check: self.tasks -> collect(t:CleaningTask | t.cleaningOperations -> size()) -> sum() <= 
+			(self.internalDataFlows -> select(d | d.source.isKindOf(CleaningOperation) and 
+			d.target.isKindOf(CleaningOperation)) -> size() + 1) or 
+			collect(t:CleaningTask | t.cleaningOperations -> size()) -> sum() == 0
+		message: "Missing one or more data flows between cleaning operations"
+	}
+}
+```  
+  
+Within Cleaning and Analysis Task, operation must be all executed once (they all have one incoming and one outgoing internal data flow, except for the first and the last, and there must not be cycles). This is expressed by the cardinality of the relation between operations and internal dataflow, and the following constraints:
+```
+context CleaningTask {
+	constraint uniqueInternalDataFlowOut {
+		check: self.CleaningOperations -> forAll(o | o.outgoing -> size() <= 1)
+		message: "Cleaning operations can have at maximum one outgoing internal data flow"
+	}
+	constraint uniqueInternalDataFlowIn {
+		check: self.cleaningOperations -> forAll(o | o.incoming -> size() <= 1)
+		message: "Cleaning operations can have at maximum one incoming internal data flow"
+	}
+	constraint initialCleaningOperation {
+		check: self.cleaningOperations -> select(op | op.incoming == null) -> size() == 1
+		message: "There can be just one initial cleaning operation. Some internal data flows are wrong"
+	}
+	constraint finalCleaningOperation {
+		check: self.cleaningOperations -> select(op | op.outgoing == null) -> size() == 1
+		message: "There can be just one final cleaning operation. Some internal data flows are wrong"
+	}
+}
+```  
+  
+Source can be imported only once, as files can be exported only once (and obviously each import[export] operation is associated with a unique source[file]).  
+```
+ context Pipeline {
+	constraint sourceImportedOnce {
+		check: self.sources -> forAll(s | (self.tasks -> select(t | t.isTypeOf(CollectionTask)).importOperations
+                       -> forAll(i | i.read == s)) -> size() == 1)
+		message: "Imports must be linked to different input sources"
+ 	}
+ }
+```  
+  
+Each schema must have at least one attribute, and all attributes within the same schema must have different names.
+```
+ context Schema {
+	constraint SchemaHasAttributes {
+		check: self.attributes -> size() > 0
+		message: "Each schema must have at least one attribute"
+	}
+	constraint uniqueNameAttribute {
+		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
+		message: "There can't be more attributes with the same name in the same schema"
+	}	
+}
+```  
+  
+As we already said, if there are many source the Integration Task is needed, and the number of _integrationOperation_ is the number of sources - 1 (they are merged one pair at a time). Obviously the attributes on which we join must be of the same type.  
+```
+ context Pipeline {
+	constraint ifManySourcesIntegration {
+		check: self.sources -> size() > 1 implies self.tasks -> select(t | t.isTypeOf(IntegrationTask)) -> size() == 1
+		message: "If there are many input sources there must be a integration task"
+	}
+	constraint numberOfIntegrationOperation {
+		check: self.sources -> size() > 1 implies self.sources -> size() ==
+			self.tasks -> select(t | t.isTypeOf(IntegrationTask)).integrationOperations -> first() -> size() + 1
+		message: "The number of integration operation must be the number of sources - 1"
+	}
+ }
+```    
+  
+Since the Analysis Task can produce other attributes, the incoming and outgoing dataflows must have compatible schemas, which means that all the incoming schema attributes must be present in the outgoing schema attributes, and the output schema must include all the attributes generated by the analysis operations:  
+```
+ context AnalysisTask {
+	constraint outputSchemaIsCompatibleWithInputSchema {
+		check: self.incoming.schema.attributes -> first() -> forAll(attr1 | self.outgoing.schema.attributes -> first() -> exists(attr2 |
+			attr1.name == attr2.name and attr1.type == attr2.type))
+		message: "The outgoing data flow schema must contain all the attributes of the incoming data flow schema"
+	}
+	constraint outgoingDataFlowHasRightSchema {
+		check: self.analysisOperations.outputAttribute -> select(attr | attr <> null) -> size() > 0 implies
+			self.analysisOperations.outputAttribute -> select(attr | attr <> null) -> forAll(attr1 |
+			self.outgoing.schema.attributes -> first() -> exists(attr2 | attr1.name == attr2.name and attr1.type == attr2.type))
+		message: "The outgoing dataflow schema must contain all the generated output attributes" 
+	}
+ }
+```  
+  
+For clarity and implementation reasons, analysis and cleaning operations must all have different IDs, and there is a series of constraints regarding the specific analysis operations (number and type of input and output attributes), which we have mentioned introducing them.
 
-Source can be imported only once, as files can be exported only once (and obviously each import[export] operation is associated with a unique source[file]).
 
-As we already said, if there are many source the Integration Task is needed, and the number of _integrationOperation_ is the number of sources - 1 (they are merged one pair at a time). Obviously the attributes on which we join must be of the same type.
 
-For clarity and implementation reasons, analysis and cleaning operations must all have different IDs, and there is a series of constraints regarding the specific analysis operations, which we have mentioned introducing them.
 
+# Graphical Concrete Syntax
+
+## Eclipse Sirius
+
+We created a modeling workbench with _Eclipse Sirius_. This diagram editor allows users to visualize and edit a pipeline with its elements and their relationships.  
+A _Viewpoint Specification Project_ contains the definition of our modeling workbench. The Viewpoint Specification Project creation wizard creates a new project containing a _.odesign_ file. This file describes the modeling workbench that we created. It will be interpreted by the Sirius runtime. In this file the wizard has created a first viewpoint we renamed to `pipeline`. This viewpoint provides a diagram that the user will be able to instantiate. We configure this diagram to graphically represent instances of _Pipelines_. A _Diagram_ shows _Nodes_, _Containers_, _Element Base Edges_ and _Relation Based Edges_ which are elements of the model.  
+To define the way a diagram element is graphically represented on the diagram, it must declare a _Style_. The _Style_ defines the graphical attributes of the _Diagram Element_ (e.g. its color).  
+_Sources_, _Charts_ and _Files_ are displayed as nodes.  
+A _Container_ is a kind of diagram element that can contain other diagram elements.  
+On the _Pipeline diagram_, we used seven containers to represent:
+* Schema
+* CollectionTask
+* IntegrationTask
+* CleaningTask
+* AnalysisTask
+* VisualizationTask
+* ExportTask
+
+Now, to display children inside these containers, we added _Sub Nodes_ and _Bordered Nodes_.  
+Here, we have chosen a workspace image to represent an Operation.   
+The following aggregations and associations of the Domain Model are represented by _Relation Based Edges_:
+* attributes
+* axes
+* chart
+* inputAttribute
+* inputAttributes
+* next
+* outputAttribute
+* outputAttributes
+* read
+* use
+* write
+
+To display instances of _DataFlow_ and _InternalDataFlow_, we created two _Element Based Edges_.  
+### Palette
+We completed this desinger with a palette containing tools to allow users to create new model elements.  
+We added five _Sections_ named _Tools_, _Data Flows_, _Schema_, _Tasks_ and _Operations_ to the _Layer_.  
+The palette is composed of tools which will allow the user to create new objects.  
+To create new instances of Domain Classes, we added a _Node Creation_ element to the _Section_ _Tools_. To define which kind of nodes will be created by the tool, the _Node Creation_ element must be associated to an existing node (e.g. _SourceNode_). When the user will use the tool, actions will be executed. We had to define them. The first step consisted in adding a _Change Contex_ element to define the context of the actions. The _Change Contex_ element contains an expression which allows Sirius to find the model element which will be the context. Then, we added a _Create Instance_ which will create a new instance of _Source_. We specified the type of the new instance and how it will be attached to the context.  
+We copied, pasted and adapted this tool to provide a _Node Creation_ tool for all the elements.  
+An _Edge Creation_ tool allows the user to create relationships directly from the diagram, by using the palette. We used this tool to allow the user to set the relations of an element. We created a _Edge Creation_ tool to set the _next_ of an _Attribute_. Then we defined the operations that will be performed by this tool each time the user will click on it. Under the _Begin_ object, we created a _Change Context_. We set its _Browse Expression_ to `var:source` in order to define the execution context of the next operations. Under the _Change Context_ we created a _Set_. It will set the _next_ of the first Attribute clicked (source) to the second Attribute clicked (target):
+* **Feature Name:** `next`
+* **Value Expression:** `var:target`
+
+For the element based case, it is slightly different as we have to create the element and store it in the model and then we need to set the references between this element and its "source" and "target".  
+We proceeded the same way to create a _Edge Creation_ tool for all the relationships.  
+A _Reconnect Edge_ tool allows the user to change the end of a relationship by moving it directly from the diagram. We created a _Reconnect Edge_ tool to change the _next_ of an Attribute. We associated an edge to each reconnect tool. Then we created a _Change Context_ and set its expression to `var:element` (the attribute that will change its next). Finally, we created a _Set_ to assign the new selected attribute (`var:target`) as _next_ of this attribute.  
+We copied, pasted and updated this tool to create a _Reconnect Edge_ tool for all the relationships.  
 
 
 

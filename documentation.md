@@ -6,11 +6,6 @@ Academic Year 2017/2018
   
 Using _Eclipse_, we defined the abstract syntax of our language, then we designed a concrete graphical syntax and created a modelling environment with _Sirius_, we defined 2 sample models, and finally we created a model to text transformation with _Acceleo_ which creates a textual report of the pipeline in _HTML_.
 
-# Abstract Syntax
-
-The metamodel is defined by a _.ecore_ file and some constraints (validation rules).
-
-![](https://github.com/SPozzoli/ase-project/blob/master/Pictures/pipeline.png)
 
 # Abstract Syntax
 

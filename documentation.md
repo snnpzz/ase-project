@@ -345,7 +345,7 @@ Then we do the following _analysis operations_ in the _Analysis Task_:
 * _MultipleLinearRegression_ to estimate _temperature_ from _pm_ values;
 * _MultipleLinearRegression_ to estimate _humidity_ from _pm_ values.
 
-Finally in the _Export tasl_ we export the final schema in a new _csv_ file, named _airQuality.csv_. 
+Finally in the _Export task_ we export the final schema in a new _csv_ file, named _airQuality.csv_. 
 
 Here is the diagram (arrows and links have different colours for clarity):
 

@@ -263,7 +263,7 @@ We copied, pasted and updated this tool to create a _Reconnect Edge_ tool for al
 
 # Samples
 
-Here are some examples of the model.
+Here are some example models conforming to the metamodel.
 
 ## Sample A
 

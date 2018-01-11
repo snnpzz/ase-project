@@ -83,7 +83,7 @@ context Pipeline {
 	
 	constraint numberOfIntegrationOperation {
 		check: self.sources -> size() > 1 implies self.sources -> size() ==
-			self.tasks -> select(t | t.isTypeOf(IntegrationTask)).integrationOperations -> size() + 1
+			self.tasks -> select(t | t.isTypeOf(IntegrationTask)).integrationOperations -> first() -> size() + 1
 		message: "The number of integration operation must be the number of sources - 1"
 	}
 	
@@ -116,6 +116,15 @@ context Pipeline {
 	
 }
 
+
+context DataFlow {
+	constraint DataFlowHasSchema {
+		check: self.schema <> null
+		message: "Each dataflow must be linked to a schema"
+	}
+}
+
+
 context Task {
 	
 	constraint positiveMaxSpace {
@@ -129,6 +138,7 @@ context Task {
 	}
 
 }
+
 
 context CollectionTask {
 
@@ -308,6 +318,11 @@ context ExportTask {
 
 context Schema {
 
+	constraint SchemaHasAttributes {
+		check: self.attributes -> size() > 0
+		message: "Each schema must have at least one attribute"
+	}
+	
 	constraint uniqueNameAttribute {
 		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
 		message: "There can't be more attributes with the same name in the same schema"
@@ -328,6 +343,11 @@ context Schema {
 
 context ComplexAttribute {
 
+	constraint ComplexAttribHasAttributes {
+		check: self.attributes -> size() > 1
+		message: "A complex attribute should have at least 2 attributes (otherwise use a simple attribute instead)"
+	}
+	
 	constraint uniqueNameAttribute {
 		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
 		message: "There can't be more attributes with the same name in the same attribute"

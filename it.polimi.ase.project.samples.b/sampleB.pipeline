@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pipeline:Pipeline xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pipeline="http://www.project.ase.polimi.it/pipeline">
+<pipeline:Pipeline xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pipeline="http://www.project.ase.polimi.it/pipeline" ID="airQuality">
   <dataFlows target="//@tasks.1" source="//@tasks.0" schema="//@schemas.0" ID="df1"/>
   <dataFlows target="//@tasks.1" source="//@tasks.0" schema="//@schemas.1" ID="df2" format="TXT"/>
   <dataFlows target="//@tasks.1" source="//@tasks.0" schema="//@schemas.2" ID="df3"/>

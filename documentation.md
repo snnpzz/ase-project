@@ -258,9 +258,6 @@ We proceeded the same way to create a _Edge Creation_ tool for all the relations
 A _Reconnect Edge_ tool allows the user to change the end of a relationship by moving it directly from the diagram. We created a _Reconnect Edge_ tool to change the _next_ of an Attribute. We associated an edge to each reconnect tool. Then we created a _Change Context_ and set its expression to `var:element` (the attribute that will change its next). Finally, we created a _Set_ to assign the new selected attribute (`var:target`) as _next_ of this attribute.  
 We copied, pasted and updated this tool to create a _Reconnect Edge_ tool for all the relationships.  
 
-
-
-
 # Samples
 
 Here are some example models conforming to the metamodel.
@@ -350,3 +347,16 @@ Finally in the _Export task_ we export the final schema in a new _csv_ file, nam
 Here is the diagram (arrows and links have different colours for clarity):
 
 ![Sample B](https://github.com/SPozzoli/ase-project/blob/master/Pictures/BDiagram.jpg)
+
+# Model to Text Transformation
+## Report HTML
+### it.polimi.ase.project.pipeline2html
+#### reportHtmlFile.mtl
+The `generateHtml()` template uses the "file block" to generate _.html_ files.  
+[Bootstrap](http://getbootstrap.com/) requires the use of the HTML5 doctype. To ensure proper rendering and touch zooming for all devices, we added the responsive viewport metatag to our `<head>`.  
+We defined three divisions in the HTML document.  
+The first `<div>` contains information about the pipeline.    
+The second `<div>` tag is used to group block-elements containing information on the tasks inside the pipeline. For each task, the user is provided with information on it, including incoming data flow(s) or source(s), operations and outgoing data flow(s) or file(s).  
+The third `<div>` tag is used to group block-elements containing information on the operations inside the tasks of the pipeline. For each operation, the user is provided with information on it, including incoming internal data flow(s) or source(s), input attribute(s), output attribute(s) and outgoing internal data flow(s) or file(s).    
+#### mainModule.mtl
+### it.polimi.ase.project.pipeline2html.ui

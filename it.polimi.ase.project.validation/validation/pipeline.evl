@@ -116,29 +116,28 @@ context Pipeline {
 	
 }
 
-
 context DataFlow {
-	constraint DataFlowHasSchema {
-		check: self.schema <> null
-		message: "Each dataflow must be linked to a schema"
-	}
-}
 
+	constraint SchemaIsDefined {
+		check: self.schema <> null
+		message: "Each data flow must be linked to a schema"
+	}
+
+}
 
 context Task {
 	
-	constraint positiveMaxSpace {
+	constraint MaxSpaceIsValid{
 		check: not(self.maxSpace.isUndefined()) implies self.maxSpace >= 0
-		message: 'The maximum space ... must be grater or equal to 0'
+		message: 'The maximum space of a task must be grater or equal to 0'
 	}
 	
-	constraint positiveMaxTime {
+	constraint MaxTimeIsValid {
 		check: not(self.maxSpace.isUndefined()) implies self.maxTime >= 0
-		message: 'The maximum time ... must be greater or equal to 0'
+		message: 'The maximum time of a task must be greater or equal to 0'
 	}
 
 }
-
 
 context CollectionTask {
 
@@ -153,9 +152,9 @@ context CollectionTask {
 		message: "Collection task must be linked to integration, cleaning or analysis task"
 	}
 	
-	constraint outgoingDataFlow {
+	constraint OutgoingIsDefined {
 		check: self.outgoing -> size() > 0
-		message: "There must be at least 1 outgoing data flow"
+		message: "A collection task must have at least 1 outgoing data flow"
 	}
 	
 	constraint manyDataFlowsFromCollectionAsManyImports {
@@ -264,7 +263,6 @@ context AnalysisTask{
 		check: self.analysisOperations -> select(op | op.outgoing == null) -> size() == 1
 		message: "There can be just one final analysis operation. Some internal data flows are wrong"
 	}
-	
 	
 	constraint outputSchemaIsCompatibleWithInputSchema {
 		check: self.incoming.schema.attributes -> first() -> forAll(attr1 | self.outgoing.schema.attributes -> first() -> exists(attr2 |
@@ -428,7 +426,7 @@ context DescriptiveAnalysisOperation {
 
 context ClusteringAnalysisOperation {
 
-	constraint KisSet{
+	constraint KIsValid {
 		check: self.k > 0
 		message: "K parameter for clustering analysis operation must be set and must be positive"
 	}
@@ -464,7 +462,7 @@ context PredictiveAnalysisOperation {
 		message: "Predictive analysis: regression must have integer or double input attributes"
 	}
 	
-	constraint inputRequired {
+	constraint InputAttributesIsDefined {
 		check: self.inputAttributes -> size() > 0
 		message: "Predictive analyzes requires input attribute(s)"
 	}

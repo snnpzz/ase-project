@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/it.polimi.ase.project/src" modelPluginID="it.polimi.ase.project"
     modelName="Pipeline" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
     copyrightFields="false">
-  <foreignModel>pipeline.emf</foreignModel>
+  <foreignModel>pipeline.ecore</foreignModel>
   <genPackages prefix="Pipeline" disposableProviderFactory="true" ecorePackage="pipeline.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="pipeline.ecore#//PredefinedOperation">
       <genEnumLiterals ecoreEnumLiteral="pipeline.ecore#//PredefinedOperation/removeNulls"/>

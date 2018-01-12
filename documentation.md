@@ -346,7 +346,7 @@ Here is the diagram (arrows and links have different colours for clarity):
 ![Sample B](https://github.com/SPozzoli/ase-project/blob/master/Pictures/BDiagram.jpg)
 
 ## Model to Text Transformations
-### Report HTML
+### HTML Report
 #### it.polimi.ase.project.pipeline2html
 ##### reportHtmlFile.mtl
 The `generateHtml()` template uses the "file block" to generate _.html_ files.  

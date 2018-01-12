@@ -19,9 +19,6 @@
 # (If some libraries are missing, install them: install.packages("library_name") )
 library(readr)
 
-# install.packages("reshape")
-library(reshape)
-
 library(MASS)
 library(class)
 library(e1071)
@@ -45,7 +42,7 @@ pdf("output/[aPipeline.ID/].pdf")
 ## INTEGRATION TASK
 # Join all data in a unique data frame
 
-[joinSources(aPipeline.sources, aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask).integrationOperations.inputAttributes)/]
+[joinSources(aPipeline.sources, aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask).integrationOperations)/]
 [/if]
 
 
@@ -78,7 +75,7 @@ pdf("output/[aPipeline.ID/].pdf")
 	[/for]
 [/if]
 
-
+[comment TODO check everything works here/]
 ## ANALYSIS TASK
 
 [for (op : AnalysisOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(AnalysisTask)).oclAsType(AnalysisTask).analysisOperations)]
@@ -143,28 +140,25 @@ download.file([s.serverName.concat(':').concat(s.portNumber.toString()).concat('
 [/for]
 [/template]
 
+[comment TODO fix/]
+[template private joinSources(aSources: OrderedSet(Source), aOperations: Sequence(IntegrationOperation))] 
 
-[template private joinSources(aSources: OrderedSet(Source), aAttributes: Sequence(Attribute))] 
-sourceList <- list(
-	[for (source : Source | aSources)]	
-		[if (i = 1)]
-			['source'.concat(i.toString()) /]
-		[else]
-			[', source'.concat(i.toString()) /]
-		[/if]		
-	[/for]
-)
-joinAttributes <- c(
-	[for (attr : Attribute | aAttributes.oclAsSet())]
-		[if (i = 1)]
-			['"'.concat(attr.name).concat('"')/]
-		[else]
-			[', "'.concat(attr.name).concat('"')/]
-		[/if]
-	[/for]
-)
-joinAttributes <- unique(joinAttributes)
-source <- merge_all(sourceList, by = joinAttributes)	
+[if (aOperations -> size() = 1)]
+source <- merge(source1, source2, by.x ='[aOperations.oclAsType(IntegrationOperation).inputAttributes.name/]', 
+	by.y = '[aOperations.oclAsType(IntegrationOperation).inputAttributes.name/]')
+[/if]
+
+# If source.format=TXT => TODO
+[for (op: IntegrationOperation | aOperations)]
+	[if (i=1)]
+		merge(source1, source2, by.x = 'c1', by.y = 'c2')
+	[else]
+		
+	[/if]
+[/for]
+# Replace column names with output attributes name
+colnames(source)['['/]colnames(source) == ''[']'/] = ''
+
 [/template]
 
 
@@ -276,7 +270,7 @@ source
 [drawChart(chart.type, chart.axes)/]
 [/template]
 
-
+[comment TODO all ggplot? /]
 [template private drawChart(type: ChartType, attributes: OrderedSet(Attribute))]
 data2plot <- data.frame(	
 [for (attr: Attribute | attributes)]

@@ -23,9 +23,11 @@ library(readr)
 # install.packages("plyr")
 # install.packages("XML")
 # install.packages("jsonlite")
+# install.packages("rjson")
 library(plyr)
 library(xml)
 library(jsonlite)
+library(rjson)
 
 
 library(MASS)
@@ -318,7 +320,7 @@ source
 [drawChart(chart.type, chart.axes)/]
 [/template]
 
-[comment TODO all ggplot? /]
+
 [template private drawChart(type: ChartType, attributes: OrderedSet(Attribute))]
 
 data2plot <- data.frame(	
@@ -371,7 +373,26 @@ data2plot <- data.frame(
 
 [template private exportFiles(aTask: Sequence(ExportTask))]
 [for (exp : ExportOperation | aTask.exportOperations)]
+	[if (exp.write.format.toString() = 'XML')]
+	xml <- xmlTree()
+	xml$addTag("pipeline_data", close = FALSE)
+	xml$addTag("rows", close = FALSE)
+	for (i in 1:nrow(source)) {
+  		xml$addTag("row", close = FALSE)
+  		for (j in names(source)) {
+    		xml$addTag(j, source['['/]i, j[']'/])
+  		}
+  		xml$closeTag()
+	}
+	xml$closeTag()
+	xml$closeTag()
+	saveXML(xml, "output/[exp.write.name/]")
+	[elseif (exp.write.format.toString() = 'JSON')]
+	json <- toJSON(unname(split(source, 1:nrow(source))))
+	write(json, "output/[exp.write.name/]")
+	[else]
 	write.table(source, file = "output/[exp.write.name/]")
+	[/if]
 [/for]
 [/template]
 

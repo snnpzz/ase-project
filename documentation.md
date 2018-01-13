@@ -405,4 +405,66 @@ We created a "main" module which role is to delegate to all of the modules that 
 
 ### it.polimi.ase.project.pipeline2html.ui
 Now that our generation modules are ready, we want to have some wizards to launch the generation from within Eclipse. The **New Acceleo UI project** wizard will create a new Eclipse project which will allow the end user to launch the generation with a right-click action on any appropriate model. The wizard created a new plugin with all the necessary code to display a new action for the selected model file that will generate _.html_ files in the specified folder. The result of this plugin is a **Generate Pipeline to HTML** action on the _.pipeline_ files.  
-![Generate Pipeline to HTML](https://github.com/SPozzoli/ase-project/blob/master/Pictures/Generate%20Pipeline%20to%20HTML.PNG)
+![Generate Pipeline to HTML](https://github.com/SPozzoli/ase-project/blob/master/Pictures/Generate%20Pipeline%20to%20HTML.PNG)  
+  
+<br >
+
+# R Script
+
+We created also a Model to Text transformation that creates a R script which makes the pipeline executable.
+
+## it.polimi.ase.project.pipeline2r
+
+### scriptRFile.mtl
+
+This module will generate a _.r_ file.  
+The script, generated through the _file_ tag, imports first all the needed libraries.  
+
+Then all sources are imported, saved in variables named as the file (removing any space). According to the format:
+* _csv_: the file is simply imported as a data frame;
+* _txt_: the file is imported and should automatically be read as a data frame, but if the file is badly formatted, this won't happen, so the user will have to check if the file was correctly imported, otherwise he will have to fix it (eg: if every row is read as a unique column he will have to split it in the various columns); a _TODO_ will mark this situation;
+* _xml_: the file is imported as a xml structured variable, but the program can handle just tables and dataframes, so only the following structure of xml file can be read (and converted to dataframes, this also because the purpose of the program is to handle data, which can be fairly expressed in this way in an _xml_ file):
+```
+<rootNode>
+	<listNode>
+		<attribute1> ... </attribute1>
+		<attribute2> ... </attribute2>
+
+		<attributeN> ... </attributeN>
+	</listNode>
+	<listNode>
+		...
+	</listNode>
+	...
+</rootNode>
+```
+* _json_: the behavior is similar to the _csv_ files, the _json_ file is imported and the user will have to complete the conversion to a dataframe, by pointing the correct path to the elements (note that in the end the structure must be an array of objects structured in the same way).  
+  
+If the sources are local, they are simply imported, if the _path_ is not specified, theiy are assumed to be in a folder named _sources_ at the same level of the R file.  
+If the sources are remote: if they need credentials, the user will have to manually download them (a _TODO_ will highlight link and credentials), if not they are automatically downloaded and imported by the script.  
+  
+If there are many sources they are all merged in a unique dataframe, named `sourceDF`, obtained by joining in cascade all the dataframes, then if the user specified a different output attribute for the integration operation, the corresponding column will be renamed.  
+Example of joining 3 dataframes:  
+``` merge(merge(df1, df2, by.x = 'c1', by.y = 'c2'), df3, by.x = 'c1', by.y = 'c3' ```  
+  
+Then we have the cleaning operations: the _predefined_ ones are already defined and ready to use, but the _user defined cleaning operations_ must be written by the user (these are marked by _TODO_).
+> In the SampleA, we defined 2 user defined operations, and we manually added the corresponding code.    
+  
+Also the analysis operations are already defined, just for the _kMeans_ (_classification operation_), the user can change the _k_ parameter (default set to 3).  
+
+For the visualization task, all plots are rendered through the _ggplot2_ library. Note that it's very important to link _Charts_ to the attributes (axes) in the right order (first x axis, then y axis, finally eventual grouping attribute), otherwise the plots will be rendered in the wrong way, and the user will have to manually change the order and/or the parameters of the various functions.  
+
+Finally files are exported, for _txt_ and _csv_ format the dataframe is just saved in the corresponding format, but for:
+* _json_: the dataframe must be converted to a _json_ structure, precisely it will be an array of objects, with as attributes the columns of the dataframe, then the result will be saved in a _json_ file;
+* _csv_: the dataframe must be converted to the tree structure, precisely a root element is created, then for each row a child is added to the root, and for each column another child is added to the root child; the result is then saved in a _xml_ file.  
+
+For some operations (like regression), there are no output attributes generated, but we wanted to save the result anyway, so the _summary_ of the operation is saved in a _txt_ file in the _output_ folder.  
+Also plots are saved in a _pdf_ file in the _output_ folder.  
+
+
+### mainModule.mtl
+
+We created a "main" module which role is to delegate to all of the modules that will create files. This module is placed alone in its own _it.polimi.ase.project.pipeline2r.main_ package.  
+## it.polimi.ase.project.pipeline2r.ui
+Now that our generation modules are ready, we want to have some wizards to launch the generation from within Eclipse. The **New Acceleo UI project** wizard will create a new Eclipse project which will allow the end user to launch the generation with a right-click action on any appropriate model. The wizard created a new plugin with all the necessary code to display a new action for the selected model file that will generate _.r_ files in the specified folder. The result of this plugin is a **Generate Pipeline to R** action on the _.pipeline_ files.  
+![Generate Pipeline to R](https://github.com/SPozzoli/ase-project/blob/master/Pictures/Generate%20Pipeline%20to%20R.PNG)

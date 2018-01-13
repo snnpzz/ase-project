@@ -7,16 +7,16 @@
 [file ('pipeline_'.concat(aPipeline.ID).concat('.r'), false, 'UTF-8')]
 
 # This will generate an executable version of the pipeline
+
 # Structure of the program:
 # - if sources are local files and path is not specified, place them in a folder named "sources" at the same level of the R file;
 #	if sources are remote, if they don't require credentials they will be automatically downloaded, otherwise you need to manually
 #	download them;
 # - all output files will be placed in a folder named "output" at the same level of the R file.
 
-# A pdf file will be anyway exported in "output/[aPipeline.ID/].pdf"
+# A pdf file will be exported in "output/[aPipeline.ID/].pdf"
 
-# Import libraries
-# (If some libraries are missing, install them: install.packages("library_name") )
+# Import libraries (if some are missing, install them: install.packages("library_name") )
 library(readr)
 
 library(MASS)
@@ -37,12 +37,11 @@ pdf("output/[aPipeline.ID/].pdf")
 
 [importSource(aPipeline.sources)/]
 
-
 [if (aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)) -> size() <> 0)]
 ## INTEGRATION TASK
 # Join all data in a unique data frame
 
-[joinSources(aPipeline.sources, aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask).integrationOperations)/]
+[joinSources(aPipeline)/]
 [/if]
 
 
@@ -72,25 +71,22 @@ pdf("output/[aPipeline.ID/].pdf")
 # TODO: User defined cleaning operation
 # [op.ID/]: [op.oclAsType(UserDefinedCleaningOperation).type/]
 		[/if]
+
 	[/for]
 [/if]
 
-[comment TODO check everything works here/]
+
 ## ANALYSIS TASK
 
 [for (op : AnalysisOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(AnalysisTask)).oclAsType(AnalysisTask).analysisOperations)]
 	[if (op.oclIsTypeOf(DescriptiveAnalysisOperation))]
-# Descriptive analysis
-		[doDescriptiveAnalysis(op.oclAsType(DescriptiveAnalysisOperation))/]
+# Descriptive analysis: [doDescriptiveAnalysis(op.oclAsType(DescriptiveAnalysisOperation))/]
 	[elseif (op.oclIsTypeOf(ClassificationAnalysisOperation))]
-# Classification analysis	
-		[doClassificationAnalysis(op.oclAsType(ClassificationAnalysisOperation))/]
+# Classification analysis: [doClassificationAnalysis(op.oclAsType(ClassificationAnalysisOperation))/]
 	[elseif (op.oclIsTypeOf(ClusteringAnalysisOperation))]
-# Clustering analysis
-		[doClusteringAnalysis(op.oclAsType(ClusteringAnalysisOperation))/]
+# Clustering analysis: [doClusteringAnalysis(op.oclAsType(ClusteringAnalysisOperation))/]
 	[else] 
-# Predictive analysis
-		[doPredictiveAnalysis(op.oclAsType(PredictiveAnalysisOperation))/]
+# Predictive analysis: [doPredictiveAnalysis(op.oclAsType(PredictiveAnalysisOperation))/]
 	[/if]
 [/for]
 
@@ -119,7 +115,7 @@ rm(list = ls())
 	[if (not(s.serverName.oclIsUndefined() or s.portNumber.oclIsUndefined()))]
 		[if (not(s.userName.oclIsUndefined() or s.password.oclIsUndefined()))]
 # TODO
-# The requested source requires credential:
+# The requested source requires credential, before continuing download it:
 # Link: [s.serverName/][if not(s.portNumber.oclIsUndefined())]:[s.portNumber/][/if]/[s.name/]
 # Credentials:
 	# Username: [s.userName/]
@@ -127,37 +123,54 @@ rm(list = ls())
 		[else]
 # Remote source: downloading file
 download.file([s.serverName.concat(':').concat(s.portNumber.toString()).concat('/').concat(s.name)/], "sources/[s.name/]", mode = "w")	
-[comment #['source'.concat(i.toString())/ <- read.[s.format.toString().toLower()/("sources/[s.name/") /]
-['source'.concat(i.toString())/] <- read.table("sources/[s.name/]")
 		[/if]
+[s.name.replace('.', '')/] <- read.table("sources/[s.name/]")
 	[/if]
 # Loading file [s.name/]
 	[if (not(s.path.oclIsUndefined()))]
-['source'.concat(i.toString())/] <- read.table("[s.path/]/[s.name/]")
+[s.name.replaceAll('\x20', '')/] <- read.table("[s.path/]/[s.name/]")
 	[else]
-['source'.concat(i.toString())/] <- read.table("sources/[s.name/]")
+[s.name.replaceAll('\x20', '')/] <- read.table("sources/[s.name/]")
 	[/if]
+	[if (s.format.toString() = 'TXT')]
+# TODO
+# The source '[s.name.replaceAll('\x20', '')/]' is a TXT file, every row has been imported as a unique column, manually split it		
+	[/if]
+
 [/for]
 [/template]
 
-[comment TODO fix/]
-[template private joinSources(aSources: OrderedSet(Source), aOperations: Sequence(IntegrationOperation))] 
 
-[if (aOperations -> size() = 1)]
-source <- merge(source1, source2, by.x ='[aOperations.oclAsType(IntegrationOperation).inputAttributes.name/]', 
-	by.y = '[aOperations.oclAsType(IntegrationOperation).inputAttributes.name/]')
-[/if]
-
-# If source.format=TXT => TODO
-[for (op: IntegrationOperation | aOperations)]
+[template private joinSources(aPipeline: Pipeline)] 
+source <-
+[for (op: IntegrationOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask).integrationOperations)]
+	merge(
+[/for]
+[for (op: IntegrationOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask).integrationOperations)]
 	[if (i=1)]
-		merge(source1, source2, by.x = 'c1', by.y = 'c2')
+		[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(CollectionTask)).oclAsType(CollectionTask).importOperations -> select(imp | imp.use.attributes -> exists(a | a = op.inputAttributes->at(1))).read.format.toString() = 'TXT' or
+			aPipeline.tasks -> select(t | t.oclIsTypeOf(CollectionTask)).oclAsType(CollectionTask).importOperations -> select(imp | imp.use.attributes -> exists(a | a = op.inputAttributes->at(2))).read.format.toString() = 'TXT') ]
+		# TODO check this merge with a txt file
+		[/if]
+		[aPipeline.tasks -> select(t | t.oclIsTypeOf(CollectionTask)).oclAsType(CollectionTask).importOperations -> select(imp | imp.use.attributes -> exists(a | a = op.inputAttributes->at(1))).read.name.replace('\x20', '')/], 
+		[aPipeline.tasks -> select(t | t.oclIsTypeOf(CollectionTask)).oclAsType(CollectionTask).importOperations -> select(imp | imp.use.attributes -> exists(a | a = op.inputAttributes->at(2))).read.name.replace('\x20', '')/], 
+		by.x = '[op.inputAttributes->at(1).name/]', by.y = '[op.inputAttributes->at(2).name/]')
 	[else]
-		
+		, [aPipeline.tasks -> select(t | t.oclIsTypeOf(CollectionTask)).oclAsType(CollectionTask).importOperations -> select(imp | imp.use.attributes -> exists(a | a = op.inputAttributes->at(1))).read.name.replace('\x20', '')/], 
+		by.x = '[op.inputAttributes->at(1).name/]', by.y = '[op.inputAttributes->at(2).name/]')
+		[if (aPipeline.tasks -> select(t | t.oclIsTypeOf(CollectionTask)).oclAsType(CollectionTask).importOperations -> select(imp | imp.use.attributes -> exists(a | a = op.inputAttributes->at(1))).read.format.toString() = 'TXT')]
+		# TODO check this merge with a txt file
+		[/if]
 	[/if]
 [/for]
-# Replace column names with output attributes name
-colnames(source)['['/]colnames(source) == ''[']'/] = ''
+
+[for (op: IntegrationOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask).integrationOperations)]
+	[if (not op.outputAttribute.oclIsUndefined())]
+	# Replace column names with output attributes name
+	colnames(source)['['/]colnames(source) == '[op.inputAttributes->at(1).name/]'[']'/] = '[op.outputAttribute.name/]'
+	[/if]
+
+[/for]
 
 [/template]
 
@@ -171,8 +184,7 @@ colnames(source)['['/]colnames(source) == ''[']'/] = ''
 	[drawChart(ChartType::Pie, op.inputAttributes)/]
 [elseif (op.type = DescriptiveOperation::ScatterPlot)]
 	[drawChart(ChartType::Scatter, op.inputAttributes)/]
-[else]
-# View data
+[else] view data
 View(source)
 source
 [/if]
@@ -197,35 +209,32 @@ source
 	[if (i = 1)]
 		[attr.name.concat(sep)/]
 	[elseif (i = 2)]
-		[','.concat(attr.name).concat(sep)/]
+		[', '.concat(attr.name).concat(sep)/]
 	[/if]				
 [/for]
 [/template]
 
 [template private doClassificationAnalysis(op: ClassificationAnalysisOperation)]
-[if (op.type.toString() = 'LogisticRegression')]
-	# Logistic regression
+[if (op.type.toString() = 'LogisticRegression')] logistic regression
 	[op.ID/] <- glm([writeFormula(op.inputAttributes)/], data = source, family = binomial)
 	summary([op.ID/])
-[elseif (op.type.toString() = 'LDA')]
-	# LDA
+[elseif (op.type.toString() = 'LDA')] LDA
 	[op.ID/] <- lda([writeFormula(op.inputAttributes)/], data = source)
 	[op.ID/]
-[elseif (op.type.toString() = 'QDA')]
-	# QDA
+[elseif (op.type.toString() = 'QDA')] QDA
 	[op.ID/] <- qda([writeFormula(op.inputAttributes)/], data = source)
 	[op.ID/]
-[elseif (op.type.toString() = 'KNN')] 
-	# KNN
-	knnInd <- sample(nrow(source), round(nrow(source)*0.8)
+[elseif (op.type.toString() = 'KNN')] KNN
+	knnInd <- sample(nrow(source), round(nrow(source) * 0.8)
 	train  <- cbind([writeColumns(op.inputAttributes, '[knnInd, ]')/])
 	knnInd <- -knnInd
 	test   <- cbind([writeColumns(op.inputAttributes, '[knnInd, ]')/])
-	[op.ID/] <- knn(train, test, k = 3, prob = TRUE)
+	# TODO: change k_KNN if you need a different k
+	k_KNN <- 3 
+	[op.ID/] <- knn(train, test, k = k_KNN, prob = TRUE)
 	source$[op.outputAttribute.name/] <- [op.ID/]
 	rm(knnInd, train, test)
-[else]
-	# SVM
+[else] SVM
 	[op.ID/] <- svm([op.inputAttributes.name/] ~ ., data = source, kernel = "linear")
 	[op.ID/]
 [/if]
@@ -233,13 +242,11 @@ source
 
 
 [template private doClusteringAnalysis(op: ClusteringAnalysisOperation)]
-[if (op.type.toString() = 'kMeans')]
-	# Kmeans
+[if (op.type.toString() = 'kMeans')] kMeans
 	[op.ID/] <- kmeans(source, [op.k/])
 	plot(source, col = [op.ID/]$cluster)
 	source$[op.outputAttribute.name/] <- [op.ID/]$cluster
-[else]
-	# Hierarchical
+[else] hierarchical clustering
 	[op.ID/] <- hclust(
 	[if (op.inputAttributes -> size() = 0)] source
 	[else] dist(data.frame([writeColumns(op.inputAttributes, '')/]))
@@ -251,15 +258,13 @@ source
 
 
 [template private doPredictiveAnalysis(op: PredictiveAnalysisOperation)]
-[if (op.type.toString() = 'SimpleRegression')]
-	# Simple regression
-	[op.ID/] <- lm([op.inputAttributes.name/]~[op.inputAttributes.next.name/], data = source)
+[if (op.type.toString() = 'SimpleRegression')] simple regression
+	[op.ID/] <- lm([op.inputAttributes->at(1).name/] ~ [op.inputAttributes->at(2).name/], data = source)
 	summary([op.ID/])
-[elseif (op.type.toString() = 'MultipleLinRegr')]
-	# Multiple linear regression
+[elseif (op.type.toString() = 'MultipleLinRegr')] multiple linear regression
 	[op.ID/] <- lm([writeFormula(op.inputAttributes)/], data = source)
-[else]
-	# Random forests
+	summary([op.ID/])
+[else] random forests
 	[op.ID/] <- randomForest([op.inputAttributes.name/], data = source, importante = TRUE, proximity = TRUE)
 	print([op.ID/])
 [/if]
@@ -272,6 +277,7 @@ source
 
 [comment TODO all ggplot? /]
 [template private drawChart(type: ChartType, attributes: OrderedSet(Attribute))]
+
 data2plot <- data.frame(	
 [for (attr: Attribute | attributes)]
 	[attr.name.concat(', ')/]
@@ -286,10 +292,10 @@ data2plot <- data.frame(
 [elseif (type.toString() = 'Column')]
 	barplot(data2plot)
 [elseif (type.toString() = 'Histogram')]
-	hist([attributes.name/])
+	hist(data2plot)
 [elseif (type.toString() = 'Line')]
 	plot(data2plot)
-	lines(data2plot['['/],2[']'/])
+	lines(data2plot['['/] , 2[']'/])
 [elseif (type.toString() = 'Pie')]
 [elseif (type.toString() = 'Radar')]
 [elseif (type.toString() = 'Scatter')]

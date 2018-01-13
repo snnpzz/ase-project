@@ -64,12 +64,7 @@ This assumption is expressed by these type of constraints:
 ``` 
  context Pipeline {
 	constraint uniqueTasks {
-		check: self.tasks -> select(t|t.isTypeOf(CollectionTask)) -> size() <= 1 and 
-			self.tasks -> select(t|t.isTypeOf(IntegrationTask)) -> size() <= 1 and
-			self.tasks -> select(t|t.isTypeOf(CleaningTask)) -> size() <= 1 and
-			self.tasks -> select(t|t.isTypeOf(AnalysisTask)) -> size() <= 1 and
-			self.tasks -> select(t|t.isTypeOf(VisualizationTask)) -> size() <= 1 and
-			self.tasks -> select(t|t.isTypeOf(ExportTask)) -> size() <= 1
+		check: self.tasks -> select(t|t.isTypeOf(CollectionTask)) -> size() <= 1 and self.tasks -> select(t|t.isTypeOf(IntegrationTask)) -> size() <= 1 and self.tasks -> select(t|t.isTypeOf(CleaningTask)) -> size() <= 1 and self.tasks -> select(t|t.isTypeOf(AnalysisTask)) -> size() <= 1 and self.tasks -> select(t|t.isTypeOf(VisualizationTask)) -> size() <= 1 and self.tasks -> select(t|t.isTypeOf(ExportTask)) -> size() <= 1
 		message: 'There can be at most 1 task per type'
 	}
  }
@@ -81,9 +76,7 @@ This assumption is expressed by these type of constraints:
          message: "Collection task can't have an incoming data flow"  
      }  
      constraint nextTypeCollection {  
-         check: (self.outgoing -> size() == 1) and (self.outgoing.target -> select(t |t.isTypeOf(CollectionTask)
-	        or t.isTypeOf(VisualizationTask) or t.isTypeOf(ExportTask)) -> size() == 0) or 
-		(self.outgoing -> size() > 1)
+         check: (self.outgoing -> size() == 1) and (self.outgoing.target -> select(t |t.isTypeOf(CollectionTask) or t.isTypeOf(VisualizationTask) or t.isTypeOf(ExportTask)) -> size() == 0) or (self.outgoing -> size() > 1)
          message: "Collection task must be linked to integration, cleaning or analysis task"  
      }  
  }
@@ -99,10 +92,8 @@ All tasks except Collection and Export, must have a unique outgoing dataflow, an
 		message:  "In collection task there must be as many outgoing data flows as many input sources"
 	}
 	constraint allOutgoingDataFlowsTargetingSameIntegrationTask {
-		check: (self.outgoing -> size() > 1) implies (self.outgoing.target -> 
-			forAll(t | t.isTypeOf(IntegrationTask)))
-		message: "If there are many outgoing data flows from the collection task, all of them must be 
-			linked to the same integration task"
+		check: (self.outgoing -> size() > 1) implies (self.outgoing.target -> forAll(t | t.isTypeOf(IntegrationTask)))
+		message: "If there are many outgoing data flows from the collection task, all of them must be linked to the same integration task"
 	}
  }
 ```  
@@ -111,10 +102,7 @@ Also the internal dataflow between operations must be unique (and obviously a cl
 ```
 context Pipeline {
 	constraint dataFlowBetweenCleaningOperation {
-		check: self.tasks -> collect(t:CleaningTask | t.cleaningOperations -> size()) -> sum() <= 
-			(self.internalDataFlows -> select(d | d.source.isKindOf(CleaningOperation) and 
-			d.target.isKindOf(CleaningOperation)) -> size() + 1) or 
-			collect(t:CleaningTask | t.cleaningOperations -> size()) -> sum() == 0
+		check: self.tasks -> collect(t:CleaningTask | t.cleaningOperations -> size()) -> sum() <= (self.internalDataFlows -> select(d | d.source.isKindOf(CleaningOperation) and d.target.isKindOf(CleaningOperation)) -> size() + 1) or collect(t:CleaningTask | t.cleaningOperations -> size()) -> sum() == 0
 		message: "Missing one or more data flows between cleaning operations"
 	}
 }
@@ -146,9 +134,7 @@ Source can be imported only once, as files can be exported only once (and obviou
 ```
  context Pipeline {
 	constraint sourceImportedOnce {
-		check: self.sources -> forAll(s | (self.tasks -> select(t | 
-			t.isTypeOf(CollectionTask)).importOperations -> 
-			forAll(i | i.read == s)) -> size() == 1)
+		check: self.sources -> forAll(s | (self.tasks -> select(t | t.isTypeOf(CollectionTask)).importOperations -> forAll(i | i.read == s)) -> size() == 1)
 		message: "Imports must be linked to different input sources"
  	}
  }
@@ -162,8 +148,7 @@ Each schema must have at least one attribute, and all attributes within the same
 		message: "Each schema must have at least one attribute"
 	}
 	constraint uniqueNameAttribute {
-		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies 
-			a1.name <> a2.name))
+		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
 		message: "There can't be more attributes with the same name in the same schema"
 	}	
 }
@@ -173,14 +158,11 @@ As we already said, if there are many source the Integration Task is needed, and
 ```
  context Pipeline {
 	constraint ifManySourcesIntegration {
-		check: self.sources -> size() > 1 implies self.tasks -> select(t | t.isTypeOf(IntegrationTask))
-			-> size() == 1
+		check: self.sources -> size() > 1 implies self.tasks -> select(t | t.isTypeOf(IntegrationTask)) -> size() == 1
 		message: "If there are many input sources there must be a integration task"
 	}
 	constraint numberOfIntegrationOperation {
-		check: self.sources -> size() > 1 implies self.sources -> size() ==
-			self.tasks -> select(t | t.isTypeOf(IntegrationTask)).integrationOperations -> 
-				first() -> size() + 1
+		check: self.sources -> size() > 1 implies self.sources -> size() == self.tasks -> select(t | t.isTypeOf(IntegrationTask)).integrationOperations -> first() -> size() + 1
 		message: "The number of integration operation must be the number of sources - 1"
 	}
  }
@@ -190,15 +172,11 @@ Since the Analysis Task can produce other attributes, the incoming and outgoing 
 ```
  context AnalysisTask {
 	constraint outputSchemaIsCompatibleWithInputSchema {
-		check: self.incoming.schema.attributes -> first() -> forAll(attr1 | self.outgoing.schema.attributes
-			-> first() -> exists(attr2 | attr1.name == attr2.name and attr1.type == attr2.type))
+		check: self.incoming.schema.attributes -> first() -> forAll(attr1 | self.outgoing.schema.attributes -> first() -> exists(attr2 | attr1.name == attr2.name and attr1.type == attr2.type))
 		message: "The outgoing data flow schema must contain all the attributes of the incoming data flow schema"
 	}
 	constraint outgoingDataFlowHasRightSchema {
-		check: self.analysisOperations.outputAttribute -> select(attr | attr <> null) -> size() > 0 
-			implies self.analysisOperations.outputAttribute -> select(attr | attr <> null) -> 
-			forAll(attr1 | self.outgoing.schema.attributes -> first() -> exists(attr2 | attr1.name == 
-			attr2.name and attr1.type == attr2.type))
+		check: self.analysisOperations.outputAttribute -> select(attr | attr <> null) -> size() > 0 implies self.analysisOperations.outputAttribute -> select(attr | attr <> null) -> forAll(attr1 | self.outgoing.schema.attributes -> first() -> exists(attr2 | attr1.name == attr2.name and attr1.type == attr2.type))
 		message: "The outgoing dataflow schema must contain all the generated output attributes" 
 	}
  }

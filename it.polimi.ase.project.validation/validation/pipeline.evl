@@ -91,6 +91,11 @@ context Pipeline {
 		check: self.sources -> forAll(s | (self.tasks -> select(t | t.isTypeOf(CollectionTask)).importOperations -> forAll(i | i.read = s)) -> size() = 1)
 		message: "Imports must be linked to different input sources"
  	}
+	
+	constraint uniqueSourceName {
+		check: self.sources -> forAll (s1 | self.sources -> select (s2 | s1.name = s2.name) -> size() = 1)
+		message: "There can't be many sources with the same name"
+	}
   	
   	constraint FileExportedOnce {
  		check: self.files -> forAll(f | (self.tasks -> select(t | t.isTypeOf(ExportTask)).exportOperations -> forAll(e | e.write = f)) -> size() = 1)
@@ -460,6 +465,11 @@ context PredictiveAnalysisOperation {
 		check: (self.type.value = 0 or self.type.value = 1) implies
 			(self.inputAttributes -> forAll(attr | attr.type.value = 1 or attr.type.value = 2))
 		message: "Predictive analysis: regression must have integer or double input attributes"
+	}
+	
+	constraint simpleRegressionOn2Attributes {
+		check: self.type.value = 0 implies self.inputAttributes -> size() = 2
+		message: "Predictive analysis: linear regressione requires 2 input attributes."
 	}
 	
 	constraint InputAttributesIsDefined {

@@ -1,4 +1,5 @@
-# Advanced Software Engineering Project Documentation
+## Advanced Software Engineering 
+# Project Documentation
 Academic Year 2017/2018    
 
 ## Contributors  
@@ -9,7 +10,7 @@ Using _Eclipse_, we defined the abstract syntax of our language, then we designe
 
 <br >
 
-## Abstract Syntax
+# Abstract Syntax
 
 The metamodel is defined by a _.ecore_ file and some constraints (validation rules).
 
@@ -17,7 +18,7 @@ The metamodel is defined by a _.ecore_ file and some constraints (validation rul
 
 <br >
 
-### Ecore
+## Ecore
 
 The container of our model is the _EClass_ **Pipeline**, which is an aggregation of the following _EClasses_:
 * **Task**: the abstract class representing the various tasks, it has a name as identifier, it specializes into the concrete EClasses **CollectionTask**, **IntegrationTask**, **CleaningTask**, **AnalysisTask**, **VisualizationTask** and **ExportTask**;
@@ -58,7 +59,7 @@ Operations are linked by the InternalDataFlow as tasks are linked by the DataFlo
 
 <br >
 
-### Validation
+## Validation
 
 To complete our model, we made some other assumptions, which are represented by constraints we added to the model.  
   
@@ -233,11 +234,12 @@ For clarity and implementation reasons, analysis and cleaning operations must al
 
 <br >
 
-## Concrete Syntax
+# Concrete Syntax
 
-### Graphical Concrete Syntax
+## Graphical Concrete Syntax
 
-#### Eclipse Sirius
+### Eclipse Sirius
+
 We created a modeling workbench with _Eclipse Sirius_. This diagram editor allows users to visualize and edit a pipeline with its elements and their relationships.  
 A _Viewpoint Specification Project_ contains the definition of our modeling workbench. The Viewpoint Specification Project creation wizard creates a new project containing a _.odesign_ file. This file describes the modeling workbench that we created. It will be interpreted by the Sirius runtime. In this file the wizard has created a first viewpoint we renamed to `pipeline`. This viewpoint provides a diagram that the user will be able to instantiate. We configure this diagram to graphically represent instances of _Pipelines_. A _Diagram_ shows _Nodes_, _Containers_, _Element Base Edges_ and _Relation Based Edges_ which are elements of the model.  
 To define the way a diagram element is graphically represented on the diagram, it must declare a _Style_. The _Style_ defines the graphical attributes of the _Diagram Element_ (e.g. its color).  
@@ -269,7 +271,8 @@ The following aggregations and associations of the Domain Model are represented 
 
 To display instances of _DataFlow_ and _InternalDataFlow_, we created two _Element Based Edges_.
 
-##### Palette
+#### Palette
+
 We completed this desinger with a palette containing tools to allow users to create new model elements.  
 We added five _Sections_ named _Tools_, _Data Flows_, _Schema_, _Tasks_ and _Operations_ to the _Layer_.  
 The palette is composed of tools which will allow the user to create new objects.  
@@ -288,11 +291,11 @@ We copied, pasted and updated this tool to create a _Reconnect Edge_ tool for al
 
 <br >
 
-## Samples
+# Samples
 
 Here are some example models conforming to the metamodel.
 
-### Sample A
+## Sample A
 
 The first example is a simple in case in which we have a unique source, representing some social media data, on which we want to perform some statistical analyzes.
 
@@ -337,7 +340,8 @@ Here is a representation of the model:
 
 <br >
 
-### Sample B
+## Sample B
+
 Now a little more complex example. We have some sensors that measure air quality: one for temperature and humidity, one for pressure and another for pollution. Each sensor writes data in a different file, the first and the latter in _csv_ format, the other in _txt_.
 
 The _schemas_ are:
@@ -382,13 +386,13 @@ Here is the diagram (arrows and links have different colours for clarity):
 
 <br >
 
-## Model to Text Transformations
+# Model to Text Transformations
 
-### HTML Report
+## HTML Report
 
-#### it.polimi.ase.project.pipeline2html
+### it.polimi.ase.project.pipeline2html
 
-##### reportHtmlFile.mtl
+#### reportHtmlFile.mtl
 The `generateHtml()` template uses the "file block" to generate _.html_ files.  
 [Bootstrap](http://getbootstrap.com/) requires the use of the HTML5 doctype. To ensure proper rendering and touch zooming for all devices, we added the responsive viewport metatag to our `<head>`.  
 We defined three divisions in the HTML document.  
@@ -396,9 +400,9 @@ The first `<div>` contains information about the pipeline.
 The second `<div>` tag is used to group block-elements containing information on the tasks inside the pipeline. For each task, the user is provided with information on it, including incoming data flow(s) or source(s), operations and outgoing data flow(s) or file(s).  
 The third `<div>` tag is used to group block-elements containing information on the operations inside the tasks of the pipeline. For each operation, the user is provided with information on it, including incoming internal data flow(s) or source(s), input attribute(s), output attribute(s) and outgoing internal data flow(s) or file(s).    
 
-##### mainModule.mtl
+#### mainModule.mtl
 We created a "main" module which role is to delegate to all of the modules that will create files. This module is placed alone in its own _it.polimi.ase.project.pipeline2html.main_ package.
 
-#### it.polimi.ase.project.pipeline2html.ui
+### it.polimi.ase.project.pipeline2html.ui
 Now that our generation modules are ready, we want to have some wizards to launch the generation from within Eclipse. The **New Acceleo UI project** wizard will create a new Eclipse project which will allow the end user to launch the generation with a right-click action on any appropriate model. The wizard created a new plugin with all the necessary code to display a new action for the selected model file that will generate _.html_ files in the specified folder. The result of this plugin is a **Generate Pipeline to HTML** action on the _.pipeline_ files.  
 ![Generate Pipeline to HTML](https://github.com/SPozzoli/ase-project/blob/master/Pictures/Generate%20Pipeline%20to%20HTML.PNG)

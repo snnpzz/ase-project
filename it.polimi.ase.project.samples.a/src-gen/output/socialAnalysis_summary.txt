@@ -1,0 +1,39 @@
+
+Linear regression
+
+Call:
+lm(formula = mostActiveHour ~ numbUsers, data = sourceDF)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.2468 -2.2595 -0.2478  1.7197  6.7545 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)  1.184e+01  1.278e+01   0.927    0.366
+numbUsers   -2.591e-05  5.616e-04  -0.046    0.964
+
+Residual standard error: 2.941 on 18 degrees of freedom
+Multiple R-squared:  0.0001183,	Adjusted R-squared:  -0.05543 
+F-statistic: 0.002129 on 1 and 18 DF,  p-value: 0.9637
+
+
+Multiple linear regression
+
+Call:
+lm(formula = mostActiveHour ~ numbUsers + numbPosts, data = sourceDF)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-3.388 -2.209 -0.304  1.828  6.510 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept) 2.997e+00  1.641e+01   0.183    0.857
+numbUsers   5.192e-06  5.667e-04   0.009    0.993
+numbPosts   3.599e-04  4.146e-04   0.868    0.397
+
+Residual standard error: 2.962 on 17 degrees of freedom
+Multiple R-squared:  0.04257,	Adjusted R-squared:  -0.07007 
+F-statistic: 0.3779 on 2 and 17 DF,  p-value: 0.6909
+

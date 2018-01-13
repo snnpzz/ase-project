@@ -12,6 +12,7 @@
  
 # Import libraries (if some are missing, install them: install.packages("library_name") )
 
+# install.packages("readr")
 library(readr)
 
 # install.packages("plyr")
@@ -67,9 +68,14 @@ sourceDF <- posts.csv
 
 # TODO: User defined cleaning operation
 # orderByDate: OrderByAsc
+	sourceDF <- sourceDF[order(sourceDF$date),]
 
 # TODO: User defined cleaning operation
 # group: GroupByDate
+	# install.packages("sqldf")
+	library(sqldf)
+	sourceDF <- sqldf("SELECT date, MAX(numbPosts) AS numbPosts, MAX(numbUsers) AS numbUsers, AVG(mostActiveHour) AS
+	                   mostActiveHour, holiday FROM sourceDF GROUP BY date, holiday")
 
 
 ## ANALYSIS TASK
@@ -81,14 +87,14 @@ sourceDF
 # Descriptive analysis: 	
 	data2plot <- data.frame(	
 		
-		numbPosts = sourceDF$numbPosts
-		 , 
 		date = sourceDF$date
+		 , 
+		numbPosts = sourceDF$numbPosts
 		 , 
 		numbUsers = sourceDF$numbUsers
 		, row.names = NULL)
 		
-		ggplot(data2plot, aes(x = numbPosts, fill = date)) + geom_histogram()
+		ggplot(data2plot, aes(x = date, y = numbPosts)) + geom_bar(stat ="identity")
 	
 
 # Clustering analysis:  kMeans
@@ -114,7 +120,7 @@ sourceDF
 
 
 ## EXPORT TASK
-	write.table(sourceDF, file = "output/analyzesPosts.csv")
+	write.csv(sourceDF, file = "output/analyzesPosts.csv", row.names = F)
 
 
 dev.off()

@@ -13,7 +13,7 @@
   </tasks>
   <tasks xsi:type="pipeline:AnalysisTask" ID="Analysis" incoming="//@dataFlows.1" outgoing="//@dataFlows.2">
     <analysisOperations xsi:type="pipeline:DescriptiveAnalysisOperation" outgoing="//@internalDataFlows.0" ID="viewAllData" type="ViewData"/>
-    <analysisOperations xsi:type="pipeline:DescriptiveAnalysisOperation" incoming="//@internalDataFlows.0" outgoing="//@internalDataFlows.1" ID="histDate" inputAttributes="//@schemas.1/@attributes.1 //@schemas.1/@attributes.0 //@schemas.1/@attributes.2"/>
+    <analysisOperations xsi:type="pipeline:DescriptiveAnalysisOperation" incoming="//@internalDataFlows.0" outgoing="//@internalDataFlows.1" ID="histDate" inputAttributes="//@schemas.1/@attributes.0 //@schemas.1/@attributes.1 //@schemas.1/@attributes.2"/>
     <analysisOperations xsi:type="pipeline:ClusteringAnalysisOperation" incoming="//@internalDataFlows.1" outgoing="//@internalDataFlows.2" ID="kMeansUsers" outputAttribute="//@schemas.2/@attributes.5" k="5"/>
     <analysisOperations xsi:type="pipeline:PredictiveAnalysisOperation" incoming="//@internalDataFlows.2" outgoing="//@internalDataFlows.3" ID="linRegrHour" inputAttributes="//@schemas.1/@attributes.3 //@schemas.1/@attributes.2"/>
     <analysisOperations xsi:type="pipeline:PredictiveAnalysisOperation" incoming="//@internalDataFlows.3" ID="multRegrHour" inputAttributes="//@schemas.1/@attributes.3 //@schemas.1/@attributes.2 //@schemas.1/@attributes.1" type="MultipleLinRegr"/>

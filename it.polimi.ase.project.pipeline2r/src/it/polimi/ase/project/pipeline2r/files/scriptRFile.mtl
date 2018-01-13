@@ -233,7 +233,7 @@ sourceDF <-
 [if (op.type = DescriptiveOperation::Boxplot)]
 	[drawChart(ChartType::BoxPlot, op.inputAttributes)/]
 [elseif (op.type = DescriptiveOperation::Histogram)]
-	[drawChart(ChartType::Histogram, op.inputAttributes)/]
+	[drawChart(ChartType::Column, op.inputAttributes)/]
 [elseif (op.type = DescriptiveOperation::PieChart)]
 	[drawChart(ChartType::Pie, op.inputAttributes)/]
 [elseif (op.type = DescriptiveOperation::ScatterPlot)]
@@ -406,6 +406,8 @@ data2plot <- data.frame(
 	[elseif (exp.write.format.toString() = 'JSON')]
 	json <- toJSON(unname(split(sourceDF, 1:nrow(sourceDF))))
 	write(json, "output/[exp.write.name/]")
+	[elseif (exp.write.format.toString() = 'CSV')]
+	write.csv(sourceDF, file = "output/[exp.write.name/]", row.names = F)
 	[else]
 	write.table(sourceDF, file = "output/[exp.write.name/]")
 	[/if]

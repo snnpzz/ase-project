@@ -1,11 +1,13 @@
 # Advanced Software Engineering Project Documentation
 Academic Year 2017/2018    
+
 ## Contributors  
 * Bafaro Eva 893961 
 * Pozzoli Susanna 897788  
   
 Using _Eclipse_, we defined the abstract syntax of our language, then we designed a concrete graphical syntax and created a modelling environment with _Sirius_, we defined 2 sample models, and finally we created a model to text transformation with _Acceleo_ which creates a textual report of the pipeline in _HTML_.
 
+<br >
 
 ## Abstract Syntax
 
@@ -13,6 +15,7 @@ The metamodel is defined by a _.ecore_ file and some constraints (validation rul
 
 ![](https://github.com/SPozzoli/ase-project/blob/master/Pictures/pipeline.png)
 
+<br >
 
 ### Ecore
 
@@ -53,6 +56,7 @@ Task is linked to DataFlow by two binary associations, so from the point of view
 * dataflow, we can get the _source_ and _target_ task.
 Operations are linked by the InternalDataFlow as tasks are linked by the DataFlow.
 
+<br >
 
 ### Validation
 
@@ -64,7 +68,13 @@ This assumption is expressed by these type of constraints:
 ``` 
  context Pipeline {
 	constraint uniqueTasks {
-		check: self.tasks -> select(t|t.isTypeOf(CollectionTask)) -> size() <= 1 and self.tasks -> select(t|t.isTypeOf(IntegrationTask)) -> size() <= 1 and self.tasks -> select(t|t.isTypeOf(CleaningTask)) -> size() <= 1 and self.tasks -> select(t|t.isTypeOf(AnalysisTask)) -> size() <= 1 and self.tasks -> select(t|t.isTypeOf(VisualizationTask)) -> size() <= 1 and self.tasks -> select(t|t.isTypeOf(ExportTask)) -> size() <= 1
+		check: self.tasks -> select(t|t.isTypeOf(CollectionTask)) -> size() <= 1 
+			and self.tasks -> select(t|t.isTypeOf(IntegrationTask)) -> 
+			size() <= 1 and self.tasks -> select(t|t.isTypeOf(CleaningTask)) -> 
+			size() <= 1 and self.tasks -> select(t|t.isTypeOf(AnalysisTask)) -> 
+			size() <= 1 and self.tasks -> select(t|t.isTypeOf(VisualizationTask))
+			-> size() <= 1 and self.tasks -> select(t|t.isTypeOf(ExportTask)) -> 
+			size() <= 1
 		message: 'There can be at most 1 task per type'
 	}
  }
@@ -76,8 +86,12 @@ This assumption is expressed by these type of constraints:
          message: "Collection task can't have an incoming data flow"  
      }  
      constraint nextTypeCollection {  
-         check: (self.outgoing -> size() == 1) and (self.outgoing.target -> select(t |t.isTypeOf(CollectionTask) or t.isTypeOf(VisualizationTask) or t.isTypeOf(ExportTask)) -> size() == 0) or (self.outgoing -> size() > 1)
-         message: "Collection task must be linked to integration, cleaning or analysis task"  
+         check: (self.outgoing -> size() == 1) and (self.outgoing.target -> 
+	 	select(t | t.isTypeOf(CollectionTask) or t.isTypeOf(VisualizationTask) 
+		or t.isTypeOf(ExportTask)) -> size() == 0) or (self.outgoing -> 
+		size() > 1)
+         message: "Collection task must be linked to integration, cleaning or 
+	 	analysis task"  
      }  
  }
 ```  
@@ -89,11 +103,14 @@ All tasks except Collection and Export, must have a unique outgoing dataflow, an
  context CollectionTask {
 	constraint manyDataFlowsFromCollectionAsManyImports {
 		check: self.importOperations -> size() == (self.outgoing -> size())
-		message:  "In collection task there must be as many outgoing data flows as many input sources"
+		message:  "In collection task there must be as many outgoing data flows as 
+			many input sources"
 	}
 	constraint allOutgoingDataFlowsTargetingSameIntegrationTask {
-		check: (self.outgoing -> size() > 1) implies (self.outgoing.target -> forAll(t | t.isTypeOf(IntegrationTask)))
-		message: "If there are many outgoing data flows from the collection task, all of them must be linked to the same integration task"
+		check: (self.outgoing -> size() > 1) implies (self.outgoing.target -> 
+			forAll(t | t.isTypeOf(IntegrationTask)))
+		message: "If there are many outgoing data flows from the collection task,
+			all of them must be linked to the same integration task"
 	}
  }
 ```  
@@ -102,7 +119,12 @@ Also the internal dataflow between operations must be unique (and obviously a cl
 ```
 context Pipeline {
 	constraint dataFlowBetweenCleaningOperation {
-		check: self.tasks -> collect(t:CleaningTask | t.cleaningOperations -> size()) -> sum() <= (self.internalDataFlows -> select(d | d.source.isKindOf(CleaningOperation) and d.target.isKindOf(CleaningOperation)) -> size() + 1) or collect(t:CleaningTask | t.cleaningOperations -> size()) -> sum() == 0
+		check: self.tasks -> collect(t:CleaningTask | t.cleaningOperations -> 
+			size()) -> sum() <= (self.internalDataFlows -> select(d | 
+			d.source.isKindOf(CleaningOperation) and 
+			d.target.isKindOf(CleaningOperation)) -> size() + 1) or 
+			collect(t:CleaningTask | t.cleaningOperations -> size()) -> 
+			sum() == 0
 		message: "Missing one or more data flows between cleaning operations"
 	}
 }
@@ -113,19 +135,25 @@ Within Cleaning and Analysis Task, operation must be all executed once (they all
 context CleaningTask {
 	constraint uniqueInternalDataFlowOut {
 		check: self.CleaningOperations -> forAll(o | o.outgoing -> size() <= 1)
-		message: "Cleaning operations can have at maximum one outgoing internal data flow"
+		message: "Cleaning operations can have at maximum one outgoing internal 
+			data flow"
 	}
 	constraint uniqueInternalDataFlowIn {
 		check: self.cleaningOperations -> forAll(o | o.incoming -> size() <= 1)
-		message: "Cleaning operations can have at maximum one incoming internal data flow"
+		message: "Cleaning operations can have at maximum one incoming internal 
+			data flow"
 	}
 	constraint initialCleaningOperation {
-		check: self.cleaningOperations -> select(op | op.incoming == null) -> size() == 1
-		message: "There can be just one initial cleaning operation. Some internal data flows are wrong"
+		check: self.cleaningOperations -> select(op | op.incoming == null) -> 
+			size() == 1
+		message: "There can be just one initial cleaning operation. Some internal 
+			data flows are wrong"
 	}
 	constraint finalCleaningOperation {
-		check: self.cleaningOperations -> select(op | op.outgoing == null) -> size() == 1
-		message: "There can be just one final cleaning operation. Some internal data flows are wrong"
+		check: self.cleaningOperations -> select(op | op.outgoing == null) -> 
+			size() == 1
+		message: "There can be just one final cleaning operation. Some internal 
+			data flows are wrong"
 	}
 }
 ```  
@@ -134,7 +162,9 @@ Source can be imported only once, as files can be exported only once (and obviou
 ```
  context Pipeline {
 	constraint sourceImportedOnce {
-		check: self.sources -> forAll(s | (self.tasks -> select(t | t.isTypeOf(CollectionTask)).importOperations -> forAll(i | i.read == s)) -> size() == 1)
+		check: self.sources -> forAll(s | (self.tasks -> select(t | 
+			t.isTypeOf(CollectionTask)).importOperations -> forAll(i | 
+			i.read == s)) -> size() == 1)
 		message: "Imports must be linked to different input sources"
  	}
  }
@@ -148,8 +178,10 @@ Each schema must have at least one attribute, and all attributes within the same
 		message: "Each schema must have at least one attribute"
 	}
 	constraint uniqueNameAttribute {
-		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
-		message: "There can't be more attributes with the same name in the same schema"
+		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | 
+			a1 <> a2 implies a1.name <> a2.name))
+		message: "There can't be more attributes with the same name in the 
+			same schema"
 	}	
 }
 ```  
@@ -158,12 +190,16 @@ As we already said, if there are many source the Integration Task is needed, and
 ```
  context Pipeline {
 	constraint ifManySourcesIntegration {
-		check: self.sources -> size() > 1 implies self.tasks -> select(t | t.isTypeOf(IntegrationTask)) -> size() == 1
+		check: self.sources -> size() > 1 implies self.tasks -> select(t | 
+			t.isTypeOf(IntegrationTask)) -> size() == 1
 		message: "If there are many input sources there must be a integration task"
 	}
 	constraint numberOfIntegrationOperation {
-		check: self.sources -> size() > 1 implies self.sources -> size() == self.tasks -> select(t | t.isTypeOf(IntegrationTask)).integrationOperations -> first() -> size() + 1
-		message: "The number of integration operation must be the number of sources - 1"
+		check: self.sources -> size() > 1 implies self.sources -> size() == 
+			self.tasks -> select(t | t.isTypeOf(IntegrationTask)).
+			integrationOperations -> first() -> size() + 1
+		message: "The number of integration operation must be the number of 
+			sources - 1"
 	}
  }
 ```    
@@ -172,12 +208,20 @@ Since the Analysis Task can produce other attributes, the incoming and outgoing 
 ```
  context AnalysisTask {
 	constraint outputSchemaIsCompatibleWithInputSchema {
-		check: self.incoming.schema.attributes -> first() -> forAll(attr1 | self.outgoing.schema.attributes -> first() -> exists(attr2 | attr1.name == attr2.name and attr1.type == attr2.type))
-		message: "The outgoing data flow schema must contain all the attributes of the incoming data flow schema"
+		check: self.incoming.schema.attributes -> first() -> forAll(attr1 | 
+			self.outgoing.schema.attributes -> first() -> exists(attr2 | 
+			attr1.name == attr2.name and attr1.type == attr2.type))
+		message: "The outgoing data flow schema must contain all the attributes of 
+			the incoming data flow schema"
 	}
 	constraint outgoingDataFlowHasRightSchema {
-		check: self.analysisOperations.outputAttribute -> select(attr | attr <> null) -> size() > 0 implies self.analysisOperations.outputAttribute -> select(attr | attr <> null) -> forAll(attr1 | self.outgoing.schema.attributes -> first() -> exists(attr2 | attr1.name == attr2.name and attr1.type == attr2.type))
-		message: "The outgoing dataflow schema must contain all the generated output attributes" 
+		check: self.analysisOperations.outputAttribute -> select(attr | attr 
+			<> null) -> size() > 0 implies self.analysisOperations.
+			outputAttribute -> select(attr | attr <> null) -> forAll(attr1 | 
+			self.outgoing.schema.attributes -> first() -> exists(attr2 | 
+			attr1.name == attr2.name and attr1.type == attr2.type))
+		message: "The outgoing dataflow schema must contain all the generated 
+			output attributes" 
 	}
  }
 ```  
@@ -185,10 +229,14 @@ Since the Analysis Task can produce other attributes, the incoming and outgoing 
 For clarity and implementation reasons, analysis and cleaning operations must all have different IDs, and there is a series of constraints regarding the specific analysis operations (number and type of input and output attributes), which we have mentioned introducing them.
 
 
+<br >
 
+<br >
 
 ## Concrete Syntax
+
 ### Graphical Concrete Syntax
+
 #### Eclipse Sirius
 We created a modeling workbench with _Eclipse Sirius_. This diagram editor allows users to visualize and edit a pipeline with its elements and their relationships.  
 A _Viewpoint Specification Project_ contains the definition of our modeling workbench. The Viewpoint Specification Project creation wizard creates a new project containing a _.odesign_ file. This file describes the modeling workbench that we created. It will be interpreted by the Sirius runtime. In this file the wizard has created a first viewpoint we renamed to `pipeline`. This viewpoint provides a diagram that the user will be able to instantiate. We configure this diagram to graphically represent instances of _Pipelines_. A _Diagram_ shows _Nodes_, _Containers_, _Element Base Edges_ and _Relation Based Edges_ which are elements of the model.  
@@ -219,7 +267,8 @@ The following aggregations and associations of the Domain Model are represented 
 * use
 * write
 
-To display instances of _DataFlow_ and _InternalDataFlow_, we created two _Element Based Edges_.  
+To display instances of _DataFlow_ and _InternalDataFlow_, we created two _Element Based Edges_.
+
 ##### Palette
 We completed this desinger with a palette containing tools to allow users to create new model elements.  
 We added five _Sections_ named _Tools_, _Data Flows_, _Schema_, _Tasks_ and _Operations_ to the _Layer_.  
@@ -234,6 +283,10 @@ For the element based case, it is slightly different as we have to create the el
 We proceeded the same way to create a _Edge Creation_ tool for all the relationships.  
 A _Reconnect Edge_ tool allows the user to change the end of a relationship by moving it directly from the diagram. We created a _Reconnect Edge_ tool to change the _next_ of an Attribute. We associated an edge to each reconnect tool. Then we created a _Change Context_ and set its expression to `var:element` (the attribute that will change its next). Finally, we created a _Set_ to assign the new selected attribute (`var:target`) as _next_ of this attribute.  
 We copied, pasted and updated this tool to create a _Reconnect Edge_ tool for all the relationships.  
+
+<br >
+
+<br >
 
 ## Samples
 
@@ -282,6 +335,8 @@ Here is a representation of the model:
 
 ![Sample A](https://github.com/SPozzoli/ase-project/blob/master/Pictures/ADiagram.jpg)
 
+<br >
+
 ### Sample B
 Now a little more complex example. We have some sensors that measure air quality: one for temperature and humidity, one for pressure and another for pollution. Each sensor writes data in a different file, the first and the latter in _csv_ format, the other in _txt_.
 
@@ -323,9 +378,16 @@ Here is the diagram (arrows and links have different colours for clarity):
 
 ![Sample B](https://github.com/SPozzoli/ase-project/blob/master/Pictures/BDiagram.jpg)
 
+<br >
+
+<br >
+
 ## Model to Text Transformations
+
 ### HTML Report
+
 #### it.polimi.ase.project.pipeline2html
+
 ##### reportHtmlFile.mtl
 The `generateHtml()` template uses the "file block" to generate _.html_ files.  
 [Bootstrap](http://getbootstrap.com/) requires the use of the HTML5 doctype. To ensure proper rendering and touch zooming for all devices, we added the responsive viewport metatag to our `<head>`.  
@@ -333,8 +395,10 @@ We defined three divisions in the HTML document.
 The first `<div>` contains information about the pipeline.    
 The second `<div>` tag is used to group block-elements containing information on the tasks inside the pipeline. For each task, the user is provided with information on it, including incoming data flow(s) or source(s), operations and outgoing data flow(s) or file(s).  
 The third `<div>` tag is used to group block-elements containing information on the operations inside the tasks of the pipeline. For each operation, the user is provided with information on it, including incoming internal data flow(s) or source(s), input attribute(s), output attribute(s) and outgoing internal data flow(s) or file(s).    
+
 ##### mainModule.mtl
-We created a "main" module which role is to delegate to all of the modules that will create files. This module is placed alone in its own _it.polimi.ase.project.pipeline2html.main_ package.  
+We created a "main" module which role is to delegate to all of the modules that will create files. This module is placed alone in its own _it.polimi.ase.project.pipeline2html.main_ package.
+
 #### it.polimi.ase.project.pipeline2html.ui
 Now that our generation modules are ready, we want to have some wizards to launch the generation from within Eclipse. The **New Acceleo UI project** wizard will create a new Eclipse project which will allow the end user to launch the generation with a right-click action on any appropriate model. The wizard created a new plugin with all the necessary code to display a new action for the selected model file that will generate _.html_ files in the specified folder. The result of this plugin is a **Generate Pipeline to HTML** action on the _.pipeline_ files.  
 ![Generate Pipeline to HTML](https://github.com/SPozzoli/ase-project/blob/master/Pictures/Generate%20Pipeline%20to%20HTML.PNG)

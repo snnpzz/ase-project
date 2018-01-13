@@ -27,7 +27,6 @@ pdf("output/[aPipeline.ID/].pdf")
 # Import sourceDFs as dataframes
 [importSources(aPipeline.sources)/]
 
-
 [if (aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)) -> size() <> 0)]
 ## INTEGRATION TASK
 # Join all data in a unique data frame
@@ -37,8 +36,8 @@ pdf("output/[aPipeline.ID/].pdf")
 sourceDF <- [aPipeline.sources->at(1).name.replaceAll('\x20', '')/]
 [/if]
 
-
 [if (aPipeline.tasks -> select(t | t.oclIsTypeOf(CleaningTask)) -> size() <> 0)]
+
 ## CLEANING TASK
 	[for (op : CleaningOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(CleaningTask)).oclAsType(CleaningTask).cleaningOperations)]
 		[if (op.oclIsTypeOf(PredefinedCleaningOperation))]
@@ -67,7 +66,6 @@ sourceDF <- [aPipeline.sources->at(1).name.replaceAll('\x20', '')/]
 
 	[/for]
 [/if]
-
 
 ## ANALYSIS TASK
 
@@ -106,6 +104,7 @@ rm(list = ls())
 [template private importLibraries(aPipeline: Pipeline)]
 # Import libraries (if some are missing, install them: install.packages("library_name") )
 
+# install.packages("readr")
 library(readr)
 
 # install.packages("plyr")

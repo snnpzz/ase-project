@@ -9,59 +9,32 @@
 # This script will generate an executable version of the pipeline
 
 # Structure of the program:
-# - if sources are local files and path is not specified, place them in a folder named "sources" at the same level of the R file;
+# - if sources are local files and path is not specified, place them in a folder named "sourceDFs" at the same level of the R file;
 #	if sources are remote, if they don't require credentials they will be automatically downloaded, otherwise you need to manually
 #	download them;
 # - all output files will be placed in a folder named "output" at the same level of the R file.
 
-# A pdf file will be exported in "output/[aPipeline.ID/].pdf"
-
-# Import libraries (if some are missing, install them: install.packages("library_name") )
-
-library(readr)
-
-# install.packages("plyr")
-# install.packages("XML")
-# install.packages("jsonlite")
-# install.packages("rjson")
-library(plyr)
-library(xml)
-library(jsonlite)
-library(rjson)
-
-
-library(MASS)
-library(class)
-library(e1071)
-library(randomForest)
-
-# install.packages(ggplot2)
-library(ggplot2)
-
-# install.packages("dplyr")
-# install.packages("scales")
-# install.packages("reshape2")
-# install.packages("tibble")
-library(dplyr)
-library(scales)
-library(reshape2)
-library(tibble)
-
+# A pdf file containing plots will be exported to "output/[aPipeline.ID/].pdf"
+# A txt file containing summaries will be exported to "output/[aPipeline.ID/]_summary.txt"
+ 
+[importLibraries(aPipeline)/]
 
 set.seed(501)
 pdf("output/[aPipeline.ID/].pdf")
 
 
 ## COLLECTION TASK
-# Import sources as dataframes
+# Import sourceDFs as dataframes
+[importSources(aPipeline.sources)/]
 
-[importSource(aPipeline.sources)/]
 
 [if (aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)) -> size() <> 0)]
 ## INTEGRATION TASK
 # Join all data in a unique data frame
 
 [joinSources(aPipeline)/]
+[else]
+sourceDF <- [aPipeline.sources->at(1).name.replaceAll('\x20', '')/]
 [/if]
 
 
@@ -71,21 +44,21 @@ pdf("output/[aPipeline.ID/].pdf")
 		[if (op.oclIsTypeOf(PredefinedCleaningOperation))]
 
 # Predefined operation : [if (op.oclAsType(PredefinedCleaningOperation).type.toString() = 'removeNulls')] remove null values
-	source <- na.omit(source)
+	sourceDF <- na.omit(sourceDF)
 			[elseif (op.oclAsType(PredefinedCleaningOperation).type.toString() = 'removeNegative')] remove negative values
 				[for (attr : Attribute | op.inputAttributes)]
-	source$[attr.name/] <- source['['/] source$[attr.name/] >= 0 ,[']'/]
+	sourceDF$[attr.name/] <- sourceDF['['/] sourceDF$[attr.name/] >= 0 ,[']'/]
 				[/for]
 			[elseif (op.oclAsType(PredefinedCleaningOperation).type.toString() = 'round')] round values
 				[for (attr : Attribute | op.inputAttributes)]
-	source$[attr.name/] <- round(source$[attr.name/])
+	sourceDF$[attr.name/] <- round(sourceDF$[attr.name/])
 				[/for]
 			[elseif (op.oclAsType(PredefinedCleaningOperation).type.toString() = 'removeColumn')] remove column
 				[for (attr : Attribute | op.inputAttributes)]
-	source$[attr.name/] <- NULL
+	sourceDF$[attr.name/] <- NULL
 				[/for]
 			[else] remove duplicates
-	source <- unique(source)
+	sourceDF <- unique(sourceDF)
 			[/if]
 		[else]
 # TODO: User defined cleaning operation
@@ -102,11 +75,11 @@ pdf("output/[aPipeline.ID/].pdf")
 	[if (op.oclIsTypeOf(DescriptiveAnalysisOperation))]
 # Descriptive analysis: [doDescriptiveAnalysis(op.oclAsType(DescriptiveAnalysisOperation))/]
 	[elseif (op.oclIsTypeOf(ClassificationAnalysisOperation))]
-# Classification analysis: [doClassificationAnalysis(op.oclAsType(ClassificationAnalysisOperation))/]
+# Classification analysis: [doClassificationAnalysis(op.oclAsType(ClassificationAnalysisOperation), aPipeline.ID)/]
 	[elseif (op.oclIsTypeOf(ClusteringAnalysisOperation))]
 # Clustering analysis: [doClusteringAnalysis(op.oclAsType(ClusteringAnalysisOperation))/]
 	[else] 
-# Predictive analysis: [doPredictiveAnalysis(op.oclAsType(PredictiveAnalysisOperation))/]
+# Predictive analysis: [doPredictiveAnalysis(op.oclAsType(PredictiveAnalysisOperation), aPipeline.ID)/]
 	[/if]
 [/for]
 
@@ -130,12 +103,47 @@ rm(list = ls())
 [/template]
 
 
+[template private importLibraries(aPipeline: Pipeline)]
+# Import libraries (if some are missing, install them: install.packages("library_name") )
+
+library(readr)
+
+# install.packages("plyr")
+# install.packages("XML")
+# install.packages("jsonlite")
+# install.packages("rjson")
+library(plyr)
+library(XML)
+library(jsonlite)
+library(rjson)
+
+# install.packages("e1071")
+# install.packages("randomForest")
+library(MASS)
+library(class)
+library(e1071)
+library(randomForest)
+
+# install.packages(ggplot2)
+library(ggplot2)
+
+# install.packages("dplyr")
+# install.packages("scales")
+# install.packages("reshape2")
+# install.packages("tibble")
+library(dplyr)
+library(scales)
+library(reshape2)
+library(tibble)
+[/template]
+
+
 [template private readFile(s: Source, path: String)]
 
 [if (s.format.toString() = 'TXT')]
 [s.name.replaceAll('\x20', '')/] <- read.table("[path/]/[s.name/]")
 # TODO
-# The source '[s.name.replaceAll('\x20', '')/]' is a TXT file, every row could have been imported as a unique column, 
+# The sourceDF '[s.name.replaceAll('\x20', '')/]' is a TXT file, every row could have been imported as a unique column, 
 # check if you need to manually split it in the desired columns		
 [elseif (s.format.toString() = 'XML')]
 sourceXML <- xmlParse("[path/]/[s.name/]")
@@ -152,13 +160,17 @@ sourceJSON <- fromJSON("[path/]/[s.name/]")
 #             The last identifier must be an object
 [s.name.replaceAll('\x20', '')/] <- sourceJSON$
 rm(sourceJSON)
+[elseif (s.format.toString() = 'CSV')]
+# TODO: check the separator character for the csv file
+separatorChar <- ';'
+[s.name.replaceAll('\x20', '')/] <- read.csv("[path/]/[s.name/]", sep = separatorChar)
 [else]
 [s.name.replaceAll('\x20', '')/] <- read.table("[path/]/[s.name/]")
 [/if]
 [/template]
 
 
-[template private importSource(aSources: OrderedSet(Source))]
+[template private importSources(aSources: OrderedSet(Source))]
 [for (s : Source | aSources)]
 	[if (not(s.serverName.oclIsUndefined() or s.portNumber.oclIsUndefined()))]
 		[if (not(s.userName.oclIsUndefined() or s.password.oclIsUndefined()))]
@@ -186,7 +198,7 @@ download.file([s.serverName.concat(':').concat(s.portNumber.toString()).concat('
 
 
 [template private joinSources(aPipeline: Pipeline)] 
-source <-
+sourceDF <-
 [for (op: IntegrationOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask).integrationOperations)]
 	merge(
 [/for]
@@ -211,11 +223,10 @@ source <-
 [for (op: IntegrationOperation | aPipeline.tasks -> select(t | t.oclIsTypeOf(IntegrationTask)).oclAsType(IntegrationTask).integrationOperations)]
 	[if (not op.outputAttribute.oclIsUndefined())]
 	# Replace column names with output attributes name
-	colnames(source)['['/]colnames(source) == '[op.inputAttributes->at(1).name/]'[']'/] = '[op.outputAttribute.name/]'
+	colnames(sourceDF)['['/]colnames(sourceDF) == '[op.inputAttributes->at(1).name/]'[']'/] = '[op.outputAttribute.name/]'
 	[/if]
 
 [/for]
-
 [/template]
 
 
@@ -229,8 +240,8 @@ source <-
 [elseif (op.type = DescriptiveOperation::ScatterPlot)]
 	[drawChart(ChartType::Scatter, op.inputAttributes)/]
 [else] view data
-View(source)
-source
+View(sourceDF)
+sourceDF
 [/if]
 [/template]
 
@@ -259,28 +270,30 @@ source
 [/template]
 
 
-[template private doClassificationAnalysis(op: ClassificationAnalysisOperation)]
+[template private doClassificationAnalysis(op: ClassificationAnalysisOperation, pipelineID: String)]
 [if (op.type.toString() = 'LogisticRegression')] logistic regression
-	[op.ID/] <- glm([writeFormula(op.inputAttributes)/], data = source, family = binomial)
+	[op.ID/] <- glm([writeFormula(op.inputAttributes)/], data = sourceDF, family = binomial)
 	summary([op.ID/])
+	out <- capture.output(summary([op.ID/]))
+	cat("\nLogistic regression", out, file="output/[pipelineID/]_summary.txt", sep="\n", append=TRUE)
 [elseif (op.type.toString() = 'LDA')] LDA
-	[op.ID/] <- lda([writeFormula(op.inputAttributes)/], data = source)
+	[op.ID/] <- lda([writeFormula(op.inputAttributes)/], data = sourceDF)
 	[op.ID/]
 [elseif (op.type.toString() = 'QDA')] QDA
-	[op.ID/] <- qda([writeFormula(op.inputAttributes)/], data = source)
+	[op.ID/] <- qda([writeFormula(op.inputAttributes)/], data = sourceDF)
 	[op.ID/]
 [elseif (op.type.toString() = 'KNN')] KNN
-	knnInd <- sample(nrow(source), round(nrow(source) * 0.8)
+	knnInd <- sample(nrow(sourceDF), round(nrow(sourceDF) * 0.8)
 	train  <- cbind([writeColumns(op.inputAttributes, '[knnInd, ]')/])
 	knnInd <- -knnInd
 	test   <- cbind([writeColumns(op.inputAttributes, '[knnInd, ]')/])
 	# TODO: change k_KNN if you need a different k
 	k_KNN <- 3 
 	[op.ID/] <- knn(train, test, k = k_KNN, prob = TRUE)
-	source$[op.outputAttribute.name/] <- [op.ID/]
+	sourceDF$[op.outputAttribute.name/] <- [op.ID/]
 	rm(knnInd, train, test)
 [else] SVM
-	[op.ID/] <- svm([op.inputAttributes.name/] ~ ., data = source, kernel = "linear")
+	[op.ID/] <- svm([op.inputAttributes.name/] ~ ., data = sourceDF, kernel = "linear")
 	[op.ID/]
 [/if]
 [/template]
@@ -288,29 +301,33 @@ source
 
 [template private doClusteringAnalysis(op: ClusteringAnalysisOperation)]
 [if (op.type.toString() = 'kMeans')] kMeans
-	[op.ID/] <- kmeans(source, [op.k/])
-	plot(source, col = [op.ID/]$cluster)
-	source$[op.outputAttribute.name/] <- [op.ID/]$cluster
+	[op.ID/] <- kmeans(sourceDF['['/] , sapply(sourceDF, is.numeric)[']'/], [op.k/])
+	plot(sourceDF, col = [op.ID/]$cluster)
+	sourceDF$[op.outputAttribute.name/] <- [op.ID/]$cluster
 [else] hierarchical clustering
 	[op.ID/] <- hclust(
-	[if (op.inputAttributes -> size() = 0)] source
+	[if (op.inputAttributes -> size() = 0)] sourceDF
 	[else] dist(data.frame([writeColumns(op.inputAttributes, '')/]))
 	[/if], [op.k/])
-	source$[op.outputAttribute.name/] <- [op.ID/]$order
+	sourceDF$[op.outputAttribute.name/] <- [op.ID/]$order
 	plot([op.ID/])
 [/if]
 [/template]
 
 
-[template private doPredictiveAnalysis(op: PredictiveAnalysisOperation)]
+[template private doPredictiveAnalysis(op: PredictiveAnalysisOperation, pipelineID: String)]
 [if (op.type.toString() = 'SimpleRegression')] simple regression
-	[op.ID/] <- lm([op.inputAttributes->at(1).name/] ~ [op.inputAttributes->at(2).name/], data = source)
+	[op.ID/] <- lm([op.inputAttributes->at(1).name/] ~ [op.inputAttributes->at(2).name/], data = sourceDF)
 	summary([op.ID/])
+	out <- capture.output(summary([op.ID/]))
+	cat("\nLinear regression", out, file="output/[pipelineID/]_summary.txt", sep="\n", append=TRUE)
 [elseif (op.type.toString() = 'MultipleLinRegr')] multiple linear regression
-	[op.ID/] <- lm([writeFormula(op.inputAttributes)/], data = source)
+	[op.ID/] <- lm([writeFormula(op.inputAttributes)/], data = sourceDF)
 	summary([op.ID/])
+	out <- capture.output(summary([op.ID/]))
+	cat("\nMultiple linear regression", out, file="output/[pipelineID/]_summary.txt", sep="\n", append=TRUE)
 [else] random forests
-	[op.ID/] <- randomForest([op.inputAttributes.name/], data = source, importante = TRUE, proximity = TRUE)
+	[op.ID/] <- randomForest([op.inputAttributes.name/], data = sourceDF, importante = TRUE, proximity = TRUE)
 	print([op.ID/])
 [/if]
 [/template]
@@ -326,9 +343,9 @@ source
 data2plot <- data.frame(	
 [for (attr: Attribute | attributes)]
 	[if (i > 1)] , [/if]
-	[attr.name/] = source$[attr.name/]
+	[attr.name/] = sourceDF$[attr.name/]
 [/for]
-	row.names = FALSE)
+	, row.names = NULL)
 	
 [if (type.toString() = 'Area')]
 	ggplot(data2plot, aes(x = [attributes->at(1).name/] [if (attributes -> size() > 1)], fill=[attributes->at(2).name/] [/if])) + geom_area(aes(y = ..density..), stat = "bin")
@@ -351,7 +368,7 @@ data2plot <- data.frame(
 	[if (attributes -> size() = 1)] 
 	ggplot(data2plot, aes(x = [attributes->at(1).name/])) + geom_histogram()
 	[else]
-	ggplot(data2plot, aes(x = [attributes->at(1).name/], color = [attributes->at(2).name/])) + geom_histogram()
+	ggplot(data2plot, aes(x = [attributes->at(1).name/], fill = [attributes->at(2).name/])) + geom_histogram()
 	[/if]
 [elseif (type.toString() = 'Line')]
 	ggplot(data2plot, aes(x = [attributes->at(1).name/], y = [attributes->at(2).name/], group = [if (attributes -> size() <= 2)] 1 [else] [attributes->at(3).name/] [/if])) + geom_line() + geom_point()
@@ -377,10 +394,10 @@ data2plot <- data.frame(
 	xml <- xmlTree()
 	xml$addTag("pipeline_data", close = FALSE)
 	xml$addTag("rows", close = FALSE)
-	for (i in 1:nrow(source)) {
+	for (i in 1:nrow(sourceDF)) {
   		xml$addTag("row", close = FALSE)
-  		for (j in names(source)) {
-    		xml$addTag(j, source['['/]i, j[']'/])
+  		for (j in names(sourceDF)) {
+    		xml$addTag(j, sourceDF['['/]i, j[']'/])
   		}
   		xml$closeTag()
 	}
@@ -388,10 +405,10 @@ data2plot <- data.frame(
 	xml$closeTag()
 	saveXML(xml, "output/[exp.write.name/]")
 	[elseif (exp.write.format.toString() = 'JSON')]
-	json <- toJSON(unname(split(source, 1:nrow(source))))
+	json <- toJSON(unname(split(sourceDF, 1:nrow(sourceDF))))
 	write(json, "output/[exp.write.name/]")
 	[else]
-	write.table(source, file = "output/[exp.write.name/]")
+	write.table(sourceDF, file = "output/[exp.write.name/]")
 	[/if]
 [/for]
 [/template]

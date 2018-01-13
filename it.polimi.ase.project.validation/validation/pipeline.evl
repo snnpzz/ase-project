@@ -39,13 +39,13 @@ context Pipeline {
 	
 	constraint operationNextIsCleaning {
 		check: self.internalDataFlows -> select(d | d.source.isKindOf(CleaningOperation) and 
-			d.target.isKindOf(AnalysisOperation)) -> size() == 0
+			d.target.isKindOf(AnalysisOperation)) -> size() = 0
 		message: "Cleaning operations can be linked only to cleaning operations"
 	}
 	
 	constraint operationNextIsAnalysis {
 		check: self.internalDataFlows -> select(d | d.source.isKindOf(AnalysisOperation) and 
-			d.target.isKindOf(CleaningOperation)) -> size() == 0
+			d.target.isKindOf(CleaningOperation)) -> size() = 0
 		message: "Analysis operations can be linked only to analysis operations"
 	}
 	
@@ -53,7 +53,7 @@ context Pipeline {
 		check: self.tasks -> collect(t:CleaningTask | t.cleaningOperations -> size()) -> sum() <= 
 			(self.internalDataFlows -> select(d | d.source.isKindOf(CleaningOperation) and 
 			d.target.isKindOf(CleaningOperation)) -> size() + 1) or 
-			collect(t:CleaningTask | t.cleaningOperations -> size()) -> sum() == 0
+			collect(t:CleaningTask | t.cleaningOperations -> size()) -> sum() = 0
 		message: "Missing one or more data flows between cleaning operations"
 	}
 	
@@ -61,44 +61,44 @@ context Pipeline {
 		check: self.tasks -> collect(t:AnalysisTask | t.analysisOperations -> size()) -> sum() <= 
 			(self.internalDataFlows -> select(d | d.source.isKindOf(AnalysisOperation) and 
 			d.target.isKindOf(AnalysisOperation)) -> size() + 1) or 
-			self.tasks -> collect(t:AnalysisTask | t.analysisOperations -> size()) -> sum() == 0
+			self.tasks -> collect(t:AnalysisTask | t.analysisOperations -> size()) -> sum() = 0
 		message: "Missing one or more data flows between analysis operations"
 	}
 	
 	constraint asManySourcesAsManyImportOperations {
-		check: self.sources -> size() == (self.tasks -> select(t | t.isTypeOf(CollectionTask)) -> collect(t | t.importOperations -> size()) -> sum())
+		check: self.sources -> size() = (self.tasks -> select(t | t.isTypeOf(CollectionTask)) -> collect(t | t.importOperations -> size()) -> sum())
 		message: "There must be as many input sources as many import operations."
 			
 	}
 	
 	constraint asManyFilesAsManyExportOperations {
-		check: self.files -> size() == (self.tasks -> select(t | t.isTypeOf(ExportTask)) -> collect(t | t.exportOperations -> size()) -> sum())
+		check: self.files -> size() = (self.tasks -> select(t | t.isTypeOf(ExportTask)) -> collect(t | t.exportOperations -> size()) -> sum())
 		message: "There must be as many output files as many export operations."
 	}
 	
 	constraint ifManySourcesIntegration {
-		check: self.sources -> size() > 1 implies self.tasks -> select(t | t.isTypeOf(IntegrationTask)) -> size() == 1
+		check: self.sources -> size() > 1 implies self.tasks -> select(t | t.isTypeOf(IntegrationTask)) -> size() = 1
 		message: "If there are many input sources there must be a integration task"
 	}
 	
 	constraint numberOfIntegrationOperation {
-		check: self.sources -> size() > 1 implies self.sources -> size() ==
+		check: self.sources -> size() > 1 implies self.sources -> size() =
 			self.tasks -> select(t | t.isTypeOf(IntegrationTask)).integrationOperations -> first() -> size() + 1
 		message: "The number of integration operation must be the number of sources - 1"
 	}
 	
 	constraint sourceImportedOnce {
-		check: self.sources -> forAll(s | (self.tasks -> select(t | t.isTypeOf(CollectionTask)).importOperations -> forAll(i | i.read == s)) -> size() == 1)
+		check: self.sources -> forAll(s | (self.tasks -> select(t | t.isTypeOf(CollectionTask)).importOperations -> forAll(i | i.read = s)) -> size() = 1)
 		message: "Imports must be linked to different input sources"
  	}
   	
   	constraint FileExportedOnce {
- 		check: self.files -> forAll(f | (self.tasks -> select(t | t.isTypeOf(ExportTask)).exportOperations -> forAll(e | e.write == f)) -> size() == 1)
+ 		check: self.files -> forAll(f | (self.tasks -> select(t | t.isTypeOf(ExportTask)).exportOperations -> forAll(e | e.write = f)) -> size() = 1)
  		message: "Exports must be linked to different output files"
   	}
   	
   	constraint formatExportedOnce {
-  		check: self.files.format -> forAll(f1 | self.files.format -> select(f2 | f2 == f1) -> size() == 1)
+  		check: self.files.format -> forAll(f1 | self.files.format -> select(f2 | f2 = f1) -> size() = 1)
   		message: "Each format can be exported at most once"
   	}
   	
@@ -142,13 +142,13 @@ context Task {
 context CollectionTask {
 
 	constraint initialTask {
-		check: self.incoming -> size() == 0
+		check: self.incoming -> size() = 0
 		message: "Collection task can't have an incoming data flow"
 	}
 	
 	constraint nextTypeCollection {
-		check: (self.outgoing -> size() == 1) and (self.outgoing.target -> select(t |t.isTypeOf(CollectionTask) or 
-			t.isTypeOf(VisualizationTask) or t.isTypeOf(ExportTask)) -> size() == 0) or (self.outgoing -> size() > 1)
+		check: (self.outgoing -> size() = 1) and (self.outgoing.target -> select(t |t.isTypeOf(CollectionTask) or 
+			t.isTypeOf(VisualizationTask) or t.isTypeOf(ExportTask)) -> size() = 0) or (self.outgoing -> size() > 1)
 		message: "Collection task must be linked to integration, cleaning or analysis task"
 	}
 	
@@ -158,7 +158,7 @@ context CollectionTask {
 	}
 	
 	constraint manyDataFlowsFromCollectionAsManyImports {
-		check: self.importOperations -> size() == (self.outgoing -> size())
+		check: self.importOperations -> size() = (self.outgoing -> size())
 		message:  "In collection task there must be as many outgoing data flows as many input sources"
 	}
 	
@@ -168,8 +168,8 @@ context CollectionTask {
 	}
 	
 	constraint pairsOfSchema {
-		check: self.importOperations.use -> forAll(s1 | self.outgoing -> select(df | df.schema == s1) -> size() > 0) and
-			self.outgoing.schema -> forAll(s2 | self.importOperations -> select(i | i.use == s2) -> size() > 0)
+		check: self.importOperations.use -> forAll(s1 | self.outgoing -> select(df | df.schema = s1) -> size() > 0) and
+			self.outgoing.schema -> forAll(s2 | self.importOperations -> select(i | i.use = s2) -> size() > 0)
 		message: "Links to schema must be paired wrt import and outgoing data flow"
 	}
 	
@@ -185,7 +185,7 @@ context IntegrationTask {
 
 	constraint nextTypeIntegration {
 		check: self.outgoing.target -> select(t | t.isTypeOf(CollectionTask) or t.isTypeOf(IntegrationTask) or
-			t.isTypeOf(VisualizationTask) or t.isTypeOf(ExportTask)) -> size() == 0
+			t.isTypeOf(VisualizationTask) or t.isTypeOf(ExportTask)) -> size() = 0
 		message: "Integration task must be linked to cleaning or analysis task"
 	}
 		
@@ -210,7 +210,7 @@ context IntegrationTask {
 context CleaningTask {
 
 	constraint nextTypeCleaning {
-		check: self.outgoing.target -> reject(t | t.isTypeOf(AnalysisTask)) -> size() == 0
+		check: self.outgoing.target -> reject(t | t.isTypeOf(AnalysisTask)) -> size() = 0
 		message: "Cleaning task can be linked only to analysis task"
 	}
 	
@@ -225,12 +225,12 @@ context CleaningTask {
 	}
 	
 	constraint initialCleaningOperation {
-		check: self.cleaningOperations -> select(op | op.incoming == null) -> size() == 1
+		check: self.cleaningOperations -> select(op | op.incoming = null) -> size() = 1
 		message: "There can be just one initial cleaning operation. Some internal data flows are wrong"
 	}
 	
 	constraint finalCleaningOperation {
-		check: self.cleaningOperations -> select(op | op.outgoing == null) -> size() == 1
+		check: self.cleaningOperations -> select(op | op.outgoing = null) -> size() = 1
 		message: "There can be just one final cleaning operation. Some internal data flows are wrong"
 	}
 	
@@ -240,7 +240,7 @@ context AnalysisTask{
 
 	constraint nextTypeAnalysis {
 		check: self.outgoing.target -> select(t | t.isTypeOf(CollectionTask) or t.isTypeOf(IntegrationTask) or
-			t.isTypeOf(CleaningTask) or t.isTypeOf(AnalysisTask)) -> size() == 0
+			t.isTypeOf(CleaningTask) or t.isTypeOf(AnalysisTask)) -> size() = 0
 		message: "Analysis task must be linked to visualization or export task"
 	}
 	
@@ -255,25 +255,25 @@ context AnalysisTask{
 	}
 	
 	constraint initialAnalysisOperation {
-		check: self.analysisOperations -> select(op | op.incoming == null) -> size() == 1
+		check: self.analysisOperations -> select(op | op.incoming = null) -> size() = 1
 		message: "There can be just one initial analysis operation. Some internal data flows are wrong"
 	}
 	
 	constraint finalAnalysisOperation {
-		check: self.analysisOperations -> select(op | op.outgoing == null) -> size() == 1
+		check: self.analysisOperations -> select(op | op.outgoing = null) -> size() = 1
 		message: "There can be just one final analysis operation. Some internal data flows are wrong"
 	}
 	
 	constraint outputSchemaIsCompatibleWithInputSchema {
 		check: self.incoming.schema.attributes -> first() -> forAll(attr1 | self.outgoing.schema.attributes -> first() -> exists(attr2 |
-			attr1.name == attr2.name and attr1.type == attr2.type))
+			attr1.name = attr2.name and attr1.type = attr2.type))
 		message: "The outgoing data flow schema must contain all the attributes of the incoming data flow schema"
 	}
 	
 	constraint outgoingDataFlowHasRightSchema {
 		check: self.analysisOperations.outputAttribute -> select(attr | attr <> null) -> size() > 0 implies
 			self.analysisOperations.outputAttribute -> select(attr | attr <> null) -> forAll(attr1 |
-			self.outgoing.schema.attributes -> first() -> exists(attr2 | attr1.name == attr2.name and attr1.type == attr2.type))
+			self.outgoing.schema.attributes -> first() -> exists(attr2 | attr1.name = attr2.name and attr1.type = attr2.type))
 		message: "The outgoing dataflow schema must contain all the generated output attributes" 
 	}
 	
@@ -288,7 +288,7 @@ context AnalysisTask{
 context VisualizationTask {
 
 	constraint nextTypeVisualization {
-		check: self.outgoing.target -> reject(t | t.isTypeOf(ExportTask)) -> size() == 0
+		check: self.outgoing.target -> reject(t | t.isTypeOf(ExportTask)) -> size() = 0
 		message: "Visualization task can be linked only to export task"
 	}
 	
@@ -303,7 +303,7 @@ context VisualizationTask {
 context ExportTask {
 
 	constraint finalTask {
-		check: self.outgoing -> size() == 0
+		check: self.outgoing -> size() = 0
 		message: "Export task can't have an outgoing data flow"
 	}
 	
@@ -327,13 +327,13 @@ context Schema {
 	}	
 	
 	constraint uniqueAttribute {
-		check: self.attributes -> forAll (a1 | self.attributes -> select (a2 | a1 == a2) -> size() == 1)
+		check: self.attributes -> forAll (a1 | self.attributes -> select (a2 | a1 = a2) -> size() = 1)
 		message: "There can't be many equal attributes in the same schema"
 	}	
 	
 	constraint attributesAreLinked {
-		check: self.attributes -> select(attr | attr.next == null) -> size() == 1 and 
-			self.attributes -> select(attr | attr.previous == null) -> size() == 1
+		check: self.attributes -> select(attr | attr.next = null) -> size() = 1 and 
+			self.attributes -> select(attr | attr.previous = null) -> size() = 1
 		message: "Attributes in the schema must be linked as a chain"
 	}
 }
@@ -352,13 +352,13 @@ context ComplexAttribute {
 	}	
 	
 	constraint uniqueAttribute {
-		check: self.attributes -> forAll (a1 | self.attributes -> select (a2 | a1 == a2) -> size() == 1)
+		check: self.attributes -> forAll (a1 | self.attributes -> select (a2 | a1 = a2) -> size() = 1)
 		message: "There can't be many equal attributes in the same attribute"
 	}	
 	
 	constraint attributesAreLinked {
-		check: self.attributes -> select(attr | attr.next == null) -> size() == 1 and 
-			self.attributes -> select(attr | attr.previous == null) -> size() == 1
+		check: self.attributes -> select(attr | attr.next = null) -> size() = 1 and 
+			self.attributes -> select(attr | attr.previous = null) -> size() = 1
 		message: "Attributes of the complex attribute must be linked as a chain"
 	}
 	
@@ -368,17 +368,17 @@ context ComplexAttribute {
 context PredefinedCleaningOperation {
 
 	constraint removeNegative_Column_round_needInput {
-		check:  (self.type.value == 1 or self.type.value == 4 or self.type.value == 2) implies (self.inputAttributes -> size() > 0)
+		check:  (self.type.value = 1 or self.type.value = 4 or self.type.value = 2) implies (self.inputAttributes -> size() > 0)
 		message: "Cleaning operation: removeNegative, removeColumn and round require at least one input attribute"
 	}
 	
 	constraint removeNegativeOnNumericValues {
-		check: (self.type.value == 1 or self.type.value == 2) implies (self.inputAttributes -> forAll(attr | attr.type.value == 1 or attr.type.value == 2))
+		check: (self.type.value = 1 or self.type.value = 2) implies (self.inputAttributes -> forAll(attr | attr.type.value = 1 or attr.type.value = 2))
 		message: "Cleaning operation: removeNegative and round can be applied only to numeric attributes (integer or double)"
 	}
 	
 	constraint roundIntegerValues {
-		check: (self.type.value == 2) implies (self.inputAttributes -> forAll(attr | attr.type.value = 2))
+		check: (self.type.value = 2) implies (self.inputAttributes -> forAll(attr | attr.type.value = 2))
 		message: "Cleaning oepration: round can be applied only to double attributes"
 	}
 }
@@ -387,18 +387,18 @@ context PredefinedCleaningOperation {
 context ClassificationAnalysisOperation {
 
 	constraint LogisticRegressionOnBoolean {
-		check: self.type.value == 0 implies self.inputAttributes -> forAll(attr | attr.type.value == 3)
+		check: self.type.value = 0 implies self.inputAttributes -> forAll(attr | attr.type.value = 3)
 		message: "Classification analysis: logistic regression must be applied to boolean values"
 	}
 	
 	constraint Log_LDA_QDA_SVM_noOutput {
-		check: (self.type.value == 0 or self.type.value == 1 or self.type.value == 2 or self.type.value == 4) implies 
-			(self.outputAttribute == null) -- -> size() == 0)
+		check: (self.type.value = 0 or self.type.value = 1 or self.type.value = 2 or self.type.value = 4) implies 
+			(self.outputAttribute = null) -- -> size() = 0)
 		message: "Classification analysis: Logistic regression, LDA, QDA and SVM don't need an output attribute"
 	}
 	
 	constraint KNN_needsOutput {
-		check: (self.type.value == 3) implies (self.outputAttribute -> size() == 1)
+		check: (self.type.value = 3) implies (self.outputAttribute -> size() = 1)
 		message: "Classification analysis: KNN requires an output attribute"
 	}
 	
@@ -412,13 +412,13 @@ context ClassificationAnalysisOperation {
 context DescriptiveAnalysisOperation {
 
 	constraint noOutputNeeded {
-		check: self.outputAttribute == null
+		check: self.outputAttribute = null
 		message: "Description analyzes don't require output attribute"
 	}
 	
 	constraint inputAttributes {
 		check: (self.type.value <> 5 and self.inputAttributes -> size() > 0) or
-			(self.type.value == 5 and self.inputAttributes -> size() == 0)
+			(self.type.value = 5 and self.inputAttributes -> size() = 0)
 		message: "Descriptive analyzes operations (except ViewData) must have at least one input attribute"
 	}
 	
@@ -432,18 +432,18 @@ context ClusteringAnalysisOperation {
 	}
 	
 	constraint kMeansNoInput {
-		check: self.type.value == 0 implies self.inputAttributes -> size() == 0
+		check: self.type.value = 0 implies self.inputAttributes -> size() = 0
 		message: "Clustering analysis: kMeans doesn't require input attributes"
 	}
 	
 	constraint ClusteringHasIntegerOutputAttribute {
-		check: self.outputAttribute-> size() ==  1 and self.outputAttribute.type.value == 1
+		check: self.outputAttribute-> size() =  1 and self.outputAttribute.type.value = 1
 		message: "Clustering analyzes require an integer output attribute"
 	}
 	
 	constraint inputAttributes {
 		check: (self.type.value <> 0 and self.inputAttributes -> size() > 0) or
-			(self.type.value == 0 and self.inputAttributes -> size() == 0)
+			(self.type.value = 0 and self.inputAttributes -> size() = 0)
 		message: "Clustering analyzes: kMeans doesn't require any input attribute, hierarchical clustering does"
 	}
 	
@@ -452,13 +452,13 @@ context ClusteringAnalysisOperation {
 context PredictiveAnalysisOperation {
 	
 	constraint outputAttributeNotRequired {
-		check: self.outputAttribute == null
+		check: self.outputAttribute = null
 		message: "Predictive analyzes don't require an output attribute"
 	}
 	
 	constraint regressionOnNumericValues {
-		check: (self.type.value == 0 or self.type.value == 1) implies
-			(self.inputAttributes -> forAll(attr | attr.type.value == 1 or attr.type.value == 2))
+		check: (self.type.value = 0 or self.type.value = 1) implies
+			(self.inputAttributes -> forAll(attr | attr.type.value = 1 or attr.type.value = 2))
 		message: "Predictive analysis: regression must have integer or double input attributes"
 	}
 	

@@ -199,10 +199,9 @@
     <eLiterals name="Bar" value="3"/>
     <eLiterals name="Area" value="4"/>
     <eLiterals name="Scatter" value="5"/>
-    <eLiterals name="Surface" value="6"/>
-    <eLiterals name="Radar" value="7"/>
-    <eLiterals name="Histogram" value="8"/>
-    <eLiterals name="BoxPlot" value="9"/>
+    <eLiterals name="Radar" value="6"/>
+    <eLiterals name="Histogram" value="7"/>
+    <eLiterals name="BoxPlot" value="8"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Format">
     <eLiterals name="CSV"/>

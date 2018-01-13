@@ -831,10 +831,6 @@
         <element xmi:type="ecore:EEnumLiteral" href="pipeline.ecore#//ChartType/Scatter"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_hiuwvfGZEeefr4nx6trf5Q"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_hiuwxPGZEeefr4nx6trf5Q" type="3009">
-        <element xmi:type="ecore:EEnumLiteral" href="pipeline.ecore#//ChartType/Surface"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_hiuwxfGZEeefr4nx6trf5Q"/>
-      </children>
       <children xmi:type="notation:Node" xmi:id="_hiuwxvGZEeefr4nx6trf5Q" type="3009">
         <element xmi:type="ecore:EEnumLiteral" href="pipeline.ecore#//ChartType/Radar"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_hiuwx_GZEeefr4nx6trf5Q"/>

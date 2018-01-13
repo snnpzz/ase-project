@@ -6,7 +6,7 @@
 
 [file ('pipeline_'.concat(aPipeline.ID).concat('.r'), false, 'UTF-8')]
 
-# This will generate an executable version of the pipeline
+# This script will generate an executable version of the pipeline
 
 # Structure of the program:
 # - if sources are local files and path is not specified, place them in a folder named "sources" at the same level of the R file;
@@ -17,7 +17,16 @@
 # A pdf file will be exported in "output/[aPipeline.ID/].pdf"
 
 # Import libraries (if some are missing, install them: install.packages("library_name") )
+
 library(readr)
+
+# install.packages("plyr")
+# install.packages("XML")
+# install.packages("jsonlite")
+library(plyr)
+library(xml)
+library(jsonlite)
+
 
 library(MASS)
 library(class)
@@ -26,6 +35,15 @@ library(randomForest)
 
 # install.packages(ggplot2)
 library(ggplot2)
+
+# install.packages("dplyr")
+# install.packages("scales")
+# install.packages("reshape2")
+# install.packages("tibble")
+library(dplyr)
+library(scales)
+library(reshape2)
+library(tibble)
 
 
 set.seed(501)
@@ -110,6 +128,34 @@ rm(list = ls())
 [/template]
 
 
+[template private readFile(s: Source, path: String)]
+
+[if (s.format.toString() = 'TXT')]
+[s.name.replaceAll('\x20', '')/] <- read.table("[path/]/[s.name/]")
+# TODO
+# The source '[s.name.replaceAll('\x20', '')/]' is a TXT file, every row could have been imported as a unique column, 
+# check if you need to manually split it in the desired columns		
+[elseif (s.format.toString() = 'XML')]
+sourceXML <- xmlParse("[path/]/[s.name/]")
+sourceXMLRoot <- xmlRoot(sourceXML)
+sourceXMLTable <- xmlSApply(sourceXMLRoot, function(x) xmlSApply(x, xmlValue))
+[s.name.replaceAll('\x20', '')/] <- data.frame(t(sourceXMLTable), row.names=NULL)
+rm(sourceXML, sourceXMLRoot, sourceXMLTable)
+[elseif (s.format.toString() = 'JSON')]
+sourceJSON <- fromJSON("[path/]/[s.name/]")
+# TODO: complete the path after sourceJSON$ to extract the table from the json file
+#   Example:  list$resource$field : from the object 'list', extract the object 'resource', from the latter extract the object 'field'
+#             The result will be a table where every row is a 'field'
+#			  (In this case we have and array of 'list', or inside 'list' we have an array of 'resource', or ... array of 'field')
+#             The last identifier must be an object
+[s.name.replaceAll('\x20', '')/] <- sourceJSON$
+rm(sourceJSON)
+[else]
+[s.name.replaceAll('\x20', '')/] <- read.table("[path/]/[s.name/]")
+[/if]
+[/template]
+
+
 [template private importSource(aSources: OrderedSet(Source))]
 [for (s : Source | aSources)]
 	[if (not(s.serverName.oclIsUndefined() or s.portNumber.oclIsUndefined()))]
@@ -124,17 +170,13 @@ rm(list = ls())
 # Remote source: downloading file
 download.file([s.serverName.concat(':').concat(s.portNumber.toString()).concat('/').concat(s.name)/], "sources/[s.name/]", mode = "w")	
 		[/if]
-[s.name.replace('.', '')/] <- read.table("sources/[s.name/]")
+[readFile(s, 'sources')/]
 	[/if]
 # Loading file [s.name/]
 	[if (not(s.path.oclIsUndefined()))]
-[s.name.replaceAll('\x20', '')/] <- read.table("[s.path/]/[s.name/]")
+[readFile(s, s.path)/]
 	[else]
-[s.name.replaceAll('\x20', '')/] <- read.table("sources/[s.name/]")
-	[/if]
-	[if (s.format.toString() = 'TXT')]
-# TODO
-# The source '[s.name.replaceAll('\x20', '')/]' is a TXT file, every row has been imported as a unique column, manually split it		
+[readFile(s, 'sources')/]
 	[/if]
 
 [/for]
@@ -214,6 +256,7 @@ source
 [/for]
 [/template]
 
+
 [template private doClassificationAnalysis(op: ClassificationAnalysisOperation)]
 [if (op.type.toString() = 'LogisticRegression')] logistic regression
 	[op.ID/] <- glm([writeFormula(op.inputAttributes)/], data = source, family = binomial)
@@ -280,27 +323,48 @@ source
 
 data2plot <- data.frame(	
 [for (attr: Attribute | attributes)]
-	[attr.name.concat(', ')/]
+	[if (i > 1)] , [/if]
+	[attr.name/] = source$[attr.name/]
 [/for]
 	row.names = FALSE)
 	
 [if (type.toString() = 'Area')]
+	ggplot(data2plot, aes(x = [attributes->at(1).name/] [if (attributes -> size() > 1)], fill=[attributes->at(2).name/] [/if])) + geom_area(aes(y = ..density..), stat = "bin")
 [elseif (type.toString() = 'Bar')]
-	barplot(data2plot, horizontal = TRUE)
+	[if (attributes -> size() = 1)] 
+	ggplot(data2plot, aes(x = factor([attributes->at(1).name/]))) + geom_bar(stat = "bin") + coord_flip()
+	[else]
+	ggplot(data2plot, aes(x = [attributes->at(1).name/], y = [attributes->at(2).name/])) + geom_bar(stat ="identity") + coord_flip()
+	[/if]
 [elseif (type.toString() = 'BoxPlot')]
-	boxplot(data2plot)
+	data2plot['['/] , 1[']'/] <- as.factor(data2plot['['/] , 1[']'/]) 
+	ggplot(data2plot, aes(x = [attributes->at(1).name/], y = [attributes->at(2).name/])) + geom_boxplot()	
 [elseif (type.toString() = 'Column')]
-	barplot(data2plot)
+	[if (attributes -> size() = 1)] 
+	ggplot(data2plot, aes(x = factor([attributes->at(1).name/]))) + geom_bar(stat = "bin")
+	[else]
+	ggplot(data2plot, aes(x = [attributes->at(1).name/], y = [attributes->at(2).name/])) + geom_bar(stat ="identity")
+	[/if]
 [elseif (type.toString() = 'Histogram')]
-	hist(data2plot)
+	[if (attributes -> size() = 1)] 
+	ggplot(data2plot, aes(x = [attributes->at(1).name/])) + geom_histogram()
+	[else]
+	ggplot(data2plot, aes(x = [attributes->at(1).name/], color = [attributes->at(2).name/])) + geom_histogram()
+	[/if]
 [elseif (type.toString() = 'Line')]
-	plot(data2plot)
-	lines(data2plot['['/] , 2[']'/])
+	ggplot(data2plot, aes(x = [attributes->at(1).name/], y = [attributes->at(2).name/], group = [if (attributes -> size() <= 2)] 1 [else] [attributes->at(3).name/] [/if])) + geom_line() + geom_point()
 [elseif (type.toString() = 'Pie')]
+	[if (attributes -> size() > 1)] 
+	ggplot(data2plot, aes(x = "", y = [attributes->at(1).name/], fill = [attributes->at(2).name/])) + geom_bar(width = 1, stat = "identity") + coord_polar("y", start = 0)
+	[else]
+	ggplot(data2plot, aes(x = factor(1), fill = [attributes->at(1).name/])) + geom_bar(width = 1, stat = "identity") + coord_polar("y", start = 0)
+	[/if]
 [elseif (type.toString() = 'Radar')]
+	line_plot <- data2plot %>% filter(variable == '[attributes->at(1).name/]') %>%
+ 		ggplot(aes(x = [attributes->at(2).name/], y = [attributes->at(3).name/], group = 1)) + geom_line()
+	print(line_plot + coord_polar())
 [elseif (type.toString() = 'Scatter')]
-	plot(data2Plot)
-[elseif (type.toString() = 'Surface')]
+	ggplot(data2Plot, aes(x = [attributes->at(1).name/], y = [attributes->at(2).name/] [if (attributes -> size() > 2)] , col = [attributes->at(3).name/] [/if])) + geom_point()
 [/if]
 [/template]
 

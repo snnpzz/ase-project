@@ -82,13 +82,13 @@ This assumption is expressed by these type of constraints:
 ``` 
  context CollectionTask {  
      constraint initialTask {  
-         check: self.incoming -> size() == 0  
+         check: self.incoming -> size() = 0  
          message: "Collection task can't have an incoming data flow"  
      }  
      constraint nextTypeCollection {  
          check: (self.outgoing -> size() == 1) and (self.outgoing.target -> 
 	 	select(t | t.isTypeOf(CollectionTask) or t.isTypeOf(VisualizationTask) 
-		or t.isTypeOf(ExportTask)) -> size() == 0) or (self.outgoing -> 
+		or t.isTypeOf(ExportTask)) -> size() = 0) or (self.outgoing -> 
 		size() > 1)
          message: "Collection task must be linked to integration, cleaning or 
 	 	analysis task"  
@@ -102,7 +102,7 @@ All tasks except Collection and Export, must have a unique outgoing dataflow, an
 ```
  context CollectionTask {
 	constraint manyDataFlowsFromCollectionAsManyImports {
-		check: self.importOperations -> size() == (self.outgoing -> size())
+		check: self.importOperations -> size() = (self.outgoing -> size())
 		message:  "In collection task there must be as many outgoing data flows as 
 			many input sources"
 	}
@@ -144,14 +144,14 @@ context CleaningTask {
 			data flow"
 	}
 	constraint initialCleaningOperation {
-		check: self.cleaningOperations -> select(op | op.incoming == null) -> 
-			size() == 1
+		check: self.cleaningOperations -> select(op | op.incoming = null) -> 
+			size() = 1
 		message: "There can be just one initial cleaning operation. Some internal 
 			data flows are wrong"
 	}
 	constraint finalCleaningOperation {
-		check: self.cleaningOperations -> select(op | op.outgoing == null) -> 
-			size() == 1
+		check: self.cleaningOperations -> select(op | op.outgoing = null) -> 
+			size() = 1
 		message: "There can be just one final cleaning operation. Some internal 
 			data flows are wrong"
 	}
@@ -164,7 +164,7 @@ Source can be imported only once, as files can be exported only once (and obviou
 	constraint sourceImportedOnce {
 		check: self.sources -> forAll(s | (self.tasks -> select(t | 
 			t.isTypeOf(CollectionTask)).importOperations -> forAll(i | 
-			i.read == s)) -> size() == 1)
+			i.read = s)) -> size() = 1)
 		message: "Imports must be linked to different input sources"
  	}
  }
@@ -191,11 +191,11 @@ As we already said, if there are many source the Integration Task is needed, and
  context Pipeline {
 	constraint ifManySourcesIntegration {
 		check: self.sources -> size() > 1 implies self.tasks -> select(t | 
-			t.isTypeOf(IntegrationTask)) -> size() == 1
+			t.isTypeOf(IntegrationTask)) -> size() = 1
 		message: "If there are many input sources there must be a integration task"
 	}
 	constraint numberOfIntegrationOperation {
-		check: self.sources -> size() > 1 implies self.sources -> size() == 
+		check: self.sources -> size() > 1 implies self.sources -> size() = 
 			self.tasks -> select(t | t.isTypeOf(IntegrationTask)).
 			integrationOperations -> first() -> size() + 1
 		message: "The number of integration operation must be the number of 
@@ -210,7 +210,7 @@ Since the Analysis Task can produce other attributes, the incoming and outgoing 
 	constraint outputSchemaIsCompatibleWithInputSchema {
 		check: self.incoming.schema.attributes -> first() -> forAll(attr1 | 
 			self.outgoing.schema.attributes -> first() -> exists(attr2 | 
-			attr1.name == attr2.name and attr1.type == attr2.type))
+			attr1.name = attr2.name and attr1.type = attr2.type))
 		message: "The outgoing data flow schema must contain all the attributes of 
 			the incoming data flow schema"
 	}
@@ -219,7 +219,7 @@ Since the Analysis Task can produce other attributes, the incoming and outgoing 
 			<> null) -> size() > 0 implies self.analysisOperations.
 			outputAttribute -> select(attr | attr <> null) -> forAll(attr1 | 
 			self.outgoing.schema.attributes -> first() -> exists(attr2 | 
-			attr1.name == attr2.name and attr1.type == attr2.type))
+			attr1.name = attr2.name and attr1.type = attr2.type))
 		message: "The outgoing dataflow schema must contain all the generated 
 			output attributes" 
 	}

@@ -453,6 +453,7 @@ Then we have the cleaning operations: the _predefined_ ones are already defined 
 Also the analysis operations are already defined, just for the _kMeans_ (_classification operation_), the user can change the _k_ parameter (default set to 3).  
 
 For the visualization task, all plots are rendered through the _ggplot2_ library. Note that it's very important to link _Charts_ to the attributes (axes) in the right order (first x axis, then y axis, finally eventual grouping attribute), otherwise the plots will be rendered in the wrong way, and the user will have to manually change the order and/or the parameters of the various functions.  
+Attributes are copied in a new dataframe called `data2plot`, so the user can see which attributes (and with which names) he can use, without modifying the primary dataframe `sourceDF`.  
 
 Finally files are exported, for _txt_ and _csv_ format the dataframe is just saved in the corresponding format, but for:
 * _json_: the dataframe must be converted to a _json_ structure, precisely it will be an array of objects, with as attributes the columns of the dataframe, then the result will be saved in a _json_ file;

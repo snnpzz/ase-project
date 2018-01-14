@@ -3,7 +3,6 @@
   <ownedViewpoints name="pipeline" modelFileExtension="pipeline">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Pipeline diagram" domainClass="Pipeline">
       <metamodel href="http://www.project.ase.polimi.it/pipeline#/"/>
-      <validationSet name="PipelineValidation"/>
       <defaultLayer name="Default">
         <nodeMappings name="chartNode" label="Chart" domainClass="Chart">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:title" sizeComputationExpression="-1" workspacePath="/it.polimi.ase.project.design/icons/chart.svg">
@@ -730,7 +729,7 @@
             <element name="element"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="charts" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="chart" valueExpression="var:target"/>
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>

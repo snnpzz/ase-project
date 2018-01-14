@@ -22,7 +22,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="chartEdge" label="Chart" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='visualizationTaskContainer']/@subNodeMappings[name='visualizationOperationNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@nodeMappings[name='chartNode']" targetFinderExpression="feature:chart" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectChart']">
+        <edgeMappings name="chartEdge" label="Chart" deletionDescription="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='unsetChart']" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='visualizationTaskContainer']/@subNodeMappings[name='visualizationOperationNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@nodeMappings[name='chartNode']" targetFinderExpression="feature:chart" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectChart']">
           <style lineStyle="dot" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -46,7 +46,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="readEdge" label="Read" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer']/@subNodeMappings[name='Import%20Operation']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@nodeMappings[name='SourceNode']" targetFinderExpression="feature:read" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectRead']">
+        <edgeMappings name="readEdge" label="Read" deletionDescription="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='unsetRead']" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer']/@subNodeMappings[name='Import%20Operation']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@nodeMappings[name='SourceNode']" targetFinderExpression="feature:read" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectRead']">
           <style lineStyle="dot" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -62,7 +62,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="useEdge" label="Use" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer']/@subNodeMappings[name='Import%20Operation']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']" targetFinderExpression="feature:use" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectUse']">
+        <edgeMappings name="useEdge" label="Use" deletionDescription="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='unsetUse']" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='CollectionTaskContainer']/@subNodeMappings[name='Import%20Operation']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']" targetFinderExpression="feature:use" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectUse']">
           <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -70,7 +70,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="writeEdge" label="Write" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Export%20Task']/@subNodeMappings[name='Export%20Operation']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@nodeMappings[name='FileNode']" targetFinderExpression="feature:write" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectWrite']">
+        <edgeMappings name="writeEdge" label="Write" deletionDescription="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='unsetWrite']" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Export%20Task']/@subNodeMappings[name='Export%20Operation']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@nodeMappings[name='FileNode']" targetFinderExpression="feature:write" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectWrite']">
           <style lineStyle="dot" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -78,7 +78,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="nextAttributeEdge" label="Next Attribute" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:next" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='reconnectNextAttribute']">
+        <edgeMappings name="nextAttributeEdge" label="Next Attribute" deletionDescription="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='unsetNext']" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:next" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='reconnectNextAttribute']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -86,7 +86,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="chartAttributesEdge" label="Chart Attributes Edge" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@nodeMappings[name='chartNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:axes" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='reconnectChartAttributes']">
+        <edgeMappings name="chartAttributesEdge" label="Chart Attributes Edge" deletionDescription="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='unsetChartAttributes']" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@nodeMappings[name='chartNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:axes" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='reconnectChartAttributes']">
           <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -94,15 +94,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="inputAttributesEdge" label="Input Attributes Edge" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='userDefinedCleaningOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='classificationAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='clusteringAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='descriptiveAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='predictiveAnalysisOperationSubNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:inputAttributes" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectInputAttributes']">
-          <style lineStyle="dash" sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <centerLabelStyleDescription>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
-        <edgeMappings name="complexAttributeAttributesEdge" label="Complex Attribute Attributes" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:attributes" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='reconnetComplexAttributeAttributes']">
+        <edgeMappings name="complexAttributeAttributesEdge" label="Complex Attribute Attributes" deletionDescription="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='unsetComplexAttributeAttributes']" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:attributes" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='reconnetComplexAttributeAttributes']">
           <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -110,7 +102,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="analysisOperationOutputAttributeEdge" label="Output Attribute (Analysis Operation) Edge" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='classificationAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='clusteringAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='descriptiveAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='predictiveAnalysisOperationSubNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:outputAttribute" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectAnalysisOperationOutputAttribute']">
+        <edgeMappings name="inputAttributesEdge" label="Input Attributes (Cleaning and Analysis Operation) Edge" deletionDescription="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='unsetInputAttributes']" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='predefinedCleaningOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Cleaning%20Task']/@subNodeMappings[name='userDefinedCleaningOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='classificationAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='clusteringAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='descriptiveAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='predictiveAnalysisOperationSubNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:inputAttributes" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectInputAttributes']">
           <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -118,7 +110,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="integrationOperationOutputAttributeEdge" label="Output Attribute (Integration Operation) Edge" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='integrationTaskContainer']/@subNodeMappings[name='integrationOperationSubNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:outputAttribute" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectIntegrationOperationOutputAttribute']">
+        <edgeMappings name="integrationOperationInputAttributesEdge" label="Input Attributes (Integration Operation)" deletionDescription="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='unsetIntegrationOperationInputAttributes']" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='integrationTaskContainer']/@subNodeMappings[name='integrationOperationSubNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:inputAttributes" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectIntegrationOperationInputAttributes']">
           <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -126,7 +118,15 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="integrationOperationInputAttributes" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='integrationTaskContainer']/@subNodeMappings[name='integrationOperationSubNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:inputAttributes" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectIntegrationOperationInputAttributes']">
+        <edgeMappings name="analysisOperationOutputAttributeEdge" label="Output Attribute (Analysis Operation) Edge" deletionDescription="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='unsetAnalysisOperationOutputAttribute']" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='classificationAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='clusteringAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='descriptiveAnalysisOperationSubNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='Analysis%20Task']/@subNodeMappings[name='predictiveAnalysisOperationSubNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:outputAttribute" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectAnalysisOperationOutputAttribute']">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="integrationOperationOutputAttributeEdge" label="Output Attribute (Integration Operation) Edge" deletionDescription="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='unsetIntegrationOperationOutputAttribute']" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='integrationTaskContainer']/@subNodeMappings[name='integrationOperationSubNode']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='ComplexAttributeBorderedNode'] //@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']/@borderedNodeMappings[name='SimpleAttributeBorderedNode']" targetFinderExpression="feature:outputAttribute" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='reconnectIntegrationOperationOutputAttribute']">
           <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -325,6 +325,16 @@
             </initialOperation>
             <edgeView name="edgeView"/>
           </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="unsetChartAttributes" label="Attributes (Chart)">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="axes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
         <toolSections name="Data Flows">
           <ownedTools xsi:type="tool:EdgeCreationDescription" name="setTargetTask" label="Data Flow" edgeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge']">
@@ -482,6 +492,26 @@
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="unsetComplexAttributeAttributes" label="Attributes (Complex Attribute)">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="attributes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="unsetNext" label="Next">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var.element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="next"/>
+              </firstModelOperations>
+            </initialOperation>
           </ownedTools>
         </toolSections>
         <toolSections name="Tasks" label="Tasks">
@@ -644,7 +674,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="createInputAttributes" label="Input Attributes (Cleaning and Analysis Operations)" edgeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@edgeMappings[name='inputAttributesEdge']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="setInputAttributes" label="Input Attributes (Cleaning and Analysis Operations)" edgeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@edgeMappings[name='inputAttributesEdge']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -655,7 +685,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="cerateIntegrationOperationInputAttributes" label="Input Attributes (Integration Operation)" edgeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@edgeMappings[name='integrationOperationInputAttributes']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="setIntegrationOperationInputAttributes" label="Input Attributes (Integration Operation)" edgeMappings="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@edgeMappings[name='integrationOperationInputAttributesEdge']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -762,19 +792,6 @@
             </initialOperation>
             <edgeView name="edgeView"/>
           </ownedTools>
-          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="reconnectAnalysisOperationOutputAttribute" label="Output Attributes (Analysis Operation)">
-            <source name="source"/>
-            <target name="target"/>
-            <sourceView name="sourceView"/>
-            <targetView name="targetView"/>
-            <element name="element"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var.element">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="outputAttribute" valueExpression="var:target"/>
-              </firstModelOperations>
-            </initialOperation>
-            <edgeView name="edgeView"/>
-          </ownedTools>
           <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="reconnectIntegrationOperationOutputAttribute" label="Output Attribute (Integration Operation)">
             <source name="source"/>
             <target name="target"/>
@@ -783,6 +800,19 @@
             <element name="element"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="outputAttribute" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="reconnectAnalysisOperationOutputAttribute" label="Output Attributes (Analysis Operation)">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var.element">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="outputAttribute" valueExpression="var:target"/>
               </firstModelOperations>
             </initialOperation>
@@ -826,6 +856,86 @@
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="unsetChart" label="Chart">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var.element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="chart"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="unsetInputAttributes" label="Input Attributes (Cleaning and Analysis Operations)">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="inputAttributes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="unsetIntegrationOperationInputAttributes" label="Input Attributes (Integration Operation)">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="inputAttributes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="unsetIntegrationOperationOutputAttribute" label="Output Attribute (Integration Operation)">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="outputAttribute"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="unsetAnalysisOperationOutputAttribute" label="Output Attributes (Analysis Operation)">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="outputAttribute"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="unsetRead" label="Read">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="read"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="unsetUse" label="Use">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="use"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="unsetWrite" label="Write">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="write"/>
+              </firstModelOperations>
+            </initialOperation>
           </ownedTools>
         </toolSections>
       </defaultLayer>

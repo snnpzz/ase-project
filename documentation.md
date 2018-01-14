@@ -445,7 +445,7 @@ If the sources are remote: if they need credentials, the user will have to manua
   
 If there are many sources they are all merged in a unique dataframe, named `sourceDF`, obtained by joining in cascade all the dataframes, then if the user specified a different output attribute for the integration operation, the corresponding column will be renamed.  
 Example of joining 3 dataframes:  
-``` merge(merge(df1, df2, by.x = 'c1', by.y = 'c2'), df3, by.x = 'c1', by.y = 'c3' ```  
+``` merge(merge(df1, df2, by.x = 'c1', by.y = 'c2'), df3, by.x = 'c1', by.y = 'c3') ```  
   
 Then we have the cleaning operations: the _predefined_ ones are already defined and ready to use, but the _user defined cleaning operations_ must be written by the user (these are marked by _TODO_).
 > In the SampleA, we created a source file (with random values). For the cleaning task we defined 2 user defined operations, and we manually added the corresponding code. All sources and output files are included in the _it.polimi.ase.project.samples.a/src-gen_ folder.   

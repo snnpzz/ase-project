@@ -305,7 +305,9 @@ sourceDF
 	sourceDF$[op.outputAttribute.name/] <- [op.ID/]$cluster
 [else] hierarchical clustering
 	[op.ID/] <- hclust(
-	[if (op.inputAttributes -> size() = 0)] sourceDF
+	[if (op.inputAttributes -> size() = 0)] 
+	# TODO complete the source with the appropriate input attributes, 
+	# hierarchical clustering must be computed on a dist() argument
 	[else] dist(data.frame([writeColumns(op.inputAttributes, '')/]))
 	[/if], [op.k/])
 	sourceDF$[op.outputAttribute.name/] <- [op.ID/]$order

@@ -54,7 +54,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="schemaEdge" label="Schema" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']" targetFinderExpression="feature:schema" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='reconnectSchema']">
+        <edgeMappings name="schemaEdge" label="Schema" deletionDescription="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='unsetSchema']" sourceMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@edgeMappings[name='dataFlowEdge']" targetMapping="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@containerMappings[name='SchemaContainer']" targetFinderExpression="feature:schema" reconnections="//@ownedViewpoints[name='pipeline']/@ownedRepresentations[name='Pipeline%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='reconnectSchema']">
           <style lineStyle="dash" targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -414,6 +414,16 @@
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="unsetSchema" label="Schema">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="schema"/>
+              </firstModelOperations>
+            </initialOperation>
           </ownedTools>
         </toolSections>
         <toolSections name="Schemas" label="Schemas">
@@ -882,7 +892,7 @@
             <elementView name="elementView"/>
             <containerView name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var.element">
                 <subModelOperations xsi:type="tool_1:Unset" featureName="inputAttributes"/>
               </firstModelOperations>
             </initialOperation>

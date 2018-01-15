@@ -270,14 +270,16 @@ context AnalysisTask{
 	}
 	
 	constraint outputSchemaIsCompatibleWithInputSchema {
-		check: self.incoming.schema.attributes -> first() -> forAll(attr1 | self.outgoing.schema.attributes -> first() -> exists(attr2 |
-			attr1.name = attr2.name and attr1.type = attr2.type))
+		check: self.incoming.schema.attributes -> size() > 0 and
+			self.incoming.schema.attributes -> first() -> forAll(attr1 | self.outgoing.schema.attributes -> first() -> 
+			exists(attr2 | attr1.name = attr2.name and attr1.type = attr2.type))
 		message: "The outgoing data flow schema must contain all the attributes of the incoming data flow schema"
 	}
 	
 	constraint outgoingDataFlowHasRightSchema {
 		check: self.analysisOperations.outputAttribute -> select(attr | attr <> null) -> size() > 0 implies
 			self.analysisOperations.outputAttribute -> select(attr | attr <> null) -> forAll(attr1 |
+			self.outgoing.schema.attributes -> size() > 0 and
 			self.outgoing.schema.attributes -> first() -> exists(attr2 | attr1.name = attr2.name and attr1.type = attr2.type))
 		message: "The outgoing dataflow schema must contain all the generated output attributes" 
 	}
@@ -327,12 +329,14 @@ context Schema {
 	}
 	
 	constraint uniqueNameAttribute {
-		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
+		check: self.attributes -> size() > 0 and self.attributes -> 
+			forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
 		message: "There can't be more attributes with the same name in the same schema"
 	}	
 	
 	constraint uniqueAttribute {
-		check: self.attributes -> forAll (a1 | self.attributes -> select (a2 | a1 = a2) -> size() = 1)
+		check: self.attributes -> size() > 0 and self.attributes -> 
+			forAll (a1 | self.attributes -> select (a2 | a1 = a2) -> size() = 1)
 		message: "There can't be many equal attributes in the same schema"
 	}	
 	
@@ -352,12 +356,14 @@ context ComplexAttribute {
 	}
 	
 	constraint uniqueNameAttribute {
-		check: self.attributes -> forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
+		check: self.attributes -> size() > 1 and self.attributes -> 
+			forAll (a1 | self.attributes -> forAll (a2 | a1 <> a2 implies a1.name <> a2.name))
 		message: "There can't be more attributes with the same name in the same attribute"
 	}	
 	
 	constraint uniqueAttribute {
-		check: self.attributes -> forAll (a1 | self.attributes -> select (a2 | a1 = a2) -> size() = 1)
+		check: self.attributes -> size() > 1 and self.attributes -> 
+			forAll (a1 | self.attributes -> select (a2 | a1 = a2) -> size() = 1)
 		message: "There can't be many equal attributes in the same attribute"
 	}	
 	

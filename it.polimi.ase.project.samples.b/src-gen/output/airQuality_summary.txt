@@ -1,0 +1,44 @@
+
+Multiple linear regression
+
+Call:
+lm(formula = temperature ~ pm25 + pm10, data = sourceDF)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-4.527 -0.818 -0.032  1.217  3.175 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  6.39782    0.60894  10.506  < 2e-16 ***
+pm25         0.32360    0.04358   7.425 7.18e-11 ***
+pm10        -0.32807    0.04024  -8.153 2.42e-12 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.601 on 87 degrees of freedom
+Multiple R-squared:  0.4377,	Adjusted R-squared:  0.4248 
+F-statistic: 33.86 on 2 and 87 DF,  p-value: 1.329e-11
+
+
+Multiple linear regression
+
+Call:
+lm(formula = humidity ~ pm25 + pm10, data = sourceDF)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-10.7055  -1.9292   0.8925   2.4687   9.0828 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  82.9125     1.5446  53.680  < 2e-16 ***
+pm25         -0.2579     0.1105  -2.333    0.022 *  
+pm10          0.4546     0.1021   4.454  2.5e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.062 on 87 degrees of freedom
+Multiple R-squared:  0.4047,	Adjusted R-squared:  0.391 
+F-statistic: 29.57 on 2 and 87 DF,  p-value: 1.588e-10
+
